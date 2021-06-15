@@ -31,6 +31,7 @@
         <li><a href="#onInputHelperClear">onInputHelperClear</a></li>
         <li><a href="#onInputHelperInput">onInputHelperInput</a></li>
         <li><a href="#onMethodReturn">onMethodReturn</a></li>
+        <li><a href="#onPluginsReady">onPluginsReady</a></li>
         <li><a href="#onTargetPositionChanged">onTargetPositionChanged</a></li>
         <li><a href="#onTranslate">onTranslate</a></li>       
     </ul>
@@ -462,6 +463,14 @@ window.Asc.plugin.onMethodReturn = function(returnValue) {
         window.Asc.plugin.executeCommand("close", console.log(JSON.stringify(returnValue)));
     } 
 };                                                 
+</pre>
+    </li>
+
+    <li>
+        <p><b id="onPluginsReady" class="copy-link">onPluginsReady</b> - the function called when all the plugins are loaded and can be used.</p>
+        <div class="header-gray">Example</div>
+        <pre>
+window.Asc.plugin.onPluginsReady = function ();                                                 
 </pre>
     </li>
 
