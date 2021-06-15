@@ -38,6 +38,7 @@
         <li><a href="#toolbarHideFileName">toolbarHideFileName</a></li>
         <li><a href="#toolbarNoTabs">toolbarNoTabs</a></li>
         <li><a href="#trackChanges">trackChanges</a></li>
+        <li><a href="#uiTheme">uiTheme</a></li>
         <li><a href="#unit">unit</a></li>
         <li><a href="#zoom">zoom</a></li>
     </ul>
@@ -189,7 +190,7 @@
         <tr class="tablerow">
             <td id="customer" class="copy-link">customer<span class="required">*</span></td>
             <td>
-                Contains the information which will be displayed int the editor <b>About</b> section and visible to all the editor users.
+                Contains the information which will be displayed in the editor <b>About</b> section and visible to all the editor users.
                 The object has the following parameters:
                 <ul>
                     <li>
@@ -622,6 +623,19 @@
             <td>boolean</td>
             <td>true</td>
         </tr>
+        <tr class="tablerow">
+            <td id="uiTheme" class="copy-link">uiTheme</td>
+            <td>
+                Defines the editor theme settings. It can be set in two ways:
+                <ul>
+                    <li><b>theme id</b> - the user sets the theme parameter by its id (<em>theme-light</em>, <em>theme-classic-light</em>, <em>theme-dark</em>),</li>
+                    <li><b>default theme</b> - the default dark or light theme value will be set (<em>default-dark</em>, <em>default-light</em>). The default light theme is <em>theme-classic-light</em>.</li>
+                </ul>
+                The first option has higher priority.
+            </td>
+            <td>string</td>
+            <td>theme-dark</td>
+        </tr>
         <tr>
             <td id="unit" class="copy-link">unit</td>
             <td>
@@ -735,6 +749,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
             <% } %>"toolbarHideFileName": false,
             "toolbarNoTabs": false,
             "trackChanges": false,
+            "uiTheme": "theme-dark",
             "unit": "cm",
             "zoom": 100
         },

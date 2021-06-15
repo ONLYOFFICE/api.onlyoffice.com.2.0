@@ -16,6 +16,11 @@
     </h1>
 
     <p class="dscr">The list of changes of ONLYOFFICE Document Server API.</p>
+    <h2 id="64" class="copy-link">Version 6.4</h2>
+    <ul>
+        <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#uiTheme">editorConfig.customization.uiTheme</a> field.</li>
+    </ul>
+    
     <h2 id="63" class="copy-link">Version 6.3</h2>
     <ul>
         <li>Added the <a href="<%= Url.Action("command") %>#c">license</a> command.</li>

@@ -1,5 +1,6 @@
 # Change Log
 
+- editors: added editorConfig.customization.uiTheme
 - editors: try reviewGroups
 - editors: added the license command
 - global search
