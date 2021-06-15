@@ -1,5 +1,6 @@
 # Change Log
 
+- editors: added the possibility to view the document history for the presentation files
 - editors: added editorConfig.customization.uiTheme
 - editors: try reviewGroups
 - editors: added the license command

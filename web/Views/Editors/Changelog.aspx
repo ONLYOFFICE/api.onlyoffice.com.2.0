@@ -19,6 +19,7 @@
     <h2 id="64" class="copy-link">Version 6.4</h2>
     <ul>
         <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#uiTheme">editorConfig.customization.uiTheme</a> field.</li>
+        <li>Added the possibility to view the <a href="<%= Url.Action("history") %>">document history</a> for the presentation files.</li>
     </ul>
     
     <h2 id="63" class="copy-link">Version 6.3</h2>
