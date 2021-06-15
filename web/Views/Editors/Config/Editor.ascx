@@ -12,6 +12,7 @@
     <ul class="columns-4" style="list-style: none;">
         <li><a href="#actionLink">actionLink</a></li>
         <li><a href="#callbackUrl">callbackUrl</a></li>
+        <li><a href="#coEditing">coEditing</a></li>
         <li><a href="#createUrl">createUrl</a></li>
         <li><a href="#lang">lang</a></li>
         <li><a href="#location">location</a></li>
@@ -51,6 +52,35 @@
             <td>Specifies absolute URL to the <b>document storage service</b> (which <a href="<%= Url.Action("callback") %>">must be implemented</a> by the software integrators who use ONLYOFFICE Document Server on their own server).</td>
             <td>string</td>
             <td>"https://example.com/url-to-callback.ashx"</td>
+        </tr>
+        <tr>
+            <td id="coEditing" class="copy-link">coEditing</td>
+            <td>
+                Defines the co-editing mode (<em>fast</em> or <em>strict</em>) and the possibility to change it. The object has the following parameters:
+                <ul>
+                    <li>
+                        <b>mode</b> - the co-editing mode (<em>fast</em> or <em>strict</em>),
+                        <br />
+                        <b>type</b>: string,
+                        <br />
+                        <b>example</b>:  "fast";
+                    </li>
+                    <li>
+                        <b>change</b> - defines if the co-editing mode can be changed in the editor interface or not,
+                        <br />
+                        <b>type</b>: boolean,
+                        <br />
+                        <b>example</b>:  true.
+                    </li>
+                </ul>
+            </td>
+            <td>object</td>
+            <td></td>
+        </tr>
+        <tr class="tablerow tablerow-note">
+            <td colspan="4">
+                <div class="note">Please note that in case this setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.coEditing.mode</em> parameter.</div>
+            </td>
         </tr>
         <tr>
             <td id="createUrl" class="copy-link">createUrl</td>
@@ -246,6 +276,10 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
     "editorConfig": {
         "actionLink": ACTION_DATA,
         "callbackUrl": "https://example.com/url-to-callback.ashx",
+        "coEditing": {
+            "mode": "fast",
+            "change": true
+        },
         "createUrl": "https://example.com/url-to-create-document/",
         "lang": "en",
         "location": "",
