@@ -23,6 +23,7 @@
         <li>Added the <a href="<%= Url.Action("config/document/permissions") %>#commentGroups">document.permissions.commentGroups</a> field.</li>
         <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#hideNotes">editorConfig.customization.hideNotes</a> field.</li>
         <li>Added the <a href="<%= Url.Action("config/editor") %>#coEditing">editorConfig.coEditing</a> field.</li>
+        <li>Added the <a href="<%= Url.Action("methods") %>#requestClose">requestClose</a> method.</li>
     </ul>
     
     <h2 id="63" class="copy-link">Version 6.3</h2>

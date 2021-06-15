@@ -1,6 +1,7 @@
 # Change Log
 
 - plugins: added the onPluginsReady event
+- editors: added the requestClose method
 - editors: added editorConfig.coEditing
 - editors: added document.permissions.commentGroups
 - editors: added the possibility to view the document history for the presentation files
