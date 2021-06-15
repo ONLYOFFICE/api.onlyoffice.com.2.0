@@ -25,6 +25,7 @@
         <li><a href="#forcesave">forcesave</a></li>
         <li><a href="#goback">goback</a></li>
         <li><a href="#help">help</a></li>
+        <li><a href="#hideNotes">hideNotes</a></li>
         <li><a href="#hideRightMenu">hideRightMenu</a></li>
         <li><a href="#hideRulers">hideRulers</a></li>
         <li><a href="#logo">logo</a></li>
@@ -343,6 +344,19 @@
             </td>
         </tr>
         <tr>
+            <td id="hideNotes" class="copy-link">hideNotes</td>
+            <td>
+                Defines if the note panel is displayed or hidden on first loading.
+                The default value is <b>false</b>.
+            </td>
+            <td>boolean</td>
+            <td>false</td>
+        </tr><tr class="tablerow tablerow-note">
+            <td colspan="4">
+                <div class="note">Please note that in case this setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.customization.hideNotes</em> parameter.</div>
+            </td>
+        </tr>
+        <tr>
             <td id="hideRightMenu" class="copy-link">hideRightMenu</td>
             <td>
                 Defines if the right menu is displayed or hidden on first loading.
@@ -359,7 +373,7 @@
         <tr>
             <td id="hideRulers" class="copy-link">hideRulers</td>
             <td>
-                Defines if the editor rulers are displayed (<b>true</b>) or hidden (<b>false</b>). 
+                Defines if the editor rulers are displayed or hidden. 
                 This parameter is available for the document and presentation editors. The default value is <b>false</b> for the document editor and <b>true</b> for presentations.
             </td>
             <td>boolean</td>
@@ -725,6 +739,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
                { %>"leftMenu": true,
             "loaderLogo": "https://example.com/loader-logo.png",
             "loaderName": "The document is loading, please wait...",
+            "hideNotes": false,
             <% } %>"hideRightMenu": false,
             "hideRulers": false,
             "logo": {

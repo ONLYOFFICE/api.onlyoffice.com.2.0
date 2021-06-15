@@ -21,6 +21,7 @@
         <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#uiTheme">editorConfig.customization.uiTheme</a> field.</li>
         <li>Added the possibility to view the <a href="<%= Url.Action("history") %>">document history</a> for the presentation files.</li>
         <li>Added the <a href="<%= Url.Action("config/document/permissions") %>#commentGroups">document.permissions.commentGroups</a> field.</li>
+        <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#hideNotes">editorConfig.customization.hideNotes</a> field.</li>
     </ul>
     
     <h2 id="63" class="copy-link">Version 6.3</h2>

@@ -3,6 +3,7 @@
 - plugins: added the onPluginsReady event
 - editors: added document.permissions.commentGroups
 - editors: added the possibility to view the document history for the presentation files
+- editors: added editorConfig.customization.hideNotes
 - editors: added editorConfig.customization.uiTheme
 - editors: try reviewGroups
 - editors: added the license command
