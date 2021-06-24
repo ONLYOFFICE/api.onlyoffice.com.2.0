@@ -310,6 +310,7 @@
     <Content Include="Content\img\Editor\coedit.jpg" />
     <Content Include="Content\img\Editor\conversion.jpg" />
     <Content Include="Content\img\csharp\add.png" />
+    <Content Include="Content\img\Editor\compare-documents.png" />
     <Content Include="Content\img\Editor\create.png" />
     <Content Include="Content\img\Editor\customization.png" />
     <Content Include="Content\img\Editor\e-coedit.png" />
@@ -691,6 +692,7 @@
     <Content Include="Views\Editors\AnonymousUsers.aspx" />
     <Content Include="Views\Editors\Confluence.aspx" />
     <Content Include="Views\Editors\Command.aspx" />
+    <Content Include="Views\Editors\Comparing.aspx" />
     <Content Include="Views\Editors\Coedit.aspx" />
     <Content Include="Views\Editors\Editor.aspx" />
     <Content Include="Views\Editors\Try.aspx" />

@@ -107,6 +107,9 @@
             <li>
                 <a href="<%= Url.Action("anonymoususers") %>">Anonymous users</a>
             </li>
+            <li>
+                <a href="<%= Url.Action("comparing") %>">Comparing documents</a>
+            </li>
         </ul>
     </li>
 </ul>

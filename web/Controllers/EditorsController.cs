@@ -47,6 +47,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "Changelog",
                 "Coedit",
                 "Command",
+                "Comparing",
                 "Config",
                 "Config/Document",
                 "Config/Document/Info",
@@ -176,6 +177,11 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult Command()
+        {
+            return View();
+        }
+
+        public ActionResult Comparing()
         {
             return View();
         }
