@@ -19,6 +19,7 @@
         <li><a href="#onMetaChange">onMetaChange</a> - the meta information of the document is changed via the <a href="<%= Url.Action("command") %>#meta">meta</a> command.</li>
         <li><a href="#onMakeActionLink">onMakeActionLink</a> - the user is trying to get link for opening the document which contains a bookmark, scrolling to the bookmark position.</li>
         <li><a href="#onOutdatedVersion">onOutdatedVersion</a> - the document is opened for editing with the old <a href="<%= Url.Action("config/document") %>#key">document.key</a> value, which was used to edit the previous document version and was successfully saved.</li>
+        <li><a href="#onPluginsReady">onPluginsReady</a> - all plugins are loaded and can be used.</li>
         <li><a href="#onReady">onReady</a> - the application is loaded into the browser.</li>
         <li><a href="#onRequestClose">onRequestClose</a> - the work with the editor must be ended and the editor must be closed.</li>
         <li><a href="#onRequestCompareFile">onRequestCompareFile</a> - the user is trying to select document for comparing by clicking the <em>Document from Storage</em> button.</li>
@@ -251,6 +252,26 @@ var onOutdatedVersion = function () {
 var docEditor = new DocsAPI.DocEditor("placeholder", {
     "events": {
         "onOutdatedVersion": onOutdatedVersion,
+        ...
+    },
+    ...
+});
+</pre>
+    </li>
+
+    <li>
+        <p>
+            <b id="onPluginsReady" class="copy-link">onPluginsReady</b> - the function called when all plugins are loaded and can be used.
+        </p>
+        <div class="header-gray">Example</div>
+        <pre>
+var onPluginsReady = function () {
+    ...
+};
+
+var docEditor = new DocsAPI.DocEditor("placeholder", {
+    "events": {
+        "onPluginsReady": onPluginsReady,
         ...
     },
     ...

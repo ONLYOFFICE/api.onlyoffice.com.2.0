@@ -640,10 +640,14 @@
         <tr class="tablerow">
             <td id="uiTheme" class="copy-link">uiTheme</td>
             <td>
-                Defines the editor theme settings. It can be set in two ways:
+                Defines the editor theme settings.
+                It can be set in two ways:
                 <ul>
                     <li><b>theme id</b> - the user sets the theme parameter by its id (<em>theme-light</em>, <em>theme-classic-light</em>, <em>theme-dark</em>),</li>
-                    <li><b>default theme</b> - the default dark or light theme value will be set (<em>default-dark</em>, <em>default-light</em>). The default light theme is <em>theme-classic-light</em>.</li>
+                    <li>
+                        <b>default theme</b> - the default dark or light theme value will be set (<em>default-dark</em>, <em>default-light</em>).
+                        The default light theme is <em>theme-classic-light</em>.
+                    </li>
                 </ul>
                 The first option has higher priority.
             </td>
@@ -735,14 +739,14 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
                 "url": "https://example.com"
             },
             "help": true,
+            "hideNotes": false,
+            "hideRightMenu": false,
+            "hideRulers": false,
             <% if (license)
                { %>"leftMenu": true,
             "loaderLogo": "https://example.com/loader-logo.png",
             "loaderName": "The document is loading, please wait...",
-            "hideNotes": false,
-            <% } %>"hideRightMenu": false,
-            "hideRulers": false,
-            "logo": {
+            <% } %>"logo": {
                 "image": "https://example.com/logo.png",
                 "imageEmbedded": "https://example.com/logo_em.png",
                 "url": "https://www.onlyoffice.com"

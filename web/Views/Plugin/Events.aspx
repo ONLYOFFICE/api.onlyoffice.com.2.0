@@ -33,7 +33,7 @@
         <li><a href="#onMethodReturn">onMethodReturn</a></li>
         <li><a href="#onPluginsReady">onPluginsReady</a></li>
         <li><a href="#onTargetPositionChanged">onTargetPositionChanged</a></li>
-        <li><a href="#onTranslate">onTranslate</a></li>       
+        <li><a href="#onTranslate">onTranslate</a></li>
     </ul>
 </nav>
 
@@ -169,7 +169,7 @@ window.Asc.plugin.inputHelper_onSelectItem = function(item) {
 
     window.Asc.plugin.executeMethod("InputText", [item.text, window.Asc.plugin.currentText]);
     window.Asc.plugin.getInputHelper().unShow();
-};       
+};
 </pre>
     </li>
 
@@ -209,7 +209,7 @@ window.Asc.plugin.event_onClick = function(isSelectionUse) {
             controlTag = "";
         ... 
     }); 
-};                                                   
+};
 </pre>
     </li>
 
@@ -221,7 +221,7 @@ window.Asc.plugin.event_onClick = function(isSelectionUse) {
 window.Asc.plugin.onCommandCallback = function() {
     var plugin = window.Asc.plugin;
     plugin.executeCommand("close", "");
-};                              
+};
 </pre>
     </li>
 
@@ -239,7 +239,7 @@ window.Asc.plugin.event_onDocumentContentReady = function() {
     window.Asc.plugin.executeMethod("SearchAndReplace", [oProperties], function() {
             window.Asc.plugin.executeCommand("close", "");
     });
-};                                            
+};
 </pre>
     </li>
 
@@ -276,7 +276,7 @@ window.Asc.plugin.onEnableMouseEvent = function(isEnabled) {
     if (_frames && _frames[0]) {
         _frames[0].style.pointerEvents = isEnabled ? "none" : "";
     }
-};                      
+};
 </pre>
     </li>
 
@@ -288,7 +288,7 @@ window.Asc.plugin.onExternalMouseUp = function () {
     var evt = document.createEvent("MouseEvents");
     evt.initMouseEvent("mouseup", true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
     document.dispatchEvent(evt);
-};                                                
+};
 </pre>
     </li>
 
@@ -355,7 +355,7 @@ window.Asc.plugin.onExternalPluginMessage = function(data) {
             break;
         }
     }
-};                             
+};
 </pre>
     </li>
 
@@ -422,7 +422,7 @@ window.Asc.plugin.event_onInputHelperInput = function(data) {
     else
         window.Asc.plugin.currentText = data.text;
         ...
-}                 
+}
 </pre>
     </li>
 
@@ -462,7 +462,7 @@ window.Asc.plugin.onMethodReturn = function(returnValue) {
     } else if ("GetAllContentControls") {
         window.Asc.plugin.executeCommand("close", console.log(JSON.stringify(returnValue)));
     } 
-};                                                 
+};
 </pre>
     </li>
 
@@ -483,7 +483,7 @@ window.Asc.plugin.event_onTargetPositionChanged = function() {
         window.Asc.plugin.executeMethod("GetCurrentContentControl");
     }
     fClickLabel = false;
-};                                   
+};
 </pre>
     </li>
 
@@ -495,7 +495,7 @@ window.Asc.plugin.onTranslate = function() {
     var label = document.getElementById("button_new");
     if (label)
         label.innerHTML = window.Asc.plugin.tr("New");
-}                       
+}
 </pre>
     </li>
 

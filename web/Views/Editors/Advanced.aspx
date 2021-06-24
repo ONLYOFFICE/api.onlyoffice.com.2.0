@@ -76,6 +76,11 @@
         "<a href="<%= Url.Action("config/document") %>#key">key</a>": "Khirz6zTPdfd7",
         "<a href="<%= Url.Action("config/document/permissions") %>">permissions</a>": {
             "<a href="<%= Url.Action("config/document/permissions") %>#comment">comment</a>": true,
+            "<a href="<%= Url.Action("config/document/permissions") %>#commentGroups">commentGroups</a>": [
+                "view": "",
+                "edit": ["Group2", ""],
+                "remove": [""]
+            ],
             "<a href="<%= Url.Action("config/document/permissions") %>#copy">copy</a>": true,
             "<a href="<%= Url.Action("config/document/permissions") %>#deleteCommentAuthorOnly">deleteCommentAuthorOnly</a>": false,
             "<a href="<%= Url.Action("config/document/permissions") %>#download">download</a>": true,
@@ -95,6 +100,10 @@
     "<a href="<%= Url.Action("config/editor") %>">editorConfig</a>": {
         "<a href="<%= Url.Action("config/editor") %>#actionLink">actionLink</a>": ACTION_DATA,
         "<a href="<%= Url.Action("config/editor") %>#callbackUrl">callbackUrl</a>": "https://example.com/url-to-callback.ashx",
+        "<a href="<%= Url.Action("config/editor") %>#coEditing">coEditing</a>": {
+            "mode": "fast",
+            "change": true
+        },
         "<a href="<%= Url.Action("config/editor") %>#createUrl">createUrl</a>": "https://example.com/url-to-create-document/",
         "<a href="<%= Url.Action("config/editor/customization") %>">customization</a>": {
             "<a href="<%= Url.Action("config/editor/customization") %>#anonymous">anonymous</a>": {
@@ -127,6 +136,7 @@
                 "url": "https://example.com"
             },
             "<a href="<%= Url.Action("config/editor/customization") %>#help">help</a>": true,
+            "<a href="<%= Url.Action("config/editor/customization") %>#hideNotes">hideNotes</a>": false,
             "<a href="<%= Url.Action("config/editor/customization") %>#hideRightMenu">hideRightMenu</a>": false,
             "<a href="<%= Url.Action("config/editor/customization") %>#hideRulers">hideRulers</a>": false,
             "<a href="<%= Url.Action("config/editor/customization") %>#logo">logo</a>": {
@@ -145,6 +155,7 @@
             "<a href="<%= Url.Action("config/editor/customization") %>#toolbarHideFileName">toolbarHideFileName</a>": false,
             "<a href="<%= Url.Action("config/editor/customization") %>#toolbarNoTabs">toolbarNoTabs</a>": false,
             "<a href="<%= Url.Action("config/editor/customization") %>#trackChanges">trackChanges</a>": false,
+            "<a href="<%= Url.Action("config/editor/customization") %>#uiTheme">uiTheme</a>": "theme-dark",
             "<a href="<%= Url.Action("config/editor/customization") %>#unit">unit</a>": "cm",
             "<a href="<%= Url.Action("config/editor/customization") %>#zoom">zoom</a>": 100
         },
@@ -213,6 +224,7 @@
         "<a href="<%= Url.Action("config/events") %>#onInfo">onInfo</a>": onInfo,
         "<a href="<%= Url.Action("config/events") %>#onMetaChange">onMetaChange</a>": onMetaChange,
         "<a href="<%= Url.Action("config/events") %>#onOutdatedVersion">onOutdatedVersion</a>": onOutdatedVersion,
+        "<a href="<%= Url.Action("config/events") %>#onPluginsReady">onPluginsReady</a>": onPluginsReady,
         "<a href="<%= Url.Action("config/events") %>#onRequestClose">onRequestClose</a>": onRequestClose,
         "<a href="<%= Url.Action("config/events") %>#onRequestCompareFile">onRequestCompareFile</a>": onRequestCompareFile,
         "<a href="<%= Url.Action("config/events") %>#onRequestCreateNew">onRequestCreateNew</a>": onRequestCreateNew,

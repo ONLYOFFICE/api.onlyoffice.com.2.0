@@ -3,7 +3,7 @@
       "id":"editors",
       "title":"Document Server",
       "description":"Bring document editing and co-authoring to your web app users. In this section you will learn how to set up, configure and integrate ONLYOFFICE Docs.",
-      "version":"6.3",
+      "version":"6.4",
       "links":{
          "Get Started":[
             {
@@ -143,7 +143,7 @@
       "id":"docbuilder",
       "title":"Document Builder",
       "description":"Generate documents easily without running a document editor. In this section you will learn how to build documents using JavaScript and integrate Document Builder into your DMS, CRM system, etc.",
-      "version": "6.2",
+      "version": "6.3",
       "links":{
          "Get started":[
             {

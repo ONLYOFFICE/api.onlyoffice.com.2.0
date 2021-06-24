@@ -45,8 +45,11 @@
         </tr>
         <tr>
             <td id="favorite" class="copy-link">favorite</td>
-            <td>Defines the highlighting state of the <em>Favorite</em> icon.
-            If the parameter is <em>undefined</em>, the <em>Favorite</em> icon is not displayed at the editor window header.</td>
+            <td>
+                Defines the highlighting state of the <em>Favorite</em> icon.
+                When the user clicks the icon, the <a href="<%= Url.Action("config/events") %>#onMetaChange">onMetaChange</a> event is called.
+                If the parameter is <em>undefined</em>, the <em>Favorite</em> icon is not displayed at the editor window header.
+            </td>
             <td>boolean</td>
             <td>true</td>
         </tr>

@@ -56,7 +56,8 @@
         <tr>
             <td id="coEditing" class="copy-link">coEditing</td>
             <td>
-                Defines the co-editing mode (<em>fast</em> or <em>strict</em>) and the possibility to change it. The object has the following parameters:
+                Defines the co-editing mode (<em>fast</em> or <em>strict</em>) and the possibility to change it.
+                The object has the following parameters:
                 <ul>
                     <li>
                         <b>mode</b> - the co-editing mode (<em>fast</em> or <em>strict</em>),
@@ -79,7 +80,7 @@
         </tr>
         <tr class="tablerow tablerow-note">
             <td colspan="4">
-                <div class="note">Please note that in case this setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.coEditing.mode</em> parameter.</div>
+                <div class="note">Please note that in case <em>mode</em> setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.coEditing.mode</em> parameter.</div>
             </td>
         </tr>
         <tr>
