@@ -310,6 +310,7 @@
     <Content Include="Content\img\Editor\coedit.jpg" />
     <Content Include="Content\img\Editor\conversion.jpg" />
     <Content Include="Content\img\csharp\add.png" />
+    <Content Include="Content\img\Editor\compare.png" />
     <Content Include="Content\img\Editor\compare-documents.png" />
     <Content Include="Content\img\Editor\create.png" />
     <Content Include="Content\img\Editor\customization.png" />
