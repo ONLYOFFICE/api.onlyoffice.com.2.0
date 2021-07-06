@@ -75,6 +75,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "Example/Ruby",
                 "Example/Python",
                 "Example/Csharp",
+                "ExternalThemes",
                 "FAQ",
                 "FAQ/Coediting",
                 "FAQ/Customizing",
@@ -233,6 +234,11 @@ namespace ASC.Api.Web.Help.Controllers
                 catchall = null;
             }
             return View("Example", (object)catchall);
+        }
+
+        public ActionResult ExternalThemes()
+        {
+            return View();
         }
 
         public ActionResult FAQ(string catchall)

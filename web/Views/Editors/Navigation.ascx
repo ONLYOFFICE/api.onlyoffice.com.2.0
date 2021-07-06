@@ -113,6 +113,9 @@
             <li>
                 <a href="<%= Url.Action("comparing") %>">Comparing documents</a>
             </li>
+            <li>
+                <a href="<%= Url.Action("externalthemes") %>">Loading external themes</a>
+            </li>
         </ul>
     </li>
 </ul>

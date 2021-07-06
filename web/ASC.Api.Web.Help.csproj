@@ -594,6 +594,7 @@
     <Content Include="Views\Editors\Commenting.aspx" />
     <Content Include="Views\Editors\Comparing.aspx" />
     <Content Include="Views\Editors\DocumentBuilderApi.aspx" />
+    <Content Include="Views\Editors\ExternalThemes.aspx" />
     <Content Include="Views\Editors\FAQ.aspx" />
     <Content Include="Views\Editors\FAQ\Default.ascx" />
     <Content Include="Views\Editors\FAQ\FAQShared\ExpandCollapse.ascx" />
