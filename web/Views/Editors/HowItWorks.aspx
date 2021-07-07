@@ -33,6 +33,7 @@
         <li><a href="<%= Url.Action("security") %>">Protect a document</a></li>
         <li><a href="<%= Url.Action("anonymoususers") %>">Set a name to an anonymous user</a></li>
         <li><a href="<%= Url.Action("comparing") %>">Compare documents</a></li>
+        <li><a href="<%= Url.Action("externalthemes") %>">Loading external themes</a></li>
     </ul>
     
     <br />
