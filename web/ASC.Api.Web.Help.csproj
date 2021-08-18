@@ -588,11 +588,13 @@
     <Content Include="Views\Editors\HumHub.aspx" />
     <Content Include="Views\Editors\Example\Python.ascx" />
     <Content Include="Views\Editors\InlineEditors.aspx" />
+    <Content Include="Views\Editors\Integrating.aspx" />
     <Content Include="Views\Editors\Liferay.aspx" />
     <Content Include="Views\Editors\Chamilo.aspx" />
     <Content Include="Views\Editors\Changelog.aspx" />
     <Content Include="Views\Editors\Commenting.aspx" />
     <Content Include="Views\Editors\Comparing.aspx" />
+    <Content Include="Views\Editors\Discovery.aspx" />
     <Content Include="Views\Editors\DocumentBuilderApi.aspx" />
     <Content Include="Views\Editors\FAQ.aspx" />
     <Content Include="Views\Editors\FAQ\Default.ascx" />
@@ -607,9 +609,11 @@
     <Content Include="Views\Editors\FAQ\Customizing.ascx" />
     <Content Include="Views\Editors\FAQ\Security.ascx" />
     <Content Include="Views\Editors\FAQ\General.ascx" />
+    <Content Include="Views\Editors\GetDocs.aspx" />
     <Content Include="Views\Editors\Mentions.aspx" />
     <Content Include="Views\Editors\Nextcloud.aspx" />
     <Content Include="Views\Editors\Rename.aspx" />
+    <Content Include="Views\Editors\RestApi.aspx" />
     <Content Include="Views\Editors\Review.aspx" />
     <Content Include="Views\Editors\SharePoint.aspx" />
     <Content Include="Views\Editors\OwnCloud.aspx" />
@@ -712,6 +716,8 @@
     <Content Include="Views\Editors\Coedit.aspx" />
     <Content Include="Views\Editors\Editor.aspx" />
     <Content Include="Views\Editors\Try.aspx" />
+    <Content Include="Views\Editors\Wopi.aspx" />
+    <Content Include="Views\Editors\WopiConfig.aspx" />
     <Content Include="Views\Editors\Troubleshooting.aspx" />
     <Content Include="Views\Editors\History.aspx" />
     <Content Include="Views\Editors\Plugins.aspx" />
@@ -728,6 +734,7 @@
     <Content Include="Views\Editors\DemoPreview.aspx" />
     <Content Include="Views\Editors\Save.aspx" />
     <Content Include="Views\Editors\Open.aspx" />
+    <Content Include="Views\Editors\PostMessage.aspx" />
     <Content Include="Views\Editors\Config\Document\Permissions.ascx" />
     <Content Include="Views\Editors\Config.aspx" />
     <Content Include="Views\Editors\Config\Document\Info.ascx" />

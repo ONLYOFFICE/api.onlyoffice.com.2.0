@@ -27,9 +27,11 @@
         <tr>
             <td id="documentType" class="copy-link">documentType</td>
             <td>Defines the document type to be opened:
-                <em>open a text document (.doc, .docm, .docx, .dot, .dotm, .dotx, .epub, .fodt, .fb2, .htm, .html, .mht, .odt, .ott, .pdf, .rtf, .txt, .djvu, .xml, .xps) for viewing or editing</em> - <b>word</b>,
-                <em>open a spreadsheet (.csv, .fods, .ods, .ots, .xls, .xlsm, .xlsx, .xlt, .xltm, .xltx) for viewing or editing</em> - <b>cell</b>,
-                <em>open a presentation (.fodp, .odp, .otp, .pot, .potm, .potx, .pps, .ppsm, .ppsx, .ppt, .pptm, .pptx) for viewing  or editing</em> - <b>slide</b>.
+                <ul>
+                    <li><b>word</b> - text document (<em>.doc, .docm, .docx, .dot, .dotm, .dotx, .epub, .fodt, .fb2, .htm, .html, .mht, .odt, .ott, .pdf, .rtf, .txt, .djvu, .xml, .xps</em>),</li>
+                    <li><b>cell</b> - spreadsheet (<em>.csv, .fods, .ods, .ots, .xls, .xlsm, .xlsx, .xlt, .xltm, .xltx</em>),</li>
+                    <li><b>slide</b> - presentation (<em>.fodp, .odp, .otp, .pot, .potm, .potx, .pps, .ppsm, .ppsx, .ppt, .pptm, .pptx</em>).</li>
+                </ul>
             </td>
             <td>string</td>
             <td>"cell"</td>

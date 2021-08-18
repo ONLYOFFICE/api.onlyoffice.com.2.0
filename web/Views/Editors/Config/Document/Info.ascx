@@ -75,24 +75,24 @@
             <td>Displays the information about the settings which allow to share the document with other users:
                 <ul>
                     <li>
-                        <b>isLink</b> - changes the user icon to the link icon.
+                        <b>isLink</b> - changes the user icon to the link icon,
                         <br />
-                        <b>type</b>: boolean
+                        <b>type</b>: boolean,
                         <br />
-                        <b>example</b>: false
+                        <b>example</b>: false;
                     </li>
                     <li>
                         <b>permissions</b> - the access rights for the user with the name above.
-                        Can be <b>Full Access</b>, <b>Read Only</b> or <b>Deny Access</b>
+                        Can be <b>Full Access</b>, <b>Read Only</b> or <b>Deny Access</b>,
                         <br />
-                        <b>type</b>: string
+                        <b>type</b>: string,
                         <br />
-                        <b>example</b>: "Full Access"
+                        <b>example</b>: "Full Access";
                     </li>
                     <li>
-                        <b>user</b> - the name of the user the document will be shared with.
+                        <b>user</b> - the name of the user the document will be shared with,
                         <br />
-                        <b>type</b>: string
+                        <b>type</b>: string,
                         <br />
                         <b>example</b>: "John Smith".
                     </li>

@@ -1,5 +1,7 @@
 # Change Log
 
+- editors: added the Get ONLYOFFICE Docs page
+- editors: added the support for the basic version of the WOPI protocol
 - editors: commentGroups on try page
 - editors: added the Commenting page
 - editors: added document.permissions.commentGroups

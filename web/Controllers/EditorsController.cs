@@ -68,6 +68,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "Conversion",
                 "ConversionApi",
                 "DemoPreview",
+                "Discovery",
                 "DocumentBuilderApi",
                 "Example/Java",
                 "Example/Nodejs",
@@ -87,10 +88,12 @@ namespace ASC.Api.Web.Help.Controllers
                 "FAQ/Saving",
                 "FAQ/Security",
                 "FAQ/Sharing",
+                "GetDocs",
                 "History",
                 "HowItWorks",
                 "HumHub",
                 "InlineEditors",
+                "Integrating",
                 "Liferay",
                 "Mentions",
                 "Methods",
@@ -100,7 +103,9 @@ namespace ASC.Api.Web.Help.Controllers
                 "OwnCloud",
                 "Plone",
                 "Plugins",
+                "PostMessage",
                 "Rename",
+                "RestApi",
                 "Review",
                 "Save",
                 "Security",
@@ -111,6 +116,8 @@ namespace ASC.Api.Web.Help.Controllers
                 "Signature/Request",
                 "Troubleshooting",
                 "Try",
+                "Wopi",
+                "WopiConfig",
             };
 
         [ValidateInput(false)]
@@ -244,6 +251,11 @@ namespace ASC.Api.Web.Help.Controllers
             return View("FAQ", (object)catchall);
         }
 
+        public ActionResult GetDocs()
+        {
+            return View();
+        }
+
         public ActionResult DemoPreview()
         {
             var directoryInfo = new DirectoryInfo(Request.MapPath("~/app_data/editor"));
@@ -251,6 +263,11 @@ namespace ASC.Api.Web.Help.Controllers
             var examples = directoryInfo.GetFiles("*.zip", SearchOption.TopDirectoryOnly).Select(fileInfo => fileInfo.Name).ToList();
 
             return View(examples);
+        }
+
+        public ActionResult Discovery()
+        {
+            return View();
         }
 
         public ActionResult DocumentBuilderApi()
@@ -279,6 +296,11 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult InlineEditors()
+        {
+            return View();
+        }
+
+        public ActionResult Integrating()
         {
             return View();
         }
@@ -328,7 +350,17 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult PostMessage()
+        {
+            return View();
+        }
+
         public ActionResult Rename()
+        {
+            return View();
+        }
+
+        public ActionResult RestApi()
         {
             return View();
         }
@@ -368,6 +400,16 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult Try()
+        {
+            return View();
+        }
+
+        public ActionResult Wopi()
+        {
+            return View();
+        }
+
+        public ActionResult WopiConfig()
         {
             return View();
         }

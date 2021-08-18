@@ -18,6 +18,7 @@
     <p class="dscr">The list of changes of ONLYOFFICE Document Server API.</p>
     <h2 id="64" class="copy-link">Version 6.4</h2>
     <ul>
+        <li>Added the support for the basic version of the <a href="<%= Url.Action("wopi") %>">WOPI protocol</a>.</li>
         <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#uiTheme">editorConfig.customization.uiTheme</a> field.</li>
         <li>Added the possibility to view the <a href="<%= Url.Action("history") %>">document history</a> for the presentation files.</li>
         <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#hideNotes">editorConfig.customization.hideNotes</a> field.</li>
