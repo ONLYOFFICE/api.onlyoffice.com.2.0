@@ -1,5 +1,6 @@
 # Change Log
 
+- editors: added support for WOPI protocol
 - editors: added the simple value to the editorConfig.customization.reviewDisplay
 - editors: information about threaded comments
 - editors: commentGroups on try page

@@ -34,37 +34,59 @@
         </ul>
     </li>
     <li>
-        <a href="<%= Url.Action("plugins") %>">Integration connectors</a>
+        <a href="<%= Url.Action("integrating") %>">Integrating ONLYOFFICE Docs</a>
         <ul>
             <li>
-                <a href="<%= Url.Action("alfresco") %>">Alfresco integration</a>
+                <a href="<%= Url.Action("plugins") %>">Creating connectors</a>
+                <ul>
+                    <li>
+                        <a href="<%= Url.Action("alfresco") %>">Alfresco integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("chamilo") %>">Chamilo integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("confluence") %>">Confluence integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("humhub") %>">HumHub integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("liferay") %>">Liferay integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("nextcloud") %>">Nextcloud integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("nuxeo") %>">Nuxeo integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("owncloud") %>">ownCloud integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("plone") %>">Plone integration</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("sharepoint") %>">SharePoint integration</a>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a href="<%= Url.Action("chamilo") %>">Chamilo integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("confluence") %>">Confluence integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("humhub") %>">HumHub integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("liferay") %>">Liferay integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("nextcloud") %>">Nextcloud integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("nuxeo") %>">Nuxeo integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("owncloud") %>">ownCloud integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("plone") %>">Plone integration</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("sharepoint") %>">SharePoint integration</a>
+                <a href="<%= Url.Action("wopi") %>">Using WOPI</a>
+                <ul>
+                    <li>
+                        <a href="<%= Url.Action("discovery") %>">WOPI discovery</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("restapi") %>">WOPI REST API</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("postmessage") %>">PostMessage</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("wopiconfig") %>">Configuration</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </li>

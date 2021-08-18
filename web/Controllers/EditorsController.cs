@@ -68,6 +68,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "Conversion",
                 "ConversionApi",
                 "DemoPreview",
+                "Discovery",
                 "DocumentBuilderApi",
                 "Example/Java",
                 "Example/Nodejs",
@@ -91,6 +92,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "HowItWorks",
                 "HumHub",
                 "InlineEditors",
+                "Integrating",
                 "Liferay",
                 "Mentions",
                 "Methods",
@@ -100,7 +102,9 @@ namespace ASC.Api.Web.Help.Controllers
                 "OwnCloud",
                 "Plone",
                 "Plugins",
+                "PostMessage",
                 "Rename",
+                "RestApi",
                 "Review",
                 "Save",
                 "Security",
@@ -111,6 +115,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "Signature/Request",
                 "Troubleshooting",
                 "Try",
+                "Wopi",
             };
 
         [ValidateInput(false)]
@@ -253,6 +258,11 @@ namespace ASC.Api.Web.Help.Controllers
             return View(examples);
         }
 
+        public ActionResult Discovery()
+        {
+            return View();
+        }
+
         public ActionResult DocumentBuilderApi()
         {
             return View();
@@ -279,6 +289,11 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult InlineEditors()
+        {
+            return View();
+        }
+
+        public ActionResult Integrating()
         {
             return View();
         }
@@ -328,7 +343,17 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult PostMessage()
+        {
+            return View();
+        }
+
         public ActionResult Rename()
+        {
+            return View();
+        }
+
+        public ActionResult RestApi()
         {
             return View();
         }
@@ -368,6 +393,11 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult Try()
+        {
+            return View();
+        }
+
+        public ActionResult Wopi()
         {
             return View();
         }
