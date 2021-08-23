@@ -17,11 +17,11 @@
 
     <p class="dscr">
         ONLYOFFICE Document Editors can be integrated into some of the existing document management systems using plugins.
-        These plugins will add the document editing functions into the document management system you use quickly and easily without the need of writing the code by yourselves. 
+        These plugins will add the document editing features into the document management system you use quickly and easily without having to write your own code. 
         This enables users to create, edit and view office documents and collaborate on them right from the DMS.
     </p>
 
-    <p>Currently the following plugins are available:</p>
+    <p>Currently, the following plugins are available:</p>
     <ul>
         <li><a href="<%= Url.Action("alfresco") %>">ONLYOFFICE Alfresco module package</a></li>
         <li><a href="<%= Url.Action("chamilo") %>">Chamilo ONLYOFFICE integration plugin</a></li>

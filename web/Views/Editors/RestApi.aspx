@@ -16,7 +16,7 @@
     </h1>
 
     <p class="dscr">
-        <b>WOPI REST API</b> specifies a set of operations that enables a client to access and change files stored by a server.
+        <b>WOPI REST API</b> specifies a set of operations that enables a client to access and change files stored on a server.
     </p>
     <p>ONLYOFFICE Docs uses the following WOPI operations:</p>
     <ul>
@@ -31,7 +31,7 @@
 
     <h2 id="CheckFileInfo" class="copy-link">CheckFileInfo</h2>
 
-    <p>Returns information about file properties, access rights and editor settings.</p>
+    <p>Returns information about the file properties, access rights and editor settings.</p>
 
     <div class="header-gray">Required response properties</div>
     <table class="table">
@@ -52,7 +52,7 @@
         <tbody>
             <tr>
                 <td id="BaseFileName" class="copy-link">BaseFileName</td>
-                <td>A file name without a path used for displaying in the user interface (UI), and determining the file extension.</td>
+                <td>A file name without a path that is displayed in the user interface (UI) and determines the file extension.</td>
                 <td>string</td>
                 <td>"Example File Name.docx"</td>
             </tr>
@@ -90,7 +90,7 @@
             </tr>
             <tr>
                 <td id="BreadcrumbBrandUrl" class="copy-link">BreadcrumbBrandUrl</td>
-                <td>URI to a web page that the WOPI client navigates to when the user clicks the UI displaying <a href="#BreadcrumbBrandName">BreadcrumbBrandName</a>.</td>
+                <td>URL to a web page that the WOPI client navigates to when the user clicks the UI displaying <a href="#BreadcrumbBrandName">BreadcrumbBrandName</a>.</td>
                 <td>string</td>
                 <td>"https://example.com/url-to-breadcrumb-brand-page.com"</td>
             </tr>
@@ -102,13 +102,13 @@
             </tr>
             <tr>
                 <td id="BreadcrumbFolderName" class="copy-link">BreadcrumbFolderName</td>
-                <td>A name that the WOPI client displays to the user that indicates the name of the folder that contains a file.</td>
+                <td>A name that the WOPI client displays to the user that indicates the name of the folder that contains the file.</td>
                 <td>string</td>
                 <td>"Folder name"</td>
             </tr>
             <tr>
                 <td id="BreadcrumbFolderUrl" class="copy-link">BreadcrumbFolderUrl</td>
-                <td>URI to a web page that the WOPI client navigates to when the user clicks the UI displaying <a href="#BreadcrumbFolderName">BreadcrumbFolderName</a>.</td>
+                <td>URL to a web page that the WOPI client navigates to when the user clicks the UI displaying <a href="#BreadcrumbFolderName">BreadcrumbFolderName</a>.</td>
                 <td>string</td>
                 <td>"https://example.com/url-to-breadcrumb-brand-folder"</td>
             </tr>
@@ -135,14 +135,14 @@
             <tr>
                 <td id="ClosePostMessage" class="copy-link">ClosePostMessage</td>
                 <td>Specifies if the WOPI client should notify the WOPI server in case the user closes the rendering or editing client currently using this file. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Close">UI_Close</a> PostMessage when the <em>Close</em> UI in online office is activated.</td>
+                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Close">UI_Close</a> PostMessage when the <em>Close</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="EditModePostMessage" class="copy-link">EditModePostMessage</td>
                 <td>Specifies if the WOPI client should notify the WOPI server in case the user tries to edit a file. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Edit">UI_Edit</a> PostMessage when the <em>Edit</em> UI in online office is activated.</td>
+                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Edit">UI_Edit</a> PostMessage when the <em>Edit</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
@@ -156,14 +156,14 @@
             <tr>
                 <td id="FileSharingPostMessage" class="copy-link">FileSharingPostMessage</td>
                 <td>Specifies if the WOPI client should notify the WOPI server in case the user tries to share a file. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Sharing">UI_Sharing</a> PostMessage when the <em>Share</em> UI in online office is activated.</td>
+                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Sharing">UI_Sharing</a> PostMessage when the <em>Share</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="FileVersionPostMessage" class="copy-link">FileVersionPostMessage</td>
-                <td>Specifies if the WOPI client will notify the WOPI server in case the user tries to navigate to a previous file version. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_FileVersions">UI_FileVersions</a> PostMessage when the <em>Previous Versions</em> UI in online office is activated.</td>
+                <td>Specifies if the WOPI client will notify the WOPI server in case the user tries to navigate to the previous file version. 
+                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_FileVersions">UI_FileVersions</a> PostMessage when the <em>Previous Versions</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
@@ -195,25 +195,25 @@
         <tbody>
             <tr>
                 <td id="CloseURL" class="copy-link">CloseURL</td>
-                <td>URI to a web page that the implementer deems useful to a user in case the user closes the rendering or editing client currently using this file.</td>
+                <td>URL to a web page that the implementer deems useful to the user in case the user closes the rendering or editing client currently using this file.</td>
                 <td>string</td>
                 <td>"https://example.com/url-to-close-page.com"</td>
             </tr>
             <tr>
                 <td id="FileSharingUrl" class="copy-link">FileSharingUrl</td>
-                <td>URI to the location that allows a user to share a file.</td>
+                <td>URL to the location that allows the user to share a file.</td>
                 <td>string</td>
                 <td>"https://example.com/url-to-sharing-page.com"</td>
             </tr>
             <tr>
                 <td id="FileVersionUrl" class="copy-link">FileVersionUrl</td>
-                <td>URL to the location that allows a user to view a previous file version.</td>
+                <td>URL to the location that allows the user to view the previous file version.</td>
                 <td>string</td>
                 <td>"https://example.com/url-to-previous-version-page.com"</td>
             </tr>
             <tr>
                 <td id="HostEditUrl" class="copy-link">HostEditUrl</td>
-                <td>URI to a web page where a file can be edited using the WOPI client.</td>
+                <td>URL to a web page where a file can be edited using the WOPI client.</td>
                 <td>string</td>
                 <td>"https://example.com/url-to-host-page.com"</td>
             </tr>
@@ -251,7 +251,7 @@
             </tr>
             <tr>
                 <td id="FileNameMaxLength" class="copy-link">FileNameMaxLength</td>
-                <td>The maximum length of the file names, including the file extension, supported by the WOPI server.</td>
+                <td>The maximum length of a file name, including the file extension, supported by the WOPI server.</td>
                 <td>integer</td>
                 <td>20</td>
             </tr>
@@ -277,7 +277,7 @@
         <tbody>
             <tr>
                 <td id="IsAnonymousUser" class="copy-link">IsAnonymousUser</td>
-                <td>Specifies if a user is anonymous.</td>
+                <td>Specifies if the user is anonymous.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
@@ -315,19 +315,19 @@
             </tr>
             <tr>
                 <td id="UserCanRename" class="copy-link">UserCanRename</td>
-                <td>Specifies if a user has permissions to rename a file.</td>
+                <td>Specifies if the user has permissions to rename a file.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="UserCanReview" class="copy-link">UserCanReview</td>
-                <td>Specifies if a user has permissions to review a file.</td>
+                <td>Specifies if the user has permissions to review a file.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="UserCanWrite" class="copy-link">UserCanWrite</td>
-                <td>Specifies if a user has permissions to edit a file.</td>
+                <td>Specifies if the user has permissions to edit a file.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
@@ -405,7 +405,7 @@
 
     <h2 id="Unlock" class="copy-link">Unlock</h2>
 
-    <p>Releases a lock for editing a file.</p>
+    <p>Allows for file editing.</p>
 
 
     <h2 id="GetFile" class="copy-link">GetFile</h2>

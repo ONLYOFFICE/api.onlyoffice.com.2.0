@@ -94,35 +94,35 @@ otherWindow.postMessage (msg, targetOrigin)
         <tbody>
             <tr>
                 <td id="App_LoadingStatus" class="copy-link">App_LoadingStatus</td>
-                <td>This message is posted after online office application frame were loaded. 
-                    Until the host receives this message, it must assume that online office frame cannot react to any incoming messages except <em>Host_PostmessageReady</em>.</td>
+                <td>This message is posted after the online office application frame was loaded. 
+                    Until the host receives this message, it must assume that the online office frame cannot react to any incoming messages except <em>Host_PostmessageReady</em>.</td>
             </tr>
             <tr>
                 <td id="Edit_Notification" class="copy-link">Edit_Notification</td>
-                <td>This message is posted when the user first makes an edit to a document, and every five minutes thereafter, if the user has made edits in the last five minutes. 
-                    Hosts can use this message to gauge whether users are interacting with online office. In co-authoring sessions, hosts cannot use the WOPI calls for this purpose.</td>
+                <td>This message is posted when the user first makes an edit to a document, and every five minutes thereafter, if the user has made edits over the last five minutes. 
+                    Hosts can use this message to gauge whether users are interacting with the online office. In co-authoring sessions, hosts cannot use the WOPI calls for this purpose.</td>
             </tr>
             <tr>
                 <td id="File_Rename" class="copy-link">File_Rename</td>
-                <td>This message is posted when the user renames the current file in online office. The host can use this message to optionally update the UI, such as the page title.</td>
+                <td>This message is posted when the user renames the current file in the online office. The host can use this message to optionally update the UI, such as the page title.</td>
             </tr>
             <tr>
                 <td id="UI_Close" class="copy-link">UI_Close</td>
-                <td>This message is posted when online office application are closing, either due to an error or a user action. 
+                <td>This message is posted when the online office application is closing, either due to an error or a user action. 
                     Typically, the URL specified in the <a href="<%= Url.Action("restapi") %>#CloseURL">CloseURL</a> property in the <a href="<%= Url.Action("restapi") %>#CheckFileInfo">CheckFileInfo</a> response is displayed. 
                     However, hosts can intercept this message instead and navigate in an appropriate way.</td>
             </tr>
             <tr>
                 <td id="UI_Edit" class="copy-link">UI_Edit</td>
-                <td>This message is posted when the user activates the <em>Edit</em> UI in online office. This UI is only visible when using the view action.</td>
+                <td>This message is posted when the user activates the <em>Edit</em> UI in the online office. This UI is only visible when using the view action.</td>
             </tr>
             <tr>
                 <td id="UI_FileVersions" class="copy-link">UI_FileVersions</td>
-                <td>This message is posted when the user activates the <em>Previous Versions</em> UI in online office. The host should use this message to trigger any custom file version history UI.</td>
+                <td>This message is posted when the user activates the <em>Previous Versions</em> UI in the online office. The host should use this message to trigger any custom file version history UI.</td>
             </tr>
             <tr>
                 <td id="UI_Sharing" class="copy-link">UI_Sharing</td>
-                <td>This message is posted when the user activates the <em>Share</em> UI in online office. The host should use this message to trigger any custom sharing UI.</td>
+                <td>This message is posted when the user activates the <em>Share</em> UI in the online office. The host should use this message to trigger any custom sharing UI.</td>
             </tr>
         </tbody>
     </table>

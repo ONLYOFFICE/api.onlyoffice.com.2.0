@@ -15,8 +15,8 @@
         <span class="hdr">Configuration</span>
     </h1>
 
-    <p class="dscr">Here you can find configuration file parameters that can be changed by the integrator using WOPI protocol. 
-        The full list of configuration parameters you can find <a href="<%= Url.Action("advanced") %>">on this page</a>.</p>
+    <p class="dscr">Here you can find configuration file parameters that can be changed by the integrator using the WOPI protocol. 
+        The full list of configuration parameters can be found <a href="<%= Url.Action("advanced") %>">on this page</a>.</p>
 
     <pre>
 <a href="<%= Url.Action("config/") %>">config</a> = {
