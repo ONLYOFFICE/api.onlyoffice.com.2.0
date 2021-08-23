@@ -40,7 +40,7 @@ otherWindow.postMessage (msg, targetOrigin)
         </thead>
         <tbody>
             <tr>
-                <td>msg</td>
+                <td id="msg" class="copy-link">msg</td>
                 <td>The message data:
                     <ul>
                         <li>
@@ -67,12 +67,12 @@ otherWindow.postMessage (msg, targetOrigin)
                 <td>string or JSON object</td>
             </tr>
             <tr>
-                <td>targetOrigin</td>
+                <td id="targetOrigin" class="copy-link">targetOrigin</td>
                 <td>
                     The <em>otherWindow</em> origin that must be for the event to be dispatched. 
                     It will be set to the <a href="<%= Url.Action("restapi") %>#PostMessageOrigin">PostMessageOrigin</a> property provided in <a href="<%= Url.Action("restapi") %>#CheckFileInfo">CheckFileInfo</a>.
                     <br />
-                    *<em>otherWindow</em> is a reference to another window that msg will be posted to.
+                    *<em>otherWindow</em> is a reference to another window that <em>msg</em> will be posted to.
                 </td>
                 <td>string</td>
             </tr>

@@ -48,7 +48,7 @@
             </tr>
             <tr>
                 <td>urlsrc</td>
-                <td>The URI that you navigate to in order to invoke the action on a particular file.</td>
+                <td>The URL that you navigate to in order to invoke the action on a particular file.</td>
             </tr>
         </tbody>
     </table>

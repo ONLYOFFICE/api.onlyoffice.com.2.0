@@ -24,17 +24,17 @@
     "<a href="<%= Url.Action("config/") %>#token">token</a>": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
     "<a href="<%= Url.Action("config/document") %>">document</a>": {
         "<a href="<%= Url.Action("config/document") %>#title">title</a>": "Example Document Title.docx",
-        "<a href="<%= Url.Action("config/document") %>#url">url</a>": "https://example.com/url-to-example-document.docx"
+        "<a href="<%= Url.Action("config/document") %>#url">url</a>": "https://example.com/url-to-example-document.docx",
         "<a href="<%= Url.Action("config/document") %>#fileType">fileType</a>": "docx",
         "<a href="<%= Url.Action("config/document") %>#key">key</a>": "Khirz6zTPdfd7",
         "<a href="<%= Url.Action("config/document/info") %>">info</a>": {
-            "<a href="<%= Url.Action("config/document/info") %>#folder">folder</a>": "Example Files",
+            "<a href="<%= Url.Action("config/document/info") %>#folder">folder</a>": "Example Files"
         },
         "<a href="<%= Url.Action("config/document/permissions") %>">permissions</a>": {
             "<a href="<%= Url.Action("config/document/permissions") %>#edit">edit</a>": true,
             "<a href="<%= Url.Action("config/document/permissions") %>#review">review</a>": true,
             "<a href="<%= Url.Action("config/document/permissions") %>#copy">copy</a>": true,
-            "<a href="<%= Url.Action("config/document/permissions") %>#print">print</a>": true,
+            "<a href="<%= Url.Action("config/document/permissions") %>#print">print</a>": true
         },
     },
     "<a href="<%= Url.Action("config/editor") %>">editorConfig</a>": {
