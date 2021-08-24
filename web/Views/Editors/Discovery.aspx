@@ -118,30 +118,4 @@
         </tbody>
     </table>
 
-
-    <h2 id="nextcloud-specific" class="copy-link">Nextcloud WOPI app specific</h2>
-
-    <div class="header-gray">Parameters</div>
-    <table class="table">
-        <colgroup>
-            <col class="table-name" />
-            <col />
-            <col class="table-example" />
-        </colgroup>
-        <thead>
-            <tr class="tablerow">
-                <td>Name</td>
-                <td>Description</td>
-                <td>Example</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>lang</td>
-                <td>Indicates that the WOPI server includes the preferred UI language in the format described in <a href="https://datatracker.ietf.org/doc/html/rfc1766.html" target="_blank">[RFC1766]</a>.</td>
-                <td>&lt;lang="en-us"&&gt;</td>
-            </tr>
-        </tbody>
-    </table>
-
 </asp:Content>
