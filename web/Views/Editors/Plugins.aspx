@@ -16,9 +16,8 @@
     </h1>
 
     <p class="dscr">
-        ONLYOFFICE Document Editors can be integrated into some of the existing document management systems using plugins.
-        These plugins will add the document editing features into the document management system you use quickly and easily without having to write your own code. 
-        This enables users to create, edit and view office documents and collaborate on them right from the DMS.
+        ONLYOFFICE Docs can be integrated into some of the existing document management systems using plugins.
+        These plugins will add the document editing features into the document management system you use quickly and easily without having to write your own code.
     </p>
 
     <p>Currently, the following plugins are available:</p>

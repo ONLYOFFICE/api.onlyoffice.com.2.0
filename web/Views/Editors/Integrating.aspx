@@ -28,7 +28,7 @@
         ONLYOFFICE allows you to connect the online document editors to any existing cloud service using one of the following ways:
     </p>
     <ul>
-        <li><a href="<%= Url.Action("plugins") %>">Connectors</a>. In this case, ONLYOFFICE editors will be available right in the DMS.</li>
+        <li><a href="<%= Url.Action("plugins") %>">Connectors</a>. In this case, ONLYOFFICE Docs will be integrated into some of the existing document management systems.</li>
         <li><a href="<%= Url.Action("wopi") %>">WOPI protocol</a>. In this case, an iframe for the editing UI and documents will be presented.</li>
     </ul>
 
