@@ -86,7 +86,7 @@
                 <td id="BreadcrumbBrandName" class="copy-link">BreadcrumbBrandName</td>
                 <td>A name that the WOPI client displays to the user to indicate the brand name of the WOPI server.</td>
                 <td>string</td>
-                <td>"Brand name"</td>
+                <td>"Example Brand Name"</td>
             </tr>
             <tr>
                 <td id="BreadcrumbBrandUrl" class="copy-link">BreadcrumbBrandUrl</td>
@@ -104,7 +104,7 @@
                 <td id="BreadcrumbFolderName" class="copy-link">BreadcrumbFolderName</td>
                 <td>A name that the WOPI client displays to the user that indicates the name of the folder that contains the file.</td>
                 <td>string</td>
-                <td>"Folder name"</td>
+                <td>"Example Folder Name"</td>
             </tr>
             <tr>
                 <td id="BreadcrumbFolderUrl" class="copy-link">BreadcrumbFolderUrl</td>
