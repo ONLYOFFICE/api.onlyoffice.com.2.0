@@ -43,7 +43,6 @@
         "<a href="<%= Url.Action("config/editor") %>#region">region</a>": "en-US",
         "<a href="<%= Url.Action("config/editor") %>#callbackUrl">callbackUrl</a>": "https://example.com/url-to-callback.ashx",
         "<a href="<%= Url.Action("config/editor") %>#user">user</a>": {
-            "group": "Group1",
             "id": "78e1e841",
             "name": "John Smith"
         },
