@@ -16,7 +16,7 @@
     </h1>
 
     <p class="dscr">
-        PostMessage is the  <a href="https://www.w3.org/TR/2011/WD-webmessaging-20110317/" target="_blank">HTML5 Web Messaging</a> protocol which allows exchanging messages in the browser between the iframe storage and ONLYOFFICE Docs. 
+        PostMessage is the  <a href="https://html.spec.whatwg.org/multipage/" target="_blank">HTML5 Web Messaging</a> protocol which allows exchanging messages in the browser between the iframe storage and ONLYOFFICE Docs. 
         It allows the online office frame to communicate with its parent host page.
     </p>
 

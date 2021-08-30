@@ -99,7 +99,7 @@
                 <td>rs</td>
                 <td>DC_LLCC</td>
                 <td>Indicates that the WOPI server includes preferred data language in the format described in <a href="https://datatracker.ietf.org/doc/html/rfc1766.html" target="_blank">[RFC1766]</a> for cases 
-                    where the language can affect data calculation (in SSE).</td>
+                    where the language can affect data calculation (in spreadsheet editor).</td>
                 <td>&lt;rs="en-us"&&gt;</td>
             </tr>
             <tr>
