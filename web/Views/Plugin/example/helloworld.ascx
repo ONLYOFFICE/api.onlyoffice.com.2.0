@@ -47,29 +47,39 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
         {
             "description"         : "hello world",
             "url"                 : "index.html",
+
             "icons"               : ["resources/img/icon.png", "resources/img/icon@2x.png"],
             "isViewer"            : false,
             "EditorsSupport"      : ["word"],
+
             "isVisual"            : false,
             "isModal"             : true,
             "isInsideMode"        : false,
+
             "initDataType"        : "none",
             "initData"            : "",
+
             "isUpdateOleOnResize" : true,
+
             "buttons"             : []
         },
         {
             "description"         : "About",
             "url"                 : "index_about.html",
+
             "icons"               : ["resources/img/icon.png", "resources/img/icon@2x.png"],
             "isViewer"            : false,
             "EditorsSupport"      : ["word"],
+
             "isVisual"            : true,
             "isModal"             : true,
             "isInsideMode"        : false,
+
             "initDataType"        : "none",
             "initData"            : "",
+
             "isUpdateOleOnResize" : true,
+
             "buttons"         : [
                 {
                     "text": "Ok",

@@ -31,7 +31,7 @@
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
 <body class="<%= Html.IfController("Home") ? "main-body" : string.Empty %>">
-    <div class="site-overlay hidden"></div>
+    <div class="site-overlay hidden"></div><div class="close-menu"></div>
     <div class="layout-table-header main-page">
         <% Html.RenderPartial("TopNavigation");%>
     </div>

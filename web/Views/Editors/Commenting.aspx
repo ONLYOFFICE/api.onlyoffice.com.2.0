@@ -148,5 +148,36 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
                 <li><em>"remove": [""]</em> means that the user can remove comments made by someone who belongs to none of these groups (for example, the document that is commented in third-party editors).</li>
                 <li><em>"view": ""</em> means that the user can view comments made by any user.</li>
             </ul>
-            
+        </li>
+    </ol>
+
+
+    <h2 id="threaded-comments" class="copy-link">Threaded comments in spreadsheets</h2>
+    <p>
+        To display ONLYOFFICE spreadsheet comments in other editors correctly, all the comments are saved in two formats - original and threaded:
+    </p>
+    <ol>
+        <li>
+            <p>The <b>original comment format</b> looks as follows:</p>
+            <pre>
+${author1}:
+comment
+${author2}:
+reply1
+${author2}:
+reply2
+</pre>
+            <img width="834px" src="<%= Url.Content("~/content/img/editor/comments-threaded.png") %>" alt="" />
+        </li>
+        <li>
+            To convert the original comments format into the <b>threaded comments</b>, the <em>"${author}:\n"</em> string is deleted if the comment starts with it.
+        </li>
+    </ol>
+
+    <p>The file in the editors opens as follows:</p>
+    <ul>
+        <li>If there are threaded comments in the file, they are used when opening.</li>
+        <li>If there are comments in the original ONLYOFFICE format only, they are converted into threaded comments.</li>
+    </ul>
+
 </asp:Content>

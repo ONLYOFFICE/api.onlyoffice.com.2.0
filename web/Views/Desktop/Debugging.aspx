@@ -14,7 +14,12 @@
         <span class="hdr">Debugging</span>
     </h1>
 
-    <p>To run ONLYOFFICE Desktop Editors in debug mode, launch it with <em>--ascdesktop-support-debug-info</em> flag.</p>
+    <p>To run ONLYOFFICE Desktop Editors in debug mode:</p>
+    <ol>
+        <li>launch the application with <em>--ascdesktop-support-debug-info</em> flag;</li>
+        <li>right-click any editable field on the top toolbar (for example, font list combo);</li>
+        <li>click <b>Inspect Element</b>.</li>
+    </ol>
     <p>Here is the result:</p>
     <img alt="Debug" src="<%= Url.Content("~/content/img/desktop/debugging.png") %>" />
     

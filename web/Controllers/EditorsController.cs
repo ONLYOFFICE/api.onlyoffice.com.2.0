@@ -117,7 +117,6 @@ namespace ASC.Api.Web.Help.Controllers
                 "Troubleshooting",
                 "Try",
                 "Wopi",
-                "WopiConfig",
             };
 
         [ValidateInput(false)]
@@ -405,11 +404,6 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult Wopi()
-        {
-            return View();
-        }
-
-        public ActionResult WopiConfig()
         {
             return View();
         }

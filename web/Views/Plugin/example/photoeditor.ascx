@@ -126,8 +126,6 @@
 
             "isUpdateOleOnResize": false,
 
-
-
             "size": [ 392, 147 ]
         }
     ]

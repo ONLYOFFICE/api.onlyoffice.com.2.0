@@ -29,8 +29,7 @@
 .icon-program-block {
     margin: 70px auto 110px auto;
     justify-content: space-between;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    display: flex;
     max-width: 1120px;
 }
 
@@ -57,62 +56,41 @@
 
 /* IMG */
 
-.img-title-editors {
-    background-image: url("img/main-page/document_server.svg");
+.icon-program-block > div {
     background-repeat: no-repeat;
-    width: 186px;
+    width: 170px;
     height: 100px;
     background-position: center;
     display: inline-block;
+}
+
+.img-title-editors {
+    background-image: url("img/main-page/document_server.svg");
 }
 
 .img-title-docbuilder {
     background-image: url("img/main-page/document_builder.svg");
-    background-repeat: no-repeat;
-    width: 186px;
-    height: 100px;
-    background-position: center;
-    display: inline-block;
 }
 
 .img-title-apisystem {
     background-image: url("img/main-page/hosted_solution.svg");
-    background-repeat: no-repeat;
-    width: 186px;
-    height: 100px;
-    background-position: center;
-    display: inline-block;
 }
 
 .img-title-plugin {
     background-image: url("img/main-page/plugins_and_macros.svg");
-    background-repeat: no-repeat;
-    width: 186px;
-    height: 100px;
-    background-position: center;
-    display: inline-block;
 }
 
 .img-title-portals {
     background-image: url("img/main-page/community_server.svg");
-    background-repeat: no-repeat;
-    width: 186px;
-    height: 100px;
-    background-position: center;
-    display: inline-block;
 }
 
 .img-title-desktop {
     background-image: url("img/main-page/desktop.svg");
-    background-repeat: no-repeat;
-    width: 186px;
-    height: 100px;
-    background-position: center;
-    display: inline-block;
 }
 
 .block-img {
     width: 115px;
+    height: 100px;
 }
 
 /* BLOCK */
@@ -214,7 +192,7 @@
 .api_users_block a {
     color: #333;
     text-decoration: none;
-}
+} 
 
 .programs-list-title {
     font-weight: 700;
@@ -252,9 +230,24 @@
     padding: 0 32px 0 32px;
 }
 
+.api_col_wrapper {
+    display: flex;
+    max-width: 1120px;
+    width: 100%;
+    align-items: flex-start;
+    margin: auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+
+.api_col_wrapper.showing{
+    display:none;
+}
+
 @media screen and (max-width: 1024px) {
     .icon-program-block {
-        max-width: 928px;
+        max-width: 580px;
         display: block;
         line-height: 100px;
         margin: 70px auto auto auto;
@@ -270,15 +263,98 @@
         min-width: 795px;
     }
 
-    .icon-program-block {
-        max-width: 700px;
-    }
-
-    .body-block {
-        max-width: 700px;
-    }
-
     .block-img {
         padding: 0;
     }
+}
+
+@media screen and (max-width: 500px) {
+    .ip_main_part {
+        margin: 0;
+    }
+
+    .api_block_links .api_users_block {
+        display: none;
+    }
+
+    .product-link-column{
+        display:block;
+    }
+
+    .api_products.col_1 {
+        margin-right: 16px;
+        width: 50%;
+    }
+
+    .api_col_wrapper.showing {
+        display: flex;
+    }
+
+    .api_products a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .icon-program-block {
+        max-width: 100%;
+    }
+
+    .body-block {
+        display: block;
+        max-width: 300px;
+    }
+
+    body.main-body {
+        min-width: 100px !important;
+        width: 100%;
+    }
+
+    .ip_main_part {
+        width: 100%
+    }
+
+    .products-info {
+        max-width: 288px;
+        margin: auto;
+        padding: 40px 0;
+    }
+
+    .pp_info_block {
+        padding: 32px 16px 0 16px;
+    }
+
+    .long {
+        padding-left: 16px;
+    }
+
+    .api_block_links .api_users_block {
+        padding: 0 16px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    /*.api_block_links .api_users_block {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: space-between;
+        width: 100%;
+        grid-gap: 0px;
+        height: 100%;
+    }
+
+    .product-link-column {
+        width: 50%;
+    }
+
+    .product-link-column:nth-child(2n+1) {
+        order: 2;
+    }
+
+    .product-link-column:nth-child(2n) {
+        order: 1;
+        position: absolute;
+        right: 0;
+        margin-bottom: 10px;
+    }*/
 }

@@ -44,15 +44,19 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
         {
             "description"         : "settings",
             "url"                 : "index.html",
+
             "icons"               : ["icon.png", "icon@2x.png"],
             "isViewer"            : true,
-            "EditorsSupport"   : [ "word", "cell", "slide" ],
-            "isSystem"  : true,
+            "EditorsSupport"      : [ "word", "cell", "slide" ],
+
+            "isSystem"            : true,
             "isVisual"            : false,
             "isModal"             : false,
             "isInsideMode"        : false,
+
             "initDataType"        : "none",
             "initData"            : "",
+
             "buttons"             : []
         }
     ]

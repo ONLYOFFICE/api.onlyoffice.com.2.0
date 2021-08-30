@@ -15,6 +15,14 @@
         <span class="hdr">Integration examples</span>
     </h1>
 
+    <p>With ONLYOFFICE Docs, any of collaborative solutions can be enhanced with document editing and co-editing. 
+        In this section, you will learn how to integrate ONLYOFFICE Docs into your own website.</p>
+
+
+    <p>Each ONLYOFFICE Docs instance includes online editors for text documents, spreadsheets, and presentations, plus a test example.</p>
+    <p>Test example is simple document management system that can be built into your application for testing. 
+        The test example included by default is written on Node.js. It is disabled by default. To enable it, follow the instructions on your start screen.</p>
+
     <h2>To start integrating document editors into your own website you need to do the following:</h2>
 
     <ol>
@@ -27,7 +35,7 @@
         </li>
 
         <li>
-            <p>Select the programming language and download the code for the sample of online editors integration into your web site:
+            <p>Select the programming language and download the code for the sample of online editors integration into your website:
         <% if (Model != null && Model.Count > 0)
            { %>
             </p>

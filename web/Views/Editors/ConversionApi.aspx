@@ -362,6 +362,24 @@
                 <td>txt</td>
             </tr>
             <tr>
+                <td>djvu</td>
+                <td><span class="yes"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="yes"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="yes"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="yes"></span></td>
+                <td><span class="no"></span></td>
+                <td><span class="no"></span></td>
+            </tr>
+            <tr>
                 <td>doc</td>
                 <td><span class="yes"></span></td>
                 <td><span class="yes"></span></td>

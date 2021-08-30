@@ -125,6 +125,14 @@
             <td>This method allows to get the selected text from the document.</td>
         </tr>
         <tr class="tablerow">
+            <td><a href="<%= Url.Action("executemethod/getselectiontype") %>">GetSelectionType</a></td>
+            <td>This method allows to get the type of the current selection.</td>
+        </tr>
+        <tr class="tablerow">
+            <td><a href="<%= Url.Action("executemethod/getversion") %>">GetVersion</a></td>
+            <td>This method allows to get the editor version.</td>
+        </tr>
+        <tr class="tablerow">
             <td><a href="<%= Url.Action("executemethod/inputtext") %>">InputText</a></td>
             <td>This method allows to insert text into the document.</td>
         </tr>

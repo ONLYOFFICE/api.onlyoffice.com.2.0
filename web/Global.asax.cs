@@ -101,6 +101,7 @@ namespace ASC.Api.Web.Help
                                 "~/scripts/highlight.pack.js",
                                 "~/scripts/clipboard.js",
                                 "~/scripts/navigation-menu.js",
+                                "~/scripts/menuselector.js",
                                 "~/scripts/scripts.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/plugin-example")

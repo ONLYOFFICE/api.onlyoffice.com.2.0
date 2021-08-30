@@ -115,7 +115,7 @@
                "Item2":"styles"
             },
             {
-               "Item1":"Plugin example",
+               "Item1":"Plugin examples",
                "Item2":"example"
             }
          ],
@@ -157,6 +157,10 @@
             {
                "Item1":"Integrating Builder",
                "Item2":"integratingdocumentbuilder"
+            },
+            {
+               "Item1":"How it works",
+               "Item2":"howitworks"
             }
          ],
          "Usage API":[
@@ -301,7 +305,7 @@
          ],
          "More information":[
             {
-               "Item1":"F.A.Q.",
+               "Item1":"FAQ",
                "Item2":"faq"
             },
             {

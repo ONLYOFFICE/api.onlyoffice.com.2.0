@@ -16,6 +16,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <h1>
+        <span class="hdr">Frequently asked questions: Plugins and macros</span>
+    </h1>
+
     <% Html.RenderPartial("FAQ/FAQShared/ExpandCollapse");%>
 <dl class="faq_block" id="plugins_1">
     <dt>How to install plugins to the ONLYOFFICE editors?</dt>
@@ -53,7 +57,7 @@
     <dt>How can I create an About window for my plugin?</dt>
     <dd>
         <p>
-            Use the plugin variations or <em>subplugins</em> to create an <b>About</b> window for your plugin or add extra plugin settings. 
+            Use the <a href="<%= Url.Action("variations") %>">plugin variations</a> or <em>subplugins</em> to create an <b>About</b> window for your plugin or add extra plugin settings. 
             Have a look at the plugin example with two variations <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/helloworld" target="_blank">here</a>. 
             In addition to two variations in the config, you also need to create an additional <em>index_about.html</em> file.
         </p>

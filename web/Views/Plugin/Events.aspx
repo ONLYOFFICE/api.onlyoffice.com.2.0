@@ -11,7 +11,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>
-        <a class="up" href="<%= Url.Action("plugin") %>"></a>
         <span class="hdr">Events</span>
     </h1>
 
@@ -59,7 +58,7 @@
                 <tr class="tablerow">
                     <td>id</td>
                     <td>
-                        Defines the button index in the <em>buttons</em> array of the <a href="<%= Url.Action("config") %>">config.json</a> file. 
+                        Defines the button index in the <a href="<%= Url.Action("config") %>#buttons">buttons</a> array of the <em>config.json</em> file. 
                         If <em>id == -1</em>, then the plugin considers that the <b>Close window</b> cross button has been clicked or its operation has been somehow interrupted.
                     </td>
                     <td>number</td>
@@ -95,9 +94,7 @@ window.Asc.plugin.button = function (id) {
                 <tr class="tablerow">
                     <td>data</td>
                     <td>
-                        Defines the data parameter that depends on the <em>initDataType</em> setting specified in the <a href="<%= Url.Action("config") %>">config.json</a> file. 
-                        The type of the data is as follows: <em>none</em> - an empty string, <em>text</em> - the text of the selected document, 
-                        <em>html</em> - a fragment of the selected document, <em>ole</em> - the data of the OLE object.
+                        Defines the data parameter that depends on the <a href="<%= Url.Action("config") %>#initDataType">initDataType</a> setting specified in the <em>config.json</em> file.
                     </td>
                     <td>string</td>
                 </tr>

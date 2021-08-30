@@ -249,6 +249,7 @@
     <Content Include="Content\highlight.css" />
     <Content Include="Content\img\accordions_sprite.png" />
     <Content Include="Content\img\arrow-gray.svg" />
+    <Content Include="Content\img\close.svg" />
     <Content Include="Content\img\desktop\adding_plugins.png" />
     <Content Include="Content\img\desktop\connection_list.png" />
     <Content Include="Content\img\desktop\debugging.png" />
@@ -310,6 +311,8 @@
     <Content Include="Content\img\Editor\changesurl.png" />
     <Content Include="Content\img\Editor\coedit-view.png" />
     <Content Include="Content\img\Editor\coedit.jpg" />
+    <Content Include="Content\img\Editor\coediting-mode.png" />
+    <Content Include="Content\img\Editor\comments-threaded.png" />
     <Content Include="Content\img\Editor\compare.png" />
     <Content Include="Content\img\Editor\compare-documents.png" />
     <Content Include="Content\img\Editor\conversion.jpg" />
@@ -322,6 +325,7 @@
     <Content Include="Content\img\Editor\e-error0.png" />
     <Content Include="Content\img\Editor\e-key.png" />
     <Content Include="Content\img\Editor\embedded.png" />
+    <Content Include="Content\img\Editor\hideNotes.png" />
     <Content Include="Content\img\Editor\history_open.png" />
     <Content Include="Content\img\Editor\info.png" />
     <Content Include="Content\img\Editor\nextcloud-local.jpg" />
@@ -505,6 +509,7 @@
     <Content Include="Scripts\main-page.js" />
     <Content Include="Scripts\faq.js" />
     <Content Include="Scripts\filter-plugin.js" />
+    <Content Include="Scripts\menuselector.js" />
     <Content Include="Scripts\navigation-menu.js" />
     <Content Include="version.txt" />
     <Content Include="Global.asax" />
@@ -661,6 +666,8 @@
     <Content Include="Views\Plugin\Executemethod\getfields.ascx" />
     <Content Include="Views\Plugin\Executemethod\getfilehtml.ascx" />
     <Content Include="Views\Plugin\Executemethod\getselectedtext.ascx" />
+    <Content Include="Views\Plugin\Executemethod\getselectiontype.ascx" />
+    <Content Include="Views\Plugin\Executemethod\getversion.ascx" />
     <Content Include="Views\Plugin\Executemethod\movecursortocontentcontrol.ascx" />
     <Content Include="Views\Plugin\Executemethod\movecursortoend.ascx" />
     <Content Include="Views\Plugin\Executemethod\movecursortostart.ascx" />
@@ -675,6 +682,7 @@
     <Content Include="Views\Plugin\Localization.aspx" />
     <Content Include="Views\Plugin\Styles.aspx" />
     <Content Include="Views\Plugin\Macros\Macros.aspx" />
+    <Content Include="Views\Plugin\Icons.aspx" />
     <Content Include="Views\Plugin\Info.aspx" />
     <Content Include="Views\Plugin\callCommand.aspx" />
     <Content Include="Views\Plugin\callModule.aspx" />
@@ -697,6 +705,7 @@
     <Content Include="Views\Plugin\FAQ\FAQShared\ExpandCollapse.ascx" />
     <Content Include="Views\Plugin\Navigation.ascx" />
     <Content Include="Views\Plugin\Types.aspx" />
+    <Content Include="Views\Plugin\Variations.aspx" />
     <Content Include="Views\Editors\Callback.aspx" />
     <Content Include="Views\Editors\Config\Default.ascx" />
     <Content Include="Views\Editors\Conversion.aspx" />
@@ -717,7 +726,6 @@
     <Content Include="Views\Editors\Editor.aspx" />
     <Content Include="Views\Editors\Try.aspx" />
     <Content Include="Views\Editors\Wopi.aspx" />
-    <Content Include="Views\Editors\WopiConfig.aspx" />
     <Content Include="Views\Editors\Troubleshooting.aspx" />
     <Content Include="Views\Editors\History.aspx" />
     <Content Include="Views\Editors\Plugins.aspx" />

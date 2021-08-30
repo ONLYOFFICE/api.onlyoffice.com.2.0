@@ -56,7 +56,7 @@
         <tr>
             <td id="coEditing" class="copy-link">coEditing</td>
             <td>
-                Defines the co-editing mode (<em>fast</em> or <em>strict</em>) and the possibility to change it.
+                Defines the co-editing mode (<em>Fast</em> or <em>Strict</em>) and the possibility to change it.
                 The object has the following parameters:
                 <ul>
                     <li>
@@ -78,9 +78,14 @@
             <td>object</td>
             <td></td>
         </tr>
-        <tr class="tablerow tablerow-note">
+        <tr class="tablerow-note">
             <td colspan="4">
                 <div class="note">Please note that in case <em>mode</em> setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.coEditing.mode</em> parameter.</div>
+            </td>
+        </tr>
+        <tr class="tablerow">
+            <td colspan="4">
+                <img src="<%= Url.Content("~/content/img/editor/coediting-mode.png") %>" width="834px" alt="" />
             </td>
         </tr>
         <tr>

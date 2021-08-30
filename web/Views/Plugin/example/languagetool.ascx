@@ -9,7 +9,7 @@
 <p class="dscr">Connects the <a href="https://languagetool.org/" target="_blank">LanguageTool</a> assistant to check the text for grammar, style and spell errors.</p>
 <p><b>Plugin type:</b> visual, non-system.</p>
 <p><b>Supported editors:</b> documents, spreadsheets, presentations.</p>
-<p><b>Analogue:</b> <a href="https://github.com/ONLYOFFICE/plugin-glavred" target="_blank">Glavred</a>.</p>
+<p><b>Analogue:</b> <a href="https://github.com/ONLYOFFICE/plugin-glavred" target="_blank">Glavred</a>, <a href="https://github.com/ONLYOFFICE/plugin-grammalecte" target="_blank">Grammalecte</a>.</p>
 
 <img alt="LanguageTool" src="<%= Url.Content("~/content/img/plugins/gifs/language-tool.gif") %>" />
 

@@ -53,17 +53,10 @@
 
     <ol>
         <li>Create an informative <b>About</b> window for your plugin. Add a short description and the plugin version, the company developer name and link to its website. 
-            Follow the instructions <a href="<%= Url.Action("config") %>">here</a> to create an <b>About</b> variation in the <em>config.json</em> file.</li>
+            Follow the instructions <a href="<%= Url.Action("variations") %>">here</a> to create an <b>About</b> variation in the <em>config.json</em> file.</li>
         <img alt="About window" src="<%= Url.Content("~/content/img/plugins/about-variation.png") %>" />
         <li>
-            <p>Prepare icons for the plugin and put them into the main plugin folder. Make sure that they fulfil the following requirements:</p>
-            <uL>
-                <li><b>icon.png</b> - 40x40;</li>
-                <li><b>icon@2x.png</b> - 80x80;</li>
-                <li><b>icon2.png</b> - 26x26;</li>
-                <li><b>icon2@2x.png</b>- 52x52.</li>
-            </uL>
-            <note>Icons with the lowest ID value are placed first to specify the application icons.</note>
+            <p>Prepare icons for the plugin and put them into the main plugin folder. Follow the instructions <a href="<%= Url.Action("icons") %>">here</a> to specify icon parameters in the <em>config.json</em> file.</p>
         </li>
         <li>Don&#8217;t forget about the <em>readme</em> file where you can add a detailed plugin description, installation and usage instructions, known issues, etc. 
             Put this file into the main plugin folder.</li>

@@ -65,7 +65,7 @@
 <div class="treeheader">More information</div>
 <ul class="side-nav root">
     <li>
-        <a href="<%= Url.Action("faq") %>">F.A.Q.</a>
+        <a href="<%= Url.Action("faq") %>">FAQ</a>
     </li>
     <li>
         <a href="<%= Url.Action("filters") %>">Filtering</a>

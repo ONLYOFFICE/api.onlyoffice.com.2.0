@@ -18,7 +18,9 @@
     <p class="dscr">The list of changes of ONLYOFFICE Document Server API.</p>
     <h2 id="64" class="copy-link">Version 6.4</h2>
     <ul>
-        <li>Added the support for the basic version of the <a href="<%= Url.Action("wopi") %>">WOPI protocol</a>.</li>
+        <li>Added support for <a href="<%= Url.Action("wopi") %>">WOPI protocol</a>.</li>
+        <li>Added the <em>simple</em> value to the <a href="<%= Url.Action("config/editor/customization") %>#reviewDisplay">editorConfig.customization.reviewDisplay</a> parameter.</li>
+        <li>Added the <a href="<%= Url.Action("commenting") %>#threaded-comments">threaded comments</a> saving in the spreadsheet files.</li>
         <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#uiTheme">editorConfig.customization.uiTheme</a> field.</li>
         <li>Added the possibility to view the <a href="<%= Url.Action("history") %>">document history</a> for the presentation files.</li>
         <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#hideNotes">editorConfig.customization.hideNotes</a> field.</li>
@@ -136,6 +138,7 @@
 
     <h2 id="51" class="copy-link">Version 5.1</h2>
     <ul>
+        <li>Added the <em>format</em> parameter to the <a href="<%= Url.Action("methods") %>#downloadAs">downloadAs</a> method.</li>
         <li>Added the <a href="<%= Url.Action("config/document/permissions") %>#modifyContentControl">document.permissions.modifyContentControl</a> field.</li>
         <li>Added conversion for <a href="<%= Url.Action("conversionapi") %>#text-matrix">OpenDocument Template</a> formats.</li>
         <li>Added the <a href="<%= Url.Action("config/events") %>#onRequestClose">events.onRequestClose</a> event.</li>

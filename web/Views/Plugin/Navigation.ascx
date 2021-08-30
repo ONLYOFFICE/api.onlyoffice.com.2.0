@@ -22,6 +22,14 @@
         <ul>
             <li>
                 <a href="<%= Url.Action("config") %>">config.json</a>
+                <ul>
+                    <li>
+                        <a href="<%= Url.Action("variations") %>">Plugin variations</a>
+                    </li>
+                    <li>
+                        <a href="<%= Url.Action("icons") %>">Plugin icons</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="<%= Url.Action("indexhtml") %>">index.html</a>
@@ -91,6 +99,12 @@
                                     </li>
                                     <li>
                                         <a href="<%= Url.Action("executemethod/getselectedtext") %>">GetSelectedText</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("executemethod/getselectiontype") %>">GetSelectionType</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("executemethod/getversion") %>">GetVersion</a>
                                     </li>
                                     <li>
                                         <a href="<%= Url.Action("executemethod/inputtext") %>">InputText</a>

@@ -18,7 +18,7 @@
 
     <h2 id="localizeConfigJSON">Translating config.json sections</h2>
 
-    <p>First you can translate the <a href="<%= Url.Action("config") %>">config.json</a> file. To do that, open it and find all the strings in English. Usually they are <em>name</em>, <em>variations.description</em> and <em>variations.buttons.text</em> nodes of the configuration object.</p>
+    <p>First you can translate the <a href="<%= Url.Action("config") %>">config.json</a> file. To do that, open it and find all the strings in English. Usually they are <a href="<%= Url.Action("config") %>#name">name</a>, <a href="<%= Url.Action("config") %>#description">variations.description</a> and <a href="<%= Url.Action("config") %>#buttons">variations.buttons.text</a> nodes of the configuration object.</p>
 
     <p>Add the new nodes with the key name plus <em>Locale</em>, equal to an object that will have the language locale as the key and the translation as the value. For example, for the <em>name</em> key the localization object will look like this:</p>
 
@@ -110,7 +110,7 @@ pluginCode.js</pre>
 
     <pre>&lt;button id="button_new"&gt;New&lt;/button&gt;</pre>
 
-    <p>After that add the <em>window.Asc.plugin.onTranslate</em> function to the <a href="<%= Url.Action("code") %>">pluginCode.js</a> file:</p>
+    <p>After that add the <a href="<%= Url.Action("events") %>#onTranslate">window.Asc.plugin.onTranslate</a> function to the <a href="<%= Url.Action("code") %>">pluginCode.js</a> file:</p>
 
     <pre>window.Asc.plugin.onTranslate = function()
     {

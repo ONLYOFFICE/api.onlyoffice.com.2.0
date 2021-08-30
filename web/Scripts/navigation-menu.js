@@ -37,6 +37,9 @@ $(function () {
                     .removeClass('pushy-submenu-closed')
                     .addClass('pushy-submenu-open');
                 $(".site-overlay").removeClass('hidden');
+                if ($(".layout-side").hasClass("open-menu")) {
+                    $(".layout-side").removeClass("open-menu");
+                }
             } else {
                 $(".pushy-left")
                     .addClass('pushy-submenu-closed')
@@ -51,6 +54,7 @@ $(function () {
             .addClass('pushy-submenu-closed')
             .removeClass('pushy-submenu-open');
         $(".site-overlay").addClass('hidden');
+        $(".layout-side").removeClass("open-menu");
     })
 
     $('header').mouseleave(function () {

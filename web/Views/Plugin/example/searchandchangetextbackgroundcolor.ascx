@@ -65,7 +65,6 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
             "isUpdateOleOnResize" : false,
 
             "buttons"         : []
-
         }
     ]
 }

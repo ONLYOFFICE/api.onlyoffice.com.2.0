@@ -417,3 +417,18 @@ img {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .macro-block, .plugin-block {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .macro-example, .plugin-example {
+        max-width: 100%;
+    }
+
+    .filter-selector ul {
+        padding: 0;
+    }
+}
+
