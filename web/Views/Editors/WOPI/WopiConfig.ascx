@@ -1,17 +1,7 @@
-<%@ Page
-    Title=""
-    Language="C#"
-    MasterPageFile="~/Views/Shared/Site.Master"
-    Inherits="System.Web.Mvc.ViewPage"
-    ContentType="text/html" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Configuration
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 
     <h1>
+        <a class="up" href="<%= Url.Action("wopi/") %>"></a>
         <span class="hdr">Configuration</span>
     </h1>
 
@@ -69,5 +59,3 @@
     }
 };
 </pre>
-
-</asp:Content>

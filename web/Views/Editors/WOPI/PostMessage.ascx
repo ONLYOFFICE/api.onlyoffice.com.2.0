@@ -1,17 +1,7 @@
-<%@ Page
-    Title=""
-    Language="C#"
-    MasterPageFile="~/Views/Shared/Site.Master"
-    Inherits="System.Web.Mvc.ViewPage<string>"
-    ContentType="text/html" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    PostMessage
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 
     <h1>
+        <a class="up" href="<%= Url.Action("wopi/") %>"></a>
         <span class="hdr">PostMessage</span>
     </h1>
 
@@ -70,7 +60,7 @@ otherWindow.postMessage (msg, targetOrigin)
                 <td id="targetOrigin" class="copy-link">targetOrigin</td>
                 <td>
                     The <em>otherWindow</em> origin that must be for the event to be dispatched. 
-                    It will be set to the <a href="<%= Url.Action("restapi") %>#PostMessageOrigin">PostMessageOrigin</a> property provided in <a href="<%= Url.Action("restapi") %>#CheckFileInfo">CheckFileInfo</a>.
+                    It will be set to the <a href="<%= Url.Action("wopi/restapi") %>#PostMessageOrigin">PostMessageOrigin</a> property provided in <a href="<%= Url.Action("wopi/restapi") %>#CheckFileInfo">CheckFileInfo</a>.
                     <br />
                     *<em>otherWindow</em> is a reference to another window that <em>msg</em> will be posted to.
                 </td>
@@ -109,7 +99,7 @@ otherWindow.postMessage (msg, targetOrigin)
             <tr>
                 <td id="UI_Close" class="copy-link">UI_Close</td>
                 <td>This message is posted when the online office application is closing, either due to an error or a user action. 
-                    Typically, the URL specified in the <a href="<%= Url.Action("restapi") %>#CloseURL">CloseURL</a> property in the <a href="<%= Url.Action("restapi") %>#CheckFileInfo">CheckFileInfo</a> response is displayed. 
+                    Typically, the URL specified in the <a href="<%= Url.Action("wopi/restapi") %>#CloseURL">CloseURL</a> property in the <a href="<%= Url.Action("wopi/restapi") %>#CheckFileInfo">CheckFileInfo</a> response is displayed. 
                     However, hosts can intercept this message instead and navigate in an appropriate way.</td>
             </tr>
             <tr>
@@ -126,5 +116,3 @@ otherWindow.postMessage (msg, targetOrigin)
             </tr>
         </tbody>
     </table>
-
-</asp:Content>

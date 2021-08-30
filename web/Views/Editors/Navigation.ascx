@@ -75,19 +75,19 @@
                 </ul>
             </li>
             <li>
-                <a href="<%= Url.Action("wopi") %>">Using WOPI</a>
+                <a href="<%= Url.Action("wopi/") %>">Using WOPI</a>
                 <ul>
                     <li>
-                        <a href="<%= Url.Action("discovery") %>">WOPI discovery</a>
+                        <a href="<%= Url.Action("wopi/discovery") %>">WOPI discovery</a>
                     </li>
                     <li>
-                        <a href="<%= Url.Action("restapi") %>">WOPI REST API</a>
+                        <a href="<%= Url.Action("wopi/restapi") %>">WOPI REST API</a>
                     </li>
                     <li>
-                        <a href="<%= Url.Action("postmessage") %>">PostMessage</a>
+                        <a href="<%= Url.Action("wopi/postmessage") %>">PostMessage</a>
                     </li>
                     <li>
-                        <a href="<%= Url.Action("wopiconfig") %>">Configuration</a>
+                        <a href="<%= Url.Action("wopi/wopiconfig") %>">Configuration</a>
                     </li>
                 </ul>
             </li>

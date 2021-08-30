@@ -1,17 +1,7 @@
-<%@ Page
-    Title=""
-    Language="C#"
-    MasterPageFile="~/Views/Shared/Site.Master"
-    Inherits="System.Web.Mvc.ViewPage<string>"
-    ContentType="text/html" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    WOPI REST API
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 
     <h1>
+        <a class="up" href="<%= Url.Action("wopi/") %>"></a>
         <span class="hdr">WOPI REST API</span>
     </h1>
 
@@ -135,41 +125,41 @@
             <tr>
                 <td id="ClosePostMessage" class="copy-link">ClosePostMessage</td>
                 <td>Specifies if the WOPI client should notify the WOPI server in case the user closes the rendering or editing client currently using this file. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Close">UI_Close</a> PostMessage when the <em>Close</em> UI in the online office is activated.</td>
+                    The host expects to receive the <a href="<%= Url.Action("wopi/postmessage") %>#UI_Close">UI_Close</a> PostMessage when the <em>Close</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="EditModePostMessage" class="copy-link">EditModePostMessage</td>
                 <td>Specifies if the WOPI client should notify the WOPI server in case the user tries to edit a file. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Edit">UI_Edit</a> PostMessage when the <em>Edit</em> UI in the online office is activated.</td>
+                    The host expects to receive the <a href="<%= Url.Action("wopi/postmessage") %>#UI_Edit">UI_Edit</a> PostMessage when the <em>Edit</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="EditNotificationPostMessage" class="copy-link">EditNotificationPostMessage</td>
                 <td>Specifies if the WOPI client should notify the WOPI server  in case the user tries to edit a file. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#Edit_Notification">Edit_Notification</a> PostMessage.</td>
+                    The host expects to receive the <a href="<%= Url.Action("wopi/postmessage") %>#Edit_Notification">Edit_Notification</a> PostMessage.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="FileSharingPostMessage" class="copy-link">FileSharingPostMessage</td>
                 <td>Specifies if the WOPI client should notify the WOPI server in case the user tries to share a file. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_Sharing">UI_Sharing</a> PostMessage when the <em>Share</em> UI in the online office is activated.</td>
+                    The host expects to receive the <a href="<%= Url.Action("wopi/postmessage") %>#UI_Sharing">UI_Sharing</a> PostMessage when the <em>Share</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="FileVersionPostMessage" class="copy-link">FileVersionPostMessage</td>
                 <td>Specifies if the WOPI client will notify the WOPI server in case the user tries to navigate to the previous file version. 
-                    The host expects to receive the <a href="<%= Url.Action("postmessage") %>#UI_FileVersions">UI_FileVersions</a> PostMessage when the <em>Previous Versions</em> UI in the online office is activated.</td>
+                    The host expects to receive the <a href="<%= Url.Action("wopi/postmessage") %>#UI_FileVersions">UI_FileVersions</a> PostMessage when the <em>Previous Versions</em> UI in the online office is activated.</td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
             <tr>
                 <td id="PostMessageOrigin" class="copy-link">PostMessageOrigin</td>
-                <td>A domain that the WOPI client must use as the <a href="<%= Url.Action("postmessage") %>#targetOrigin">targetOrigin</a> parameter when sending messages as described in <a href="https://www.w3.org/TR/2011/WD-webmessaging-20110317/" target="_blank">[W3C-HTML5WEBMSG]</a>.</td>
+                <td>A domain that the WOPI client must use as the <a href="<%= Url.Action("wopi/postmessage") %>#targetOrigin">targetOrigin</a> parameter when sending messages as described in <a href="https://html.spec.whatwg.org/multipage/" target="_blank">[W3C-HTML5WEBMSG]</a>.</td>
                 <td>string</td>
                 <td>"https://exampledomain.com"</td>
             </tr>
@@ -416,5 +406,3 @@
     <h2 id="PutFile" class="copy-link">PutFile</h2>
 
     <p>Requests a message to update a file for the <em>HTTP://server/&lt;...&gt;/wopi*/files/&lt;id&gt;/contents</em> operation.</p>
-
-</asp:Content>
