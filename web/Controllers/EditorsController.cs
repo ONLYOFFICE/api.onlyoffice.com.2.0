@@ -115,9 +115,9 @@ namespace ASC.Api.Web.Help.Controllers
                 "Try",
                 "WOPI",
                 "WOPI/Discovery",
+                "WOPI/HostPage",
                 "WOPI/PostMessage",
-                "WOPI/RestApi",
-                "WOPI/WopiConfig"
+                "WOPI/RestApi"
             };
 
         [ValidateInput(false)]

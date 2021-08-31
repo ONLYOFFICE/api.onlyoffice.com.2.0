@@ -728,7 +728,7 @@
     <Content Include="Views\Editors\WOPI\Discovery.ascx" />
     <Content Include="Views\Editors\WOPI\PostMessage.ascx" />
     <Content Include="Views\Editors\WOPI\RestApi.ascx" />
-    <Content Include="Views\Editors\WOPI\WopiConfig.ascx" />
+    <Content Include="Views\Editors\WOPI\HostPage.ascx" />
     <Content Include="Views\Editors\Troubleshooting.aspx" />
     <Content Include="Views\Editors\History.aspx" />
     <Content Include="Views\Editors\Plugins.aspx" />
