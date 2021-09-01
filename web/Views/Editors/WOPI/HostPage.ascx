@@ -82,4 +82,5 @@
 &lt;/html&gt;
 </pre>
 
+    <note>Please note that the <em>"&lt;%= actionUrl %&gt;"</em>, <em>"&lt;%= token %&gt;&lt;%= params %&gt;"</em>, <em>"&lt;%= tokenTtl %&gt;"</em> strings will be rendered with the appropriate parameters.</note>
     <p>Further information about building a host page can be found <a href="https://wopi.readthedocs.io/en/latest/hostpage.html" target="_blank">here</a>.</p>
