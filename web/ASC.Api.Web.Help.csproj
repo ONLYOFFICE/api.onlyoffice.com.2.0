@@ -725,7 +725,7 @@
     <Content Include="Views\Editors\Coedit.aspx" />
     <Content Include="Views\Editors\Editor.aspx" />
     <Content Include="Views\Editors\Try.aspx" />
-    <Content Include="Views\Editors\WOPI.aspx" />
+    <Content Include="Views\Editors\Wopi.aspx" />
     <Content Include="Views\Editors\WOPI\Default.ascx" />
     <Content Include="Views\Editors\WOPI\Discovery.ascx" />
     <Content Include="Views\Editors\WOPI\PostMessage.ascx" />
