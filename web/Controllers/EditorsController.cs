@@ -68,6 +68,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "Conversion",
                 "ConversionApi",
                 "DemoPreview",
+                "Discovery",
                 "DocumentBuilderApi",
                 "Example/Java",
                 "Example/Nodejs",
@@ -102,7 +103,9 @@ namespace ASC.Api.Web.Help.Controllers
                 "OwnCloud",
                 "Plone",
                 "Plugins",
+                "PostMessage",
                 "Rename",
+                "RestApi",
                 "Review",
                 "Save",
                 "Security",
@@ -265,6 +268,11 @@ namespace ASC.Api.Web.Help.Controllers
             return View(examples);
         }
 
+        public ActionResult Discovery()
+        {
+            return View();
+        }
+
         public ActionResult DocumentBuilderApi()
         {
             return View();
@@ -345,7 +353,17 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult PostMessage()
+        {
+            return View();
+        }
+
         public ActionResult Rename()
+        {
+            return View();
+        }
+
+        public ActionResult RestApi()
         {
             return View();
         }
