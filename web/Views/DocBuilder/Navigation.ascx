@@ -37,6 +37,9 @@
             <li>
                 <a href="<%= Url.Action("howitworks/comparedocuments") %>">Comparing documents</a>
             </li>
+            <li>
+                <a href="<%= Url.Action("howitworks/docbuilder") %>">Document builder</a>
+            </li>
         </ul>
     </li>
 </ul>

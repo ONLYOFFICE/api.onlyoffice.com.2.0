@@ -74,6 +74,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "presentationapi",
                 "global",
                 "classlist",
+                "howitworks/docbuilder",
             };
 
         #endregion
