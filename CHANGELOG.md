@@ -1,5 +1,6 @@
 # Change Log
 
+- editors: added new examples of token in body in the outgoing requests
 - editors: added the WordPress plugin
 
 ## 2.8.1

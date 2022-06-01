@@ -195,7 +195,56 @@ Content-Type: application/json
             Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
             See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
         </p>
-
-        <p>When performing the GET requests from ONLYOFFICE Document Server an <a href="<%= Url.Action("signature/request") %>">authorization header</a> with the token is added.</p>
     </li>
+    <li>
+        <p><b id="download" class="copy-link">Request to document storage service for file download</b></p>
+        <p>Validation is performed for outgoing requests to <b>document storage service</b> for file download.</p>
+
+        <div class="header-gray">Sample parameters of request to document storage service for file download</div>
+        <pre>
+{
+    "url": "https://example.com/url-to-example-document.docx"
+}
+</pre>
+        <div class="header-gray">Sample of request to document storage service for file download</div>
+        <pre>
+POST url-to-example-document.docx HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQuZG9jeCJ9fQ.DnhdBVtn8sFo9Adfl6GuT_v53NVV5cQ0Vi9c8xRzrjs"
+}
+</pre>
+        <p>
+            Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
+        </p>
+    </li>
+    <li>
+        <p><b id="file-changes" class="copy-link">Request to document storage service for document changes data download</b></p>
+        <p>Validation is performed for outgoing requests to <b>document storage service</b> for document changes data download.</p>
+
+        <div class="header-gray">Sample parameters of request to document storage service for document changes data download</div>
+        <pre>
+{
+    "url": "https://example.com/url-to-document-changes.zip"
+}
+</pre>
+        <div class="header-gray">Sample of request to document storage service for document changes data download</div>
+        <pre>
+POST url-to-document-changes.zip HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWRvY3VtZW50LWNoYW5nZXMuemlwIn19.4CJ4F8x7VDMW72ss9VnIYGIwjRpBMYBBRXZ5aX2r2Y4"
+}
+</pre>
+        <p>
+            Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
+        </p>
+    </li>
+</ul>
 </ul>
