@@ -42,6 +42,9 @@ namespace ASC.Api.Web.Help.Controllers
         private readonly string[] _actionMap = new[]
             {
                 "Basic",
+                "buildersamples",
+                "buildersamples/addingtext",
+                "buildersamples/creatingaformaldocument",
                 "changelog",
                 "classlist",
                 "csharpexample",
@@ -93,6 +96,15 @@ namespace ASC.Api.Web.Help.Controllers
         public ActionResult Basic()
         {
             return View();
+        }
+
+        public ActionResult Buildersamples(string catchall)
+        {
+            if (!_actionMap.Contains("buildersamples/" + catchall, StringComparer.OrdinalIgnoreCase))
+            {
+                catchall = null;
+            }
+            return View("Buildersamples", (object)catchall);
         }
 
         public ActionResult Changelog()

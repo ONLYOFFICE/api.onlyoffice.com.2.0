@@ -2562,4 +2562,19 @@ article {
 .content.active {
     display: inline;
 }
-    
+
+.img-block-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 16px;
+    margin: 0;
+    margin-top: 32px;
+}
+
+.img-block-3 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 16px;
+    margin: 0;
+    margin-top: 32px;
+}
