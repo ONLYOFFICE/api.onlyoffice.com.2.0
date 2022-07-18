@@ -277,6 +277,7 @@
     <Content Include="Content\img\desktop\windows-terminal.png" />
     <Content Include="Content\img\docbuilder\adding-text.png" />
     <Content Include="Content\img\docbuilder\compare-documents.png" />
+    <Content Include="Content\img\docbuilder\converting-document.png" />
     <Content Include="Content\img\docbuilder\csharp\add.png" />
     <Content Include="Content\img\docbuilder\csharp\browse.png" />
     <Content Include="Content\img\docbuilder\csharp\net46.png" />
@@ -284,6 +285,11 @@
     <Content Include="Content\img\docbuilder\csharp\sitename.png" />
     <Content Include="Content\img\docbuilder\document-samples\sample1.docx" />
     <Content Include="Content\img\docbuilder\document-samples\sample2.docx" />
+    <Content Include="Content\img\docbuilder\document-samples\sample3.docx" />
+    <Content Include="Content\img\docbuilder\document-samples\sample4.docx" />
+    <Content Include="Content\img\docbuilder\document-samples\sample5.docx" />
+    <Content Include="Content\img\docbuilder\document-samples\sample6.docx" />
+    <Content Include="Content\img\docbuilder\document-samples\sample7.docx" />
     <Content Include="Content\img\docbuilder\examples\coordinate_aspects.png" />
     <Content Include="Content\img\docbuilder\examples\icon_DocumentEditors.png" />
     <Content Include="Content\img\docbuilder\examples\step2_1.png" />
@@ -295,6 +301,9 @@
     <Content Include="Content\img\docbuilder\formal-document-2.png" />
     <Content Include="Content\img\docbuilder\formal-document-3.png" />
     <Content Include="Content\img\docbuilder\php-add.png" />
+    <Content Include="Content\img\docbuilder\presentation.png" />
+    <Content Include="Content\img\docbuilder\statistical-table.png" />
+    <Content Include="Content\img\docbuilder\watermark.png" />
     <Content Include="Content\img\Editor\accept_reject.png" />
     <Content Include="Content\img\Editor\changes-url.png" />
     <Content Include="Content\img\Editor\actionLink-create.png" />
@@ -605,8 +614,13 @@
     <Content Include="Views\DocBuilder\Basic.aspx" />
     <Content Include="Views\DocBuilder\Buildersamples.aspx" />
     <Content Include="Views\DocBuilder\Buildersamples\addingtext.ascx" />
+    <Content Include="Views\DocBuilder\Buildersamples\convertingadocument.ascx" />
     <Content Include="Views\DocBuilder\Buildersamples\creatingaformaldocument.ascx" />
+    <Content Include="Views\DocBuilder\Buildersamples\creatingapresentation.ascx" />
+    <Content Include="Views\DocBuilder\Buildersamples\creatingatable.ascx" />
+    <Content Include="Views\DocBuilder\Buildersamples\creatingreports.ascx" />
     <Content Include="Views\DocBuilder\Buildersamples\default.ascx" />
+    <Content Include="Views\DocBuilder\Buildersamples\insertingawatermark.ascx" />
     <Content Include="Views\DocBuilder\Changelog.aspx" />
     <Content Include="Views\DocBuilder\classlist.aspx" />
     <Content Include="Views\DocBuilder\formapi.aspx" />
