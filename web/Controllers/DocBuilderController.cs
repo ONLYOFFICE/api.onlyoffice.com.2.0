@@ -50,6 +50,8 @@ namespace ASC.Api.Web.Help.Controllers
                 "buildersamples/creatingatable",
                 "buildersamples/creatingreports",
                 "buildersamples/insertingawatermark",
+                "buildersamples/mailmergeprocess",
+                "buildersamples/mailmergereceptions",
                 "changelog",
                 "classlist",
                 "csharpexample",

@@ -290,6 +290,8 @@
     <Content Include="Content\img\docbuilder\document-samples\sample5.docx" />
     <Content Include="Content\img\docbuilder\document-samples\sample6.docx" />
     <Content Include="Content\img\docbuilder\document-samples\sample7.docx" />
+    <Content Include="Content\img\docbuilder\document-samples\sample8.docx" />
+    <Content Include="Content\img\docbuilder\document-samples\sample9.docx" />
     <Content Include="Content\img\docbuilder\examples\coordinate_aspects.png" />
     <Content Include="Content\img\docbuilder\examples\icon_DocumentEditors.png" />
     <Content Include="Content\img\docbuilder\examples\step2_1.png" />
@@ -300,8 +302,11 @@
     <Content Include="Content\img\docbuilder\formal-document-1.png" />
     <Content Include="Content\img\docbuilder\formal-document-2.png" />
     <Content Include="Content\img\docbuilder\formal-document-3.png" />
+    <Content Include="Content\img\docbuilder\mail-merge-reception1.png" />
+    <Content Include="Content\img\docbuilder\mail-merge-reception2.png" />
     <Content Include="Content\img\docbuilder\php-add.png" />
     <Content Include="Content\img\docbuilder\presentation.png" />
+    <Content Include="Content\img\docbuilder\reports.png" />
     <Content Include="Content\img\docbuilder\statistical-table.png" />
     <Content Include="Content\img\docbuilder\watermark.png" />
     <Content Include="Content\img\Editor\accept_reject.png" />
@@ -621,6 +626,8 @@
     <Content Include="Views\DocBuilder\Buildersamples\creatingreports.ascx" />
     <Content Include="Views\DocBuilder\Buildersamples\default.ascx" />
     <Content Include="Views\DocBuilder\Buildersamples\insertingawatermark.ascx" />
+    <Content Include="Views\DocBuilder\Buildersamples\mailmergeprocess.ascx" />
+    <Content Include="Views\DocBuilder\Buildersamples\mailmergereceptions.ascx" />
     <Content Include="Views\DocBuilder\Changelog.aspx" />
     <Content Include="Views\DocBuilder\classlist.aspx" />
     <Content Include="Views\DocBuilder\formapi.aspx" />
