@@ -15,15 +15,14 @@
     <li>set the presentation sizes (<a href="<%= Url.Action("presentationapi/apipresentation/setsizes") %>">ApiPresentation/SetSizes</a>);</li>
     <li>set the background to each slide (<a href="<%= Url.Action("presentationapi/api/createblipfill") %>">Api/CreateBlipFill</a>,
     <a href="<%= Url.Action("presentationapi/apislide/setbackground") %>">ApiSlide/SetBackground</a>);</li>
-    <li>set the slide title and main text in the specified style (<a href="<%= Url.Action("presentationapi/api/createparagraph") %>">Api/CreateParagraph</a>),
+    <li>set the slide title and text in the specified style (<a href="<%= Url.Action("presentationapi/api/createparagraph") %>">Api/CreateParagraph</a>,
     <a href="<%= Url.Action("presentationapi/api/creatergbcolor") %>">Api/CreateRGBColor</a>, <a href="<%= Url.Action("presentationapi/api/createshape") %>">Api/CreateShape</a>,
     <a href="<%= Url.Action("presentationapi/api/createsolidfill") %>">Api/CreateSolidFill</a>, <a href="<%= Url.Action("presentationapi/apidocumentcontent/removeallelements") %>">ApiDocumentContent/RemoveAllElements</a>,
-    <a href="<%= Url.Action("presentationapi/apidocumentcontent/push") %>">ApiDocumentContent/Push</a>, <a href="<%= Url.Action("presentationapi/apiparagraph/addtext") %>">ApiParagraph/AddText</a>,
+    <a href="<%= Url.Action("presentationapi/apidocumentcontent/push") %>">ApiDocumentContent/Push</a>, <a href="<%= Url.Action("presentationapi/apidrawing/setposition") %>">ApiDrawing/SetPosition</a>, <a href="<%= Url.Action("presentationapi/apiparagraph/addtext") %>">ApiParagraph/AddText</a>,
     <a href="<%= Url.Action("presentationapi/apiparagraph/setjc") %>">ApiParagraph/SetJc</a>, <a href="<%= Url.Action("presentationapi/apiparagraph/setspacingafter") %>">ApiParagraph/SetSpacingAfter</a>,
     <a href="<%= Url.Action("presentationapi/apiparagraph/setspacingbefore") %>">ApiParagraph/SetSpacingBefore</a>, <a href="<%= Url.Action("presentationapi/apirun/setbold") %>">ApiRun/SetBold</a>,
     <a href="<%= Url.Action("presentationapi/apirun/setfill") %>">ApiRun/SetFill</a>, <a href="<%= Url.Action("presentationapi/apirun/setfontfamily") %>">ApiRun/SetFontFamily</a>,
-    <a href="<%= Url.Action("presentationapi/apirun/setfontsize") %>">ApiRun/SetFontSize</a>, <a href="<%= Url.Action("presentationapi/apishape/getdoccontent") %>">ApiShape/GetDocContent</a>,
-    <a href="<%= Url.Action("presentationapi/apishape/setposition") %>">ApiShape/SetPosition</a>, <a href="<%= Url.Action("presentationapi/apislide/addobject") %>">ApiSlide/AddObject</a>,
+    <a href="<%= Url.Action("presentationapi/apirun/setfontsize") %>">ApiRun/SetFontSize</a>, <a href="<%= Url.Action("presentationapi/apishape/getdoccontent") %>">ApiShape/GetDocContent</a>, <a href="<%= Url.Action("presentationapi/apislide/addobject") %>">ApiSlide/AddObject</a>,
     <a href="<%= Url.Action("presentationapi/apislide/removeallobjects") %>">ApiSlide/RemoveAllObjects</a>).</li>
 </ul>
 

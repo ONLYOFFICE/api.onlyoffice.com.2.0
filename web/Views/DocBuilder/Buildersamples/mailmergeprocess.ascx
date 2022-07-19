@@ -2,14 +2,14 @@
 
 <h1>
     <a class="up" href="<%= Url.Action("buildersamples/") %>"></a>
-    <span class="hdr">Mail merge process</span>
+    <span class="hdr">Running mail merge process</span>
 </h1>
 
 <div class="header-gray">Description</div>
 
 <p class="dscr">Run the mail merge process for the current document:</p>
 <ul>
-    <li>load mail merge data from the opened xlsx file to the current document (<a href="<%= Url.Action("textdocumentapi/api/getmailmergedata") %>">Api/GetMailMergeData</a>,
+    <li>load mail merge data from the opened <em>xlsx</em> file to the current document (<a href="<%= Url.Action("spreadsheetapi/api/getmailmergedata") %>">Api/GetMailMergeData</a>,
     <a href="<%= Url.Action("textdocumentapi/api/loadmailmergedata") %>">Api/LoadMailMergeData</a>);</li>
     <li>run the mail merge process for the current document (<a href="<%= Url.Action("textdocumentapi/api/mailmerge") %>">Api/MailMerge</a>).</li>
 </ul>
@@ -42,4 +42,7 @@
 
 <div class="header-gray">Result</div>
 </br >
+<img alt="Mail merge template" src="<%= Url.Content("~/content/img/docbuilder/mail-merge-template.png") %>" />
+<p class="image-description">Mail merge template</p>
 <img alt="Mail merge receptions" src="<%= Url.Content("~/content/img/docbuilder/mail-merge-reception1.png") %>" />
+<p class="image-description">Reception</p>

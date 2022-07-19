@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Create a report about all the comments added to the document and every change which was made to the document in the review mode:</p>
+<p class="dscr">Create reports on all the comments added to the document and on every change which was made to the document in the review mode:</p>
 <ul>
     <li>open the created file (<a href="<%= Url.Action("textdocumentapi/api/getdocument") %>">Api/GetDocument</a>);</li>
     <li>get the comments and review reports and save them to the global variable (<a href="<%= Url.Action("textdocumentapi/apidocument/getcommentsreport") %>">ApiDocument/GetCommentsReport</a>,
@@ -17,7 +17,7 @@
     <a href="<%= Url.Action("textdocumentapi/apidocumentcontent/getelement") %>">ApiDocumentContent/GetElement</a>, <a href="<%= Url.Action("textdocumentapi/apiparagraph/addtext") %>">ApiParagraph/AddText</a>,
     <a href="<%= Url.Action("textdocumentapi/apitable/getrow") %>">ApiTable/GetRow</a>, <a href="<%= Url.Action("textdocumentapi/apitable/mergecells") %>">ApiTable/MergeCells</a>,
     <a href="<%= Url.Action("textdocumentapi/apitablecell/getcontent") %>">ApiTableCell/GetContent</a>, <a href="<%= Url.Action("textdocumentapi/apitablerow/getcell") %>">ApiTableRow/GetCell</a>);</li>
-    <li>edit text style toin the table (<a href="<%= Url.Action("textdocumentapi/apidocument/getstyle") %>">ApiDocument/GetStyle</a>, <a href="<%= Url.Action("textdocumentapi/apirun/setcolor") %>">ApiRun/SetColor</a>,
+    <li>edit text style in the table (<a href="<%= Url.Action("textdocumentapi/apidocument/getstyle") %>">ApiDocument/GetStyle</a>, <a href="<%= Url.Action("textdocumentapi/apirun/setcolor") %>">ApiRun/SetColor</a>,
     <a href="<%= Url.Action("textdocumentapi/apirun/setstrikeout") %>">ApiRun/SetStrikeout</a>).</li>
 </ul>
 

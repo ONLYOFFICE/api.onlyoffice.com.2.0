@@ -13,9 +13,10 @@
     <a href="<%= Url.Action("spreadsheetapi/api/getactivesheet") %>">Api/GetActiveSheet</a>, <a href="<%= Url.Action("spreadsheetapi/apirange/setalignhorizontal") %>">ApiRange/SetAlignHorizontal</a>,
     <a href="<%= Url.Action("spreadsheetapi/apirange/setfontcolor") %>">ApiRange/SetFontColor</a>, <a href="<%= Url.Action("spreadsheetapi/apirange/setfontname") %>">ApiRange/SetFontName</a>,
     <a href="<%= Url.Action("spreadsheetapi/apirange/setfontsize") %>">ApiRange/SetFontSize</a>, <a href="<%= Url.Action("spreadsheetapi/apirange/setvalue") %>">ApiRange/SetValue</a>,
-    <a href="<%= Url.Action("spreadsheetapi/apiworksheet/formatastable") %>">ApiWorksheet/FormatAsTable</a>, <a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange") %>">ApiWorksheet/GetRange</a>,
+    <a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange") %>">ApiWorksheet/GetRange</a>,
     <a href="<%= Url.Action("spreadsheetapi/apiworksheet/setname") %>">ApiWorksheet/SetName</a>);</li>
-    <li>create a table with the specified data (<a href="<%= Url.Action("spreadsheetapi/apiworksheet/setcolumnwidth") %>">ApiWorksheet/SetColumnWidth</a>);</li>
+    <li>create a table with the specified data (<a href="<%= Url.Action("spreadsheetapi/apiworksheet/formatastable") %>">ApiWorksheet/FormatAsTable</a>, 
+    <a href="<%= Url.Action("spreadsheetapi/apiworksheet/setcolumnwidth") %>">ApiWorksheet/SetColumnWidth</a>);</li>
     <li>add an image to the table (<a href="<%= Url.Action("spreadsheetapi/apiworksheet/addimage") %>">ApiWorksheet/AddImage</a>);</li>
     <li>add a chart to represent the table data (<a href="<%= Url.Action("spreadsheetapi/apichart/sethoraxistitle") %>">ApiChart/SetHorAxisTitle</a>,
     <a href="<%= Url.Action("spreadsheetapi/apichart/setlegendpos") %>">ApiChart/SetLegendPos</a>, <a href="<%= Url.Action("spreadsheetapi/apichart/setshowdatalabels") %>">ApiChart/SetShowDataLabels</a>,

@@ -2578,3 +2578,12 @@ article {
     margin: 0;
     margin-top: 32px;
 }
+
+.image-description {
+    display: inline-block;
+    font-weight: bold;
+    padding-top: 70px;
+    margin-left: 30px;
+    vertical-align: top;
+    width: 150px;
+}

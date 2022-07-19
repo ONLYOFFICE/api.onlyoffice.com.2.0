@@ -304,6 +304,7 @@
     <Content Include="Content\img\docbuilder\formal-document-3.png" />
     <Content Include="Content\img\docbuilder\mail-merge-reception1.png" />
     <Content Include="Content\img\docbuilder\mail-merge-reception2.png" />
+    <Content Include="Content\img\docbuilder\mail-merge-template.png" />
     <Content Include="Content\img\docbuilder\php-add.png" />
     <Content Include="Content\img\docbuilder\presentation.png" />
     <Content Include="Content\img\docbuilder\reports.png" />

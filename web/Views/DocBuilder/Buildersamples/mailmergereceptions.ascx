@@ -2,18 +2,18 @@
 
 <h1>
     <a class="up" href="<%= Url.Action("buildersamples/") %>"></a>
-    <span class="hdr">Mail merge receptions</span>
+    <span class="hdr">Creating mail merge receptions</span>
 </h1>
 
 <div class="header-gray">Description</div>
 
 <p class="dscr">Create mail merge receptions in the separate documents:</p>
 <ul>
-    <li>load mail merge data from the opened xlsx file to the current document (<a href="<%= Url.Action("textdocumentapi/api/getmailmergedata") %>">Api/GetMailMergeData</a>,
+    <li>load mail merge data from the opened <em>xlsx</em> file to the current document (<a href="<%= Url.Action("spreadsheetapi/api/getmailmergedata") %>">Api/GetMailMergeData</a>,
     <a href="<%= Url.Action("textdocumentapi/api/loadmailmergedata") %>">Api/LoadMailMergeData</a>);</li>
     <li>get the mail merge template document (<a href="<%= Url.Action("textdocumentapi/api/getmailmergetemplatedoccontent") %>">Api/GetMailMergeTemplateDocContent</a>);</li>
     <li>count a number of the mail merge receptions (<a href="<%= Url.Action("textdocumentapi/api/getmailmergereceptionscount") %>">Api/GetMailMergeReceptionsCount</a>);</li>
-    <li>run the mail merge process for each mail merge reception and save them to the separate files (<a href="<%= Url.Action("textdocumentapi/api/mailmerge") %>">Api/MailMerge</a>);</li>
+    <li>run the mail merge process for each mail merge reception and save the results to the separate files (<a href="<%= Url.Action("textdocumentapi/api/mailmerge") %>">Api/MailMerge</a>);</li>
     <li>replace the resulting document content after each mail merge action with the mail merge template document content in order to use it later for the next mail merge (<a href="<%= Url.Action("textdocumentapi/api/replacedocumentcontent") %>">Api/ReplaceDocumentContent</a>).</li>
 </ul>
 
@@ -53,5 +53,9 @@
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Mail merge receptions" src="<%= Url.Content("~/content/img/docbuilder/mail-merge-reception1.png") %>" />
-<img alt="Mail merge receptions" src="<%= Url.Content("~/content/img/docbuilder/mail-merge-reception2.png") %>" />
+<img alt="Mail merge template" src="<%= Url.Content("~/content/img/docbuilder/mail-merge-template.png") %>" />
+<p class="image-description">Mail merge template</p>
+<img alt="Mail merge reception 1" src="<%= Url.Content("~/content/img/docbuilder/mail-merge-reception1.png") %>" />
+<p class="image-description">Reception 1</p>
+<img alt="Mail merge reception 2" src="<%= Url.Content("~/content/img/docbuilder/mail-merge-reception2.png") %>" />
+<p class="image-description">Reception 2</p>

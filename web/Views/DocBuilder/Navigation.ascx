@@ -188,8 +188,8 @@
             <li><a href="<%= Url.Action("buildersamples/creatingapresentation") %>">Creating a presentation</a></li>
             <li><a href="<%= Url.Action("buildersamples/creatingreports") %>">Creating a comment/review report</a></li>
             <li><a href="<%= Url.Action("buildersamples/insertingawatermark") %>">Inserting a watermark</a></li>
-            <li><a href="<%= Url.Action("buildersamples/mailmergereceptions") %>">Mail merge receptions</a></li>
-            <li><a href="<%= Url.Action("buildersamples/mailmergeprocess") %>">Mail merge process</a></li>
+            <li><a href="<%= Url.Action("buildersamples/mailmergereceptions") %>">Creating mail merge receptions</a></li>
+            <li><a href="<%= Url.Action("buildersamples/mailmergeprocess") %>">Running mail merge process</a></li>
         </ul>
     </li>
     <li>

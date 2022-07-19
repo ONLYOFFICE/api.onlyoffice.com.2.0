@@ -18,11 +18,11 @@
 
 <textarea readonly="readonly" id="builderScript" name="builderScript" class="builder-code">
     builder.OpenFile("sample1.docx", "");
-    .SaveFile("pdf", "sample3.pdf");
+    builder.SaveFile("pdf", "sample3.pdf");
     builder.CloseFile();
 </textarea>
 
-<a style="text-decoration: none;" href="<%= Url.Content("~/content/img/docbuilder/document-samples/sample3.docx") %>" download="">
+<a style="text-decoration: none;" href="<%= Url.Content("~/content/img/docbuilder/document-samples/sample3.pdf") %>" download="">
     <button type="submit" id="generateButton" class="builder-run">
         Generate<br />
         document

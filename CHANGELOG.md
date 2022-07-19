@@ -1,5 +1,6 @@
 # Change Log
 
+- docbuilder: added the Builder samples section
 - editors: added the WordPress plugin
 
 ## 2.8.1
