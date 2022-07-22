@@ -207,7 +207,7 @@
     builder.CloseFile();
 </textarea>
 
-<a style="text-decoration: none;" href="<%= Url.Content("~/content/img/docbuilder/document-samples/sample4.xlsx") %>", download="" />
+<a style="text-decoration: none;" href="<%= Url.Content("~/content/document/sample4.xlsx") %>", download="" />
     <button type="submit" id="generateButton" class="builder-run">
         Generate<br />
         document
