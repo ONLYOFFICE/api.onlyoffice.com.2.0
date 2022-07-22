@@ -17,10 +17,11 @@
 
     <div class="header-gray">Description</div>
 
-    <p class="dscr">Defines the method used to send the data back to the editor. This method is deprecated, please use the <a href="<%= Url.Action("callcommand") %>">callCommand</a> method which runs the code from the <em>data</em> string parameter. 
-        Now this method is mainly used to work with the OLE objects or close the plugin without any other commands.
-        It is also retained for using with text so that the previous versions of the plugin remain compatible.</p>
+    <p class="dscr">Defines the method used to send the data back to the editor.</p>
+    <div class="note">This method is deprecated, please use the <a href="<%= Url.Action("callcommand") %>">callCommand</a> method which runs the code from the <em>data</em> string parameter.</div>
 
+    <p>Now this method is mainly used to work with the OLE objects or close the plugin without any other commands.
+        It is also retained for using with text so that the previous versions of the plugin remain compatible.</p>
     <p>The <em>callback</em> is the result that the command returns. It is an optional parameter. In case it is missing, the 
         <a href="<%= Url.Action("events") %>#onCommandCallback">window.Asc.plugin.onCommandCallback</a> function will be used to return the result of the command execution.</p>
 

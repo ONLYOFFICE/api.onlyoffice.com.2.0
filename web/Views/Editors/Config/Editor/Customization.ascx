@@ -766,8 +766,8 @@
                 </ul>
                 The default value is <b>warn</b>.
             </td>
-            <td>boolean</td>
-            <td>true</td>
+            <td>string</td>
+            <td>warn</td>
         </tr>
         <tr class="tablerow tablerow-note">
             <td colspan="4">

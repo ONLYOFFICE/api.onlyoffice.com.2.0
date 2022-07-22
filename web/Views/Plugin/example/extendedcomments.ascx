@@ -2,7 +2,7 @@
 
 <h1>
     <a class="up" href="<%= Url.Action("example/") %>"></a>
-    <span class="hdr">Extended conmments</span>
+    <span class="hdr">Extended comments</span>
 </h1>
 
 <div class="header-gray">Description</div>

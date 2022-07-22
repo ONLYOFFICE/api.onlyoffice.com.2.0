@@ -34,6 +34,7 @@
         <li><a href="<%= Url.Action("anonymoususers") %>">Set a name to an anonymous user</a></li>
         <li><a href="<%= Url.Action("commenting") %>">Comment on a document</a></li>
         <li><a href="<%= Url.Action("comparing") %>">Compare documents</a></li>
+        <li><a href="<%= Url.Action("mobileintegration") %>">Mobile integration</a></li>
     </ul>
     
     <br />
