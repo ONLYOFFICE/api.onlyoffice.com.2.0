@@ -256,6 +256,15 @@
   <ItemGroup>
     <Content Include="404.aspx" />
     <Content Include="500.aspx" />
+    <Content Include="Content\document\sample1.docx" />
+    <Content Include="Content\document\sample2.docx" />
+    <Content Include="Content\document\sample3.pdf" />
+    <Content Include="Content\document\sample4.xlsx" />
+    <Content Include="Content\document\sample5.pptx" />
+    <Content Include="Content\document\sample6.docx" />
+    <Content Include="Content\document\sample7.docx" />
+    <Content Include="Content\document\sample8.docx" />
+    <Content Include="Content\document\sample9.docx" />
     <Content Include="Content\highlight.css" />
     <Content Include="Content\img\accordions_sprite.png" />
     <Content Include="Content\img\arrow-gray.svg" />
@@ -283,15 +292,6 @@
     <Content Include="Content\img\docbuilder\csharp\net46.png" />
     <Content Include="Content\img\docbuilder\csharp\platform.png" />
     <Content Include="Content\img\docbuilder\csharp\sitename.png" />
-    <Content Include="Content\img\docbuilder\document-samples\sample1.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample2.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample3.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample4.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample5.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample6.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample7.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample8.docx" />
-    <Content Include="Content\img\docbuilder\document-samples\sample9.docx" />
     <Content Include="Content\img\docbuilder\examples\coordinate_aspects.png" />
     <Content Include="Content\img\docbuilder\examples\icon_DocumentEditors.png" />
     <Content Include="Content\img\docbuilder\examples\step2_1.png" />
