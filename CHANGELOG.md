@@ -1,5 +1,6 @@
 # Change Log
 
+- plugins: added the EditorConnector class for working with the editor from the outside
 - plugins: changed the plugin localization scheme
 - plugins: added the GetFileToDownload method
 

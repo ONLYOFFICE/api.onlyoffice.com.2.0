@@ -679,6 +679,7 @@
     <Content Include="Views\Home\ProductBlock.ascx" />
     <Content Include="Views\Plugin\Basic.aspx" />
     <Content Include="Views\Plugin\Config.aspx" />
+    <Content Include="Views\Plugin\Connector.aspx" />
     <Content Include="Views\Plugin\Code.aspx" />
     <Content Include="Views\Plugin\Events.aspx" />
     <Content Include="Views\Plugin\Example\default.ascx" />

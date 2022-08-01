@@ -2,6 +2,8 @@
     Language="C#"
     Inherits="System.Web.Mvc.ViewUserControl" %>
 
+<% var license = !string.IsNullOrEmpty(Page.Request["license"]); %>
+
 <div class="treeheader">Get Started</div>
 <ul class="side-nav root">
     <li>
@@ -13,7 +15,11 @@
     <li>
         <a href="<%= Url.Action("types") %>">Plugin types</a>
     </li>
-</ul>
+    <% if (license)
+        { %><li>
+            <a href="<%= Url.Action("connector") %>">Connector</a>
+        </li>
+<% } %></ul>
 
 <div class="treeheader">Plugins</div>
 <ul class="side-nav root">

@@ -39,6 +39,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "Basic",
                 "Code",
                 "Config",
+                "Connector",
                 "callCommand",
                 "callModule",
                 "createInputHelper",
@@ -202,6 +203,11 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult Config()
+        {
+            return View();
+        }
+
+        public ActionResult Connector()
         {
             return View();
         }
