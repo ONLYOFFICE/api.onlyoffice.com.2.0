@@ -50,51 +50,362 @@
         <a href="<%= Url.Action("integrationapi") %>">Integration API</a>
         <ul>
             <li>
-                <a href="<%= Url.Action("integrationapi/usingdocbuilderfile") %>">Using .docbuilder file</a>
-            </li>
-            <li>
-                <a href="<%= Url.Action("integrationapi/cdocbuilder") %>">CDocBuilder class</a>
+                <a href="<%= Url.Action("integrationapi/c") %>">Using doctrenderer library</a>
                 <ul>
                     <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/closefile") %>">CloseFile</a>
+                        <a href="<%= Url.Action("integrationapi/c") %>">C++ wrapper</a>
+                        <ul>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/c/cdocbuilder") %>">CDocBuilder class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/closefile") %>">CloseFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/createfile") %>">CreateFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/dispose") %>">Dispose</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/executecommand") %>">ExecuteCommand</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/getcontext") %>">GetContext</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/getversion") %>">GetVersion</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/initialize") %>">Initialize</a>
+                                    </li>
+                                    <li>
+                                        <a title="IsSaveWithDoctrendererMode" href="<%= Url.Action("integrationapi/c/cdocbuilder/issavewithdoctrenderermode") %>">IsSaveWithDoctrendererMode</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/openfile") %>">OpenFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/run") %>">Run</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/runtexta") %>">RunTextA</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/runtextw") %>">RunTextW</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/savefile") %>">SaveFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/setproperty") %>">SetProperty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/setpropertyw") %>">SetPropertyW</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/settmpfolder") %>">SetTmpFolder</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuilder/writedata") %>">WriteData</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext") %>">CDocBuilderContext class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/allocmemorytypedarray") %>">AllocMemoryTypedArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/createarray") %>">CreateArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/createnull") %>">CreateNull</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/createobject") %>">CreateObject</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/createscope") %>">CreateScope</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/createtypedarray") %>">CreateTypedArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/createundefined") %>">CreateUndefined</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/freememorytypedarray") %>">FreeMemoryTypedArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/getglobal") %>">GetGlobal</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontext/iserror") %>">IsError</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/c/cdocbuildercontextscope") %>">CDocBuilderContextScope class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildercontextscope/close") %>">Close</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue") %>">CDocBuilderValue class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/call") %>">Call</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/clear") %>">Clear</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/createnull") %>">CreateNull</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/createundefined") %>">CreateUndefined</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/get") %>">Get</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/getlength") %>">GetLength</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/getproperty") %>">GetProperty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isarray") %>">IsArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isbool") %>">IsBool</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isdouble") %>">IsDouble</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isempty") %>">IsEmpty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isfunction") %>">IsFunction</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isint") %>">IsInt</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isnull") %>">IsNull</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isobject") %>">IsObject</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isstring") %>">IsString</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/istypedarray") %>">IsTypedArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/isundefined") %>">IsUndefined</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/set") %>">Set</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/setproperty") %>">SetProperty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/tobool") %>">ToBool</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/todouble") %>">ToDouble</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/toint") %>">ToInt</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/c/cdocbuildervalue/tostring") %>">ToString</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/createfile") %>">CreateFile</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/dispose") %>">Dispose</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/executecommand") %>">ExecuteCommand</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/initialize") %>">Initialize</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/openfile") %>">OpenFile</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/run") %>">Run</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/runtexta") %>">RunTextA</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/runtextw") %>">RunTextW</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/savefile") %>">SaveFile</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/setproperty") %>">SetProperty</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/setpropertyw") %>">SetPropertyW</a>
-                    </li>
-                    <li>
-                        <a href="<%= Url.Action("integrationapi/cdocbuilder/settmpfolder") %>">SetTmpFolder</a>
+                        <a href="<%= Url.Action("integrationapi/net") %>">.Net wrapper</a>
+                        <ul>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/net/cdocbuilder") %>">CDocBuilder class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/closefile") %>">CloseFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/createfile") %>">CreateFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/destroy") %>">Destroy</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/executecommand") %>">ExecuteCommand</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/getcontext") %>">GetContext</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/getversion") %>">GetVersion</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/initialize") %>">Initialize</a>
+                                    </li>
+                                    <li>
+                                        <a title="IsSaveWithDoctrendererMode" href="<%= Url.Action("integrationapi/net/cdocbuilder/issavewithdoctrenderermode") %>">IsSaveWithDoctrendererMode</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/openfile") %>">OpenFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/run") %>">Run</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/runtext") %>">RunText</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/savefile") %>">SaveFile</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/setproperty") %>">SetProperty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/settmpfolder") %>">SetTmpFolder</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuilder/writedata") %>">WriteData</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext") %>">CDocBuilderContext class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/createarray") %>">CreateArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/createnull") %>">CreateNull</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/createobject") %>">CreateObject</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/createscope") %>">CreateScope</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/createtypedarray") %>">CreateTypedArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/createundefined") %>">CreateUndefined</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/getglobal") %>">GetGlobal</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontext/iserror") %>">IsError</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/net/cdocbuildercontextscope") %>">CDocBuilderContextScope class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildercontextscope/close") %>">Close</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue") %>">CDocBuilderValue class</a>
+                                <ul>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/call") %>">Call</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/clear") %>">Clear</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/createnull") %>">CreateNull</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/createundefined") %>">CreateUndefined</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/get") %>">Get</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/getlength") %>">GetLength</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/getproperty") %>">GetProperty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isarray") %>">IsArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isbool") %>">IsBool</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isdouble") %>">IsDouble</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isempty") %>">IsEmpty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isfunction") %>">IsFunction</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isint") %>">IsInt</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isnull") %>">IsNull</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isobject") %>">IsObject</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isstring") %>">IsString</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/istypedarray") %>">IsTypedArray</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/isundefined") %>">IsUndefined</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/set") %>">Set</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/setproperty") %>">SetProperty</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/tobool") %>">ToBool</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/todouble") %>">ToDouble</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/toint") %>">ToInt</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= Url.Action("integrationapi/net/cdocbuildervalue/tostring") %>">ToString</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="<%= Url.Action("integrationapi/usingdocbuilderfile") %>">Using .docbuilder file</a>
             </li>
             <li>
                 <a href="<%= Url.Action("integrationapi/arguments") %>">Using command line arguments</a>

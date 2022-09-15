@@ -17,6 +17,13 @@
 
     <p class="dscr">The list of changes for ONLYOFFICE Document Builder API.</p>
     <h2 id="72" class="copy-link">Version 7.2</h2>
+    <p><b>Integration API</b></p>
+    <ul>
+        <li>Updated the <a href="<%= Url.Action("integrationapi/c") %>">C++</a> wrapper for ONLYOFFICE Document Builder.</li>
+        <li>Added the <a href="<%= Url.Action("integrationapi/net") %>">.Net</a> wrapper for ONLYOFFICE Document Builder.</li>
+    </ul>
+    <br />
+    
     <p><b>Form methods</b></p>
     <ul>
         <li>Added the <a href="<%= Url.Action("textdocumentapi/apicomplexform") %>">ApiComplexForm</a> class to Text document API.</li>
