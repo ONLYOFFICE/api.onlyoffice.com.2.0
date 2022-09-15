@@ -1,5 +1,6 @@
 # Change Log
 
+- docbuilder: added the onWorksheetChange event to Spreadsheet API
 - editors: added the WordPress plugin
 
 ## 2.8.1

@@ -2216,6 +2216,9 @@
     <Content Include="Views\DocBuilder\rubyexample.aspx" />
     <Content Include="Views\DocBuilder\spreadsheetapi.aspx" />
     <Content Include="Views\DocBuilder\Spreadsheetapi\default.ascx" />
+    <Content Include="Views\DocBuilder\events.aspx" />
+    <Content Include="Views\DocBuilder\events\default.ascx" />
+    <Content Include="Views\DocBuilder\events\onworksheetchange.ascx" />
     <Content Include="Views\DocBuilder\textdocumentapi.aspx" />
     <Content Include="Views\DocBuilder\Textdocumentapi\default.ascx" />
     <Content Include="Views\Editors\ActionLink.aspx" />

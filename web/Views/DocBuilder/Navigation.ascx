@@ -132,6 +132,12 @@
                     </ul>
                 </li>
             <% } %>
+            <li>
+                <a href="<%= Url.Action("events") %>">Events</a>
+                <ul>
+                    <li><a href="<%= Url.Action("events/onworksheetchange") %>">onWorksheetChange</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
     <li>

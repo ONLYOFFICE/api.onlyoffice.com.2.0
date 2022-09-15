@@ -27,6 +27,12 @@
     </ul>
     <br />
 
+    <p><b>Events</b></p>
+    <ul>
+        <li>Added the <a href="<%= Url.Action("events/onworksheetchange") %>">onWorksheetChange</a> event to Spreadsheet API.</li>
+    </ul>
+    <br />
+
     <p><b>Methods for converting to/from JSON</b></p>
     <ul>
         <li>Added the <a href="<%= Url.Action("textdocumentapi/api/fromjson") %>">Api/FromJSON</a> method to Text document API.</li>

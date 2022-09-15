@@ -45,6 +45,8 @@ namespace ASC.Api.Web.Help.Controllers
                 "changelog",
                 "classlist",
                 "csharpexample",
+                "events",
+                "events/onworksheetchange",
                 "formapi",
                 "gettingstarted",
                 "global",
@@ -98,6 +100,15 @@ namespace ASC.Api.Web.Help.Controllers
         public ActionResult Changelog()
         {
             return View();
+        }
+
+        public ActionResult Events(string catchall)
+        {
+            if (!_actionMap.Contains("events/" + catchall, StringComparer.OrdinalIgnoreCase))
+            {
+                catchall = null;
+            }
+            return View("Events", (object)catchall);
         }
 
         public ActionResult Gettingstarted()
