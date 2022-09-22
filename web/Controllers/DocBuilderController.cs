@@ -45,8 +45,6 @@ namespace ASC.Api.Web.Help.Controllers
                 "changelog",
                 "classlist",
                 "csharpexample",
-                "events",
-                "events/onworksheetchange",
                 "formapi",
                 "gettingstarted",
                 "global",
@@ -172,6 +170,8 @@ namespace ASC.Api.Web.Help.Controllers
                 "presentationapi",
                 "rubyexample",
                 "spreadsheetapi",
+                "spreadsheetapi/events",
+                "spreadsheetapi/events/onworksheetchange",
                 "textdocumentapi",
                 "try",
             };
@@ -196,15 +196,6 @@ namespace ASC.Api.Web.Help.Controllers
         public ActionResult Changelog()
         {
             return View();
-        }
-
-        public ActionResult Events(string catchall)
-        {
-            if (!_actionMap.Contains("events/" + catchall, StringComparer.OrdinalIgnoreCase))
-            {
-                catchall = null;
-            }
-            return View("Events", (object)catchall);
         }
 
         public ActionResult Gettingstarted()
@@ -369,6 +360,11 @@ namespace ASC.Api.Web.Help.Controllers
             var section = split[0];
             var method = split.Length > 1 ? split[1] : null;
 
+            if (section == "events")
+            {
+                if (method == null) return View("Spreadsheetapi/Events");
+                return View("Spreadsheetapi/Events", (object)method);
+            }
             if (string.IsNullOrEmpty(method))
             {
                 var sec = DocBuilderDocumentation.GetSection(module, section);

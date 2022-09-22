@@ -444,9 +444,9 @@
                 </li>
             <% } %>
             <li>
-                <a href="<%= Url.Action("events") %>">Events</a>
+                <a href="<%= Url.Action("spreadsheetapi/events") %>">Events</a>
                 <ul>
-                    <li><a href="<%= Url.Action("events/onworksheetchange") %>">onWorksheetChange</a></li>
+                    <li><a href="<%= Url.Action("spreadsheetapi/events/onworksheetchange") %>">onWorksheetChange</a></li>
                 </ul>
             </li>
         </ul>

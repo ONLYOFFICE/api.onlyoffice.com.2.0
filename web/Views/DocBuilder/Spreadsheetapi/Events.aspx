@@ -10,5 +10,5 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <%= Html.Partial("Events/"+ (Model ?? "default")) %>
+    <%= Html.Partial("Spreadsheetapi/Events/"+ (Model ?? "default")) %>
 </asp:Content>
