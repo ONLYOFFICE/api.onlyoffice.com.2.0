@@ -16,6 +16,7 @@
     </h1>
 
     <p class="dscr">This <a href="https://github.com/ONLYOFFICE/onlyoffice-wordpress" target="_blank">plugin</a> enables users to edit and view office documents from <a href="https://wordpress.org/" target="_blank">WordPress</a> pages on site and admin panel using ONLYOFFICE Docs.</p>
+    <p>The minimum WordPress version for ONLYOFFICE integration plugin is 5.9.0.</p>
 
     <h2 id="features" class="copy-link">Features</h2>
     <ul>
