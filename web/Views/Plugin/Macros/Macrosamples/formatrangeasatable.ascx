@@ -28,4 +28,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Range as a table" src="<%= Url.Content("~/content/img/plugins/range_as_a_table.png") %>" />
+<img class="screenshot-width-832" alt="Range as a table" src="<%= Url.Content("~/content/img/plugins/range_as_a_table.png") %>" />

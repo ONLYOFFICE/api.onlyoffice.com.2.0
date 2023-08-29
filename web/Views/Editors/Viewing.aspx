@@ -36,11 +36,11 @@
     ...
 }
 </pre>
-            <img alt="Setting" src="<%= Url.Content("~/content/img/editor/show-changes-from-other-users.png") %>" />
+            <img class="screenshot-width-832" alt="Setting" src="<%= Url.Content("~/content/img/editor/show-changes-from-other-users.png") %>" />
             <p>In the live viewer, the cursors of the other users are displayed by configuring the <a href="<%= Url.Action("config/document/permissions") %>#userInfoGroups">document.permissions.userInfoGroups</a> parameter.</p>
-            <img alt="Live viewer" src="<%= Url.Content("~/content/img/editor/live-viewer.png") %>" />
+            <img class="screenshot-width-832" alt="Live viewer" src="<%= Url.Content("~/content/img/editor/live-viewer.png") %>" />
             <p>The changes are displayed in the same way as in the editing mode.</p>
-            <img alt="Editor" src="<%= Url.Content("~/content/img/editor/editor.png") %>" />
+            <img class="screenshot-width-832" alt="Editor" src="<%= Url.Content("~/content/img/editor/editor.png") %>" />
         </li>
         <li>
             <p>If the <em>mode</em> field is <em>fast</em> and the <em>change</em> field is <em>false</em>, then the live viewer is opened by default, and you cannot switch the mode to the common viewer:</p>
@@ -85,7 +85,7 @@
     ...
 }
 </pre>
-            <img alt="Viewer" src="<%= Url.Content("~/content/img/editor/viewer.png") %>" />
+            <img class="screenshot-width-832" alt="Viewer" src="<%= Url.Content("~/content/img/editor/viewer.png") %>" />
         </li>
     </ol>
 

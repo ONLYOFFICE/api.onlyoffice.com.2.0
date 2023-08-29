@@ -32,7 +32,7 @@
                 When the user types the <b>+</b> sign, the <a href="<%= Url.Action("config/events") %>#onRequestUsers">onRequestUsers</a> event is called and the commenter can select other users for mentioning in the comments.
                 The <em>data.c</em> parameter with the <em>mention</em> operation type is passed in this event.
             </p>
-            <img alt="Mentions" src="<%= Url.Content("~/content/img/editor/onRequestUsers.png") %>" />
+            <img class="screenshot-width-300" alt="Mentions" src="<%= Url.Content("~/content/img/editor/onRequestUsers.png") %>" />
             <pre>
 var onRequestUsers = function(event) {
     docEditor.setUsers({
@@ -129,7 +129,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
     <p>
         In the case when the <a href="<%= Url.Action("config/document/info") %>#sharingSettings">document.info.sharingSettings</a> field is used in the document initialization but the list of the users from the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event is different, the <a href="<%= Url.Action("methods") %>#setSharingSettings">setSharingSettings</a> method must be called.
     </p>
-    <img width="832px" alt="Mentions" src="<%= Url.Content("~/content/img/editor/sharing_settings.png") %>" />
+    <img class="screenshot-width-832" alt="Mentions" src="<%= Url.Content("~/content/img/editor/sharing_settings.png") %>" />
     <pre>
 docEditor.setSharingSettings({
     "sharingSettings": [
@@ -151,5 +151,5 @@ docEditor.setSharingSettings({
     <div class="note">
         Please note that it will only be available for the comments if the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event is set.
     </div>
-    <img alt="Mentions" src="<%= Url.Content("~/content/img/editor/mentionShare.png") %>" />
+    <img class="screenshot-width-300" alt="Mentions" src="<%= Url.Content("~/content/img/editor/mentionShare.png") %>" />
 </asp:Content>

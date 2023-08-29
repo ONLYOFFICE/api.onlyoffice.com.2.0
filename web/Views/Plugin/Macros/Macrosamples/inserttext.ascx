@@ -26,4 +26,4 @@
 
 <div class="header-gray">Result</div>
 <br/>
-<img alt="Chart" src="<%= Url.Content("~/content/img/plugins/insert-text.png") %>" />
+<img class="screenshot-width-832" alt="Chart" src="<%= Url.Content("~/content/img/plugins/insert-text.png") %>" />

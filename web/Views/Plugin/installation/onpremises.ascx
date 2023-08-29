@@ -95,7 +95,7 @@ add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
     <li>Click <b>Plugin Manager</b>.</li>
     <li>Find the plugin you need and click <b>Install</b>.</li>
 </ol>
-<img alt="Plugins manager" src="<%= Url.Content("~/content/img/plugins/plugin-manager.png") %>" />
+<img class="screenshot-width-832" alt="Plugins manager" src="<%= Url.Content("~/content/img/plugins/plugin-manager.png") %>" />
 <p>The plugin will be added to the opened editors and all the editors you will open afterwords and displayed within the <b>Plugins</b> tab.</p>
 <p>Starting from version 7.4, the <b>pluginsmanager</b> utility can be used to manage the plugins in ONLYOFFICE Docs on-premises.
 The commands for installing, removing, restoring, updating, etc. are available. For example:</p>

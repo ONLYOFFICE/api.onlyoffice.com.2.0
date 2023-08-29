@@ -149,7 +149,7 @@ It helps to use the <b>Encryption</b> plugin when necessary for the whole app.</
 </pre>
 
 <p>With it, we will get a new tab called <b>Encryption</b> on the main app page:</p>
-<img alt="Encryption exabled" width="832px" src="<%= Url.Content("~/content/img/desktop/encryption-enabled.png") %>" />
+<img class="screenshot-width-550" alt="Encryption exabled" src="<%= Url.Content("~/content/img/desktop/encryption-enabled.png") %>" />
 
 <p>Enable encryption by ticking the checkbox:</p>
 <pre>

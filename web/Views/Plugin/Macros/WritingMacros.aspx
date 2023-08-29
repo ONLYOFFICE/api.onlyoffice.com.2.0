@@ -41,9 +41,9 @@
                     <pre>var rowOdd = i, rowEven = i + 1;</pre>
                 </li>
                 <li>Now that we can access both the odd and even rows, let's color them in proper colors. Set the desired colors using the <a href="<%= Url.Action("spreadsheetapi/api/createcolorfromrgb", "docbuilder") %>">CreateColorFromRGB</a> method. Get the cell range within the row using the <a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange", "docbuilder") %>">GetRange</a> method and set the color for the odd rows:
-                    <pre>oWorksheet.GetRange("A" + rowOdd + ":S" + rowOdd).SetFillColor(Api.CreateColorFromRGB(118, 190, 39));</pre>
+                    <pre>oWorksheet.GetRange("A" + rowOdd + ":S" + rowOdd).SetFillColor(Api.CreateColorFromRGB(138, 181, 155));</pre>
                     The same is for the even rows, but with a different color:
-                    <pre>oWorksheet.GetRange("A" + rowEven + ":S" + rowEven).SetFillColor(Api.CreateColorFromRGB(186, 56, 46));</pre>
+                    <pre>oWorksheet.GetRange("A" + rowEven + ":S" + rowEven).SetFillColor(Api.CreateColorFromRGB(216, 227, 220));</pre>
                 </li>
             </ul>
         </li>
@@ -56,13 +56,13 @@
     var oWorksheet = Api.GetActiveSheet();
     for (var i = 1; i < 200; i += 2) {
         var rowOdd = i, rowEven = i + 1;
-        oWorksheet.GetRange("A" + rowOdd + ":S" + rowOdd).SetFillColor(Api.CreateColorFromRGB(118, 190, 39));
-        oWorksheet.GetRange("A" + rowEven + ":S" + rowEven).SetFillColor(Api.CreateColorFromRGB(186, 56, 46));
+        oWorksheet.GetRange("A" + rowOdd + ":S" + rowOdd).SetFillColor(Api.CreateColorFromRGB(138, 181, 155));
+        oWorksheet.GetRange("A" + rowEven + ":S" + rowEven).SetFillColor(Api.CreateColorFromRGB(216, 227, 220));
     }
 })();</pre>
 
     <p>Paste the code above to the macros window and click <b>Run</b>. The table rows from 1 to 200 will be colored alternately in less than a second.</p>
-    <img alt="Alternate raws" src="<%= Url.Content("~/content/img/plugins/alternate-raws.png") %>" />
+    <img class="screenshot-width-832" alt="Alternate raws" src="<%= Url.Content("~/content/img/plugins/alternate-raws.png") %>" />
 
     <h2 id="assign-macro" class="copy-link">Assigning macros</h2>
     <p>In the spreadsheet editor, you can assign a macro to the graphic object:</p>
@@ -72,7 +72,7 @@
         <li>Choose a macro in the appeared window. You can type the macro name in the corresponding field.</li>
         <li>Click the <b>OK</b> button.</li>
     </ol>
-    <img alt="Assign macro" src="<%= Url.Content("~/content/img/plugins/assign-macro.png") %>" />
+    <img class="screenshot-width-832" alt="Assign macro" src="<%= Url.Content("~/content/img/plugins/assign-macro.png") %>" />
     <p>To run the macro, just click the graphic object and the script will be executed.</p>
 
 </asp:Content>

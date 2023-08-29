@@ -52,7 +52,7 @@
     </li>
     <li>
         <p>In the opened window, find <b>Internet Information Services</b> and check all the features that are chosen in the following image:</p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/server-components.png") %>" />
+        <img class="screenshot-width-550" alt="" src="<%= Url.Content("~/content/img/csharp/server-components.png") %>" />
     </li>
 </ol>
 
@@ -65,13 +65,13 @@
     <li>
         <p>Add your website in the IIS Manager.</p>
         <p>On the <b>Connections</b> panel right-click the <b>Sites</b> node in the tree, then click <b>Add Website</b>.</p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
+        <img class="screenshot-width-300" alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
     </li>
     <li>
         <p>In the <b>Add Website</b> dialog box specify the name of the folder with the .Net (C#) project in the <b>Site name</b> box.</p>
         <p>Specify the path to the folder with your project in the <b>Physical Path</b> box.</p>
         <p>Specify the unique value used only for this website in the <b>Port</b> box.</p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/sitename.png") %>" />
+        <img class="screenshot-width-550" alt="" src="<%= Url.Content("~/content/img/csharp/sitename.png") %>" />
     </li>
     <li>
         <p>
@@ -79,12 +79,12 @@
             Choose <b>v4.0.</b> version.
         </p>
         <p><b>Application Pools</b> -> right-click the platform name -> <b>Set application Pool defaults</b> -> <b>.NET CLR version</b></p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/platform.png") %>" />
+        <img class="screenshot-width-550" alt="" src="<%= Url.Content("~/content/img/csharp/platform.png") %>" />
     </li>
     <li>
         <p>Browse your website with the IIS Manager:</p>
         <p>Right-click the site -> <b>Manage Website</b> -> <b>Browse</b></p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/browse.png") %>" />
+        <img class="screenshot-width-700" alt="" src="<%= Url.Content("~/content/img/csharp/browse.png") %>" />
     </li>
 </ol>
 

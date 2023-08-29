@@ -110,7 +110,7 @@ this.docEditor = new DocsAPI.DocEditor("placeholder",
 &lt;/script&gt;
 </pre>
             <p>Once done, a form template can be opened for editing. After editing this file, you can get the form itself. To do so, click the <b>Save as oform</b> button.</p>
-            <img alt="Embed docxf" src="<%= Url.Content("~/content/img/editor/embed-docxf.png") %>" />
+            <img class="screenshot-width-832" alt="Embed docxf" src="<%= Url.Content("~/content/img/editor/embed-docxf.png") %>" />
         </div>
         <div id="filling" class="content">
             <h2 id="oform" class="copy-link">How to open OFORM for filling from website</h2>
@@ -199,7 +199,7 @@ this.docEditor = new DocsAPI.DocEditor("placeholder",
 </pre>
             <p>Once done, a form can be opened for filling. After filling in the fields (the required ones are highlighted with the red border), you can get a PDF file.
                 To do so, click the <b>Save as PDF</b> button.</p>
-            <img alt="Embed oform" src="<%= Url.Content("~/content/img/editor/embed-oform.png") %>" />
+            <img class="screenshot-width-832" alt="Embed oform" src="<%= Url.Content("~/content/img/editor/embed-oform.png") %>" />
         </div>
     </div>
 

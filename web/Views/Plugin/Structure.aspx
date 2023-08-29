@@ -33,5 +33,5 @@
     <p>The plugin folder can also contain other files such as plugin icons, styles, translations, readme, third-party services, etc. More information can be found <a href="<%= Url.Action("gettingstarted") %>">here</a>.</p>
 
     </br >
-    <img alt="Structure" src="<%= Url.Content("~/content/img/plugins/plugins-structure.png") %>" />
+    <img class="screenshot-width-832" alt="Structure" src="<%= Url.Content("~/content/img/plugins/plugins-structure.png") %>" />
 </asp:Content>

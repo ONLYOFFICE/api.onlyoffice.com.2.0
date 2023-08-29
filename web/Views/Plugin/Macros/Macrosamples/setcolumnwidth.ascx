@@ -27,4 +27,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Column width" src="<%= Url.Content("~/content/img/plugins/column_width.png") %>" />
+<img class="screenshot-width-832" alt="Column width" src="<%= Url.Content("~/content/img/plugins/column_width.png") %>" />

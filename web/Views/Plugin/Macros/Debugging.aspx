@@ -31,7 +31,7 @@ oParagraph.AddText("Hello world!");
         <li>
             <p>Press the <b>Run</b> button to run your script.</p>
             <note>Please note that the <b>debugger</b> command will only work if the development tools are open. Otherwise, the browser will ignore it.</note>
-            <img alt="Debugger" src="<%= Url.Content("~/content/img/plugins/debugger.png") %>" />
+            <img class="screenshot-width-832" alt="Debugger" src="<%= Url.Content("~/content/img/plugins/debugger.png") %>" />
         </li>
     </ol>
     <p>The <b>debugger</b> command works as a breakpoint and pauses the execution at the script point where this command is inserted.</p>

@@ -64,7 +64,7 @@ For example, <em>D:\\folder</em>. Please note that on Windows OS the double back
         <p>In the <b>Variable Name</b> field, enter <b>JAVA_HOME</b> if you installed the <b>JDK</b> (Java Development Kit) or <b>JRE_HOME</b> if you installed the <b>JRE</b> (Java Runtime Environment).</p>
         <p>In the <b>Variable Value</b> field, enter your <b>JDK</b> or <b>JRE</b> installation path, for example <em>C:\Program Files\Java\jdk1.8.0_65</em>.</p>
 
-        <img src="<%= Url.Content("~/content/img/java/make-var.png") %>" alt="" />
+        <img class="screenshot-width-832" src="<%= Url.Content("~/content/img/java/make-var.png") %>" alt="" />
 
         <p>Check if the variable created successfully by <b>echo</b> command in the <b>Command Prompt</b>:</p>
         <pre>echo %JAVA_HOME%</pre>
@@ -92,11 +92,11 @@ For example, <em>D:\\folder</em>. Please note that on Windows OS the double back
 <ol>
     <li>
         <p>Open Tomcat Web Application Manager by clicking <b>Manager App:</b></p>
-        <img src="<%= Url.Content("~/content/img/java/manager.jpg") %>" width="700" alt="" />
+        <img class="screenshot-width-832" src="<%= Url.Content("~/content/img/java/manager.jpg") %>" alt="" />
     </li>
     <li>
         <p>Tomcat Web Application Manager will request the <b>username</b> and the <b>password:</b></p>
-        <img src="<%= Url.Content("~/content/img/java/author.jpg") %>" height="300" alt="" />
+        <img class="screenshot-width-300" src="<%= Url.Content("~/content/img/java/author.jpg") %>" alt="" />
 
         <p>
             Specify user data in <em>tomcat-users.xml</em> file in the Apache Tomcat installation folder.
@@ -113,12 +113,12 @@ For example, <em>D:\\folder</em>. Please note that on Windows OS the double back
     </li>
     <li>
         <p>Upload the Java project in Tomcat Web Application Manager. For that click <b>Choose File</b> in the <b>WAR file to deploy</b> section and find the <em>.war</em> file in the Java project folder, then click <b>Deploy</b>.</p>
-        <img src="<%= Url.Content("~/content/img/java/upload-app.jpg") %>" width="800" alt="" />
-        <img src="<%= Url.Content("~/content/img/java/war-file.jpg") %>" width="600" alt="" />
+        <img class="screenshot-width-700" src="<%= Url.Content("~/content/img/java/upload-app.jpg") %>" alt="" />
+        <img class="screenshot-width-700" src="<%= Url.Content("~/content/img/java/war-file.jpg") %>"  alt="" />
     </li>
     <li>
         <p>You will see the project in the <b>Application List</b>:</p>
-        <img src="<%= Url.Content("~/content/img/java/manager-app.jpg") %>" width="800" alt="" />
+        <img class="screenshot-width-832" src="<%= Url.Content("~/content/img/java/manager-app.jpg") %>" alt="" />
     </li>
     <li>
         <p>Click the link with the application name to run it.</p>

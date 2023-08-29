@@ -75,4 +75,4 @@ When you click on it, a macro is executed, the table is filled in with the relev
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Currency pair USD - EUR" width="832px" src="<%= Url.Content("~/content/img/plugins/currencies-usd-eur.png") %>" />
+<img class="screenshot-width-832" alt="Currency pair USD - EUR" src="<%= Url.Content("~/content/img/plugins/currencies-usd-eur.png") %>" />

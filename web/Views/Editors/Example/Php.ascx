@@ -60,7 +60,7 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
         <p>After PHP Manager for IIS installation is complete, launch the <b>IIS Manager:</b></p>
         <p><b>Start</b> -> <b>Control Panel</b> -> <b>System and Security</b> -> <b>Administrative Tools</b> -> <b>Internet Information Services (IIS) Manager</b></p>
         <p>and find the <b>PHP Manager</b> feature in the <b>Features View</b> in IIS.</p>
-        <img src="<%= Url.Content("~/content/img/php/manager.png") %>" alt="">
+        <img class="screenshot-width-700" src="<%= Url.Content("~/content/img/php/manager.png") %>" alt="">
 
         <p>You need to register the installed PHP version in IIS using PHP Manager.</p>
 
@@ -68,16 +68,16 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
             Double-click <b>PHP Manager</b> to open it, click the <b>Register new PHP version</b> task and specify the full path to the main PHP executable file location.
             For example: <em>C:\Program Files\PHP\php-cgi.exe</em>.
         </p>
-        <img src="<%= Url.Content("~/content/img/php/php-version-1.jpg") %>" width="700" alt="" />
+        <img class="screenshot-width-700" src="<%= Url.Content("~/content/img/php/php-version-1.jpg") %>" alt="" />
 
         <p>After clicking <b>OK</b>, the new <b>PHP version</b> will be registered with IIS and will become active.</p>
-        <img src="<%= Url.Content("~/content/img/php/php-version-2.jpg") %>" width="650" alt="" />
+        <img class="screenshot-width-700" src="<%= Url.Content("~/content/img/php/php-version-2.jpg") %>" alt="" />
     </li>
     <li>
         <p>Configure IIS to handle PHP requests.</p>
         <p>For IIS to host PHP applications, you must add handler mapping that tells IIS to pass all the PHP-specific requests to the PHP application framework by using the <b>FastCGI</b> protocol.</p>
         <p>Double-click the <b>Handler Mappings</b> feature:</p>
-        <img src="<%= Url.Content("~/content/img/php/handlerclick.png") %>" alt="" />
+        <img class="screenshot-width-700" src="<%= Url.Content("~/content/img/php/handlerclick.png") %>" alt="" />
 
         <p>
             In the <b>Action</b> panel, click <b>Add Module Mapping</b>.
@@ -90,7 +90,7 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
             <li><b>Name</b>: PHP via FastCGI.</li>  
         </ul>
         <p>Click <b>OK</b>.</p>
-        <img src="<%= Url.Content("~/content/img/php/handler-add.png") %>" alt="" />
+        <img class="screenshot-width-700" src="<%= Url.Content("~/content/img/php/handler-add.png") %>" alt="" />
     </li>
 </ol>
 <p>After IIS manager configuration is complete, everything is ready for running the PHP example.</p>
@@ -100,18 +100,18 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
     <li>
         <p>Add your website in the IIS Manager.</p>
         <p>On the <b>Connections</b> panel right-click the <b>Sites</b> node in the tree, then click <b>Add Website</b>.</p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
+        <img class="screenshot-width-300" alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
     </li>
     <li>
         <p>In the <b>Add Website</b> dialog box, specify the name of the folder with the PHP project in the <b>Site name</b> box.</p>
         <p>Specify the path to the folder with your project in the <b>Physical path</b> box.</p>
         <p>Specify the unique value used only for this website in the <b>Port</b> box.</p>
-        <img alt="" src="<%= Url.Content("~/content/img/editor/php-add.png") %>" />
+        <img class="screenshot-width-550" alt="" src="<%= Url.Content("~/content/img/editor/php-add.png") %>" />
     </li>
     <li>
         <p>Browse your website with the IIS manager:</p>
         <p>Right-click the site -> <b>Manage Website</b> -> <b>Browse</b></p>
-        <img alt="" src="<%= Url.Content("~/content/img/php/browse.png") %>" />
+        <img class="screenshot-width-400" alt="" src="<%= Url.Content("~/content/img/php/browse.png") %>" />
     </li>
 </ol>
 

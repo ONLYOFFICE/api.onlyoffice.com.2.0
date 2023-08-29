@@ -27,4 +27,4 @@
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Next blank row" src="<%= Url.Content("~/content/img/plugins/remove-shapes.png") %>" />
+<img class="screenshot-width-832" alt="Next blank row" src="<%= Url.Content("~/content/img/plugins/remove-shapes.png") %>" />

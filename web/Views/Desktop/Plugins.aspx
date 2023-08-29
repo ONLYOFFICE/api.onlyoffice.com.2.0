@@ -32,7 +32,7 @@
         <li>Click <b>Plugin Manager</b>.</li>
         <li>Find the plugin you need and click <b>Install</b>.</li>
     </ol>
-    <img alt="Plugins manager" src="<%= Url.Content("~/content/img/plugins/desktop-plugin-manager.png") %>" />
+    <img class="screenshot-width-832" alt="Plugins manager" src="<%= Url.Content("~/content/img/plugins/desktop-plugin-manager.png") %>" />
     <p>The plugin will be added to the opened editors and all the editors you will open afterwords and displayed within the <b>Plugins</b> tab.</p>
 
 
@@ -56,10 +56,10 @@
     <p>So, the folder name of this plugin will be <em>{91EAC419-EF8B-440C-A960-B451C7DF3A37}</em>.</p>
     
     <p><b>Step 3.</b> Put all the plugin files to this folder:</p>
-    <img alt="Plugin folder" src="<%= Url.Content("~/content/img/desktop/plugins_folder.png") %>" />
+    <img class="screenshot-width-832" alt="Plugin folder" src="<%= Url.Content("~/content/img/desktop/plugins_folder.png") %>" />
     
     <p><b>Step 4.</b> Start ONLYOFFICE Desktop Editors. If everything is done correctly, the plugin will be displayed within the <b>Plugins</b> tab:</p>
-    <img alt="Extended comments" src="<%= Url.Content("~/content/img/desktop/extended_comments.png") %>" />
+    <img class="screenshot-width-832" alt="Extended comments" src="<%= Url.Content("~/content/img/desktop/extended_comments.png") %>" />
     
 
     <h2>Removing plugins from ONLYOFFICE Desktop Editors</h2>

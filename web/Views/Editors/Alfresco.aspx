@@ -24,14 +24,14 @@
         <li>Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.</li>
         <li>
             <p>The plugin will create a new <b>Edit in ONLYOFFICE</b> menu option within the document library for Office documents.</p>
-            <img alt="Edit in OnlyOffice" src="<%= Url.Content("~/content/img/editor/alfresco.png") %>"/>
+            <img class="screenshot-width-832" alt="Edit in OnlyOffice" src="<%= Url.Content("~/content/img/editor/alfresco.png") %>"/>
             <p>This allows multiple users to collaborate in real time and to save back those changes to Alfresco.</p>
         </li>
         <li>To convert ODT, ODP, ODS, DOC, XLS, PPT files into their OOXML counterparts, select the <b>Convert using ONLYOFFICE</b> option. Resulting files will be placed in the same folder. 
             You can also configure rules for a folder, that will automatically convert files on upload or on change. Details you can find <a href="https://docs.alfresco.com/content-services/latest/using/content/rules/" target="_blank">here</a>.</li>
         <li>
             To create a new document, choose the context menu <b>Create new...</b> option within document library.
-            <img alt="Create new..." src="<%= Url.Content("~/content/img/editor/alfresco-create.png") %>"/>
+            <img class="screenshot-width-832" alt="Create new..." src="<%= Url.Content("~/content/img/editor/alfresco-create.png") %>"/>
         </li>
     </ul>
 

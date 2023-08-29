@@ -22,7 +22,7 @@
         <li>The <b>document editing service</b> sends the changes made by user 1 to the user 2 <b>document editor</b>.</li>
         <li>Now these changes become visible to user 2.</li>
     </ol>
-    <img alt="Co-editing" src="<%= Url.Content("~/content/img/editor/coedit-view.png") %>" />
+    <img class="screenshot-width-832" alt="Co-editing" src="<%= Url.Content("~/content/img/editor/coedit-view.png") %>" />
 
     <h2 id="apply" class="copy-link">How this can be done in practice</h2>
     <ol>
@@ -308,7 +308,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
 </pre>
     <h3 id="fast" class="copy-link">Fast mode</h3>
     <p>The <b>Fast</b> mode is used by default and defines the real-time co-editing. All changes are saved automatically and the possibility to redo the last undone operation is not available. This mode displays the user cursors and tooltips with their names when they are editing the text.</p>
-    <img alt="Fast mode" src="<%= Url.Content("~/content/img/editor/fast-mode.png") %>" />
+    <img class="screenshot-width-832" alt="Fast mode" src="<%= Url.Content("~/content/img/editor/fast-mode.png") %>" />
 
     <p></p>
     <h3 id="strict" class="copy-link">Strict mode</h3>
@@ -316,6 +316,6 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
     <p>When the user saves the changes by clicking the <b>Save</b> button, the others will receive a note about updates.
         To accept them and save your own changes to show them to other users, click the <img alt="Save updates" title="Save updates" src="<%= Url.Content("~/content/img/editor/save-updates.png") %>" /> button
         in the left upper corner of the top toolbar. The updates will be highlighted.</p>
-    <img alt="Strict mode" src="<%= Url.Content("~/content/img/editor/strict-mode.png") %>" />
+    <img class="screenshot-width-832" alt="Strict mode" src="<%= Url.Content("~/content/img/editor/strict-mode.png") %>" />
 
 </asp:Content>

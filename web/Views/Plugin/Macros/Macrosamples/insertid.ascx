@@ -38,4 +38,4 @@
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Insert id" src="<%= Url.Content("~/content/img/plugins/insert_id.png") %>" />
+<img class="screenshot-width-832" alt="Insert id" src="<%= Url.Content("~/content/img/plugins/insert_id.png") %>" />

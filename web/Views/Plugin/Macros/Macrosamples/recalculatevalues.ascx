@@ -27,4 +27,4 @@
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Recalculate worksheet values" src="<%= Url.Content("~/content/img/plugins/recalculate-cell-values.png") %>" />
+<img class="screenshot-width-832" alt="Recalculate worksheet values" src="<%= Url.Content("~/content/img/plugins/recalculate-cell-values.png") %>" />

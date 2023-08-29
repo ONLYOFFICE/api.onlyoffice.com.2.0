@@ -26,7 +26,7 @@
 
             <h2>Integration based on the ONLYOFFICE test sample</h2>
             <p>This example demonstrates how to integrate ONLYOFFICE mobile web editors with the ONLYOFFICE <a href="<%= Url.Action("demopreview") %>">test or DMS sample</a>.</p>
-            <p><img alt="iOS integration via test sample" src="<%= Url.Content("~/content/img/editor/ios-test-sample.png") %>" /></p>
+            <p><img class="screenshot-width-832" alt="iOS integration via test sample" src="<%= Url.Content("~/content/img/editor/ios-test-sample.png") %>" /></p>
             <p><b>Opening ONLYOFFICE editors</b></p>
             <ol>
                 <li>Download and install ONLYOFFICE Docs <a href="https://www.onlyoffice.com/docs-enterprise.aspx" target="_blank">Enterprise</a> or <a href="https://www.onlyoffice.com/developer-edition.aspx" target="_blank">Developer</a> edition.</li>
@@ -59,11 +59,11 @@ private func load() {
 </pre>
                     <div class="img-block-2">
                         <div>
-                            <img alt="iOS error" src="<%= Url.Content("~/content/img/editor/ios-error.png") %>" />
+                            <img class="screenshot-width-260" alt="iOS error" src="<%= Url.Content("~/content/img/editor/ios-error.png") %>" />
                             <p><b>DocumentServerURL is not specified</b></p>
                         </div>
                         <div>
-                            <img alt="iOS managing" src="<%= Url.Content("~/content/img/editor/ios-managing.png") %>" />
+                            <img class="screenshot-width-260" alt="iOS managing" src="<%= Url.Content("~/content/img/editor/ios-managing.png") %>" />
                             <p><b>DocumentServerURL is specified</b></p>
                         </div>
                     </div>
@@ -112,15 +112,15 @@ func webView(_ webView: WKWebView,
                     <p>The full code for <b>DocumentServerViewController</b> can be found <a href="https://github.com/ONLYOFFICE/editors-webview-ios/blob/ad146259742d0cecb7b10e67e19b4594730663e0/EditorWebViewDemo/PresentationLayer/UserStories/DocumentServerDemo/DocumentServerViewController.swift" target="_blank">here</a>.</p>
                     <div class="img-block-3">
                         <div>
-                            <img alt="Activity indicator" src="<%= Url.Content("~/content/img/editor/activity-indicator.png") %>" />
+                            <img class="screenshot-width-260" alt="Activity indicator" src="<%= Url.Content("~/content/img/editor/activity-indicator.png") %>" />
                             <p align="center"><b>Activity Indicator</b></p>
                         </div>
                         <div>
-                            <img alt="Progress view" src="<%= Url.Content("~/content/img/editor/progress-view.png") %>" />
+                            <img class="screenshot-width-260" alt="Progress view" src="<%= Url.Content("~/content/img/editor/progress-view.png") %>" />
                             <p align="center"><b>Progress View</b></p>
                         </div>
                         <div>
-                            <img alt="Buttons" src="<%= Url.Content("~/content/img/editor/buttons.png") %>" />
+                            <img class="screenshot-width-260" alt="Buttons" src="<%= Url.Content("~/content/img/editor/buttons.png") %>" />
                             <p align="center"><b>Buttons</b></p>
                         </div>
                     </div>
@@ -183,14 +183,14 @@ func webView(_ webView: WKWebView,
 }
 </pre>
             <div>
-                <img alt="Go back" src="<%= Url.Content("~/content/img/editor/exit-button.png") %>" />
+                <img class="screenshot-width-260" alt="Go back" src="<%= Url.Content("~/content/img/editor/exit-button.png") %>" />
                 <p style="margin-left: 40px;"><b>Button to exit the editor</b></p>
             </div>
             <p>The full code for <b>DocumentServerEditorViewController</b> can be found <a href="https://github.com/ONLYOFFICE/editors-webview-ios/blob/ad146259742d0cecb7b10e67e19b4594730663e0/EditorWebViewDemo/PresentationLayer/UserStories/DocumentServerEditor/DocumentServerEditorViewController.swift" target="_blank">here</a>.</p>
 
             <h2>Integration based on the ONLYOFFICE Docs API</h2>
             <p>This example demonstrates how to open the ONLYOFFICE editors via WKWebView using the editor configuration described in the <a href="<%= Url.Action("basic") %>">API documentation</a> and the <a href="<%= Url.Action("try") %>">configuration examples</a>.</p>
-            <p><img alt="iOS integration via api" src="<%= Url.Content("~/content/img/editor/ios-api-config.png") %>" /></p>
+            <p><img class="screenshot-width-832" alt="iOS integration via api" src="<%= Url.Content("~/content/img/editor/ios-api-config.png") %>" /></p>
             <p><b>Opening ONLYOFFICE editors</b></p>
             <ol>
                 <li>Download and install ONLYOFFICE Docs <a href="https://www.onlyoffice.com/docs-enterprise.aspx" target="_blank">Enterprise</a> or <a href="https://www.onlyoffice.com/developer-edition.aspx" target="_blank">Developer</a> edition.</li>
@@ -255,7 +255,7 @@ private func load() {
 }
 </pre>
                     <div>
-                        <img alt="Editor samples" src="<%= Url.Content("~/content/img/editor/editor-samples.png") %>" />
+                        <img class="screenshot-width-260" alt="Editor samples" src="<%= Url.Content("~/content/img/editor/editor-samples.png") %>" />
                         <p style="margin-left: 25px;"><b>ONLYOFFICE Editor Samples</b></p>
                     </div>
                     <p>The full code for <b>EditorViewController</b> can be found <a href="https://github.com/ONLYOFFICE/editors-webview-ios/blob/ad146259742d0cecb7b10e67e19b4594730663e0/EditorWebViewDemo/PresentationLayer/UserStories/Editor/EditorViewController.swift" target="_blank">here</a>.</p>
@@ -377,7 +377,7 @@ func present(url: URL, in parent: UIViewController, complation: @escaping (() ->
             <h2>Integration based on the ONLYOFFICE test sample</h2>
             <p>This example demonstrates how to integrate ONLYOFFICE mobile web editors with the ONLYOFFICE <a href="<%= Url.Action("demopreview") %>">test or DMS sample</a>.</p>
             
-            <p><img alt="Android integration via test sample" src="<%= Url.Content("~/content/img/editor/android-test-sample.png") %>" /></p>
+            <p><img class="screenshot-width-832" alt="Android integration via test sample" src="<%= Url.Content("~/content/img/editor/android-test-sample.png") %>" /></p>
             <p><b>Opening ONLYOFFICE editors</b></p>
             <ol>
                 <li>Download and install ONLYOFFICE Docs <a href="https://www.onlyoffice.com/docs-enterprise.aspx" target="_blank">Enterprise</a> or <a href="https://www.onlyoffice.com/developer-edition.aspx" target="_blank">Developer</a> edition.</li>
@@ -404,11 +404,11 @@ private fun showDialog() {
 </pre>
                     <div class="img-block-2">
                         <div>
-                            <img alt="Android error" src="<%= Url.Content("~/content/img/editor/android-error.png") %>" />
+                            <img img class="screenshot-width-260" alt="Android error" src="<%= Url.Content("~/content/img/editor/android-error.png") %>" />
                             <p><b>DocumentServerURL is not specified</b></p>
                         </div>
                         <div>
-                            <img alt="Android managing" src="<%= Url.Content("~/content/img/editor/android-managing.png") %>" />
+                            <img img class="screenshot-width-260" alt="Android managing" src="<%= Url.Content("~/content/img/editor/android-managing.png") %>" />
                             <p><b>DocumentServerURL is specified</b></p>
                         </div>
                     </div>

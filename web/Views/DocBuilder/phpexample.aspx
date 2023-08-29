@@ -48,21 +48,21 @@
             <p>After <b>PHP Manager for IIS</b> installation is complete launch the <b>IIS Manager:</b></p>
             <p>Start -> ControlPanel -> System and Security -> Administrative Tools -> Internet Information Services (IIS) Manager </p>
             <p>and find the <b>PHP Manager</b> feature in the <b>Features View</b> in <b>IIS</b>.</p>
-            <img src="<%= Url.Content("~/content/img/php/manager.png") %>" alt="">
+            <img class="screenshot-width-550" src="<%= Url.Content("~/content/img/php/manager.png") %>" alt="">
 
             <p>You need to register the installed PHP version in <b>IIS</b> using <b>PHP Manager</b>.</p>
 
             <p>Double-click <b>PHP Manager</b> to open it, click the <b>Register new PHP version</b> task and specify the full path to the main PHP executable file location. For example: C:\Program Files\PHP\php-cgi.exe.</p>
-            <img src="<%= Url.Content("~/content/img/php/php-version-1.jpg") %>" width="700" alt="" />
+            <img class="screenshot-width-550" src="<%= Url.Content("~/content/img/php/php-version-1.jpg") %>" width="700" alt="" />
 
             <p>After clicking <b>OK</b> the new <b>PHP version</b> will be registered with IIS and will become active.</p>
-            <img src="<%= Url.Content("~/content/img/php/php-version-2.jpg") %>" width="650" alt="" />
+            <img class="screenshot-width-550" src="<%= Url.Content("~/content/img/php/php-version-2.jpg") %>" width="650" alt="" />
         </li>
         <li>
             <p>Configure IIS to handle PHP requests:</p>
             <p>For IIS to host PHP applications, you must add handler mapping that tells IIS to pass all PHP-specific requests to the PHP application framework by using the FastCGI protocol.</p>
             <p>Double-click the <b>Handler Mappings</b> feature:</p>
-            <img src="<%= Url.Content("~/content/img/php/handlerclick.png") %>" alt="" />
+            <img class="screenshot-width-550" src="<%= Url.Content("~/content/img/php/handlerclick.png") %>" alt="" />
 
             <p>In the <b>Action</b> panel, click <b>Add Module Mapping</b>. In the <b>Add Module Mapping</b> dialog box, specify the configuration settings as follows:</p>
             <ul>
@@ -74,7 +74,7 @@
                     <p>click <b>OK</b>.</p>
                 </li>
             </ul>
-            <img src="<%= Url.Content("~/content/img/php/handler-add.png") %>" alt="" />
+            <img class="screenshot-width-550" src="<%= Url.Content("~/content/img/php/handler-add.png") %>" alt="" />
         </li>
     </ol>
     <p>After IIS manager configuration is complete everything is ready for running the <b>PHP</b> example.</p>
@@ -84,18 +84,18 @@
         <li>
             <p>Add your web site in the IIS Manager:</p>
             <p>On the <b>Connections</b> panel right-click the <b>Sites</b> node in the tree, then click <b>Add Website</b>.</p>
-            <img alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
+            <img class="screenshot-width-300" alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
         </li>
         <li>
             <p>In the <b>Add Website</b> dialog box specify the name of the folder with the PHP project in the <b>Site name</b> box.</p>
             <p>Specify the path to the folder with your project in the <b>Physical Path</b> box.</p>
             <p>Specify the unique value used only for this website in the <b>Port</b> box.</p>
-            <img alt="" src="<%= Url.Content("~/content/img/docbuilder/php-add.png") %>" />
+            <img class="screenshot-width-550" alt="" src="<%= Url.Content("~/content/img/docbuilder/php-add.png") %>" />
         </li>
         <li>
             <p>Browse your web site with the IIS manager:</p>
             <p>Right-click the site -> <b>Manage Website</b> -> <b>Browse</b></p>
-            <img alt="" src="<%= Url.Content("~/content/img/php/browse.png") %>" />
+            <img class="screenshot-width-400" alt="" src="<%= Url.Content("~/content/img/php/browse.png") %>" />
         </li>
     </ol>
 

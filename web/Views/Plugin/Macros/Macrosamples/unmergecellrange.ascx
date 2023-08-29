@@ -28,5 +28,5 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Unmerge-before" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_before.png") %>" />
-<img alt="Unmerge-after" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_after.png") %>" />
+<img class="screenshot-width-832" alt="Unmerge-before" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_before.png") %>" />
+<img class="screenshot-width-832" alt="Unmerge-after" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_after.png") %>" />

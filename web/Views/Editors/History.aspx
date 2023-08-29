@@ -79,7 +79,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
     ...
 });
 </pre>
-            <img alt="Opening File" src="<%= Url.Content("~/content/img/editor/history_open.png") %>" />
+            <img class="screenshot-width-300" alt="Opening File" src="<%= Url.Content("~/content/img/editor/history_open.png") %>" />
         </li>
         <li>
             <p>
@@ -105,7 +105,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
     ...
 });
 </pre>
-            <img alt="Opening File" src="<%= Url.Content("~/content/img/editor/history.png") %>" />
+            <img class="screenshot-width-832" alt="Opening File" src="<%= Url.Content("~/content/img/editor/history.png") %>" />
         </li>
         <li>Open your <em>html</em> file in the browser.</li>
         <li>Open the <em>Version History</em> option in the Document Editor menu.</li>
@@ -129,7 +129,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
     ...
 });
 </pre>
-<img alt="onRequestHistoryClose" src="<%= Url.Content("~/content/img/editor/onRequestHistoryClose.png") %>"/>
+<img class="screenshot-width-832" alt="onRequestHistoryClose" src="<%= Url.Content("~/content/img/editor/onRequestHistoryClose.png") %>"/>
         </li>
     </ol>
     
@@ -205,7 +205,7 @@ docEditor.setHistoryData({
                 For its correct work the cross-origin HTTP requests must be allowed (CORS).
                 This can be achieved using the <em>Access-Control-Allow-Origin</em> header.
             </div>
-            <img width="832px" alt="changesurl" src="<%= Url.Content("~/content/img/editor/changesurl.png") %>" />
+            <img class="screenshot-width-832" alt="changesurl" src="<%= Url.Content("~/content/img/editor/changesurl.png") %>" />
         </li>
     </ul>
 </asp:Content>

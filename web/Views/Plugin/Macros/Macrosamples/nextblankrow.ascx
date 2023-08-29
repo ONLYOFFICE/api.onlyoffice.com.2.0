@@ -48,4 +48,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Next blank row" src="<%= Url.Content("~/content/img/plugins/next_blank_row.png") %>" />
+<img class="screenshot-width-832" alt="Next blank row" src="<%= Url.Content("~/content/img/plugins/next_blank_row.png") %>" />

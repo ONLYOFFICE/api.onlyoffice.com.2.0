@@ -50,4 +50,4 @@
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Import CSV/text data" src="<%= Url.Content("~/content/img/plugins/import-csv-macro.png") %>" />
+<img class="screenshot-width-832" alt="Import CSV/text data" src="<%= Url.Content("~/content/img/plugins/import-csv-macro.png") %>" />

@@ -183,11 +183,11 @@
 <ol>
     <li>
         <p>The icon for the connection list. The required icon size is 36x36:</p>
-        <img alt="Connection list" src="<%= Url.Content("~/content/img/desktop/connection_list.png") %>" />
+        <img class="screenshot-width-832" alt="Connection list" src="<%= Url.Content("~/content/img/desktop/connection_list.png") %>" />
     </li>
     <li>
         <p>The icon for the provider button on the connection page when the <b>Connected clouds</b> list is empty. The required icon size is 148x38:</p>
-        <img alt="Provider button" src="<%= Url.Content("~/content/img/desktop/provider_button.png") %>" />
+        <img class="screenshot-width-832" alt="Provider button" src="<%= Url.Content("~/content/img/desktop/provider_button.png") %>" />
     </li>
 </ol>
 <p>Supported image formats are <em>.png</em>, <em>.jpeg</em>, <em>.svg</em>. 

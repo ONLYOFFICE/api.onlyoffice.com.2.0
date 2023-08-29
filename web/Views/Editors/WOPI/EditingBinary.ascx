@@ -52,4 +52,4 @@
     <p><b>Option 3</b>. Redirecting to an interstitial page</p>
     <p>The online office navigates to the <a href="<%= Url.Action("wopi/restapi/checkfileinfo") %>#HostEditUrl">HostEditUrl</a> that's returned in the <a href="<%= Url.Action("wopi/restapi/PutRelativeFile") %>">PutRelativeFile</a> response,
     which the host controls. So, hosts can send the user to any URL after the conversion is finished. For example, a host might redirect the user to an interstitial page that informs them that their document has been converted.</p>
-    <img alt="Convert binary files" src="<%= Url.Content("~/content/img/editor/convert-binary-files.jpg") %>" />
+    <img class="screenshot-width-400" alt="Convert binary files" src="<%= Url.Content("~/content/img/editor/convert-binary-files.jpg") %>" />

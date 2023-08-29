@@ -28,4 +28,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Font color" src="<%= Url.Content("~/content/img/plugins/font_color.png") %>" />
+<img class="screenshot-width-832" alt="Font color" src="<%= Url.Content("~/content/img/plugins/font_color.png") %>" />

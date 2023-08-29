@@ -40,7 +40,7 @@
         <li>Clone the fork to your local computer.</li>
         <li>
             <p>Add a folder for your plugin to <em>onlyoffice.github.io/sdkjs-plugins/content/</em>.</p>
-            <img alt="New folder" src="<%= Url.Content("~/content/img/plugins/new-folder.png") %>" />
+            <img class="screenshot-width-832" alt="New folder" src="<%= Url.Content("~/content/img/plugins/new-folder.png") %>" />
         </li>
     </ol>
 
@@ -50,7 +50,7 @@
     <p>Develop a plugin. Follow the plugin structure described <a href="<%= Url.Action("structure") %>">here</a>.
         The plugin folder must contain three files required for the plugin to work: <a href="<%= Url.Action("config") %>">config.json</a>,
         <a href="<%= Url.Action("indexhtml") %>">index.html</a>, <a href="<%= Url.Action("code") %>">pluginCode.js</a>.</p>
-    <img alt="Structure" src="<%= Url.Content("~/content/img/plugins/plugins-structure.png") %>" />
+    <img class="screenshot-width-832" alt="Structure" src="<%= Url.Content("~/content/img/plugins/plugins-structure.png") %>" />
     <p>Use plugin <a href="<%= Url.Action("plugin") %>">methods</a> and <a href="<%= Url.Action("events") %>">events</a> while writing the plugin code.</p>
 
 
@@ -106,7 +106,7 @@ var URL_TO_PLUGIN = "https://YOUR-USERNAME.github.io/onlyoffice.github.io/sdkjs-
                 run your ONLYOFFICE Document Server and find the plugin in the <a href="<%= Url.Action("installation/onpremises") %>#plugin-manager">Plugin Manager</a>.</p>
             <note>Please note that this is important to open your plugin in the <b>Plugin Manager</b> and check how it looks like in the <b>My Plugins</b> tab both in the light and dark themes.
                 Improve the plugin display if necessary.</note>
-            <img alt="Plugin manager" src="<%= Url.Content("~/content/img/plugins/plugin-manager.png") %>" />
+            <img class="screenshot-width-832" alt="Plugin manager" src="<%= Url.Content("~/content/img/plugins/plugin-manager.png") %>" />
         </li>
     </ol>
 

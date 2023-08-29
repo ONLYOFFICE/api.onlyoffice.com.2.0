@@ -16,7 +16,7 @@
     <p class="dscr">The most common problems with the editors integration and the ways to solve them.</p>
 
     <h2 id="download" class="copy-link">Download failed</h2>
-    <img alt="Download failed" src="<%= Url.Content("~/content/img/editor/e-download.png") %>" />
+    <img class="screenshot-width-832" alt="Download failed" src="<%= Url.Content("~/content/img/editor/e-download.png") %>" />
     <p>The "Download failed" message is displayed at the editors loading process.</p>
     <p>The <b>Document editing service</b> cannot upload the file for editing.</p>
     <p>
@@ -33,7 +33,7 @@
     </p>
 
     <h2 id="error0" class="copy-link">Could not be saved</h2>
-    <img alt="Could not be saved" src="<%= Url.Content("~/content/img/editor/e-error0.png") %>" />
+    <img class="screenshot-width-832" alt="Could not be saved" src="<%= Url.Content("~/content/img/editor/e-error0.png") %>" />
     <p>The editor is loaded with the "The document could not be saved" message.</p>
     <p>The <b>document editing service</b> cannot connect to the <b>document storage service</b> at the <a href="<%= Url.Action("config/editor") %>#callbackUrl">editorConfig.callbackUrl</a> address.</p>
     <p>
@@ -42,7 +42,7 @@
     </p>
 
     <h2 id="key" class="copy-link">The file version has been changed</h2>
-    <img alt="The file version has been changed" src="<%= Url.Content("~/content/img/editor/e-key.png") %>" />
+    <img class="screenshot-width-832" alt="The file version has been changed" src="<%= Url.Content("~/content/img/editor/e-key.png") %>" />
     <p>
         The editor is loaded with the "The file version has been changed.
         The page will be reloaded" message.
@@ -51,12 +51,12 @@
     <p>Do not forget that every time the document is edited and saved, the <a href="<%= Url.Action("config/document") %>#key">document.key</a> must be generated anew.</p>
 
     <h2 id="changesUrl" class="copy-link">The file version cannot be opened</h2>
-    <img width="832px" alt="The file version cannot be opened" src="<%= Url.Content("~/content/img/editor/changes-url.png") %>" />
+    <img class="screenshot-width-832" alt="The file version cannot be opened" src="<%= Url.Content("~/content/img/editor/changes-url.png") %>" />
     <p>The <b>document editing service</b> cannot open the file version.</p>
     <p>Check if the <em>changesUrl</em> link from the <a href="<%= Url.Action("methods") %>#setHistoryData">setHistoryData</a> method corresponds to the <em>previous.url</em> parameter.</p>
 
     <h2 id="coedit" class="copy-link">No collaborative editing</h2>
-    <img width="832px" alt="No collaborative editing" src="<%= Url.Content("~/content/img/editor/e-coedit.png") %>" />
+    <img class="screenshot-width-832" alt="No collaborative editing" src="<%= Url.Content("~/content/img/editor/e-coedit.png") %>" />
     <p>No co-editing is available when the document is opened for editing by different users.</p>
     <p>The <b>document editing service</b> opens <b>two different</b> files for editing.</p>
     <p>
@@ -65,7 +65,7 @@
     </p>
 
     <h2 id="token" class="copy-link">Invalid token</h2>
-    <img alt="Invalid token" src="<%= Url.Content("~/content/img/editor/e-token.png") %>" />
+    <img class="screenshot-width-832" alt="Invalid token" src="<%= Url.Content("~/content/img/editor/e-token.png") %>" />
     <p>
         The editor is loaded with the "The document security token is not correctly formed.
         Please contact your Document Server administrator" message.

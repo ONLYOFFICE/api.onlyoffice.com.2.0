@@ -32,4 +32,4 @@
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Unhide all rows" src="<%= Url.Content("~/content/img/plugins/unhide_all_rows.png") %>" />
+<img class="screenshot-width-832" alt="Unhide all rows" src="<%= Url.Content("~/content/img/plugins/unhide_all_rows.png") %>" />

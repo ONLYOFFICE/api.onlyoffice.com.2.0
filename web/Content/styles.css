@@ -2741,7 +2741,7 @@ select {
 screenshots
 ********************************/
 
-.screenshot-width-832, .screenshot-width-700, .screenshot-width-550, .screenshot-width-400, .screenshot-width-300 {
+.screenshot-width-832, .screenshot-width-700, .screenshot-width-550, .screenshot-width-400, .screenshot-width-300, .screenshot-width-260 {
     border: 1px solid #D0D5DA;
 }
 
@@ -2763,4 +2763,8 @@ screenshots
 
 .screenshot-width-300 {
     max-width: 300px;
+}
+
+.screenshot-width-260 {
+    max-width: 260px;
 }

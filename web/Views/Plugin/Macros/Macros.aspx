@@ -38,7 +38,7 @@
         <li><b>Rename</b> your macro by clicking the corresponding button.</li>
         <li>When ready, click <b>Run</b> to run your code in the document.</li>
     </ol>
-    <img alt="Macros window" src="<%= Url.Content("~/content/img/plugins/macro_window.png") %>" />
+    <img class="screenshot-width-832" alt="Macros window" src="<%= Url.Content("~/content/img/plugins/macro_window.png") %>" />
 
     <p>If you want to delete an unnecessary macro, click the <b>Delete</b> button.</p>
 

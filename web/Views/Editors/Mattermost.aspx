@@ -59,7 +59,7 @@
 
 
     <h2 id="configuration" class="copy-link">Configuring Mattermost ONLYOFFICE integration plugin</h2>
-    <img alt="Mattermost settings" width="832px" src="<%= Url.Content("~/content/img/editor/mattermost-settings.png") %>"/>
+    <img class="screenshot-width-832" alt="Mattermost settings" src="<%= Url.Content("~/content/img/editor/mattermost-settings.png") %>"/>
     <ul>
         <li><b>Enable Plugin</b>. Enable the Mattermost ONLYOFFICE integration plugin by setting this parameter to <b>true</b>.</li>
         <li>
@@ -87,17 +87,17 @@
         <li><b>Open file in ONLYOFFICE</b> and <b>Change access rights</b> - for the author of the message.</li>
         <li><b>Open file in ONLYOFFICE</b> - for the recipient of the message.</li>
     </ul>
-    <img alt="Mattermost actions" src="<%= Url.Content("~/content/img/editor/mattermost-actions.png") %>"/>
+    <img class="screenshot-width-550" alt="Mattermost actions" src="<%= Url.Content("~/content/img/editor/mattermost-actions.png") %>"/>
 
     <p>When clicking on the <b>Open file in ONLYOFFICE</b> button, the corresponding ONLYOFFICE editor opens in the same window.</p>
-    <img alt="Mattermost editor" width="832px" src="<%= Url.Content("~/content/img/editor/mattermost-editor.png") %>"/>
+    <img class="screenshot-width-832" alt="Mattermost editor" src="<%= Url.Content("~/content/img/editor/mattermost-editor.png") %>"/>
 
     <p>The author of the message with attached documents is able to change access rights to the file via the context menu using the <b>Change access rights</b> option. 
         This action is available both in personal and group chats.</p>
-    <img alt="Mattermost share" src="<%= Url.Content("~/content/img/editor/mattermost-share.png") %>"/>
+    <img class="screenshot-width-400" alt="Mattermost share" src="<%= Url.Content("~/content/img/editor/mattermost-share.png") %>"/>
 
     <p>ONLYOFFICE bot sends notifications about changes in the document specifying the name of the user who made those changes.</p>
-    <img alt="Mattermost bot" src="<%= Url.Content("~/content/img/editor/mattermost-bot.png") %>"/>
+    <img class="screenshot-width-300" alt="Mattermost bot" src="<%= Url.Content("~/content/img/editor/mattermost-bot.png") %>"/>
 
 
     <h2 id="howitworks" class="copy-link">How it works</h2>

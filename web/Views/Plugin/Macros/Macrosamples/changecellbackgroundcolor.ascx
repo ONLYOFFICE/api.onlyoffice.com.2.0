@@ -29,4 +29,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Background color" src="<%= Url.Content("~/content/img/plugins/background_color.png") %>" />
+<img class="screenshot-width-832" alt="Background color" src="<%= Url.Content("~/content/img/plugins/background_color.png") %>" />

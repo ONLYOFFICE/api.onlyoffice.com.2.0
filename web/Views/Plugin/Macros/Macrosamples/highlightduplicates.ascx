@@ -115,4 +115,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Highlight duplicates" src="<%= Url.Content("~/content/img/plugins/highlight_duplicates.png") %>" />
+<img class="screenshot-width-832" alt="Highlight duplicates" src="<%= Url.Content("~/content/img/plugins/highlight_duplicates.png") %>" />

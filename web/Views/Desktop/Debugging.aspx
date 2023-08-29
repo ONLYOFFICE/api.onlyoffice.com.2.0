@@ -34,7 +34,7 @@
                 <li>In the <b>Target</b> field, after the path to the application, enter a space and then type the <em>--ascdesktop-support-debug-info</em> flag.</li>
                 <li>Click the <b>Apply</b> button.</li>
             </ol>
-            <p><img alt="Windows shortcut" src="<%= Url.Content("~/content/img/desktop/windows-shortcut.png") %>" /></p>
+            <p><img class="screenshot-width-300" alt="Windows shortcut" src="<%= Url.Content("~/content/img/desktop/windows-shortcut.png") %>" /></p>
 
             <br />
             <p><b>Option 2</b>. Run the app through the terminal:</p>
@@ -42,7 +42,7 @@
                 <li>Press <b>Win+R</b>.</li>
                 <li>
                     <p>In the appeared <b>Run</b> window, type <em>cmd</em> in the <b>Open</b> field.</p>
-                    <p><img alt="Windows terminal" src="<%= Url.Content("~/content/img/desktop/windows-terminal.png") %>" /></p>
+                    <p><img class="screenshot-width-300" alt="Windows terminal" src="<%= Url.Content("~/content/img/desktop/windows-terminal.png") %>" /></p>
                 </li>
                 <li>Click the <b>OK</b> button. The terminal will be opened.</li>
                 <li>
@@ -69,7 +69,7 @@
                 <li>Press <b>Command+Space</b>.</li>
                 <li>
                     <p>In the appeared <b>Spotlight</b> window, type <em>Terminal</em> in the search line:</p>
-                    <p><img alt="MacOS terminal" src="<%= Url.Content("~/content/img/desktop/macos-terminal.png") %>" /></p>
+                    <p><img class="screenshot-width-550" alt="MacOS terminal" src="<%= Url.Content("~/content/img/desktop/macos-terminal.png") %>" /></p>
                 </li>
                 <li>Choose the <b>Terminal</b> option. The terminal will be opened.</li>
                 <li>
@@ -85,7 +85,7 @@
         or click anywhere in the document and press <b>F1</b>.</p>
 
     <p>Here is the result:</p>
-    <p><img alt="Debug" src="<%= Url.Content("~/content/img/desktop/debugging.png") %>" /></p>
+    <p><img class="screenshot-width-832" alt="Debug" src="<%= Url.Content("~/content/img/desktop/debugging.png") %>" /></p>
 
     <h2 id="running" class="copy-link">Running the application</h2>
     <p>Starting from version 7.1, you can run ONLYOFFICE Desktop Editors with the <em>--ascdesktop-support-debug-info-keep</em> flag. It can have the following values:</p>

@@ -69,7 +69,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
         <li>
             <p>If the clipboard has the source spreadsheet data specified in step 3, and the destination spreadsheet has the <em>onRequestReferenceData</em> event handler
                 in the initialization config, then the <em>Paste link</em> button is displayed in the dialog box.</p>
-            <img alt="Paste link" src="<%= Url.Content("~/content/img/editor/paste-link.png") %>" />
+            <img class="screenshot-width-550" alt="Paste link" src="<%= Url.Content("~/content/img/editor/paste-link.png") %>" />
         </li>
         <li>
             <p>When the user clicks the <em>Paste link</em> button, the formula is inserted into the current cell, and the <em>referenceData</em> object is saved to the destination file.
@@ -131,7 +131,7 @@ var onRequestReferenceData = function (event) {
     ...
 };
 </pre>
-            <img alt="Update values" src="<%= Url.Content("~/content/img/editor/update-values.png") %>" />
+            <img class="screenshot-width-700" alt="Update values" src="<%= Url.Content("~/content/img/editor/update-values.png") %>" />
         </li>
         <li>
             <p>In order to refresh the data from the source file, the <a href="<%= Url.Action("methods") %>#setReferenceData">setReferenceData</a> method must be called:</p>
