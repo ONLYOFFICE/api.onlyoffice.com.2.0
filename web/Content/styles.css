@@ -2736,3 +2736,31 @@ select {
     select:invalid {
         color: #CCCCCC;
     }
+
+/********************************
+screenshots
+********************************/
+
+.screenshot-width-832, .screenshot-width-700, .screenshot-width-550, .screenshot-width-400, .screenshot-width-300 {
+    border: 1px solid #D0D5DA;
+}
+
+.screenshot-width-832 {
+    max-width: 832px;
+}
+
+.screenshot-width-700 {
+    max-width: 700px;
+}
+
+.screenshot-width-550 {
+    max-width: 550px;
+}
+
+.screenshot-width-400 {
+    max-width: 400px;
+}
+
+.screenshot-width-300 {
+    max-width: 300px;
+}
