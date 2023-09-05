@@ -2761,3 +2761,28 @@ select {
     outline: 1px solid #EFEFEF;
     outline-offset: -1px;
 }
+
+.max-width-832 {
+    max-width: 832px;
+}
+
+.max-width-700 {
+    max-width: 700px;
+}
+
+.max-width-550 {
+    max-width: 550px;
+}
+
+.max-width-400 {
+    max-width: 400px;
+}
+
+.max-width-300 {
+    max-width: 300px;
+}
+
+.max-width-260 {
+    max-width: 260px;
+}
+

@@ -41,6 +41,21 @@
                 <li>
                     <a href="<%= Url.Action("howitworks/comparedocuments") %>">Comparing documents</a>
                 </li>
+                <li>
+                    <a href="<%= Url.Action("howitworks/createbasicoform") %>">Creating basic oForm</a>
+                </li>
+                <li>
+                    <a href="<%= Url.Action("howitworks/searchoform") %>">Searching by key in oForm</a>
+                </li>
+                <li>
+                    <a href="<%= Url.Action("howitworks/createadvancedoform") %>">Creating advanced oForm</a>
+                </li>
+                <li>
+                    <a href="<%= Url.Action("howitworks/filloform") %>">Filling oForm</a>
+                </li>
+                <li>
+                    <a href="<%= Url.Action("howitworks/readoform") %>">Reading oForm</a>
+                </li>
             </ul>
         </li>
     </ul>

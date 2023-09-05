@@ -2283,6 +2283,12 @@
     <Content Include="Content\img\docbuilder\file_pdf.png" />
     <Content Include="Content\img\docbuilder\file_xlsx.png" />
     <Content Include="Content\img\docbuilder\php-add.png" />
+	<Content Include="Content\img\docbuilder\create-advanced-oform-example.png" />
+	<Content Include="Content\img\docbuilder\create-oform-example.png" />
+	<Content Include="Content\img\docbuilder\fill-oform-example.png" />
+	<Content Include="Content\img\docbuilder\read-form-output.png" />
+	<Content Include="Content\img\docbuilder\read-form-xlsx.png" />
+	<Content Include="Content\img\docbuilder\search-oform-example.png" />
     <Content Include="Content\img\docbuilder\terminal.png" />
     <Content Include="Content\img\docspace\editor-mode.png" />
     <Content Include="Content\img\docspace\file-selector-mode.png" />
@@ -3793,6 +3799,11 @@
     <Content Include="Views\DocBuilder\Howitworks\comparedocuments.ascx" />
     <Content Include="Views\DocBuilder\Howitworks\default.ascx" />
     <Content Include="Views\DocBuilder\Howitworks\globalvariable.ascx" />
+    <Content Include="Views\DocBuilder\Howitworks\createadvancedoform.ascx" />
+	<Content Include="Views\DocBuilder\Howitworks\createbasicoform.ascx" />
+	<Content Include="Views\DocBuilder\Howitworks\filloform.ascx" />
+	<Content Include="Views\DocBuilder\Howitworks\readoform.ascx" />
+	<Content Include="Views\DocBuilder\Howitworks\searchoform.ascx" />
     <Content Include="Views\DocBuilder\integratingdocumentbuilder.aspx" />
     <Content Include="Views\DocBuilder\integrationapi.aspx" />
     <Content Include="Views\DocBuilder\Integrationapi\arguments.ascx" />
