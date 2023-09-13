@@ -198,7 +198,7 @@ this.docEditor = new DocsAPI.DocEditor("placeholder",
 &lt;/script&gt;
 </pre>
             <p>Once done, a form can be opened for filling. After filling in the fields (the required ones are highlighted with the red border), you can get a PDF file.
-                To do so, click the <b>Save as PDF</b> button.</p>
+                To do so, click the <b>Save as ...</b> button.</p>
             <img class="screenshot max-width-832" alt="Embed oform" src="<%= Url.Content("~/content/img/editor/embed-oform.png") %>" />
         </div>
     </div>
