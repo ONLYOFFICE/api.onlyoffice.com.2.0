@@ -45,8 +45,8 @@
         and on <a href="https://marketplace.atlassian.com/apps/1218214/onlyoffice-connector-for-confluence?tab=overview&hosting=datacenter" target="_blank">Atlassian Marketplace</a>.</p>
     <p>You could also install the app from Confluence administration panel:</p>
     <ol>
-        <li>Log into your Confluence instance as an administrator.</li>
-        <li>Navigate to <b>Manage add-ons</b> page.</li>
+        <li>Log in to your Confluence instance as an administrator.</li>
+        <li>Navigate to the <b>Manage add-ons</b> page.</li>
         <li>Click <b>Find new apps</b> or <b>Find new add-ons</b> on the left panel.</li>
         <li>
             Locate <b>ONLYOFFICE Connector for Confluence</b> using search.
@@ -57,14 +57,16 @@
     </ol>
 
     <h2 id="configure" class="copy-link">Configuring Confluence ONLYOFFICE integration app</h2>
-    <p>Find the uploaded <b>Confluence ONLYOFFICE integration app</b> on the <b>Manage add-ons</b> page.
-        Click <b>Configure</b> and enter the name of the server with the ONLYOFFICE Docs installed:</p>
+    <p>Find the uploaded <b>ONLYOFFICE Confluence connector</b> on the <b>Manage add-ons</b> page.
+        Click <b>Configure</b> and enter the name of the server with ONLYOFFICE Docs installed:</p>
     <span class="commandline">https://documentserver/</span>
     <p>
         where the <b>documentserver</b> is the name of the server with <b>ONLYOFFICE Docs</b> installed.
         The address must be accessible from the user browser and from the Confluence server.
         The Confluence server address must also be accessible from <b>ONLYOFFICE Docs</b> for correct work.
     </p>
+    <p>Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+        Specify your own <b>Secret key</b> on the Confluence administration page. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</p>
 
     <h2 id="compile" class="copy-link">Compiling Confluence ONLYOFFICE integration app</h2>
     <p>If you plan to compile the Confluence ONLYOFFICE integration app yourself (e.g. edit the source code and compile it afterwards), follow these steps:</p>
@@ -87,8 +89,9 @@ sudo apt-get install openjdk-8-jdk</span>
     </ol>
 
     <h2 id="howitworks" class="copy-link">How it works</h2>
+    <p>The ONLYOFFICE integration follows the API documented <a href="<%= Url.Action("basic") %>">here</a>.</p>
     <ol>
-        <li>User navigates to a Confluence attachments and selects the <b>Edit in ONLYOFFICE</b> action.</li>
+        <li>User navigates to the Confluence attachments and selects the <b>Edit in ONLYOFFICE</b> action.</li>
         <li>Confluence makes a request to OnlyOfficeEditorServlet (URL of the form: <em>/plugins/servlet/onlyoffice/doceditor?attachmentId=$attachment.id</em>).</li>
         <li>Confluence sends a document to ONLYOFFICE Document storage service and receive a temporary link.</li>
         <li>
@@ -96,6 +99,7 @@ sudo apt-get install openjdk-8-jdk</span>
             <ul>
                 <li><b>url</b> - the temporary link that ONLYOFFICE Docs uses to download the document;</li>
                 <li><b>callbackUrl</b> - the URL that ONLYOFFICE Docs informs about status of the document editing;</li>
+                <li><b>docserviceApiUrl</b> - the URL that the client needs to reply to ONLYOFFICE Docs (provided by the <em>files.docservice.url.api</em> property);</li>
                 <li><b>key</b> - the UUID to instruct ONLYOFFICE Docs whether to download the document again or not;</li>
                 <li><b>title</b> - the document title (name).</li>
             </ul>
@@ -103,7 +107,7 @@ sudo apt-get install openjdk-8-jdk</span>
         <li>The client browser makes a request to the JavaScript library from ONLYOFFICE Docs and sends ONLYOFFICE Docs the DocEditor configuration with the above properties.</li>
         <li>Then ONLYOFFICE Docs downloads the document from Confluence and the user begins editing.</li>
         <li>When all users and client browsers are done with editing, they close the editing window.</li>
-        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to the <em>callback</em> URL letting Confluence know that the clients have finished editing the document and closed it.</li>
+        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to <em>callbackUrl</em> letting Confluence know that the clients have finished editing the document and closed it.</li>
         <li>Confluence downloads a new version of the document, replacing the old one.</li>
     </ol>
 

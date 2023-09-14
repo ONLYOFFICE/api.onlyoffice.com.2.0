@@ -11,7 +11,7 @@
     <dd>
         <p>The examples of integration of Document Server with your own website can be found <a href="<%= Url.Action("demopreview") %>">here</a>. You can choose among different web development programming languages:</p>
         <ul class="columns-2">
-            <li><a href="<%= Url.Action("example/csharp") %>">.Net (C#)</a></li>
+            <li><a href="<%= Url.Action("example/csharp") %>">.Net (C#) / .Net (C# MVC)</a></li>
             <li><a href="<%= Url.Action("example/java") %>">Java</a></li>
             <li><a href="<%= Url.Action("example/javaspring") %>">Java Spring</a></li>
             <li><a href="<%= Url.Action("example/nodejs") %>">Node.js</a></li>
@@ -25,17 +25,20 @@
             <li><a href="<%= Url.Action("alfresco") %>">Alfresco</a></li>
             <li><a href="<%= Url.Action("chamilo") %>">Chamilo</a></li>
             <li><a href="<%= Url.Action("confluence") %>">Confluence</a></li>
+            <li><a href="<%= Url.Action("drupal") %>">Drupal</a></li>
             <li><a href="<%= Url.Action("humhub") %>">HumHub</a></li>
             <li><a href="<%= Url.Action("liferay") %>">Liferay</a></li>
             <li><a href="<%= Url.Action("mattermost") %>">Mattermost</a></li>
             <li><a href="<%= Url.Action("moodle") %>">Moodle</a></li>
             <li><a href="<%= Url.Action("nextcloud") %>">Nextcloud</a></li>
             <li><a href="<%= Url.Action("nuxeo") %>">Nuxeo</a></li>
+            <li><a href="<%= Url.Action("odoo") %>">Odoo</a></li>
             <li><a href="<%= Url.Action("owncloud") %>">ownCloud</a></li>
             <li><a href="<%= Url.Action("plone") %>">Plone</a></li>
             <li><a href="<%= Url.Action("redmine") %>">Redmine</a></li>
             <li><a href="<%= Url.Action("sharepoint") %>">SharePoint</a></li>
             <li><a href="<%= Url.Action("strapi") %>">Strapi</a></li>
+            <li><a href="<%= Url.Action("suitecrm") %>">SuiteCRM</a></li>
             <li><a href="<%= Url.Action("wordpress") %>">WordPress</a></li>
         </ul>
         <p>Most of the connectors are available from the corresponding service application store and are easy to install. Just follow the step-by-step instructions at the <a href="<%= Url.Action("plugins") %>">connector page</a> and connect Document Server to your service.</p>

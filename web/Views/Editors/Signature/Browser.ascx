@@ -52,7 +52,7 @@
 }
 </pre>
 <p>
-    Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+    Where <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
     See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
 </p>
 
@@ -64,7 +64,7 @@
 
 <ul>
     <li>
-        <p><b id="insertImage" class="copy-link">insertImage</b> - when calling the <a href="<%= Url.Action("methods") %>#insertImage">insertImage</a> method to insert an image into the file, the <a href="<%= Url.Action("config/") %>#token">token</a> must be added to validate the parameters.</p>
+        <p><b id="insertImage" class="copy-link">insertImage</b> - when calling the <a href="<%= Url.Action("methods") %>#insertImage">insertImage</a> method to insert an image into the file, the <a href="<%= Url.Action("methods") %>#insertImage-token">token</a> must be added to validate the parameters.</p>
 
         <p>
             The <em>payload</em> for the JWT token in the JSON format must have the same structure as the method parameter.
@@ -73,20 +73,25 @@
 
         <pre>
 {
-    "fileType": "png",
-    "url": "https://example.com/url-to-example-image.png"
+    "c": "add",
+    "images": [
+        {
+            "fileType": "png",
+            "url": "https://example.com/url-to-example-image.png"
+        }
+    ]
 }
 </pre>
         <p>
-            Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            Where <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
             See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
         </p>
 
         <div class="header-gray">Sample token</div>
-        <pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6InBuZyIsInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtaW1hZ2UucG5nIn0.FXuC3GUvPq3japwyzo4i-utUe3g1rfSDt1ytuK_VyCc</pre>
+        <pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjIjoiYWRkIiwiaW1hZ2VzIjpbeyJmaWxlVHlwZSI6InBuZyIsInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtaW1hZ2UucG5nIn1dfQ._tPxpJrPbom_f83qgX4_AB9v1cfK2LSQsfomfl7zJ58</pre>
     </li>
     <li>
-        <p><b id="setHistoryData" class="copy-link">setHistoryData</b> - when calling the <a href="<%= Url.Action("methods") %>#setHistoryData">setHistoryData</a> method to view the document <a href="<%= Url.Action("history") %>">history</a> version in ONLYOFFICE Document Server, the <a href="<%= Url.Action("config/") %>#token">token</a> must be added to validate the parameters.</p>
+        <p><b id="setHistoryData" class="copy-link">setHistoryData</b> - when calling the <a href="<%= Url.Action("methods") %>#setHistoryData">setHistoryData</a> method to view the document <a href="<%= Url.Action("history") %>">history</a> version in ONLYOFFICE Document Server, the <a href="<%= Url.Action("methods") %>#setHistoryData-token">token</a> must be added to validate the parameters.</p>
 
         <p>
             The <em>payload</em> for the JWT token in the JSON format must have the same structure as the method parameter.
@@ -106,7 +111,7 @@
 }
 </pre>
         <p>
-            Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            Where <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
             See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
         </p>
 
@@ -114,7 +119,7 @@
         <pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFuZ2VzVXJsIjoiaHR0cHM6Ly9leGFtcGxlLmNvbS91cmwtdG8tY2hhbmdlcy56aXAiLCJrZXkiOiJLaGlyejZ6VFBkZmQ3IiwicHJldmlvdXMiOnsia2V5IjoiYWY4NkM3ZTcxQ2E4IiwidXJsIjoiaHR0cHM6Ly9leGFtcGxlLmNvbS91cmwtdG8tdGhlLXByZXZpb3VzLXZlcnNpb24tb2YtdGhlLWRvY3VtZW50LmRvY3gifSwidXJsIjoiaHR0cHM6Ly9leGFtcGxlLmNvbS91cmwtdG8tZXhhbXBsZS1kb2N1bWVudC5kb2N4IiwidmVyc2lvbiI6Mn0.7gaOe1_4OvgRLYD0oGk_bMrVdPaLmgZVNIgQCUQdgoE</pre>
     </li>
     <li>
-        <p><b id="setMailMergeRecipients" class="copy-link">setMailMergeRecipients</b> - when calling the <a href="<%= Url.Action("methods") %>#setMailMergeRecipients">setMailMergeRecipients</a> method to insert recipient data for mail merge into the file, the <a href="<%= Url.Action("config/") %>#token">token</a> must be added to validate the parameters.</p>
+        <p><b id="setMailMergeRecipients" class="copy-link">setMailMergeRecipients</b> - when calling the <a href="<%= Url.Action("methods") %>#setMailMergeRecipients">setMailMergeRecipients</a> method to insert recipient data for mail merge into the file, the <a href="<%= Url.Action("methods") %>#setMailMergeRecipients-token">token</a> must be added to validate the parameters.</p>
 
         <p>
             The <em>payload</em> for the JWT token in the JSON format must have the same structure as the method parameter.
@@ -128,7 +133,7 @@
 }
 </pre>
         <p>
-            Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            Where <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
             See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
         </p>
 
@@ -136,7 +141,34 @@
         <pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLXJlY2lwaWVudHMueGxzeCJ9.P3TjOyX1Tv3xAVRAc8qtNb-uFLD6FH_WErag_rbI6nQ</pre>
     </li>
     <li>
-        <p><b id="setRevisedFile" class="copy-link">setRevisedFile</b> - when calling the <a href="<%= Url.Action("methods") %>#setRevisedFile">setRevisedFile</a> method to select a document for comparing, the <a href="<%= Url.Action("config/") %>#token">token</a> must be added to validate the parameters.</p>
+        <p><b id="setReferenceData" class="copy-link">setReferenceData</b> - when calling the <a href="<%= Url.Action("methods") %>#setReferenceData">setReferenceData</a> method to insert data into the spreadsheet by an external link, the <a href="<%= Url.Action("methods") %>#setReferenceData-token">token</a> must be added to validate the parameters.</p>
+
+        <p>
+            The <em>payload</em> for the JWT token in the JSON format must have the same structure as the method parameter.
+            The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+        </p>
+
+        <pre>
+{
+    "fileType": "xlsx",
+    "path": "sample.xlsx",
+    "referenceData": {
+        "fileKey": "BCFA2CED",
+        "instanceId": "https://example.com"
+    },
+    "url": "https://example.com/url-to-example-document.xlsx"
+}
+</pre>
+        <p>
+            Where <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
+        </p>
+
+        <div class="header-gray">Sample token</div>
+        <pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJwYXRoIjoic2FtcGxlLnhsc3giLCJyZWZlcmVuY2VEYXRhIjp7ImZpbGVLZXkiOiJCQ0ZBMkNFRCIsImluc3RhbmNlSWQiOiJodHRwczovL2V4YW1wbGUuY29tIn0sInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQueGxzeCJ9.UXosmM-E_Cu9j9QGSlcj9FEoSu5m-zCS4b6FxO_2k7w</pre>
+    </li>
+    <li>
+        <p><b id="setRevisedFile" class="copy-link">setRevisedFile</b> - when calling the <a href="<%= Url.Action("methods") %>#setRevisedFile">setRevisedFile</a> method to select a document for comparing, the <a href="<%= Url.Action("methods") %>#setRevisedFile-token">token</a> must be added to validate the parameters.</p>
 
         <p>
             The <em>payload</em> for the JWT token in the JSON format must have the same structure as the method parameter.
@@ -150,7 +182,7 @@
 }
 </pre>
         <p>
-            Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            Where <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
             See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
         </p>
 

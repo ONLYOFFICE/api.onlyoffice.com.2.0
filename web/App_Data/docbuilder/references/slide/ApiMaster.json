@@ -54,7 +54,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -86,7 +86,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -135,7 +135,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -160,7 +160,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -190,7 +190,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -213,7 +217,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -275,7 +279,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -310,7 +314,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -391,8 +395,52 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "GetAllOleObjects": {
+      "memberof": "ApiMaster",
+      "name": "GetAllOleObjects",
+      "description": "<p>Returns an array with all the OLE objects from the slide master.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiOleObject>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiMaster",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiMaster object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "bool",
+          "name": "bWriteTableStyles",
+          "description": "<p>Specifies whether to write used table styles to the JSON object (true) or not (false).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a slide master.\n     * @constructor\n     */",
   "description": "<p>Class representing a slide master.</p>",
   "scope": "global",

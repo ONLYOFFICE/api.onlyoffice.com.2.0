@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Set the width for the column <b>B</b>.</p>
+<p class="dscr">Sets the width for the column <b>B</b>.</p>
 
 <pre>(function()
 {
@@ -27,4 +27,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Column width" src="<%= Url.Content("~/content/img/plugins/column_width.png") %>" />
+<img class="screenshot max-width-832" alt="Column width" src="<%= Url.Content("~/content/img/plugins/column_width.png") %>" />

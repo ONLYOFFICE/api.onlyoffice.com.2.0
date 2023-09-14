@@ -31,17 +31,17 @@
 
 <div class="header-gray">Plugin structure</div>
 
-<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/plugin-photoeditor" target="_blank">https://github.com/ONLYOFFICE/plugin-photoeditor</a>.</p>
+<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/photoeditor" target="_blank">https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/photoeditor</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>photoeditor.js</em></li>
     <li>Icons</li>
-    <li>The <em>translations</em> folder contains translations into Russian, German, Spanish, Czech and French.</li>
+    <li>The <em>translations</em> folder contains translations into Russian, German, Spanish, Czech, and French.</li>
     <li><em>index_about.html</em> for the plugin <b>About</b> window</li>
     <li><em>black-theme.css</em>, <em>black-theme.js</em>, <em>white-theme.css</em> and <em>white-theme.js</em> are used to adjust the dark or light plugin theme</li>
     <li>Third-party services:
         <ul>
-            <li><b>jQuery</b> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development (<a href="https://jquery.com" target="_blank">https://jquery.com</a>). License: <a href="https://github.com/ONLYOFFICE/plugin-photoeditor/blob/master/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
-            <li><b>Toast UI Image Editor</b> is a full featured image editor that uses HTML5 Canvas. It's easy to use and provides powerful filters (<a href="https://ui.toast.com/tui-image-editor" target="_blank">https://ui.toast.com/tui-image-editor</a>).  License: <a href="https://github.com/ONLYOFFICE/plugin-photoeditor/blob/master/licenses/Tui.license" target="_blank">MIT License</a>.</li>
+            <li><a href="https://jquery.com" target="_blank">jQuery</a> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/photoeditor/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
+            <li><a href="https://ui.toast.com/tui-image-editor" target="_blank">Toast UI Image Editor</a> is a full featured image editor that uses HTML5 Canvas. It's easy to use and provides powerful filters.  License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/photoeditor/licenses/Tui.license" target="_blank">MIT License</a>.</li>
         </ul>
     </li>
 </ol>
@@ -52,23 +52,21 @@
 {
     "name": "Photo Editor",
     "nameLocale": {
-        "ru": "&#1060;&#1086;&#1090;&#1086;&#1088;&#1077;&#1076;&#1072;&#1082;&#1090;&#1086;&#1088;",
         "fr": "Photo Editor",
         "es": "Editor de Fotos",
         "de": "Foto-Editor"
     },
     "guid": "asc.{07FD8DFA-DFE0-4089-AL24-0730933CC80A}",
-    "version": "1.0",
+    "version": "1.0.1",
     "baseUrl": "",
 
     "variations": [
         {
-            "description": "Photo Editor",
+            "description": "Edit images, screenshots, and photos right in your documents: crop, resize, apply effects.",
             "descriptionLocale": {
-                "ru": "&#1060;&#1086;&#1090;&#1086;&#1088;&#1077;&#1076;&#1072;&#1082;&#1090;&#1086;&#1088;",
-                "fr": "Photo Editor",
-                "es": "Editor de Fotos",
-                "de": "Foto-Editor"
+                "fr": "Modifiez des images, des captures d'&#233;cran et des photos directement dans vos documents: coupez, ajustez, appliquez des effets.",
+                "es": "Edite im&#225;genes, capturas de pantalla y fotos directamente en sus documentos: recorte, cambie el tama&#241;o y aplique efectos.",
+                "de": "Bearbeiten Sie Bilder, Screenshots und Fotos direkt in Dokumenten: Zuschneiden, Gr&#246;&#223;e &#228;ndern, Effekte anwenden."
             },
             "url": "index.html",
 
@@ -128,12 +126,11 @@
                     "text": "Ok",
                     "primary": true
                 },
-                {
+				{
                     "text": "Cancel",
                     "primary": false,
                     "isViewer": false,
                     "textLocale": {
-                        "ru": "&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;",
                         "fr": "Annuler",
                         "es": "Cancelar",
                         "de": "Abbrechen"
@@ -141,13 +138,23 @@
                 }
             ],
 
-            "size": [ 10000, 10000 ]
+            "size": [ 10000, 10000 ],
+            "store": {
+                "background": {
+                    "light" : "linear-gradient(180deg, #FF8E3D 0%, #FF6F3D 100%)",
+                    "dark" : "linear-gradient(180deg, #FF8E3D 0%, #FF6F3D 100%)"
+                },
+                "screenshots" : ["resources/store/screenshots/screen_1.png"],
+                "icons"       : {
+                    "light" : "resources/store/icons",
+                    "dark"  : "resources/store/icons"
+                }
+            }
         },
         {
             "description": "About",
             "descriptionLocale": {
-                "ru": "&#1057;&#1087;&#1088;&#1072;&#1074;&#1082;&#1072;",
-                "fr": "A&#768; propos",
+                "fr": "&#192; propos",
                 "es": "Sobre programa",
                 "de": "&#220;ber"
             },
@@ -174,11 +181,14 @@
 <div class="header-gray">Methods and events</div>
 
 <ul class="columns-2">
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#onTranslate">onTranslate</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onTranslate") %>">onTranslate</a></li>
     <li><a href="<%= Url.Action("callcommand") %>">callCommand</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/getimagedatafromselection") %>">executeMethod ("GetImageDataFromSelection")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/getversion") %>">executeMethod ("GerVersion")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/putimagedatatoselection") %>">executeMethod ("PutImageDataToSelection")</a></li>
     <li><a href="<%= Url.Action("resizewindow") %>">resizeWindow</a></li>
     <li><a href="<%= Url.Action("scope") %>">Asc.scope object</a></li>
     <li><a href="<%= Url.Action("info") %>#editorType">info.editorType</a></li>
@@ -187,4 +197,4 @@
 
 <div class="header-gray">Support</div>
 
-<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/issues" target="_blank">GitHub</a>.</p>
+<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/issues" target="_blank">GitHub</a>.</p>

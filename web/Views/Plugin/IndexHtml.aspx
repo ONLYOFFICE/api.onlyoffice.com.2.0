@@ -6,12 +6,12 @@
     ContentType="text/html" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    index.html
+    Creating plugin entry point
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>
-        <span class="hdr">index.html</span>
+        <span class="hdr">Creating plugin entry point</span>
     </h1>
 
     <p class="dscr">Each plugin acts in its own iframe. The editor will connect the <em>index.html</em> file, specified in the <a href="<%= Url.Action("config") %>">config.json</a> plugin configuration file. The <em>index.html</em> file is the plugin entry point, connecting the <em>plugin.js</em> file - the base file needed for work with plugins.</p>

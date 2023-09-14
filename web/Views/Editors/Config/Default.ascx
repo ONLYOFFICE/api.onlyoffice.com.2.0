@@ -28,9 +28,9 @@
             <td id="documentType" class="copy-link">documentType</td>
             <td>Defines the document type to be opened:
                 <ul>
-                    <li><b>word</b> - text document (<em>.doc, .docm, .docx, .docxf, .dot, .dotm, .dotx, .epub, .fodt, .fb2, .htm, .html, .mht, .odt, .oform, .ott, .oxps, .pdf, .rtf, .txt, .djvu, .xml, .xps</em>),</li>
-                    <li><b>cell</b> - spreadsheet (<em>.csv, .fods, .ods, .ots, .xls, .xlsb, .xlsm, .xlsx, .xlt, .xltm, .xltx</em>),</li>
-                    <li><b>slide</b> - presentation (<em>.fodp, .odp, .otp, .pot, .potm, .potx, .pps, .ppsm, .ppsx, .ppt, .pptm, .pptx</em>).</li>
+                    <li><b>word</b> - text document (<em>.djvu, .doc, .docm, .docx, .docxf, .dot, .dotm, .dotx, .epub, .fb2, .fodt, .htm, .html, .mht, .mhtml, .odt, .oform, .ott, .oxps, .pdf, .rtf, .stw, .sxw, .txt, .wps, .wpt, .xml, .xps</em>),</li>
+                    <li><b>cell</b> - spreadsheet (<em>.csv, .et, .ett, .fods, .ods, .ots, .sxc, .xls, .xlsb, .xlsm, .xlsx, .xlt, .xltm, .xltx, .xml</em>),</li>
+                    <li><b>slide</b> - presentation (<em>.dps, .dpt, .fodp, .odp, .otp, .pot, .potm, .potx, .pps, .ppsm, .ppsx, .ppt, .pptm, .pptx, .sxi</em>).</li>
                 </ul>
             </td>
             <td>string</td>
@@ -54,7 +54,7 @@
             <td id="token" class="copy-link">token</td>
             <td>Defines the encrypted signature added to the <b>Document Server</b> config in the form of a <a href="<%= Url.Action("signature/browser") %>#config">token</a>.</td>
             <td>string</td>
-            <td>"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M"</td>
+            <td>"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.LwimMJA3puF3ioGeS-tfczR3370GXBZMIL-bdpu4hOU"</td>
         </tr>
         <tr class="tablerow">
             <td id="type" class="copy-link">type</td>
@@ -84,7 +84,7 @@
 var docEditor = new DocsAPI.DocEditor("placeholder", {
     "documentType": "word",
     "height": "100%",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.LwimMJA3puF3ioGeS-tfczR3370GXBZMIL-bdpu4hOU",
     "type": "desktop",
     "width": "100%",
     ...

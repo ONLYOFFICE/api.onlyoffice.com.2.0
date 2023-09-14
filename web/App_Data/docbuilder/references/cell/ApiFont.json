@@ -1,0 +1,429 @@
+{
+  "methods": {
+    "GetParent": {
+      "memberof": "ApiFont",
+      "name": "GetParent",
+      "description": "<p>Returns the parent ApiCharacters object of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiCharacters"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetBold": {
+      "memberof": "ApiFont",
+      "name": "GetBold",
+      "description": "<p>Returns the bold property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetBold": {
+      "memberof": "ApiFont",
+      "name": "SetBold",
+      "description": "<p>Sets the bold property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isBold",
+          "description": "<p>Specifies that the text characters are displayed bold.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetItalic": {
+      "memberof": "ApiFont",
+      "name": "GetItalic",
+      "description": "<p>Returns the italic property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetItalic": {
+      "memberof": "ApiFont",
+      "name": "SetItalic",
+      "description": "<p>Sets the italic property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isItalic",
+          "description": "<p>Specifies that the text characters are displayed italic.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetSize": {
+      "memberof": "ApiFont",
+      "name": "GetSize",
+      "description": "<p>Returns the font size property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "number",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetSize": {
+      "memberof": "ApiFont",
+      "name": "SetSize",
+      "description": "<p>Sets the font size property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "number",
+          "name": "Size",
+          "description": "<p>Font size.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetStrikethrough": {
+      "memberof": "ApiFont",
+      "name": "GetStrikethrough",
+      "description": "<p>Returns the strikethrough property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetStrikethrough": {
+      "memberof": "ApiFont",
+      "name": "SetStrikethrough",
+      "description": "<p>Sets the strikethrough property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isStrikethrough",
+          "description": "<p>Specifies that the text characters are displayed strikethrough.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetUnderline": {
+      "memberof": "ApiFont",
+      "name": "GetUnderline",
+      "description": "<p>Returns the type of underline applied to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "XlUnderlineStyle",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetUnderline": {
+      "memberof": "ApiFont",
+      "name": "SetUnderline",
+      "description": "<p>Sets an underline of the type specified in the request to the current font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "XlUnderlineStyle",
+          "name": "Underline",
+          "description": "<p>Underline type.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetSubscript": {
+      "memberof": "ApiFont",
+      "name": "GetSubscript",
+      "description": "<p>Returns the subscript property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetSubscript": {
+      "memberof": "ApiFont",
+      "name": "SetSubscript",
+      "description": "<p>Sets the subscript property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isSubscript",
+          "description": "<p>Specifies that the text characters are displayed subscript.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetSuperscript": {
+      "memberof": "ApiFont",
+      "name": "GetSuperscript",
+      "description": "<p>Returns the superscript property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetSuperscript": {
+      "memberof": "ApiFont",
+      "name": "SetSuperscript",
+      "description": "<p>Sets the superscript property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isSuperscript",
+          "description": "<p>Specifies that the text characters are displayed superscript.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetName": {
+      "memberof": "ApiFont",
+      "name": "GetName",
+      "description": "<p>Returns the font name property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "string",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetName": {
+      "memberof": "ApiFont",
+      "name": "SetName",
+      "description": "<p>Sets the font name property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "FontName",
+          "description": "<p>Font name.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetColor": {
+      "memberof": "ApiFont",
+      "name": "GetColor",
+      "description": "<p>Returns the font color property of the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiColor",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetColor": {
+      "memberof": "ApiFont",
+      "name": "SetColor",
+      "description": "<p>Sets the font color property to the specified font.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiColor",
+          "name": "Color",
+          "description": "<p>Font color.</p>",
+          "optional": false
+        }
+      ]
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Class that contains the font attributes (font name, font size, color, and so on).\n\t * @constructor\n\t * @property {ApiCharacters} Parent - The parent object of the specified font object.\n\t * @property {boolean | null} Bold - The font bold property.\n\t * @property {boolean | null} Italic - The font italic property.\n\t * @property {number | null} Size - The font size property.\n\t * @property {boolean | null} Strikethrough - The font strikethrough property.\n\t * @property {string | null} Underline - The font type of underline.\n\t * @property {boolean | null} Subscript - The font subscript property.\n\t * @property {boolean | null} Superscript - The font superscript property.\n\t * @property {string | null} Name - The font name.\n\t * @property {ApiColor | null} Color - The font color property.\n\t */",
+  "description": "<p>Class that contains the font attributes (font name, font size, color, and so on).</p>",
+  "scope": "global",
+  "params": [],
+  "properties": [
+    {
+      "type": "ApiCharacters",
+      "name": "Parent",
+      "description": "<p>The parent object of the specified font object.</p>"
+    },
+    {
+      "type": "boolean | null",
+      "name": "Bold",
+      "description": "<p>The font bold property.</p>"
+    },
+    {
+      "type": "boolean | null",
+      "name": "Italic",
+      "description": "<p>The font italic property.</p>"
+    },
+    {
+      "type": "number | null",
+      "name": "Size",
+      "description": "<p>The font size property.</p>"
+    },
+    {
+      "type": "boolean | null",
+      "name": "Strikethrough",
+      "description": "<p>The font strikethrough property.</p>"
+    },
+    {
+      "type": "string | null",
+      "name": "Underline",
+      "description": "<p>The font type of underline.</p>"
+    },
+    {
+      "type": "boolean | null",
+      "name": "Subscript",
+      "description": "<p>The font subscript property.</p>"
+    },
+    {
+      "type": "boolean | null",
+      "name": "Superscript",
+      "description": "<p>The font superscript property.</p>"
+    },
+    {
+      "type": "string | null",
+      "name": "Name",
+      "description": "<p>The font name.</p>"
+    },
+    {
+      "type": "ApiColor | null",
+      "name": "Color",
+      "description": "<p>The font color property.</p>"
+    }
+  ]
+}

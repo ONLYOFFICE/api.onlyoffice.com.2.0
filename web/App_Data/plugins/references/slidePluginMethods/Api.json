@@ -1,0 +1,86 @@
+{
+  "methods": {
+    "AddComment": {
+      "memberof": "Api",
+      "name": "AddComment",
+      "description": "<p>Adds a comment to the presentation.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "string",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "CommentData",
+          "name": "oCommentData",
+          "description": "<p>An object which contains the comment data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ChangeComment": {
+      "memberof": "Api",
+      "name": "ChangeComment",
+      "description": "<p>Changes the specified comment.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sId",
+          "description": "<p>The comment ID.</p>",
+          "optional": false
+        },
+        {
+          "type": "CommentData",
+          "name": "oCommentData",
+          "description": "<p>An object which contains the new comment data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "RemoveComments": {
+      "memberof": "Api",
+      "name": "RemoveComments",
+      "description": "<p>Removes the specified comments.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Array.<string>",
+          "name": "arrIds",
+          "description": "<p>An array which contains the IDs of the specified comments.</p>",
+          "optional": false
+        }
+      ]
+    }
+  },
+  "events": {},
+  "comment": "/**\n     * Base class.\n     * @global\n     * @class\n     * @name Api\n     */",
+  "description": "<p>Base class.</p>",
+  "scope": "global"
+}

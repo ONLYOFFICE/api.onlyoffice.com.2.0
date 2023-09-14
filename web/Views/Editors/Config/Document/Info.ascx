@@ -55,7 +55,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/favorite.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/favorite.png") %>" alt="" />
             </td>
         </tr>
         <tr class="tablerow">
@@ -99,11 +99,16 @@
                 </ul>
             </td>
             <td>array of object</td>
-            <td></td>
+            <td>[
+    {
+        "permissions": "Full Access",
+        "user": "John Smith"
+    }
+]</td>
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/sharing_settings.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/sharing_settings.png") %>" alt="" />
             </td>
         </tr>
         <tr class="tablerow">
@@ -114,7 +119,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/info.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/info.png") %>" alt="" />
             </td>
         </tr>
     </tbody>

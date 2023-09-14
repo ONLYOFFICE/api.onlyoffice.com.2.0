@@ -18,7 +18,7 @@
         The <b>Review option</b> allows you to review a document, change sentences, phrases and other page elements, correct spelling, etc. without actually editing it.
         All the changes will be recorded and shown to the user who created the document.
     </p>
-    <img src="<%= Url.Content("~/content/img/editor/review.png") %>" alt="" />
+    <img class="screenshot max-width-832" src="<%= Url.Content("~/content/img/editor/review.png") %>" alt="" />
 
     <h2 id="access-rights" class="copy-link">Review access rights</h2>
     <p>
@@ -28,7 +28,7 @@
     <p>
         In case the <em>edit</em> parameter is set to <b>true</b> and the <em>review</em> parameter is also set to <b>true</b>, the user will be able to edit the document, accept or reject the changes and switch to the review mode him/herself.
     </p>
-    <img alt="Reviewing" src="<%= Url.Content("~/content/img/editor/accept_reject.png") %>" />
+    <img class="screenshot max-width-832" alt="Reviewing" src="<%= Url.Content("~/content/img/editor/accept_reject.png") %>" />
     <p>
         In case the <em>edit</em> parameter is set to <b>false</b> and the <em>review</em> parameter is set to <b>true</b>, the document will be available for reviewing only.
     </p>

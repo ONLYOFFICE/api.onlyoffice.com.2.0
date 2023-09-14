@@ -20,7 +20,7 @@
     <h2 id="features" class="copy-link">Features</h2>
     <ul>
         <li>Currently, the following document formats can be edited: DOCX, XLSX, PPTX.</li>
-        <li>The following formats are available for viewing: DOC, DOCX, DOCM, DOT, DOTX, DOTM, ODT, FODT, OTT, RTF, TXT, HTML, HTM, MHT, XML, PDF, DJVU, FB2, EPUB, XPS, XLS, XLSX, XLSM, XLT, XLTX, XLTM, ODS, FODS, OTS, CSV, PPS, PPSX, PPSM, PPT, PPTX, PPTM, POT, POTX, POTM, ODP, FODP, OTP.</li>
+        <li>The following formats are available for viewing only: DOC, DOCM, DOT, DOTX, DOTM, ODT, FODT, OTT, RTF, TXT, HTML, HTM, MHT, XML, PDF, DJVU, FB2, EPUB, XPS, XLS, XLSM, XLT, XLTX, XLTM, ODS, FODS, OTS, CSV, PPS, PPSX, PPSM, PPT, PPTM, POT, POTX, POTM, ODP, FODP, OTP.</li>
         <li>The plugin allows multiple users to collaborate in real time and save back those changes to WordPress.</li>
     </ul>
 
@@ -55,7 +55,8 @@ git clone https://github.com/ONLYOFFICE/onlyoffice-wordpress
     <p>Configure the plugin via the WordPress interface. Go to <b>WordPress administrative dashboard -> ONLYOFFICE -> Settings</b> and specify the following parameters:</p>
     <ul>
         <li><b>Document Editing Service address</b>. The URL of the installed ONLYOFFICE Document Server.</li>
-        <li><b>Document server JWT secret key</b>. Enables JWT to protect your documents from unauthorized access (further information can be found <a href="<%= Url.Action("signature/") %>">here</a>).</li>
+        <li><b>Document server JWT secret key</b>. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+            Specify your own secret key in the WordPress administrative configuration. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</li>
     </ul>
 
 

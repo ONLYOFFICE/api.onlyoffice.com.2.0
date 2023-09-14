@@ -42,9 +42,14 @@
         <li>If you're new to Redmine, install it following <a href="https://www.redmine.org/projects/redmine/wiki/RedmineInstall" target="_blank">these instructions</a>.</li>
         <li>
             <p>Download Redmine ONLYOFFICE integration plugin. You can either clone the master branch or download the latest zipped version. 
-            Before installing, make sure that the Redmine instance is stopped.</p>
+            Before installing, make sure that the Redmine instance is stopped:</p>
             <pre>
 git clone https://github.com/ONLYOFFICE/onlyoffice-redmine
+</pre>
+            <p>Go to the Redmine ONLYOFFICE integration plugin folder and get a submodule:</p>
+            <pre>
+cd onlyoffice-redmine
+git submodule update --init --recursive
 </pre>
         </li>
         <li>Put <b>onlyoffice_redmine</b> plugin directory into plugins. The plugins sub-directory must be named as <b>onlyoffice_redmine</b>. 
@@ -81,7 +86,8 @@ https://&lt;documentserver&gt;:&lt;port&gt;/
 </pre>
             <p>where <b>documentserver</b> is the name of the server and <b>port</b> is the port number with <b>ONLYOFFICE Docs</b> installed.</p>
         </li>
-        <li><b>Secret key</b>: Enable JWT to protect your documents from unauthorized access (further information can be found <a href="<%= Url.Action("signature/") %>">here</a>).</li>
+        <li><b>Secret key</b>: Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+            Specify your own secret key on the Redmine configuration page. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</li>
     </ul>
     <p>You can also configure the <b>Editor customization settings</b>:</p>
     <ul>
@@ -124,14 +130,14 @@ https://&lt;documentserver&gt;:&lt;port&gt;/
         <li>
             <p><b>News module</b></p>
             <p>The uploaded files in this module are available for viewing and editing.</p>
-            <p>File editing is available for user roles with the <b>Edit news</b> permission.</p>
+            <p>File editing is available for user roles with the <b>Manage news</b> permission.</p>
             <p>Opening files for viewing is available for user roles with the <b>View news</b> permission.</p>
         </li>
+        <li>
+            <p><b>Saving changes</b></p>
+            <p>All the changes made in the document are saved in the original file.</p>
+        </li>
     </ul>
-
-    <br />
-    <p>All the changes made in the document are saved in the original file.</p>
-
 
     <br />
     <p>Download the Redmine ONLYOFFICE integration plugin <a href="https://github.com/ONLYOFFICE/onlyoffice-redmine" target="_blank">here</a>.</p>

@@ -1,0 +1,1316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Web.Calendar</name>
+    </assembly>
+    <members>
+        <member name="F:ASC.Web.Calendar.Controls.DocumentsPopup._documentUploader">
+            <summary>
+            _documentUploader control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Calendar.Controls.DocumentsPopup.loaderHolder">
+            <summary>
+            loaderHolder control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Calendar.Default.CreateButtonContent">
+            <summary>
+            CreateButtonContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Calendar.Default.SidePanelContent">
+            <summary>
+            SidePanelContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Calendar.Default.CalendarPageContent">
+            <summary>
+            CalendarPageContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Calendar.Default.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Calendar.UserControls.CalendarControl._sharingContainer">
+            <summary>
+            _sharingContainer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Calendar.UserControls.CalendarControl._phDocUploader">
+            <summary>
+            _phDocUploader control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Calendar.UserControls.CalendarControl._commonPopup">
+            <summary>
+            _commonPopup control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:ASC.Web.Calendar.Resources.CalendarJSResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.AcceptedCount">
+            <summary>
+              Looks up a localized string similar to Accepted:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.attendeesNoAccountLink">
+            <summary>
+              Looks up a localized string similar to Connect mail accounts.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.attendeesNoAccountText">
+            <summary>
+              Looks up a localized string similar to to send invitations.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendar_newCalendarTitle">
+            <summary>
+              Looks up a localized string similar to Calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendar_newEventTitle">
+            <summary>
+              Looks up a localized string similar to Event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarAddNewEventLabel">
+            <summary>
+              Looks up a localized string similar to Create new event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarAddNewLabel">
+            <summary>
+              Looks up a localized string similar to Create.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarAllDayText">
+            <summary>
+              Looks up a localized string similar to all-day.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarButtonNewText_list">
+            <summary>
+              Looks up a localized string similar to List.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarButtonNewText_todo">
+            <summary>
+              Looks up a localized string similar to To-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarButtonText_day">
+            <summary>
+              Looks up a localized string similar to Day.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarButtonText_list">
+            <summary>
+              Looks up a localized string similar to Period.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarButtonText_month">
+            <summary>
+              Looks up a localized string similar to Month.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarButtonText_today">
+            <summary>
+              Looks up a localized string similar to Today.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarButtonText_week">
+            <summary>
+              Looks up a localized string similar to Week.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_addHeader">
+            <summary>
+              Looks up a localized string similar to Create new calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_cancelButton">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_colorLabel">
+            <summary>
+              Looks up a localized string similar to Color:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_deleteButton">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_editHeader">
+            <summary>
+              Looks up a localized string similar to Edit calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_importHeader">
+            <summary>
+              Looks up a localized string similar to Import events.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_saveButton">
+            <summary>
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_textColorLabel">
+            <summary>
+              Looks up a localized string similar to Text color:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesDialog_timezoneLabel">
+            <summary>
+              Looks up a localized string similar to Time Zone:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesList_addNewCategoryLabel">
+            <summary>
+              Looks up a localized string similar to Add.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesList_calendarsHeader">
+            <summary>
+              Looks up a localized string similar to My Calendars.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesList_subscriptionsHeader">
+            <summary>
+              Looks up a localized string similar to Other Calendars.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarCategoriesList_subscriptionsManageLabel">
+            <summary>
+              Looks up a localized string similar to Manage.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_attachDeleteAllLabel">
+            <summary>
+              Looks up a localized string similar to Delete All.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_attachFilesFromDocuments">
+            <summary>
+              Looks up a localized string similar to Attach files from Documents.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_attachmentsLabelHelpInfo">
+            <summary>
+              Looks up a localized string similar to All documents will be with access rights &apos;Read only&apos; for guests.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_bytes">
+            <summary>
+              Looks up a localized string similar to B.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_copyFilesToMyDocumentsBtn">
+            <summary>
+              Looks up a localized string similar to Copy to &apos;My documents&apos;.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_copyFileToMyDocumentsFolderErrorMsg">
+            <summary>
+              Looks up a localized string similar to Error occured while copying file.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_copyingToMyDocumentsLabel">
+            <summary>
+              Looks up a localized string similar to Copying to &apos;My documents&apos; folder.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_documentAccessDeniedError">
+            <summary>
+              Looks up a localized string similar to Access to the document is denied..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_emptyFileNotSupportedError">
+            <summary>
+              Looks up a localized string similar to Empty files are not supported..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_executableWarning">
+            <summary>
+              Looks up a localized string similar to executable files may be not allowed by some services (e.g. Gmail).
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_filesCannotBeAttachedAsLinks_Body">
+            <summary>
+              Looks up a localized string similar to You have &quot;View Only&quot; access rights for some attached file, thus you will not be able to share them with others. {0}{0} These files can be copied to the &quot;My documents&quot; folder and attached as links afterward. {0}{0} Alternatively you can ask document owners to give you &quot;Full Access&quot; permissions to the files you want to attach as links and repeat the operation once again..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_filesCannotBeAttachedAsLinks_Header">
+            <summary>
+              Looks up a localized string similar to Some files cannot be attached as links..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_fileSizeError">
+            <summary>
+              Looks up a localized string similar to Size of attachment exceeds limit..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_insertedViaLink">
+            <summary>
+              Looks up a localized string similar to Inserted via link.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_kilobytes">
+            <summary>
+              Looks up a localized string similar to KB.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_label">
+            <summary>
+              Looks up a localized string similar to Attachments:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_limitLabel">
+            <summary>
+              Looks up a localized string similar to Note: the file size must not exceed %1 MB..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_megabytes">
+            <summary>
+              Looks up a localized string similar to MB.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_multimediaFilesCannotBeAttached_Body">
+            <summary>
+              Looks up a localized string similar to In the trial version, files in uneditable formats (.jpg, .mp3, .mp4, .webp, etc.) cannot be sent as external links..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_multimediaFilesCannotBeAttached_Header">
+            <summary>
+              Looks up a localized string similar to Files in this format cannot be sent as links.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_uploadedLabel">
+            <summary>
+              Looks up a localized string similar to Uploaded.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_uploadFile">
+            <summary>
+              Looks up a localized string similar to Upload file.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_uploadingLabel">
+            <summary>
+              Looks up a localized string similar to Uploading.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventAttachments_warningLabel">
+            <summary>
+              Looks up a localized string similar to Warning.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_addHeader">
+            <summary>
+              Looks up a localized string similar to Create new event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alert15Minutes">
+            <summary>
+              Looks up a localized string similar to 15 minutes.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alert2Hours">
+            <summary>
+              Looks up a localized string similar to 2 hours.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alert30Minutes">
+            <summary>
+              Looks up a localized string similar to half an hour.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alert5Minutes">
+            <summary>
+              Looks up a localized string similar to 5 minutes.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alertDay">
+            <summary>
+              Looks up a localized string similar to a day.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alertDefault">
+            <summary>
+              Looks up a localized string similar to default.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alertHour">
+            <summary>
+              Looks up a localized string similar to an hour.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alertLabel">
+            <summary>
+              Looks up a localized string similar to Alert:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_alertNever">
+            <summary>
+              Looks up a localized string similar to never.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_allDayEvent">
+            <summary>
+              Looks up a localized string similar to This is all-day event..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_allDayLabel">
+            <summary>
+              Looks up a localized string similar to All-day event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_attendeesLabel">
+            <summary>
+              Looks up a localized string similar to Guests:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_attendeesLabelHelpInfo">
+             <summary>
+               Looks up a localized string similar to Start typing an email address or  a name from the list of your personal/CRM/portal 
+            users&apos; contacts, or add any other email to invite people to your event..
+             </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_calendarLabel">
+            <summary>
+              Looks up a localized string similar to Calendar:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_cancelButton">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_closeButton">
+            <summary>
+              Looks up a localized string similar to Close.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_deleteButton">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_descriptionLabel">
+            <summary>
+              Looks up a localized string similar to Description:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_detailsButton">
+            <summary>
+              Looks up a localized string similar to Details.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_editButton">
+            <summary>
+              Looks up a localized string similar to Edit.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_eventButton">
+            <summary>
+              Looks up a localized string similar to Event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_fromLabel">
+            <summary>
+              Looks up a localized string similar to From:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_headerCreate">
+            <summary>
+              Looks up a localized string similar to Create new event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_headerEdit">
+            <summary>
+              Looks up a localized string similar to Edit event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_headerView">
+            <summary>
+              Looks up a localized string similar to View event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_locationLabel">
+            <summary>
+              Looks up a localized string similar to Location:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_moreDetailsButtons">
+            <summary>
+              Looks up a localized string similar to More details.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_notAllDayEvent">
+            <summary>
+              Looks up a localized string similar to This event is not all-day..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_optionalParticipant">
+            <summary>
+              Looks up a localized string similar to Optional.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_organizerLabel">
+            <summary>
+              Looks up a localized string similar to Organizer:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_ownerLabel">
+            <summary>
+              Looks up a localized string similar to Owner:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_repeatCustom">
+            <summary>
+              Looks up a localized string similar to custom.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_repeatDaily">
+            <summary>
+              Looks up a localized string similar to every day.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_repeatLabel">
+            <summary>
+              Looks up a localized string similar to Repeat:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_repeatMonthly">
+            <summary>
+              Looks up a localized string similar to every month.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_repeatNever">
+            <summary>
+              Looks up a localized string similar to never.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_repeatWeekly">
+            <summary>
+              Looks up a localized string similar to every week.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_repeatYearly">
+            <summary>
+              Looks up a localized string similar to every year.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_requiredParticipant">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_saveButton">
+            <summary>
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_sentInvitationsLabel">
+            <summary>
+              Looks up a localized string similar to Send invitations.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_sharedUsersLabel">
+            <summary>
+              Looks up a localized string similar to Users for sharing.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_sharedUsersLink">
+            <summary>
+              Looks up a localized string similar to Add Users.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_sharingNoLabel">
+            <summary>
+              Looks up a localized string similar to This event is not shared..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_statusCancelled">
+            <summary>
+              Looks up a localized string similar to CANCELED.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_statusConfirmed">
+            <summary>
+              Looks up a localized string similar to CONFIRMED.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_statusLabel">
+            <summary>
+              Looks up a localized string similar to Status:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_statusTentative">
+            <summary>
+              Looks up a localized string similar to TENTATIVE.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_summaryLabel">
+            <summary>
+              Looks up a localized string similar to Event name:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_timeLabel">
+            <summary>
+              Looks up a localized string similar to Time:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_todoButton">
+            <summary>
+              Looks up a localized string similar to To-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_toLabel">
+            <summary>
+              Looks up a localized string similar to To:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarEventEditor_unsubscribeButton">
+            <summary>
+              Looks up a localized string similar to Unsubscribe.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarExportEvents_byLink">
+            <summary>
+              Looks up a localized string similar to Via link.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarExportEvents_fromFile">
+            <summary>
+              Looks up a localized string similar to From file.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarExportEvents_syncByLink">
+            <summary>
+              Looks up a localized string similar to Sync with a calendar via the link.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarImportEvents_calendarLabel">
+            <summary>
+              Looks up a localized string similar to Import to.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarListView_noEventsMessage">
+            <summary>
+              Looks up a localized string similar to There are no events to show..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarMiniCalendar_hideLabel">
+            <summary>
+              Looks up a localized string similar to Hide mini calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarMiniCalendar_showLabel">
+            <summary>
+              Looks up a localized string similar to Show mini calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarMoreEventsLabel">
+            <summary>
+              Looks up a localized string similar to +%d events.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarNewLabel">
+            <summary>
+              Looks up a localized string similar to New calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSharedList_addLink">
+            <summary>
+              Looks up a localized string similar to Add users for sharing.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSharedList_moreLink">
+            <summary>
+              Looks up a localized string similar to Show %d more users.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSharedList_title">
+            <summary>
+              Looks up a localized string similar to Shared with:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSubscriptionsDialog_header">
+            <summary>
+              Looks up a localized string similar to Edit calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSubscriptionsDialog_ownerLabel">
+            <summary>
+              Looks up a localized string similar to Owner:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSubscriptionsDialog_unsubscribeButton">
+            <summary>
+              Looks up a localized string similar to Hide from the list.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSubscriptionsManageDialog_cancelButton">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSubscriptionsManageDialog_qSearchText">
+            <summary>
+              Looks up a localized string similar to Quick search.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSubscriptionsManageDialog_saveButton">
+            <summary>
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarSubscriptionsManageDialog_title">
+            <summary>
+              Looks up a localized string similar to Manage other calendars.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodayLabel">
+            <summary>
+              Looks up a localized string similar to Today.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoDeleteDialog_dialogButton_apply">
+            <summary>
+              Looks up a localized string similar to Apply.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoDeleteDialog_dialogButton_cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoDeleteDialog_dialogHeader">
+            <summary>
+              Looks up a localized string similar to Delete to-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoDeleteDialog_dialogSingleBody">
+            <summary>
+              Looks up a localized string similar to The deleted to-do cannot be restored. Are you sure you want to continue?.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoEditor_descriptionLabel">
+            <summary>
+              Looks up a localized string similar to Description:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoEditor_dialogDateLabel">
+            <summary>
+              Looks up a localized string similar to Date:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoEditor_dialogHeader_add">
+            <summary>
+              Looks up a localized string similar to Create to-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoEditor_dialogHeader_edit">
+            <summary>
+              Looks up a localized string similar to Edit to-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoEditor_titleLabel">
+            <summary>
+              Looks up a localized string similar to Title:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoList_addTodoLabel">
+            <summary>
+              Looks up a localized string similar to New to-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoList_newTodoTitle">
+            <summary>
+              Looks up a localized string similar to new to-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoList_noDueDate">
+            <summary>
+              Looks up a localized string similar to No due date.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoList_Overdue">
+            <summary>
+              Looks up a localized string similar to Overdue.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarTodoList_title">
+            <summary>
+              Looks up a localized string similar to To-do.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarViewLabelText_calendar">
+            <summary>
+              Looks up a localized string similar to Calendar view.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.calendarViewLabelText_list">
+            <summary>
+              Looks up a localized string similar to List view.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.cancelledEventInfoText">
+            <summary>
+              Looks up a localized string similar to Event canceled.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_AddEventBody">
+            <summary>
+              Looks up a localized string similar to Would you like to send invitations to guests?.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_AddEventHeader">
+            <summary>
+              Looks up a localized string similar to Sending invitations.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_ButtonDontSend">
+            <summary>
+              Looks up a localized string similar to Do not Send.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_ButtonOk">
+            <summary>
+              Looks up a localized string similar to Ok.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_ButtonSend">
+            <summary>
+              Looks up a localized string similar to Send.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_ButtonSendCustoms">
+            <summary>
+              Looks up a localized string similar to New &amp; Removed Guests.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_ButtonSendEveryone">
+            <summary>
+              Looks up a localized string similar to Everyone.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_DeleteEventBody">
+            <summary>
+              Looks up a localized string similar to Would you like to send cancellations to existing guests?.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_DeleteEventHeader">
+            <summary>
+              Looks up a localized string similar to Sending cancellations.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_ErrorToastText">
+            <summary>
+              Looks up a localized string similar to An error occurred while sending notifications.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_SuccessToastText">
+            <summary>
+              Looks up a localized string similar to Notifications successfully sent.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_UpdateEventBody">
+            <summary>
+              Looks up a localized string similar to Would you like to send updates to existing guests?.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_UpdateEventHeader">
+            <summary>
+              Looks up a localized string similar to Sending updates.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.confirmPopup_UpdateGuestsBody">
+            <summary>
+              Looks up a localized string similar to Please select who you would like to notify about the updates: new and removed guests only or everyone. If you select the &apos;Do not Send&apos; option, no notifications will be sent. .
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.DeclinedCount">
+            <summary>
+              Looks up a localized string similar to Declined:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_allLabel">
+            <summary>
+              Looks up a localized string similar to All events in the series.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_applyBtn">
+            <summary>
+              Looks up a localized string similar to Apply.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_cancelBtn">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_followingLabel">
+            <summary>
+              Looks up a localized string similar to This event and all that follow.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_header">
+            <summary>
+              Looks up a localized string similar to Delete recurring event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_singleBody">
+            <summary>
+              Looks up a localized string similar to The deleted event cannot be restored. Are you sure you want to continue?.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_singleHeader">
+            <summary>
+              Looks up a localized string similar to Delete event.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.deleteSettings_thisLabel">
+            <summary>
+              Looks up a localized string similar to This event only.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.dialogCopyMessage">
+            <summary>
+              Looks up a localized string similar to Link has been copied to the clipboard.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.dialogErrorMassageSpecCharacter">
+            <summary>
+              Looks up a localized string similar to The title cannot contain any of the following characters: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.editorInfoText">
+            <summary>
+              Looks up a localized string similar to All subsequent changes will be applied to your calendar only..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.editorInfoTextSubscription">
+            <summary>
+              Looks up a localized string similar to Event guests will not be notified. Use your own calendars to send notifications..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.GuestsCount">
+            <summary>
+              Looks up a localized string similar to Guests:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_browseBtn">
+            <summary>
+              Looks up a localized string similar to Select file.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_closeBtn">
+            <summary>
+              Looks up a localized string similar to Close.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_description">
+            <summary>
+              Looks up a localized string similar to Use the following address to access your calendar from other applications. You can copy and enter this information into any calendar supporting iCal format. You can save the data into a file in iCal format and export the events into another calendar or application..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_caldav">
+            <summary>
+              Looks up a localized string similar to CalDAV.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_copy_button">
+            <summary>
+              Looks up a localized string similar to Copy.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_description">
+            <summary>
+              Looks up a localized string similar to To configure the export of events from this calendar to another calendar, copy the corresponding link and add it to the required calendar..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_header">
+            <summary>
+              Looks up a localized string similar to Export and Sync.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_help">
+            <summary>
+              Looks up a localized string similar to Find detailed instructions in the.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_help_center">
+            <summary>
+              Looks up a localized string similar to Help Center.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_ical">
+            <summary>
+              Looks up a localized string similar to iCal.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_todo_description">
+            <summary>
+              Looks up a localized string similar to To configure the export of to-dos to another calendar, copy the corresponding link and add it to the required calendar..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_export_try_again_button">
+            <summary>
+              Looks up a localized string similar to Try again.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_exportLink">
+            <summary>
+              Looks up a localized string similar to Export events from ONLYOFFICE™ calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_fileNotSelected">
+            <summary>
+              Looks up a localized string similar to no file is selected.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_fileSelected">
+            <summary>
+              Looks up a localized string similar to file is selected.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_header">
+            <summary>
+              Looks up a localized string similar to Calendar event export.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_importEventsLabel">
+            <summary>
+              Looks up a localized string similar to Import events.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_importExport">
+            <summary>
+              Looks up a localized string similar to Import/Export.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_importLinkNew">
+            <summary>
+              Looks up a localized string similar to Select iCal file.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_importtLink">
+            <summary>
+              Looks up a localized string similar to Import events into ONLYOFFICE™ calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_incorrectFormat">
+            <summary>
+              Looks up a localized string similar to Wrong format of the iCal file.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_inputLabel">
+            <summary>
+              Looks up a localized string similar to Enter the iCal feed link.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_newLabel">
+            <summary>
+              Looks up a localized string similar to Calendar from iCal feed.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_preparing_error_message">
+            <summary>
+              Looks up a localized string similar to Link preparation failed.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_preparing_message">
+            <summary>
+              Looks up a localized string similar to Preparing the link for export.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.icalStream_savedLinkLabel">
+            <summary>
+              Looks up a localized string similar to iCal feed link:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.menuDeleteMarkedTodo">
+            <summary>
+              Looks up a localized string similar to Hide to-do marked as done on page load.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.menuSyncLinks">
+            <summary>
+              Looks up a localized string similar to Export and Sync.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.menuTodoInCalendar">
+            <summary>
+              Looks up a localized string similar to Show to-dos in the calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSetting_fromLabel">
+            <summary>
+              Looks up a localized string similar to starting with.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_afterLabel">
+            <summary>
+              Looks up a localized string similar to after.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_aliasLabel">
+            <summary>
+              Looks up a localized string similar to every.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_cancelBtn">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_eachLabel">
+            <summary>
+              Looks up a localized string similar to every.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_firstLabel">
+            <summary>
+              Looks up a localized string similar to first.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_header">
+            <summary>
+              Looks up a localized string similar to Recurrence setup.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_intervalDay">
+            <summary>
+              Looks up a localized string similar to day.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_intervalMonth">
+            <summary>
+              Looks up a localized string similar to month.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_intervalWeek">
+            <summary>
+              Looks up a localized string similar to week.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_intervalYear">
+            <summary>
+              Looks up a localized string similar to year.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_lastLabel">
+            <summary>
+              Looks up a localized string similar to last.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_onDays">
+            <summary>
+              Looks up a localized string similar to days.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_onLabel">
+            <summary>
+              Looks up a localized string similar to by.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_onMonths">
+            <summary>
+              Looks up a localized string similar to months.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_onWeeks">
+            <summary>
+              Looks up a localized string similar to weeks.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_onYears">
+            <summary>
+              Looks up a localized string similar to years.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_optionCount">
+            <summary>
+              Looks up a localized string similar to number of times.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_optionDate">
+            <summary>
+              Looks up a localized string similar to date.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_optionNever">
+            <summary>
+              Looks up a localized string similar to never.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_penultimateLabel">
+            <summary>
+              Looks up a localized string similar to last but one.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_saveBtn">
+            <summary>
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_secondLabel">
+            <summary>
+              Looks up a localized string similar to second.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_thirdLabel">
+            <summary>
+              Looks up a localized string similar to third.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_timesLabel">
+            <summary>
+              Looks up a localized string similar to times.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.repeatSettings_toLabel">
+            <summary>
+              Looks up a localized string similar to end.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.replyAnswerMaybe">
+            <summary>
+              Looks up a localized string similar to Maybe.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.replyAnswerNo">
+            <summary>
+              Looks up a localized string similar to No.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.replyAnswerYes">
+            <summary>
+              Looks up a localized string similar to Yes.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.replyLabelText">
+            <summary>
+              Looks up a localized string similar to Attending.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.todoViewer_dialogButton_delete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.todoViewer_dialogButton_edit">
+            <summary>
+              Looks up a localized string similar to Edit.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.todoViewer_dialogButton_mark_off">
+            <summary>
+              Looks up a localized string similar to Mark as not done.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarJSResource.todoViewer_dialogButton_mark_on">
+            <summary>
+              Looks up a localized string similar to Mark as done.
+            </summary>
+        </member>
+        <member name="T:ASC.Web.Calendar.Resources.CalendarAddonResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarAddonResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarAddonResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarAddonResource.AddonDescription">
+            <summary>
+              Looks up a localized string similar to Organize your work schedule. Track tasks and milestones due dates. Get notifications about events..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarAddonResource.AddonName">
+            <summary>
+              Looks up a localized string similar to Calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarAddonResource.CalendarSharingSubscription">
+            <summary>
+              Looks up a localized string similar to Sharing of calendars &amp; events.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarAddonResource.EventAlertSubscription">
+            <summary>
+              Looks up a localized string similar to Event reminders.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Calendar.Resources.CalendarAddonResource.WholeCalendarModule">
+            <summary>
+              Looks up a localized string similar to Whole Calendar module.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,197 @@
+{
+  "methods": {
+    "GetCount": {
+      "memberof": "ApiCharacters",
+      "name": "GetCount",
+      "description": "<p>Returns a value that represents a number of objects in the collection.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "number"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetParent": {
+      "memberof": "ApiCharacters",
+      "name": "GetParent",
+      "description": "<p>Returns the parent object of the specified characters.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiRange"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "Delete": {
+      "memberof": "ApiCharacters",
+      "name": "Delete",
+      "description": "<p>Deletes the ApiCharacters object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null
+    },
+    "Insert": {
+      "memberof": "ApiCharacters",
+      "name": "Insert",
+      "description": "<p>Inserts a string replacing the specified characters.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "String",
+          "description": "<p>The string to insert.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetCaption": {
+      "memberof": "ApiCharacters",
+      "name": "SetCaption",
+      "description": "<p>Sets a string value that represents the text of the specified range of characters.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "Caption",
+          "description": "<p>A string value that represents the text of the specified range of characters.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetCaption": {
+      "memberof": "ApiCharacters",
+      "name": "GetCaption",
+      "description": "<p>Returns a string value that represents the text of the specified range of characters.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetText": {
+      "memberof": "ApiCharacters",
+      "name": "SetText",
+      "description": "<p>Sets the text for the specified characters.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "Text",
+          "description": "<p>The text to be set.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetText": {
+      "memberof": "ApiCharacters",
+      "name": "GetText",
+      "description": "<p>Returns the text of the specified range of characters.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetFont": {
+      "memberof": "ApiCharacters",
+      "name": "GetFont",
+      "description": "<p>Returns the ApiFont object that represents the font of the specified characters.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiFont"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Class representing characters in an object that contains text.\n\t * @constructor\n\t * @property {number} Count - The number of characters in the collection.\n\t * @property {ApiRange} Parent - The parent object of the specified characters.\n\t * @property {string} Caption - The text of the specified range of characters.\n\t * @property {string} Text - The string value representing the text of the specified range of characters.\n\t * @property {ApiFont} Font - The font of the specified characters.\n\t */",
+  "description": "<p>Class representing characters in an object that contains text.</p>",
+  "scope": "global",
+  "params": [],
+  "properties": [
+    {
+      "type": "number",
+      "name": "Count",
+      "description": "<p>The number of characters in the collection.</p>"
+    },
+    {
+      "type": "ApiRange",
+      "name": "Parent",
+      "description": "<p>The parent object of the specified characters.</p>"
+    },
+    {
+      "type": "string",
+      "name": "Caption",
+      "description": "<p>The text of the specified range of characters.</p>"
+    },
+    {
+      "type": "string",
+      "name": "Text",
+      "description": "<p>The string value representing the text of the specified range of characters.</p>"
+    },
+    {
+      "type": "ApiFont",
+      "name": "Font",
+      "description": "<p>The font of the specified characters.</p>"
+    }
+  ]
+}

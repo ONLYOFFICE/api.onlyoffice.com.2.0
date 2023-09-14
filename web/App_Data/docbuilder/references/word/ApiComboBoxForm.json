@@ -6,7 +6,8 @@
       "description": "<p>Returns the list values from the current combo box.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -23,7 +24,8 @@
       "description": "<p>Sets the list values to the current combo box.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -48,7 +50,8 @@
       "description": "<p>Selects the specified value from the combo box list values.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -73,7 +76,8 @@
       "description": "<p>Sets the text to the current combo box.\n<em>Available only for editable combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -95,10 +99,11 @@
     "IsEditable": {
       "memberof": "ApiComboBoxForm",
       "name": "IsEditable",
-      "description": "<p>Checks if the combo box text can be edited.</p>",
+      "description": "<p>Checks if the combo box text can be edited. If it is not editable, then this form is a dropdown list.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -115,7 +120,8 @@
       "description": "<p>Returns a type of the ApiFormBase class.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -132,7 +138,8 @@
       "description": "<p>Returns a type of the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -149,7 +156,8 @@
       "description": "<p>Returns the current form key.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -166,7 +174,8 @@
       "description": "<p>Sets a key to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -191,7 +200,8 @@
       "description": "<p>Returns the tip text of the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -208,7 +218,8 @@
       "description": "<p>Sets the tip text to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -233,7 +244,8 @@
       "description": "<p>Checks if the current form is required.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -250,7 +262,8 @@
       "description": "<p>Specifies if the current form should be required.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -275,7 +288,8 @@
       "description": "<p>Checks if the current form is fixed size.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -292,7 +306,8 @@
       "description": "<p>Converts the current form to a fixed size form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -323,7 +338,8 @@
       "description": "<p>Converts the current form to an inline form.\n<em>Picture form can't be converted to an inline form, it's always a fixed size object.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -340,7 +356,8 @@
       "description": "<p>Sets the border color to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -383,7 +400,8 @@
       "description": "<p>Sets the background color to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -423,10 +441,11 @@
     "GetText": {
       "memberof": "ApiComboBoxForm",
       "name": "GetText",
-      "description": "<p>Returns the text from the current form.</p>",
+      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -443,7 +462,8 @@
       "description": "<p>Clears the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [],
@@ -456,7 +476,8 @@
       "description": "<p>Returns a shape in which the form is placed to control the position and size of the fixed size form frame.\nThe null value will be returned for the inline forms.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -473,7 +494,8 @@
       "description": "<p>Sets the placeholder text to the current form.\n<em>Can't be set to checkbox or radio button.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -495,10 +517,11 @@
     "SetTextPr": {
       "memberof": "ApiComboBoxForm",
       "name": "SetTextPr",
-      "description": "<p>Sets the text properties to the current form.</p>",
+      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -520,10 +543,11 @@
     "GetTextPr": {
       "memberof": "ApiComboBoxForm",
       "name": "GetTextPr",
-      "description": "<p>Returns the text properties from the current form.</p>",
+      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -533,10 +557,29 @@
       ],
       "see": null,
       "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
+    },
+    "Copy": {
+      "memberof": "ApiComboBoxForm",
+      "name": "Copy",
+      "description": "<p>Copies the current form (copies with the shape if it exists).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiForm"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#Copy}"
     }
   },
-  "comment": "/**\n\t * Class representing a document combo box form.\n\t * @constructor\n\t * @property {boolean} editable - Specifies if the combo box text can be edited.\n\t * @property {boolean} autoFit - Specifies if the combo box form content should be autofit, i.e. whether the font size adjusts to the size of the fixed size form.\n\t * @property {Array.<string | Array.<string>>} items - The combo box items.\n     * This array consists of strings or arrays of two strings where the first string is the displayed value and the second one is its meaning.\n     * If the array consists of single strings, then the displayed value and its meaning are the same.\n     * Example: [\"First\", [\"Second\", \"2\"], [\"Third\", \"3\"], \"Fourth\"].\n\t * @extends {ApiFormBase}\n\t */",
-  "description": "<p>Class representing a document combo box form.</p>",
+  "events": {},
+  "comment": "/**\n\t * Class representing a document combo box / dropdown list.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @property {boolean} editable - Specifies if the combo box text can be edited.\n\t * @property {boolean} autoFit - Specifies if the combo box form content should be autofit, i.e. whether the font size adjusts to the size of the fixed size form.\n\t * @property {Array.<string | Array.<string>>} items - The combo box items.\n     * This array consists of strings or arrays of two strings where the first string is the displayed value and the second one is its meaning.\n     * If the array consists of single strings, then the displayed value and its meaning are the same.\n     * Example: [\"First\", [\"Second\", \"2\"], [\"Third\", \"3\"], \"Fourth\"].\n\t * @extends {ApiFormBase}\n\t */",
+  "description": "<p>Class representing a document combo box / dropdown list.</p>",
   "scope": "global",
   "params": [],
   "properties": [

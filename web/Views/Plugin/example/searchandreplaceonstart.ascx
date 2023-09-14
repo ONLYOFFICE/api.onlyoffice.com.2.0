@@ -22,8 +22,8 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Usage</div>
 
 <ol>
-    <li>Enter any text into the document (for this example it is <em>ONLYOFFICE</em>).</li>
-    <li>In the plugin code enter the replacement text in <b>replaceString</b> parameter.</li>
+    <li>Enter any text into the document (in this example, it is <em>ONLYOFFICE</em>).</li>
+    <li>In the plugin code, enter the replacement text in <b>replaceString</b> parameter.</li>
     <li>Reopen the document.</li>
 </ol>
 
@@ -32,8 +32,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/searchAndReplaceOnStart" target="_blank">https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/searchAndReplaceOnStart</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
-    <li>Icons</li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>code.js</em></li>
 </ol>
 
 
@@ -69,11 +68,11 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul>
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#onDocumentContentReady">onDocumentContentReady</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onDocumentContentReady") %>">onDocumentContentReady</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/searchandreplace") %>">executeMethod ("SearchAndReplace")</a></li>
+    <li><a href="<%= Url.Action("executemethod/text/searchandreplace") %>">executeMethod ("SearchAndReplace")</a></li>
 </ul>
 
 

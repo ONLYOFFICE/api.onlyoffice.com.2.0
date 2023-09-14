@@ -76,6 +76,7 @@ window.AscDesktopEditor.execCommand("portal:login", JSON.stringify({
                 </tr>
             </tbody>
         </table>
+        <div class="mobile-content"></div>
 
         <div class="header-gray">Example</div>
         <pre>
@@ -140,6 +141,7 @@ window.AscDesktopEditor.execCommand("portal:checkpwd", JSON.stringify({
                 </tr>
             </tbody>
         </table>
+        <div class="mobile-content"></div>
 
         <div class="header-gray">Example</div>
         <pre>

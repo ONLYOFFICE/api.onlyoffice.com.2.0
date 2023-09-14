@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -23,30 +23,87 @@
  *
 */
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
-using ASC.Web.Core.Files;
+
 using JWT;
 using JWT.Algorithms;
+
+using System.Text.RegularExpressions;
+using System.Web.Configuration;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace ASC.Api.Web.Help.Helpers
 {
     [DataContract(Name = "EditorConfiguration", Namespace = "")]
     public class Config
     {
+        public static string GetSignatureSecret()
+        {
+            var result = WebConfigurationManager.AppSettings["files.docservice.secret"] ?? "";
+
+            var regex = new Regex(@"^\s+$");
+
+            if (regex.IsMatch(result))
+                result = "";
+
+            return result;
+        }
+
+        public class JwtSerializer : IJsonSerializer
+        {
+            private class CamelCaseExceptDictionaryKeysResolver : CamelCasePropertyNamesContractResolver
+            {
+                protected override JsonDictionaryContract CreateDictionaryContract(Type objectType)
+                {
+                    var contract = base.CreateDictionaryContract(objectType);
+
+                    contract.DictionaryKeyResolver = propertyName => propertyName;
+
+                    return contract;
+                }
+            }
+
+            public string Serialize(object obj)
+            {
+                var settings = new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCaseExceptDictionaryKeysResolver(),
+                    NullValueHandling = NullValueHandling.Ignore,
+                };
+
+                return JsonConvert.SerializeObject(obj, Formatting.Indented, settings);
+            }
+
+            public T Deserialize<T>(string json)
+            {
+                var settings = new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCaseExceptDictionaryKeysResolver(),
+                    NullValueHandling = NullValueHandling.Ignore,
+                };
+
+                return JsonConvert.DeserializeObject<T>(json, settings);
+            }
+        }
+
         public static string Serialize(Config config)
         {
-            if (!string.IsNullOrEmpty(FileUtility.SignatureSecret))
+            var signatureSecret = GetSignatureSecret();
+
+            if (!string.IsNullOrEmpty(signatureSecret))
             {
-                var serializer = new DocumentService.JwtSerializer();
+                var serializer = new JwtSerializer();
                 var urlEncoder = new JwtBase64UrlEncoder();
                 var algorithm = new HMACSHA256Algorithm();
                 var encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
 
-                config.Token = encoder.Encode(config, FileUtility.SignatureSecret);
+                config.Token = encoder.Encode(config, signatureSecret);
             }
 
             using (var ms = new MemoryStream())
@@ -258,6 +315,9 @@ namespace ASC.Api.Web.Help.Helpers
 
                 [DataMember(Name = "hideRulers", EmitDefaultValue = false)]
                 public bool? HideRulers;
+
+                [DataMember(Name = "integrationMode", EmitDefaultValue = false)]
+                public string IntegrationMode;
 
                 [DataMember(Name = "logo", EmitDefaultValue = false)]
                 public LogoConfig Logo;

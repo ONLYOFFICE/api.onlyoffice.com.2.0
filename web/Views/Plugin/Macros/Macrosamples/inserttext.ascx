@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Insert text into the document at the current cursor position.</p>
+<p class="dscr">Inserts text into the document at the current cursor position.</p>
 
 <pre>(function()
 {
@@ -26,4 +26,4 @@
 
 <div class="header-gray">Result</div>
 <br/>
-<img alt="Chart" src="<%= Url.Content("~/content/img/plugins/insert-text.png") %>" />
+<img class="screenshot max-width-832" alt="Chart" src="<%= Url.Content("~/content/img/plugins/insert-text.png") %>" />

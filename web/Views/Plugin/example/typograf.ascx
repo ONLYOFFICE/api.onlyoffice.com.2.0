@@ -50,15 +50,16 @@
 
 <div class="header-gray">Plugin structure</div>
 
-<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/plugin-typograf" target="_blank">https://github.com/ONLYOFFICE/plugin-typograf</a>.</p>
+<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/typograf" target="_blank">https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/typograf</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>typograf.js</em></li>
     <li>Icons</li>
+    <li>The <em>translations</em> folder contains translations into Russian, Belarusian, Ukrainian, Bulgarian, Catalan, Danish, German, Spanish, Greek, Finnish, Hungarian, Latvian, Norwegian, Polish, Romanian, Slovak, Slovenian, Swedish, Italian, Dutch, and French.</li>
     <li>Third-party services:
         <ul>
-            <li><b>jQuery</b> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development (<a href="https://jquery.com" target="_blank">https://jquery.com</a>). License: <a href="https://github.com/ONLYOFFICE/plugin-typograf/blob/master/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
-            <li><b>Select2</b> gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options (<a href="https://select2.org/" target="_blank">https://select2.org/</a>). License: <a href="https://github.com/ONLYOFFICE/plugin-typograf/blob/master/licenses/Select2.license" target="_blank">MIT</a>.</li>
-            <li><b>Typograf</b> - screen typography for typesetting text (<a href="https://github.com/typograf/typograf" target="_blank">https://github.com/typograf/typograf</a>). License: <a href="https://github.com/ONLYOFFICE/plugin-typograf/blob/master/licenses/Typograf.license" target="_blank">MIT License</a>.</li>
+            <li><a href="https://jquery.com" target="_blank">jQuery</a> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
+            <li><a href="https://select2.org/" target="_blank">Select2</a> gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/Select2.license" target="_blank">MIT</a>.</li>
+            <li><a href="https://github.com/typograf/typograf" target="_blank">Typograf</a> - screen typography for typesetting text. License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/Typograf.license" target="_blank">MIT License</a>.</li>
         </ul>
     </li>
 </ol>
@@ -69,38 +70,57 @@
 {
     "name": "Typograf",
     "nameLocale": {
-        "ru": "&#1058;&#1080;&#1087;&#1086;&#1075;&#1088;&#1072;&#1092;",
         "fr": "Typograf",
         "es": "Typograf",
         "de": "Typograf"
     },
     "guid": "asc.{55159EC6-C91A-4DDB-8E1E-558454666461}",
+    "version": "1.0.0",
 
     "variations": [
         {
-            "description": "Typograf",
+            "description": "Prepare your texts for publishing by correcting typography.",
             "descriptionLocale": {
-                "ru": "&#1058;&#1080;&#1087;&#1086;&#1075;&#1088;&#1072;&#1092;",
-                "fr": "Typograf",
-                "es": "Typograf",
-                "de": "Typograf"
+                "fr": "Pr&#233;parez vos textes pour la publication en corrigeant la typographie.",
+                "es": "Prepare sus textos para la publicaci&#243;n corrigiendo la tipograf&#237;a.",
+                "de": "Bereiten Sie Ihre Texte f&#252;r die Ver&#246;ffentlichung vor, indem Sie Typografie korrigieren."
             },
             "url": "index.html",
 
-            "icons": [ "resources/img/icon.png", "resources/img/icon@2x.png"],
+            "icons": [ "resources/img/icon.png", "resources/img/icon@2x.png" ],
+            "icons2": [
+                {
+                    "100%": { "normal": "resources/img/icon.png" },
+                    "125%": { "normal": "resources/img/icon@1.25x.png" },
+                    "150%": { "normal": "resources/img/icon@1.5x.png" },
+                    "175%": { "normal": "resources/img/icon@1.75x.png" },
+                    "200%": { "normal": "resources/img/icon@2x.png" }
+                }
+			],
             "isViewer": true,
-            "EditorsSupport": [ "word" ],
+            "EditorsSupport": [ "word", "slide", "cell" ],
 
             "isVisual": true,
             "isModal": false,
             "isInsideMode": true,
 
-            "initDataType": "none",
+            "initDataType": "text",
             "initData": "",
 
             "buttons": [],
 
-            "initOnSelectionChanged": true
+            "initOnSelectionChanged": true,
+            "store": {
+                "background": {
+                    "light" : "#AE1717",
+                    "dark" : "#AE1717"
+                },
+                "screenshots" : ["resources/store/screenshots/screen_1.png"],
+                "icons"       : {
+                    "light" : "resources/store/icons",
+                    "dark"  : "resources/store/icons"
+                }
+            }
         }
     ]
 }
@@ -110,16 +130,20 @@
 <div class="header-gray">Methods and events</div>
 
 <ul class="columns-2">
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#onExternalMouseUp">onExternalMouseUp</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onExternalMouseUp") %>">onExternalMouseUp</a></li>
+    <li><a href="<%= Url.Action("events/onTranslate") %>">onTranslate</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/getselectedtext") %>">executeMethod ("GetSelectedText")</a></li>
-    <li><a href="<%= Url.Action("executemethod/pastetext") %>">executeMethod ("PasteText")</a></li>
-    <li><a href="<%= Url.Action("info") %>#recalculate">info.recalculate</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/getselectedtext") %>">executeMethod ("GetSelectedText")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/getversion") %>">executeMethod ("GetVersion")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/pastetext") %>">executeMethod ("PasteText")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/replacetextsmart") %>">executeMethod ("ReplaceTextSmart")</a></li>
+    <li><a href="<%= Url.Action("scope") %>">Asc.scope object</a></li>
+    <li><a href="<%= Url.Action("info") %>#editorType">info.editorType</a></li>
 </ul>
 
 
 <div class="header-gray">Support</div>
 
-<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/issues" target="_blank">GitHub</a>.</p>
+<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/issues" target="_blank">GitHub</a>.</p>

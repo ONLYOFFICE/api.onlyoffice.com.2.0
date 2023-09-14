@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Set the background color of the cell <b>B3</b> to blue.</p>
+<p class="dscr">Sets the background color of the cell <b>B3</b> to blue.</p>
 
 <pre>(function()
 {
@@ -29,4 +29,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Background color" src="<%= Url.Content("~/content/img/plugins/background_color.png") %>" />
+<img class="screenshot max-width-832" alt="Background color" src="<%= Url.Content("~/content/img/plugins/background_color.png") %>" />

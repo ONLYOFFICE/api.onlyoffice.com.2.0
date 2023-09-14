@@ -26,11 +26,11 @@
 <h2 id="Windows" class="copy-link">For Windows</h2>
 <h2 id="win-1" class="copy-link"><span class="style_step">Step 1. </span>Install ONLYOFFICE Docs</h2>
 <p>Download and install <a href="<%= Url.Action("demopreview") %>">ONLYOFFICE Docs</a> (packaged as Document Server).</p>
-<p>See the detailed guide to learn how to install Document Server <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-windows.aspx?from=api_javaspring_example">for Windows</a>.</p>
+<p>See the detailed guide to learn how to install Document Server <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-windows.aspx?from=api_javaspring_example" target="_blank">for Windows</a>.</p>
 
 <h2 id="win-2" class="copy-link"><span class="style_step">Step 2. </span>Download the Java code for the editors integration</h2>
 <p>Download the <a href="<%= Url.Action("demopreview") %>">Java-Spring example</a> from our site.</p>
-<p>To connect the editors to your website, specify the path to the editors installation, server port and the path to the storage folder in the <em>\src\main\resources\application.properties</em> file:</p>
+<p>To connect the editors to your website, specify the path to the editors installation, server port and the path to the storage folder in the <em>src/main/resources/application.properties</em> file:</p>
 
 <pre>
 files.storage=
@@ -46,8 +46,8 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
 <p>To run the Java-Spring example code, install the Java version 11 appropriate for your OS and framework <b>Apache Maven</b>:</p>
 
 <ul>
-    <li><b>Java</b> (download from  <a href="https://www.oracle.com/java/technologies/downloads/#java11">the Oracle official website</a>);</li>
-    <li><b>Apache Maven</b> (download from <a href="https://maven.apache.org/download.cgi">the official website</a>).</li>
+    <li><b>Java</b> (download from  <a href="https://www.oracle.com/java/technologies/downloads/#java11" target="_blank">the Oracle official website</a>);</li>
+    <li><b>Apache Maven</b> (download from <a href="https://maven.apache.org/download.cgi" target="_blank">the official website</a>).</li>
 </ul>
 
 <h2 id="win-4" class="copy-link"><span class="style_step">Step 4. </span>Set environment variables</h2>
@@ -127,22 +127,18 @@ http://server.address:server.port/
 <h2 id="Linux" class="copy-link">For Linux</h2>
 <h2 id="linux-1" class="copy-link"><span class="style_step">Step 1. </span>Install ONLYOFFICE Docs</h2>
 <p>Download and install <a href="<%= Url.Action("demopreview") %>">ONLYOFFICE Docs</a> (packaged as Document Server).</p>
-<p>See the detailed guide to learn how to install Document Server <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-ubuntu.aspx?from=api_javaspring_example">for Linux</a>.</p>
+<p>See the detailed guide to learn how to install Document Server <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-ubuntu.aspx?from=api_javaspring_example" target="_blank">for Linux</a>.</p>
 
 <h2 id="linux-2" class="copy-link"><span class="style_step">Step 2. </span>Install the prerequisites and run the website with the editors</h2>
 <ol>
-    <li>Install <b>Java</b>:
-        <span class="commandline">sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java11-installer</span>
-    </li>
+    <li>Install <b>Java</b> following the instructions <a href="https://docs.oracle.com/en/java/javase/20/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8" target="_blank">here</a>.
     <li>
         <p>There are two ways to get the Java-Spring example:</p>
         <ul>
             <li>
                 <p>download the archive with the Java-Spring example and unpack it:</p>
-                <span class="commandline">wget https://api.onlyoffice.com/app_data/editor/Java-Spring%20Example.zip</span>
-                <span class="commandline">unzip Java-Spring\ Example.zip</span>
+                <span class="commandline">wget https://github.com/ONLYOFFICE/document-server-integration/releases/latest/download/Java.Spring.Example.zip</span>
+                <span class="commandline">unzip Java\ Spring\ Example.zip</span>
             </li>
             <li>
                 <p>clone the git repository:</p>
@@ -155,7 +151,7 @@ sudo apt-get install oracle-java11-installer</span>
         <ul>
             <li>
                 <p>in the archive:</p>
-                <div class="commandline">cd Java-Spring\ Example</div>
+                <div class="commandline">cd Java\ Spring\ Example/</div>
             </li>
             <li>
                 <p>in the git repository:</p>
@@ -163,7 +159,7 @@ sudo apt-get install oracle-java11-installer</span>
             </li>
         </ul>
     </li>
-    <li>Edit the <em>application.properties</em> configuration file.
+    <li>Edit the <em>src/main/resources/application.properties</em> configuration file.
         Specify the name of your local server with the ONLYOFFICE Docs installed.
         <div class="commandline">nano src/main/resources/application.properties</div>
         <p>Edit the following lines:</p>
@@ -203,9 +199,43 @@ files.docservice.url.site=https://documentserver/
 
 <h2 id="Docker" class="copy-link">For Docker</h2>
 
+<h2 id="docker-1" class="copy-link"><span class="style_step">Step 1. </span>Install ONLYOFFICE Docs</h2>
+<p>Download and install <a href="<%= Url.Action("demopreview") %>">ONLYOFFICE Docs</a> (packaged as Document Server).</p>
+<p>See the detailed guide to learn how to install Document Server <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-docker.aspx?from=api_java_example" target="_blank">for Docker</a>.</p>
+
+<h2 id="docker-2" class="copy-link"><span class="style_step">Step 2. </span>Install the prerequisites and run the website with the editors</h2>
 <ol>
-    <li>Edit the <em>application.properties</em> configuration file.
-        Specify the name of your local server with the ONLYOFFICE Docs <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-docker.aspx">installed</a>.
+    <li>Install <b>Java</b> following the instructions <a href="https://docs.oracle.com/en/java/javase/20/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8" target="_blank">here</a>.
+    </li>
+    <li>
+        <p>There are two ways to get the Java-Spring example:</p>
+        <ul>
+            <li>
+                <p>download the archive with the Java-Spring example and unpack it:</p>
+                <span class="commandline">wget https://github.com/ONLYOFFICE/document-server-integration/releases/latest/download/Java.Spring.Example.zip</span>
+                <span class="commandline">unzip Java\ Spring\ Example.zip</span>
+            </li>
+            <li>
+                <p>clone the git repository:</p>
+                <span class="commandline">git clone https://github.com/ONLYOFFICE/document-server-integration.git</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <p>Change the current directory for the project directory:</p>
+        <ul>
+            <li>
+                <p>in the archive:</p>
+                <div class="commandline">cd Java\ Spring\ Example/</div>
+            </li>
+            <li>
+                <p>in the git repository:</p>
+                <div class="commandline">cd document-server-integration/web/documentserver-example/java-spring</div>
+            </li>
+        </ul>
+    </li>
+    <li>Edit the <em>src/main/resources/application.properties</em> configuration file.
+        Specify the name of your local server with the ONLYOFFICE Docs installed:
         <div class="commandline">nano src/main/resources/application.properties</div>
         <p>Edit the following lines:</p>
 
@@ -226,3 +256,11 @@ You can set an absolute path.</p>
         <div class="commandline">http://server.address:server.port/</div>
     </li>
 </ol>
+
+<h2 id="docker-3" class="copy-link"><span class="style_step">Step 3. </span>Check accessibility</h2>
+<p>
+    In case the example and Document Server are installed on different computers, make sure that your server with the example installed has access to the Document Server with the address which you specify instead of <b>documentserver</b> in the configuration files.
+    Make sure that the Document Server in its turn has access to the server with the example installed with the address which you specify instead of <b>example.com</b> in the configuration files.
+</p>
+
+<p>If you integrated the editors successfully the result should look like the <a href="<%= Url.Action("demopreview") %>#DemoPreview">demo preview</a> on our site.</p>

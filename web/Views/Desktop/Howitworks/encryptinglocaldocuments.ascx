@@ -94,8 +94,8 @@
 </pre>
 
 <p>As we can see from the code above, all files will be encrypted with one password - <em>{my-super-long-password}</em>. 
-The <a href="<%= Url.Action("executemethod/onencryption", "plugin") %>">OnEncryption</a>, <a href="<%= Url.Action("executemethod/startaction", "plugin") %>">StartAction</a>, 
-<a href="<%= Url.Action("executemethod/endaction", "plugin") %>">EndAction</a> methods can be found in the <b>Plugins and macros API documentation</b>.</p>
+The <a href="<%= Url.Action("executemethod/common/onencryption", "plugin") %>">OnEncryption</a>, <a href="<%= Url.Action("executemethod/common/startaction", "plugin") %>">StartAction</a>, 
+<a href="<%= Url.Action("executemethod/common/endaction", "plugin") %>">EndAction</a> methods can be found in the <b>Plugins and macros API documentation</b>.</p>
 
 <note>Please note that the <em>encryptData</em> and <em>decryptData</em> types of the <em>OnEncryption</em> method are not relevant for local files.</note>
 
@@ -149,7 +149,7 @@ It helps to use the <b>Encryption</b> plugin when necessary for the whole app.</
 </pre>
 
 <p>With it, we will get a new tab called <b>Encryption</b> on the main app page:</p>
-<img alt="Encryption exabled" width="832px" src="<%= Url.Content("~/content/img/desktop/encryption-enabled.png") %>" />
+<img class="screenshot max-width-832" alt="Encryption exabled" src="<%= Url.Content("~/content/img/desktop/encryption-enabled.png") %>" />
 
 <p>Enable encryption by ticking the checkbox:</p>
 <pre>

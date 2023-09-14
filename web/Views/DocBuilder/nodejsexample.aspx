@@ -65,7 +65,7 @@
             <div class="commandline">apt-get install nodejs</div>
         </li>
         <li>Download the archive with the Node.js Example and unpack the archive:
-        <div class="commandline">wget https://api.onlyoffice.com/app_data/docbuilder/Node.js%20Example.zip</div>
+        <div class="commandline">wget https://github.com/ONLYOFFICE/document-builder-integration/releases/latest/download/Node.js.Example.zip</div>
             <div class="commandline">unzip Node.js\ Example.zip</div>
         </li>
         <li>Change the current directory for the project directory:
@@ -79,7 +79,7 @@
             <p>Edit the following lines:</p>
 
             <pre>
-"builderPath": "/usr/bin/documentbuilder"
+"builderPath": "/usr/bin/docbuilder"
 </pre>
         </li>
         <li>Run the project with Node.js:

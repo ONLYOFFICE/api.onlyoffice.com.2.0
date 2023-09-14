@@ -1,0 +1,103 @@
+{
+  "methods": {
+    "GetAllForms": {
+      "memberof": "Api",
+      "name": "GetAllForms",
+      "description": "<p>Returns information about all the forms that have been added to the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ContentControl>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetFormsByTag": {
+      "memberof": "Api",
+      "name": "GetFormsByTag",
+      "description": "<p>Returns information about all the forms that have been added to the document with specified tag.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ContentControl>"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "tag",
+          "description": "<p>The form tag.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetFormValue": {
+      "memberof": "Api",
+      "name": "SetFormValue",
+      "description": "<p>Sets a value to the specified form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "internalId",
+          "description": "<p>A unique internal identifier of the form.</p>",
+          "optional": false
+        },
+        {
+          "type": "string | boolean",
+          "name": "value",
+          "description": "<p>Form value to be set. Its type depends on the form type.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetFormValue": {
+      "memberof": "Api",
+      "name": "GetFormValue",
+      "description": "<p>Returns a value of the specified form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "null",
+          "string",
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "internalId",
+          "description": "<p>A unique internal identifier of the form.</p>",
+          "optional": false
+        }
+      ]
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Returns information about all the forms that have been added to the document.\n\t * @memberof Api\n\t * @typeofeditors [\"CDE\"]\n\t * @alias GetAllForms\n\t * @returns {ContentControl[]} - An array with all the forms from the document.\n\t * @example\n\t * window.Asc.plugin.executeMethod(\"GetAllForms\");\n\t */",
+  "description": "<p>Returns information about all the forms that have been added to the document.</p>"
+}

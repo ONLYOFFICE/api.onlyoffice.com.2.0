@@ -35,18 +35,18 @@
     
     <h2 id="features" class="copy-link">Features</h2>
     <ul>
-        <li>Currently the following document formats can be opened and edited with this app: DOCX, XLSX, PPTX, CSV, TXT, DOCXF, OFORM.</li>
+        <li>Currently, the following document formats can be opened and edited with this app: DOCX, XLSX, PPTX, CSV, TXT, DOCXF, OFORM.</li>
         <li>The following formats are available for viewing only: PDF, DJVU, XPS.</li>
+        <li>The following formats can be converted into OOXML: DOC, DOCM, DOT, DOTX, EPUB, HTM, HTML, ODP, ODT, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM, RTF, XLS, XLSM, XLT, XLTM, XLTX.
+            ODT, ODS, and ODP are also available for instant conversion. After you enable the corresponding option in the admin settings, ODF-formatted documents are immediately converted in the editor and opened after you click on it.
+        </li>
         <li>
             The app will create an item in the <b>new (+)</b> menu to create <b>Document</b>, <b>Spreadsheet</b>, <b>Presentation</b>.
             It will also create a new <b>Open in ONLYOFFICE</b> menu option within the document library for Office documents.
             This allows multiple users to collaborate in real time and to save back those changes to ownCloud. 
             Co-editing is also available between several federated ownCloud instances connected to one Document Server.
         </li>
-        <li>Sharing files is possible with different permission types - viewing/editing, commenting, reviewing, filling forms. It's also possible to restrict downloading (in all editors) and modifying filters (in spreadshhets). Sharing via public link is also available.</li>
-        <li>The following formats can be converted into OOXML: DOC, DOCM, DOT, DOTX, EPUB, HTM, HTML, ODP, ODT, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM, RTF, XLS, XLSM, XLT, XLTM, XLTX. 
-            ODT, ODS, and ODP are also available for instant conversion. After you enable the corresponding option in the admin settings, ODF-formatted documents are immediately converted in the editor and opened after you click on it.
-        </li>
+        <li>Sharing files is possible with different permission types - viewing/editing, commenting, reviewing, filling forms. It's also possible to restrict downloading (in all editors) and modifying filters (in spreadsheets). Sharing via public link is also available.</li>
         <li>It is possible to work with documents, spreadsheets, and presentations within <b>ownCloud Web</b>.</li>
     </ul>
 
@@ -59,17 +59,16 @@
     <p>
         ONLYOFFICE Docs and ownCloud can be installed either on different computers, or on the same machine.
         In case you select the latter variant, you will need to set up a custom port for Document Server as by default both ONLYOFFICE Docs and ownCloud work on port 80.
-        Or you can use Document Server behind a proxy, please refer to <a href="https://helpcenter.onlyoffice.com/server/document/document-server-proxy.aspx">this article</a> to learn how you can configure it.
+        Or you can use Document Server behind a proxy, please refer to <a href="https://helpcenter.onlyoffice.com/server/document/document-server-proxy.aspx" target="_blank">this article</a> to learn how you can configure it.
     </p>
-    <p>The easiest way to start an instance of ONLYOFFICE Docs is to use <a href="https://github.com/ONLYOFFICE/Docker-DocumentServer" target="_blank">Docker</a>.</p>
     <p>You can also use our <a target="_blank" href="https://github.com/ONLYOFFICE/docker-onlyoffice-owncloud">Docker installation</a> to get installed and configured Document Server and ownCloud installation with a couple of commands.</p>
 
 
     <h2 id="install" class="copy-link">Installing ownCloud ONLYOFFICE integration app</h2>
     <p>
         The ownCloud administrator can install the integration app from the in-built application market.
-        For that click the upper-left hamburger menu and select <b>Market</b>.
-        After that find <b>ONLYOFFICE</b> in the list of available applications and install it.
+        To do this, click the upper-left hamburger menu and select <b>Market</b>.
+        After that, find <b>ONLYOFFICE</b> in the list of available applications and install it.
     </p>
     <p>
         If the server with the ownCloud installed does not have the Internet access, or if you need it for some other reason, the administrator can install the application manually.
@@ -95,13 +94,13 @@ git submodule update --init --recursive</span>
         <li>Change the owner to update the application right from ownCloud web interface:
             <span class="commandline">chown -R www-data:www-data onlyoffice</span>
         </li>
-        <li>In ownCloud open the <em>~/settings/admin?sectionid=apps&category=disabled</em> page with <b>Not enabled</b> apps by administrator and click <b>Enable</b> for the <b>ONLYOFFICE</b> application.</li>
+        <li>In ownCloud, open the <em>~/settings/admin?sectionid=apps&category=disabled</em> page with <b>Not enabled</b> apps by administrator and click <b>Enable</b> for the <b>ONLYOFFICE</b> application.</li>
     </ol>
 
 
     <h2 id="settings" class="copy-link">Configuring ownCloud ONLYOFFICE integration app</h2>
     <p>
-        In ownCloud open the <em>~/settings/admin?sectionid=additional#onlyoffice</em> page with administrative settings for <b>ONLYOFFICE</b> section.
+        In ownCloud, open the <em>~/settings/admin?sectionid=additional#onlyoffice</em> page with administrative settings for <b>ONLYOFFICE</b> section.
         Enter the following address to connect ONLYOFFICE Docs:
     </p>
     <span class="commandline">https://&lt;documentserver&gt;/</span>
@@ -120,11 +119,8 @@ git submodule update --init --recursive</span>
     </p>
     <img alt="Public" src="<%= Url.Content("~/content/img/editor/owncloud-public.jpg") %>" />
 
-    <p>
-        To restrict the access to ONLYOFFICE Docs and for security reasons and data integrity the encrypted signature is used.
-        Specify the <b>Secret key</b> in the ownCloud administrative configuration.
-        In the ONLYOFFICE Docs <a href="<%= Url.Action("signature") %>">config file</a> specify the same secret key and enable the validation.
-    </p>
+    <p>Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+        Specify your own <b>Secret key</b> in the ownCloud administrative configuration. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</p>
 
     <p>Enable or disable the <b>Open file in the same tab</b> setting.</p>
 
@@ -132,6 +128,12 @@ git submodule update --init --recursive</span>
         The <b>Open in ONLYOFFICE</b> action will be added to the file context menu.
         You can specify this action as default and it will be used when the file name is clicked for the selected file types.
     </p>
+
+    <h2 id="check-connection" class="copy-link">Checking the connection</h2>
+    <p>You can check the connection to ONLYOFFICE Docs by using the following occ command:</p>
+    <span class="commandline">occ onlyoffice:documentserver --check</span>
+    <p>You will see a text either with information about the successful connection or the cause of the error.</p>
+
 
     <h2 id="ownCloud-web" class="copy-link">Enabling editing for ownCloud Web</h2>
     <p>To enable work within <b>ownCloud Web</b>, register the connector in the ownCloud Web <em>config.json</em>:</p>
@@ -148,8 +150,10 @@ git submodule update --init --recursive</span>
     }
 ]
 </pre>
+    <p>Depending on your webserver configuration you can drop the <em>index.php</em> segment from the URL path.</p>
     
     <h2 id="howitworks" class="copy-link">How it works</h2>
+    <p>The ONLYOFFICE integration follows the API documented <a href="https://api.onlyoffice.com/editors/basic">here</a>.</p>
     <ol>
         <li>When creating a new file, the user navigates to a document folder within ownCloud and clicks the <b>Document</b>, <b>Spreadsheet</b> or <b>Presentation</b> item in the <b>new (+)</b> menu.</li>
         <li>
@@ -163,18 +167,16 @@ git submodule update --init --recursive</span>
             <ul>
                 <li><b>url</b> - the URL that ONLYOFFICE Docs uses to download the document;</li>
                 <li><b>callbackUrl</b> - the URL that ONLYOFFICE Docs informs about status of the document editing;</li>
-                <li><b>key</b> - the <em>UUID+Modified Timestamp</em> to instruct ONLYOFFICE Docs whether to download the document again or not;</li>
-                <li><b>title</b> - the document title (name);</li>
-                <li><b>id</b> - the user identification;</li>
-                <li><b>name</b> - the user name.</li>
+                <li><b>documentServerUrl</b> - the URL that the client needs to respond to ONLYOFFICE Document Server (can be set at the administrative settings page);</li>
+                <li><b>key</b> - the <em>UUID+Modified Timestamp</em> to instruct ONLYOFFICE Docs whether to download the document again or not.</li>
             </ul>
         </li>
         <li>ownCloud takes this object and constructs a page from <em>templates/editor.php</em> template, filling in all of those values so that the client browser can load up the editor.</li>
         <li>The client browser makes a request to the JavaScript library from ONLYOFFICE Docs and sends ONLYOFFICE Docs the DocEditor configuration with the above properties.</li>
         <li>Then ONLYOFFICE Docs downloads the document from ownCloud and the user begins editing.</li>
-        <li>ONLYOFFICE Docs sends a POST request to the <em>callback</em> URL to inform ownCloud that a user is editing the document.</li>
+        <li>ONLYOFFICE Docs sends a POST request to <em>callbackUrl</em> to inform ownCloud that a user is editing the document.</li>
         <li>When all users and client browsers are done with editing, they close the editing window.</li>
-        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to the <em>callback</em> URL letting ownCloud know that the clients have finished editing the document and closed it.</li>
+        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to <em>callbackUrl</em> letting ownCloud know that the clients have finished editing the document and closed it.</li>
         <li>ownCloud downloads a new version of the document, replacing the old one.</li>
     </ol>
 

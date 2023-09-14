@@ -1,0 +1,11 @@
+builder.CreateFile("xlsx");
+var oWorksheet = Api.GetActiveSheet();
+oWorksheet.GetRange("A1").SetValue("1");
+var oRange = oWorksheet.GetRange("A1");
+oRange.AddComment("This is just a number.");
+var oComment = oRange.GetComment();
+oWorksheet.GetRange("A3").SetValue("Comment: " + oComment.GetText());
+var sType = oComment.GetClassType();
+oWorksheet.GetRange("A4").SetValue("Type: " + sType + " (number of comment data type)");
+builder.SaveFile("xlsx", "ApiComment.xlsx");
+builder.CloseFile();

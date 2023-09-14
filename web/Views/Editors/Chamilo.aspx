@@ -39,13 +39,55 @@
     <p>The easiest way to start an instance of ONLYOFFICE Docs is to use <a href="https://github.com/onlyoffice/Docker-DocumentServer" target="_blank">Docker</a>.</p>
 
 
+    <h2 id="collect" class="copy-link">Collecting Chamilo ONLYOFFICE integration plugin</h2>
+    <ol>
+        <li>
+            <p>Get the latest version of the <a href="https://github.com/ONLYOFFICE/onlyoffice-chamilo" target="_blank">repository</a> running the command:</p>
+            <span class="commandline">git clone https://github.com/ONLYOFFICE/onlyoffice-chamilo
+cd onlyoffice-chamilo
+</span>
+        </li>
+        <li>
+            <p>Get a submodule:</p>
+            <span class="commandline">git submodule update --init --recursive</span>
+        </li>
+        <li>
+            <p>Collect all files:</p>
+            <span class="commandline">mkdir /tmp/onlyoffice-deploy
+mkdir /tmp/onlyoffice-deploy/onlyoffice
+cp -r ./ /tmp/onlyoffice-deploy/onlyoffice
+cd /tmp/onlyoffice-deploy/onlyoffice
+rm -rf ./.git*
+rm -rf */.git*
+</span>
+        </li>
+        <li>
+            <p>Archive the files obtained in the previous step:</p>
+            <span class="commandline">cd ../
+zip onlyoffice.zip -r onlyoffice
+</span>
+        </li>
+    </ol>
+
+
     <h2 id="install" class="copy-link">Installing Chamilo ONLYOFFICE integration plugin</h2>
     <p>To start using ONLYOFFICE Docs with Chamilo, the following steps must be performed:</p>
     <ol>
-        <li>Go to Chamilo <b>Administration</b>, choose <b>Plugins</b> and click the <b>Upload plugin</b> button.</li>
-        <li>Upload <em>onlyoffice.zip</em> (you'll find it <a href="https://github.com/ONLYOFFICE/onlyoffice-chamilo/releases" target="_blank">here</a>). You'll see the plugin list.</li>
+        <li>Go to Chamilo <b>Administration</b> and choose the <b>Plugins</b> section.</li>
+        <li>
+            <p>Select the ONLYOFFICE plugin and click the <b>Enable the selected plugins</b> button.</p>
+            <p>If you want more up-to-date versions of the plugin, you need to replace the pre-installed default plugin folder with the newly collected plugin:</p>
+            <span class="commandline">/var/www/html/chamilo-1.11.16/plugin/onlyoffice</span>
+            <p>where <b>chamilo-1.11.16</b> is your current Chamilo version.</p>
+        </li>
+    </ol>
+
+    <p>If your Chamilo version is lower than 1.11.16:</p>
+    <ol>
+        <li>Go to Chamilo <b>Administration</b>, choose the <b>Plugins</b> section, and click the <b>Upload plugin</b> button.</li>
+        <li>Upload <em>onlyoffice.zip</em> from the <b>Releases</b> section. You'll see the plugin list.</li>
         <li>Launch <em>composer install</em> from the Chamilo root folder.</li>
-        <li>Return to the plugin list, select the ONLYOFFICE plugin, and click <b>Enable the selected plugins</b>.</li>
+        <li>Return to the plugin list, select the ONLYOFFICE plugin, and click the <b>Enable the selected plugins</b> button.</li>
     </ol>
 
 
@@ -57,13 +99,16 @@
         The address must be accessible from the user browser and from the Chamilo server.
         The Chamilo server address must also be accessible from <b>ONLYOFFICE Docs</b> for correct work.
     </p>
+    <p>Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+        Specify your own <b>Secret key</b> on the Chamilo <b>Settings</b> page. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</p>
 
 
     <h2 id="howitworks" class="copy-link">How it works</h2>
+    <p>The ONLYOFFICE integration follows the API documented <a href="<%= Url.Action("basic") %>">here</a>.</p>
     <ol>
-        <li>To create a new file, the user opens the necessary folder and clicks the <b>Create new</b> ONLYOFFICE icon.</li>
+        <li>To create a new file, the teacher opens the necessary folder and clicks the <b>Create new</b> ONLYOFFICE icon.</li>
         <li>The user is redirected to the file creation page where they need to enter the file name and format (text document, spreadsheet, or presentation).
-            The browser calls the <em>/plugin/onlyoffice/create.php</em> method. It adds a copy of an empty file to the user folder.</li>
+            The browser calls the <em>/plugin/onlyoffice/create.php</em> method. It adds a copy of an empty file to the course folder.</li>
         <li>To open an existing file, the user chooses the <b>Open with ONLYOFFICE</b> icon.</li>
         <li>
             <p>The request is sent to <em>/plugin/onlyoffice/editor.php?docId="document identificator"</em>.

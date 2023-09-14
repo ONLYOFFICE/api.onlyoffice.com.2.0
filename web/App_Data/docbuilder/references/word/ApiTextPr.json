@@ -28,7 +28,11 @@
           "CDE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -51,7 +55,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -74,7 +82,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -97,7 +109,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -120,7 +136,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -143,7 +163,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -166,7 +190,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -187,7 +215,11 @@
           "CDE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -229,7 +261,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -247,7 +283,8 @@
       "description": "<p>Specifies a highlighting color which is added to the text properties and applied as a background to the contents of the current run/range/paragraph.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE, CPE"
+          "CDE",
+          "CPE"
         ]
       },
       "returns": [
@@ -277,7 +314,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -300,7 +341,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -323,7 +368,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -346,7 +395,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -367,7 +420,11 @@
           "CDE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -388,7 +445,11 @@
           "CDE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -409,7 +470,11 @@
           "CDE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -449,7 +514,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -460,8 +529,88 @@
           "optional": false
         }
       ]
+    },
+    "SetTextFill": {
+      "memberof": "ApiTextPr",
+      "name": "SetTextFill",
+      "description": "<p>Sets the text fill to the current text run.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiFill",
+          "name": "oApiFill",
+          "description": "<p>The color or pattern used to fill the text color.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetOutLine": {
+      "memberof": "ApiTextPr",
+      "name": "SetOutLine",
+      "description": "<p>Sets the text outline to the current text run.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the text outline.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ToJSON": {
+      "memberof": "ApiTextPr",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTextPr object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the used styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing the text properties.\n\t * @constructor\n\t */",
   "description": "<p>Class representing the text properties.</p>",
   "scope": "global",

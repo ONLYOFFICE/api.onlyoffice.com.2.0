@@ -903,8 +903,34 @@
           "optional": false
         }
       ]
+    },
+    "ToJSON": {
+      "memberof": "ApiParaPr",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiParaPr object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the used styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing the paragraph properties.\n\t * @constructor\n\t */",
   "description": "<p>Class representing the paragraph properties.</p>",
   "scope": "global",

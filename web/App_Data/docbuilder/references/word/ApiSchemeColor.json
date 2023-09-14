@@ -18,8 +18,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiSchemeColor",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiSchemeColor object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a Scheme Color.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a Scheme Color.</p>",
   "scope": "global",

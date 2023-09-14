@@ -2,7 +2,7 @@
     Title=""
     Language="C#"
     MasterPageFile="~/Views/Shared/Site.Master"
-    Inherits="System.Web.Mvc.ViewPage<List<string>>"
+    Inherits="System.Web.Mvc.ViewPage"
     ContentType="text/html" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
@@ -21,22 +21,26 @@
             <a href="https://www.onlyoffice.com/document-builder.aspx" class="button" target="blank">Download</a>
         </li>
 
-        <% if (Model != null && Model.Count > 0)
-           { %>
         <li>
             <p>Select the programming language and download the code for the sample of <b>ONLYOFFICE Document Builder</b> integration into your application</p>
             <ul class="list-buttons">
-                <% foreach (var example in Model)
-                   { %>
                 <li>
-                    <a class="button" href="<%= Url.Content("~/app_data/docbuilder/" + example.Replace("#", "%23")) %>" target="_blank">
-                        <%= example.TrimEnd(".zip".ToCharArray()) %>
-                    </a>
+                    <a class="button" href="https://github.com/ONLYOFFICE/document-builder-integration/releases/latest/download/DotNet.Csharp.Example.zip" target="_blank">DotNet.Csharp.Example</a>
                 </li>
-                <% } %>
+                <li>
+                    <a class="button" href="https://github.com/ONLYOFFICE/document-builder-integration/releases/latest/download/DotNet.Csharp.MVC.Example.zip" target="_blank">DotNet.Csharp.MVC.Example</a>
+                </li>
+                <li>
+                    <a class="button" href="https://github.com/ONLYOFFICE/document-builder-integration/releases/latest/download/Node.js.Example.zip" target="_blank">Node.js.Example</a>
+                </li>
+                <li>
+                    <a class="button" href="https://github.com/ONLYOFFICE/document-builder-integration/releases/latest/download/PHP.Example.zip" target="_blank">PHP.Example</a>
+                </li>
+                <li>
+                    <a class="button" href="https://github.com/ONLYOFFICE/document-builder-integration/releases/latest/download/Ruby.Example.zip" target="_blank">Ruby.Example</a>
+                </li>
             </ul>
         </li>
-        <% } %>
         <li>
             <p>Run the example on your computer to get acquainted with the basic <b>ONLYOFFICE Document Builder</b> features before you start creating your own application. If everything is alright you will see the example website page with the form elements like the ones below.</p>
         </li>

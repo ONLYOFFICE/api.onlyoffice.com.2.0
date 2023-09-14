@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Common</name>
+    </assembly>
+    <members>
+        <member name="M:ASC.Common.Threading.DistributedTaskQueue.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Name of queue</param>
+            <param name="maxThreadsCount">limit of threads count; Default: -1 - no limit</param>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.GetDomainMxRecords(System.String)">
+            <summary>
+            Get domain MX records
+            </summary>
+            <param name="domainName">domain name</param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>list of MxRecord</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.IsDomainMxRecordExists(System.String,System.String)">
+            <summary>
+            Check existance of MX record in domain DNS
+            </summary>
+            <param name="domainName">domain name</param>
+            <param name="mxRecord">MX record value</param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>true if exists and vice versa</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.IsDomainExists(System.String)">
+            <summary>
+            Check domain existance
+            </summary>
+            <param name="domainName"></param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <exception cref="T:System.SystemException">if DNS request failed</exception>
+            <returns>true if any DNS record exists and vice versa</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.GetDomainARecords(System.String)">
+            <summary>
+            Get domain A records
+            </summary>
+            <param name="domainName">domain name</param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>list of ARecord</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.GetDomainIPs(System.String)">
+            <summary>
+            Get domain IP addresses list
+            </summary>
+            <param name="domainName">domain name</param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>list of IPAddress</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.GetDomainTxtRecords(System.String)">
+            <summary>
+            Get domain TXT records
+            </summary>
+            <param name="domainName">domain name</param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>list of TxtRecord</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.IsDomainTxtRecordExists(System.String,System.String)">
+            <summary>
+            Check existance of TXT record in domain DNS
+            </summary>
+            <param name="domainName">domain name</param>
+            <param name="recordValue">TXT record value</param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>true if exists and vice versa</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.IsDomainDkimRecordExists(System.String,System.String,System.String)">
+            <summary>
+            Check existance of DKIM record in domain DNS
+            </summary>
+            <param name="domainName">domain name</param>
+            <param name="dkimSelector">DKIM selector (example is "dkim")</param>
+            <param name="dkimValue">DKIM record value</param>
+            <exception cref="T:System.ArgumentNullException">if domainName is empty</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>true if exists and vice versa</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.IsDomainPtrRecordExists(System.Net.IPAddress,System.String)">
+            <summary>
+            Check existance Domain in PTR record
+            </summary>
+            <param name="ipAddress">IP address for PTR check</param>
+            <param name="domainName">PTR domain name</param>
+            <exception cref="T:System.ArgumentNullException">if domainName or ipAddress is empty/null</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <returns>true if exists and vice versa</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.DnsLookup.IsDomainPtrRecordExists(System.String,System.String)">
+            <summary>
+            Check existance Domain in PTR record
+            </summary>
+            <param name="ipAddress">IP address for PTR check</param>
+            <param name="domainName">PTR domain name</param>
+            <exception cref="T:System.ArgumentNullException">if domainName or ipAddress is empty/null</exception>
+            <exception cref="T:System.ArgumentException">if domainName is invalid</exception>
+            <exception cref="T:System.FormatException">if ipAddress is invalid</exception>
+            <returns>true if exists and vice versa</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.IpAddressParser.ParseAddress(System.String)">
+            <summary>
+            Parse the address into an array
+            </summary>
+            <param name="value">Comma-separated string value (e.g. X-Forwarded-For request header)</param>
+            <returns>Address array</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.IpAddressParser.GetIpWithoutPort(System.String)">
+            <summary>
+            Returns IP address without port
+            </summary>
+            <param name="ip">IPv4 or IPv6 address with port (e.g. [::1]:80, 127.0.0.1:80)</param>
+            <returns>IP address without port</returns>
+        </member>
+        <member name="M:ASC.Common.Utils.StringUtils.NormalizeStringForMySql(System.String)">
+            <summary>
+            Removes control characters and other non-UTF-8 characters
+            </summary>
+            <param name="inString">The string to process</param>
+            <return>A string with no control characters or entities above 0x00FD</return>
+        </member>
+        <member name="M:ASC.Common.Utils.HtmlUtil.SearchTextHighlight(System.String,System.String,System.Boolean)">
+            <summary>
+            The function highlight all words in htmlText by searchText.
+            </summary>
+            <param name="searchText">the space separated string</param>
+            <param name="htmlText">html for highlight</param>
+            <param name="withoutLink"></param>
+            <returns>highlighted html</returns>
+        </member>
+    </members>
+</doc>

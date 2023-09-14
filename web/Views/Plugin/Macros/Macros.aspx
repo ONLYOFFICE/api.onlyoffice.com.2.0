@@ -36,9 +36,9 @@
         <li>Consult the <a href="<%= Url.Action("basic", "docbuilder") %>">API documentation</a> to write the script.</li>
         <li><a href="<%= Url.Action("writingmacros") %>">Write</a> code for your macro.</li>
         <li><b>Rename</b> your macro by clicking the corresponding button.</li>
-        <li>When ready, click <b>Run</b> to run your code in the document.</li>
+        <li>When ready, click <b>Run</b> to run your code in the document.</li>
     </ol>
-    <img alt="Macros window" src="<%= Url.Content("~/content/img/plugins/macro_window.png") %>" />
+    <img class="screenshot max-width-832" alt="Macros window" src="<%= Url.Content("~/content/img/plugins/macro_window.png") %>" />
 
     <p>If you want to delete an unnecessary macro, click the <b>Delete</b> button.</p>
 

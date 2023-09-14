@@ -15,6 +15,8 @@
         <li><a href="<%= Url.Action("wopi/proofkeys") %>">proof keys</a> which are used to check that the request is received from the online office;</li>
         <li>supported <a href="<%= Url.Action("wopi/restapi") %>">WOPI REST API</a> functions;</li>
         <li>available messages that can be posted via <a href="<%= Url.Action("wopi/postmessage") %>">PostMessage</a>;</li>
+        <li>request parameters for <a href="<%= Url.Action("wopi/conversionapi") %>">converting</a> different file formats in the online office;</li>
+        <li>a scheme for <a href="<%= Url.Action("wopi/editingbinary") %>">editing binary document formats</a>;</li>
         <li><a href="<%= Url.Action("wopi/apivswopi") %>">differences</a> between ONLYOFFICE Docs API and WOPI.</li>
     </ul>
 
@@ -58,6 +60,7 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>
 
     <div class="header-gray">Example</div>
     <pre>
@@ -89,7 +92,7 @@
             "allowed": false
         }
     ],
-    "useforrequest": true,
+    "useforrequest": false,
     "errorcode": 403
 }
 </pre>
@@ -107,6 +110,12 @@
         <li>Change the <em>"allowed"</em> rule that can be <b>true</b> or <b>false</b>.</li>
         <li>
             <p>Restart the services for the config changes to take effect:</p>
+            <p><b>For RPM/DEB packages:</b></p>
+            <pre>
+systemctl restart ds-*
+</pre>
+
+            <p><b>For Docker:</b></p>
             <pre>
 supervisorctl restart all
 </pre>

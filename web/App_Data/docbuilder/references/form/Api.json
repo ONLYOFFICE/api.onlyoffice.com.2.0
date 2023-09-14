@@ -3,7 +3,7 @@
     "CreateTextForm": {
       "memberof": "Api",
       "name": "CreateTextForm",
-      "description": "<p>Creates a text form with the specified text form properties.</p>",
+      "description": "<p>Creates a text field with the specified text field properties.</p>",
       "tags": {},
       "returns": [
         [
@@ -16,7 +16,7 @@
         {
           "type": "TextFormPr",
           "name": "oFormPr",
-          "description": "<p>Text form properties.</p>",
+          "description": "<p>Text field properties.</p>",
           "optional": false
         }
       ]
@@ -24,7 +24,7 @@
     "CreateCheckBoxForm": {
       "memberof": "Api",
       "name": "CreateCheckBoxForm",
-      "description": "<p>Creates a checkbox/radio button form with the specified checkbox/radio button form properties.</p>",
+      "description": "<p>Creates a checkbox / radio button with the specified checkbox / radio button properties.</p>",
       "tags": {},
       "returns": [
         [
@@ -37,7 +37,7 @@
         {
           "type": "CheckBoxFormPr",
           "name": "oFormPr",
-          "description": "<p>Checkbox/radio button form properties.</p>",
+          "description": "<p>Checkbox / radio button properties.</p>",
           "optional": false
         }
       ]
@@ -45,7 +45,7 @@
     "CreateComboBoxForm": {
       "memberof": "Api",
       "name": "CreateComboBoxForm",
-      "description": "<p>Creates a combo box/dropdown form with the specified combo box/dropdown form properties.</p>",
+      "description": "<p>Creates a combo box / dropdown list with the specified combo box / dropdown list properties.</p>",
       "tags": {},
       "returns": [
         [
@@ -58,7 +58,7 @@
         {
           "type": "ComboBoxFormPr",
           "name": "oFormPr",
-          "description": "<p>Combo box/dropdown form properties.</p>",
+          "description": "<p>Combo box / dropdown list properties.</p>",
           "optional": false
         }
       ]
@@ -85,6 +85,7 @@
       ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Base class\n\t * @global\n\t * @class\n\t * @name Api\n\t */",
   "description": "<p>Base class</p>",
   "scope": "global"

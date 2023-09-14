@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Portal</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Api.Portal.PortalApi">
+            <summary>
+             Portal information access.
+            </summary>
+            <name>portal</name>
+        </member>
+        <member name="P:ASC.Api.Portal.PortalApi.Name">
+            <summary>
+             Api name entry
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.Get">
+            <summary>
+            Returns the current portal.
+            </summary>
+            <short>
+            Get the current portal
+            </short>
+            <category>Settings</category>
+            <returns type="ASC.Core.Tenants.Tenant, ASC.Core.Common">Portal</returns>
+             <path>api/2.0/portal</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetUser(System.Guid)">
+            <summary>
+            Returns a user with the ID specified in the request from the current portal.
+            </summary>
+            <short>
+            Get a user by ID
+            </short>
+            <category>Users</category>
+            <param type="System.Guid, System" name="userID">User ID</param>
+            <returns type="ASC.Core.Users.UserInfo, ASC.Core.Common">User</returns>
+            <path>api/2.0/portal/users/{userID}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GeInviteLink(ASC.Core.Users.EmployeeType)">
+            <summary>
+            Returns an invitation link for joining the portal.
+            </summary>
+            <short>
+            Get an invitation link
+            </short>
+            <param type="ASC.Core.Users.EmployeeType, ASC.Core.Users" method="url" name="employeeType">
+             Employee type (User or Visitor)
+            </param>
+            <category>Users</category>
+            <returns>
+            Invitation link
+            </returns>
+            <path>api/2.0/portal/users/invite/{employeeType}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetShortenLink(System.String)">
+            <summary>
+            Returns a link specified in the request in the shortened format.
+            </summary>
+            <short>Get a shortened link</short>
+            <param type="System.String, System" name="link">Link</param>
+            <category>Settings</category>
+            <returns>Shortened link</returns>
+            <path>api/2.0/portal/getshortenlink</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetUsedSpace">
+            <summary>
+            Returns the used space of the current portal.
+            </summary>
+            <short>
+            Get the used portal space
+            </short>
+            <category>Quota</category>
+            <returns>Used space</returns>
+            <path>api/2.0/portal/usedspace</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetUsersCount">
+            <summary>
+            Returns a number of portal users.
+            </summary>
+            <short>
+            Get a number of portal users
+            </short>
+            <category>Users</category>
+            <returns>User count</returns>
+            <path>api/2.0/portal/userscount</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.UploadLicense(System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase})">
+            <summary>
+            Uploads a portal license specified in the request.
+            </summary>
+            <short>
+            Upload a license
+            </short>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="attachments">License attachments</param>
+            <category>Quota</category>
+            <returns>License</returns>
+            <path>api/2.0/portal/uploadlicense</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.ActivateLicense">
+            <summary>
+            Activates a license for the portal.
+            </summary>
+            <short>
+            Activate a license
+            </short>
+            <category>Quota</category>
+            <returns>License</returns>
+            <path>api/2.0/portal/activatelicense</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.ActivateTrial">
+            <summary>
+            Activates a trial license for the portal.
+            </summary>
+            <short>
+            Activate a trial license
+            </short>
+            <category>Quota</category>
+            <returns>Trial license</returns>
+            <path>api/2.0/portal/activatetrial</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetTenantExtra">
+            <summary>
+            Returns an extra tenant license for the portal.
+            </summary>
+            <short>
+            Get an extra tenant license
+            </short>
+            <category>Quota</category>
+            <returns>Extra tenant license information</returns>
+            <path>api/2.0/portal/tenantextra</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetTariff">
+            <summary>
+            Returns the current portal tariff.
+            </summary>
+            <short>
+            Get a portal tariff
+            </short>
+            <category>Quota</category>
+            <returns type="ASC.Core.Billing.Tariff, ASC.Core.Common">Tariff</returns>
+            <path>api/2.0/portal/tariff</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetQuota">
+            <summary>
+            Returns the current portal quota.
+            </summary>
+            <short>
+            Get a portal quota
+            </short>
+            <category>Quota</category>
+            <returns type="ASC.Core.Tenants.TenantQuota, ASC.Core.Common">Quota</returns>
+            <path>api/2.0/portal/quota</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetRightQuota">
+            <summary>
+            Returns the recommended quota for the current portal.
+            </summary>
+            <short>
+            Get the recommended quota
+            </short>
+            <category>Quota</category>
+            <returns type="ASC.Core.Tenants.TenantQuota, ASC.Core.Common">Quota</returns>
+            <path>api/2.0/portal/quota/right</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetFullAbsolutePath(System.String)">
+            <summary>
+            Returns the full absolute path to the current portal.
+            </summary>
+            <short>
+            Get a path to the portal
+            </short>
+            <param type="System.String, System" name="virtualPath">Portal virtual path</param>
+            <returns>Portal path</returns>
+            <path>api/2.0/portal/path</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetMessageCount">
+            <summary>
+            Returns a number of unread messages from the portal.
+            </summary>
+            <short>
+            Get a number of unread messages
+            </short>
+            <category>Talk</category>
+            <returns>Number of unread messages</returns>
+            <path>api/2.0/portal/talk/unreadmessages</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.RemoveXmppConnection(System.String)">
+            <summary>
+            Removes the XMPP connection specified in the request from the inner channel.
+            </summary>
+            <short>
+            Remove the XMPP connection
+            </short>
+            <category>Talk</category>
+            <param type="System.String, System" name="connectionId">Connection ID</param>
+            <returns>XMPP connection ID</returns>
+            <path>api/2.0/portal/talk/connection</path>
+            <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.AddXmppConnection(System.String,System.Byte)">
+            <summary>
+            Adds the XMPP connection to the inner channel.
+            </summary>
+            <short>
+            Add the XMPP connection
+            </short>
+            <category>Talk</category>
+            <param type="System.String, System" name="connectionId">Connection ID</param>
+            <param type="System.Byte, System" name="state">Service state</param>
+            <returns>Updated inner channel</returns>
+            <path>api/2.0/portal/talk/connection</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetState(System.String)">
+            <summary>
+            Returns the service state for the user with the name specified in the request.
+            </summary>
+            <short>
+            Get the service state
+            </short>
+            <category>Talk</category>
+            <param type="System.String, System" name="userName">User name</param>
+            <returns>State</returns>
+            <path>api/2.0/portal/talk/state</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.SendState(System.Byte)">
+            <summary>
+            Sends the service state specified in the request.
+            </summary>
+            <short>
+            Send the service state
+            </short>
+            <category>Talk</category>
+            <param type="System.Byte, System" name="state">Service state</param>
+            <returns>State</returns>
+            <path>api/2.0/portal/talk/state</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.SendMessage(System.String,System.String,System.String)">
+            <summary>
+            Sends a message to the user specified in the request.
+            </summary>
+            <short>
+            Send a message
+            </short>
+            <category>Talk</category>
+            <param type="System.String, System" name="to">User to whom a message will be sent</param>
+            <param type="System.String, System" name="text">Message text</param>
+            <param type="System.String, System" name="subject">Message subject</param>
+            <path>api/2.0/portal/talk/message</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetAllStates">
+            <summary>
+            Returns a dictionary of all the service states.
+            </summary>
+            <short>
+            Get service states
+            </short>
+            <category>Talk</category>
+            <returns>Dictionary of all the service states</returns>
+            <path>api/2.0/portal/talk/states</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetRecentMessages(System.String,System.Int32)">
+            <summary>
+            Returns all the recent messages.
+            </summary>
+            <short>
+            Get recent messages
+            </short>
+            <category>Talk</category>
+            <param type="System.String, System" name="calleeUserName">Callee user name</param>
+            <param type="System.Int32, System" name="id">ID</param>
+            <returns>Recent messages</returns>
+            <path>api/2.0/portal/talk/recentMessages</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.Ping(System.Byte)">
+            <summary>
+            Pings when a message is received.
+            </summary>
+            <short>
+            Ping
+            </short>
+            <category>Talk</category>
+            <param type="System.Byte, System" name="state">Service state</param>
+            <path>api/2.0/portal/talk/ping</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.RegisterMobileAppInstall(ASC.Core.Common.Notify.Push.MobileAppType)">
+            <summary>
+            Registers the mobile app installation.
+            </summary>
+            <short>
+            Register the mobile app installation
+            </short>
+            <category>Mobile</category>
+            <param type="ASC.Core.Common.Notify.Push.MobileAppType, ASC.Core.Common.Notify.Push" name="type">Mobile app type ("IosProjects", "AndroidProjects", "IosDocuments", "AndroidDocuments", or "DesktopEditor")</param>
+            <path>api/2.0/portal/mobile/registration</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetBackupSchedule">
+            <summary>
+            Returns the backup schedule for the current portal.
+            </summary>
+            <short>Get the backup schedule</short>
+            <category>Backup</category>
+            <returns type="ASC.Web.Studio.Core.Backup.BackupAjaxHandler.Schedule, ASC.Web.Studio">Backup schedule</returns>
+            <path>api/2.0/portal/getbackupschedule</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.CreateBackupSchedule(ASC.Core.Common.Contracts.BackupStorageType,System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}},System.Int32,ASC.Web.Studio.Core.Backup.BackupAjaxHandler.CronParams,System.Boolean)">
+            <summary>
+            Creates the backup schedule for the current portal with the parameters specified in the request.
+            </summary>
+            <short>Create the backup schedule</short>
+            <param type="ASC.Core.Common.Contracts.BackupStorageType, ASC.Core.Common.Contracts" name="storageType">Storage type ("Documents", "ThridpartyDocuments", "CustomCloud", "Local", "DataStore", or "ThirdPartyConsumer")</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String, System.String}}, System.Collections.Generic" name="storageParams">Storage parameters</param>
+            <param type="System.Int32, System" name="backupsStored">Maximum number of backup stored copies</param>
+            <param type="ASC.Web.Studio.Core.Backup.BackupAjaxHandler.CronParams, ASC.Web.Studio.Core.Backup" name="cronParams">Cron parameters</param>
+            <param type="System.Boolean, System" name="backupMail">Specifies if the mails will be included into the backup or not</param>
+            <category>Backup</category>
+            <path>api/2.0/portal/createbackupschedule</path>
+            <httpMethod>POST</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.DeleteBackupSchedule">
+            <summary>
+            Deletes the backup schedule for the current portal.
+            </summary>
+            <short>Delete the backup schedule</short>
+            <category>Backup</category>
+            <path>api/2.0/portal/deletebackupschedule</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.StartBackup(ASC.Core.Common.Contracts.BackupStorageType,System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}},System.Boolean)">
+            <summary>
+            Starts the backup of the current portal with the parameters specified in the request.
+            </summary>
+            <short>Start the backup</short>
+            <param type="ASC.Core.Common.Contracts.BackupStorageType, ASC.Core.Common.Contracts" name="storageType">Storage type ("Documents", "ThridpartyDocuments", "CustomCloud", "Local", "DataStore", or "ThirdPartyConsumer")</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String, System.String}}, System.Collections.Generic" name="storageParams">Storage parameters</param>
+            <param type="System.Boolean, System" name="backupMail">Specifies if the mails will be included into the backup or not</param>
+            <category>Backup</category>
+            <returns type="ASC.Core.Common.Contracts.BackupProgress, ASC.Core.Common">Backup progress</returns>
+            <path>api/2.0/portal/startbackup</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetBackupProgress">
+            <summary>
+            Returns the progress of the started backup.
+            </summary>
+            <short>Get the backup progress</short>
+            <category>Backup</category>
+            <returns type="ASC.Core.Common.Contracts.BackupProgress, ASC.Core.Common">Backup progress</returns>
+            <path>api/2.0/portal/getbackupprogress</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetBackupHistory">
+            <summary>
+            Returns the history of the started backup.
+            </summary>
+            <short>Get the backup history</short>
+            <category>Backup</category>
+            <returns type="ASC.Core.Common.Contracts.BackupHistoryRecord, ASC.Core.Common">Backup history</returns>
+            <path>api/2.0/portal/getbackuphistory</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.DeleteBackup(System.Guid)">
+            <summary>
+            Deletes the backup with the ID specified in the request.
+            </summary>
+            <short>Delete the backup</short>
+            <param type="System.Guid, System" name="id">Backup ID</param>
+            <category>Backup</category>
+            <path>api/2.0/portal/deletebackup/{id}</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.DeleteBackupHistory">
+            <summary>
+            Deletes the backup history of the current portal.
+            </summary>
+            <short>Delete the backup history</short>
+            <category>Backup</category>
+            <path>api/2.0/portal/deletebackuphistory</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.StartBackupRestore(System.String,ASC.Core.Common.Contracts.BackupStorageType,System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}},System.Boolean)">
+            <summary>
+            Starts the data restoring process for the current portal with the parameters specified in the request.
+            </summary>
+            <short>Start the restoring process</short>
+            <param type="System.String, System" name="backupId">Backup ID</param>
+            <param type="ASC.Core.Common.Contracts.BackupStorageType, ASC.Core.Common.Contracts" name="storageType">Storage type ("Documents", "ThridpartyDocuments", "CustomCloud", "Local", "DataStore", or "ThirdPartyConsumer")</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String, System.String}}, System.Collections.Generic" name="storageParams">Storage parameters</param>
+            <param type="System.Boolean, System" name="notify">Specifies whether to notify the users about the backup or not</param>
+            <category>Backup</category>
+            <returns type="ASC.Core.Common.Contracts.BackupProgress, ASC.Core.Common">Restoring progress</returns>
+            <path>api/2.0/portal/startrestore</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetRestoreProgress">
+            <summary>
+            Returns the progress of the started restoring process.
+            </summary>
+            <short>Get the restoring progress</short>
+            <category>Backup</category>
+            <returns type="ASC.Core.Common.Contracts.BackupProgress, ASC.Core.Common">Restoring progress</returns>
+            <path>api/2.0/portal/getrestoreprogress</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetTempPath(System.String)">
+             <summary>
+             Returns the path to the backup temporary directory.
+             </summary>
+             <short>Get the path to the backup temporary directory</short>
+             <category>Backup</category>
+             <param type="System.String, System" name="alias">Alias</param>
+             <returns>The path to the backup temporary directory</returns>
+             <path>api/2.0/portal/backuptmp</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.DeletePortalImmediately">
+             <summary>
+             Deletes the current portal immediately.
+             </summary>
+             <short>Delete the current portal</short>
+             <path>api/2.0/portal/deleteportalimmediately</path>
+             <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.UpdatePortalName(System.String)">
+             <summary>
+             Updates a portal name with a new one specified in the request.
+             </summary>
+             <short>Update a portal name</short>
+             <param type="System.String, System" name="alias">New portal name</param>
+             <returns>Message about renaming a portal</returns>
+             <path>api/2.0/portal/portalrename</path>
+             <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.SendCongratulations(System.Guid,System.String)">
+             <summary>
+             Sends congratulations to the user after registering the portal.
+             </summary>
+             <short>Send congratulations</short>
+             <param type="System.Guid, System" name="userid">User ID</param>
+             <param type="System.String, System" name="key">Email key</param>
+             <path>api/2.0/portal/sendcongratulations</path>
+             <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+             <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.RemoveCommentComplete(System.String,System.String)">
+             <summary>
+             Removes a comment with the ID specified in the request.
+             </summary>
+             <short>Remove a comment</short>
+             <category>Comments</category>
+             <param type="System.String, System" name="commentid">Comment ID</param>
+             <param type="System.String, System" name="domain">Domain name</param>
+             <returns>Operation status</returns>
+             <path>api/2.0/portal/fcke/comment/removecomplete</path>
+             <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.CancelCommentComplete(System.String,System.String,System.Boolean)">
+             <summary>
+             Cancels editing a comment with the ID specified in the request.
+             </summary>
+             <short>Cancel comment editing</short>
+             <category>Comments</category>
+             <param type="System.String, System" name="commentid">Comment ID</param>
+             <param type="System.String, System" name="domain">Domain name</param>
+             <param type="System.Boolean System" name="isedit">Specifies if a comment was edited or not</param>
+             <returns>Operation status</returns>
+             <path>api/2.0/portal/fcke/comment/cancelcomplete</path>
+             <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.EditCommentComplete(System.String,System.String,System.String,System.Boolean)">
+             <summary>
+             Edits a comment with the ID specified in the request.
+             </summary>
+             <short>Edit a comment</short>
+             <category>Comments</category>
+             <param type="System.String, System" name="commentid">Comment ID</param>
+             <param type="System.String, System" name="domain">Domain name</param>
+             <param type="System.String, System" name="html">New comment in the HTML format</param>
+             <param type="System.Boolean, System" name="isedit">Specifies if a comment was edited or not</param>
+             <returns>Operation status</returns>
+             <path>api/2.0/portal/fcke/comment/editcomplete</path>
+             <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetBarPromotions(System.String,System.String,System.Boolean)">
+             <summary>
+             Returns the promotion bar.
+             </summary>
+             <short>Get the promotion bar</short>
+             <category>Promotions</category>
+             <param type="System.String, System" name="domain">Domain name</param>
+             <param type="System.String, System" name="page">Page</param>
+             <param type="System.Boolean, System" name="desktop">Specifies if the bar will be displayed in the desktop app or not</param>
+             <returns>Promotion bar</returns>
+             <path>api/2.0/portal/bar/promotions</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.MarkBarPromotion(System.String)">
+             <summary>
+             Marks the promotion bar as read.
+             </summary>
+             <short>Mark the promotion bar as read</short>
+             <category>Promotions</category>
+             <param type="System.String, System" name="id">ID</param>
+             <path>api/2.0/portal/bar/promotions/mark/{id}</path>
+             <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetBarTips(System.String,System.String,System.Boolean,System.Boolean)">
+             <summary>
+             Returns the promotion bar tips.
+             </summary>
+             <short>Get the promotion bar tips</short>
+             <category>Promotions</category>
+             <param type="System.String, System" name="domain">Domain name</param>
+             <param type="System.String, System" name="page">Page</param>
+             <param type="System.Boolean, System" name="productAdmin">Specifies if the current user is a product administrator or not</param>
+             <param type="System.Boolean, System" name="desktop">Specifies if the bar will be displayed in the desktop app or not</param>
+             <returns>Promotion bar tips</returns>
+             <path>api/2.0/portal/bar/tips</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.MarkBarTip(System.String)">
+             <summary>
+             Marks the promotion bar tips as read.
+             </summary>
+             <short>Mark the promotion bar tips as read</short>
+             <category>Promotions</category>
+             <param type="System.String, System" name="id">ID</param>
+             <path>api/2.0/portal/bar/tips/mark/{id}</path>
+             <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.DeleteBarTips">
+             <summary>
+             Deletes the promotion bar tips.
+             </summary>
+             <short>Delete the promotion bar tips</short>
+             <category>Promotions</category>
+             <path>api/2.0/portal/bar/tips</path>
+             <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetSearchSettings">
+             <summary>
+             Returns the search settings.
+             </summary>
+             <short>Get the search settings</short>
+             <category>Search</category>
+             <returns>Search settings</returns>
+            <path>api/2.0/portal/search</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.CheckSearchAvailable">
+             <summary>
+             Checks if the search process is available or not.
+             </summary>
+             <short>Check the search availability</short>
+             <category>Search</category>
+             <returns>Search information</returns>
+            <path>api/2.0/portal/search/state</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.Reindex(System.String)">
+            <summary>
+            Reindexes a page during the search process.
+            </summary>
+            <short>Reindex a page</short>
+            <category>Search</category>
+            <param type="System.String, System" name="name">Index name</param>
+            <returns>Search information</returns>
+            <path>api/2.0/portal/search/reindex</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.SetSearchSettings(System.Collections.Generic.List{ASC.ElasticSearch.Core.SearchSettingsItem})">
+            <summary>
+            Sets the search settings specified in the request.
+            </summary>
+            <short>Set the search settings</short>
+            <category>Search</category>
+            <param type="System.Collections.Generic.List{ASC.ElasticSearch.Core.SearchSettingsItem}, System.Collections.Generic" name="items">Search settings</param>
+            <path>api/2.0/portal/search</path>
+            <httpMethod>POST</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetRandomPassword">
+             <summary>
+             Returns a random password.
+             </summary>
+             <short>Get a random password</short>
+             <returns>Random password</returns>
+             <path>api/2.0/portal/randompwd</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.GetIPInformation(System.String)">
+             <summary>
+             Returns the information about the IP address specified in the request.
+             </summary>
+             <short>Get the IP information</short>
+             <param type="System.String, System" name="ipAddress">IP address</param>
+             <returns>IP information</returns>
+             <path>api/2.0/portal/ip/{ipAddress}</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Portal.PortalApi.MarkGiftAsReaded">
+             <summary>
+             Marks a gift message as read.
+             </summary>
+             <short>Mark a gift message as read</short>
+             <path>api/2.0/portal/gift/mark</path>
+             <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+    </members>
+</doc>

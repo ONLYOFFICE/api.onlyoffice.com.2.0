@@ -1,0 +1,94 @@
+
+.block_more {
+    margin: 9px 0 0;
+    position: absolute;
+    bottom: 12px;
+    padding-bottom: 6px;
+}
+
+.connector-info {
+    padding-bottom: 8px;
+}
+
+.connector-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    margin: 0;
+    margin-top: 32px;
+}
+
+.example-img {
+    height: 80px;
+    background-size: 100%;
+}
+
+.comments {
+    background-image: url("img/connector/comments.svg");
+    background-repeat: no-repeat;
+}
+
+.review-work {
+    background-image: url("img/connector/review-work.svg");
+    background-repeat: no-repeat;
+}
+
+.filling-form {
+    background-image: url("img/connector/filling-form.svg");
+    background-repeat: no-repeat;
+}
+
+.connector-example {
+    background-color: #fff;
+    border: 1px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 0px 7px 25px rgba(85, 85, 85, 0.15);
+    border-radius: 3px;
+    padding: 24px;
+    list-style-type: none;
+    position: relative;
+    max-width: 256px;
+}
+
+.connector-example.hidden {
+    display: none;
+}
+
+.name-example-connector {
+    margin: 32px 0 12px 0;
+}
+
+.name-example-connector a {
+    color: #333;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .connector-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 16px;
+    }
+
+    .example-img {
+        background-size: 208px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .connector-block {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .connector-example {
+        max-width: 100%;
+    }
+}

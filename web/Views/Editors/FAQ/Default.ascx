@@ -82,6 +82,7 @@
 <ul class="faq_all_list">
     <li><a href="<%= Url.Action("faq/managingversions") %>#versions_1">Which methods can be used when working with the document history events?</a></li>
     <li><a href="<%= Url.Action("faq/managingversions") %>#versions_2">How to display a document with highlighted changes?</a></li>
+    <li><a href="<%= Url.Action("faq/managingversions") %>#versions_3">Why is a new version not shown in the document history after I forcefully save a document?</a></li>
 </ul>
 
 <h5><a class="link_in_heading" href="<%= Url.Action("faq/saving") %>">Saving questions</a></h5>

@@ -36,6 +36,7 @@
         <li>Create a <a href="<%= Url.Action("callback") %>">callback handler</a> to save the document from <b>document editing service</b>.</li>
         <li>Create an <em>html</em> file to <a href="<%= Url.Action("open") %>#apply">Open the document</a>.</li>
         <li>In the configuration script for Document Editor initialization specify the URL to the file with the <em>Callback handler</em> in the <a href="<%= Url.Action("config/editor") %>#callbackUrl">parameter line</a>.
+            Be sure to add a <a href="<%= Url.Action("security") %>">token</a> when using local links. Otherwise, an error will occur.
             <pre>
 new DocsAPI.DocEditor("placeholder", {
     "document": {
@@ -47,10 +48,11 @@ new DocsAPI.DocEditor("placeholder", {
     "documentType": "word",
     "editorConfig": {
         "callbackUrl": "https://example.com/url-to-callback.ashx"
-    }
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6eyJmaWxlVHlwZSI6ImRvY3giLCJrZXkiOiJLaGlyejZ6VFBkZmQ3IiwidGl0bGUiOiJFeGFtcGxlIERvY3VtZW50IFRpdGxlLmRvY3giLCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLWRvY3VtZW50LmRvY3gifSwiZG9jdW1lbnRUeXBlIjoid29yZCIsImVkaXRvckNvbmZpZyI6eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWNhbGxiYWNrLmFzaHgifX0.vbezS2aM8Xf8qFzIAsO-jrIsi7VLxjRYkIkwh5jLTJU"
 });
 </pre>
-            Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
+            Where <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
         </li>
         <li>Open your <em>html</em> file in the browser and edit your document.</li>
         <li>
@@ -85,10 +87,10 @@ new DocsAPI.DocEditor("placeholder", {
     <div class="header-gray">Parameters</div>
     <table class="table">
         <colgroup>
-            <col style="width: 310px;" />
+            <col class="table-name" />
             <col />
-            <col style="width: 100px;" />
-            <col style="width: 100px;" />
+            <col class="table-type" />
+            <col class="table-example" />
         </colgroup>
         <thead>
             <tr class="tablerow">
@@ -144,10 +146,10 @@ new DocsAPI.DocEditor("placeholder", {
 
             <table class="table">
                 <colgroup>
-                    <col style="width: 300px;" />
+                    <col class="table-name" />
                     <col />
-                    <col style="width: 100px;" />
-                    <col style="width: 100px;" />
+                    <col class="table-type" />
+                    <col class="table-example" />
                 </colgroup>
                 <thead>
                     <tr class="tablerow">
@@ -192,6 +194,9 @@ new DocsAPI.DocEditor("placeholder", {
 </pre>
         The <em>forcesavetype</em> parameter will have the <b>2</b> value when sending the request to the <b>callback handler</b>.</li>
     </ul>
+    <note>Please note that you cannot see the document versions created with the force saving option in the document history.
+        The reason is that ONLYOFFICE Docs <a href="<%= Url.Action("history") %>#apply-changes">highlights the changes</a> made from the beginning of the current document session, not from the beginning of the document version.
+        And even if several document versions are created during one session, all changes from this session will be highlighted.</note>
 
 
     <h2 id="assemblyFormatAsOrigin" class="copy-link">Saving in original format</h2>
@@ -204,10 +209,10 @@ new DocsAPI.DocEditor("placeholder", {
     <div class="header-gray">Parameters</div>
     <table class="table">
         <colgroup>
-            <col style="width: 300px;" />
+            <col class="table-name" />
             <col />
-            <col style="width: 100px;" />
-            <col style="width: 100px;" />
+            <col class="table-type" />
+            <col class="table-example" />
         </colgroup>
         <thead>
             <tr class="tablerow">
@@ -222,13 +227,14 @@ new DocsAPI.DocEditor("placeholder", {
                 <td>services.CoAuthoring.server.assemblyFormatAsOrigin</td>
                 <td>
                     Defines if the assembled file is saved in its original format or not.
-                    The default value is <b>true</b>.
+                    The default value is <b>true</b>.
                 </td>
                 <td>boolean</td>
                 <td>true</td>
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>
 
     <div class="header-gray">Sample local.json configuration</div>
     <pre>

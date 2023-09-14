@@ -1,0 +1,2414 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.AuditTrail</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.AuditTrail.AuditReportResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ActionCol">
+            <summary>
+              Looks up a localized string similar to Action.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ActionIdCol">
+            <summary>
+              Looks up a localized string similar to Action ID.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ActionTypeCol">
+            <summary>
+              Looks up a localized string similar to Action Type.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AdministratorAdded">
+            <summary>
+              Looks up a localized string similar to Administrator Added: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AdministratorDeleted">
+            <summary>
+              Looks up a localized string similar to Administrator Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AdministratorMessageSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Administrator Message Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AdministratorOpenedFullAccess">
+            <summary>
+              Looks up a localized string similar to Administrators [{0}]. Full Access Opened.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AttachActionType">
+            <summary>
+              Looks up a localized string similar to Attach.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AuditSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Audit Lifetime Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AuditTrailReportDownloaded">
+            <summary>
+              Looks up a localized string similar to Audit Trail Report Downloaded.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AuditTrailReportName">
+            <summary>
+              Looks up a localized string similar to Audit Trail Report ({0}-{1}).
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.AuthorizationKeysSetting">
+            <summary>
+              Looks up a localized string similar to Third-party authorization keys updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.BrowserCol">
+            <summary>
+              Looks up a localized string similar to Browser.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseAttachedFiles">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Files Attached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseClosed">
+            <summary>
+              Looks up a localized string similar to Case Closed: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseCreated">
+            <summary>
+              Looks up a localized string similar to Case Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseCreatedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. History Event Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseCreatedTag">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Tag Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseDeleted">
+            <summary>
+              Looks up a localized string similar to Case Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseDeletedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. History Event Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseDeletedTag">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Tag Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseDetachedFile">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. File Detached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseLinkedCompany">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Company Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseLinkedPerson">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Person Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseOpened">
+            <summary>
+              Looks up a localized string similar to Case Opened: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseOpenedAccess">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Access Opened.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseRestrictedAccess">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Access Restricted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CasesCreatedTag">
+            <summary>
+              Looks up a localized string similar to Cases. Tag Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CasesDeleted">
+            <summary>
+              Looks up a localized string similar to Cases Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CasesDeletedTag">
+            <summary>
+              Looks up a localized string similar to Cases. Tag Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CasesExportedToCsv">
+            <summary>
+              Looks up a localized string similar to Cases Exported To CSV File: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CasesImportedFromCSV">
+            <summary>
+              Looks up a localized string similar to Cases Imported From CSV File.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CasesModule">
+            <summary>
+              Looks up a localized string similar to Cases.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseUnlinkedCompany">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Company Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseUnlinkedPerson">
+            <summary>
+              Looks up a localized string similar to Cases [{0}]. Person Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseUpdated">
+            <summary>
+              Looks up a localized string similar to Case Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseUserFieldCreated">
+            <summary>
+              Looks up a localized string similar to Case User Field Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseUserFieldDeleted">
+            <summary>
+              Looks up a localized string similar to Case User Field Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseUserFieldsUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Case User Fields Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CaseUserFieldUpdated">
+            <summary>
+              Looks up a localized string similar to Case User Field Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ColorThemeChanged">
+            <summary>
+              Looks up a localized string similar to Color Theme Changed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CommonCrmSettingsModule">
+            <summary>
+              Looks up a localized string similar to Common Settings.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompaniesMerged">
+            <summary>
+              Looks up a localized string similar to Companies Merged: {0} - {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompaniesModule">
+            <summary>
+              Looks up a localized string similar to Companies.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyAttachedFiles">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Files Attached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyCreated">
+            <summary>
+              Looks up a localized string similar to Company Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyCreatedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. History Event Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyCreatedPersonsTag">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Persons Tag Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyCreatedTag">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Tag Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyCreatedWithWebForm">
+            <summary>
+              Looks up a localized string similar to Company Created with Web Form: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyDeleted">
+            <summary>
+              Looks up a localized string similar to Company Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyDeletedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. History Event Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyDeletedTag">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Tag Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyDetachedFile">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. File Detached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyLinkedPerson">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Person Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyLinkedProject">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Project Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUnlinkedPerson">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Person Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUnlinkedProject">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Project Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUpdated">
+            <summary>
+              Looks up a localized string similar to Company Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUpdatedPersonsTemperatureLevel">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Person Temperature Level Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUpdatedPhoto">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Photo Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUpdatedPrincipalInfo">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Principal Info Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUpdatedTemperatureLevel">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Temperature Level Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUploadedFiles">
+            <summary>
+              Looks up a localized string similar to Companies [{0}]. Files Uploaded: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUserFieldCreated">
+            <summary>
+              Looks up a localized string similar to Company User Field Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUserFieldDeleted">
+            <summary>
+              Looks up a localized string similar to Company User Field Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUserFieldsUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Company User Fields Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CompanyUserFieldUpdated">
+            <summary>
+              Looks up a localized string similar to Company User Field Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactAdminMailSent">
+            <summary>
+              Looks up a localized string similar to Contact Admin Mail Sent.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactLinkedProject">
+            <summary>
+              Looks up a localized string similar to Contacts [{0}]. Project Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsCreatedCrmTasks">
+            <summary>
+              Looks up a localized string similar to Contacts [{0}]. Task Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsCreatedTag">
+            <summary>
+              Looks up a localized string similar to Contacts. Tag Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsDeleted">
+            <summary>
+              Looks up a localized string similar to Contacts Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsDeletedTag">
+            <summary>
+              Looks up a localized string similar to Contacts. Tag Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsExportedToCsv">
+            <summary>
+              Looks up a localized string similar to Contacts Exported To CSV File: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsImportedFromCSV">
+            <summary>
+              Looks up a localized string similar to Contacts Imported From CSV File.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsModule">
+            <summary>
+              Looks up a localized string similar to Contacts.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsSettingsModule">
+            <summary>
+              Looks up a localized string similar to Settings.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactsTagSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Contacts Tag Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTemperatureLevelCreated">
+            <summary>
+              Looks up a localized string similar to Contact Temperature Level Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTemperatureLevelDeleted">
+            <summary>
+              Looks up a localized string similar to Contact Temperature Level Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTemperatureLevelSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Contact Temperature Level Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTemperatureLevelsUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Contact Temperature Levels Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTemperatureLevelUpdated">
+            <summary>
+              Looks up a localized string similar to Contact Temperature Level Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTemperatureLevelUpdatedColor">
+            <summary>
+              Looks up a localized string similar to Contact Temperature Level [{0}]. Color Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTypeCreated">
+            <summary>
+              Looks up a localized string similar to Contact Type Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTypeDeleted">
+            <summary>
+              Looks up a localized string similar to Contact Type Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTypesModule">
+            <summary>
+              Looks up a localized string similar to Contact Types.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTypesUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Contact Types Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactTypeUpdated">
+            <summary>
+              Looks up a localized string similar to Contact Type Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactUnlinkedProject">
+            <summary>
+              Looks up a localized string similar to Contacts [{0}]. Project Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactUserFieldCreated">
+            <summary>
+              Looks up a localized string similar to Contact User Field Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactUserFieldDeleted">
+            <summary>
+              Looks up a localized string similar to Contact User Field Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactUserFieldsUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Contacts User Fields Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ContactUserFieldUpdated">
+            <summary>
+              Looks up a localized string similar to Contact User Field Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CookieSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Cookie Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CopyActionType">
+            <summary>
+              Looks up a localized string similar to Copy.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CreateActionType">
+            <summary>
+              Looks up a localized string similar to Create.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmAllDataExported">
+            <summary>
+              Looks up a localized string similar to All Data Exported.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmDefaultCurrencyUpdated">
+            <summary>
+              Looks up a localized string similar to Default Currency Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmEntityDetachedFile">
+            <summary>
+              Looks up a localized string similar to CRM Entity. Detached File: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmFilesModule">
+            <summary>
+              Looks up a localized string similar to CRM Files.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmProduct">
+            <summary>
+              Looks up a localized string similar to CRM.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmSmtpMailSent">
+            <summary>
+              Looks up a localized string similar to SMTP Mail Sent to Contacts: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmSmtpSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to SMTP Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskCategoriesUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to CRM Task Categories Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskCategoryCreated">
+            <summary>
+              Looks up a localized string similar to CRM Task Category Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskCategoryDeleted">
+            <summary>
+              Looks up a localized string similar to CRM Task Category Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskCategoryUpdated">
+            <summary>
+              Looks up a localized string similar to CRM Task Category Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskCategoryUpdatedIcon">
+            <summary>
+              Looks up a localized string similar to CRM Task Category Icon Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskClosed">
+            <summary>
+              Looks up a localized string similar to CRM Task Closed: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskCreated">
+            <summary>
+              Looks up a localized string similar to CRM Task Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskDeleted">
+            <summary>
+              Looks up a localized string similar to CRM Task Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskOpened">
+            <summary>
+              Looks up a localized string similar to CRM Task Opened: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTasksExportedToCsv">
+            <summary>
+              Looks up a localized string similar to CRM Tasks Exported To CSV File: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTasksImportedFromCSV">
+            <summary>
+              Looks up a localized string similar to CRM Tasks Imported From CSV File.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTasksModule">
+            <summary>
+              Looks up a localized string similar to CRM Tasks.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTaskUpdated">
+            <summary>
+              Looks up a localized string similar to CRM Tasks Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CrmTestMailSent">
+            <summary>
+              Looks up a localized string similar to Test Mail Sent.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CurrencyRateUpdated">
+            <summary>
+              Looks up a localized string similar to Currency Rate Updated: {0} - {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.CustomNavigationSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Custom Navigation Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DateCol">
+            <summary>
+              Looks up a localized string similar to Date.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DefaultStartPageSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Default Start Page Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DeleteActionType">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DetachActionType">
+            <summary>
+              Looks up a localized string similar to Detach.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionAttachedFiles">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussions [{1}]. Files Attached: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionCommentCreated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussions [{1}]. Comment Created.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionCommentDeleted">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussions [{1}]. Comment Deleted.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionCommentUpdated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussions [{1}]. Comment Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionCreated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussion Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionDeleted">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussion Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionDetachedFile">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussions [{1}]. File Detached: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionsModule">
+            <summary>
+              Looks up a localized string similar to Discussions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionUpdated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussion Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DiscussionUpdatedFollowing">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussion  Following Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DnsSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to DNS Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentServiceLocationSetting">
+            <summary>
+              Looks up a localized string similar to Document Service Location Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsExternalShareSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to External share Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsForcesave">
+            <summary>
+              Looks up a localized string similar to Forcesave settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsModule">
+            <summary>
+              Looks up a localized string similar to Documents.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsOverwritingSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to  Overwriting Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsProduct">
+            <summary>
+              Looks up a localized string similar to Documents.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsSettingsModule">
+            <summary>
+              Looks up a localized string similar to Settings.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsStoreForcesave">
+            <summary>
+              Looks up a localized string similar to Store forcesave settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsThirdPartySettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Third-Party Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DocumentsUploadingFormatsSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Uploading Formats Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.DownloadActionType">
+            <summary>
+              Looks up a localized string similar to Download.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ExportActionType">
+            <summary>
+              Looks up a localized string similar to Export.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileChangeOwner">
+            <summary>
+              Looks up a localized string similar to Set owner of [{0}] to [{1}].
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileConverted">
+            <summary>
+              Looks up a localized string similar to File Converted to Internal Format: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileCopied">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Copied From Folder &quot;{1}&quot; To Folder: &quot;{2}&quot;.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileCopiedWithOverwriting">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Copied With Overwriting From Folder &quot;{1}&quot; To Folder: &quot;{2}&quot;.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileCreated">
+            <summary>
+              Looks up a localized string similar to File Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileCreatedVersion">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Revision: {1}. Version Created.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileDeleted">
+            <summary>
+              Looks up a localized string similar to File Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileDeletedVersion">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Revision: {1}. Version Deleted.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileDownloaded">
+            <summary>
+              Looks up a localized string similar to File Downloaded: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileDownloadedAs">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Downloaded As: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileExternalLinkAccessUpdated">
+            <summary>
+              Looks up a localized string similar to File {0}. External Link Access Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileImported">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. File Imported: {1}. Provider: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileLocked">
+            <summary>
+              Looks up a localized string similar to File Locked: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileMarkedAsFavorite">
+            <summary>
+              Looks up a localized string similar to File Marked As Favorite: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileMarkedAsRead">
+            <summary>
+              Looks up a localized string similar to File {0}: Marked As Read.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileMoved">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Moved From Folder &quot;{1}&quot; To Folder: &quot;{2}&quot;.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileMovedToTrash">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Moved To Trash Folder.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileMovedWithOverwriting">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Moved With Overwriting From Folder &quot;{1}&quot; To Folder: &quot;{2}&quot;.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileOpenedForChange">
+            <summary>
+              Looks up a localized string similar to File {0}: Opened For Change.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileReaded">
+            <summary>
+              Looks up a localized string similar to File {0}: Readed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileRemovedFromFavorite">
+            <summary>
+              Looks up a localized string similar to File Removed From Favorite: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileRemovedFromList">
+            <summary>
+              Looks up a localized string similar to File Removed From List: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileRenamed">
+            <summary>
+              Looks up a localized string similar to File Renamed: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileRestoreVersion">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Revision: {1}. Version Restored.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileRevisionDownloaded">
+            <summary>
+              Looks up a localized string similar to File {0}. Revision {1} Downloaded.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FilesDocumentSigned">
+            <summary>
+              Looks up a localized string similar to Document {1} signed via {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileSendAccessLink">
+            <summary>
+              Looks up a localized string similar to Sent shared link to the [{0}] file. Recipients: [{1}].
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FilesModule">
+            <summary>
+              Looks up a localized string similar to Files.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FilesRequestSign">
+            <summary>
+              Looks up a localized string similar to Document {1} sent to sign via {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileUnlocked">
+            <summary>
+              Looks up a localized string similar to File Unlocked: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileUpdated">
+            <summary>
+              Looks up a localized string similar to File Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileUpdatedAccess">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Access Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileUpdatedAccessFor">
+            <summary>
+              Looks up a localized string similar to File {0}. Access Updated for {1}: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileUpdatedRevisionComment">
+            <summary>
+              Looks up a localized string similar to Files [{0}]. Revision {1}. Comment Updated .
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FileUploaded">
+            <summary>
+              Looks up a localized string similar to File Uploaded: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderCopied">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. Copied To Folder: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderCopiedWithOverwriting">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. Copied With Overwriting To Folder: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderCreated">
+            <summary>
+              Looks up a localized string similar to Folder Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderDeleted">
+            <summary>
+              Looks up a localized string similar to Folder Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderDownloaded">
+            <summary>
+              Looks up a localized string similar to Folder Downloaded: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderMarkedAsFavorite">
+            <summary>
+              Looks up a localized string similar to Folder Marked As Favorite: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderMarkedAsRead">
+            <summary>
+              Looks up a localized string similar to Folder {0}: Marked As Read.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderMoved">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. Moved To Folder: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderMovedFrom">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. Moved From Folder &quot;{1}&quot; To Folder: &quot;{2}&quot;.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderMovedToTrash">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. Moved To Trash Folder.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderMovedWithOverwriting">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. Moved With Overwriting To Folder: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderRemovedFromFavorite">
+            <summary>
+              Looks up a localized string similar to Folder Removed From Favorite: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderRemovedFromList">
+            <summary>
+              Looks up a localized string similar to Folder Removed From List: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderRenamed">
+            <summary>
+              Looks up a localized string similar to Folder Renamed: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FoldersModule">
+            <summary>
+              Looks up a localized string similar to Folders.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderUpdatedAccess">
+            <summary>
+              Looks up a localized string similar to Folders [{0}]. Access Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FolderUpdatedAccessFor">
+            <summary>
+              Looks up a localized string similar to Folder {0}. Access Updated for {1}: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FollowActionType">
+            <summary>
+              Looks up a localized string similar to Follow.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.FullTextSearchSetting">
+            <summary>
+              Looks up a localized string similar to Sphinx settings updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GeneralModule">
+            <summary>
+              Looks up a localized string similar to General.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GreetingSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Welcome Page Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GroupCreated">
+            <summary>
+              Looks up a localized string similar to Group Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GroupDeleted">
+            <summary>
+              Looks up a localized string similar to Group Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GroupsModule">
+            <summary>
+              Looks up a localized string similar to Groups.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GroupUpdated">
+            <summary>
+              Looks up a localized string similar to Group Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GuestAccount">
+            <summary>
+              Looks up a localized string similar to Guest Account.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GuestActivated">
+            <summary>
+              Looks up a localized string similar to Guest Activated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GuestCreated">
+            <summary>
+              Looks up a localized string similar to Guest Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GuestCreatedViaInvite">
+            <summary>
+              Looks up a localized string similar to Guest Created Via Invite: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.GuestImported">
+            <summary>
+              Looks up a localized string similar to Guest Imported: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.HistoryEventCategoriesUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to History Events Categories. Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.HistoryEventCategoryCreated">
+            <summary>
+              Looks up a localized string similar to History Event Category Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.HistoryEventCategoryDeleted">
+            <summary>
+              Looks up a localized string similar to History Event Category Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.HistoryEventCategoryUpdated">
+            <summary>
+              Looks up a localized string similar to History Event Category Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.HistoryEventCategoryUpdatedIcon">
+            <summary>
+              Looks up a localized string similar to History Event Categories [{0}]. Icon Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ImpersonateUserLogin">
+            <summary>
+              Looks up a localized string similar to User Impersonation, Login:  {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ImpersonateUserLogout">
+            <summary>
+              Looks up a localized string similar to User Impersonation, Logout: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ImportActionType">
+            <summary>
+              Looks up a localized string similar to Import.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceCreated">
+            <summary>
+              Looks up a localized string similar to Invoice Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceDefaultTermsUpdated">
+            <summary>
+              Looks up a localized string similar to Invoice Default Terms Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceDeleted">
+            <summary>
+              Looks up a localized string similar to Invoice Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceDownloaded">
+            <summary>
+              Looks up a localized string similar to Invoice Downloaded: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceItemCreated">
+            <summary>
+              Looks up a localized string similar to Invoice Item Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceItemDeleted">
+            <summary>
+              Looks up a localized string similar to Invoice Item Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceItemsDeleted">
+            <summary>
+              Looks up a localized string similar to Invoice Items Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceItemUpdated">
+            <summary>
+              Looks up a localized string similar to Invoice Item Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceNumberFormatUpdated">
+            <summary>
+              Looks up a localized string similar to Invoice Number Format Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoicesDeleted">
+            <summary>
+              Looks up a localized string similar to Invoices Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceSettingsModule">
+            <summary>
+              Looks up a localized string similar to Invoice Settings.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoicesModule">
+            <summary>
+              Looks up a localized string similar to Invoices.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoicesUpdatedStatus">
+            <summary>
+              Looks up a localized string similar to Invoices [{0}]. Status Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceTaxCreated">
+            <summary>
+              Looks up a localized string similar to Invoice Tax Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceTaxDeleted">
+            <summary>
+              Looks up a localized string similar to Invoice Tax Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceTaxUpdated">
+            <summary>
+              Looks up a localized string similar to Invoice Tax Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.InvoiceUpdated">
+            <summary>
+              Looks up a localized string similar to Invoice Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.IpCol">
+            <summary>
+              Looks up a localized string similar to IP.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LanguageSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Language Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LicenseKeyUploaded">
+            <summary>
+              Looks up a localized string similar to License key uploaded.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LinkActionType">
+            <summary>
+              Looks up a localized string similar to Link.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFail">
+            <summary>
+              Looks up a localized string similar to Login Fail.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailBruteForce">
+            <summary>
+              Looks up a localized string similar to Login Fail. Too many attempts.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailDisabledProfile">
+            <summary>
+              Looks up a localized string similar to Login Fail. Profile Disabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailInvalidCombination">
+            <summary>
+              Looks up a localized string similar to Login Fail. Invalid username-password combination.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailIpSecurity">
+            <summary>
+              Looks up a localized string similar to IP Security: Login Failed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailRecaptcha">
+            <summary>
+              Looks up a localized string similar to Login Fail. Recaptcha is invalid.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailSocialAccountNotFound">
+            <summary>
+              Looks up a localized string similar to Login Fail. Associated Social Account Not Found.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailViaApi">
+            <summary>
+              Looks up a localized string similar to Failed Login via API.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailViaApiSms">
+            <summary>
+              Looks up a localized string similar to Failed Login via API &amp; SMS Code.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailViaApiSocialAccount">
+            <summary>
+              Looks up a localized string similar to Login via API &amp; Social Media Failed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailViaApiTfa">
+            <summary>
+              Looks up a localized string similar to Failed Login via API &amp; authenticator application.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailViaSms">
+            <summary>
+              Looks up a localized string similar to Login via SMS failed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailViaSSO">
+            <summary>
+              Looks up a localized string similar to Login via SSO Failed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginFailViaTfaApp">
+            <summary>
+              Looks up a localized string similar to Login via authenticator application Failed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginHistoryReportDownloaded">
+            <summary>
+              Looks up a localized string similar to Login History Report Downloaded.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginHistoryReportName">
+            <summary>
+              Looks up a localized string similar to Login History Report ({0}-{1}).
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccess">
+            <summary>
+              Looks up a localized string similar to Login Success.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessSocialAccount">
+            <summary>
+              Looks up a localized string similar to Login Via Social Account Success.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessSocialApp">
+            <summary>
+              Looks up a localized string similar to Successful login via social application.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessViaApi">
+            <summary>
+              Looks up a localized string similar to Successful Login via API.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessViaApiSms">
+            <summary>
+              Looks up a localized string similar to Successful Login via API &amp; SMS Code.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessViaApiTfa">
+            <summary>
+              Looks up a localized string similar to Successful Login via API &amp; authenticator application.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessViaSms">
+            <summary>
+              Looks up a localized string similar to Login via SMS successful.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessViaSocialAccount">
+            <summary>
+              Looks up a localized string similar to Login via API &amp; Social Media Successful.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccessViaSSO">
+            <summary>
+              Looks up a localized string similar to Successful Login via SSO.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.LoginSuccesViaTfaApp">
+            <summary>
+              Looks up a localized string similar to Successful Login via authenticator application.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.Logout">
+            <summary>
+              Looks up a localized string similar to Logout.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.MailServiceSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Mail Service Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.MilestoneCreated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Milestone Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.MilestoneDeleted">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Milestone Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.MilestonesModule">
+            <summary>
+              Looks up a localized string similar to Milestones.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.MilestoneUpdated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Milestone Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.MilestoneUpdatedStatus">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Milestones [{1}]. Status Updated: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ModuleCol">
+            <summary>
+              Looks up a localized string similar to Module.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.MoveActionType">
+            <summary>
+              Looks up a localized string similar to Move.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpenActionType">
+            <summary>
+              Looks up a localized string similar to Open.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunitiesCreatedTag">
+            <summary>
+              Looks up a localized string similar to Opportunities. Tag Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunitiesDeleted">
+            <summary>
+              Looks up a localized string similar to Opportunities Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunitiesDeletedTag">
+            <summary>
+              Looks up a localized string similar to Opportunities. Tag Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunitiesExportedToCsv">
+            <summary>
+              Looks up a localized string similar to Opportunities Exported To CSV File: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunitiesImportedFromCSV">
+            <summary>
+              Looks up a localized string similar to Opportunities Imported From CSV File.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunitiesModule">
+            <summary>
+              Looks up a localized string similar to Opportunities.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityAttachedFiles">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Files Attached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityCreated">
+            <summary>
+              Looks up a localized string similar to Opportunity Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityCreatedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. History Event Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityCreatedTag">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Tag Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityDeleted">
+            <summary>
+              Looks up a localized string similar to Opportunity Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityDeletedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. History Event Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityDeletedTag">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Tag Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityDetachedFile">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. File Detached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityLinkedCompany">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Company Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityLinkedPerson">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Person Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityOpenedAccess">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Access Opened.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityRestrictedAccess">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Access Restricted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityStageCreated">
+            <summary>
+              Looks up a localized string similar to Opportunity Stage Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityStageDeleted">
+            <summary>
+              Looks up a localized string similar to Opportunity Stage Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityStagesUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Opportunity Stages Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityStageUpdated">
+            <summary>
+              Looks up a localized string similar to Opportunity Stage Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityStageUpdatedColor">
+            <summary>
+              Looks up a localized string similar to Opportunity Stage Color Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUnlinkedCompany">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Company Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUnlinkedPerson">
+            <summary>
+              Looks up a localized string similar to Opportunities [{0}]. Person Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUpdated">
+            <summary>
+              Looks up a localized string similar to Opportunity Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUpdatedStage">
+            <summary>
+              Looks up a localized string similar to Opportunity Stage Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUserFieldCreated">
+            <summary>
+              Looks up a localized string similar to Opportunity User Field Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUserFieldDeleted">
+            <summary>
+              Looks up a localized string similar to Opportunity User Field Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUserFieldsUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Opportunity User Fields Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OpportunityUserFieldUpdated">
+            <summary>
+              Looks up a localized string similar to Opportunity User Field Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OrganizationProfileUpdatedAddress">
+            <summary>
+              Looks up a localized string similar to Organization Profile. Address Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OrganizationProfileUpdatedCompanyName">
+            <summary>
+              Looks up a localized string similar to Organization Profile. Company Name Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OrganizationProfileUpdatedInvoiceLogo">
+            <summary>
+              Looks up a localized string similar to Organization Profile. Invoice Logo Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OtherCrmSettingsModule">
+            <summary>
+              Looks up a localized string similar to Other Settings.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OthersProduct">
+            <summary>
+              Looks up a localized string similar to Others.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OwnerChanged">
+            <summary>
+              Looks up a localized string similar to Owner Changed: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OwnerSentChangeOwnerInstructions">
+            <summary>
+              Looks up a localized string similar to Owner [{0}]. Sent Change Owner Instructions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OwnerSentPortalDeactivationInstructions">
+            <summary>
+              Looks up a localized string similar to Owner [{0}]. Sent Portal Deactivation Instructions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.OwnerSentPortalDeleteInstructions">
+            <summary>
+              Looks up a localized string similar to Owner [{0}]. Sent Portal Delete Instructions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PageCol">
+            <summary>
+              Looks up a localized string similar to Page.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PasswordStrengthSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Password Strength Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PeopleProduct">
+            <summary>
+              Looks up a localized string similar to People.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonAttachedFiles">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Files Attached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonCreated">
+            <summary>
+              Looks up a localized string similar to Person Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonCreatedCompanyTag">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Company Tag Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonCreatedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. History Event Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonCreatedTag">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Tag Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonCreatedWithWebForm">
+            <summary>
+              Looks up a localized string similar to Person Created with Web Form: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonDeleted">
+            <summary>
+              Looks up a localized string similar to Person Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonDeletedHistoryEvent">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. History Event Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonDeletedTag">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Tag Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonDetachedFile">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. File Detached: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonLinkedProject">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Project Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonsCreated">
+            <summary>
+              Looks up a localized string similar to Persons Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonsMerged">
+            <summary>
+              Looks up a localized string similar to Persons Merged: {0} - {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonsModule">
+            <summary>
+              Looks up a localized string similar to Persons.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUnlinkedProject">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Project Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUpdated">
+            <summary>
+              Looks up a localized string similar to Person Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUpdatedCompanyTemperatureLevel">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Company Temperature Level Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUpdatedPhoto">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Photo Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUpdatedPrincipalInfo">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Principal Info Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUpdatedTemperatureLevel">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Temperature Level Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUploadedFiles">
+            <summary>
+              Looks up a localized string similar to Persons [{0}]. Files Uploaded: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUserFieldCreated">
+            <summary>
+              Looks up a localized string similar to Person User Field Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUserFieldDeleted">
+            <summary>
+              Looks up a localized string similar to Person User Field Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUserFieldsUpdatedOrder">
+            <summary>
+              Looks up a localized string similar to Person User Fields Order Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PersonUserFieldUpdated">
+            <summary>
+              Looks up a localized string similar to Person User Field Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PlatformCol">
+            <summary>
+              Looks up a localized string similar to Platform.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PortalAccessSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Portal Access Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PortalDeactivated">
+            <summary>
+              Looks up a localized string similar to Portal Deactivated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PortalDeleted">
+            <summary>
+              Looks up a localized string similar to Portal Deleted.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PrivacyRoomDisable">
+            <summary>
+              Looks up a localized string similar to Private Room is disabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.PrivacyRoomEnable">
+            <summary>
+              Looks up a localized string similar to Private Room is enabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductAccessOpened">
+            <summary>
+              Looks up a localized string similar to Products [{0}]. Access Opened.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductAccessOpenedForGroups">
+            <summary>
+              Looks up a localized string similar to Products: [{0}]. Groups [{1}].  Access Opened.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductAccessOpenedForUsers">
+            <summary>
+              Looks up a localized string similar to Products: [{0}]. Users [{1}].  Access Opened.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductAccessRestricted">
+            <summary>
+              Looks up a localized string similar to Products [{0}]. Access Restricted.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductAddedAdministrator">
+            <summary>
+              Looks up a localized string similar to Products [{0}]. Administrator Added: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductCol">
+            <summary>
+              Looks up a localized string similar to Product.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductDeletedAdministrator">
+            <summary>
+              Looks up a localized string similar to Products [{0}]. Administrator Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductsListUpdated">
+            <summary>
+              Looks up a localized string similar to Products List Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProductsModule">
+            <summary>
+              Looks up a localized string similar to Products.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectCreated">
+            <summary>
+              Looks up a localized string similar to Project Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectCreatedFromTemplate">
+            <summary>
+              Looks up a localized string similar to Templates [{0}]. Project Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectDeleted">
+            <summary>
+              Looks up a localized string similar to Project Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectDeletedMember">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Member Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectFollowed">
+            <summary>
+              Looks up a localized string similar to Project Followed: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectLinkedCompany">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Company Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectLinkedContacts">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Contacts Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectLinkedPerson">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Person Linked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectsImportedFromBasecamp">
+            <summary>
+              Looks up a localized string similar to Projects Imported From Basecamp: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectsModule">
+            <summary>
+              Looks up a localized string similar to Projects.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectsProduct">
+            <summary>
+              Looks up a localized string similar to Projects.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectsSettingsModule">
+            <summary>
+              Looks up a localized string similar to Settings.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectTemplateCreated">
+            <summary>
+              Looks up a localized string similar to Project Template Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectTemplateDeleted">
+            <summary>
+              Looks up a localized string similar to Project Template Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectTemplateUpdated">
+            <summary>
+              Looks up a localized string similar to Project Template Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectUnfollowed">
+            <summary>
+              Looks up a localized string similar to Project Unfollowed: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectUnlinkedCompany">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Company Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectUnlinkedPerson">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Person Unlinked: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectUpdated">
+            <summary>
+              Looks up a localized string similar to Project Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectUpdatedMemberRights">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Members [{1}]. Access Rights Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectUpdatedStatus">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Status Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ProjectUpdatedTeam">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Team Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ReassignsActionType">
+            <summary>
+              Looks up a localized string similar to Reassigns.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ReportsModule">
+            <summary>
+              Looks up a localized string similar to Reports.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ReportTemplateCreated">
+            <summary>
+              Looks up a localized string similar to Project Report Template Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ReportTemplateDeleted">
+            <summary>
+              Looks up a localized string similar to Project Report Template Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ReportTemplateUpdated">
+            <summary>
+              Looks up a localized string similar to Project Report Template Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SendActionType">
+            <summary>
+              Looks up a localized string similar to Send.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SentInviteInstructions">
+            <summary>
+              Looks up a localized string similar to Invite Instructions Sent: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SessionCompleted">
+            <summary>
+              Looks up a localized string similar to Session Completed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SessionStarted">
+            <summary>
+              Looks up a localized string similar to Session Started.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SettingsProduct">
+            <summary>
+              Looks up a localized string similar to Settings.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SSODisabled">
+            <summary>
+              Looks up a localized string similar to SSO Disabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SSOEnabled">
+            <summary>
+              Looks up a localized string similar to SSO Enabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.StartBackupSetting">
+            <summary>
+              Looks up a localized string similar to Start backup.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.StartStorageDecryption">
+            <summary>
+              Looks up a localized string similar to Start storage decryption.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.StartStorageEncryption">
+            <summary>
+              Looks up a localized string similar to Start storage encryption.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.StartTransferSetting">
+            <summary>
+              Looks up a localized string similar to Start portal region migration.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SubtaskCreated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Subtask Created: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SubtaskDeleted">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Subtask Deleted: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SubtaskMoved">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Subtask Moved: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SubtaskUpdated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Subtask Updated: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SubtaskUpdatedStatus">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Subtasks [{2}]. Status Updated: {3}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.SystemAccount">
+            <summary>
+              Looks up a localized string similar to System Account.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TargetIdCol">
+            <summary>
+              Looks up a localized string similar to Target ID.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskAttachedFiles">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Files Attached: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskCommentCreated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Comment Created.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskCommentDeleted">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Comment Deleted.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskCommentUpdated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Comment Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskCreated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Task Created: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskCreatedFromDiscussion">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Discussions [{1}]. Task Created: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskDeleted">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Task Deleted: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskDetachedFile">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Task: {1}. File Detached: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskMovedToMilestone">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Milestones [{1}]. Task Moved: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TasksLinked">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks Linked: {1} - {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TasksModule">
+            <summary>
+              Looks up a localized string similar to Tasks.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TasksUnlinked">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks Unlinked: {1} - {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskTimeCreated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Task Time Created: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskTimesDeleted">
+            <summary>
+              Looks up a localized string similar to Task Times Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskTimesUpdatedStatus">
+            <summary>
+              Looks up a localized string similar to Task Times [{0}]. Status Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskTimeUpdated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Task Time Updated: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskUnlinkedMilestone">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Unlinked From Milestones..
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskUpdated">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Task Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskUpdatedFollowing">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Task Following Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TaskUpdatedStatus">
+            <summary>
+              Looks up a localized string similar to Projects [{0}]. Tasks [{1}]. Status Updated: {2}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TeamTemplateChanged">
+            <summary>
+              Looks up a localized string similar to Team Template Changed.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ThirdPartyCreated">
+            <summary>
+              Looks up a localized string similar to Third Party Created: {0}. Provider: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ThirdPartyDeleted">
+            <summary>
+              Looks up a localized string similar to Third Party Deleted: {0}. Provider: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.ThirdPartyUpdated">
+            <summary>
+              Looks up a localized string similar to Third Party Updated: {0}. Provider: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TimeTrackingModule">
+            <summary>
+              Looks up a localized string similar to Time Tracking.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TimeZoneSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Time Zone Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TrashEmptied">
+            <summary>
+              Looks up a localized string similar to Trash Emptied.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TrustedMailDomainSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Trusted mail domain settings updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TwoFactorAuthenticationSettingsDisabled">
+            <summary>
+              Looks up a localized string similar to Two-factor Authentication Settings Updated: Two-factor auth was disabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TwoFactorAuthenticationSettingsEnabledBySms">
+            <summary>
+              Looks up a localized string similar to Two-factor Authentication Settings Updated: SMS confirmation was enabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TwoFactorAuthenticationSettingsEnabledByTfaApp">
+            <summary>
+              Looks up a localized string similar to Two-factor Authentication Settings Updated: Authentication app was enabled.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.TwoFactorAuthenticationSettingsUpdated">
+            <summary>
+              Looks up a localized string similar to Two-factor Authentication Settings Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UnfollowActionType">
+            <summary>
+              Looks up a localized string similar to Unfollow.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UnknownAccount">
+            <summary>
+              Looks up a localized string similar to Unknown Account.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UnlinkActionType">
+            <summary>
+              Looks up a localized string similar to Unlink.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UpdateAccessActionType">
+            <summary>
+              Looks up a localized string similar to Updated Access.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UpdateActionType">
+            <summary>
+              Looks up a localized string similar to Update.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UploadActionType">
+            <summary>
+              Looks up a localized string similar to Upload.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserActivated">
+            <summary>
+              Looks up a localized string similar to User Activated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserAddedAvatar">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Avatar Added.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserCol">
+            <summary>
+              Looks up a localized string similar to User.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserCreated">
+            <summary>
+              Looks up a localized string similar to User Created: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserCreatedViaInvite">
+            <summary>
+              Looks up a localized string similar to User Created Via Invite: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserDataReassigns">
+            <summary>
+              Looks up a localized string similar to Data Reassigned: from user {0} to user {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserDataRemoving">
+            <summary>
+              Looks up a localized string similar to User data for {0} has been deleted.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserDeleted">
+            <summary>
+              Looks up a localized string similar to User Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserDeletedAvatar">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Avatar Deleted.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserFileUpdated">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. File Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserImported">
+            <summary>
+              Looks up a localized string similar to User Imported: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserLinkedSocialAccount">
+            <summary>
+              Looks up a localized string similar to Social Account Linked. Provider: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserLogoutActiveConnection">
+            <summary>
+              Looks up a localized string similar to User {0} has logged out active connection.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserLogoutActiveConnections">
+            <summary>
+              Looks up a localized string similar to User {0} has logged out their active connections.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserLogoutActiveConnectionsForUser">
+            <summary>
+              Looks up a localized string similar to Logged out active connections for user: {0} .
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UsersDeleted">
+            <summary>
+              Looks up a localized string similar to Users Deleted: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserSentActivationInstructions">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Sent Activation Instructions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserSentDeleteInstructions">
+            <summary>
+              Looks up a localized string similar to Sent Delete Profile Instructions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserSentEmailInstructions">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Sent Email Change Instructions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserSentPasswordInstructions">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Sent Password Change Instructions.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UsersModule">
+            <summary>
+              Looks up a localized string similar to Users.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UsersSentActivationInstructions">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Activation Instructions Sent.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UsersUpdatedStatus">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Updated Status.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UsersUpdatedType">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Updated Type.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserTfaDisconnected">
+            <summary>
+              Looks up a localized string similar to Authenticator application disconnected: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserTfaGenerateCodes">
+            <summary>
+              Looks up a localized string similar to New backup codes are created.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserUnlinkedSocialAccount">
+            <summary>
+              Looks up a localized string similar to Social Account Unlinked. Provider: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserUpdated">
+            <summary>
+              Looks up a localized string similar to User Updated: {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserUpdatedAvatarThumbnails">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Avatar Thumbnails Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserUpdatedEmail">
+            <summary>
+              Looks up a localized string similar to Email Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserUpdatedLanguage">
+            <summary>
+              Looks up a localized string similar to Language Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserUpdatedMobileNumber">
+            <summary>
+              Looks up a localized string similar to Users [{0}]. Mobile Number Updated: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.UserUpdatedPassword">
+            <summary>
+              Looks up a localized string similar to Password Updated.
+            </summary>
+        </member>
+        <member name="P:ASC.AuditTrail.AuditReportResource.WebsiteContactFormUpdatedKey">
+            <summary>
+              Looks up a localized string similar to Website Contact Form Key Updated.
+            </summary>
+        </member>
+    </members>
+</doc>

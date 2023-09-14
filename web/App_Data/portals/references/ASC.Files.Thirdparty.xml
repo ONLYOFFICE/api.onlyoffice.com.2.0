@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Files.Thirdparty</name>
+    </assembly>
+    <members>
+        <member name="M:ASC.Files.Thirdparty.ProviderDao.ProviderFileDao.GetFileStream(ASC.Files.Core.File,System.Int64)">
+            <summary>
+            Get stream of file
+            </summary>
+            <param name="file"></param>
+            <param name="offset"></param>
+            <returns>Stream</returns>
+        </member>
+    </members>
+</doc>

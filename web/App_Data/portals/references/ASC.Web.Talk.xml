@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Web.Talk</name>
+    </assembly>
+    <members>
+        <member name="F:ASC.Web.Talk.DefaultTalk.mainContainer">
+            <summary>
+            mainContainer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Talk.DefaultTalk.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Talk.JabberClient.TalkTabsContainer">
+            <summary>
+            TalkTabsContainer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Talk.JabberClient.TalkRoomsContainer">
+            <summary>
+            TalkRoomsContainer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Talk.JabberClient.TalkMeseditorContainer">
+            <summary>
+            TalkMeseditorContainer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Talk.JabberClient.TalkContactsContainer">
+            <summary>
+            TalkContactsContainer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Talk.JabberClient.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="T:ASC.Web.Talk.Resources.TalkOverviewResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.AutoupdateContactListDescription">
+            <summary>
+              Looks up a localized string similar to The contact list is updated automatically as people are added/removed from the list of employees, so you don&apos;t have to check it out manually.  .
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.BrowsersNotification">
+            <summary>
+              Looks up a localized string similar to Notification in a browser.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.ChatRoom">
+            <summary>
+              Looks up a localized string similar to Chat room.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.ChatTabs">
+            <summary>
+              Looks up a localized string similar to Chat Tabs.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.ContactListWithSettings">
+            <summary>
+              Looks up a localized string similar to Contact List with settings.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.DefaultNotificationText">
+            <summary>
+              Looks up a localized string similar to By default all the notifications will be sent both to your email address and into Talk. You can configure them at the.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.DeleteSentFiles">
+            <summary>
+              Looks up a localized string similar to Delete sent files.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.GroupListOfContact">
+            <summary>
+              Looks up a localized string similar to List of contacts joining in groups.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.Here">
+            <summary>
+              Looks up a localized string similar to here.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.HideOfflineContacts">
+            <summary>
+              Looks up a localized string similar to Hide offline contacts.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.Mailing">
+            <summary>
+              Looks up a localized string similar to Mailing.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.MoreInformation">
+            <summary>
+              Looks up a localized string similar to More information about notification is avaliable {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.NotificationSetup">
+            <summary>
+              Looks up a localized string similar to Notification Setup.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.OverviewContent">
+            <summary>
+              Looks up a localized string similar to Talk is a corporate IM system for exchanging instant text messages among the employees in real time..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.OverviewContentDescription">
+            <summary>
+              Looks up a localized string similar to Talk offers all the traditional features you expect from a messenger - choice of status, history archiving, file transfer, multi-user chat support, and more..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.OverviewSectionTitle">
+            <summary>
+              Looks up a localized string similar to Talk Overview.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.OverviewWebClientDescription">
+            <summary>
+              Looks up a localized string similar to Launch our web client to start using Talk right now with no prior settings. .
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.ProfilePage">
+            <summary>
+              Looks up a localized string similar to Profile page.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.SendMessageHotButton">
+            <summary>
+              Looks up a localized string similar to Send messages by Ctrl+Enter.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.SettingsOfInputField">
+            <summary>
+              Looks up a localized string similar to The settings of input field.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.StartWebClientLink">
+            <summary>
+              Looks up a localized string similar to Launch Web Client.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.StartWebClientLinkDescription">
+            <summary>
+              Looks up a localized string similar to No extra settings! Click to launch web client and start talking right now.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.SubscriptionSectionText">
+            <summary>
+              Looks up a localized string similar to Subscription section of the {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.Type">
+            <summary>
+              Looks up a localized string similar to Type:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkOverviewResource.VoicesOfEvents">
+            <summary>
+              Looks up a localized string similar to Voices of events.
+            </summary>
+        </member>
+        <member name="T:ASC.Web.Talk.Resources.TalkResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnAccept">
+            <summary>
+              Looks up a localized string similar to Accept.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnAddToMailing">
+            <summary>
+              Looks up a localized string similar to Add to mass mailing.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnCancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnCloseHistory">
+            <summary>
+              Looks up a localized string similar to Close history.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnCreate">
+            <summary>
+              Looks up a localized string similar to Create.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnDecline">
+            <summary>
+              Looks up a localized string similar to Decline.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnDelete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnKick">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnRemove">
+            <summary>
+              Looks up a localized string similar to Remove.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnRemoveConference">
+            <summary>
+              Looks up a localized string similar to Remove.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnRemoveMailing">
+            <summary>
+              Looks up a localized string similar to Remove mailing.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnRemoveMember">
+            <summary>
+              Looks up a localized string similar to Remove member.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.BtnSendInvite">
+            <summary>
+              Looks up a localized string similar to Send invite.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.Chat">
+            <summary>
+              Looks up a localized string similar to Talk.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.Close">
+            <summary>
+              Looks up a localized string similar to Close.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.ConferenceGroupName">
+            <summary>
+              Looks up a localized string similar to Chat rooms.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.Connection">
+            <summary>
+              Looks up a localized string similar to Connection.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.DefaultConferenceSubjectTemplate">
+            <summary>
+              Looks up a localized string similar to Welcome to {0}.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.DefaultContactTitle">
+            <summary>
+              Looks up a localized string similar to Anonymous.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.DeleteSentFiles">
+            <summary>
+              Looks up a localized string similar to Delete sent files.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.DeleteSentFilesAll">
+            <summary>
+              Looks up a localized string similar to All files.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.DeleteSentFilesInfo">
+            <summary>
+              Looks up a localized string similar to The files you sent via chat occupy &lt;b&gt;&lt;/b&gt; of the portal disk space. If you choose to delete these files, it will free up space, but the files will no longer be accessible through the links in the history for all the conversation participants. Select what to delete:.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.DeleteSentFilesMonth">
+            <summary>
+              Looks up a localized string similar to Files sent more than a month ago.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.DeleteSentFilesYear">
+            <summary>
+              Looks up a localized string similar to Files sent more than a year ago.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.FullDateFormat">
+            <summary>
+              Looks up a localized string similar to %H:%M:%S %d %b %y.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintClientConnecting">
+            <summary>
+              Looks up a localized string similar to Connecting....
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintClientDisconnected">
+            <summary>
+              Looks up a localized string similar to Connect Me.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintCreateConference">
+            <summary>
+              Looks up a localized string similar to Create chat room.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintCreateMassend">
+            <summary>
+              Looks up a localized string similar to Send multiple.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintCreateShortcutDialog">
+            <summary>
+              Looks up a localized string similar to Create shortcuts and launch Talk as a web application..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintCtrlEnterSender">
+            <summary>
+              Looks up a localized string similar to Use Ctrl+Enter to send messages, Enter to start a new paragraph .
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintEmotions">
+            <summary>
+              Looks up a localized string similar to Smileys.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintFilter">
+            <summary>
+              Looks up a localized string similar to Enable/Disable filter.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintFlastPlayerIncorrect">
+            <summary>
+              Looks up a localized string similar to The Adobe Flash Player version is not correct.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintGroups">
+            <summary>
+              Looks up a localized string similar to Show/Hide groups.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintHistory">
+            <summary>
+              Looks up a localized string similar to Message history.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintNoFlashPlayer">
+            <summary>
+              Looks up a localized string similar to Adobe Flash Player is not installed.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintSearch">
+            <summary>
+              Looks up a localized string similar to Search.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintSearchNextMessage">
+            <summary>
+              Looks up a localized string similar to Next.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintSearchPrevMessage">
+            <summary>
+              Looks up a localized string similar to Previous.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintSelectContact">
+            <summary>
+              Looks up a localized string similar to Select a person from the contact list to start a talk .
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintSendFile">
+            <summary>
+              Looks up a localized string similar to Send File.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintSendInvite">
+            <summary>
+              Looks up a localized string similar to Drag a contact here to add a recipient..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintShowLeftTab">
+            <summary>
+              Looks up a localized string similar to Show tab on the left.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintShowRightTab">
+            <summary>
+              Looks up a localized string similar to Show tab on the right.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.HintUnreadMessages">
+            <summary>
+              Looks up a localized string similar to read.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.IndexTitle">
+            <summary>
+              Looks up a localized string similar to Search in chat messages content.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelConferenceSplash">
+            <summary>
+              Looks up a localized string similar to Drag a contact here to add a recipient.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelCurrentStatus">
+            <summary>
+              Looks up a localized string similar to Current Status.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelDoNotAsk">
+            <summary>
+              Looks up a localized string similar to Do not ask next time.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelFirstSplash">
+            <summary>
+              Looks up a localized string similar to first choose user{0}from list to start chat.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelKickOccupant">
+            <summary>
+              Looks up a localized string similar to Do you really want to remove this user from chat?.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelName">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelNewMessage">
+            <summary>
+              Looks up a localized string similar to New message.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelRecvInvite">
+            <summary>
+              Looks up a localized string similar to has invited you.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelRemoveRoom">
+            <summary>
+              Looks up a localized string similar to Do you really want to delete this room?.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelSend">
+            <summary>
+              Looks up a localized string similar to Send.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelTemporaryRoom">
+            <summary>
+              Looks up a localized string similar to Temporary room (will be deleted when all users leave it).
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelTopic">
+            <summary>
+              Looks up a localized string similar to Topic.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.LabelValidSymbols">
+            <summary>
+              Looks up a localized string similar to Valid symbols.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.MailingsGroupName">
+            <summary>
+              Looks up a localized string similar to Mailings.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.ProductName">
+            <summary>
+              Looks up a localized string similar to Talk.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.Search">
+            <summary>
+              Looks up a localized string similar to Find Contact.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.SearchOnHistory">
+            <summary>
+              Looks up a localized string similar to Search in message history.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.SendFileMessage">
+            <summary>
+              Looks up a localized string similar to File: {0}Size: {1}.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.SeparatorOfFoundMessages">
+            <summary>
+              Looks up a localized string similar to of.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.ShortDateFormat">
+            <summary>
+              Looks up a localized string similar to %H:%M:%S.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.ShowUserList">
+            <summary>
+              Looks up a localized string similar to Show list.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.StatusAway">
+            <summary>
+              Looks up a localized string similar to Away.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.StatusNA">
+            <summary>
+              Looks up a localized string similar to Not available.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.StatusOffline">
+            <summary>
+              Looks up a localized string similar to Offline.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.StatusOnline">
+            <summary>
+              Looks up a localized string similar to Available.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TalkDescription">
+            <summary>
+              Looks up a localized string similar to Chat with colleagues in real time. Get contact list automatically updated. Receive &quot;what’s new&quot; notifications..
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TitleBrowserNotificationsDialog">
+            <summary>
+              Looks up a localized string similar to Browser Notifications.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TitleCreateMailing">
+            <summary>
+              Looks up a localized string similar to Create mass mailing.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TitleCreateRoom">
+            <summary>
+              Looks up a localized string similar to Create chat room.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TitleKickOccupantDialog">
+            <summary>
+              Looks up a localized string similar to Delete user from chat.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TitleRecvInvite">
+            <summary>
+              Looks up a localized string similar to Invite to chat.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TitleRemoveRoomDialog">
+            <summary>
+              Looks up a localized string similar to Delete chat.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.TotalUsers">
+            <summary>
+              Looks up a localized string similar to Total.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.ValidSymbols">
+            <summary>
+              Looks up a localized string similar to letters, numbers, and periods (.).
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Talk.Resources.TalkResource.WriteMessage">
+            <summary>
+              Looks up a localized string similar to Write a message....
+            </summary>
+        </member>
+        <member name="F:ASC.Web.Talk.UserControls.MeseditorContainer.talkHistoryButton">
+            <summary>
+            talkHistoryButton control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Talk.UserControls.MeseditorContainer.talkToggleSendButton">
+            <summary>
+            talkToggleSendButton control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Talk.UserControls.MeseditorContainer.talkMassendButton">
+            <summary>
+            talkMassendButton control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Talk.UserControls.MeseditorContainer.talkConferenceButton">
+            <summary>
+            talkConferenceButton control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

@@ -10,8 +10,8 @@
     <table class="table">
         <colgroup>
             <col />
-            <col style="width: 300px;" />
-            <col style="width: 290px;" />
+            <col class="table-api" />
+            <col class="table-wopi" />
         </colgroup>
         <thead style="background-color: #ebebeb">
             <tr class="tablerow">
@@ -204,3 +204,4 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>

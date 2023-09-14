@@ -34,10 +34,10 @@
 <div class="header-gray">Parameters</div>
 <table class="table">
     <colgroup>
-        <col style="width: 300px;" />
-        <col />
-        <col style="width: 100px;" />
-        <col style="width: 100px;" />
+        <col class="table-name" />
+		<col />
+		<col class="table-type" />
+		<col class="table-example" />
     </colgroup>
     <thead>
         <tr class="tablerow">
@@ -52,7 +52,6 @@
             <td>services.CoAuthoring.token.inbox.inBody</td>
             <td>
                 Specifies the enabling the token validation in the request body to the <b>document command service</b>, <b>document conversion service</b> and <b>document builder service</b>.
-                Deprecated since version 7.1.
             </td>
             <td>boolean</td>
             <td>false</td>
@@ -61,7 +60,6 @@
             <td>services.CoAuthoring.token.outbox.inBody</td>
             <td>
                 Specifies the enabling the token generation for the request body by <b>document editing service</b> to <b>document storage service</b>.
-                Deprecated since version 7.1.
             </td>
             <td>boolean</td>
             <td>false</td>

@@ -29,8 +29,7 @@
                 <li>
                     <p><em>Non-visual plugins</em> (<em>"isVisual": false</em>) provide a button (or buttons) to apply some transformations or manipulations to the document, 
                         like <a href="<%= Url.Action("example/speech") %>">Speech</a>, 
-                        <a href="<%= Url.Action("example/helloworld") %>">Hello world</a>, 
-                        <a href="<%= Url.Action("example/num2word") %>">Num2Word</a>.</p>
+                        <a href="<%= Url.Action("example/helloworld") %>">Hello world</a>.</p>
                 </li>
                 <li>
                     <p><em>An input helper</em> (<em>"events": ["onInputHelperClear", "onInputHelperInput"]</em>) plugin is a combo of both visual and non-visual plugins, 

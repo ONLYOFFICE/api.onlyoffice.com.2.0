@@ -46,7 +46,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -88,7 +88,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -130,7 +130,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -162,6 +162,7 @@
       "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a presentation theme.\n     * @constructor\n     */",
   "description": "<p>Class representing a presentation theme.</p>",
   "scope": "global",

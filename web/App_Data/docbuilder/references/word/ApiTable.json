@@ -86,7 +86,7 @@
         },
         {
           "type": "number",
-          "name": "Cell",
+          "name": "nCell",
           "description": "<p>The cell position in the current table.</p>",
           "optional": false
         }
@@ -128,7 +128,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -479,7 +479,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -527,7 +527,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -552,7 +552,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -577,7 +577,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -620,14 +620,14 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isFlow",
           "description": "<p>Specifies if the table is inline or not.</p>",
           "optional": false
@@ -778,7 +778,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -795,7 +795,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -825,7 +825,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isMatchCase",
           "description": "<p>Case sensitive or not.</p>",
           "optional": false
@@ -843,7 +843,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -897,6 +897,176 @@
           "name": "bNone",
           "description": "<p>Defines that background color will not be set.</p>",
           "optional": false
+        }
+      ]
+    },
+    "ToJSON": {
+      "memberof": "ApiTable",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTable object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteNumberings",
+          "description": "<p>Specifies if the used numberings will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the used styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetPosInParent": {
+      "memberof": "ApiTable",
+      "name": "GetPosInParent",
+      "description": "<p>Returns the table position within its parent element.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Number"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "ReplaceByElement": {
+      "memberof": "ApiTable",
+      "name": "ReplaceByElement",
+      "description": "<p>Replaces the current table with a new element.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "DocumentElement",
+          "name": "oElement",
+          "description": "<p>The element to replace the current table with.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "AddComment": {
+      "memberof": "ApiTable",
+      "name": "AddComment",
+      "description": "<p>Adds a comment to all contents of the current table.\n<note>Please note that this table must be in the document.</note></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiComment"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>The comment text (required).</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sAuthor",
+          "description": "<p>The author's name (optional).</p>",
+          "optional": false
+        }
+      ]
+    },
+    "AddCaption": {
+      "memberof": "ApiTable",
+      "name": "AddCaption",
+      "description": "<p>Adds a caption paragraph after (or before) the current table.\n<note>Please note that the current table must be in the document (not in the footer/header).\nAnd if the current table is placed in a shape, then a caption is added after (or before) the parent shape.</note></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sAdditional",
+          "description": "<p>The additional text.</p>",
+          "optional": false
+        },
+        {
+          "type": "CaptionLabel | String",
+          "name": "sLabel",
+          "description": "<p>The caption label.</p>",
+          "optional": true,
+          "defaultValue": "\"Table\""
+        },
+        {
+          "type": "boolean",
+          "name": "bExludeLabel",
+          "description": "<p>Specifies whether to exclude the label from the caption.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "CaptionNumberingFormat",
+          "name": "sNumberingFormat",
+          "description": "<p>The possible caption numbering format.</p>",
+          "optional": true,
+          "defaultValue": "\"Arabic\""
+        },
+        {
+          "type": "boolean",
+          "name": "bBefore",
+          "description": "<p>Specifies whether to insert the caption before the current table (true) or after (false) (after/before the shape if it is placed in the shape).</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "Number",
+          "name": "nHeadingLvl",
+          "description": "<p>The heading level (used if you want to specify the chapter number).\n<note>If you want to specify &quot;Heading 1&quot;, then nHeadingLvl === 0 and etc.</note></p>",
+          "optional": true
+        },
+        {
+          "type": "CaptionSep",
+          "name": "sCaptionSep",
+          "description": "<p>The caption separator (used if you want to specify the chapter number).</p>",
+          "optional": true,
+          "defaultValue": "\"hyphen\""
         }
       ]
     },
@@ -1488,8 +1658,93 @@
           "optional": false
         }
       ]
+    },
+    "SetTableTitle": {
+      "memberof": "ApiTable",
+      "name": "SetTableTitle",
+      "description": "<p>Sets the table title (caption).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTablePr#SetTableTitle}",
+      "params": [
+        {
+          "type": "string",
+          "name": "sTitle",
+          "description": "<p>The table title to be set.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetTableTitle": {
+      "memberof": "ApiTable",
+      "name": "GetTableTitle",
+      "description": "<p>Returns the table title (caption).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTablePr#GetTableTitle}"
+    },
+    "SetTableDescription": {
+      "memberof": "ApiTable",
+      "name": "SetTableDescription",
+      "description": "<p>Sets the table description.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTablePr#SetTableDescription}",
+      "params": [
+        {
+          "type": "string",
+          "name": "sDescr",
+          "description": "<p>The table description to be set.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetTableDescription": {
+      "memberof": "ApiTable",
+      "name": "GetTableDescription",
+      "description": "<p>Returns the table description.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTablePr#GetTableDescription}"
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a table.\n\t * @constructor\n\t * @extends {ApiTablePr}\n\t */",
   "description": "<p>Class representing a table.</p>",
   "scope": "global",

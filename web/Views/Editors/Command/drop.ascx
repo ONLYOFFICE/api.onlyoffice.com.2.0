@@ -20,10 +20,10 @@
 <div class="header-gray">Parameters</div>
 <table class="table">
     <colgroup>
-        <col style="width: 100px;" />
+        <col class="table-name" />
         <col />
-        <col style="width: 100px;" />
-        <col style="width: 150px;" />
+        <col class="table-type" />
+        <col class="table-example" />
     </colgroup>
     <thead>
         <tr class="tablerow">
@@ -50,7 +50,7 @@
             <td>users</td>
             <td>Defines the list of the user identifiers.</td>
             <td>array of strings</td>
-            <td>optional</td>
+            <td>required</td>
         </tr>
     </tbody>
 </table>
@@ -68,10 +68,10 @@
 <div class="header-gray">Parameters</div>
 <table class="table">
     <colgroup>
-        <col style="width: 100px;" />
+        <col class="table-name" />
         <col />
-        <col style="width: 100px;" />
-        <col style="width: 150px;" />
+        <col class="table-type" />
+        <col class="table-example" />
     </colgroup>
     <thead>
         <tr class="tablerow">

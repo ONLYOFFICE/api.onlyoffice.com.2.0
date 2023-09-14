@@ -192,7 +192,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -209,7 +209,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -226,7 +226,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -264,7 +264,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isMatchCase",
           "description": "<p>Case sensitive or not.</p>",
           "optional": false
@@ -361,8 +361,26 @@
           "optional": false
         }
       ]
+    },
+    "ToJSON": {
+      "memberof": "ApiTableRow",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTableRowPr object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTableRowPr#ToJSON}"
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a table row.\n\t * @constructor\n\t * @extends {ApiTableRowPr}\n\t */",
   "description": "<p>Class representing a table row.</p>",
   "scope": "global",

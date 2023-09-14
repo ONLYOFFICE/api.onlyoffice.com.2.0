@@ -4,33 +4,117 @@
     "description": "<p>Common form properties.</p>",
     "type": [
       "Object"
+    ],
+    "properties": [
+      {
+        "type": "string",
+        "name": "key",
+        "description": "<p>Form key.</p>"
+      },
+      {
+        "type": "string",
+        "name": "tip",
+        "description": "<p>Form tip text.</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "required",
+        "description": "<p>Specifies if the form is required or not.</p>"
+      },
+      {
+        "type": "string",
+        "name": "placeholder",
+        "description": "<p>Form placeholder text.</p>"
+      }
     ]
   },
   "TextFormPrBase": {
     "name": "TextFormPrBase",
-    "description": "<p>Specific text form properties.</p>",
+    "description": "<p>Specific text field properties.</p>",
     "type": [
       "Object"
+    ],
+    "properties": [
+      {
+        "type": "boolean",
+        "name": "comb",
+        "description": "<p>Specifies if the text field should be a comb of characters with the same cell width. The maximum number of characters must be set to a positive value.</p>"
+      },
+      {
+        "type": "number",
+        "name": "maxCharacters",
+        "description": "<p>The maximum number of characters in the text field.</p>"
+      },
+      {
+        "type": "number",
+        "name": "cellWidth",
+        "description": "<p>The cell width for each character measured in millimeters. If this parameter is not specified or equal to 0 or less, then the width will be set automatically.</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "multiLine",
+        "description": "<p>Specifies if the current fixed size text field is multiline or not.</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "autoFit",
+        "description": "<p>Specifies if the text field content should be autofit, i.e. whether the font size adjusts to the size of the fixed size form.</p>"
+      }
     ]
   },
   "TextFormPr": {
     "name": "TextFormPr",
-    "description": "<p>Text form properties.</p>",
+    "description": "<p>Text field properties.</p>",
     "type": [
       "FormPrBase",
       "TextFormPrBase"
     ]
   },
-  "CheckBoxFormPrBase": {
-    "name": "CheckBoxFormPrBase",
-    "description": "<p>Specific checkbox properties.</p>",
+  "FormInsertPr": {
+    "name": "FormInsertPr",
+    "description": "<p>Form insertion specific properties.</p>",
     "type": [
       "Object"
+    ],
+    "properties": [
+      {
+        "type": "boolean",
+        "name": "placeholderFromSelection",
+        "description": "<p>Specifies if the currently selected text should be saved as a placeholder of the inserted form.</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "keepSelectedTextInForm",
+        "description": "<p>Specifies if the currently selected text should be saved as the content of the inserted form.</p>"
+      }
+    ]
+  },
+  "TextFormInsertPr": {
+    "name": "TextFormInsertPr",
+    "description": "<p>Properties for inserting a text field.</p>",
+    "type": [
+      "FormPrBase",
+      "TextFormPrBase",
+      "FormInsertPr"
+    ]
+  },
+  "CheckBoxFormPrBase": {
+    "name": "CheckBoxFormPrBase",
+    "description": "<p>Specific checkbox / radio button properties.</p>",
+    "type": [
+      "Object"
+    ],
+    "properties": [
+      {
+        "type": "boolean",
+        "name": "radio",
+        "description": "<p>Specifies if the current checkbox is a radio button. In this case, the key parameter is considered as an identifier for the group of radio buttons.</p>"
+      }
     ]
   },
   "CheckBoxFormPr": {
     "name": "CheckBoxFormPr",
-    "description": "<p>Checkbox form properties.</p>",
+    "description": "<p>Checkbox / radio button properties.</p>",
     "type": [
       "FormPrBase",
       "CheckBoxFormPrBase"
@@ -38,14 +122,31 @@
   },
   "ComboBoxFormPrBase": {
     "name": "ComboBoxFormPrBase",
-    "description": "<p>Specific combo box properties.</p>",
+    "description": "<p>Specific combo box / dropdown list properties.</p>",
     "type": [
       "Object"
+    ],
+    "properties": [
+      {
+        "type": "boolean",
+        "name": "editable",
+        "description": "<p>Specifies if the combo box text can be edited.</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "autoFit",
+        "description": "<p>Specifies if the combo box form content should be autofit, i.e. whether the font size adjusts to the size of the fixed size form.</p>"
+      },
+      {
+        "type": "Array.<(string|Array.<string>)>",
+        "name": "items",
+        "description": "<p>The combo box items.\nThis array consists of strings or arrays of two strings where the first string is the displayed value and the second one is its meaning.\nIf the array consists of single strings, then the displayed value and its meaning are the same.\nExample: [&quot;First&quot;, [&quot;Second&quot;, &quot;2&quot;], [&quot;Third&quot;, &quot;3&quot;], &quot;Fourth&quot;].</p>"
+      }
     ]
   },
   "ComboBoxFormPr": {
     "name": "ComboBoxFormPr",
-    "description": "<p>Combo box form properties.</p>",
+    "description": "<p>Combo box / dropdown list properties.</p>",
     "type": [
       "FormPrBase",
       "ComboBoxFormPrBase"
@@ -73,6 +174,33 @@
     "description": "<p>Specific picture form properties.</p>",
     "type": [
       "Object"
+    ],
+    "properties": [
+      {
+        "type": "ScaleFlag",
+        "name": "scaleFlag",
+        "description": "<p>The condition to scale an image in the picture form: &quot;always&quot;, &quot;never&quot;, &quot;tooBig&quot; or &quot;tooSmall&quot;.</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "lockAspectRatio",
+        "description": "<p>Specifies if the aspect ratio of the picture form is locked or not.</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "respectBorders",
+        "description": "<p>Specifies if the form border width is respected or not when scaling the image.</p>"
+      },
+      {
+        "type": "percentage",
+        "name": "shiftX",
+        "description": "<p>Horizontal picture position inside the picture form measured in percent:</p>\n<ul>\n<li><b>0</b> - the picture is placed on the left;</li>\n<li><b>50</b> - the picture is placed in the center;</li>\n<li><b>100</b> - the picture is placed on the right.</li>\n</ul>"
+      },
+      {
+        "type": "percentage",
+        "name": "shiftY",
+        "description": "<p>Vertical picture position inside the picture form measured in percent:</p>\n<ul>\n<li><b>0</b> - the picture is placed on top;</li>\n<li><b>50</b> - the picture is placed in the center;</li>\n<li><b>100</b> - the picture is placed on the bottom.</li>\n</ul>"
+      }
     ]
   },
   "PictureFormPr": {

@@ -260,6 +260,7 @@
       ]
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a table cell.\n     * @param oCell\n     * @constructor\n     */",
   "description": "<p>Class representing a table cell.</p>",
   "scope": "global",

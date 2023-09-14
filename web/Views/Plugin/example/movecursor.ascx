@@ -6,7 +6,7 @@
 </h1>
 
 <div class="header-gray">Description</div>
-<p class="dscr">Moves the text cursor to the document beginning/end.</p>
+<p class="dscr">Moves the text cursor to the document start/end.</p>
 <p><b>Plugin type:</b> visual, non-system.</p>
 <p><b>Supported editors:</b> documents.</p>
 
@@ -32,7 +32,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_move_cursor" target="_blank">https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_move_cursor</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>code.js</em></li>
     <li>Icons</li>
 </ol>
 
@@ -110,11 +110,11 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul>
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/movecursortostart") %>">executeMethod ("MoveCursorToStart")</a></li>
-    <li><a href="<%= Url.Action("executemethod/movecursortoend") %>">executeMethod ("MoveCursorToEnd")</a></li>
+    <li><a href="<%= Url.Action("executemethod/text/movecursortostart") %>">executeMethod ("MoveCursorToStart")</a></li>
+    <li><a href="<%= Url.Action("executemethod/text/movecursortoend") %>">executeMethod ("MoveCursorToEnd")</a></li>
 </ul>
 
 

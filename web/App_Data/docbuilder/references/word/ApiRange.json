@@ -50,7 +50,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -82,7 +82,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -143,7 +143,71 @@
         ]
       ],
       "see": null,
-      "inherits": null
+      "inherits": null,
+      "params": [
+        {
+          "type": "object",
+          "name": "oPr",
+          "description": "<p>The resulting string display properties.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "oPr.NewLineParagraph",
+          "description": "<p>Defines if the resulting string will include paragraph line boundaries or not.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "boolean",
+          "name": "oPr.Numbering",
+          "description": "<p>Defines if the resulting string will include numbering or not.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "boolean",
+          "name": "oPr.Math",
+          "description": "<p>Defines if the resulting string will include mathematical expressions or not.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "string",
+          "name": "oPr.NewLineSeparator",
+          "description": "<p>Defines how the line separator will be specified in the resulting string.</p>",
+          "optional": true,
+          "defaultValue": "'\\r'"
+        },
+        {
+          "type": "string",
+          "name": "oPr.TableCellSeparator",
+          "description": "<p>Defines how the table cell separator will be specified in the resulting string.</p>",
+          "optional": true,
+          "defaultValue": "'\\t'"
+        },
+        {
+          "type": "string",
+          "name": "oPr.TableRowSeparator",
+          "description": "<p>Defines how the table row separator will be specified in the resulting string.</p>",
+          "optional": true,
+          "defaultValue": "'\\r\\n'"
+        },
+        {
+          "type": "string",
+          "name": "oPr.ParaSeparator",
+          "description": "<p>Defines how the paragraph separator will be specified in the resulting string.</p>",
+          "optional": true,
+          "defaultValue": "'\\r\\n'"
+        },
+        {
+          "type": "string",
+          "name": "oPr.TabSymbol",
+          "description": "<p>Defines how the tab will be specified in the resulting string (does not apply to numbering)</p>",
+          "optional": true,
+          "defaultValue": "'\\t'"
+        }
+      ]
     },
     "GetAllParagraphs": {
       "memberof": "ApiRange",
@@ -246,7 +310,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isBold",
           "description": "<p>Specifies if the Range contents are displayed bold or not.</p>",
           "optional": false
@@ -272,7 +336,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isCaps",
           "description": "<p>Specifies if the Range contents are displayed capitalized or not.</p>",
           "optional": false
@@ -717,13 +781,109 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiRange",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiRange object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteNumberings",
+          "description": "<p>Specifies if the used numberings will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the used styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "AddComment": {
+      "memberof": "ApiRange",
+      "name": "AddComment",
+      "description": "<p>Adds a comment to the current range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiComment"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>The comment text (required).</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sAuthor",
+          "description": "<p>The author's name (optional).</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetRange": {
+      "memberof": "ApiRange",
+      "name": "GetRange",
+      "description": "<p>Returns a Range object that represents the document part contained in the specified range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiRange"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Number",
+          "name": "Start",
+          "description": "<p>Start character index in the current range.</p>",
+          "optional": true,
+          "defaultValue": 0
+        },
+        {
+          "type": "Number",
+          "name": "End",
+          "description": "<p>End character index in the current range (if &lt;= 0, then the range is taken to the end).</p>",
+          "optional": true,
+          "defaultValue": -1
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a continuous region in a document. \n\t * Each Range object is determined by the position of the start and end characters.\n\t * @param oElement - The document element that may be Document, Table, Paragraph, Run or Hyperlink.\n\t * @param {Number} Start - The start element of Range in the current Element.\n\t * @param {Number} End - The end element of Range in the current Element.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a continuous region in a document.\nEach Range object is determined by the position of the start and end characters.</p>",
   "scope": "global",

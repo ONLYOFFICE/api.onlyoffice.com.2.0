@@ -1,0 +1,1349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Calendar</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.Api.Calendar.BusinessObjects.Calendar.SecurityId">
+            <inheritdoc/>
+        </member>
+        <member name="P:ASC.Api.Calendar.BusinessObjects.Calendar.ObjectType">
+            <inheritdoc/>
+        </member>
+        <member name="P:ASC.Api.Calendar.BusinessObjects.Todo.ObjectType">
+            <inheritdoc/>
+        </member>
+        <member name="P:ASC.Api.Calendar.BusinessObjects.Event.ObjectType">
+            <inheritdoc/>
+        </member>
+        <member name="T:ASC.Api.Calendar.iCalApiContentResponse">
+             <summary>
+             Access to the calendars.
+             </summary>
+            <name>calendar</name>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.#ctor(ASC.Api.Impl.ApiContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetEventDays(ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime)">
+            <summary>
+            Returns a list of all the event days from one period till another.
+            </summary>
+            <short>
+            Get event days
+            </short>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="startDate">Period start date</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="endDate">Period end date</param>
+            <category>Events</category>
+            <returns>List of dates</returns>
+            <httpMethod>GET</httpMethod>
+            <path>api/2.0/calendar/eventdays/{startDate}/{endDate}</path>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.LoadCalendars(ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime)">
+            <summary>
+            Returns a list of calendars with the events for the current user in the selected period.
+            </summary>
+            <short>
+            Get calendars
+            </short>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" method="url" name="startDate">Period start date</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" method="url" name="endDate">Period end date</param>
+            <category>Calendars and subscriptions</category>
+            <httpMethod>GET</httpMethod>
+            <path>api/2.0/calendar/calendars/{startDate}/{endDate}</path>
+            <returns type="ASC.Api.Calendar.Wrappers.CalendarWrapper, ASC.Api.Calendar">List of calendars with events</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetCalendarEvents(System.String,ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime)">
+            <summary>
+            Returns a calendar with the events for the current user in the selected period.
+            </summary>
+            <short>
+            Get calendar events
+            </short>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" method="url" name="startDate">Period start date</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" method="url" name="endDate">Period end date</param>
+            <category>Calendars and subscriptions</category>
+            <httpMethod>GET</httpMethod>
+            <path>api/2.0/calendar/calendar/{calendarId}/{startDate}/{endDate}</path>
+            <returns type="ASC.Api.Calendar.Wrappers.CalendarWrapper, ASC.Api.Calendar">Calendar with events</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.LoadSubscriptions">
+            <summary>
+            Returns a list of all the subscriptions available to the current user.
+            </summary>
+            <short>
+            Get subscriptions
+            </short>
+            <category>Calendars and subscriptions</category>
+            <remarks>Please note that the list of events in the response will be empty.</remarks>
+            <returns type="ASC.Api.Calendar.Wrappers.SubscriptionWrapper, ASC.Api.Calendar">List of subscriptions</returns>
+            <collection>list</collection>
+            <path>api/2.0/calendar/subscriptions</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.ManageSubscriptions(System.Collections.Generic.IEnumerable{ASC.Api.Calendar.CalendarApi.SubscriptionState})">
+            <summary>
+            Updates the subscription states either subscribing or unsubscribing a user to/from it.
+            </summary>
+            <short>
+            Update the subscription states
+            </short>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Calendar.CalendarApi.SubscriptionState}, System.Collections.Generic" name="states">New subscription states</param>
+            <category>Calendars and subscriptions</category>
+            <path>api/2.0/calendar/subscriptions/manage</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetCalendarById(System.String)">
+            <summary>
+            Returns the detailed information about a calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Get a calendar by ID
+            </short>
+            <path>api/2.0/calendar/{calendarId}</path>
+            <httpMethod>GET</httpMethod>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <remarks>Please note that the list of events in the response will be empty.</remarks>
+            <category>Calendars and subscriptions</category>
+            <returns type="ASC.Api.Calendar.Wrappers.CalendarWrapper,ASC.Api.Calendar">Calendar</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.CreateCalendar(System.String,System.String,System.String,System.String,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam},System.String,System.Int32)">
+            <summary>
+            Creates a new calendar with the parameters (name, description, color, etc.) specified in the request.
+            </summary>
+            <short>
+            Create a calendar
+            </short>
+            <param type="System.String, System" name="name">Calendar name</param>
+            <param type="System.String, System" name="description">Calendar description</param>
+            <param type="System.String, System" name="textColor">Event text color</param>
+            <param type="System.String, System" name="backgroundColor">Event background color</param>
+            <param type="System.String, System" name="timeZone">Calendar time zone</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">Event alert type, in case alert type is set by default</param>
+            <param type="System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}, System.Collections.Generic" name="sharingOptions">Calendar sharing options with other users</param>
+            <param type="System.String, System" name="iCalUrl">iCal URL</param>
+            <param type="System.Int32, System" name="isTodo">Defines if the to-dos are shown in the calendar</param>
+            <remarks>Please note that the list of events in the response will be empty.</remarks>
+            <category>Calendars and subscriptions</category>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/calendar</path>
+            <returns type="ASC.Api.Calendar.Wrappers.CalendarWrapper, ASC.Api.Calendar">Created calendar</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.UpdateCalendar(System.String,System.String,System.String,System.String,System.String,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Boolean,System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam},System.String)">
+            <summary>
+            Updates the selected calendar with the parameters (name, description, color, etc.) specified in the request.
+            </summary>
+            <short>
+            Update a calendar
+            </short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="name">New calendar name</param>
+            <param type="System.String, System" name="description">New calendar description</param>
+            <param type="System.String, System" name="textColor">New event text color</param>
+            <param type="System.String, System" name="backgroundColor">New event background color</param>
+            <param type="System.String, System" name="timeZone">New calendar time zone</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">New event alert type, in case alert type is set by default</param>
+            <param type="System.Boolean, System" name="hideEvents">Display type: show or hide events in the calendar</param>
+            <param type="System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}, System.Collections.Generic" name="sharingOptions">New calendar sharing options with other users</param>
+            <param type="System.String, System" name="iCalUrl">New iCal URL</param>
+            <remarks>Please note that the list of events in the response will be empty.</remarks>
+            <category>Calendars and subscriptions</category>
+            <returns type="ASC.Api.Calendar.Wrappers.CalendarWrapper, ASC.Api.Calendar">Updated calendar</returns>
+            <path>api/2.0/calendar/{calendarId}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.UpdateCalendarView(System.String,System.String,System.String,System.String,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Boolean)">
+            <summary>
+            Updates the calendar display parameters specified in the request for the current user.
+            </summary>
+            <short>
+            Update the calendar view
+            </short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="name">New calendar name</param>
+            <param type="System.String, System" name="textColor">New event text color</param>
+            <param type="System.String, System" name="backgroundColor">New event background color</param>
+            <param type="System.String, System" name="timeZone">New calendar time zone</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">New event alert type, in case alert type is set by default</param>
+            <param type="System.Boolean, System" name="hideEvents">Display type: show or hide events in the calendar</param>
+            <remarks>Please note that the list of events in the response will be empty.</remarks>
+            <category>Calendars and subscriptions</category>
+            <returns type="ASC.Api.Calendar.Wrappers.CalendarWrapper, ASC.Api.Calendar" >Updated calendar</returns>
+            <path>api/2.0/calendar/{calendarId}/view</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.RemoveCalendar(System.Int32)">
+            <summary>
+            Deletes a calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Delete a calendar
+            </short>
+            <param type="System.Int32, System" method="url" name="calendarId">Calendar ID</param>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <httpMethod>DELETE</httpMethod>
+            <path>api/2.0/calendar/{calendarId}</path>
+            <category>Calendars and subscriptions</category>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetCalendariCalUrl(System.String)">
+            <summary>
+            Returns a link to the iCal related to the calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Get iCal link
+            </short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <category>Calendars and subscriptions</category>
+            <returns>iCal link</returns>
+            <path>api/2.0/calendar/{calendarId}/icalurl</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetCalendarCalDavUrl(System.String,System.Uri)">
+            <summary>
+            Returns a link to the CalDav related to the calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Get CalDav link
+            </short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <param type="System.Uri, System" name="uri" visible="false">Current URI</param>
+            <category>Calendars and subscriptions</category>
+            <returns>CalDav link</returns>
+            <path>api/2.0/calendar/{calendarId}/caldavurl</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.ChangeOfCalendarStorage(System.String,System.String)">
+            <summary>
+            Replaces a calendar storage with a new one specified in the request.
+            </summary>
+            <short>
+            Change a calendar storage
+            </short>
+            <param type="System.String, System" name="change">New calendar storage</param>
+            <param type="System.String, System" name="key">Email key</param>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <category>Calendars and subscriptions</category>
+            <path>api/2.0/calendar/change_to_storage</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.CaldavDeleteEvent(System.String,System.String)">
+            <summary>
+            Deletes the specified information from the CalDav event.
+            </summary>
+            <short>
+            Delete the CalDav event information
+            </short>
+            <param type="System.String, System" name="eventInfo">Event information that will be deleted</param>
+            <param type="System.String, System" name="key">Email key</param>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <category>Events</category>
+            <path>api/2.0/calendar/caldav_delete_event</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetCalendariCalStream(System.String,System.String)">
+            <summary>
+            Returns the iCal feed associated with the calendar by its ID and signagure specified in the request.
+            </summary>
+            <short>Get the iCal feed</short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" method="url" name="signature">Signature</param>
+            <remarks>To get the feed, you need to use the method returning the iCal feed link (it will generate the necessary signature).</remarks>
+            <category>Calendars and subscriptions</category>
+            <returns>Calendar iCal feed</returns>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <path>api/2.0/calendar/{calendarId}/ical/{signature}</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.ImportEvents(System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase})">
+            <summary>
+            Imports the events from the iCal files to the default calendar.
+            </summary>
+            <short>
+            Import the iCal events to the default calendar
+            </short>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="files">The iCal files with the events</param>
+            <category>Events</category>
+            <returns>The number of imported events</returns>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/calendar/import</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.ImportEvents(System.Int32,System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase})">
+            <summary>
+            Imports the events from the iCal files to the calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Import the iCal events to the specified calendar
+            </short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="files">The iCal files with the events</param>
+            <category>Events</category>
+            <returns>The number of imported events</returns>
+            <path>api/2.0/calendar/{calendarId}/import</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.ImportEventsFromAggregator(System.Int32,System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase})">
+            <summary>
+            Imports the events and attachments from the iCal files specified in the request.
+            </summary>
+            <short>
+            Import the iCal events and attachments
+            </short>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="files">The iCal files with the events and attachments</param>
+            <visible>false</visible> 
+            <category>Events</category>
+            <returns>The number of imported events</returns>
+            <path>api/2.0/calendar/importFromAggregator</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.ImportEvents(System.Int32,System.String)">
+            <summary>
+            Imports the events from the iCal string to the calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Import the events from the iCal string
+            </short>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="iCalString">The iCal string with the events to be imported</param>
+            <category>Events</category>
+            <returns>The number of imported events</returns>
+            <path>api/2.0/calendar/importIcs</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.CreateCalendarStream(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a calendar by the link to the external iCal feed.
+            </summary>
+            <short>
+            Create a calendar by the iCal link
+            </short>
+            <param type="System.String, System" name="iCalUrl">Link to the external iCal feed</param>
+            <param type="System.String, System" name="name">Calendar name</param>
+            <param type="System.String, System" name="textColor">Event text color</param>
+            <param type="System.String, System" name="backgroundColor">Event background name</param>
+            <remarks>Please note that the list of events in the response will be empty.</remarks>
+            <category>Calendars and subscriptions</category>
+            <path>api/2.0/calendar/calendarUrl</path>
+            <httpMethod>POST</httpMethod>
+            <returns type="ASC.Api.Calendar.Wrappers.CalendarWrapper, ASC.Api.Calendar">Created calendar</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.AddEvent(System.String,System.String,ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Boolean,System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam})">
+            <summary>
+            Creates a new event in the default calendar with the parameters specified in the request.
+            </summary>
+            <short>
+            Create a new event in the default calendar
+            </short>
+            <param type="System.String, System" name="name">Event name</param>
+            <param type="System.String, System" name="description">Event description</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="startDate">Event start date</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="endDate">Event end date</param>
+            <param type="System.String, System" name="repeatType">Event repeat type (RRULE string in the iCal format)</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">Event notification type</param>
+            <param type="System.Boolean, System" name="isAllDayLong">Event duration type: all day long or not</param>
+            <param type="System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}, System.Collections.Generic" name="sharingOptions">Event sharing access parameters</param>
+            <category>Events</category>
+            <path>api/2.0/calendar/event</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+            <returns type="ASC.Api.Calendar.Wrappers.EventWrapper, ASC.Api.Calendar">Event list</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.AddEvent(System.Int32,System.String,System.String,ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Boolean,System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam})">
+            <summary>
+            Creates a new event in the selected calendar with the parameters specified in the request.
+            </summary>
+            <short>
+            Create a new event in the selected calendar
+            </short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="name">Event name</param>
+            <param type="System.String, System" name="description">Event description</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="startDate">Event start date</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="endDate">Event end date</param>
+            <param type="System.String, System" name="repeatType">Event repeat type (RRULE string in the iCal format)</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">Event notification type</param>
+            <param type="System.Boolean, System" name="isAllDayLong">Event duration type: all day long or not</param>
+            <param type="System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}, System.Collections.Generic" name="sharingOptions">Event sharing access parameters</param>
+            <category>Events</category>
+            <path>api/2.0/calendar/{calendarId}/event</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+            <returns type="ASC.Api.Calendar.Wrappers.EventWrapper, ASC.Api.Calendar">List of events</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.Update(System.String,System.Int32,System.String,System.String,ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Boolean,System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam},ASC.Web.Core.Calendars.EventStatus)">
+            <summary>
+            Updates the existing event in the selected calendar with the parameters specified in the request.
+            </summary>
+            <short>
+            Update an event
+            </short>
+            <param type="System.String, System" method="url" name="calendarId">Calendar ID</param>
+            <param type="System.Int32, System" method="url" name="eventId">Event ID</param>
+            <param type="System.String, System" name="name">New event name</param>
+            <param type="System.String, System" name="description">New event description</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="startDate">New event start date</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="endDate">New event end date</param>
+            <param type="System.String, System" name="repeatType">New event repeat type (RRULE string in the iCal format)</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">New event notification type</param>
+            <param type="System.Boolean, System" name="isAllDayLong">New event duration type: all day long or not</param>
+            <param type="System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}, System.Collections.Generic" name="sharingOptions">New event sharing access parameters</param>
+            <param type="ASC.Web.Core.Calendars.EventStatus, ASC.Web.Core.Calendars" name="status">New event status</param>
+            <category>Events</category>
+            <returns type="ASC.Api.Calendar.Wrappers.EventWrapper, ASC.Api.Calendar">Updated list of events</returns>
+            <path>api/2.0/calendar/{calendarId}/{eventId}</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.AddTodo(System.String,System.String)">
+            <summary>
+            Creates a new task in the selected calendar with the parameters specified in the request.
+            </summary>
+            <short>
+            Create a new task
+            </short>
+            <param type="System.String, System" name="ics">Task in the iCal format</param>
+            <param type="System.String, System" name="todoUid">Task UID</param>
+            <category>Tasks</category>
+            <path>api/2.0/calendar/icstodo</path>
+            <httpMethod>POST</httpMethod>
+            <returns type="ASC.Api.Calendar.Wrappers.TodoWrapper, ASC.Api.Calendar">Task</returns>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.UpdateTodo(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Updates the existing task with the parameters specified in the request.
+            </summary>
+            <short>
+            Update a task
+            </short>
+            <param type="System.String, System" name="todoId">Task ID</param>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="ics">Task in the iCal format</param>
+            <param type="System.Boolean, System" name="fromCalDavServer">Defines if the request is from the CalDav server or not</param>
+            <category>Tasks</category>
+            <returns type="ASC.Api.Calendar.Wrappers.TodoWrapper, ASC.Api.Calendar">Updated task</returns>
+            <collection>list</collection>
+            <path>api/2.0/calendar/icstodo</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.RemoveTodo(System.Int32,System.Boolean)">
+            <summary>
+            Deletes a task with the ID specified in the request.
+            </summary>
+            <short>
+            Delete a task
+            </short>
+            <param type="System.Int32, System" method="url" name="todoId">Task ID</param>
+            <param type="System.Boolean, System" name="fromCaldavServer">Defines if the request is from the CalDav server or not</param>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <category>Tasks</category>
+            <httpMethod>DELETE</httpMethod>
+            <path>api/2.0/calendar/todos/{todoId}</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.AddEventOutside(System.String,System.String,System.String)">
+            <summary>
+            Adds the iCal event to the calendar specified in the request.
+            </summary>
+            <short>
+            Add the iCal event
+            </short>
+            <param type="System.String, System" name="calendarGuid">Calendar GUID</param>
+            <param type="System.String, System" name="eventGuid">Event GUID</param>
+            <param type="System.String, System" name="ics">Event in the iCal format</param>
+            <category>Events</category>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/calendar/outsideevent</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.DeleteCaldavCalendar(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Deletes a project calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Delete a project calendar
+            </short>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.Collections.Generic.List{System.String}, System.Collections.Generic" name="team">Project team</param>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <category>Calendars and subscriptions</category>
+            <httpMethod>DELETE</httpMethod>
+            <path>api/2.0/calendar/caldavprojcal</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.RefreshCalDavCalendar(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Refreshes the caldav calendar with the id specified in the request.
+            </summary>
+            <short>
+            Refresh CalDav calendar
+            </short>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.Collections.Generic.List{System.String}, System.Collections.Generic" name="team">User list</param>
+            <category>Tasks</category>
+            <httpMethod>UPDATE</httpMethod>
+            <path>api/2.0/calendar/refreshcaldavcalendar</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.DeleteCaldavEvent(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Deletes the CalDav event from the calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Delete the CalDav event
+            </short>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="uid">Event UID</param>
+            <param type="System.Collections.Generic.List{System.String}, System.Collections.Generic" name="responsibles">Task responsibles</param>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <category>Events</category>
+            <httpMethod>DELETE</httpMethod>
+            <path>api/2.0/calendar/caldavevent</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetUtcOffsets(System.String,ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime)">
+            <summary>
+            Returns the time offset in the specified time zone compared to Coordinated Universal Time (UTC) for the particular dates.
+            </summary>
+            <short>
+            Get the UTC offset
+            </short>
+            <param type="System.String, System" name="timeZone">Time zone ID</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="startDate">Start date to determine the offset</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="endDate">End date to determine the offset</param>
+            <category>Calendars and subscriptions</category>
+            <returns>The UTC offset in minutes</returns>
+            <path>api/2.0/calendar/utcoffset</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.UpdateCaldavEvent(System.String,System.String,System.Int32,System.Collections.Generic.List{System.String})">
+            <summary>
+            Updates the existing CalDav event in the calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Update the CalDav event
+            </short>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="uid">Event UID</param>
+            <param type="System.Int32, System" name="alert">Defines how many minutes before the event a reminder will be displayed</param>
+            <param type="System.Collections.Generic.List{System.String}, System.Collections.Generic" name="responsibles">Task responsibles</param>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+            <category>Events</category>
+            <path>api/2.0/calendar/caldavevent</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.AddEvent(System.Int32,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam},System.String)">
+            <summary>
+            Creates a new iCal event in the selected calendar with the parameters specified in the request.
+            </summary>
+            <short>
+            Create a new iCal event
+            </short>
+            <param type="System.Int32, System" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="ics">Event in the iCal format</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">Event notification type</param>
+            <param type="System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}, System.Collections.Generic" name="sharingOptions">Event sharing access parameters</param>
+            <param type="System.String, System" name="eventUid">Event UID</param>
+            <category>Events</category>
+            <path>api/2.0/calendar/icsevent</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+            <returns type="ASC.Api.Calendar.Wrappers.EventWrapper, ASC.Api.Calendar">Event</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.UpdateEvent(System.Int32,System.String,System.String,ASC.Web.Core.Calendars.EventAlertType,System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam},System.Boolean,System.String)">
+            <summary>
+            Updates the existing iCal event in the selected calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Update the iCal event
+            </short>
+            <param type="System.Int32, System" name="eventId">Event ID</param>
+            <param type="System.String, System" name="calendarId">Calendar ID</param>
+            <param type="System.String, System" name="ics">Event in the iCal format</param>
+            <param type="ASC.Web.Core.Calendars.EventAlertType, ASC.Web.Core.Calendars" name="alertType">New event notification type</param>
+            <param type="System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}, System.Collections.Generic" name="sharingOptions">New event sharing access parameters</param>
+            <param type="System.Boolean, System" name="fromCalDavServer">Defines if the request is from the CalDav server or not</param>
+            <param type="System.String, System" name="ownerId">New event owner ID</param>
+            <category>Events</category>
+            <returns type="ASC.Api.Calendar.Wrappers.EventWrapper, ASC.Api.Calendar">Updated event</returns>
+            <path>api/2.0/calendar/icsevent</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.RemoveEvent(System.Int32)">
+            <summary>
+            Deletes the event series from the calendar.
+            </summary>
+            <short>
+            Delete the event series
+            </short>
+            <param type="System.Int32, System" method="url" name="eventId">Event ID</param>
+            <httpMethod>DELETE</httpMethod>
+            <path>api/2.0/calendar/events/{eventId}</path>
+            <category>Events</category>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.RemoveEvent(System.Int32,ASC.Specific.ApiDateTime,ASC.Api.Calendar.CalendarApi.EventRemoveType,System.Uri,System.Boolean)">
+            <summary>
+            Deletes the specified event(s) from the series of repeating events.
+            </summary>
+            <short>
+            Delete the specified event(s) from event series
+            </short>
+            <param type="System.Int32, System" method="url" name="eventId">Event ID</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="date">Date to be deleted from the repeating event</param>
+            <param type="ASC.Api.Calendar.CalendarApi.EventRemoveType, ASC.Api.Calendar" name="type">The event deletion type: 0 - the single event, 1 - all the following events, 2 - all the event series.</param>
+            <param type="System.Boolean, System" name="fromCaldavServer">Defines if the request is from the CalDav server or not</param>
+            <param type="System.Uri, System" name="uri" visible="false">Current URI</param>
+            <category>Events</category>
+            <path>api/2.0/calendar/events/{eventId}/custom</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns type="ASC.Api.Calendar.Wrappers.EventWrapper, ASC.Api.Calendar">Updated event series collection</returns>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.UnsubscribeEvent(System.Int32)">
+            <summary>
+            Unsubscribes the current user from the event with the ID specified in the request.
+            </summary>
+            <short>
+            Unsubscribe from the event
+            </short>
+            <param type="System.Int32, System" method="url" name="eventId">Event ID</param>
+            <path>api/2.0/calendar/events/{eventId}/unsubscribe</path>
+            <httpMethod>DELETE</httpMethod>
+            <category>Events</category>
+            <returns type="System.Threading.Tasks.Task, System.Threading.Tasks">Task awaiter</returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetEventHistoryByUid(System.String)">
+            <summary>
+            Returns the iCal event by its UID from the history.
+            </summary>
+            <short>
+            Get the iCal event by UID
+            </short>
+            <param type="System.String, System" method="url" name="eventUid">Event UID</param>
+            <category>Events</category>
+            <returns type="ASC.Api.Calendar.Wrappers.EventHistoryWrapper, ASC.Api.Calendar">Event history</returns>
+            <path>api/2.0/calendar/events/{eventUid}/historybyuid</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetEventHistoryById(System.Int32)">
+            <summary>
+            Returns the iCal event by its ID from the history.
+            </summary>
+            <short>
+            Get the iCal event by ID
+            </short>
+            <param type="System.String, System" method="url" name="eventId">Event ID</param>
+            <category>Events</category>
+            <returns type="ASC.Api.Calendar.Wrappers.EventHistoryWrapper, ASC.Api.Calendar">Event history</returns>
+            <path>api/2.0/calendar/events/{eventId}/historybyid</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetCalendarSharingOptions(System.Int32)">
+            <summary>
+            Returns the sharing access parameters of the calendar with the ID specified in the request.
+            </summary>
+            <short>
+            Get access parameters
+            </short>
+            <param type="System.Int32, System" method="url" name="calendarId">Calendar ID</param>
+            <category>Calendars and subscriptions</category>
+            <returns type="ASC.Api.Calendar.Wrappers.PublicItemCollection, ASC.Api.Calendar">Sharing access parameters</returns>
+            <httpMethod>GET</httpMethod>
+            <path>api/2.0/calendar/{calendarId}/sharing</path>
+        </member>
+        <member name="M:ASC.Api.Calendar.CalendarApi.GetDefaultSharingOptions">
+            <summary>
+            Returns the default values for the sharing access parameters.
+            </summary>
+            <short>
+            Get default access parameters
+            </short>
+            <category>Calendars and subscriptions</category>
+            <returns type="ASC.Api.Calendar.Wrappers.PublicItemCollection, ASC.Api.Calendar">Default sharing access parameters</returns>
+            <httpMethod>GET</httpMethod>
+            <path>api/2.0/calendar/sharing</path>
+        </member>
+        <member name="T:ASC.Api.Calendar.iCalParser.IEmitter">
+            <summary>
+            Defines all of the basic operations that must be implemented by parser emitters.
+            </summary>
+            <remarks>
+            
+            </remarks>
+        </member>
+        <member name="T:ASC.Api.Calendar.iCalParser.Parser">
+            <summary>
+            Parse iCalendar rfc2445 streams and convert to another format based on the emitter used.
+            </summary>
+            
+            <remarks>
+            This class is the main entry point for the ICalParser library.  A parser is created
+            with a TextReader that contains the iCalendar stream to be parsed, and an IEmitter, which 
+            is used to transform the iCalendar into another format.
+            
+            Each iCalendar format file is in the form:
+            
+              ID[[;attr1;attr2;attr3;...;attrn]:value]
+              
+            where ID is the main keyword identifying the iCalendar entry, followed optionally by a 
+            set of attributes and a single value.  The parser works by identifying the specific IDs,
+            attributes and values, categorizing them based on similar 'behaviour' (as defined in the <code>Token</code>
+            class) and passing on recognized symbols to the emitter for further processing.  
+            
+            The error recovery policy of the parser is pretty simple.  When an error is detected, it is recorded,
+            and the rest of the (possibly folded) line is read, and parsing continues.  
+            </remarks>
+            
+            <example>
+            The following snippet will read the contents of the file 'myCalendar.ics', which the
+            parser will expect to contain iCalendar statements, and will write the RdfICalendar
+            equivalent to standard output.
+            <code>
+                RDFEmitter emitter = new RDFEmitter( );
+                StreamReader reader = new StreamReader( "myCalendar.ics" );
+                Parser parser = new Parser( reader, emitter );
+                parser.Parse( );
+                Console.WriteLine( emitter.Rdf );
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Parser.#ctor(System.IO.TextReader,ASC.Api.Calendar.iCalParser.IEmitter)">
+            <summary>
+            Create a new iCalendar parser.
+            </summary>
+            <param name="reader">The reader that contains the stream of text iCalendar</param>
+            <param name="_emitter">The emitter that will transform the iCalendar elements</param>
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Parser.Parse">
+            <summary>
+            Main entry point for starting the Parser.
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Parser.Parse(System.Boolean)">
+            <summary>
+            Alternate entry point for starting the parser.
+            </summary>
+            <param name="emitHandT">Indicates if the emitter should be told to emit headers
+            and trailers before and after emitting the iCalendar body</param>
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Parser.parseID">
+            <summary>
+            Parse the first field (ID) of the line.  Returns a boolean on weather or not the
+            method sucesfully recognized an ID.  If not, the method insures that the scanner
+            will start at the beginning of a new line.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Parser.parseAttributes(ASC.Api.Calendar.iCalParser.Scanner)">
+            <summary>
+            Parse the list of attributes - separated by ';'s.  Attributes always are in the
+            form 'id=value' and indicate key/value pairs in the iCalendar attribute format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Parser.parseValue">
+            <summary>
+            Parse the value.  The value is the last data item on a iCalendar input line.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ASC.Api.Calendar.iCalParser.ParserError">
+            <summary>
+            Basic error handling mechanism for the Parser
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Calendar.iCalParser.Scanner">
+            <summary>
+            The scanner is responsible for tokenizing iCalendar (RFC2445) files for use by the
+            parser.  
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Scanner.GetNextToken(ASC.Api.Calendar.iCalParser.ScannerState)">
+            <summary>
+            Returns the next token in the file.  Returns null on EOF.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Calendar.iCalParser.Scanner.ConsumeToEOL">
+            <summary>
+            This method is used for error recovery, get the rest of the line, including
+            folded lines, and position on a fresh line or EOF
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Calendar.iCalParser.Token">
+            <summary>
+            Represents the individual tokens returned from the scanner to the parser.  Note that the
+            Token creation process is sensitive to the ScannerState.  This state is defined by what context
+            the scanner currently is in - Parsing IDs, Parmeters, or values:
+              e.g.  the iCalendar grammar defines the following possible states
+              id;id=parm:value
+            each string parsed out of the value has to be treated differently (eg. quoted strings are
+            allowed in 'parm' but not in 'id')
+            
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Calendar.Notification.CalendarPatterns">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatterns.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatterns.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatterns.calendar_patterns">
+             <summary>
+               Looks up a localized string similar to &lt;patterns&gt;
+              &lt;formatter type=&quot;ASC.Notify.Patterns.NVelocityPatternFormatter, ASC.Common&quot; /&gt;
+            
+              &lt;pattern id=&quot;CalendarSharingPattern&quot; sender=&quot;email.sender&quot;&gt;
+                &lt;subject resource=&quot;|CalendarSharingSubject|ASC.Api.Calendar.Notification.CalendarPatternResource,ASC.Api.Calendar&quot; /&gt;
+                &lt;body styler=&quot;ASC.Notify.Textile.TextileStyler,ASC.Notify.Textile&quot; resource=&quot;|CalendarSharingEmailPattern|ASC.Api.Calendar.Notification.CalendarPatternResource,ASC.Api.Calendar&quot; /&gt;
+              &lt;/pattern&gt;
+              &lt;pattern id=&quot;CalendarSharing [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="T:ASC.Api.Calendar.Notification.CalendarPatternResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.CalendarSharingEmailPattern">
+             <summary>
+               Looks up a localized string similar to #if($SharingType == &quot;calendar&quot;)
+            h1.Access Granted to Calendar: $CalendarName
+             
+             
+            &quot;$UserName&quot;:&quot;$UserLink&quot; has granted you the access to the calendar: $CalendarName 
+             
+            ^You receive this email because you are a registered user of the &quot;${__VirtualRootPath}&quot;:&quot;${__VirtualRootPath}&quot; portal. If you do not want to receive the notifications about the calendars shared with you, please manage your &quot;subscription settings&quot;:&quot;$RecipientSubscriptionConfigURL&quot;.^
+            #end
+            #if($SharingType == &quot;event&quot;)
+            h1.Access Granted to Event: $ [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.CalendarSharingJabberPattern">
+             <summary>
+               Looks up a localized string similar to #if($SharingType == &quot;calendar&quot;)
+            Calendar. Access Granted to Calendar: $CalendarName
+            #end
+            #if($SharingType == &quot;event&quot;)
+            Calendar. Access Granted to Event: $EventName
+            #end.
+             </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.CalendarSharingSubject">
+             <summary>
+               Looks up a localized string similar to #if($SharingType == &quot;calendar&quot;)
+            Calendar. Access granted to calendar: $CalendarName
+            #end
+            #if($SharingType == &quot;event&quot;)
+            Calendar. Access granted to event: $EventName
+            #end.
+             </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.EventAlertEmailPatternWithAttachments">
+             <summary>
+               Looks up a localized string similar to h1.Reminder about the Event: $EventName
+             
+             
+            The $EventName event is appointed for $EventStartDate #if($EventEndDate!=&quot;&quot;)- $EventEndDate #end
+            #if($EventDescription!=&quot;&quot;)
+             
+             Event Description:
+             
+            $EventDescription
+            #end
+             
+            #if($EventAttachmentsBody!=&quot;&quot;)
+            $EventAttachmentsHeader
+            $EventAttachmentsBody
+            #end
+            
+            ^You receive this email because you are a registered user of the &quot;${__VirtualRootPath}&quot;:&quot;${__VirtualRootPath}&quot; portal. If you do not want to receive the event reminders, please manage your &quot;subscr [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.EventAlertJabberPatternWithAttachments">
+             <summary>
+               Looks up a localized string similar to The $EventName event is appointed for $EventStartDate #if($EventEndDate!=&quot;&quot;)- $EventEndDate #end
+            #if($EventDescription!=&quot;&quot;)
+             
+             Event Description:
+             
+            $EventDescription
+            #end
+            
+            #if($EventAttachmentsBody!=&quot;&quot;)
+            $EventAttachmentsHeader
+            $EventAttachmentsBody
+            #end.
+             </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.EventAlertSubject">
+            <summary>
+              Looks up a localized string similar to Calendar. Reminder about the event: $EventName.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Notification.CalendarPatternResource.EventAttachments">
+            <summary>
+              Looks up a localized string similar to Attachments:.
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Calendar.Resources.CalendarApiResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.BirthdayCalendarDescription">
+            <summary>
+              Looks up a localized string similar to Reminds about users&apos; birthdays.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.BirthdayCalendarName">
+            <summary>
+              Looks up a localized string similar to Users&apos; birthdays.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.CommonCalendarsGroup">
+            <summary>
+              Looks up a localized string similar to Common calendars.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.DefaultCalendarName">
+            <summary>
+              Looks up a localized string similar to My calendar.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.ErrorAccessDenied">
+            <summary>
+              Looks up a localized string similar to Access Denied.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.ErrorEmptyName">
+            <summary>
+              Looks up a localized string similar to Name can&apos;t be empty.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.ErrorItemNotFound">
+            <summary>
+              Looks up a localized string similar to Item not found.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.FullAccessOption">
+            <summary>
+              Looks up a localized string similar to Full Access.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.iCalCalendarsGroup">
+            <summary>
+              Looks up a localized string similar to iCal Calendars.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.NoNameCalendar">
+            <summary>
+              Looks up a localized string similar to No title.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.NoNameEvent">
+            <summary>
+              Looks up a localized string similar to No title.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.OwnerOption">
+            <summary>
+              Looks up a localized string similar to Owner.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.PersonalCalendarsGroup">
+            <summary>
+              Looks up a localized string similar to Personal calendars.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.ReadOption">
+            <summary>
+              Looks up a localized string similar to Read Only.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.SharedCalendarsGroup">
+            <summary>
+              Looks up a localized string similar to Calendars shared with me.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.SharedEventsCalendarDescription">
+            <summary>
+              Looks up a localized string similar to Here are all events, which another users shared with me.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.SharedEventsCalendarName">
+            <summary>
+              Looks up a localized string similar to Events shared with me.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Resources.CalendarApiResource.WrongiCalFeedLink">
+            <summary>
+              Looks up a localized string similar to An invalid reference to iCal.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.Id">
+            <example name="objectId">1</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.Uid">
+            <example name="uniqueId">123wda</example>
+            <order>140</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.TenantId">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.CalendarId">
+            <example name="sourceId">calendarID</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.Name">
+            <example name="title">Todo Name</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.Description">
+            <example name="description">Todo Description</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.Start">
+            <example name="start">2020-12-01T06:36:10.8645482Z</example>
+            <order>40</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.Completed">
+            <example name="completed">2020-12-01T06:36:10.8645482Z</example>
+            <order>110</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TodoWrapper.Owner">
+            <type name="owner">ASC.Api.Calendar.Wrappers.UserParams, ASC.Api.Calendar</type>
+            <order>120</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.CalendarId">
+            <example type="int" name="calendarId">1</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.EventUid">
+            <example name="eventUid">uid1@onlyoffice.com</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.EventId">
+            <example type="int" name="eventId">1</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.MergedIcs">
+            <example name="mergedIcs">BEGIN:VCALENDAR
+            VERSION:2.0
+            PRODID:onlyoffice.com
+            BEGIN:VEVENT
+            UID:uid1@onlyoffice.com
+            DTSTAMP:19970714T170000Z
+            ORGANIZER;CN=John Doe:MAILTO:john.doe@example.com
+            DTSTART:19970714T170000Z
+            DTEND:19970715T035959Z
+            SUMMARY:Bastille Day Party
+            END:VEVENT
+            END:VCALENDAR</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.CanEdit">
+            <example name="canEdit">true</example>
+            <order>40</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.CanNotify">
+            <example name="canNotify">true</example>
+            <order>50</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.Ics">
+            <example name="ics">some text</example>
+            <order>60</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.TimeZoneInfo">
+            <type name="timeZone">ASC.Api.Calendar.Wrappers.TimeZoneWrapper, ASC.Api.Calendar</type>
+            <order>70</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventHistoryWrapper.CalendarName">
+            <example name="calendarName">Calendar name</example>
+            <order>80</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventAlertWrapper.Type">
+            <example type="int">-1</example>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Id">
+            <example name="objectId">1</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Uid">
+            <example name="uniqueId">1234wda</example>
+            <order>140</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.TenantId">
+            <example>1</example>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Todo">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.CalendarId">
+            <example name="sourceId">calendarID</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Name">
+            <example name="title">Event Name</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Description">
+            <example name="description">Event Description</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.AllDayLong">
+            <example name="allDay">false</example>
+            <order>60</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Start">
+            <example name="start">2020-12-01T06:36:10.8645482Z</example>
+            <order>40</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.End">
+            <example name="end">2020-12-01T06:36:10.8645482Z</example>
+            <order>50</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.RepeatRule">
+            <example name="repeatRule"></example>
+            <order>70</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Alert">
+            <type name="alert">ASC.Api.Calendar.Wrappers.EventAlertWrapper, ASC.Api.Calendar</type>
+            <order>110</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.IsShared">
+            <example name="isShared">true</example>
+            <order>80</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.CanUnsubscribe">
+            <example name="canUnsubscribe">true</example>
+            <order>130</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.IsEditable">
+            <example name="isEditable">false</example>
+            <order>100</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Permissions">
+            <type name="permissions">ASC.Api.Calendar.Wrappers.CalendarPermissions, ASC.Api.Calendar</type>
+            <order>90</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Owner">
+            <type name="owner">ASC.Api.Calendar.Wrappers.UserParams, ASC.Api.Calendar</type>
+            <order>120</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.EventWrapper.Status">
+            <example name="status" type="int">0</example>
+            <order>150</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.PublicItemCollection.AvailableOptions">
+            <type name="actions">ASC.Api.Calendar.Wrappers.AccessOption, ASC.Api.Calendar</type>
+            <collection>list</collection>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.PublicItemCollection.Items">
+            <type name="items">ASC.Api.Calendar.Wrappers.PublicItemWrapper, ASC.Api.Calendar</type>
+            <collection>list</collection>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.IsSubscription">
+            <example name="isSubscription">false</example>
+            <order>80</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.iCalUrl">
+            <example name="iCalUrl"></example>
+            <order>230</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.IsiCalStream">
+            <example name="isiCalStream">false</example>
+            <order>220</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.IsHidden">
+            <example name="isHidden">false</example>
+            <order>50</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.CanAlertModify">
+            <example name="canAlertModify">true</example>
+            <order>200</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.IsShared">
+            <example name="isShared">true</example>
+            <order>60</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.Permissions">
+            <type name="permissions">ASC.Api.Calendar.Wrappers.CalendarPermissions, ASC.Api.Calendar</type>
+            <order>70</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.IsEditable">
+            <example name="isEditable">true</example>
+            <order>90</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.TextColor">
+            <example name="textColor">#ffffff</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.BackgroundColor">
+            <example name="backgroundColor">#000000</example>
+            <order>40</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.Description">
+            <example name="description">Calendar Description</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.Title">
+            <example name="title">Calendar Name</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.Id">
+            <example name="objectId">1</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.IsTodo">
+            <example name="isTodo">false</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.Owner">
+            <type name="owner">ASC.Api.Calendar.Wrappers.UserParams, ASC.Api.Calendar</type>
+            <order>120</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.IsAcceptedSubscription">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.Events">
+            <type name="events">ASC.Api.Calendar.Wrappers.EventWrapper, ASC.Api.Calendar</type>
+            <order>150</order>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.Todos">
+            <type name="todos">ASC.Api.Calendar.Wrappers.TodoWrapper, ASC.Api.Calendar</type>
+            <order>160</order>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.DefaultAlertType">
+            <type name="defaultAlert">ASC.Api.Calendar.Wrappers.EventAlertWrapper, ASC.Api.Calendar</type>
+            <order>160</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.TimeZoneInfo">
+            <type name="timeZone">ASC.Api.Calendar.Wrappers.TimeZoneWrapper, ASC.Api.Calendar</type>
+            <order>160</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarWrapper.CanEditTimeZone">
+            <example name="canEditTimeZone">false</example>
+            <order>160</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.CalendarPermissions.Data">
+            <type>ASC.Api.Calendar.Wrappers.PublicItemCollection, ASC.Api.Calendar</type>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.UserParams.Id">
+            <example name="objectId">2fdfe577-3c26-4736-9df9-b5a683bb8520</example>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.UserParams.Name">
+            <example name="name">Valery Zykov</example>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.PublicItemWrapper.ItemId">
+            <example name="id">2fdfe577-3c26-4736-9df9-b5a683bb8520</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.PublicItemWrapper.ItemName">
+            <example name="name">Everyone</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.PublicItemWrapper.IsGroup">
+            <example name="isGroup">true</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.PublicItemWrapper.CanEdit">
+            <example name="canEdit">true</example>
+            <order>40</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.PublicItemWrapper.SharingOption">
+            <type name="selectedAction">ASC.Api.Calendar.Wrappers.AccessOption, ASC.Api.Calendar</type>
+            <order>50</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.AccessOption.Id">
+            <example name="id">read</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.AccessOption.Name">
+            <example name="name">Read only</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.AccessOption.Default">
+            <example name="defaultAction">true</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.AccessOption.DefaultStyle">
+            <example name="defaultStyle">read</example>
+            <order>40</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.SubscriptionWrapper.IsAccepted">
+            <example name="isSubscribed">false</example>
+            <order>100</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.SubscriptionWrapper.IsNew">
+            <example name="isNew">true</example>
+            <order>140</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.SubscriptionWrapper.Group">
+            <example name="group">Personal Calendars</example>
+            <order>130</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.SubscriptionWrapper.Permissions">
+            <type>ASC.Api.Calendar.Wrappers.CalendarPermissions, ASC.Api.Calendar</type>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TimeZoneWrapper.Name">
+            <example name="name">UTC</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TimeZoneWrapper.Id">
+            <example name="id">UTC</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Calendar.Wrappers.TimeZoneWrapper.Offset">
+            <example type="int" name="offset">0</example>
+            <order>0</order>
+        </member>
+    </members>
+</doc>

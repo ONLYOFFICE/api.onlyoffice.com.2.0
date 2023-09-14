@@ -297,7 +297,7 @@
       },
       "returns": [
         [
-          "object"
+          "ReviewReport"
         ]
       ],
       "see": null,
@@ -346,7 +346,7 @@
     "GetAllContentControls": {
       "memberof": "ApiDocument",
       "name": "GetAllContentControls",
-      "description": "<p>Returns a list of all the content controls in the document.</p>",
+      "description": "<p>Returns a list of all the content controls from the document.</p>",
       "tags": {
         "typeofeditors": [
           "CDE"
@@ -360,6 +360,92 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "GetTagsOfAllContentControls": {
+      "memberof": "ApiDocument",
+      "name": "GetTagsOfAllContentControls",
+      "description": "<p>Returns a list of all tags that are used for all content controls in the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<String>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetTagsOfAllForms": {
+      "memberof": "ApiDocument",
+      "name": "GetTagsOfAllForms",
+      "description": "<p>Returns a list of all tags that are used for all forms in the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<String>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetContentControlsByTag": {
+      "memberof": "ApiDocument",
+      "name": "GetContentControlsByTag",
+      "description": "<p>Returns a list of all content controls in the document with the specified tag name.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiBlockLvlSdt>",
+          "Array.<ApiInlineLvlSdt>"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sTag",
+          "description": "<p>Content control tag.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetFormsByTag": {
+      "memberof": "ApiDocument",
+      "name": "GetFormsByTag",
+      "description": "<p>Returns a list of all forms in the document with the specified tag name.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiBlockLvlSdt>",
+          "Array.<ApiInlineLvlSdt>"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sTag",
+          "description": "<p>Form tag.</p>",
+          "optional": false
+        }
+      ]
     },
     "SetTrackRevisions": {
       "memberof": "ApiDocument",
@@ -476,7 +562,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -501,7 +587,7 @@
       },
       "returns": [
         [
-          "bool"
+          "ApiComment"
         ]
       ],
       "see": null,
@@ -509,14 +595,14 @@
       "params": [
         {
           "type": "string",
-          "name": "Comment",
-          "description": "<p>The comment text.</p>",
+          "name": "sText",
+          "description": "<p>The comment text (required).</p>",
           "optional": false
         },
         {
           "type": "string",
-          "name": "Autor",
-          "description": "<p>The author's name (not obligatory).</p>",
+          "name": "sAuthor",
+          "description": "<p>The author's name (optional).</p>",
           "optional": false
         }
       ]
@@ -602,74 +688,6 @@
       "see": null,
       "inherits": null
     },
-    "GetAllDrawingObjects": {
-      "memberof": "ApiDocument",
-      "name": "GetAllDrawingObjects",
-      "description": "<p>Returns a collection of drawing objects in the document.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE"
-        ]
-      },
-      "returns": [
-        [
-          "Array.<ApiDrawing>"
-        ]
-      ],
-      "see": null,
-      "inherits": null
-    },
-    "GetAllShapes": {
-      "memberof": "ApiDocument",
-      "name": "GetAllShapes",
-      "description": "<p>Returns a collection of shape objects in the document.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE"
-        ]
-      },
-      "returns": [
-        [
-          "Array.<ApiShape>"
-        ]
-      ],
-      "see": null,
-      "inherits": null
-    },
-    "GetAllImages": {
-      "memberof": "ApiDocument",
-      "name": "GetAllImages",
-      "description": "<p>Returns a collection of image objects in the document.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE"
-        ]
-      },
-      "returns": [
-        [
-          "Array.<ApiImage>"
-        ]
-      ],
-      "see": null,
-      "inherits": null
-    },
-    "GetAllCharts": {
-      "memberof": "ApiDocument",
-      "name": "GetAllCharts",
-      "description": "<p>Returns a collection of chart objects in the document.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE"
-        ]
-      },
-      "returns": [
-        [
-          "Array.<ApiChart>"
-        ]
-      ],
-      "see": null,
-      "inherits": null
-    },
     "Search": {
       "memberof": "ApiDocument",
       "name": "Search",
@@ -694,7 +712,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isMatchCase",
           "description": "<p>Case sensitive or not.</p>",
           "optional": false
@@ -719,28 +737,28 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bHtmlHeadings",
           "description": "<p>Defines if the HTML headings and IDs will be generated when the Markdown renderer of your target platform does not handle Markdown-style IDs.</p>",
           "optional": true,
           "defaultValue": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bBase64img",
           "description": "<p>Defines if the images will be created in the base64 format.</p>",
           "optional": true,
           "defaultValue": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bDemoteHeadings",
           "description": "<p>Defines if all heading levels in your document will be demoted to conform with the following standard: single H1 as title, H2 as top-level heading in the text body.</p>",
           "optional": true,
           "defaultValue": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bRenderHTMLTags",
           "description": "<p>Defines if HTML tags will be preserved in your Markdown. If you just want to use an occasional HTML tag, you can avoid using the opening angle bracket\nin the following way: &lt;tag&gt;text&lt;/tag&gt;. By default, the opening angle brackets will be replaced with the special characters.</p>",
           "optional": true,
@@ -766,28 +784,28 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bHtmlHeadings",
           "description": "<p>Defines if the HTML headings and IDs will be generated when the Markdown renderer of your target platform does not handle Markdown-style IDs.</p>",
           "optional": true,
           "defaultValue": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bBase64img",
           "description": "<p>Defines if the images will be created in the base64 format.</p>",
           "optional": true,
           "defaultValue": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bDemoteHeadings",
           "description": "<p>Defines if all heading levels in your document will be demoted to conform with the following standard: single H1 as title, H2 as top-level heading in the text body.</p>",
           "optional": true,
           "defaultValue": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bRenderHTMLTags",
           "description": "<p>Defines if HTML tags will be preserved in your Markdown. If you just want to use an occasional HTML tag, you can avoid using the opening angle bracket\nin the following way: &lt;tag&gt;text&lt;/tag&gt;. By default, the opening angle brackets will be replaced with the special characters.</p>",
           "optional": true,
@@ -824,10 +842,10 @@
         }
       ]
     },
-    "ClearAllFields": {
+    "UpdateAllTOC": {
       "memberof": "ApiDocument",
-      "name": "ClearAllFields",
-      "description": "<p>Clears all fields in the document.</p>",
+      "name": "UpdateAllTOC",
+      "description": "<p>Updates all tables of contents in the current document.</p>",
       "tags": {
         "typeofeditors": [
           "CDE"
@@ -835,7 +853,93 @@
       },
       "returns": [],
       "see": null,
-      "inherits": null
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bOnlyPageNumbers",
+          "description": "<p>Specifies that only page numbers will be updated.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "UpdateAllTOF": {
+      "memberof": "ApiDocument",
+      "name": "UpdateAllTOF",
+      "description": "<p>Updates all tables of figures in the current document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bOnlyPageNumbers",
+          "description": "<p>Specifies that only page numbers will be updated.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "ToJSON": {
+      "memberof": "ApiDocument",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiDocument object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteDefaultTextPr",
+          "description": "<p>Specifies if the default text properties will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteDefaultParaPr",
+          "description": "<p>Specifies if the default paragraph properties will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteTheme",
+          "description": "<p>Specifies if the document theme will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteSectionPr",
+          "description": "<p>Specifies if the document section properties will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteNumberings",
+          "description": "<p>Specifies if the document numberings will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the document styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
     },
     "GetAllForms": {
       "memberof": "ApiDocument",
@@ -848,18 +952,15 @@
       },
       "returns": [
         [
-          "Array.<ApiTextForm>",
-          "Array.<ApiPictureForm>",
-          "Array.<ApiComboBoxForm>",
-          "Array.<ApiCheckBoxForm>"
+          "Array.<ApiForm>"
         ]
       ],
       "see": null,
       "inherits": null
     },
-    "ClearAllForms": {
+    "ClearAllFields": {
       "memberof": "ApiDocument",
-      "name": "ClearAllForms",
+      "name": "ClearAllFields",
       "description": "<p>Clears all forms in the document.</p>",
       "tags": {
         "typeofeditors": [
@@ -907,6 +1008,48 @@
           "description": "<p>Defines that highlight will not be set.</p>",
           "optional": true,
           "defaultValue": false
+        }
+      ]
+    },
+    "GetAllComments": {
+      "memberof": "ApiDocument",
+      "name": "GetAllComments",
+      "description": "<p>Returns all comments from the current document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiComment>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetCommentById": {
+      "memberof": "ApiDocument",
+      "name": "GetCommentById",
+      "description": "<p>Returns a comment from the current document by its ID.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiComment"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sId",
+          "description": "<p>The comment ID.</p>",
+          "optional": false
         }
       ]
     },
@@ -996,9 +1139,9 @@
       "inherits": null,
       "params": [
         {
-          "type": "captionType",
+          "type": "CaptionLabel | string",
           "name": "sCaption",
-          "description": "<p>Caption type (equation, figure or table).</p>",
+          "description": "<p>The caption label (&quot;Equation&quot;, &quot;Figure&quot;, &quot;Table&quot;, or another caption label).</p>",
           "optional": false
         }
       ]
@@ -1041,6 +1184,277 @@
       "returns": [
         [
           "Array.<string>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetSelectedDrawings": {
+      "memberof": "ApiDocument",
+      "name": "GetSelectedDrawings",
+      "description": "<p>Returns all the selected drawings in the current document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiShape>",
+          "Array.<ApiImage>",
+          "Array.<ApiChart>",
+          "Array.<ApiDrawing>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "ReplaceCurrentImage": {
+      "memberof": "ApiDocument",
+      "name": "ReplaceCurrentImage",
+      "description": "<p>Replaces the current image with an image specified.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sImageUrl",
+          "description": "<p>The image source where the image to be inserted should be taken from (currently, only internet URL or Base64 encoded images are supported).</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "Width",
+          "description": "<p>The image width in English measure units.</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "Height",
+          "description": "<p>The image height in English measure units.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ReplaceDrawing": {
+      "memberof": "ApiDocument",
+      "name": "ReplaceDrawing",
+      "description": "<p>Replaces a drawing with a new drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiDrawing",
+          "name": "oOldDrawing",
+          "description": "<p>A drawing which will be replaced.</p>",
+          "optional": false
+        },
+        {
+          "type": "ApiDrawing",
+          "name": "oNewDrawing",
+          "description": "<p>A drawing to replace the old drawing.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bSaveOldDrawingPr",
+          "description": "<p>Specifies if the old drawing settings will be saved.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "AddFootnote": {
+      "memberof": "ApiDocument",
+      "name": "AddFootnote",
+      "description": "<p>Adds a footnote for the selected text (or the current position if the selection doesn't exist).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiDocumentContent"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "AddEndnote": {
+      "memberof": "ApiDocument",
+      "name": "AddEndnote",
+      "description": "<p>Adds an endnote for the selected text (or the current position if the selection doesn't exist).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiDocumentContent"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetControlsHighlight": {
+      "memberof": "ApiDocument",
+      "name": "SetControlsHighlight",
+      "description": "<p>Sets the highlight to the content controls from the current document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "byte",
+          "name": "r",
+          "description": "<p>Red color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "byte",
+          "name": "g",
+          "description": "<p>Green color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "byte",
+          "name": "b",
+          "description": "<p>Blue color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bNone",
+          "description": "<p>Defines that highlight will not be set.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "AddTableOfContents": {
+      "memberof": "ApiDocument",
+      "name": "AddTableOfContents",
+      "description": "<p>Adds a table of content to the current document.\n<note>Please note that the new table of contents replaces the existing table of contents.</note></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "TocPr",
+          "name": "oTocPr",
+          "description": "<p>Table of contents properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    "AddTableOfFigures": {
+      "memberof": "ApiDocument",
+      "name": "AddTableOfFigures",
+      "description": "<p>Adds a table of figures to the current document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "TofPr",
+          "name": "oTofPr",
+          "description": "<p>Table of figures properties.\n<note>Please note that the table of figures properties will be filled with the default properties if they are undefined.</note></p>",
+          "optional": true,
+          "defaultValue": "{}"
+        },
+        {
+          "type": "boolean",
+          "name": "bReplace",
+          "description": "<p>Specifies whether to replace the selected table of figures instead of adding a new one.</p>",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
+    },
+    "GetStatistics": {
+      "memberof": "ApiDocument",
+      "name": "GetStatistics",
+      "description": "<p>Returns the document statistics represented as an object with the following parameters:</p>\n<ul>\n<li><b>PageCount</b> - number of pages;</li>\n<li><b>WordsCount</b> - number of words;</li>\n<li><b>ParagraphCount</b> - number of paragraphs;</li>\n<li><b>SymbolsCount</b> - number of symbols;</li>\n<li><b>SymbolsWSCount</b> - number of symbols with spaces.</li>\n</ul>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "object"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetPageCount": {
+      "memberof": "ApiDocument",
+      "name": "GetPageCount",
+      "description": "<p>Returns a number of pages in the current document.\n<note>This method can be slow for large documents because it runs the document calculation\nprocess before the full recalculation.</note></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "number"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetAllStyles": {
+      "memberof": "ApiDocument",
+      "name": "GetAllStyles",
+      "description": "<p>Returns all styles of the current document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiStyle>"
         ]
       ],
       "see": null,
@@ -1134,7 +1548,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -1185,8 +1599,153 @@
           "optional": false
         }
       ]
+    },
+    "GetContent": {
+      "memberof": "ApiDocument",
+      "name": "GetContent",
+      "description": "<p>Returns an array of document elements from the current ApiDocumentContent object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetContent}",
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bGetCopies",
+          "description": "<p>Specifies if the copies of the document elements will be returned or not.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetAllDrawingObjects": {
+      "memberof": "ApiDocument",
+      "name": "GetAllDrawingObjects",
+      "description": "<p>Returns a collection of drawing objects from the document content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiDrawing>"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetAllDrawingObjects}"
+    },
+    "GetAllShapes": {
+      "memberof": "ApiDocument",
+      "name": "GetAllShapes",
+      "description": "<p>Returns a collection of shape objects from the document content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiShape>"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetAllShapes}"
+    },
+    "GetAllImages": {
+      "memberof": "ApiDocument",
+      "name": "GetAllImages",
+      "description": "<p>Returns a collection of image objects from the document content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiImage>"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetAllImages}"
+    },
+    "GetAllCharts": {
+      "memberof": "ApiDocument",
+      "name": "GetAllCharts",
+      "description": "<p>Returns a collection of chart objects from the document content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiChart>"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetAllCharts}"
+    },
+    "GetAllOleObjects": {
+      "memberof": "ApiDocument",
+      "name": "GetAllOleObjects",
+      "description": "<p>Returns a collection of OLE objects from the document content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiOleObject>"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetAllOleObjects}"
+    },
+    "GetAllParagraphs": {
+      "memberof": "ApiDocument",
+      "name": "GetAllParagraphs",
+      "description": "<p>Returns an array of all paragraphs from the current document content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiParagraph>"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetAllParagraphs}"
+    },
+    "GetAllTables": {
+      "memberof": "ApiDocument",
+      "name": "GetAllTables",
+      "description": "<p>Returns an array of all tables from the current document content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiParagraph>"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiDocumentContent#GetAllTables}"
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a document.\n\t * @constructor\n\t * @extends {ApiDocumentContent}\n\t */",
   "description": "<p>Class representing a document.</p>",
   "scope": "global",

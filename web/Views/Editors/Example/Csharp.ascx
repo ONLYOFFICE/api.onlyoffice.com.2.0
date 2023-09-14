@@ -1,11 +1,11 @@
 <%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 
 <h1>
-    <span class="hdr">How to integrate online editors into your own website on .Net (C#)</span>
+    <span class="hdr">How to integrate online editors into your own website on .Net (C#) / .Net (C# MVC)</span>
 </h1>
 
 <h2>Overview</h2>
-<p class="dscr">This example will help you integrate ONLYOFFICE Docs into your web application written in .Net (C#).</p>
+<p class="dscr">This example will help you integrate ONLYOFFICE Docs into your web application written in .Net (C#) or .Net (C# MVC).</p>
 
 <div class="note">
     The integration examples are used to demonstrate document editors functions and the ways to connect <b>Document Server</b> to your own application.
@@ -26,10 +26,11 @@
 <p>Download and install <a href="<%= Url.Action("demopreview") %>">ONLYOFFICE Docs</a> (packaged as Document Server).</p>
 <p>See the detailed guide to learn how to install Document Server <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-windows.aspx?from=api_csharp_example">for Windows</a>, <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-install-ubuntu.aspx?from=api_csharp_example">for Linux</a>, or <a href="https://helpcenter.onlyoffice.com/server/developer-edition/docker/docker-installation.aspx?from=api_csharp_example">for Docker</a>.</p>
 
-<h2 id="win-2" class="copy-link"><span class="style_step">Step 2. </span>Download the .Net (C#) code for the editors integration</h2>
-<p>Download the <a href="<%= Url.Action("demopreview") %>">.Net (C#) example</a> from our site.</p>
+<h2 id="win-2" class="copy-link"><span class="style_step">Step 2. </span>Download the .Net (C#) / .Net (C# MVC) code for the editors integration</h2>
+<p>Download the <a href="<%= Url.Action("demopreview") %>">.Net (C#) or .Net (C# MVC) example</a> from our site.</p>
 <p>
-    To connect the editors to your website, specify the path to the editors installation and the path to the storage folder in the <em>settings.config</em> file:
+    To connect the editors to your website, specify the path to the editors installation and the path to the storage folder in the <em>settings.config</em> file
+    (or <em>web.appsettings.config</em> file for MVC version):
 </p>
 <pre>
 &lt;add key="storage-path" value=""/&gt;
@@ -41,7 +42,7 @@
 <h2 id="win-3" class="copy-link"><span class="style_step">Step 3. </span>Install the prerequisites</h2>
 <p>Check that your system meets the requirements:</p>
 <ul>
-    <li><b>Microsoft .NET Framework</b>: version 4.5 (download it from the <a href="https://www.microsoft.com/en-US/download/details.aspx?id=30653">official Microsoft website</a>);</li>
+    <li><b>Microsoft .NET Framework</b>: version 4.5 (download it from the <a href="https://www.microsoft.com/en-US/download/details.aspx?id=30653" target="_blank">official Microsoft website</a>);</li>
     <li><b>Internet Information Services</b>: version 7 or later.</li>
 </ul>
 <p>Configure the IIS components for the server to work correctly:</p>
@@ -52,7 +53,7 @@
     </li>
     <li>
         <p>In the opened window, find <b>Internet Information Services</b> and check all the features that are chosen in the following image:</p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/server-components.png") %>" />
+        <img class="screenshot" alt="" src="<%= Url.Content("~/content/img/csharp/server-components.png") %>" />
     </li>
 </ol>
 
@@ -65,13 +66,13 @@
     <li>
         <p>Add your website in the IIS Manager.</p>
         <p>On the <b>Connections</b> panel right-click the <b>Sites</b> node in the tree, then click <b>Add Website</b>.</p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
+        <img class="screenshot" alt="" src="<%= Url.Content("~/content/img/csharp/add.png") %>" />
     </li>
     <li>
-        <p>In the <b>Add Website</b> dialog box specify the name of the folder with the .Net (C#) project in the <b>Site name</b> box.</p>
+        <p>In the <b>Add Website</b> dialog box specify the name of the folder with the .Net (C#) / .Net (C# MVC) project in the <b>Site name</b> box.</p>
         <p>Specify the path to the folder with your project in the <b>Physical Path</b> box.</p>
         <p>Specify the unique value used only for this website in the <b>Port</b> box.</p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/sitename.png") %>" />
+        <img class="screenshot" alt="" src="<%= Url.Content("~/content/img/csharp/sitename.png") %>" />
     </li>
     <li>
         <p>
@@ -79,12 +80,12 @@
             Choose <b>v4.0.</b> version.
         </p>
         <p><b>Application Pools</b> -> right-click the platform name -> <b>Set application Pool defaults</b> -> <b>.NET CLR version</b></p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/platform.png") %>" />
+        <img class="screenshot" alt="" src="<%= Url.Content("~/content/img/csharp/platform.png") %>" />
     </li>
     <li>
         <p>Browse your website with the IIS Manager:</p>
         <p>Right-click the site -> <b>Manage Website</b> -> <b>Browse</b></p>
-        <img alt="" src="<%= Url.Content("~/content/img/csharp/browse.png") %>" />
+        <img class="screenshot" alt="" src="<%= Url.Content("~/content/img/csharp/browse.png") %>" />
     </li>
 </ol>
 

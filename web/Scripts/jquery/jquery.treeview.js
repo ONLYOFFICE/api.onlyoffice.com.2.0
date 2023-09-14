@@ -214,7 +214,24 @@
 				}
 				if ( current.length ) {
 					// TODO update the open/closed classes
-					var items = current.addClass("selected").parents("ul, li").add( current.next() ).show();
+					var items = current.addClass("selected").parents("ul, li").add(current.next()).show();
+					var parent = current.parents("ul").get(-1);
+					var header = parent.previousElementSibling;
+					if (header && header.classList.contains("treeheader")) {
+						parent = header;
+					}
+
+					var firstTreeheader = document.getElementsByClassName("treeheader")[0];
+
+					document.getElementsByClassName("nav-list")[0].scrollTop = parent.offsetTop - firstTreeheader.offsetTop;
+
+					var heightBlock = Math.floor(window.innerHeight / 2);
+
+					if (current[0].offsetTop - parent.offsetTop > heightBlock) {
+						var t = Math.floor((current[0].offsetTop - parent.offsetTop) / heightBlock);
+						document.getElementsByClassName("nav-list")[0].scrollTop = document.getElementsByClassName("nav-list")[0].scrollTop + t * heightBlock;
+					}
+
 					if (settings.prerendered) {
 						// if prerendered is on, replicate the basic class swapping
 						items.filter("li")

@@ -1,0 +1,1429 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Settings</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Api.Settings.SettingsApi">
+            <summary>
+             Portal settings API.
+            </summary>
+            <name>settings</name>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetCardDavUrl">
+            <summary>
+            Creates a CardDav address book for a user with all portal users and returns a link to this address book.
+            </summary>
+            <short>
+            Get a link to the CardDav address book
+            </short>
+            <category>CardDav address book</category>
+            <path>api/2.0/settings/carddavurl</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.DeleteCardDavAddressBook">
+            <summary>
+            Deletes a CardDav address book with all portal users.
+            </summary>
+            <short>
+            Delete a CardDav address book
+            </short>
+            <category>CardDav address book</category>
+            <path>api/2.0/settings/deletebook</path>
+            <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetSmtpSettings">
+            <summary>
+            Returns the current portal SMTP settings.
+            </summary>
+            <short>
+            Get the SMTP settings
+            </short>
+            <category>SMTP</category>
+            <returns type="ASC.Api.Settings.Smtp.SmtpSettingsWrapper, ASC.Api.Settings">SMTP settings</returns>
+            <path>api/2.0/settings/smtp</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveSmtpSettings(ASC.Api.Settings.Smtp.SmtpSettingsWrapper)">
+            <summary>
+            Saves the SMTP settings for the current portal.
+            </summary>
+            <short>
+            Save the SMTP settings
+            </short>
+            <category>SMTP</category>
+            <param type="ASC.Api.Settings.Smtp.SmtpSettingsWrapper, ASC.Api.Settings.Smtp" file="ASC.Api.Settings" name="smtpSettings">SMTP settings</param>
+            <returns type="ASC.Api.Settings.Smtp.SmtpSettingsWrapper, ASC.Api.Settings">SMTP settings</returns>
+            <path>api/2.0/settings/smtp</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.ResetSmtpSettings">
+            <summary>
+            Resets SMTP settings of the current portal.
+            </summary>
+            <short>
+            Reset the SMTP settings
+            </short>
+            <category>SMTP</category>
+            <returns type="ASC.Api.Settings.Smtp.SmtpSettingsWrapper, ASC.Api.Settings">Default SMTP settings</returns>
+            <path>api/2.0/settings/smtp</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TestSmtpSettings">
+            <summary>
+            Tests the SMTP settings for the current portal (send test message to the user email).
+            </summary>
+            <short>
+            Test the SMTP settings
+            </short>
+            <category>SMTP</category>
+            <returns type="ASC.Api.Settings.Smtp.SmtpOperationStatus, ASC.Api.Settings">SMTP operation status</returns>
+            <path>api/2.0/settings/smtp/test</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetSmtpOperationStatus">
+            <summary>
+            Returns the SMTP test process status.
+            </summary>
+            <short>
+            Get the SMTP test process status
+            </short>
+            <category>SMTP</category>
+            <returns type="ASC.Api.Settings.Smtp.SmtpOperationStatus, ASC.Api.Settings">SMTP operation status</returns>
+            <path>api/2.0/settings/smtp/test/status</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetSsoSettingsV2">
+            <summary>
+            Returns the current portal SSO settings.
+            </summary>
+            <short>
+            Get the SSO settings
+            </short>
+            <category>SSO</category>
+            <returns type="ASC.Web.Studio.UserControls.Management.SingleSignOnSettings.SsoSettingsV2, ASC.Web.Studio">SSO settings</returns>
+            <path>api/2.0/settings/ssov2</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetDefaultSsoSettingsV2">
+            <summary>
+            Returns the default portal SSO settings.
+            </summary>
+            <short>
+            Get the default SSO settings
+            </short>
+            <category>SSO</category>
+            <returns type="ASC.Web.Studio.UserControls.Management.SingleSignOnSettings.SsoSettingsV2, ASC.Web.Studio">Default SSO settings</returns>
+            <path>api/2.0/settings/ssov2/default</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetSsoSettingsV2Constants">
+            <summary>
+            Returns the SSO settings constants.
+            </summary>
+            <short>
+            Get the SSO settings constants
+            </short>
+            <category>SSO</category>
+            <returns>The SSO settings constants</returns>
+            <path>api/2.0/settings/ssov2/constants</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveSsoSettingsV2(System.String)">
+            <summary>
+            Saves the SSO settings for the current portal.
+            </summary>
+            <short>
+            Save the SSO settings
+            </short>
+            <category>SSO</category>
+            <param type="System.String, System" name="serializeSettings">Serialized SSO settings</param>
+            <returns>SSO settings</returns>
+            <path>api/2.0/settings/ssov2</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.ResetSsoSettingsV2">
+            <summary>
+            Resets the SSO settings of the current portal.
+            </summary>
+            <short>
+            Reset the SSO settings
+            </short>
+            <category>SSO</category>
+            <returns type="ASC.Web.Studio.UserControls.Management.SingleSignOnSettings.SsoSettingsV2, ASC.Web.Studio">Default SSO settings</returns>
+            <path>api/2.0/settings/ssov2</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetLdapSettings">
+            <summary>
+            Returns the current portal LDAP settings.
+            </summary>
+            <short>
+            Get the LDAP settings
+            </short>
+            <category>LDAP</category>
+            <returns type="ASC.ActiveDirectory.Base.Settings.LdapSettings, ASC.ActiveDirectory">LDAP settings</returns>
+            <path>api/2.0/settings/ldap</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetLdapCronSettings">
+            <summary>
+            Returns the LDAP autosynchronous cron expression for the current portal if it exists.
+            </summary>
+            <short>
+            Get the LDAP cron expression
+            </short>
+            <category>LDAP</category>
+            <returns>Cron expression or null</returns>
+            <path>api/2.0/settings/ldap/cron</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SetLdapCronSettings(System.String)">
+            <summary>
+            Sets the LDAP autosynchronous cron expression to the current portal.
+            </summary>
+            <short>
+            Set the LDAP cron expression
+            </short>
+            <category>LDAP</category>
+            <path>api/2.0/settings/ldap/cron</path>
+            <param type="System.String, System" name="cron">Cron expression</param>
+            <httpMethod>POST</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SyncLdap">
+            <summary>
+            Synchronizes the portal data with the new information from the LDAP server.
+            </summary>
+            <short>
+            Synchronize with LDAP server
+            </short>
+            <category>LDAP</category>
+            <path>api/2.0/settings/ldap/sync</path>
+            <httpMethod>GET</httpMethod>
+            <returns type="ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus, ASC.ActiveDirectory">Operation status</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TestLdapSync">
+            <summary>
+            Starts the process of collecting preliminary changes on the portal during the synchronization process according to the selected LDAP settings.
+            </summary>
+            <short>
+            Test the LDAP synchronization
+            </short>
+            <category>LDAP</category>
+            <path>api/2.0/settings/ldap/sync/test</path>
+            <httpMethod>GET</httpMethod>
+            <returns type="ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus, ASC.ActiveDirectory">Operation status</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveLdapSettings(System.String,System.Boolean)">
+            <summary>
+            Saves the LDAP settings specified in the request and starts importing/synchronizing users and groups by LDAP.
+            </summary>
+            <short>
+            Save the LDAP settings
+            </short>
+            <category>LDAP</category>
+            <param type="System.String, System" name="settings">LDAP settings in the serialized string format</param>
+            <param type="System.Boolean, System" name="acceptCertificate">Specifies if a certificate will be accepted (true) or not (false)</param>
+            <returns type="ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus, ASC.ActiveDirectory">Operation status</returns>
+            <path>api/2.0/settings/ldap</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TestLdapSave(System.String,System.Boolean)">
+            <summary>
+            Starts the process of saving LDAP settings and collecting preliminary changes on the portal according to them.
+            </summary>
+            <short>
+            Test the LDAP saving process
+            </short>
+            <category>LDAP</category>
+            <param type="System.String, System" name="settings">LDAP settings in the serialized string format</param>
+            <param type="System.Boolean, System" name="acceptCertificate">Specifies if a certificate will be accepted (true) or not (false)</param>
+            <path>api/2.0/settings/ldap/save/test</path>
+            <httpMethod>POST</httpMethod>
+            <returns type="ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus, ASC.ActiveDirectory">Operation status</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetLdapOperationStatus">
+            <summary>
+            Returns the LDAP synchronization process status.
+            </summary>
+            <short>
+            Get the LDAP synchronization process status
+            </short>
+            <category>LDAP</category>
+            <returns type="ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus, ASC.ActiveDirectory">Operation status</returns>
+            <path>api/2.0/settings/ldap/status</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetDefaultLdapSettings">
+            <summary>
+            Returns the LDAP default settings.
+            </summary>
+            <short>
+            Get the LDAP default settings
+            </short>
+            <category>LDAP</category>
+            <returns type="ASC.ActiveDirectory.Base.Settings.LdapSettings, ASC.ActiveDirectory">LDAP default settings</returns>
+            <path>api/2.0/settings/ldap/default</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetSettings">
+            <summary>
+            Returns a list of all the available portal settings with the current values for each parameter.
+            </summary>
+            <short>
+            Get the portal settings
+            </short>
+            <category>Common settings</category>
+            <returns type="ASC.Api.Settings.SettingsWrapper, ASC.Api.Settings">Settings</returns>
+            <path>api/2.0/settings</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetQuotaUsed">
+            <summary>
+            Returns the space usage quota for the portal with the specified space usage for each module.
+            </summary>
+            <short>
+            Get the space usage
+            </short>
+            <category>Quota</category>
+            <returns type="ASC.Web.Studio.Core.Quota.QuotaWrapper, ASC.Web.Studio">Space usage and limits for upload</returns>
+            <path>api/2.0/settings/quota</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveUserQuotaSettings(System.Boolean,System.Int64)">
+             <summary>
+             Save user quota limit
+            </summary>
+            <short>
+             Save user quota limit
+            </short>
+            <category>User quota</category>
+            <returns>Operation result</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SetTenantQuotaSettings(System.Int32,System.Boolean)">
+            <summary>
+             Set tenant quota settings
+            </summary>
+            <short>
+             Set tenant quota settings
+            </short>
+            <category>Tenant quota</category>
+            <returns>Operation result</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.RecalculateQuota">
+            <summary>
+             Starts the process of recalculating quota.
+             </summary>
+             <short>
+             Recalculate quota 
+             </short>
+             <category>Quota</category>
+             <path>api/2.0/settings/recalculatequota</path>
+             <httpMethod>GET</httpMethod>
+             <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.CheckRecalculateQuota">
+            <summary>
+            Checks the process of recalculating quota.
+            </summary>
+            <short>
+            Check quota recalculation
+            </short>
+            <category>Quota</category>
+            <returns>Boolean value: true - quota recalculation process is enabled, false - quota recalculation process is disabled</returns>
+            <path>api/2.0/settings/checkrecalculatequota</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateUserQuota(System.Collections.Generic.IEnumerable{System.Guid},System.Int64)">
+            <summary>
+            Changes a quota limit for the users with the IDs specified in the request.
+            </summary>
+            <short>
+            Change a user quota limit
+            </short>
+            <category>User quota</category>
+            <param name="userIds">List of user IDs</param>
+            <param name="quota">User quota</param>
+            <returns>List of users</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.RecalculateUserQuota">
+            <summary>
+             Starts the process of recalculating users quota.
+            </summary>
+            <short>
+             Recalculates quota 
+            </short>
+            <category>Quota</category>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.CheckRecalculateUserQuota">
+            <summary>
+             Checks the process of recalculating users quota.
+            </summary>
+            <short>
+             Check users quota recalculating
+            </short>
+            <category>Quota</category>
+            <returns>Boolean value: True - quota recalculating process is running, False - quota recalculating process is stopped</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetBuildVersions">
+            <summary>
+            Returns the current build version.
+            </summary>
+            <short>Get the current build version</short>
+            <category>Versions</category>
+            <path>api/2.0/settings/version/build</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+            <requiresAuthorization>false</requiresAuthorization>
+            <returns>Current ONLYOFFICE, editor, mailserver versions</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetVersions">
+            <summary>
+            Returns a list of the availibe portal versions including the current version.
+            </summary>
+            <short>
+            Get the portal versions
+            </short>
+            <category>Versions</category>
+            <path>api/2.0/settings/version</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+            <returns>List of availibe portal versions including the current version</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SetVersion(System.Int32)">
+            <summary>
+            Sets a version with the ID specified in the request to the current tenant.
+            </summary>
+            <short>
+            Change the portal version
+            </short>
+            <category>Versions</category>
+            <param type="System.Int32, System" name="versionId">Version ID</param>
+            <path>api/2.0/settings/version</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+            <returns>List of availibe portal versions including the current version</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetWebItemSecurityInfo(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns the security settings for the modules specified in the request.
+            </summary>
+            <short>
+            Get the security settings
+            </short>
+            <category>Security</category>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" method="url" name="ids">List of module IDs</param>
+            <returns type="ASC.Api.Settings.SecurityWrapper, ASC.Api.Settings">Security settings</returns>
+            <path>api/2.0/settings/security</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetWebItemSecurityInfo(System.Guid)">
+            <summary>
+            Returns the availability of the module with the ID specified in the request.
+            </summary>
+            <short>
+            Get the module availability
+            </short>
+            <category>Security</category>
+            <param type="System.Guid, System" method="url" name="id">Module ID</param>
+            <returns>Boolean value: true - module is enabled, false - module is disabled</returns>
+            <path>api/2.0/settings/security/{id}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetEnabledModules">
+            <summary>
+            Returns a list of all the enabled modules.
+            </summary>
+            <short>
+            Get the enabled modules
+            </short>
+            <category>Security</category>
+            <returns>List of enabled modules</returns>
+            <path>api/2.0/settings/security/modules</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetPasswordSettings">
+            <summary>
+            Returns the portal password settings.
+            </summary>
+            <short>
+            Get the password settings
+            </short>
+            <category>Security</category>
+            <returns>Password settings</returns>
+            <path>api/2.0/settings/security/password</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SetPasswordSettings(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Sets the portal password settings.
+            </summary>
+            <short>
+            Set the password settings
+            </short>
+            <category>Security</category>
+            <param type="System.Int32, System" method="url" name="maxLength">Maximum length</param>
+            <param type="System.Int32, System" method="url" name="minLength">Minimum length</param>
+            <param type="System.Boolean, System" method="url" name="upperCase">Specifies whether to include uppercase letters or not</param>
+            <param type="System.Boolean, System" method="url" name="digits">Specifies whether to include digits or not</param>
+            <param type="System.Boolean, System" method="url" name="specSymbols">Specifies whether to include special symbols or not</param>
+            <returns>Password settings</returns>
+            <path>api/2.0/settings/security/password</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SetWebItemSecurity(System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Sets the security settings to the module with the ID specified in the request.
+            </summary>
+            <short>
+            Set the module security settings
+            </short>
+            <category>Security</category>
+            <param type="System.String, System" name="id">Module ID</param>
+            <param type="System.Boolean, System" name="enabled">Specifies if the selected module is enabled or not</param>
+            <param type="System.Collections.Generic.IEnumerable{System.Guid}, System.Collections.Generic" name="subjects">List of user/group IDs</param>
+            <path>api/2.0/settings/security</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+            <returns type="ASC.Api.Settings.SecurityWrapper, ASC.Api.Settings">Security settings</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SetAccessToWebItems(System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.Boolean}})">
+            <summary>
+            Sets the security settings to the modules with the IDs specified in the request.
+            </summary>
+            <short>
+            Set the security settings to modules
+            </short>
+            <category>Security</category>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String, System.Boolean}}" name="items">Modules with security information</param>
+            <path>api/2.0/settings/security/access</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+            <returns type="ASC.Api.Settings.SecurityWrapper, ASC.Api.Settings">Security settings</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetProductAdministrators(System.Guid)">
+            <summary>
+            Returns a list of all the administrators of the product with the ID specified in the request.
+            </summary>
+            <short>
+            Get the product administrators
+            </short>
+            <category>Security</category>
+            <param type="System.Guid, System" method="url" name="productid">Product ID</param>
+            <returns type="ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee">List of product administrators</returns>
+            <path>api/2.0/settings/security/administrator/{productid}</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.IsProductAdministrator(System.Guid,System.Guid)">
+            <summary>
+            Checks if the selected user is an administrator of a product with the ID specified in the request.
+            </summary>
+            <short>
+            Check the product administrator
+            </short>
+            <category>Security</category>
+            <param type="System.Guid, System" method="url" name="productid">Product ID</param>
+            <param type="System.Guid, System" method="url" name="userid">User ID</param>
+            <returns>Object with the user security information</returns>
+            <path>api/2.0/settings/security/administrator</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SetProductAdministrator(System.Guid,System.Guid,System.Boolean)">
+            <summary>
+            Sets the selected user as an administrator of a product with the ID specified in the request.
+            </summary>
+            <short>
+            Set the product administrator
+            </short>
+            <category>Security</category>
+            <param type="System.Guid, System" name="productid">Product ID</param>
+            <param type="System.Guid, System" name="userid">User ID</param>
+            <param type="System.Boolean, System" name="administrator">Specifies if a user will be a product administrator or not</param>
+            <returns>Object with the user security information</returns>
+            <path>api/2.0/settings/security/administrator</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetLogo(System.Boolean)">
+            <summary>
+            Returns the portal logo image URL.
+            </summary>
+            <short>
+            Get a portal logo
+            </short>
+            <category>Common settings</category>
+            <param type="System.Boolean, System" name="dark">Specifies if the portal logo will be used for the dark theme or not</param>
+            <returns>Portal logo image URL</returns>
+            <path>api/2.0/settings/logo</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveWhiteLabelSettings(System.String,System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.Int32,System.String}},System.Boolean)">
+            <summary>
+            Saves the white label settings specified in the request.
+            </summary>
+            <short>
+            Save the white label settings
+            </short>
+            <category>Rebranding</category>
+            <param type="System.String, System" name="logoText">Logo text</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.Int32, System.String}}" name="logo">Tenant IDs with their logos</param>
+            <param type="System.Boolean, System" name="isDefault">Specifies if the default settings will be saved or not</param>
+            <path>api/2.0/settings/whitelabel/save</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveWhiteLabelSettingsFromFiles(System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase},System.Boolean)">
+            <summary>
+            Saves the white label settings from files specified in the request.
+            </summary>
+            <short>
+            Save the white label settings from files
+            </short>
+            <category>Rebranding</category>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="attachments">Files with the white label settings</param>
+            <param type="System.Boolean, System" name="isDefault">Specifies if the default settings will be saved or not</param>
+            <path>api/2.0/settings/whitelabel/savefromfiles</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetWhiteLabelSizes">
+            <summary>
+            Returns the white label sizes.
+            </summary>
+            <short>
+            Get the white label sizes
+            </short>
+            <category>Rebranding</category>
+            <returns>White label sizes</returns>
+            <path>api/2.0/settings/whitelabel/sizes</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetWhiteLabelLogos(System.Boolean,System.Boolean)">
+            <summary>
+            Returns the white label logos.
+            </summary>
+            <short>
+            Get the white label logos
+            </short>
+            <category>Rebranding</category>
+            <param type="System.Boolean, System" name="retina">Specifies if the logos will be for the retina screens or not</param>
+            <param type="System.Boolean, System" name="isDefault">Specifies if the default settings will be saved or not</param>
+            <returns>White label logos</returns>
+            <path>api/2.0/settings/whitelabel/logos</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetWhiteLabelLogoText(System.Boolean)">
+            <summary>
+            Returns the white label logo text.
+            </summary>
+            <short>
+            Get the white label logo text
+            </short>
+            <category>Rebranding</category>
+            <param type="System.Boolean, System" name="isDefault">Specifies if the default settings will be saved or not</param>
+            <returns>Logo text</returns>
+            <path>api/2.0/settings/whitelabel/logotext</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.RestoreWhiteLabelOptions(System.Boolean)">
+            <summary>
+            Restores the white label options.
+            </summary>
+            <short>
+            Restore the white label options
+            </short>
+            <category>Rebranding</category>
+            <param type="System.Boolean, System" name="isDefault">Specifies if the default settings will be saved or not</param>
+            <path>api/2.0/settings/whitelabel/restore</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.RestoreWhiteLabelLogos(System.Collections.Generic.List{ASC.Web.Core.WhiteLabel.WhiteLabelLogoTypeEnum},System.Boolean,System.Boolean)">
+            <summary>
+            Restores the white label logos.
+            </summary>
+            <short>
+            Restore the white label logos
+            </short>
+            <category>Rebranding</category>
+            <param type="System.Collections.Generic.List{ASC.Web.Core.WhiteLabel.WhiteLabelLogoTypeEnum}, System.Collections.Generic" name="logoTypes">Logo types</param>
+            <param type="System.Boolean, System" name="restoreLogoText">Specifies if the logo text will be saved or not</param>
+            <param type="System.Boolean, System" name="isDefault">Specifies if the default settings will be saved or not</param>
+            <path>api/2.0/settings/whitelabel/restorelogos</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetIpRestrictions">
+            <summary>
+            Returns the IP portal restrictions.
+            </summary>
+            <short>Get the IP portal restrictions</short>
+            <category>IP restrictions</category>
+            <returns type="ASC.IPSecurity.IPRestriction, ASC.IPSecurity">IP restrictions</returns>
+            <path>api/2.0/settings/iprestrictions</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveIpRestrictions(System.Collections.Generic.IEnumerable{ASC.IPSecurity.IPRestrictionBase})">
+            <summary>
+            Saves the new portal IP restrictions specified in the request.
+            </summary>
+            <short>Save the IP restrictions</short>
+            <category>IP restrictions</category>
+            <param type="System.Collections.Generic.IEnumerable{ASC.IPSecurity.IPRestrictionBase}, System.Collections.Generic" name="ips">New IP restrictions</param>
+            <returns>New IP restrictions</returns>
+            <path>api/2.0/settings/iprestrictions</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateIpRestrictionsSettings(System.Boolean)">
+            <summary>
+            Updates the IP restriction settings with a parameter specified in the request.
+            </summary>
+            <short>Update the IP restrictions</short>
+            <category>IP restrictions</category>
+            <param type="System.Boolean, System" name="enable">Specifies whether to enable IP restrictions or not</param>
+            <returns type="ASC.Web.Studio.Core.IPRestrictionsSettings, ASC.Web.Studio">Updated IP restriction settings</returns>
+            <path>api/2.0/settings/iprestrictions/settings</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateTipsSettings(System.Boolean)">
+            <summary>
+            Updates the tip settings with a parameter specified in the request.
+            </summary>
+            <short>Update the tip settings</short>
+            <category>Tips</category>
+            <param type="System.Boolean, System" name="show">Specifies whether to show tips for the user or not</param>
+            <returns type="ASC.Web.Studio.Core.TipsSettings, ASC.Web.Studio">Updated tip settings</returns>
+            <path>api/2.0/settings/tips</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateTipsSubscription">
+            <summary>
+            Updates the tip subscription.
+            </summary>
+            <short>Update the tip subscription</short>
+            <category>Tips</category>
+            <returns>Boolean value: true if the user is subscribed to the tips</returns>
+            <path>api/2.0/settings/tips/change/subscription</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.CompleteWizard">
+            <summary>
+            Completes the Wizard settings.
+            </summary>
+            <short>Complete the Wizard settings</short>
+            <category>Wizard</category>
+            <returns>Wizard settings</returns>
+            <path>api/2.0/settings/wizard/complete</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TfaSettings(ASC.Api.Settings.TfaSettingsType,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Guid},System.Collections.Generic.List{System.Guid})">
+             <summary>
+             Updates the two-factor authentication settings with the type specified in the request.
+             </summary>
+             <short>Update the TFA settings</short>
+             <category>TFA settings</category>
+             <param type="ASC.Api.Settings.TfaSettingsType, ASC.Api.Settings" name="type">TFA type (None, Sms, or App)</param>
+             <param type="System.Collections.Generic.List{System.String}, System.Collections.Generic" name="trustedIps">List of trusted IP addresses</param>
+             <param type="System.Collections.Generic.List{System.Guid}, System.Collections.Generic" name="mandatoryUsers">List of users required for the TFA verification</param>
+             <param type="System.Collections.Generic.List{System.Guid}, System.Collections.Generic" name="mandatoryGroups">List of groups required for the TFA verification</param>
+             <returns>True if an operation is successful</returns>
+            <path>api/2.0/settings/tfaapp</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TfaAppGetCodes">
+            <summary>
+            Returns the two-factor authentication application codes.
+            </summary>
+            <short>Get the TFA codes</short>
+            <category>TFA settings</category>
+            <returns>List of TFA application codes</returns>
+            <path>api/2.0/settings/tfaappcodes</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TfaAppRequestNewCodes">
+            <summary>
+            Requests the new backup codes for the two-factor authentication application.
+            </summary>
+            <short>Request the TFA codes</short>
+            <category>TFA settings</category>
+            <returns>New backup codes</returns>
+            <path>api/2.0/settings/tfaappnewcodes</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TfaAppNewApp(System.Guid)">
+            <summary>
+            Unlinks the current two-factor authentication application from the user account specified in the request.
+            </summary>
+            <short>Unlink the TFA application</short>
+            <category>TFA settings</category>
+            <param type="System.Guid, System" name="id">User ID</param>
+            <returns>Login URL</returns>
+            <path>api/2.0/settings/tfaappnewapp</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetTfaSettings">
+            <summary>
+            Returns the current two-factor authentication settings.
+            </summary>
+            <short>Get TFA settings</short>
+            <category>TFA settings</category>
+            <returns>TFA settings</returns>
+            <path>api/2.0/settings/tfaapp</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.DocRegisterPusnNotificationDevice(System.String)">
+            <summary>
+            Saves the Firebase device token specified in the request for the Documents application.
+            </summary>
+            <short>Saves the Documents Firebase device token</short>
+            <category>Firebase</category>
+            <param name="firebaseDeviceToken">Firebase device token</param>
+            <returns>FireBase user</returns>
+            <path>api/2.0/settings/push/docregisterdevice</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.ProjRegisterPusnNotificationDevice(System.String)">
+            <summary>
+            Saves the Firebase device token specified in the request for the Projects application.
+            </summary>
+            <short>Saves the Projects Firebase device token</short>
+            <category>Firebase</category>
+            <param type="System.String, System" name="firebaseDeviceToken">Firebase device token</param>
+            <returns>Firebase user</returns>
+            <path>api/2.0/settings/push/projregisterdevice</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SubscribeDocumentsPushNotification(System.String,System.Boolean)">
+            <summary>
+            Subscribes to the Documents push notification.
+            </summary>
+            <short>Subscribe to Documents push notification</short>
+            <category>Firebase</category>
+            <param type="System.String, System" name="firebaseDeviceToken">Firebase device token</param>
+            <param type="System.Boolean, System" name="isSubscribed">Specifies whether the current user is subscribed to the Documents push notification or not</param>
+            <returns>Firebase user</returns>
+            <path>api/2.0/settings/push/docsubscribe</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SubscribeProjectsPushNotification(System.String,System.Boolean)">
+            <summary>
+            Subscribes to the Projects push notification.
+            </summary>
+            <short>Subscribe to Projects push notification</short>
+            <category>Firebase</category>
+            <param type="System.String, System" name="firebaseDeviceToken">Firebase device token</param>
+            <param type="System.Boolean, System" name="isSubscribed">Specifies whether the current user is subscribed to the Projects push notification or not</param>
+            <returns>Firebase user</returns>
+            <path>api/2.0/settings/push/projsubscribe</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TelegramLink">
+            <summary>
+            Returns a link that will connect the Telegram Bot to your account.
+            </summary>
+            <short>Get the Telegram link</short>
+            <category>Telegram</category>
+            <returns>Telegram link</returns>
+            <path>api/2.0/settings/telegramlink</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TelegramIsConnected">
+            <summary>
+            Checks if the current user is connected to the Telegram Bot or not.
+            </summary>
+            <short>Check the Telegram connection</short>
+            <category>Telegram</category>
+            <returns>Integer value: 0 - not connected, 1 - connected, 2 - awaiting confirmation</returns>
+            <path>api/2.0/settings/telegramisconnected</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TelegramDisconnect">
+            <summary>
+            Unlinks the Telegram Bot from your account.
+            </summary>
+            <short>Unlink Telegram</short>
+            <category>Telegram</category>
+            <path>api/2.0/settings/telegramdisconnect</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.CloseWelcomePopup">
+            <summary>
+            Closes the welcome pop-up notification.
+            </summary>
+            <short>Close the welcome pop-up notification</short>
+            <category>Common settings</category>
+            <path>api/2.0/settings/welcome/close</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.CloseAdminHelper">
+            <summary>
+            Closes the admin helper notification.
+            </summary>
+            <short>Close the admin helper notification</short>
+            <category>Common settings</category>
+            <path>api/2.0/settings/closeadminhelper</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveColorTheme(System.String)">
+            <summary>
+            Saves the portal color theme specified in the request.
+            </summary>
+            <short>Save color theme</short>
+            <category>Common settings</category>
+            <param type="System.String, System" name="theme">Portal theme</param>
+            <path>api/2.0/settings/colortheme</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveModeTheme(ASC.Web.Core.Utility.ModeTheme,System.Boolean)">
+            <summary>
+            Saves a portal mode theme specified in the request.
+            </summary>
+            <short>Save a mode theme</short>
+            <category>Common settings</category>
+            <param type="ASC.Web.Core.Utility.ModeTheme, ASC.Web.Core.Utility" name="theme">Portal mode theme (light or dark)</param>
+            <param type="System.Boolean, System" name="auto_mode">Specifies whether the interface theme  will be detected automatically or not</param>
+            <path>api/2.0/settings/modetheme</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.TimaAndLanguage(System.String,System.String)">
+            <summary>
+            Sets the portal time zone and language specified in the request.
+            </summary>
+            <short>Set time zone and language</short>
+            <category>Common settings</category>
+            <param type="System.String, System" name="lng">Language</param>
+            <param type="System.String, System" name="timeZoneID">Time zone ID</param>
+            <returns>Message about the operation result</returns>
+            <path>api/2.0/settings/timeandlanguage</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveDefaultPageSettings(System.String)">
+             <summary>
+             Sets the default product page.
+             </summary>
+             <short>Set the default product page</short>
+             <category>Common settings</category>
+             <param type="System.String, System" name="defaultProductID">Default product ID</param>
+             <returns>Message about the operation result</returns>
+             <path>api/2.0/settings/defaultpage</path>
+             <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.RefreshLicense">
+            <summary>
+            Refreshes the license.
+            </summary>
+            <short>Refresh the license</short>
+            <category>Common settings</category>
+            <returns>Boolean value: true - an operation is successful, false - an operation is unsuccessful</returns>
+            <path>api/2.0/settings/license/refresh</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetCustomNavigationItems">
+            <summary>
+            Returns a list of the custom navigation items.
+            </summary>
+            <short>Get the custom navigation items</short>
+            <category>Custom navigation</category>
+            <returns type="ASC.Web.Studio.Core.CustomNavigationItem, ASC.Web.Studio">List of the custom navigation items</returns>
+            <path>api/2.0/settings/customnavigation/getall</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetCustomNavigationItemSample">
+            <summary>
+            Returns a custom navigation item sample.
+            </summary>
+            <short>Get a custom navigation item sample</short>
+            <category>Custom navigation</category>
+            <returns type="ASC.Web.Studio.Core.CustomNavigationItem, ASC.Web.Studio">Custom navigation item</returns>
+            <path>api/2.0/settings/customnavigation/getsample</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetCustomNavigationItem(System.Guid)">
+            <summary>
+            Returns a custom navigation item by the ID specified in the request.
+            </summary>
+            <short>Get a custom navigation item by ID</short>
+            <category>Custom navigation</category>
+            <param type="System.Guid, System" method="url" name="id">Item ID</param>
+            <returns type="ASC.Web.Studio.Core.CustomNavigationItem, ASC.Web.Studio">Custom navigation item</returns>
+            <path>api/2.0/settings/customnavigation/get/{id}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.CreateCustomNavigationItem(ASC.Web.Studio.Core.CustomNavigationItem)">
+            <summary>
+            Adds a custom navigation item with the parameters specified in the request.
+            </summary>
+            <short>Add a custom navigation item</short>
+            <category>Custom navigation</category>
+            <param type="ASC.Web.Studio.Core.CustomNavigationItem, ASC.Web.Studio.Core." file="ASC.Web.Studio" name="item">Item parameters</param>
+            <returns type="ASC.Web.Studio.Core.CustomNavigationItem, ASC.Web.Studio">Custom navigation item</returns>
+            <path>api/2.0/settings/customnavigation/create</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.DeleteCustomNavigationItem(System.Guid)">
+            <summary>
+            Deletes a custom navigation item with the ID specified in the request.
+            </summary>
+            <short>Delete a custom navigation item</short>
+            <category>Custom navigation</category>
+            <param type="System.Guid, System" method="url" name="id">Item ID</param>
+            <path>api/2.0/settings/customnavigation/delete/{id}</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateEmailActivationSettings(System.Boolean)">
+            <summary>
+            Updates the email activation settings.
+            </summary>
+            <short>Update the email activation settings</short>
+            <category>Common settings</category>
+            <param type="System.Boolean, System" name="show">Specifies whether to show the email activation panel to the user or not</param>
+            <returns type="ASC.Web.Studio.Core.EmailActivationSettings, ASC.Web.Studio">Updated email activation settings</returns>
+            <path>api/2.0/settings/emailactivation</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetLicensorData">
+             <summary>
+             Returns the licensor data.
+             </summary>
+             <short>Get the licensor data</short>
+             <category>Common settings</category>
+             <returns>List of company white label settings</returns>
+             <path>api/2.0/settings/companywhitelabel</path>
+             <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetSpaceUsageStatistics(System.Guid)">
+            <summary>
+            Returns the space usage statistics of the module with the ID specified in the request.
+            </summary>
+            <category>Statistics</category>
+            <short>Get the space usage statistics</short>
+            <param method="url" name="id">Module ID</param>
+            <returns type="ASC.Api.Settings.UsageSpaceStatItemWrapper, ASC.Api.Settings">Module space usage statistics</returns>
+            <path>api/2.0/settings/statistics/spaceusage/{id}</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetVisitStatistics(ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime)">
+            <summary>
+            Returns the user visit statistics for the period specified in the request.
+            </summary>
+            <category>Statistics</category>
+            <short>Get the visit statistics</short>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" method="url" name="fromDate">Start period date</param>
+            <param type="ASC.Specific.ApiDateTime, ASC.Specific" method="url" name="toDate">End period date</param>
+            <returns type="ASC.Api.Settings.ChartPointWrapper, ASC.Api.Settings">List of point charts</returns>
+            <path>api/2.0/settings/statistics/visit</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetAllStorages">
+            <summary>
+            Returns a list of all the portal storages.
+            </summary>
+            <category>Storage</category>
+            <short>Get storages</short>
+            <returns type="ASC.Api.Settings.StorageWrapper, ASC.Api.Settings">List of storages</returns>
+            <path>api/2.0/settings/storage</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetStorageProgress">
+            <summary>
+            Returns the storage progress.
+            </summary>
+            <category>Storage</category>
+            <short>Get the storage progress</short>
+            <returns>Storage progress</returns>
+            <path>api/2.0/settings/storage/progress</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateStorage(System.String,System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}})">
+            <summary>
+            Updates a storage with the parameters specified in the request.
+            </summary>
+            <category>Storage</category>
+            <short>Update a storage</short>
+            <param type="System.String, System" name="module">Storage name</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String, System.String}}" name="props">New storage properties</param>
+            <returns type="ASC.Data.Storage.Configuration.StorageSettings, ASC.Data.Storage">Updated storage</returns>
+            <path>api/2.0/settings/storage</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.ResetStorageToDefault">
+            <summary>
+            Resets the storage settings to the default parameters.
+            </summary>
+            <category>Storage</category>
+            <short>Reset the storage settings</short>
+            <path>api/2.0/settings/storage</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetAllCdnStorages">
+            <summary>
+            Returns a list of all the CDN storages.
+            </summary>
+            <category>Storage</category>
+            <short>Get the CDN storages</short>
+            <returns type="ASC.Api.Settings.StorageWrapper, ASC.Api.Settings">List of the CDN storages</returns>
+            <path>api/2.0/settings/storage/cdn</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateCdn(System.String,System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}})">
+            <summary>
+            Updates the CDN storage with the parameters specified in the request.
+            </summary>
+            <category>Storage</category>
+            <short>Update the CDN storage</short>
+            <returns type="ASC.Data.Storage.Configuration.CdnStorageSettings, ASC.Data.Storage">Updated CDN storage</returns>
+            <param type="System.String, System" name="module">CDN storage name</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String, System.String}}" name="props">New CDN storage properties</param>
+            <path>api/2.0/settings/storage/cdn</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.ResetCdnToDefault">
+            <summary>
+            Resets the CDN storage settings to the default parameters.
+            </summary>
+            <category>Storage</category>
+            <short>Reset the CDN storage settings</short>
+            <path>api/2.0/settings/storage/cdn</path>
+            <httpMethod>DELETE</httpMethod>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetAllBackupStorages">
+            <summary>
+            Returns a list of all the backup storages.
+            </summary>
+            <category>Storage</category>
+            <short>Get the backup storages</short>
+            <returns type="ASC.Api.Settings.StorageWrapper, ASC.Api.Settings">List of the backup storages</returns>
+            <path>api/2.0/settings/storage/backup</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetAmazonS3Regions">
+            <summary>
+            Returns a list of all Amazon regions.
+            </summary>
+            <category>Storage</category>
+            <short>Get Amazon regions</short>
+            <returns>List of the Amazon regions</returns>
+            <path>api/2.0/settings/storage/s3/regions</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetSocketSettings">
+            <summary>
+            Returns the socket settings.
+            </summary>
+            <category>Common settings</category>
+            <short>Get the socket settings</short>
+            <path>api/2.0/settings/socket</path>
+            <httpMethod>GET</httpMethod>
+            <returns>Socket settings</returns>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetTenantControlPanelSettings">
+             <summary>
+             Returns the tenant Control Panel settings.
+             </summary>
+             <category>Common settings</category>
+             <short>Get the tenant Control Panel settings</short>
+             <returns>Tenant Control Panel settings</returns>
+             <path>api/2.0/settings/controlpanel</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveCompanyWhiteLabelSettings(ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings)">
+             <summary>
+             Saves the company white label settings specified in the request.
+             </summary>
+             <category>Rebranding</category>
+             <short>Save the white label settings</short>
+             <param type="ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings, ASC.Web.Core.WhiteLabel" name="settings">White label settings</param>
+             <path>api/2.0/settings/rebranding/company</path>
+             <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetCompanyWhiteLabelSettings">
+             <summary>
+             Returns the company white label settings.
+             </summary>
+             <category>Rebranding</category>
+             <short>Get the white label settings</short>
+             <returns>Company white label settings</returns>
+             <path>api/2.0/settings/rebranding/company</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.DeleteCompanyWhiteLabelSettings">
+             <summary>
+             Deletes the company white label settings.
+             </summary>
+             <category>Rebranding</category>
+             <short>Delete the white label settings</short>
+             <returns>Default company white label settings</returns>
+             <path>api/2.0/settings/rebranding/company</path>
+             <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveAdditionalWhiteLabelSettings(ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings)">
+            <summary>
+            Saves the additional white label settings specified in the request.
+            </summary>
+            <category>Rebranding</category>
+            <short>Save the additional white label settings</short>
+            <param type="ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings, ASC.Web.Core.WhiteLabel" name="settings">Additional white label settings</param>
+            <path>api/2.0/settings/rebranding/additional</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetAdditionalWhiteLabelSettings">
+             <summary>
+             Returns the additional white label settings.
+             </summary>
+             <category>Rebranding</category>
+             <short>Get the additional white label settings</short>
+             <returns>Additional white label settings</returns>
+             <path>api/2.0/settings/rebranding/additional</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.DeleteAdditionalWhiteLabelSettings">
+             <summary>
+             Deletes the additional white label settings.
+             </summary>
+             <category>Rebranding</category>
+             <short>Delete the additional white label settings</short>
+             <returns>Default additional white label settings</returns>
+             <path>api/2.0/settings/rebranding/additional</path>
+             <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.SaveMailWhiteLabelSettings(ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings)">
+             <summary>
+             Saves the mail white label settings specified in the request.
+             </summary>
+             <category>Rebranding</category>
+             <short>Save the mail white label settings</short>
+             <param type="ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings, ASC.Web.Core.WhiteLabel" name="settings">Mail white label settings</param>
+             <path>api/2.0/settings/rebranding/mail</path>
+             <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.UpdateMailWhiteLabelSettings(System.Boolean)">
+             <summary>
+             Updates the mail white label settings with a paramater specified in the request.
+             </summary>
+             <category>Rebranding</category>
+             <short>Update the mail white label settings</short>
+             <param type="System.Boolean, System" name="footerEnabled">Specifies if a footer will be enabled or not</param>
+             <path>api/2.0/settings/rebranding/mail</path>
+             <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetMailWhiteLabelSettings">
+             <summary>
+             Returns the mail white label settings.
+             </summary>
+             <category>Rebranding</category>
+             <short>Get the mail white label settings</short>
+             <returns>Mail white label settings</returns>
+             <path>api/2.0/settings/rebranding/mail</path>
+             <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.DeleteMailWhiteLabelSettings">
+             <summary>
+             Deletes the mail white label settings.
+             </summary>
+             <category>Rebranding</category>
+             <short>Delete the mail white label settings</short>
+             <returns>Default mail white label settings</returns>
+             <path>api/2.0/settings/rebranding/mail</path>
+             <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetStorageEncryptionSettings">
+            <summary>
+            Returns the storage encryption settings.
+            </summary>
+            <short>Get the storage encryption settings</short>
+            <category>Encryption</category>
+            <returns>Storage encryption settings</returns>
+            <path>api/2.0/settings/encryption/settings</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.GetStorageEncryptionProgress">
+            <summary>
+            Returns the storage encryption progress.
+            </summary>
+            <short>Get the storage encryption progress</short>
+            <category>Encryption</category>
+            <returns>Storage encryption progress</returns>
+            <path>api/2.0/settings/encryption/progress</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Settings.SettingsApi.StartStorageEncryption(System.Boolean)">
+            <summary>
+            Starts the storage encryption process.
+            </summary>
+            <short>Start the storage encryption process</short>
+            <category>Encryption</category>
+            <param type="System.Boolean, System" name="notifyUsers">Specifies if the users will be notified about the encryption process or not</param>
+            <path>api/2.0/settings/encryption/start</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="P:ASC.Api.Settings.UsageSpaceStatItemWrapper.Name">
+            <example>Item name</example>
+        </member>
+        <member name="P:ASC.Api.Settings.UsageSpaceStatItemWrapper.Icon">
+            <example>Item icon path</example>
+        </member>
+        <member name="P:ASC.Api.Settings.UsageSpaceStatItemWrapper.Disabled">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Api.Settings.UsageSpaceStatItemWrapper.Size">
+            <example>0 Byte</example>
+        </member>
+        <member name="P:ASC.Api.Settings.UsageSpaceStatItemWrapper.Url">
+            <example>Item url</example>
+        </member>
+        <member name="P:ASC.Api.Settings.ChartPointWrapper.DisplayDate">
+            <example>12/22/2020</example>
+        </member>
+        <member name="P:ASC.Api.Settings.ChartPointWrapper.Date">
+            <example>2020-12-22T04:11:57.0469085+00:00</example>
+        </member>
+        <member name="P:ASC.Api.Settings.ChartPointWrapper.Hosts">
+            <example type="int">0</example>
+        </member>
+        <member name="P:ASC.Api.Settings.ChartPointWrapper.Hits">
+            <example type="int">0</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpOperationStatus.Completed">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpOperationStatus.Id">
+            <example>{some-random-guid}</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpOperationStatus.Status">
+            <example></example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpOperationStatus.Error">
+            <example></example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpOperationStatus.Percents">
+            <example type="int">0</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpOperationStatus.Source">
+            <example></example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.Host">
+            <example>mail.example.com</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.Port">
+            <example type="int">25</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.SenderAddress">
+            <example>notify@example.com</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.SenderDisplayName">
+            <example>Postman</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.CredentialsUserName">
+            <example>notify@example.com</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.CredentialsUserPassword">
+            <example>{password}</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.EnableSSL">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Api.Settings.Smtp.SmtpSettingsWrapper.EnableAuth">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SecurityWrapper.WebItemId">
+            <example>00000000-0000-0000-0000-000000000000</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SecurityWrapper.Users">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Settings.SecurityWrapper.Groups">
+            <type>ASC.Api.Employee.GroupWrapperSummary, ASC.Api.Employee</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Settings.SecurityWrapper.Enabled">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SecurityWrapper.IsSubItem">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SettingsWrapper.Timezone">
+            <example>UTC</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SettingsWrapper.TrustedDomains">
+            <example>mydomain.com</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Settings.SettingsWrapper.TrustedDomainsType">
+            <example type="int">0</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SettingsWrapper.Culture">
+            <example>en-US</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SettingsWrapper.UtcOffset">
+            <example>-08:30:00</example>
+        </member>
+        <member name="P:ASC.Api.Settings.SettingsWrapper.UtcHoursOffset">
+            <example type="double">-8.5</example>
+        </member>
+        <member name="P:ASC.Api.Settings.StorageWrapper.Id">
+            <example>Id</example>
+        </member>
+        <member name="P:ASC.Api.Settings.StorageWrapper.Title">
+            <example>Title</example>
+        </member>
+        <member name="P:ASC.Api.Settings.StorageWrapper.Properties">
+            <type>ASC.Web.Studio.UserControls.Management.AuthKey, ASC.Web.Studio</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Settings.StorageWrapper.Current">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Api.Settings.StorageWrapper.IsSet">
+            <example>true</example>
+        </member>
+    </members>
+</doc>

@@ -6,12 +6,12 @@
     ContentType="text/html" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Plugin code
+    Coding plugin
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>
-        <span class="hdr">Plugin code</span>
+        <span class="hdr">Coding plugin</span>
     </h1>
 
     <p class="dscr">The main plugin code is placed to a <em>.js</em> file which describes what and how must be done by the plugin. This file is placed to the plugin root folder together with the <a href="<%= Url.Action("config") %>">config.json</a> and <a href="<%= Url.Action("indexhtml") %>">index.html</a> files.</p>
@@ -23,7 +23,7 @@
     <div class="note">Please note that starting from version 7.1, the access to the <em>window</em> and <em>document</em> objects and the <em>alert</em> function is restricted from the plugin command code because the <em>"use strict"</em> mode was applied to the plugin scripts.
         Don't forget to declare variables before using them so that the plugins work correctly.</div>
 
-    <p>For the plugin to work the developer must specify two obligatory events for the <em>window.Asc.plugin</em> object: <a href="<%= Url.Action("events") %>#init">window.Asc.plugin.init</a> and <a href="<%= Url.Action("events") %>#button">window.Asc.plugin.button</a>. After that the <a href="<%= Url.Action("callcommand") %>">window.Asc.plugin.callCommand</a> method is used to send the data to the editors using the in-built <b>ONLYOFFICE Document Builder</b> <a href="<%= Url.Action("integrationapi/cdocbuilder/executecommand", "docbuilder") %>">API</a> features.</p>
+    <p>For the plugin to work the developer must specify two obligatory events for the <em>window.Asc.plugin</em> object: <a href="<%= Url.Action("events/init") %>">window.Asc.plugin.init</a> and <a href="<%= Url.Action("events/button") %>">window.Asc.plugin.button</a>. After that the <a href="<%= Url.Action("callcommand") %>">window.Asc.plugin.callCommand</a> method is used to send the data to the editors using the in-built <b>ONLYOFFICE Document Builder</b> <a href="<%= Url.Action("integrationapi/cdocbuilder/executecommand", "docbuilder") %>">API</a> features.</p>
     
     <p>If the plugin operates with an OLE object, <a href="<%= Url.Action("executecommand") %>">window.Asc.plugin.executeCommand</a> method is used to manage it.</p>
 
@@ -50,6 +50,6 @@
 
     <p>The only <b>OK</b> button (<em>window.Asc.plugin.button = function (id) {...}</em>) is used to create the text and finish the work with the plugin.</p>
 
-    <p>More existing open source plugin examples can be found <a href="<%= Url.Action("example") %>">here</a>.</p>
+    <p>More existing open source plugin examples can be found <a href="<%= Url.Action("example/") %>">here</a>.</p>
 
 </asp:Content>

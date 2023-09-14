@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Write the data (the <em>Hello world</em> phrase) to the worksheet third column of the fourth row.</p>
+<p class="dscr">Writes the data (the <em>Hello world</em> phrase) to the worksheet third column of the fourth row.</p>
 
 <pre>(function()
 {
@@ -28,4 +28,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Write data" src="<%= Url.Content("~/content/img/plugins/write_data_to_cell.png") %>" />
+<img class="screenshot max-width-832" alt="Write data" src="<%= Url.Content("~/content/img/plugins/write_data_to_cell.png") %>" />

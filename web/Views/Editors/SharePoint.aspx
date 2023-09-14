@@ -40,7 +40,7 @@
     <h2>Installing ONLYOFFICE SharePoint integration solution</h2>
     <p>To start using ONLYOFFICE Docs with SharePoint, the following steps must be performed:</p>
     <ol>
-        <li>Click <b>Start</b>, point to <b>All Programs</b>, then choose <b>Administrative Tools</b> and click <b>Services</b>. Make sure that <b>SharePoint Administration</b> service is started.</li>
+        <li>Click <b>Start</b>, point to <b>All Programs</b>, then choose <b>Administrative Tools</b>, and click <b>Services</b>. Make sure that <b>SharePoint Administration</b> service is started.</li>
         <li>Click <b>Start -> SharePoint Management Shell</b>, go to the directory with the <em>.wsp</em> file.</li>
         <li>Run the <em>Install.ps1</em> script:
             <span class="commandline">PS> .\Install.ps1</span>
@@ -49,7 +49,7 @@
             <p>Enter your SharePoint site address:</p>
             <span class="commandline">https://&lt;yoursharepointsite&gt;</span>
             <div class="note">Alternatively to steps <b>3</b> and <b>4</b> you can type the following command:
-                <span class="commandline">Add-SPSolution -LiteralPath&lt;solutionpath&gt;/onlyoffice.wsp</span>
+                <span class="commandline">Add-SPSolution -LiteralPath&lt;SolutionPath&gt;/onlyoffice.wsp</span>
                 On the <b>SharePoint Central Administration</b> home page, click <b>System Settings -> Farm Management -> Manage farm solutions</b>.
                 On the <b>Solution Management</b> page, click <b>onlyoffice.wsp -> Deploy Solution</b>.
             </div>
@@ -64,7 +64,7 @@
 
     <h2 id="configure" class="copy-link">Configuring SharePoint ONLYOFFICE integration solution</h2>
     <p>
-        In SharePoint open the <em>/_layouts/15/Onlyoffice/Settings.aspx</em> page with administrative settings.
+        In SharePoint, open the <em>/_layouts/15/Onlyoffice/Settings.aspx</em> page with administrative settings.
         Enter the following address to connect ONLYOFFICE Docs:
     </p>
 
@@ -81,6 +81,12 @@
         Go to each subsite settings and enter the Document Server address to the proper field.
     </div>
 
+    <p>Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+        Specify your own <b>Secret key</b> in the SharePoint administrative settings. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</p>
+
+    <p>If JWT protection is enabled, it is necessary to specify a custom header name 
+        since the SharePoint security policy blocks external <b>Authorization</b> headers. This header should be specified in the ONLYOFFICE Docs signature settings as well. 
+        Further information about signature can be found <a href="<%= Url.Action("signature/") %>">here</a>.</p>
 
     <h2>Compiling ONLYOFFICE SharePoint integration solution</h2>
     <p>There are two ways to compile ONLYOFFICE SharePoint integration solution:</p>
@@ -108,25 +114,27 @@
 
 
     <h2 id="howitworks" class="copy-link">How it works</h2>
+    <p>The ONLYOFFICE integration follows the API documented <a href="<%= Url.Action("basic") %>">here</a>.</p>
     <ol>
         <li>User navigates to a document within SharePoint and selects the <b>Edit in ONLYOFFICE</b> action on context menu or ribbon.</li>
-        <li>SharePoint makes a request to the editor page (URL of the form: <em>/_layouts/15/Onlyoffice/editorPage.aspx?SPListItemId={SelectedItemId}&SPListId={SelectedListId}&SPSource={Source}&SPListURLDir={ListUrlDir}</em>).</li>
+        <li>SharePoint makes a request to the editor page (URL of the form: <em>/_layouts/15/Onlyoffice/editorPage.aspx?SPListItemId={ItemId}&SPListURLDir={ListUrlDir}&action=track</em>).</li>
         <li>
             <p>SharePoint prepares a JSON object with the following properties:</p>
             <ul>
                 <li><b>url</b> - the URL that ONLYOFFICE Docs uses to download the document;</li>
                 <li><b>callbackUrl</b> - the URL that ONLYOFFICE Docs informs about status of the document editing;</li>
-                <li><b>key</b> - the file identifier from SharePoint;</li>
-                <li><b>title</b> - the document title (name);</li>
-                <li><b>id</b> - the user identifier;</li>
-                <li><b>name</b> - the user name.</li>
+                <li><b>DocumentSeverHost</b> - the URL that the client needs to reply to ONLYOFFICE Document Server (can be set at the settings page);</li>
+                <li><b>Key</b> - the file identifier from SharePoint;</li>
+                <li><b>FileName</b> - the document title (name);</li>
+                <li><b>CurrentUserId</b> - the user identifier;</li>
+                <li><b>CurrentUserName</b> - the user name.</li>
             </ul>
         </li>
         <li>SharePoint constructs a page, filling in all of those values so that the client browser can load up the editor.</li>
         <li>The client browser makes a request to the JavaScript library from ONLYOFFICE Docs and sends ONLYOFFICE Docs the DocEditor configuration with the above properties.</li>
         <li>Then ONLYOFFICE Docs downloads the document from SharePoint and the user begins editing.</li>
         <li>When all users and client browsers are done with editing, they close the editing window.</li>
-        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to the callback URL letting SharePoint ONLYOFFICE solution know that the clients have finished editing the document and closed it.</li>
+        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to <em>callbackUrl</em> letting SharePoint ONLYOFFICE solution know that the clients have finished editing the document and closed it.</li>
         <li>SharePoint downloads a new version of the document, replacing the old one.</li>
     </ol>
 

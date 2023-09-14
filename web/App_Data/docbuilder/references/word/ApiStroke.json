@@ -18,8 +18,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiStroke",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiStroke object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a stroke.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a stroke.</p>",
   "scope": "global",

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.VoipService</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.VoipService.Agent.Id">
+            <example>92eb52c8-bb93-4caf-87fb-46ea11530899</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.Answer">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.ClientID">
+            <example>ClientID</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.Record">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.TimeOut">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.Status">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.AllowOutgoingCalls">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.PostFix">
+            <example>PostFix</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.PhoneNumber">
+            <example>PhoneNumber</example>
+        </member>
+        <member name="P:ASC.VoipService.Agent.RedirectToNumber">
+            <example>RedirectToNumber</example>
+        </member>
+        <member name="P:ASC.VoipService.Queue.Id">
+            <example>id</example>
+        </member>
+        <member name="P:ASC.VoipService.Queue.Name">
+            <example>Name</example>
+        </member>
+        <member name="P:ASC.VoipService.Queue.Size">
+            <example type="int">123</example>
+        </member>
+        <member name="P:ASC.VoipService.Queue.WaitUrl">
+            <example>WaitUrl</example>
+        </member>
+        <member name="P:ASC.VoipService.Queue.WaitTime">
+            <example type="int">4</example>
+        </member>
+        <member name="P:ASC.VoipService.WorkingHours.Enabled">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.VoipService.WorkingHours.From">
+            <example>2020-12-22T04:11:57.0469085+00:00</example>
+        </member>
+        <member name="P:ASC.VoipService.WorkingHours.To">
+            <example>2020-12-22T04:11:57.0469085+00:00</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipUpload.Name">
+            <example>Name</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipUpload.Path">
+            <example>Path</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipUpload.AudioType">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipUpload.IsDefault">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipPhone.Id">
+            <example>id</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipPhone.Number">
+            <example>Number</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipPhone.Alias">
+            <example>Alias</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipPhone.Settings">
+            <type>ASC.VoipService.VoipSettings, ASC.VoipService</type>
+        </member>
+        <member name="P:ASC.VoipService.VoipPhone.Caller">
+            <type>ASC.VoipService.Agent, ASC.VoipService</type>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.VoiceUrl">
+            <example>VoiceUrl</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.Name">
+            <example>Name</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.Operators">
+            <type>ASC.VoipService.Agent, ASC.VoipService</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.Queue">
+            <type>ASC.VoipService.Queue, ASC.VoipService</type>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.Caller">
+            <type>ASC.VoipService.Agent, ASC.VoipService</type>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.WorkingHours">
+            <type>ASC.VoipService.WorkingHours, ASC.VoipService</type>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.VoiceMail">
+            <example>VoiceMail</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.GreetingAudio">
+            <example>GreetingAudio</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.HoldAudio">
+            <example>HoldAudio</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.AllowOutgoingCalls">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.Pause">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.VoipService.VoipSettings.Record">
+            <example>true</example>
+        </member>
+    </members>
+</doc>

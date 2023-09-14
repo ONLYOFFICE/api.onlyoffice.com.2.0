@@ -1,0 +1,1056 @@
+{
+  "methods": {
+    "OpenFile": {
+      "memberof": "Api",
+      "name": "OpenFile",
+      "description": "<p>Opens a file with fields.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Uint8Array",
+          "name": "binaryFile",
+          "description": "<p>A file in the format of the 8-bit unsigned integer array.</p>",
+          "optional": false
+        },
+        {
+          "type": "Array.<string>",
+          "name": "fields",
+          "description": "<p>A list of field values.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetFields": {
+      "memberof": "Api",
+      "name": "GetFields",
+      "description": "<p>Returns all fields as a text.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<string>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "InsertAndReplaceContentControls": {
+      "memberof": "Api",
+      "name": "InsertAndReplaceContentControls",
+      "description": "<p>Inserts the content control containing data. The data is specified by the JS code for {@link /docbuilder/basic Document Builder}, or by a link to the shared document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ContentControlProperties>"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Array.<ContentControlPropertiesAndContent>",
+          "name": "arrDocuments",
+          "description": "<p>An array of properties and contents of the content control.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "RemoveContentControls": {
+      "memberof": "Api",
+      "name": "RemoveContentControls",
+      "description": "<p>Removes several content controls.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Array.<ContentControl>",
+          "name": "arrDocuments",
+          "description": "<p>An array of content control internal IDs. Example: [{&quot;InternalId&quot;: &quot;5_556&quot;}].</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetAllContentControls": {
+      "memberof": "Api",
+      "name": "GetAllContentControls",
+      "description": "<p>Returns information about all the content controls that have been added to the page.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ContentControl>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "RemoveContentControl": {
+      "memberof": "Api",
+      "name": "RemoveContentControl",
+      "description": "<p>Removes the currently selected content control retaining all its contents. The content control where the mouse cursor is currently positioned will be removed.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ContentControlParentPr"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "InternalId",
+          "description": "<p>A unique internal identifier of the content control.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetCurrentContentControl": {
+      "memberof": "Api",
+      "name": "GetCurrentContentControl",
+      "description": "<p>Returns an identifier of the selected content control (i.e. the content control where the mouse cursor is currently positioned).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetCurrentContentControlPr": {
+      "memberof": "Api",
+      "name": "GetCurrentContentControlPr",
+      "description": "<p>Returns the current content control properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ContentControlProperties"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "contentFormat",
+          "description": "<p>The content format (&quot;none&quot;, &quot;text&quot;, &quot;html&quot;, &quot;ole&quot; or &quot;desktop&quot;).</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SelectContentControl": {
+      "memberof": "Api",
+      "name": "SelectContentControl",
+      "description": "<p>Selects the specified content control.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "id",
+          "description": "<p>A unique internal identifier of the content control.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "MoveCursorToContentControl": {
+      "memberof": "Api",
+      "name": "MoveCursorToContentControl",
+      "description": "<p>Moves a cursor to the specified content control.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "id",
+          "description": "<p>A unique internal identifier of the content control.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "isBegin",
+          "description": "<p>Defines if the cursor position changes in the content control. By default, a cursor will be placed to the content control begin (<strong>false</strong>).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "RemoveSelectedContent": {
+      "memberof": "Api",
+      "name": "RemoveSelectedContent",
+      "description": "<p>Removes the selected content from the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null
+    },
+    "AddComment": {
+      "memberof": "Api",
+      "name": "AddComment",
+      "description": "<p>Adds a comment to the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "CommentData",
+          "name": "oCommentData",
+          "description": "<p>An object which contains the comment data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "MoveCursorToStart": {
+      "memberof": "Api",
+      "name": "MoveCursorToStart",
+      "description": "<p>Moves a cursor to the beginning of the current editing area (document body, footer/header, footnote, or autoshape).\nThis method is similar to pressing the <b>Ctrl + Home</b> keyboard shortcut.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isMoveToMainContent",
+          "description": "<p>This flag ignores the current position and always moves a cursor to the beginning of the document body.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "MoveCursorToEnd": {
+      "memberof": "Api",
+      "name": "MoveCursorToEnd",
+      "description": "<p>Moves a cursor to the end of the current editing area (document body, footer/header, footnote, or autoshape).\nThis method is similar to pressing the <b>Ctrl + End</b> keyboard shortcut.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isMoveToMainContent",
+          "description": "<p>This flag ignores the current position and always moves a cursor to the end of the document body.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SearchAndReplace": {
+      "memberof": "Api",
+      "name": "SearchAndReplace",
+      "description": "<p>Finds and replaces the text.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Object",
+          "name": "oProperties",
+          "description": "<p>An object which contains the search and replacement strings.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "oProperties.searchString",
+          "description": "<p>The search string.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "oProperties.replaceString",
+          "description": "<p>The replacement string.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "oProperties.matchCase",
+          "description": "<p>Case sensitive or not.</p>",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
+    },
+    "GetFileHTML": {
+      "memberof": "Api",
+      "name": "GetFileHTML",
+      "description": "<p>Returns file content in the HTML format.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetAllComments": {
+      "memberof": "Api",
+      "name": "GetAllComments",
+      "description": "<p>Returns all the comments from the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<comment>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "RemoveComments": {
+      "memberof": "Api",
+      "name": "RemoveComments",
+      "description": "<p>Removes the specified comments.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Array.<string>",
+          "name": "arrIds",
+          "description": "<p>An array which contains the IDs of the specified comments.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ChangeComment": {
+      "memberof": "Api",
+      "name": "ChangeComment",
+      "description": "<p>Changes the specified comment.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sId",
+          "description": "<p>The comment ID.</p>",
+          "optional": false
+        },
+        {
+          "type": "CommentData",
+          "name": "oCommentData",
+          "description": "<p>An object which contains the new comment data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "MoveToComment": {
+      "memberof": "Api",
+      "name": "MoveToComment",
+      "description": "<p>Moves a cursor to the specified comment.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sId",
+          "description": "<p>The comment ID.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetDisplayModeInReview": {
+      "memberof": "Api",
+      "name": "SetDisplayModeInReview",
+      "description": "<p>Sets the display mode for track changes.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sMode",
+          "description": "<p>The display mode:</p>\n<ul>\n<li><b>edit</b> - all changes are displayed,</li>\n<li><b>simple</b> - all changes are displayed but the balloons are turned off,</li>\n<li><b>final</b> - all accepted changes are displayed,</li>\n<li><b>original</b> - all rejected changes are displayed.</li>\n</ul>",
+          "optional": true,
+          "defaultValue": "\"edit\""
+        }
+      ]
+    },
+    "AddContentControl": {
+      "memberof": "Api",
+      "name": "AddContentControl",
+      "description": "<p>Adds an empty content control to the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ContentControl"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ContentControlType",
+          "name": "type",
+          "description": "<p>A numeric value that specifies the content control type. It can have one of the following values: <b>1</b> (block), <b>2</b> (inline), <b>3</b> (row), or <b>4</b> (cell).</p>",
+          "optional": false
+        },
+        {
+          "type": "ContentControlProperties",
+          "name": "commonPr",
+          "description": "<p>The common content control properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    "AddContentControlCheckBox": {
+      "memberof": "Api",
+      "name": "AddContentControlCheckBox",
+      "description": "<p>Adds an empty content control checkbox to the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ContentControlCheckBoxProperties",
+          "name": "checkBoxPr",
+          "description": "<p>The content control checkbox properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        },
+        {
+          "type": "ContentControlProperties",
+          "name": "commonPr",
+          "description": "<p>The common content control properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    "AddContentControlPicture": {
+      "memberof": "Api",
+      "name": "AddContentControlPicture",
+      "description": "<p>Adds an empty content control picture to the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ContentControlProperties",
+          "name": "commonPr",
+          "description": "<p>The common content control properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    "AddContentControlList": {
+      "memberof": "Api",
+      "name": "AddContentControlList",
+      "description": "<p>Adds an empty content control list to the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ContentControlType",
+          "name": "type",
+          "description": "<p>A numeric value that specifies the content control type. It can have one of the following values: <b>1</b> (block), <b>2</b> (inline), <b>3</b> (row), or <b>4</b> (cell).</p>",
+          "optional": false
+        },
+        {
+          "type": "Array.<String, String>",
+          "name": "List",
+          "description": "<p>A list of the content control elements that consists of two items: <b>Display</b> - an item that will be displayed to the user in the content control list, <b>Value</b> - a value of each item from the content control list.</p>",
+          "optional": true,
+          "defaultValue": "[{Display, Value}]"
+        },
+        {
+          "type": "ContentControlProperties",
+          "name": "commonPr",
+          "description": "<p>The common content control properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    "AddContentControlDatePicker": {
+      "memberof": "Api",
+      "name": "AddContentControlDatePicker",
+      "description": "<p>Adds an empty content control datepicker to the document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ContentControlDatePickerProperties",
+          "name": "datePickerPr",
+          "description": "<p>The content control datepicker properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        },
+        {
+          "type": "ContentControlProperties",
+          "name": "commonPr",
+          "description": "<p>The common content control properties.</p>",
+          "optional": true,
+          "defaultValue": "{}"
+        }
+      ]
+    },
+    "GetAllOleObjects": {
+      "memberof": "Api",
+      "name": "GetAllOleObjects",
+      "description": "<p>Returns all OLE object data for objects which can be opened by the specified plugin.\nIf <em>sPluginId</em> is not defined, this method returns all OLE objects contained in the currrent document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<OLEObjectData>"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sPluginId",
+          "description": "<p>Plugin identifier. It must be of the <em>asc.{UUID}</em> type.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "RemoveOleObject": {
+      "memberof": "Api",
+      "name": "RemoveOleObject",
+      "description": "<p>Removes the OLE object from the document by its internal ID.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sInternalId",
+          "description": "<p>The OLE object identifier which is used to work with OLE object added to the document.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "RemoveOleObjects": {
+      "memberof": "Api",
+      "name": "RemoveOleObjects",
+      "description": "<p>Removes several OLE objects from the document by their internal IDs.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Array.<OLEObjectData>",
+          "name": "arrObjects",
+          "description": "<p>An array of the identifiers which are used to work with OLE objects added to the document. Example: [{&quot;InternalId&quot;: &quot;5_556&quot;}].</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SelectOleObject": {
+      "memberof": "Api",
+      "name": "SelectOleObject",
+      "description": "<p>Selects the specified OLE object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "id",
+          "description": "<p>The OLE object identifier which is used to work with OLE object added to the document.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "InsertOleObject": {
+      "memberof": "Api",
+      "name": "InsertOleObject",
+      "description": "<p>Inserts the OLE object at the current document position.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "OLEObjectData",
+          "name": "NewObject",
+          "description": "<p>The OLEObjectData object.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bSelect",
+          "description": "<p>Defines if the OLE object will be selected after inserting into the document (<strong>true</strong>) or not (<strong>false</strong>).</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ChangeOleObject": {
+      "memberof": "Api",
+      "name": "ChangeOleObject",
+      "description": "<p>Changes the OLE object with the <em>InternalId</em> specified in OLE object data.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "OLEObjectData",
+          "name": "ObjectData",
+          "description": "<p>The OLEObjectData object.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ChangeOleObjects": {
+      "memberof": "Api",
+      "name": "ChangeOleObjects",
+      "description": "<p>Changes multiple OLE objects with the <em>InternalIds</em> specified in OLE object data.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Array.<OLEObjectData>",
+          "name": "arrObjectData",
+          "description": "<p>An array of OLE object data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "AcceptReviewChanges": {
+      "memberof": "Api",
+      "name": "AcceptReviewChanges",
+      "description": "<p>Accepts review changes.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAll",
+          "description": "<p>Specifies if all changes will be accepted (<strong>true</strong>) or only changes from the current selection (<strong>false</strong>).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "RejectReviewChanges": {
+      "memberof": "Api",
+      "name": "RejectReviewChanges",
+      "description": "<p>Rejects review changes.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAll",
+          "description": "<p>Specifies if all changes will be rejected (<strong>true</strong>) or only changes from the current selection (<strong>false</strong>).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "MoveToNextReviewChange": {
+      "memberof": "Api",
+      "name": "MoveToNextReviewChange",
+      "description": "<p>Navigates through the review changes.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isForward",
+          "description": "<p>Specifies whether to navigate to the next (<strong>true</strong>) or previous (<strong>false</strong>) review change.</p>",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
+    },
+    "GetAllAddinFields": {
+      "memberof": "Api",
+      "name": "GetAllAddinFields",
+      "description": "<p>Returns all addin fields from the current document.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<AddinFieldData>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "UpdateAddinFields": {
+      "memberof": "Api",
+      "name": "UpdateAddinFields",
+      "description": "<p>Updates the addin fields with the specified data.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "Array.<AddinFieldData>",
+          "name": "arrData",
+          "description": "<p>An array of addin field data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "AddAddinField": {
+      "memberof": "Api",
+      "name": "AddAddinField",
+      "description": "<p>Creates a new addin field with the data specified in the request.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "AddinFieldData",
+          "name": "data",
+          "description": "<p>Addin field data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "RemoveFieldWrapper": {
+      "memberof": "Api",
+      "name": "RemoveFieldWrapper",
+      "description": "<p>Removes a field wrapper, leaving only the field content.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "fieldId",
+          "description": "<p>Field ID. If it is not specified, then the wrapper of the current field is removed.</p>",
+          "optional": true
+        }
+      ]
+    },
+    "SetEditingRestrictions": {
+      "memberof": "Api",
+      "name": "SetEditingRestrictions",
+      "description": "<p>Sets the document editing restrictions.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "DocumentEditingRestrictions",
+          "name": "restrictions",
+          "description": "<p>The document editing restrictions.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetCurrentWord": {
+      "memberof": "Api",
+      "name": "GetCurrentWord",
+      "description": "<p>Returns the current word.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "TextPartType",
+          "name": "type",
+          "description": "<p>Specifies if the whole word or only its part will be returned.</p>",
+          "optional": true,
+          "defaultValue": "\"entirely\""
+        }
+      ]
+    },
+    "ReplaceCurrentWord": {
+      "memberof": "Api",
+      "name": "ReplaceCurrentWord",
+      "description": "<p>Replaces the current word with the specified string.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "replaceString",
+          "description": "<p>Replacement string.</p>",
+          "optional": false
+        },
+        {
+          "type": "TextPartType",
+          "name": "type",
+          "description": "<p>Specifies if the whole word or only its part will be replaced.</p>",
+          "optional": true,
+          "defaultValue": "\"entirely\""
+        }
+      ]
+    },
+    "GetCurrentSentence": {
+      "memberof": "Api",
+      "name": "GetCurrentSentence",
+      "description": "<p>Returns the current sentence.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "TextPartType",
+          "name": "type",
+          "description": "<p>Specifies if the whole sentence or only its part will be returned.</p>",
+          "optional": true,
+          "defaultValue": "\"entirely\""
+        }
+      ]
+    },
+    "ReplaceCurrentSentence": {
+      "memberof": "Api",
+      "name": "ReplaceCurrentSentence",
+      "description": "<p>Replaces the current sentence with the specified string.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "replaceString",
+          "description": "<p>Replacement string.</p>",
+          "optional": false
+        },
+        {
+          "type": "TextPartType",
+          "name": "type",
+          "description": "<p>Specifies if the whole sentence or only its part will be replaced.</p>",
+          "optional": true,
+          "defaultValue": "\"entirely\""
+        }
+      ]
+    }
+  },
+  "events": {},
+  "comment": "/**\n     * Base class.\n     * @global\n     * @class\n     * @name Api\n     */",
+  "description": "<p>Base class.</p>",
+  "scope": "global"
+}

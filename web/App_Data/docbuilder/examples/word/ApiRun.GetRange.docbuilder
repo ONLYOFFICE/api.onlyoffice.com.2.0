@@ -1,0 +1,10 @@
+builder.CreateFile("docx");
+var oDocument = Api.GetDocument();
+var oParagraph = oDocument.GetElement(0);
+var oRun = Api.CreateRun();
+oRun.AddText("This is just a sample text.");
+oParagraph.AddElement(oRun);
+var oRange = oRun.GetRange(0, 3);
+oRange.SetBold(true);
+builder.SaveFile("docx", "GetRange.docx");
+builder.CloseFile();

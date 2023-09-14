@@ -1,5 +1,6 @@
 {
   "methods": {},
+  "events": {},
   "comment": "/**\n     * Class representing a group of drawings.\n     * @constructor\n     */",
   "description": "<p>Class representing a group of drawings.</p>",
   "scope": "global",

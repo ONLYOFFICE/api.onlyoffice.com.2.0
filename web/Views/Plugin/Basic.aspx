@@ -24,10 +24,10 @@
     </p>
     <ul>
         <li>How to <a href="<%= Url.Action("structure") %>">build</a>, <a href="<%= Url.Action("localization") %>">localize</a>, run, test and publish a plugin</li>
-        <li>How to <a href="<%= Url.Action("writingmacros") %>">write</a> and run a macro 
+        <li>How to <a href="<%= Url.Action("writingmacros") %>">write</a>, <a href="<%= Url.Action("debugging") %>">debug</a> and run a macro 
             or <a href="<%= Url.Action("convertingvbamacros") %>">convert</a> VBA macros to use in ONLYOFFICE</li>
-        <li>How to use ONLYOFFICE methods and events</li>
-        <li>Where to find guides and plugin/macro code samples to get started</li>
+        <li>How to use ONLYOFFICE <a href="<%= Url.Action("plugin") %>">methods</a> and <a href="<%= Url.Action("events") %>">events</a></li>
+        <li>Where to find guides and <a href="<%= Url.Action("example/") %>">plugin</a>/<a href="<%= Url.Action("macrosamples") %>">macro</a> code samples to get started</li>
     </ul>
 
 

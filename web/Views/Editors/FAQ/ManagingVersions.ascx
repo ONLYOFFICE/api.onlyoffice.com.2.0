@@ -130,3 +130,11 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
         </ul>
     </dd>
 </dl>
+<dl class="faq_block" id="versions_3">
+    <dt>Why is a new version not shown in the document history after I forcefully save a document?</dt>
+    <dd>
+        <p>ONLYOFFICE Docs highlights the changes made from the beginning of the current document session, not from the beginning of the document version.
+        And even if several document versions are created during one session, all changes from this session will be highlighted.
+        Therefore, you cannot see the document versions created with the <a href="<%= Url.Action("save") %>#forcesave">force saving option</a> in the document history.</p>
+    </dd>
+</dl>

@@ -177,7 +177,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -262,7 +262,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -293,7 +293,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -318,7 +318,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -339,8 +339,130 @@
           "defaultValue": "ApiPresentation.GetSlidesCount()"
         }
       ]
+    },
+    "GetWidth": {
+      "memberof": "ApiPresentation",
+      "name": "GetWidth",
+      "description": "<p>Returns the presentation width in English measure units.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "EMU"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetHeight": {
+      "memberof": "ApiPresentation",
+      "name": "GetHeight",
+      "description": "<p>Returns the presentation height in English measure units.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "EMU"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiPresentation",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiPresentation object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "bool",
+          "name": "bWriteTableStyles",
+          "description": "<p>Specifies whether to write used table styles to the JSON object (true) or not (false).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "SlidesToJSON": {
+      "memberof": "ApiPresentation",
+      "name": "SlidesToJSON",
+      "description": "<p>Converts the slides from the current ApiPresentation object into the JSON objects.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<JSON>"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "bool",
+          "name": "nStart",
+          "description": "<p>The index to the start slide.</p>",
+          "optional": true,
+          "defaultValue": 0
+        },
+        {
+          "type": "bool",
+          "name": "nStart",
+          "description": "<p>The index to the end slide.</p>",
+          "optional": true,
+          "defaultValue": "ApiPresentation.GetSlidesCount() - 1"
+        },
+        {
+          "type": "bool",
+          "name": "bWriteLayout",
+          "description": "<p>Specifies if the slide layout will be written to the JSON object or not.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "bool",
+          "name": "bWriteMaster",
+          "description": "<p>Specifies if the slide master will be written to the JSON object or not (bWriteMaster is false if bWriteLayout === false).</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "bool",
+          "name": "bWriteAllMasLayouts",
+          "description": "<p>Specifies if all child layouts from the slide master will be written to the JSON object or not.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "bool",
+          "name": "bWriteTableStyles",
+          "description": "<p>Specifies whether to write used table styles to the JSON object (true) or not (false).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a presentation.\n     * @constructor\n     */",
   "description": "<p>Class representing a presentation.</p>",
   "scope": "global",

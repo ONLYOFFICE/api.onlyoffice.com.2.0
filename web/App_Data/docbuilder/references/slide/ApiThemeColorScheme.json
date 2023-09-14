@@ -28,7 +28,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -53,7 +53,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -89,8 +89,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiThemeColorScheme",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiThemeColorScheme object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a theme color scheme.\n     * @constructor\n     */",
   "description": "<p>Class representing a theme color scheme.</p>",
   "scope": "global",

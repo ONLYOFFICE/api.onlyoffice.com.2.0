@@ -199,8 +199,7 @@
       },
       "returns": [
         [
-          "bool",
-          "null"
+          "boolean"
         ]
       ],
       "see": null,
@@ -230,7 +229,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isMatchCase",
           "description": "<p>Case sensitive or not.</p>",
           "optional": false
@@ -318,7 +317,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -343,7 +342,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -368,7 +367,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -385,7 +384,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -914,8 +913,26 @@
           "optional": false
         }
       ]
+    },
+    "ToJSON": {
+      "memberof": "ApiTableCell",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTableCellPr object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTableCellPr#ToJSON}"
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a table cell.\n\t * @constructor\n\t * @extends {ApiTableCellPr}\n\t */",
   "description": "<p>Class representing a table cell.</p>",
   "scope": "global",

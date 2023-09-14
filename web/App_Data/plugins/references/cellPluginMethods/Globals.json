@@ -1,0 +1,36 @@
+{
+  "CommentData": {
+    "name": "CommentData",
+    "description": "<p>The comment data.</p>",
+    "type": [
+      "Object"
+    ],
+    "properties": [
+      {
+        "type": "string",
+        "name": "UserName",
+        "description": "<p>The comment author.</p>"
+      },
+      {
+        "type": "string",
+        "name": "Text",
+        "description": "<p>The comment text.</p>"
+      },
+      {
+        "type": "string",
+        "name": "Time",
+        "description": "<p>The time when the comment was posted (in milliseconds).</p>"
+      },
+      {
+        "type": "boolean",
+        "name": "Solved",
+        "description": "<p>Specifies if the comment is resolved (<strong>true</strong>) or not (<strong>false</strong>).</p>"
+      },
+      {
+        "type": "Array.<CommentData>",
+        "name": "Replies",
+        "description": "<p>An array containing the comment replies represented as the <em>CommentData</em> object.</p>"
+      }
+    ]
+  }
+}

@@ -22,7 +22,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Usage</div>
 
 <ol>
-    <li>Add some content controls into the document. Set any tags for them</li>
+    <li>Add some content controls to the document. Set any tags for them</li>
     <li>Open the <b>Plugins</b> tab and press <b>Example work with content controls tags</b>.</li>
     <li>In the plugin window, you can see all the content controls tags. Press the <b>Refresh list</b> button to update the list.</li>
     <li>Press the <b>Test paste for document</b> button to paste text into the document (where the text cursor is located).</li>
@@ -33,11 +33,11 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_work_with_content_controls_tags" target="_blank">https://github.com/ONLYOFFICE/sdkjs-plugins/tree/develop/example_work_with_content_controls_tags</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>code.js</em></li>
     <li>Icons</li>
     <li>Third-party service:
         <ul>
-            <li><b>jQuery</b> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development (<a href="https://jquery.com" target="_blank">https://jquery.com</a>). License: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_work_with_content_controls_tags/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
+            <li><a href="https://jquery.com" target="_blank">jQuery</a> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_work_with_content_controls_tags/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
         </ul>
     </li>
 </ol>
@@ -117,13 +117,13 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul class="columns-2">
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#onMethodReturn">onMethodReturn</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onMethodReturn") %>">onMethodReturn</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/getallcontentcontrols") %>">executeMethod ("GetAllContentControls")</a></li>
-    <li><a href="<%= Url.Action("executemethod/pastetext") %>">executeMethod ("PasteText")</a></li>
-    <li><a href="<%= Url.Action("executemethod/selectcontentcontrol") %>">executeMethod ("SelectContentControl")</a></li>
+    <li><a href="<%= Url.Action("executemethod/text/getallcontentcontrols") %>">executeMethod ("GetAllContentControls")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/pastetext") %>">executeMethod ("PasteText")</a></li>
+    <li><a href="<%= Url.Action("executemethod/text/selectcontentcontrol") %>">executeMethod ("SelectContentControl")</a></li>
 </ul>
 
 

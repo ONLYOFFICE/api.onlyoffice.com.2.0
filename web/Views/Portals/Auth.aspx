@@ -14,9 +14,9 @@
         <span class="hdr">How to pass authentication?</span>
     </h1>
 
-    <p>One needs to perform several easy steps to pass authentication:</p>
+    <p>The user needs to perform several easy steps to pass authentication:</p>
     <ol>
-        <li>Send POST request, containing two parameters: <b>userName</b> and <b>password</b>, to the <a href="<%= Url.DocUrl("authentication", null, "post", "api/2.0/authentication", "portals") %>">api/2.0/authentication</a> address
+        <li>Send POST request, containing the <b>userName</b> and <b>password</b> parameters to the <a href="<%= Url.DocUrl("authentication", null, "post", "api/2.0/authentication", "portals") %>">api/2.0/authentication</a> address:
 
     <div class="header-gray">Authentication Request</div>
             <pre>
@@ -30,7 +30,7 @@ Accept: application/json
     "password": "yourpassword"
 }
 </pre>
-            <div class="note">Please note, that you have to enter your own portal address to the <em>Host: yourportal.onlyoffice.com</em> line instead of yourportal.onlyoffice.com address.</div>
+            <div class="note">Please note, that you have to enter your own portal address to the <em>Host: yourportal.onlyoffice.com</em> line instead of <em>yourportal.onlyoffice.com</em> address.</div>
 
             <div class="header-gray">Response</div>
             <pre>
@@ -49,8 +49,8 @@ Content-Type: application/json; charset=utf-8
 </pre>
         </li>
 
-        <li>In case authentication is successful, a token which will look like <b>sdjhfskjdhkqy739459234</b> will be received</li>
-        <li>Use this token every time you call API methods inserting it to the HTTP Header: Authorization
+        <li>In case authentication is successful, a token which will look like <b>sdjhfskjdhkqy739459234</b> will be received.</li>
+        <li>Use this token every time you call API methods inserting it to the <b>Authorization</b> HTTP header:
 
         <div class="header-gray">Sample API Request</div>
             <pre>
@@ -60,8 +60,8 @@ Accept: application/json
 Authorization:sdjhfskjdhkqy739459234
 </pre>
 
-            <div class="note">Please note, that you have to enter your own portal address to the <em>Host: yourportal.onlyoffice.com</em> line instead of yourportal.onlyoffice.com address.</div>
-        </li>
+        	<div class="note">Please note, that you have to enter your own portal address to the <em>Host: yourportal.onlyoffice.com</em> line instead of <em>yourportal.onlyoffice.com</em> address.</div>
+		</li>
     </ol>
 
     <div id="csharp" class="header-gray">C# authentication request example</div>
@@ -82,12 +82,12 @@ using (var stream = request.GetRequestStream())
 var response = (System.Net.HttpWebResponse)request.GetResponse();
 var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 </pre>
-    <div class="note">Please note, that you have to enter your own portal address to the <em>yourportal.onlyoffice.com</em> line instead of yourportal.onlyoffice.com address.</div>
+    <div class="note">Please note, that you have to enter your own portal address instead of <em>yourportal.onlyoffice.com</em> address.</div>
 
     <div id="curl" class="header-gray">cURL authentication request example</div>
     <pre>
 curl --request POST --header "Content-Type: application/json" --data "{\"username\":\"yourusername\",\"password\":\"yourpassword\"}" "https://yourportal.onlyoffice.com/api/2.0/authentication.json"
 </pre>
-    <div class="note">Please note, that you have to enter your own portal address to the <em>yourportal.onlyoffice.com</em> line instead of yourportal.onlyoffice.com address.</div>
+    <div class="note">Please note, that you have to enter your own portal address instead of <em>yourportal.onlyoffice.com</em> address.</div>
 
 </asp:Content>

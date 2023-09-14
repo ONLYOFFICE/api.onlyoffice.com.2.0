@@ -539,7 +539,7 @@
   },
   "TickLabelPosition": {
     "name": "TickLabelPosition",
-    "description": "<p>Possible values for the position of chart tick labels (either horizontal or vertical).</p>\n<ul>\n<li><strong>&quot;none&quot;</strong> - not display the selected tick labels.</li>\n<li><strong>&quot;nextTo&quot;</strong> - set the position of the selected tick labels next to the main label.</li>\n<li><strong>&quot;low&quot;</strong> - set the position of the selected tick labels in the part of the chart with lower values.</li>\n<li><strong>&quot;high&quot;</strong> - set the position of the selected tick labels in the part of the chart with higher values.</li>\n</ul>",
+    "description": "<p>Possible values for the position of chart tick labels (either horizontal or vertical).</p>\n<ul>\n<li><b>&quot;none&quot;</b> - not display the selected tick labels.</li>\n<li><b>&quot;nextTo&quot;</b> - set the position of the selected tick labels next to the main label.</li>\n<li><b>&quot;low&quot;</b> - set the position of the selected tick labels in the part of the chart with lower values.</li>\n<li><b>&quot;high&quot;</b> - set the position of the selected tick labels in the part of the chart with higher values.</li>\n</ul>",
     "type": [
       "\"none\"",
       "\"nextTo\"",
@@ -549,7 +549,7 @@
   },
   "BlipFillType": {
     "name": "BlipFillType",
-    "description": "<p>The type of a fill which uses an image as a background.</p>\n<ul>\n<li><strong>&quot;tile&quot;</strong> - if the image is smaller than the shape which is filled, the image will be tiled all over the created shape surface.</li>\n<li><strong>&quot;stretch&quot;</strong> - if the image is smaller than the shape which is filled, the image will be stretched to fit the created shape surface.</li>\n</ul>",
+    "description": "<p>The type of a fill which uses an image as a background.</p>\n<ul>\n<li><b>&quot;tile&quot;</b> - if the image is smaller than the shape which is filled, the image will be tiled all over the created shape surface.</li>\n<li><b>&quot;stretch&quot;</b> - if the image is smaller than the shape which is filled, the image will be stretched to fit the created shape surface.</li>\n</ul>",
     "type": [
       "\"tile\"",
       "\"stretch\""
@@ -623,6 +623,97 @@
       "\"in\"",
       "\"none\"",
       "\"out\""
+    ]
+  },
+  "TextTransform": {
+    "name": "TextTransform",
+    "description": "<p>Text transform type.</p>",
+    "type": [
+      "\"textArchDown\"",
+      "\"textArchDownPour\"",
+      "\"textArchUp\"",
+      "\"textArchUpPour\"",
+      "\"textButton\"",
+      "\"textButtonPour\"",
+      "\"textCanDown\"",
+      "\"textCanUp\"",
+      "\"textCascadeDown\"",
+      "\"textCascadeUp\"",
+      "\"textChevron\"",
+      "\"textChevronInverted\"",
+      "\"textCircle\"",
+      "\"textCirclePour\"",
+      "\"textCurveDown\"",
+      "\"textCurveUp\"",
+      "\"textDeflate\"",
+      "\"textDeflateBottom\"",
+      "\"textDeflateInflate\"",
+      "\"textDeflateInflateDeflate\"",
+      "\"textDeflateTop\"",
+      "\"textDoubleWave1\"",
+      "\"textFadeDown\"",
+      "\"textFadeLeft\"",
+      "\"textFadeRight\"",
+      "\"textFadeUp\"",
+      "\"textInflate\"",
+      "\"textInflateBottom\"",
+      "\"textInflateTop\"",
+      "\"textPlain\"",
+      "\"textRingInside\"",
+      "\"textRingOutside\"",
+      "\"textSlantDown\"",
+      "\"textSlantUp\"",
+      "\"textStop\"",
+      "\"textTriangle\"",
+      "\"textTriangleInverted\"",
+      "\"textWave1\"",
+      "\"textWave2\"",
+      "\"textWave4\"",
+      "\"textNoShape\""
+    ]
+  },
+  "AxisPos": {
+    "name": "AxisPos",
+    "description": "<p>Axis position in the chart.</p>",
+    "type": [
+      "\"top\"",
+      "\"bottom\"",
+      "\"right\"",
+      "\"left\""
+    ]
+  },
+  "NumFormat": {
+    "name": "NumFormat",
+    "description": "<p>Standard numeric format.</p>",
+    "type": [
+      "\"General\"",
+      "\"0\"",
+      "\"0.00\"",
+      "\"#,##0\"",
+      "\"#,##0.00\"",
+      "\"0%\"",
+      "\"0.00%\"",
+      "\"0.00E+00\"",
+      "\"# ?/?\"",
+      "\"# ??/??\"",
+      "\"m/d/yyyy\"",
+      "\"d-mmm-yy\"",
+      "\"d-mmm\"",
+      "\"mmm-yy\"",
+      "\"h:mm AM/PM\"",
+      "\"h:mm:ss AM/PM\"",
+      "\"h:mm\"",
+      "\"h:mm:ss\"",
+      "\"m/d/yyyy h:mm\"",
+      "\"#,##0_);(#,##0)\"",
+      "\"#,##0_);[Red](#,##0)\"",
+      "\"#,##0.00_);(#,##0.00)\"",
+      "\"#,##0.00_);[Red](#,##0.00)\"",
+      "\"mm:ss\"",
+      "\"[h]:mm:ss\"",
+      "\"mm:ss.0\"",
+      "\"##0.0E+0\"",
+      "\"@\""
     ]
   },
   "PositivePercentage": {

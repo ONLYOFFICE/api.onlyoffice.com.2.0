@@ -1,0 +1,13 @@
+builder.CreateFile("xlsx");
+var oWorksheet = Api.GetActiveSheet();
+var oOleObject = oWorksheet.AddOleObject("https://api.onlyoffice.com/content/img/docbuilder/examples/ole-object-image.png", 130 * 36000, 90 * 36000, "https://youtu.be/SKGz4pmnpgY", "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}", 0, 2 * 36000, 4, 3 * 36000);
+oOleObject.SetApplicationId("asc.{E5773A43-F9B3-4E81-81D9-CE0A132470E7}");
+var sAppId = oOleObject.GetApplicationId();
+oWorksheet.GetRange("A1").SetValue("The OLE object application ID: " + sAppId);
+oOleObject.SetData("https://youtu.be/eJxpkjQG6Ew");
+var sData = oOleObject.GetData();
+oWorksheet.GetRange("A2").SetValue("The OLE object data: " + sData);
+var sType = oOleObject.GetClassType();
+oWorksheet.GetRange("A3").SetValue("Class type: " + sType);
+builder.SaveFile("xlsx", "ApiOleObject.xlsx");
+builder.CloseFile();

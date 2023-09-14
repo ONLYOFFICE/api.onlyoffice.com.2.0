@@ -32,10 +32,10 @@
     <div class="header-gray">Parameters</div>
     <table class="table">
         <colgroup>
-            <col style="width: 150px;" />
-            <col />
-            <col style="width: 60px;" />
-            <col style="width: 190px;" />
+            <col class="table-name" />
+			<col />
+			<col class="table-type" />
+			<col class="table-example" />
         </colgroup>
         <thead>
             <tr class="tablerow">

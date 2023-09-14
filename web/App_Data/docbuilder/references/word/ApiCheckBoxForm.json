@@ -6,7 +6,8 @@
       "description": "<p>Checks the current checkbox.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -31,7 +32,8 @@
       "description": "<p>Returns the state of the current checkbox (checked or not).</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -48,7 +50,8 @@
       "description": "<p>Checks if the current checkbox is a radio button.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -65,7 +68,8 @@
       "description": "<p>Returns the radio group key if the current checkbox is a radio button.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -79,10 +83,11 @@
     "SetRadioGroup": {
       "memberof": "ApiCheckBoxForm",
       "name": "SetRadioGroup",
-      "description": "<p>Sets the radio group key to the current checkbox.</p>",
+      "description": "<p>Sets the radio group key to the current radio button.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [],
@@ -103,7 +108,8 @@
       "description": "<p>Returns a type of the ApiFormBase class.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -120,7 +126,8 @@
       "description": "<p>Returns a type of the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -137,7 +144,8 @@
       "description": "<p>Returns the current form key.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -154,7 +162,8 @@
       "description": "<p>Sets a key to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -179,7 +188,8 @@
       "description": "<p>Returns the tip text of the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -196,7 +206,8 @@
       "description": "<p>Sets the tip text to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -221,7 +232,8 @@
       "description": "<p>Checks if the current form is required.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -238,7 +250,8 @@
       "description": "<p>Specifies if the current form should be required.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -263,7 +276,8 @@
       "description": "<p>Checks if the current form is fixed size.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -280,7 +294,8 @@
       "description": "<p>Converts the current form to a fixed size form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -311,7 +326,8 @@
       "description": "<p>Converts the current form to an inline form.\n<em>Picture form can't be converted to an inline form, it's always a fixed size object.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -328,7 +344,8 @@
       "description": "<p>Sets the border color to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -371,7 +388,8 @@
       "description": "<p>Sets the background color to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -411,10 +429,11 @@
     "GetText": {
       "memberof": "ApiCheckBoxForm",
       "name": "GetText",
-      "description": "<p>Returns the text from the current form.</p>",
+      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -431,7 +450,8 @@
       "description": "<p>Clears the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [],
@@ -444,7 +464,8 @@
       "description": "<p>Returns a shape in which the form is placed to control the position and size of the fixed size form frame.\nThe null value will be returned for the inline forms.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -461,7 +482,8 @@
       "description": "<p>Sets the placeholder text to the current form.\n<em>Can't be set to checkbox or radio button.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -483,10 +505,11 @@
     "SetTextPr": {
       "memberof": "ApiCheckBoxForm",
       "name": "SetTextPr",
-      "description": "<p>Sets the text properties to the current form.</p>",
+      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -508,10 +531,11 @@
     "GetTextPr": {
       "memberof": "ApiCheckBoxForm",
       "name": "GetTextPr",
-      "description": "<p>Returns the text properties from the current form.</p>",
+      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -521,10 +545,29 @@
       ],
       "see": null,
       "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
+    },
+    "Copy": {
+      "memberof": "ApiCheckBoxForm",
+      "name": "Copy",
+      "description": "<p>Copies the current form (copies with the shape if it exists).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiForm"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#Copy}"
     }
   },
-  "comment": "/**\n\t * Class representing a document checkbox form.\n\t * @constructor\n\t * @property {boolean} radio - Specifies if the current checkbox is a radio button. In this case, the key parameter is considered as an identifier for the group of radio buttons.\n\t * @extends {ApiFormBase}\n\t */",
-  "description": "<p>Class representing a document checkbox form.</p>",
+  "events": {},
+  "comment": "/**\n\t * Class representing a document checkbox / radio button.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @property {boolean} radio - Specifies if the current checkbox is a radio button. In this case, the key parameter is considered as an identifier for the group of radio buttons.\n\t * @extends {ApiFormBase}\n\t */",
+  "description": "<p>Class representing a document checkbox / radio button.</p>",
   "scope": "global",
   "params": [],
   "properties": [

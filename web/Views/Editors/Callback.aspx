@@ -23,10 +23,10 @@
     <h2>Parameters and their description:</h2>
     <table class="table">
         <colgroup>
-            <col style="width: 100px;" />
+            <col class="table-name" />
             <col />
-            <col style="width: 100px;" />
-            <col style="width: 150px;" />
+            <col class="table-type" />
+            <col class="table-example" />
         </colgroup>
         <thead>
             <tr class="tablerow">
@@ -138,7 +138,8 @@
             </tr>
             <tr class="tablerow">
                 <td id="userdata" class="copy-link">userdata</td>
-                <td>Defines the custom information sent to the <a href="<%= Url.Action("command/forcesave") %>">command service</a> in case it was present in the request.</td>
+                <td>Defines the custom information sent to the command service for the <a href="<%= Url.Action("command/forcesave") %>">forcesave</a>
+                    and <a href="<%= Url.Action("command/info") %>">info</a> commands in case it was present in the request.</td>
                 <td>string</td>
                 <td>optional</td>
             </tr>
@@ -165,7 +166,7 @@
 
     <table class="error-table">
         <colgroup>
-            <col style="width: 105px;" />
+            <col class="table-name" />
             <col />
         </colgroup>
         <thead>

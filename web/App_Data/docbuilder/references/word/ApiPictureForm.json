@@ -6,7 +6,8 @@
       "description": "<p>Returns the current scaling condition of the picture form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -23,7 +24,8 @@
       "description": "<p>Sets the scaling condition to the current picture form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -48,7 +50,8 @@
       "description": "<p>Locks the aspect ratio of the current picture form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -74,7 +77,8 @@
       "description": "<p>Checks if the aspect ratio of the current picture form is locked or not.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -91,7 +95,8 @@
       "description": "<p>Sets the picture position inside the current form:</p>\n<ul>\n<li><b>0</b> - the picture is placed on the left/top;</li>\n<li><b>50</b> - the picture is placed in the center;</li>\n<li><b>100</b> - the picture is placed on the right/bottom.</li>\n</ul>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -122,7 +127,8 @@
       "description": "<p>Returns the picture position inside the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -139,7 +145,8 @@
       "description": "<p>Respects the form border width when scaling the image.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -165,7 +172,8 @@
       "description": "<p>Checks if the form border width is respected or not.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -182,7 +190,8 @@
       "description": "<p>Returns an image in the base64 format from the current picture form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -199,7 +208,8 @@
       "description": "<p>Sets an image to the current picture form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -224,7 +234,8 @@
       "description": "<p>Returns a type of the ApiFormBase class.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -241,7 +252,8 @@
       "description": "<p>Returns a type of the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -258,7 +270,8 @@
       "description": "<p>Returns the current form key.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -275,7 +288,8 @@
       "description": "<p>Sets a key to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -300,7 +314,8 @@
       "description": "<p>Returns the tip text of the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -317,7 +332,8 @@
       "description": "<p>Sets the tip text to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -342,7 +358,8 @@
       "description": "<p>Checks if the current form is required.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -359,7 +376,8 @@
       "description": "<p>Specifies if the current form should be required.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -384,7 +402,8 @@
       "description": "<p>Checks if the current form is fixed size.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -401,7 +420,8 @@
       "description": "<p>Converts the current form to a fixed size form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -432,7 +452,8 @@
       "description": "<p>Converts the current form to an inline form.\n<em>Picture form can't be converted to an inline form, it's always a fixed size object.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -449,7 +470,8 @@
       "description": "<p>Sets the border color to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -492,7 +514,8 @@
       "description": "<p>Sets the background color to the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -532,10 +555,11 @@
     "GetText": {
       "memberof": "ApiPictureForm",
       "name": "GetText",
-      "description": "<p>Returns the text from the current form.</p>",
+      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -552,7 +576,8 @@
       "description": "<p>Clears the current form.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [],
@@ -565,7 +590,8 @@
       "description": "<p>Returns a shape in which the form is placed to control the position and size of the fixed size form frame.\nThe null value will be returned for the inline forms.</p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -582,7 +608,8 @@
       "description": "<p>Sets the placeholder text to the current form.\n<em>Can't be set to checkbox or radio button.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -604,10 +631,11 @@
     "SetTextPr": {
       "memberof": "ApiPictureForm",
       "name": "SetTextPr",
-      "description": "<p>Sets the text properties to the current form.</p>",
+      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -629,10 +657,11 @@
     "GetTextPr": {
       "memberof": "ApiPictureForm",
       "name": "GetTextPr",
-      "description": "<p>Returns the text properties from the current form.</p>",
+      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
       "tags": {
         "typeofeditors": [
-          "CDE"
+          "CDE",
+          "CFE"
         ]
       },
       "returns": [
@@ -642,9 +671,28 @@
       ],
       "see": null,
       "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
+    },
+    "Copy": {
+      "memberof": "ApiPictureForm",
+      "name": "Copy",
+      "description": "<p>Copies the current form (copies with the shape if it exists).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiForm"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#Copy}"
     }
   },
-  "comment": "/**\n\t * Class representing a document picture form.\n\t * @constructor\n\t * @property {ScaleFlag} scaleFlag - The condition to scale an image in the picture form: \"always\", \"never\", \"tooBig\" or \"tooSmall\".\n\t * @property {boolean} lockAspectRatio - Specifies if the aspect ratio of the picture form is locked or not.\n\t * @property {boolean} respectBorders - Specifies if the form border width is respected or not when scaling the image.\n\t * @property {percentage} shiftX - Horizontal picture position inside the picture form measured in percent:\n\t * * <b>0</b> - the picture is placed on the left;\n\t * * <b>50</b> - the picture is placed in the center;\n\t * * <b>100</b> - the picture is placed on the right.\n\t * @property {percentage} shiftY - Vertical picture position inside the picture form measured in percent:\n\t * * <b>0</b> - the picture is placed on top;\n\t * * <b>50</b> - the picture is placed in the center;\n\t * * <b>100</b> - the picture is placed on the bottom.\n\t * @extends {ApiFormBase}\n\t */",
+  "events": {},
+  "comment": "/**\n\t * Class representing a document picture form.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @property {ScaleFlag} scaleFlag - The condition to scale an image in the picture form: \"always\", \"never\", \"tooBig\" or \"tooSmall\".\n\t * @property {boolean} lockAspectRatio - Specifies if the aspect ratio of the picture form is locked or not.\n\t * @property {boolean} respectBorders - Specifies if the form border width is respected or not when scaling the image.\n\t * @property {percentage} shiftX - Horizontal picture position inside the picture form measured in percent:\n\t * * <b>0</b> - the picture is placed on the left;\n\t * * <b>50</b> - the picture is placed in the center;\n\t * * <b>100</b> - the picture is placed on the right.\n\t * @property {percentage} shiftY - Vertical picture position inside the picture form measured in percent:\n\t * * <b>0</b> - the picture is placed on top;\n\t * * <b>50</b> - the picture is placed in the center;\n\t * * <b>100</b> - the picture is placed on the bottom.\n\t * @extends {ApiFormBase}\n\t */",
   "description": "<p>Class representing a document picture form.</p>",
   "scope": "global",
   "params": [],

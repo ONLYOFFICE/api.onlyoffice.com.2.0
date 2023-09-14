@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -24,17 +24,26 @@
 */
 
 
+using JWT;
+using JWT.Algorithms;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.Serialization;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
-using ASC.Web.Core.Files;
+using static ASC.Api.Web.Help.Helpers.Config;
 
 namespace ASC.Api.Web.Help.Helpers
 {
@@ -184,12 +193,12 @@ namespace ASC.Api.Web.Help.Helpers
             var scriptUrl = GetScriptUrl(builderScript);
 
             Dictionary<string, string> urls;
-            DocumentService.DocbuilderRequest(
+            DocbuilderRequest(
                 ConfigurationManager.AppSettings["editor_url"] + "/docbuilder",
                 null,
                 scriptUrl,
                 false,
-                FileUtility.SignatureSecret,
+                Config.GetSignatureSecret(),
                 out urls
                 );
 
@@ -203,6 +212,117 @@ namespace ASC.Api.Web.Help.Helpers
                 throw new Exception("Result without file");
             }
             return fileUrl;
+        }
+
+        private string DocbuilderRequest(
+            string docbuilderUrl,
+            string requestKey,
+            string scriptUrl,
+            bool isAsync,
+            string signatureSecret,
+            out Dictionary<string, string> urls)
+        {
+            if (string.IsNullOrEmpty(docbuilderUrl))
+                throw new ArgumentNullException("docbuilderUrl");
+
+            if (string.IsNullOrEmpty(requestKey) && string.IsNullOrEmpty(scriptUrl))
+                throw new ArgumentException("requestKey or inputScript is empty");
+
+            var request = (HttpWebRequest)WebRequest.Create(docbuilderUrl);
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.Timeout = (int)TimeSpan.FromMinutes(1).TotalMilliseconds;
+
+            var body = new BuilderBody
+            {
+                Async = isAsync,
+                Key = requestKey,
+                Url = scriptUrl
+            };
+
+            if (!string.IsNullOrEmpty(signatureSecret))
+            {
+                var payload = new Dictionary<string, object>
+                    {
+                        { "payload", body }
+                    };
+
+                var serializer = new JwtSerializer();
+                var urlEncoder = new JwtBase64UrlEncoder();
+                var algorithm = new HMACSHA256Algorithm();
+                var encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
+
+                var token = encoder.Encode(payload, signatureSecret);
+
+                //todo: remove old scheme
+                request.Headers.Add("Authorization", "Bearer " + token);
+
+                token = encoder.Encode(body, signatureSecret);
+                body.Token = token;
+            }
+
+            var bodyString = JsonConvert.SerializeObject(body);
+
+            var bytes = Encoding.UTF8.GetBytes(bodyString ?? "");
+            request.ContentLength = bytes.Length;
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(bytes, 0, bytes.Length);
+            }
+
+            string dataResponse = null;
+            using (var response = (HttpWebResponse)request.GetResponse())
+            using (var responseStream = response.GetResponseStream())
+            {
+                if (responseStream != null)
+                {
+                    using (var reader = new StreamReader(responseStream))
+                    {
+                        dataResponse = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(dataResponse)) throw new Exception("Invalid response");
+
+            var responseFromService = JObject.Parse(dataResponse);
+            if (responseFromService == null) throw new Exception("Invalid answer format");
+
+            var errorElement = responseFromService.Value<string>("error");
+            if (!string.IsNullOrEmpty(errorElement))
+            {
+                throw new Exception($"Got error {errorElement}");
+            };
+
+            var isEnd = responseFromService.Value<bool>("end");
+
+            urls = null;
+            if (isEnd)
+            {
+                IDictionary<string, JToken> rates = (JObject)responseFromService["urls"];
+
+                urls = rates.ToDictionary(pair => pair.Key, pair => pair.Value.ToString());
+            }
+
+            return responseFromService.Value<string>("key");
+        }
+
+        [Serializable]
+        [DataContract(Name = "Builder", Namespace = "")]
+        [DebuggerDisplay("{Key}")]
+        private class BuilderBody
+        {
+            [DataMember(Name = "async")]
+            public bool Async { get; set; }
+
+            [DataMember(Name = "key", IsRequired = true)]
+            public string Key { get; set; }
+
+            [DataMember(Name = "url", IsRequired = true)]
+            public string Url { get; set; }
+
+            [DataMember(Name = "token", EmitDefaultValue = false)]
+            public string Token { get; set; }
         }
     }
 }

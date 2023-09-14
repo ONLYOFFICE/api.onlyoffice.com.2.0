@@ -130,7 +130,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bIsMinMax",
           "description": "<p>The <code>true</code> value sets the normal data direction for the vertical axis (from minimum to maximum).\nThe <code>false</code> value sets the inverted data direction for the vertical axis (from maximum to minimum).</p>",
           "optional": false
@@ -235,7 +235,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bIsMinMax",
           "description": "<p>The <code>true</code> value sets the normal data direction for the horizontal axis\n(from minimum to maximum). The <code>false</code> value sets the inverted data direction for the horizontal axis (from maximum to minimum).</p>",
           "optional": false
@@ -298,25 +298,25 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowSerName",
           "description": "<p>Whether to show or hide the source table column names used for the data which the chart will be build from.</p>",
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowCatName",
           "description": "<p>Whether to show or hide the source table row names used for the data which the chart will be build from.</p>",
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowVal",
           "description": "<p>Whether to show or hide the chart data values.</p>",
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowPercent",
           "description": "<p>Whether to show or hide the percent for the data values (works with stacked chart types).</p>",
           "optional": false
@@ -349,25 +349,25 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowSerName",
           "description": "<p>Whether to show or hide the source table column names used for the data which the chart will be build from.</p>",
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowCatName",
           "description": "<p>Whether to show or hide the source table row names used for the data which the chart will be build from.</p>",
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowVal",
           "description": "<p>Whether to show or hide the chart data values.</p>",
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bShowPercent",
           "description": "<p>Whether to show or hide the percent for the data values (works with stacked chart types).</p>",
           "optional": false
@@ -545,7 +545,120 @@
     "ApplyChartStyle": {
       "memberof": "ApiChart",
       "name": "ApplyChartStyle",
-      "description": "<p>Applies a set of visual settings to the chart.</p>",
+      "description": "<p>Sets a style to the current chart by style ID.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": []
+    },
+    "SetSeriaValues": {
+      "memberof": "ApiChart",
+      "name": "SetSeriaValues",
+      "description": "<p>Sets values from the specified range to the specified series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sRange",
+          "description": "<p>A range of cells from the sheet with series values. For example:</p>\n<ul>\n<li>&quot;'sheet 1'!$A$2:$A$5&quot; - must be a single cell, row or column,</li>\n<li>&quot;A1:A5&quot; - must be a single cell, row or column,</li>\n<li>&quot;Example series&quot;.</li>\n</ul>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeria",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetSeriaXValues": {
+      "memberof": "ApiChart",
+      "name": "SetSeriaXValues",
+      "description": "<p>Sets the x-axis values from the specified range to the specified series. It is used with the scatter charts only.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sRange",
+          "description": "<p>A range of cells from the sheet with series x-axis values. For example:</p>\n<ul>\n<li>&quot;'sheet 1'!$A$2:$A$5&quot; - must be a single cell, row or column,</li>\n<li>&quot;A1:A5&quot; - must be a single cell, row or column,</li>\n<li>&quot;Example series&quot;.</li>\n</ul>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeria",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetSeriaName": {
+      "memberof": "ApiChart",
+      "name": "SetSeriaName",
+      "description": "<p>Sets a name to the specified series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sNameRange",
+          "description": "<p>The series name. Can be a range of cells or usual text. For example:</p>\n<ul>\n<li>&quot;'sheet 1'!$A$2:$A$5&quot; - must be a single cell, row or column,</li>\n<li>&quot;A1:A5&quot; - must be a single cell, row or column,</li>\n<li>&quot;Example series&quot;.</li>\n</ul>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeria",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetCatFormula": {
+      "memberof": "ApiChart",
+      "name": "SetCatFormula",
+      "description": "<p>Sets a range with the category values to the current chart.</p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -556,14 +669,533 @@
       "inherits": null,
       "params": [
         {
+          "type": "string",
+          "name": "sRange",
+          "description": "<p>A range of cells from the sheet with the category names. For example:</p>\n<ul>\n<li>&quot;'sheet 1'!$A$2:$A$5&quot; - must be a single cell, row or column,</li>\n<li>&quot;A1:A5&quot; - must be a single cell, row or column.</li>\n</ul>",
+          "optional": false
+        }
+      ]
+    },
+    "AddSeria": {
+      "memberof": "ApiChart",
+      "name": "AddSeria",
+      "description": "<p>Adds a new series to the current chart.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sNameRange",
+          "description": "<p>The series name. Can be a range of cells or usual text. For example:</p>\n<ul>\n<li>&quot;'sheet 1'!$A$2:$A$5&quot; - must be a single cell, row or column,</li>\n<li>&quot;A1:A5&quot; - must be a single cell, row or column,</li>\n<li>&quot;Example series&quot;.</li>\n</ul>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sValuesRange",
+          "description": "<p>A range of cells from the sheet with series values. For example:</p>\n<ul>\n<li>&quot;'sheet 1'!$A$2:$A$5&quot; - must be a single cell, row or column,</li>\n<li>&quot;A1:A5&quot; - must be a single cell, row or column.</li>\n</ul>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sXValuesRange",
+          "description": "<p>A range of cells from the sheet with series x-axis values. It is used with the scatter charts only. For example:</p>\n<ul>\n<li>&quot;'sheet 1'!$A$2:$A$5&quot; - must be a single cell, row or column,</li>\n<li>&quot;A1:A5&quot; - must be a single cell, row or column.</li>\n</ul>",
+          "optional": true
+        }
+      ]
+    },
+    "RemoveSeria": {
+      "memberof": "ApiChart",
+      "name": "RemoveSeria",
+      "description": "<p>Removes the specified series from the current chart.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
           "type": "number",
-          "name": "nStyleIndex",
-          "description": "<p>The style index that will be set to the current chart.</p>",
+          "name": "nSeria",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetPlotAreaFill": {
+      "memberof": "ApiChart",
+      "name": "SetPlotAreaFill",
+      "description": "<p>Sets the fill to the chart plot area.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The fill type used to fill the plot area.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetPlotAreaOutLine": {
+      "memberof": "ApiChart",
+      "name": "SetPlotAreaOutLine",
+      "description": "<p>Sets the outline to the chart plot area.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the plot area outline.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetSeriesFill": {
+      "memberof": "ApiChart",
+      "name": "SetSeriesFill",
+      "description": "<p>Sets the fill to the specified chart series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The fill type used to fill the series.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeries",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bAll",
+          "description": "<p>Specifies if the fill will be applied to all series.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "SetSeriesOutLine": {
+      "memberof": "ApiChart",
+      "name": "SetSeriesOutLine",
+      "description": "<p>Sets the outline to the specified chart series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the series outline.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeries",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bAll",
+          "description": "<p>Specifies if the outline will be applied to all series.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "SetDataPointFill": {
+      "memberof": "ApiChart",
+      "name": "SetDataPointFill",
+      "description": "<p>Sets the fill to the data point in the specified chart series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The fill type used to fill the data point.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeries",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nDataPoint",
+          "description": "<p>The index of the data point in the specified chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bAllSeries",
+          "description": "<p>Specifies if the fill will be applied to the specified data point in all series.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "SetDataPointOutLine": {
+      "memberof": "ApiChart",
+      "name": "SetDataPointOutLine",
+      "description": "<p>Sets the outline to the data point in the specified chart series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the data point outline.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeries",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nDataPoint",
+          "description": "<p>The index of the data point in the specified chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bAllSeries",
+          "description": "<p>Specifies if the outline will be applied to the specified data point in all series.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetMarkerFill": {
+      "memberof": "ApiChart",
+      "name": "SetMarkerFill",
+      "description": "<p>Sets the fill to the marker in the specified chart series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The fill type used to fill the marker.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeries",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nMarker",
+          "description": "<p>The index of the marker in the specified chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bAllMarkers",
+          "description": "<p>Specifies if the fill will be applied to all markers in the specified chart series.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "SetMarkerOutLine": {
+      "memberof": "ApiChart",
+      "name": "SetMarkerOutLine",
+      "description": "<p>Sets the outline to the marker in the specified chart series.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the marker outline.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nSeries",
+          "description": "<p>The index of the chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nMarker",
+          "description": "<p>The index of the marker in the specified chart series.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bAllMarkers",
+          "description": "<p>Specifies if the outline will be applied to all markers in the specified chart series.</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    "SetTitleFill": {
+      "memberof": "ApiChart",
+      "name": "SetTitleFill",
+      "description": "<p>Sets the fill to the chart title.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The fill type used to fill the title.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetTitleOutLine": {
+      "memberof": "ApiChart",
+      "name": "SetTitleOutLine",
+      "description": "<p>Sets the outline to the chart title.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the title outline.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetLegendFill": {
+      "memberof": "ApiChart",
+      "name": "SetLegendFill",
+      "description": "<p>Sets the fill to the chart legend.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The fill type used to fill the legend.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetLegendOutLine": {
+      "memberof": "ApiChart",
+      "name": "SetLegendOutLine",
+      "description": "<p>Sets the outline to the chart legend.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the legend outline.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetAxieNumFormat": {
+      "memberof": "ApiChart",
+      "name": "SetAxieNumFormat",
+      "description": "<p>Sets the specified numeric format to the axis values.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "NumFormat | String",
+          "name": "sFormat",
+          "description": "<p>Numeric format (can be custom format).</p>",
+          "optional": false
+        },
+        {
+          "type": "AxisPos",
+          "name": "sAxiePos",
+          "description": "<p>Axis position.</p>",
           "optional": false
         }
       ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a chart.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a chart.</p>",
   "scope": "global",

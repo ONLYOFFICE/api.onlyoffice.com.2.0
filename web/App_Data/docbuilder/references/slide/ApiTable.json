@@ -234,8 +234,35 @@
           "optional": false
         }
       ]
+    },
+    "ToJSON": {
+      "memberof": "ApiTable",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTable object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "bool",
+          "name": "bWriteTableStyles",
+          "description": "<p>Specifies whether to write used table styles to the JSON object (true) or not (false).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a table.\n     * @param oGraphicFrame\n     * @constructor\n     * */",
   "description": "<p>Class representing a table.</p>",
   "scope": "global",

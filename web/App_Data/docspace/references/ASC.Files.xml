@@ -1,0 +1,1930 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Files</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Files.Api.ApiControllerBase">
+            <summary>
+            Provides access to documents.
+            </summary>
+            <name>files</name>
+        </member>
+        <member name="M:ASC.Files.Api.EditorControllerThirdparty.OpenEditThirdPartyAsync(System.String)">
+            <summary>
+            Opens a third-party file with the ID specified in the request for editing.
+            </summary>
+            <short>
+            Open a third-party file
+            </short>
+            <category>Third-party integration</category>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Web.Files.Services.DocumentService.Configuration, ASC.Files.Core">Configuration parameters</returns>
+            <path>api/2.0/files/file/app-{fileId}/openedit</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController`1.SaveEditingFromFormAsync(`0,ASC.Files.Core.ApiModels.RequestDto.SaveEditingRequestDto)">
+            <summary>
+            Saves edits to a file with the ID specified in the request.
+            </summary>
+            <short>Save file edits</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SaveEditingRequestDto, ASC.Files.Core" name="inDto">Request parameters for saving file edits</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Saved file parameters</returns>
+            <path>api/2.0/files/file/{fileId}/saveediting</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController`1.StartEditAsync(`0,ASC.Files.Core.ApiModels.RequestDto.StartEditRequestDto)">
+            <summary>
+            Informs about opening a file with the ID specified in the request for editing, locking it from being deleted or moved (this method is called by the mobile editors).
+            </summary>
+            <short>Start file editing</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.StartEditRequestDto, ASC.Files.Core" name="inDto">Request parameters for starting file editing</param>
+            <category>Files</category>
+            <returns type="System.Object, System">File key for Document Service</returns>
+            <path>api/2.0/files/file/{fileId}/startedit</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController`1.TrackEditFileAsync(`0,System.Guid,System.String,System.String,System.Boolean)">
+            <summary>
+            Tracks file changes when editing.
+            </summary>
+            <short>Track file editing</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.Guid, System" name="tabId">Tab ID</param>
+            <param type="System.String, System" name="docKeyForTrack">Document key for tracking</param>
+            <param type="System.String, System" name="doc">Shared token</param>
+            <param type="System.Boolean, System" name="isFinish">Specifies whether to finish file tracking or not</param>
+            <category>Files</category>
+            <returns type="System.Collections.Generic.KeyValuePair{System.Boolean, System.String}, System.Collections.Generic">File changes</returns>
+            <path>api/2.0/files/file/{fileId}/trackeditfile</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController`1.OpenEditAsync(`0,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Returns the initialization configuration of a file to open it in the editor.
+            </summary>
+            <short>Open a file</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.Int32, System" name="version">File version</param>
+            <param type="System.String, System" name="doc">Shared token</param>
+            <param type="System.Boolean, System" name="view">Specifies if a document will be opened for viewing only or not</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.ConfigurationDto, ASC.Files.Core">Configuration parameters</returns>
+            <path>api/2.0/files/file/{fileId}/openedit</path>
+            <requiresAuthorization>false</requiresAuthorization>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController`1.GetPresignedUriAsync(`0)">
+            <summary>
+            Returns a link to download a file with the ID specified in the request asynchronously.
+            </summary>
+            <short>Get file download link asynchronously</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Files.Core.Helpers.DocumentService.FileLink, ASC.Files.Core">File download link</returns>
+            <path>api/2.0/files/file/{fileId}/presigned</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController`1.SharedUsers(`0)">
+            <summary>
+            Returns a list of users with their access rights to the file with the ID specified in the request.
+            </summary>
+            <short>Get shared users</short>
+            <category>Sharing</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Web.Files.Services.WCFService.MentionWrapper, ASC.Files.Core">List of users with their access rights to the file</returns>
+            <path>api/2.0/files/file/{fileId}/sharedusers</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController`1.GetReferenceDataAsync(ASC.Files.Core.ApiModels.RequestDto.GetReferenceDataDto{`0})">
+            <summary>
+            Returns the reference data to uniquely identify a file in its system and check the availability of insering data into the destination spreadsheet by the external link.
+            </summary>
+            <short>Get reference data</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.GetReferenceDataDto, ASC.Files.Core" name="inDto">Request parameters for getting reference data</param>
+            <returns type="ASC.Web.Files.Services.DocumentService.FileReference, ASC.Files.Core">File reference data</returns>
+            <path>api/2.0/files/file/referencedata</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController.CheckDocServiceUrl(ASC.Files.Core.ApiModels.RequestDto.CheckDocServiceUrlRequestDto)">
+            <summary>
+            Checks the document service location.
+            </summary>
+            <short>Check the document service URL</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CheckDocServiceUrlRequestDto, ASC.Files.Core" name="inDto">Request parameters for checking the document service location</param>
+            <category>Settings</category>
+            <returns type="System.String, System">Document service information: the Document Server address, the Document Server address in the local private network, the Community Server address</returns>
+            <path>api/2.0/files/docservice</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.EditorController.GetDocServiceUrlAsync(System.Boolean)">
+            <summary>
+            Returns the address of the connected editors.
+            </summary>
+            <short>Get the document service URL</short>
+            <category>Settings</category>
+            <param type="System.Boolean, System" name="version">Specifies the editor version or not</param>
+            <returns type="System.Object, System">The document service URL with the editor version specified</returns>
+            <path>api/2.0/files/docservice</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerThirdparty.GetFileInfoThirdPartyAsync(System.String)">
+            <summary>
+            Returns the detailed information about a third-party file with the ID specified in the request.
+            </summary>
+            <short>Get third-party file information</short>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto, ASC.Files.Core">File entry information</returns>
+            <path>api/2.0/files/file/app-{fileId}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.ChangeHistoryAsync(`0,ASC.Files.Core.ApiModels.RequestDto.ChangeHistoryRequestDto)">
+            <summary>
+            Changes the version history of a file with the ID specified in the request.
+            </summary>
+            <short>Change version history</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.ChangeHistoryRequestDto, ASC.Files.Core" name="inDto">Request parameters for changing version history</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Updated information about file versions</returns>
+            <path>api/2.0/files/file/{fileId}/history</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.CheckConversionAsync(`0,System.Boolean)">
+            <summary>
+            Checks the conversion status of a file with the ID specified in the request.
+            </summary>
+            <short>Get conversion status</short>
+            <category>Operations</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.Boolean, System" name="start">Specifies if a conversion operation is started or not</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto, ASC.Files.Core">Conversion result</returns>
+            <path>api/2.0/files/file/{fileId}/checkconversion</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.GetPresignedUri(`0)">
+            <summary>
+            Returns a link to download a file with the ID specified in the request.
+            </summary>
+            <short>Get file download link</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <returns type="System.String, System">File download link</returns>
+            <path>api/2.0/files/file/{fileId}/presigneduri</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.CopyFileAs(`0,ASC.Files.Core.ApiModels.RequestDto.CopyAsRequestDto{System.Text.Json.JsonElement})">
+            <summary>
+            Copies (and converts if possible) an existing file to the specified folder.
+            </summary>
+            <short>Copy a file</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CopyAsRequestDto{System.Text.Json.JsonElement}, ASC.Files.Core" name="inDto">Request parameters for copying a file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto, ASC.Files.Core">Copied file entry information</returns>
+            <path>api/2.0/files/file/{fileId}/copyas</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.CreateFileAsync(`0,ASC.Files.Core.ApiModels.RequestDto.CreateFileRequestDto{System.Text.Json.JsonElement})">
+            <summary>
+            Creates a new file in the specified folder with the title specified in the request.
+            </summary>
+            <short>Create a file</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateFileRequestDto{System.Text.Json.JsonElement}, ASC.Files.Core" name="inDto">Request parameters for creating a file</param>
+            <remarks>If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet, or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.</remarks>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/{folderId}/file</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.CreateHtmlFileAsync(`0,ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto)">
+            <summary>
+            Creates an HTML (.html) file in the selected folder with the title and contents specified in the request.
+            </summary>
+            <short>Create an HTML file</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating an HTML file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/{folderId}/html</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.CreateTextFileAsync(`0,ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto)">
+            <summary>
+            Creates a text (.txt) file in the selected folder with the title and contents specified in the request.
+            </summary>
+            <short>Create a txt file</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a text file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/{folderId}/text</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.DeleteFile(`0,ASC.Files.Core.ApiModels.RequestDto.DeleteRequestDto)">
+            <summary>
+            Deletes a file with the ID specified in the request.
+            </summary>
+            <short>Delete a file</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DeleteRequestDto, ASC.Files.Core" name="inDto">Request parameters for deleting a file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/file/{fileId}</path>
+            <httpMethod>DELETE</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.GetEditDiffUrlAsync(`0,System.Int32,System.String)">
+            <summary>
+            Returns a URL to the changes of a file version specified in the request.
+            </summary>
+            <short>Get changes URL</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.Int32, System" name="version">File version</param>
+            <param type="System.String, System" name="doc">Shared token</param>
+            <returns type="ASC.Files.Core.EditHistoryDataDto, ASC.Files.Core">File version history data</returns>
+            <path>api/2.0/files/file/{fileId}/edit/diff</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.GetEditHistoryAsync(`0,System.String)">
+            <summary>
+            Returns the version history of a file with the ID specified in the request.
+            </summary>
+            <short>Get version history</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.String, System" name="doc">Shared token</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto, ASC.Files.Core">Version history data</returns>
+            <path>api/2.0/files/file/{fileId}/edit/history</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.GetFileInfoAsync(`0,System.Int32)">
+            <summary>
+            Returns the detailed information about a file with the ID specified in the request.
+            </summary>
+            <short>Get file information</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.Int32, System" name="version">File version</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">File information</returns>
+            <path>api/2.0/files/file/{fileId}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.GetFileVersionInfoAsync(`0)">
+            <summary>
+            Returns the detailed information about all the available file versions with the ID specified in the request.
+            </summary>
+            <short>Get file versions</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Information about file versions: folder ID, version, version group, content length, pure content length, file status, URL to view a file, web URL, file type, file extension, comment, encrypted or not, thumbnail URL, thumbnail status, locked or not, user ID who locked a file, denies file downloading or not, denies file sharing or not, file accessibility</returns>
+            <path>api/2.0/files/file/{fileId}/history</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.LockFileAsync(`0,ASC.Files.Core.ApiModels.RequestDto.LockFileRequestDto)">
+            <summary>
+            Locks a file with the ID specified in the request.
+            </summary>
+            <short>Lock a file</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.LockFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for locking a file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Locked file information</returns>
+            <path>api/2.0/files/file/{fileId}/lock</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.RestoreVersionAsync(`0,System.Int32,System.String,System.String)">
+            <summary>
+            Restores a file version specified in the request.
+            </summary>
+            <short>Restore a file version</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.Int32, System" name="version">File version</param>
+            <param type="System.String, System" name="url">File version URL</param>
+            <param type="System.String, System" name="doc">Shared token</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto, ASC.Files.Core">Version history data: file ID, key, file version, version group, a user who updated a file, creation time, history changes in the string format, list of history changes, server version</returns>
+            <path>api/2.0/files/file/{fileId}/restoreversion</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.StartConversion(`0,ASC.Files.Core.ApiModels.RequestDto.CheckConversionRequestDto{`0})">
+            <summary>
+            Starts a conversion operation of a file with the ID specified in the request.
+            </summary>
+            <short>Start file conversion</short>
+            <category>Operations</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CheckConversionRequestDto, ASC.Files.Core" name="inDto">Request parameters for starting file conversion</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto, ASC.Files.Core">Conversion result</returns>
+            <path>api/2.0/files/file/{fileId}/checkconversion</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.UpdateCommentAsync(`0,ASC.Files.Core.ApiModels.RequestDto.UpdateCommentRequestDto)">
+            <summary>
+            Updates a comment in a file with the ID specified in the request.
+            </summary>
+            <short>Update a comment</short>
+            <category>Operations</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.UpdateCommentRequestDto, ASC.Files.Core" name="inDto">Request parameters for updating a comment</param>
+            <returns type="System.Object, System">Updated comment</returns>
+            <path>api/2.0/files/file/{fileId}/comment</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.UpdateFileAsync(`0,ASC.Files.Core.ApiModels.RequestDto.UpdateFileRequestDto)">
+            <summary>
+            Updates the information of the selected file with the parameters specified in the request.
+            </summary>
+            <short>Update a file</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.UpdateFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for updating a file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Updated file information</returns>
+            <path>api/2.0/files/file/{fileId}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.UpdateFileStreamFromFormAsync(`0,ASC.Files.Core.ApiModels.RequestDto.FileStreamRequestDto)">
+            <summary>
+            Updates the contents of a file with the ID specified in the request.
+            </summary>
+            <short>Update file contents</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.FileStreamRequestDto, ASC.Files.Core" name="inDto">Request parameters for updating file contents</param>
+            <path>api/2.0/files/{fileId}/update</path>
+            <httpMethod>PUT</httpMethod>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Updated file information</returns>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.GetProperties(`0)">
+            <summary>
+            Returns file properties of the specified file.
+            </summary>
+            <short>Get file properties</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.ApiModels.RequestDto.EntryPropertiesRequestDto, ASC.Files.Core">File properties</returns>
+            <path>api/2.0/files/{fileId}/properties</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesController`1.SetProperties(`0,ASC.Files.Core.ApiModels.RequestDto.EntryPropertiesRequestDto)">
+            <summary>
+            Saves file properties to the specified file.
+            </summary>
+            <short>Save file properties to a file</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.EntryPropertiesRequestDto, ASC.Files.Core" name="inDto">File properties request parameters</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.EntryProperties, ASC.Files.Core">File properties</returns>
+            <path>api/2.0/files/{fileId}/properties</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerCommon.CreateFileAsync(ASC.Files.Core.ApiModels.RequestDto.CreateFileRequestDto{System.Text.Json.JsonElement})">
+            <summary>
+            Creates a new file in the "My documents" section with the title specified in the request.
+            </summary>
+            <short>Create a file in the "My documents" section</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateFileRequestDto{System.Text.Json.JsonElement}, ASC.Files.Core" name="inDto">Request parameters for creating a file</param>
+            <remarks>If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet, or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.</remarks>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/@my/file</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerCommon.CreateHtmlFileInCommonAsync(ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto)">
+            <summary>
+            Creates an HTML (.html) file in the "Common" section with the title and contents specified in the request.
+            </summary>
+            <short>Create an HTML file in the "Common" section</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating an HTML file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/@common/html</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerCommon.CreateHtmlFileInMyAsync(ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto)">
+            <summary>
+            Creates an HTML (.html) file in the "My documents" section with the title and contents specified in the request.
+            </summary>
+            <short>Create an HTML file in the "My documents" section</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating an HTML file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/@my/html</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerCommon.CreateTextFileInCommonAsync(ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto)">
+            <summary>
+            Creates a text (.txt) file in the "Common" section with the title and contents specified in the request.
+            </summary>
+            <short>Create a text file in the "Common" section</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a text file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/@common/text</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerCommon.CreateTextFileInMyAsync(ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto)">
+            <summary>
+            Creates a text (.txt) file in the "My documents" section with the title and contents specified in the request.
+            </summary>
+            <short>Create a text file in the "My documents" section</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateTextOrHtmlFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a text file</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/@my/text</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerCommon.CreateThumbnailsAsync(ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto)">
+            <summary>
+            Creates thumbnails for the files with the IDs specified in the request.
+            </summary>
+            <short>Create thumbnails</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto, ASC.Files.Core" name="inDto">Base batch request parameters</param>
+            <returns type="System.Text.Json.JsonElement, System.Text.Json">List of file IDs</returns>
+            <path>api/2.0/files/thumbnails</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FilesControllerCommon.SetProperties(ASC.Files.Core.ApiModels.RequestDto.BatchEntryPropertiesRequestDto)">
+            <summary>
+            Saves file properties to the specified files.
+            </summary>
+            <short>Save file properties to files</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BatchEntryPropertiesRequestDto, ASC.Files.Core" name="inDto">Batch entry properties request parameters</param>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.EntryProperties, ASC.Files.Core">List of file properties: collects the data from the filled forms or not, folder ID where a file will be saved, folder path where a file will be saved, new folder title, file name mask</returns>
+            <path>api/2.0/files/batch/properties</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.CreateFolderAsync(`0,ASC.Files.Core.ApiModels.RequestDto.CreateFolderRequestDto)">
+            <summary>
+            Creates a new folder with the title specified in the request. The parent folder ID can be also specified.
+            </summary>
+            <short>
+            Create a folder
+            </short>
+            <category>Folders</category>
+            <param type="System.Int32, System" method="url" name="folderId">Parent folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateFolderRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a folder</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">New folder parameters</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.DeleteFolder(`0,ASC.Files.Core.ApiModels.RequestDto.DeleteFolderDto)">
+            <summary>
+            Deletes a folder with the ID specified in the request.
+            </summary>
+            <short>Delete a folder</short>
+            <category>Folders</category>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DeleteFolderDto, ASC.Files.Core" name="inDto">Request parameters for deleting a folder</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>DELETE</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.GetFolderAsync(`0,System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},`0,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the folder with the ID specified in the request.
+            </summary>
+            <short>
+            Get a folder by ID
+            </short>
+            <category>Folders</category>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Int32, System" name="roomId">Room ID</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <param type="System.Nullable{System.Boolean}, System" name="excludeSubject">Specifies whether to exclude a subject or not</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">Folder contents</returns>
+            <path>api/2.0/files/{folderId}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.GetFolderInfoAsync(`0)">
+            <summary>
+            Returns the detailed information about a folder with the ID specified in the request.
+            </summary>
+            <short>Get folder information</short>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Folder parameters</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.GetFolderPathAsync(`0)">
+            <summary>
+            Returns a path to the folder with the ID specified in the request.
+            </summary>
+            <short>Get the folder path</short>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto, ASC.Files.Core">List of file entry information</returns>
+            <path>api/2.0/files/folder/{folderId}/path</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.GetFoldersAsync(`0)">
+            <summary>
+            Returns a list of all the subfolders from a folder with the ID specified in the request.
+            </summary>
+            <short>Get subfolders</short>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto, ASC.Files.Core">List of file entry information</returns>
+            <path>api/2.0/files/{folderId}/subfolders</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.GetNewItemsAsync(`0)">
+            <summary>
+            Returns a list of all the new items from a folder with the ID specified in the request.
+            </summary>
+            <short>Get new folder items</short>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto, ASC.Files.Core">List of file entry information</returns>
+            <path>api/2.0/files/{folderId}/news</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersController`1.RenameFolderAsync(`0,ASC.Files.Core.ApiModels.RequestDto.CreateFolderRequestDto)">
+            <summary>
+            Renames the selected folder with a new title specified in the request.
+            </summary>
+            <short>
+            Rename a folder
+            </short>
+            <category>Folders</category>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateFolderRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a folder: Title (string) - new folder title</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Folder parameters</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetCommonFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the "Common" section.
+            </summary>
+            <short>Get the "Common" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "Common" section contents</returns>
+            <path>api/2.0/files/@common</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetFavoritesFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the "Favorites" section.
+            </summary>
+            <short>Get the "Favorites" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "Favorites" section contents</returns>
+            <path>api/2.0/files/@favorites</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetMyFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the "My documents" section.
+            </summary>
+            <short>Get the "My documents" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "My documents" section contents</returns>
+            <path>api/2.0/files/@my</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetPrivacyFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the "Private Room" section.
+            </summary>
+            <short>Get the "Private Room" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "Private Room" section contents</returns>
+            <path>api/2.0/files/@privacy</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetProjectsFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the "In projects" section.
+            </summary>
+            <short>Get the "In projects" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "In projects" section contents</returns>
+            <path>api/2.0/files/@projects</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetRecentFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files located in the "Recent" section.
+            </summary>
+            <short>Get the "Recent" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "Recent" section contents</returns>
+            <path>api/2.0/files/@recent</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetRootFoldersAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns all the sections matching the parameters specified in the request.
+            </summary>
+            <short>Get filtered sections</short>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withoutTrash">Specifies whether to return the "Trash" section or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withoutAdditionalFolder">Specifies whether to return sections with or without additional folders</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">List of section contents with the following parameters</returns>
+            <path>api/2.0/files/@root</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetShareFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the "Shared with me" section.
+            </summary>
+            <short>Get the "Shared with me" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "Shared with me" section contents</returns>
+            <path>api/2.0/files/@share</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetTemplatesFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files located in the "Templates" section.
+            </summary>
+            <short>Get the "Templates" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "Templates" section contents</returns>
+            <path>api/2.0/files/@templates</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.FoldersControllerCommon.GetTrashFolderAsync(System.Nullable{System.Guid},System.Nullable{ASC.Files.Core.FilterType},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Returns the detailed list of files and folders located in the "Trash" section.
+            </summary>
+            <short>Get the "Trash" section</short>
+            <category>Folders</category>
+            <param type="System.Nullable{System.Guid}, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="System.Nullable{ASC.Files.Core.FilterType}, System" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5), ImagesOnly (7), ByUser (8), ByDepartment (9), ArchiveOnly (10), ByExtension (11), MediaOnly (12), EditingRooms (14), CustomRooms (17), OFormTemplateOnly (18), OFormOnly (19)">Filter type</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withsubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">The "Trash" section contents</returns>
+            <path>api/2.0/files/@trash</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.MasterFormController`1.CheckFillFormDraftAsync(`0,ASC.Files.Core.ApiModels.RequestDto.CheckFillFormDraftRequestDto)">
+            <summary>
+            Checks if the current file is a form draft which can be filled out.
+            </summary>
+            <short>Check the form draft</short>
+            <category>Files</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CheckFillFormDraftRequestDto, ASC.Files.Core" name="inDto">Request parameters for checking a form draft</param>
+            <returns type="System.Object, System">Link to the form</returns>
+            <path>api/2.0/files/masterform/{fileId}/checkfillformdraft</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.BulkDownload(ASC.Files.Core.ApiModels.RequestDto.DownloadRequestDto)">
+            <summary>
+            Starts the download process of files and folders with the IDs specified in the request.
+            </summary>
+            <short>Bulk download</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DownloadRequestDto, ASC.Files.Core" name="inDto">Request parameters for downloading files</param>
+            <category>Operations</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops/bulkdownload</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.CopyBatchItems(ASC.Files.Core.ApiModels.RequestDto.BatchRequestDto)">
+            <summary>
+            Copies all the selected files and folders to the folder with the ID specified in the request.
+            </summary>
+            <short>Copy to a folder</short>
+            <category>Operations</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BatchRequestDto, ASC.Files.Core" name="inDto">Request parameters for copying files</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops/copy</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.DeleteBatchItems(ASC.Files.Core.ApiModels.RequestDto.DeleteBatchRequestDto)">
+            <summary>
+            Deletes the files and folders with the IDs specified in the request.
+            </summary>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DeleteBatchRequestDto, ASC.Files.Core" name="inDto">Request parameters for deleting files</param>
+            <short>Delete files and folders</short>
+            <category>Operations</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto}, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops/delete</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.EmptyTrashAsync">
+            <summary>
+            Deletes all the files and folders from the "Trash" folder.
+            </summary>
+            <short>Empty the "Trash" folder</short>
+            <category>Operations</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops/emptytrash</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.GetOperationStatuses">
+            <summary>
+             Returns a list of all the active operations.
+            </summary>
+            <short>Get active operations</short>
+            <category>Operations</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.MarkAsRead(ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto)">
+            <summary>
+            Marks the files and folders with the IDs specified in the request as read.
+            </summary>
+            <short>Mark as read</short>
+            <category>Operations</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto, ASC.Files.Core" name="inDto">Base batch request parameters</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops/markasread</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.MoveBatchItems(ASC.Files.Core.ApiModels.RequestDto.BatchRequestDto)">
+            <summary>
+            Moves all the selected files and folders to the folder with the ID specified in the request.
+            </summary>
+            <short>Move to a folder</short>
+            <category>Operations</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BatchRequestDto, ASC.Files.Core" name="inDto">Request parameters for moving files and folders</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops/move</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.MoveOrCopyBatchCheckAsync(ASC.Files.Core.ApiModels.RequestDto.BatchRequestDto)">
+            <summary>
+            Checks a batch of files and folders for conflicts when moving or copying them to the folder with the ID specified in the request.
+            </summary>
+            <short>Check files and folders for conflicts</short>
+            <category>Operations</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BatchRequestDto, ASC.Files.Core" name="inDto">Request parameters for checking files and folders for conflicts</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto, ASC.Files.Core">List of file entry information</returns>
+            <path>api/2.0/files/fileops/move</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.OperationController.TerminateTasks">
+            <summary>
+            Finishes all the active operations.
+            </summary>
+            <short>Finish active operations</short>
+            <category>Operations</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">List of file operations</returns>
+            <path>api/2.0/files/fileops/terminate</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.GenerateSharedLinkAsync(`0,ASC.Files.Core.ApiModels.RequestDto.GenerateSharedLinkRequestDto)">
+            <summary>
+            Returns an external link to the shared file with the ID specified in the request.
+            </summary>
+            <short>Get the shared link</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.GenerateSharedLinkRequestDto, ASC.Files.Core" name="inDto">Request parameters for generating the shared link</param>
+            <category>Sharing</category>
+            <returns type="System.Object, System">Shared file link</returns>
+            <path>api/2.0/files/{fileId}/sharedlinkAsync</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.GetFileSecurityInfoAsync(`0)">
+            <summary>
+            Returns the detailed information about the shared file with the ID specified in the request.
+            </summary>
+            <short>Get the shared file information</short>
+            <category>Sharing</category>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto, ASC.Files.Core">List of shared file information</returns>
+            <path>api/2.0/files/file/{fileId}/share</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.GetFolderSecurityInfoAsync(`0)">
+            <summary>
+            Returns the detailed information about the shared folder with the ID specified in the request.
+            </summary>
+            <short>Get the shared folder information</short>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <category>Sharing</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto, ASC.Files.Core">List of shared folder information</returns>
+            <path>api/2.0/files/folder/{folderId}/share</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.SetAceLinkAsync(`0,ASC.Files.Core.ApiModels.RequestDto.GenerateSharedLinkRequestDto)">
+            <summary>
+            Sets the access status for the external link to the file with the ID specified in the request.
+            </summary>
+            <short>Set the link access status</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.GenerateSharedLinkRequestDto, ASC.Files.Core" name="inDto">Request parameters for generating the sharing link</param>
+            <category>Sharing</category>
+            <returns type="System.Boolean, System">Boolean value: true if the file is successfully shared</returns>
+            <path>api/2.0/files/{fileId}/setacelink</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.SetFileSecurityInfoAsync(`0,ASC.Files.Core.ApiModels.RequestDto.SecurityInfoRequestDto)">
+            <summary>
+            Sets the sharing settings to a file with the ID specified in the request.
+            </summary>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SecurityInfoRequestDto, ASC.Files.Core" name="inDto">Security information request parameters</param>
+            <short>Share a file</short>
+            <category>Sharing</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto, ASC.Files.Core">List of shared file information: sharing rights, a user who has the access to the specified file, the file is locked by this user or not, this user is an owner of the specified file or not, this user can edit the access to the specified file or not</returns>
+            <path>api/2.0/files/file/{fileId}/share</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.SetFolderSecurityInfoAsync(`0,ASC.Files.Core.ApiModels.RequestDto.SecurityInfoRequestDto)">
+            <summary>
+            Sets the sharing settings to a folder with the ID specified in the request.
+            </summary>
+            <param type="System.Int32, System" method="url" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SecurityInfoRequestDto, ASC.Files.Core" name="inDto">Security information request parameters</param>
+            <short>Share a folder</short>
+            <category>Sharing</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto}, ASC.Files.Core">List of shared folder information: sharing rights, a user who has the access to the specified folder, the folder is locked by this user or not, this user is an owner of the specified folder or not, this user can edit the access to the specified folder or not</returns>
+            <path>api/2.0/files/folder/{folderId}/share</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.GetEncryptionAccess(`0)">
+            <summary>
+            Returns the encryption keys to access a file with the ID specified in the request.
+            </summary>
+            <short>Get file encryption keys</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <category>Sharing</category>
+            <returns type="ASC.Web.Files.Core.Entries.EncryptionKeyPairDto, ASC.Files.Core">List of encryption key pairs: encrypted private key, public key, user ID</returns>
+            <path>api/2.0/files/file/{fileId}/publickeys</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryController`1.SendEditorNotify(`0,ASC.Web.Files.Services.WCFService.MentionMessageWrapper)">
+            <summary>
+            Sends a message to the users who are mentioned in the file with the ID specified in the request.
+            </summary>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Web.Files.Services.WCFService.MentionMessageWrapper, ASC.Files.Core" name="mentionMessage">Mention message request parameters</param>
+            <short>Send the mention message</short>
+            <category>Sharing</category>
+            <returns type="ASC.Web.Files.Services.WCFService.AceShortWrapper, ASC.Files.Core">List of access rights information</returns>
+            <path>api/2.0/files/file/{fileId}/sendeditornotify</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryControllerCommon.ChangeOwnerAsync(ASC.Files.Core.ApiModels.RequestDto.ChangeOwnerRequestDto)">
+            <summary>
+            Changes the owner of the file with the ID specified in the request.
+            </summary>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.ChangeOwnerRequestDto, ASC.Files.Core" name="inDto">Request parameters for changing the file owner</param>
+            <short>Change the file owner</short>
+            <category>Sharing</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto, ASC.Files.Core">File entry information</returns>
+            <path>api/2.0/files/owner</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryControllerCommon.GetSecurityInfoAsync(ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto)">
+            <summary>
+            Returns the sharing rights for all the files and folders specified in the request.
+            </summary>
+            <short>Get the sharing rights</short>
+            <category>Sharing</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto, ASC.Files.Core" name="inDto">Base batch request parameters</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto, ASC.Files.Core">List of shared files and folders information</returns>
+            <path>api/2.0/files/share</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryControllerCommon.RemoveSecurityInfoAsync(ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto)">
+            <summary>
+            Removes the sharing rights from all the files and folders specified in the request.
+            </summary>
+            <short>Remove the sharing rights</short>
+            <category>Sharing</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto, ASC.Files.Core" name="inDto">Base batch request parameters</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/share</path>
+            <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SecutiryControllerCommon.SetSecurityInfoAsync(ASC.Files.Core.ApiModels.RequestDto.SecurityInfoRequestDto)">
+            <summary>
+            Sets the sharing rights to all the files and folders specified in the request.
+            </summary>
+            <short>Set the sharing rights</short>
+            <category>Sharing</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SecurityInfoRequestDto, ASC.Files.Core" name="inDto">Security information request parameters</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto, ASC.Files.Core">List of shared files and folders information: sharing rights, a user who has the access to the specified folder, the folder is locked by this user or not, this user is an owner of the specified folder or not, this user can edit the access to the specified folder or not</returns>
+            <path>api/2.0/files/share</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ChangeAccessToThirdparty(ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto)">
+            <summary>
+            Changes the access to the third-party settings.
+            </summary>
+            <short>Change the third-party settings access</short>
+            <category>Settings</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/thirdparty</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ChangeDeleteConfrim(ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto)">
+            <summary>
+            Specifies whether to confirm the file deletion or not.
+            </summary>
+            <short>Confirm the file deletion</short>
+            <category>Settings</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/changedeleteconfrim</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ChangeDownloadZipFromBody(ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto)">
+            <summary>
+            Changes the format of the downloaded archive from .zip to .tar.gz. This method uses the body parameters.
+            </summary>
+            <short>Change the archive format (using body parameters)</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="ASC.Web.Files.Core.Compress.ICompress, ASC.Files.Core">Archive</returns>
+            <path>api/2.0/files/settings/downloadtargz</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ChangeDownloadZipFromForm(ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto)">
+            <summary>
+            Changes the format of the downloaded archive from .zip to .tar.gz. This method uses the form parameters.
+            </summary>
+            <short>Change the archive format (using form parameters)</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="ASC.Web.Files.Core.Compress.ICompress, ASC.Files.Core">Archive</returns>
+            <path>api/2.0/files/settings/downloadtargz</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.DisplayFavorite(ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto)">
+            <summary>
+            Displays the "Favorites" folder.
+            </summary>
+            <short>Display the "Favorites" folder</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/settings/favorites</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.DisplayRecent(ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto)">
+            <summary>
+            Displays the "Recent" folder.
+            </summary>
+            <short>Display the "Recent" folder</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/displayRecent</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.DisplayTemplates(ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto)">
+            <summary>
+            Displays the "Templates" folder.
+            </summary>
+            <short>Display the "Templates" folder</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/settings/templates</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ExternalShare(ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto)">
+            <summary>
+            Changes the ability to share a file externally.
+            </summary>
+            <short>Change the external sharing ability</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/settings/external</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ExternalShareSocialMedia(ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto)">
+            <summary>
+            Changes the ability to share a file externally on social networks.
+            </summary>
+            <short>Change the external sharing ability on social networks</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DisplayRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/settings/externalsocialmedia</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.Forcesave">
+            <summary>
+            Changes the ability to force save a file.
+            </summary>
+            <short>Change the forcasaving ability</short>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/forcesave</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.GetFilesSettings">
+            <summary>
+            Returns all the file settings.
+            </summary>
+            <short>Get file settings</short>
+            <category>Settings</category>
+            <returns type="ASC.Web.Files.Classes.FilesSettingsHelper, ASC.Files.Core">File settings</returns>
+            <path>api/2.0/files/settings</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.GetModule">
+            <summary>
+            Returns the information about the Documents module.
+            </summary>
+            <short>Get the Documents information</short>
+            <category>Settings</category>
+            <returns type="ASC.Api.Core.Module, ASC.Api.Core">Module information: ID, product class name, title, description, icon URL, large icon URL, start URL, primary or nor, help URL</returns>
+            <path>api/2.0/files/info</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.HideConfirmConvert(ASC.Files.Core.ApiModels.RequestDto.HideConfirmConvertRequestDto)">
+            <summary>
+            Hides the confirmation dialog for saving the file copy in the original format when converting a file.
+            </summary>
+            <short>Hide the confirmation dialog when converting</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.HideConfirmConvertRequestDto, ASC.Files.Core" name="inDto">Request parameters for hiding the confirmation dialog</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/hideconfirmconvert</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.IsAvailablePrivacyRoomSettings">
+            <summary>
+            Checks if the Private Room settings are available or not.
+            </summary>
+            <short>Check the Private Room availability</short>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the Private Room settings are available</returns>
+            <path>api/2.0/files/@privacy/available</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.StoreForcesave">
+            <summary>
+            Changes the ability to store the forcesaved file versions.
+            </summary>
+            <short>Change the ability to store the forcesaved files</short>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/storeforcesave</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.StoreOriginal(ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto)">
+            <summary>
+            Changes the ability to upload documents in the original formats as well.
+            </summary>
+            <short>Change the ability to upload original formats</short>
+            <category>Settings</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/storeoriginal</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.KeepNewFileName(ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto)">
+            <summary>
+            Specifies whether to ask a user for a file name on creation or not.
+            </summary>
+            <short>Ask a new file name</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/keepnewfilename</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.UpdateIfExist(ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto)">
+            <summary>
+            Updates a file version if a file with such a name already exists.
+            </summary>
+            <short>Update a file version if it exists</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SettingsRequestDto, ASC.Files.Core" name="inDto">Settings request parameters</param>
+            <category>Settings</category>
+            <returns type="System.Boolean, System">Boolean value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/updateifexist</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ChangeAutomaticallyCleanUp(ASC.Files.Core.ApiModels.RequestDto.AutoCleanupRequestDto)">
+            <summary>
+            Updates the trash bin auto-clearing setting.
+            </summary>
+            <short>Update the trash bin auto-clearing setting</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.AutoCleanupRequestDto, ASC.Files.Core" name="inDto">Auto-clearing request parameters</param>
+            <category>Settings</category>
+            <returns type="ASC.Files.Core.AutoCleanUpData, ASC.Files.Core">The auto-clearing setting properties: auto-clearing or not, a time interval when the auto-clearing will be performed</returns>
+            <path>api/2.0/files/settings/autocleanup</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.GetAutomaticallyCleanUp">
+            <summary>
+            Returns the auto-clearing setting properties.
+            </summary>
+            <short>Get the auto-clearing setting properties</short>
+            <category>Settings</category>
+            <returns type="ASC.Files.Core.AutoCleanUpData, ASC.Files.Core">The auto-clearing setting properties: auto-clearing or not, a time interval when the auto-clearing will be performed</returns>
+            <path>api/2.0/files/settings/autocleanup</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.SettingsController.ChangeDafaultAccessRights(System.Collections.Generic.List{ASC.Files.Core.Security.FileShare})">
+            <summary>
+            Changes the default access rights in the sharing settings.
+            </summary>
+            <short>Change the default access rights</short>
+            <param type="System.Collections.Generic.List{ASC.Files.Core.Security.FileShare}, System.Collections.Generic" name="value">Sharing rights (None, ReadWrite, Read, Restrict, Varies, Review, Comment, FillForms, CustomFilter, RoomAdmin, Editing, Collaborator)</param>
+            <category>Settings</category>
+            <returns type="ASC.Files.Core.Security.FileShare, ASC.Files.Core">Updated sharing rights (None, ReadWrite, Read, Restrict, Varies, Review, Comment, FillForms, CustomFilter, RoomAdmin, Editing, Collaborator)</returns>
+            <path>api/2.0/files/settings/dafaultaccessrights</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.TagsController`1.AddToRecentAsync(`0)">
+            <summary>
+            Adds a file with the ID specified in the request to the "Recent" section.
+            </summary>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <short>Add a file to the "Recent" section</short>
+            <category>Files</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">New file information</returns>
+            <path>api/2.0/files/file/{fileId}/recent</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.TagsController`1.ToggleFileFavoriteAsync(`0,System.Boolean)">
+            <summary>
+            Changes the favorite status of the file with the ID specified in the request.
+            </summary>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <param type="System.Boolean, System" name="favorite">Specifies if this file is marked as favorite or not</param>
+            <short>Change the file favorite status</short>
+            <category>Files</category>
+            <returns type="System.Boolean, System">Boolean value: true - the file is favorite, false - the file is not favorite</returns>
+            <path>api/2.0/files/favorites/{fileId}</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.TagsControllerCommon.AddFavoritesAsync(ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto)">
+            <summary>
+            Adds files and folders with the IDs specified in the request to the favorite list.
+            </summary>
+            <short>Add favorite files and folders</short>
+            <category>Operations</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto, ASC.Files.Core" name="inDto">Base batch request parameters</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/favorites</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.TagsControllerCommon.AddTemplatesAsync(ASC.Files.Core.ApiModels.RequestDto.TemplatesRequestDto)">
+            <summary>
+            Adds files with the IDs specified in the request to the template list.
+            </summary>
+            <short>Add template files</short>
+            <category>Files</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.TemplatesRequestDto, ASC.Files.Core" name="inDto">Request parameters for adding files to the template list</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/templates</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.TagsControllerCommon.DeleteFavoritesFromBodyAsync(ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto)">
+            <summary>
+            Removes files and folders with the IDs specified in the request from the favorite list. This method uses the body parameters.
+            </summary>
+            <short>Delete favorite files and folders (using body parameters)</short>
+            <category>Operations</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto, ASC.Files.Core" name="inDto">Base batch request parameters</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/favorites</path>
+            <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.TagsControllerCommon.DeleteFavoritesFromQueryAsync(ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto)">
+            <summary>
+            Removes files and folders with the IDs specified in the request from the favorite list. This method uses the query parameters.
+            </summary>
+            <short>Delete favorite files and folders (using query parameters)</short>
+            <category>Operations</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BaseBatchRequestDto, ASC.Files.Core" name="inDto">Base batch request parameters</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/favorites</path>
+            <httpMethod>DELETE</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.TagsControllerCommon.DeleteTemplatesAsync(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Removes files with the IDs specified in the request from the template list.
+            </summary>
+            <short>Delete template files</short>
+            <category>Files</category>
+            <param type="System.Collections.Generic.IEnumerable{System.Int32}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/templates</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.Capabilities">
+            <summary>
+            Returns a list of the available providers.
+            </summary>
+            <short>Get providers</short>
+            <category>Third-party integration</category>
+            <returns type="System.Collections.Generic.List{System.String}, System.Collections.Generic">List of provider keys</returns>
+            <remarks>Available provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.</remarks>
+            <path>api/2.0/files/thirdparty/capabilities</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.CreateWordpressPost(ASC.Files.Core.ApiModels.RequestDto.CreateWordpressPostRequestDto)">
+            <summary>
+            Creates a WordPress post with the parameters specified in the request.
+            </summary>
+            <short>Create a WordPress post</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateWordpressPostRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a WordPress post</param>
+            <category>WordPress</category>
+            <returns type="System.Boolean, System">Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/wordpress</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.DeleteThirdPartyAsync(System.Int32)">
+            <summary>
+            Removes the third-party storage service account with the ID specified in the request.
+            </summary>
+            <param type="System.Int32, System" method="url" name="providerId">Provider ID. It is a part of the folder ID. Example: folder ID is "sbox-123", then provider ID is "123"</param>
+            <short>Remove a third-party account</short>
+            <category>Third-party integration</category>
+            <returns type="System.Object, System">Third-party folder ID</returns>
+            <path>api/2.0/files/thirdparty/{providerId}</path>
+            <httpMethod>DELETE</httpMethod>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.DeleteWordpressInfo">
+            <summary>
+            Deletes the WordPress plugin information.
+            </summary>
+            <short>Delete the WordPress information</short>
+            <category>WordPress</category>
+            <returns type="System.Object, System">Object with the "success" field: true if the operation is successful</returns>
+            <path>api/2.0/files/wordpress-delete</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.GetCommonThirdPartyFoldersAsync">
+            <summary>
+            Returns a list of the third-party services connected to the "Common" section.
+            </summary>
+            <category>Third-party integration</category>
+            <short>Get common third-party services</short>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">List of common third-party folderst</returns>
+            <path>api/2.0/files/thirdparty/common</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.GetThirdPartyAccountsAsync">
+            <summary>
+            Returns a list of all the connected third-party accounts.
+            </summary>
+            <category>Third-party integration</category>
+            <short>Get third-party accounts</short>
+            <returns type="ASC.Web.Files.Services.WCFService.ThirdPartyParams, ASC.Files.Core">List of connected providers information</returns>
+            <path>api/2.0/files/thirdparty</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.GetBackupThirdPartyAccountAsync">
+            <summary>
+            Return a backup of the connected third-party account.
+            </summary>
+            <category>Third-party integration</category>
+            <short>Get a third-party account backup</short>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Folder for the third-party account backup</returns>
+            <path>api/2.0/files/thirdparty/backup</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.GetWordpressInfo">
+            <summary>
+            Returns the WordPress plugin information.
+            </summary>
+            <short>Get the WordPress information</short>
+            <category>WordPress</category>
+            <returns type="System.Object, System">Object with the following parameters: "success" - specifies if the operation is successful or not, "data" - blog information</returns>
+            <path>api/2.0/files/wordpress-info</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.SaveThirdPartyAsync(ASC.Files.Core.ApiModels.RequestDto.ThirdPartyRequestDto)">
+            <summary>
+            Saves the third-party storage service account. For WebDav, Yandex, kDrive and SharePoint, the login and password are used for authentication. For other providers, the authentication is performed using a token received via OAuth 2.0.
+            </summary>
+            <short>Save a third-party account</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.ThirdPartyRequestDto, ASC.Files.Core" name="inDto">Third-party request parameters</param>
+            <category>Third-party integration</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Connected provider folder</returns>
+            <remarks>List of provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.</remarks>
+            <path>api/2.0/files/thirdparty</path>
+            <httpMethod>POST</httpMethod>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.SaveThirdPartyBackupAsync(ASC.Files.Core.ApiModels.RequestDto.ThirdPartyBackupRequestDto)">
+            <summary>
+            Saves a backup of the connected third-party account.
+            </summary>
+            <short>Save a third-party account backup</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.ThirdPartyBackupRequestDto, ASC.Files.Core" name="inDto">Third-party backup request parameters</param>
+            <category>Third-party integration</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Folder for the third-party account backup</returns>
+            <remarks>List of provider key: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive</remarks>
+            <path>api/2.0/files/thirdparty/backup</path>
+            <httpMethod>POST</httpMethod>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:ASC.Files.Api.ThirdpartyController.WordpressSave(ASC.Files.Core.ApiModels.RequestDto.WordpressSaveRequestDto)">
+            <summary>
+            Saves the user WordPress information when logging in.
+            </summary>
+            <short>Save the user WordPress information</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.WordpressSaveRequestDto, ASC.Files.Core" name="inDto">Request parameters for saving WordPress information</param>
+            <category>WordPress</category>
+            <returns type="System.Object, System">Object with the following parameters: "success" - specifies if the operation is successful or not, "data" - blog information</returns>
+            <path>api/2.0/files/wordpress-save</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Files.Api.UploadController`1.CreateUploadSessionAsync(`0,ASC.Files.Core.ApiModels.RequestDto.SessionRequestDto)">
+            <summary>
+            Creates a session to upload large files in multiple chunks to the folder with the ID specified in the request.
+            </summary>
+            <short>Chunked upload</short>
+            <category>Operations</category>
+            <param type="System.Int32, System" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.SessionRequestDto, ASC.Files.Core" name="inDto">Session request parameters</param>
+            <remarks>
+            <![CDATA[
+            Each chunk can have different length but the length should be multiple of <b>512</b> and greater or equal to <b>10 mb</b>. Last chunk can have any size.
+            After the initial response to the request with the <b>200 OK</b> status, you must get the <em>location</em> field value from the response. Send all your chunks to this location.
+            Each chunk must be sent in the exact order the chunks appear in the file.
+            After receiving each chunk, the server will respond with the current information about the upload session if no errors occurred.
+            When the number of bytes uploaded is equal to the number of bytes you sent in the initial request, the server responds with the <b>201 Created</b> status and sends you information about the uploaded file.
+            ]]>
+            </remarks>
+            <returns type="System.Object, System">
+            <![CDATA[
+            Information about created session which includes:
+            <ul>
+            <li><b>id:</b> unique ID of this upload session,</li>
+            <li><b>created:</b> UTC time when the session was created,</li>
+            <li><b>expired:</b> UTC time when the session will expire if no chunks are sent before that time,</li>
+            <li><b>location:</b> URL where you should send your next chunk,</li>
+            <li><b>bytes_uploaded:</b> number of bytes uploaded for the specific upload ID,</li>
+            <li><b>bytes_total:</b> total number of bytes which will be uploaded.</li>
+            </ul>
+            ]]>
+            </returns>
+            <path>api/2.0/files/{folderId}/upload/create_session</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.UploadController`1.CreateEditSession(`0,System.Int64)">
+            <summary>
+            Creates a session to edit the existing file with multiple chunks (needed for WebDAV).
+            </summary>
+            <short>Create the editing session</short>
+            <category>Files</category>
+            <param type="System.Int32, System" name="fileId">File ID</param>
+            <param type="System.Int64, System" name="fileSize">File size in bytes</param>
+            <returns type="System.Object, System">
+            <![CDATA[
+            Information about created session which includes:
+            <ul>
+            <li><b>id:</b> unique ID of this upload session,</li>
+            <li><b>created:</b> UTC time when the session was created,</li>
+            <li><b>expired:</b> UTC time when the session will expire if no chunks are sent before that time,</li>
+            <li><b>location:</b> URL where you should send your next chunk,</li>
+            <li><b>bytes_uploaded:</b> number of bytes uploaded for the specific upload ID,</li>
+            <li><b>bytes_total:</b> total number of bytes which will be uploaded.</li>
+            </ul>
+            ]]>
+            </returns>
+            <path>api/2.0/files/file/{fileId}/edit_session</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.UploadController`1.InsertFileAsync(`0,ASC.Files.Core.ApiModels.RequestDto.InsertFileRequestDto)">
+            <summary>
+            Inserts a file specified in the request to the selected folder by single file uploading.
+            </summary>
+            <short>Insert a file</short>
+            <param type="System.Int32, System" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.InsertFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for inserting a file</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Inserted file informationy</returns>
+            <path>api/2.0/files/{folderId}/insert</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.UploadController`1.UploadFileAsync(`0,ASC.Files.Core.ApiModels.RequestDto.UploadRequestDto)">
+            <summary>
+            Uploads a file specified in the request to the selected folder by single file uploading or standart multipart/form-data method.
+            </summary>
+            <short>Upload a file</short>
+            <category>Folders</category>
+            <remarks>
+            <![CDATA[
+             You can upload files in two different ways:
+             <ol>
+            <li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>
+            <li>Using standart multipart/form-data method.</li>
+            </ol>]]>
+            </remarks>
+            <param type="System.Int32, System" name="folderId">Folder ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.UploadRequestDto, ASC.Files.Core" name="inDto">Request parameters for uploading a file</param>
+            <returns type="System.Object, System">Uploaded file(s)</returns>
+            <path>api/2.0/files/{folderId}/upload</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.UploadControllerCommon.InsertFileToCommonFromBodyAsync(ASC.Files.Core.ApiModels.RequestDto.InsertFileRequestDto)">
+            <summary>
+            Inserts a file specified in the request to the "Common" section by single file uploading.
+            </summary>
+            <short>Insert a file to the "Common" section</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.InsertFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for inserting a file</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Inserted file</returns>
+            <path>api/2.0/files/@common/insert</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.UploadControllerCommon.InsertFileToMyFromBodyAsync(ASC.Files.Core.ApiModels.RequestDto.InsertFileRequestDto)">
+            <summary>
+            Inserts a file specified in the request to the "My documents" section by single file uploading.
+            </summary>
+            <short>Insert a file to the "My documents" section</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.InsertFileRequestDto, ASC.Files.Core" name="inDto">Request parameters for inserting a file</param>
+            <category>Folders</category>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileDto, ASC.Files.Core">Inserted file</returns>
+            <path>api/2.0/files/@my/insert</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.UploadControllerCommon.UploadFileToCommonAsync(ASC.Files.Core.ApiModels.RequestDto.UploadRequestDto)">
+            <summary>
+            Uploads a file specified in the request to the "Common" section by single file uploading or standart multipart/form-data method.
+            </summary>
+            <short>Upload a file to the "Common" section</short>
+            <category>Folders</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.UploadRequestDto, ASC.Files.Core" name="inDto">Request parameters for uploading a file</param>
+            <remarks>
+            <![CDATA[
+             You can upload files in two different ways:
+             <ol>
+            <li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>
+            <li>Using standart multipart/form-data method.</li>
+            </ol>]]>
+            </remarks>
+            <returns type="System.Object, System">Uploaded file(s)</returns>
+            <path>api/2.0/files/@common/upload</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.UploadControllerCommon.UploadFileToMyAsync(ASC.Files.Core.ApiModels.RequestDto.UploadRequestDto)">
+            <summary>
+            Uploads a file specified in the request to the "My documents" section by single file uploading or standart multipart/form-data method.
+            </summary>
+            <short>Upload a file to the "My documents" section</short>
+            <category>Folders</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.UploadRequestDto, ASC.Files.Core" name="inDto">Request parameters for uploading a file</param>
+            <remarks>
+            <![CDATA[
+             You can upload files in two different ways:
+             <ol>
+            <li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>
+            <li>Using standart multipart/form-data method.</li>
+            </ol>]]>
+            </remarks>
+            <returns type="System.Object, System">Uploaded file(s)</returns>
+            <path>api/2.0/files/@my/upload</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsInternalController.CreateRoomAsync(ASC.Files.Core.ApiModels.RequestDto.CreateRoomRequestDto)">
+            <summary>
+            Creates a room in the "Rooms" section.
+            </summary>
+            <short>Create a room</short>
+            <category>Rooms</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a room</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsThirdPartyController.CreateRoomAsync(System.String,ASC.Files.Core.ApiModels.RequestDto.CreateRoomRequestDto)">
+            <summary>
+            Creates a room in the "Rooms" section stored in a third-party storage.
+            </summary>
+            <short>Create a third-party room</short>
+            <category>Rooms</category>
+            <param type="System.String, System" method="url" name="id">ID of the folder in the third-party storage in which the contents of the room will be stored</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a room</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/thirdparty/{id}</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.GetRoomInfoAsync(`0)">
+            <summary>
+            Returns the room information.
+            </summary>
+            <short>Get room information</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/{id}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.UpdateRoomAsync(`0,ASC.Files.Core.ApiModels.RequestDto.UpdateRoomRequestDto)">
+            <summary>
+            Renames a room with the ID specified in  the request.
+            </summary>
+            <short>Rename a room</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.UpdateRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for updating a room</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Updated room information</returns>
+            <path>api/2.0/files/rooms/{id}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.DeleteRoomAsync(`0,ASC.Files.Core.ApiModels.RequestDto.DeleteRoomRequestDto)">
+            <summary>
+            Removes a room with the ID specified in the request.
+            </summary>
+            <short>Remove a room</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.DeleteRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for deleting a room</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">File operation</returns>
+            <path>api/2.0/files/rooms/{id}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.ArchiveRoomAsync(`0,ASC.Files.Core.ApiModels.RequestDto.ArchiveRoomRequestDto)">
+            <summary>
+            Moves a room with the ID specified in the request to the "Archive" section.
+            </summary>
+            <short>Archive a room</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.ArchiveRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for archiving a room</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">File operation</returns>
+            <path>api/2.0/files/rooms/{id}/archive</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.UnarchiveRoomAsync(`0,ASC.Files.Core.ApiModels.RequestDto.ArchiveRoomRequestDto)">
+            <summary>
+            Moves a room with the ID specified in the request from the "Archive" section to the "Rooms" section.
+            </summary>
+            <short>Unarchive a room</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.ArchiveRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for unarchiving a room</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto, ASC.Files.Core">File operation</returns>
+            <path>api/2.0/files/rooms/{id}/unarchive</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.SetRoomSecurityAsync(`0,ASC.Files.Core.ApiModels.RequestDto.RoomInvitationRequestDto)">
+            <summary>
+            Sets the access rights to a room with the ID specified in the request.
+            </summary>
+            <short>Set room access rights</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.RoomInvitationRequestDto, ASC.Files.Core" name="inDto">Request parameters for inviting users to a room</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.RoomSecurityDto, ASC.Files.Core">Room security information</returns>
+            <path>api/2.0/files/rooms/{id}/share</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.GetRoomSecurityInfoAsync(`0)">
+            <summary>
+            Returns the access rights of a room with the ID specified in the request.
+            </summary>
+            <short>Get room access rights</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto, ASC.Files.Core">Security information of room files</returns>
+            <path>api/2.0/files/rooms/{id}/share</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.SetInvintationLinkAsync(`0,ASC.Files.Core.ApiModels.RequestDto.InvintationLinkRequestDto)">
+            <summary>
+            Sets an external link to invite the users to a room with the ID specified in the request.
+            </summary>
+            <short>Set an external invitation link</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.InvintationLinkRequestDto, ASC.Files.Core" name="inDto">Invitation link request parameters</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FileShareDto, ASC.Files.Core">Security information of room files</returns>
+            <path>api/2.0/files/rooms/{id}/links</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.AddTagsAsync(`0,ASC.Files.Core.ApiModels.RequestDto.BatchTagsRequestDto)">
+            <summary>
+            Adds the tags to a room with the ID specified in the request.
+            </summary>
+            <short>Add room tags</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BatchTagsRequestDto, ASC.Files.Core" name="inDto">Request parameters for adding tags</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/{id}/tags</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.DeleteTagsAsync(`0,ASC.Files.Core.ApiModels.RequestDto.BatchTagsRequestDto)">
+            <summary>
+            Removes the tags from a room with the ID specified in the request.
+            </summary>
+            <short>Remove room tags</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BatchTagsRequestDto, ASC.Files.Core" name="inDto">Request parameters for removing tags</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/{id}/tags</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.CreateRoomLogoAsync(`0,ASC.Files.Core.ApiModels.RequestDto.LogoRequestDto)">
+            <summary>
+            Creates a logo for a room with the ID specified in the request.
+            </summary>
+            <short>Create a room logo</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.LogoRequestDto, ASC.Files.Core" name="inDto">Logo request parameters</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/{id}/logo</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.DeleteRoomLogoAsync(`0)">
+            <summary>
+            Removes a logo from a room with the ID specified in the request.
+            </summary>
+            <short>Remove a room logo</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/{id}/logo</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.PinRoomAsync(`0)">
+            <summary>
+            Pins a room with the ID specified in the request to the top of the list.
+            </summary>
+            <short>Pin a room</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/{id}/pin</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.UnpinRoomAsync(`0)">
+            <summary>
+            Unpins a room with the ID specified in the request from the top of the list.
+            </summary>
+            <short>Unpin a room</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderDto, ASC.Files.Core">Room information</returns>
+            <path>api/2.0/files/rooms/{id}/unpin</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsController`1.ResendEmailInvitationsAsync(`0,ASC.Files.Core.ApiModels.RequestDto.UserInvintationRequestDto)">
+            <summary>
+            Resends the email invitations to a room with the ID specified in the request to the selected users.
+            </summary>
+            <short>Resend room invitations</short>
+            <category>Rooms</category>
+            <param type="System.Int32, System" method="url" name="id">Room ID</param>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.UserInvintationRequestDto, ASC.Files.Core" name="inDto">User invitation request parameters</param>
+            <returns></returns>
+            <path>api/2.0/files/rooms/{id}/resend</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsCommonController.GetRoomsFolderAsync(System.Nullable{ASC.Files.Core.ApiModels.RequestDto.RoomFilterType},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{ASC.Files.Core.VirtualRooms.SearchArea},System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.Nullable{ASC.Files.Core.ProviderFilter},System.Nullable{ASC.Files.Core.Core.SubjectFilter})">
+            <summary>
+            Returns the contents of the "Rooms" section by the parameters specified in the request.
+            </summary>
+            <short>Get rooms</short>
+            <category>Rooms</category>
+            <param type="System.Nullable{ASC.Files.Core.ApiModels.RequestDto.RoomFilterType}, System" name="type">Filter by room type</param>
+            <param type="System.String, System" name="subjectId">Filter by user ID</param>
+            <param type="System.Nullable{System.Boolean}, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <param type="System.Nullable{ASC.Files.Core.VirtualRooms.SearchArea}, System" name="searchArea">Room search area (Active, Archive, Any)</param>
+            <param type="System.Nullable{System.Boolean}, System" name="withoutTags">Specifies whether to search by tags or not</param>
+            <param type="System.String, System" name="tags">Tags in the serialized format</param>
+            <param type="System.Nullable{System.Boolean}, System" name="excludeSubject">Specifies whether to exclude a subject or not</param>
+            <param type="System.Nullable{ASC.Files.Core.ProviderFilter}, System" name="provider">Filter by provider name (None, Box, DropBox, GoogleDrive, kDrive, OneDrive, SharePoint, WebDav, Yandex)</param>
+            <param type="System.Nullable{ASC.Files.Core.Core.SubjectFilter}, System" name="subjectFilter">Filter by subject (Owner - 1, Member - 1)</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto, ASC.Files.Core">Rooms contents</returns>
+            <path>api/2.0/files/rooms</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsCommonController.CreateTagAsync(ASC.Files.Core.ApiModels.RequestDto.CreateTagRequestDto)">
+            <summary>
+            Creates a custom tag with the parameters specified in the request.
+            </summary>
+            <short>Create a tag</short>
+            <category>Rooms</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.CreateTagRequestDto, ASC.Files.Core" name="inDto">Request parameters for creating a tag</param>
+            <returns type="System.Object, System">New tag name</returns>
+            <path>api/2.0/files/tags</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsCommonController.GetTagsInfoAsync">
+            <summary>
+            Returns a list of custom tags.
+            </summary>
+            <short>Get tags</short>
+            <category>Rooms</category>
+            <returns type="System.Object, System">List of tag names</returns>
+            <path>api/2.0/files/tags</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsCommonController.DeleteTagsAsync(ASC.Files.Core.ApiModels.RequestDto.BatchTagsRequestDto)">
+            <summary>
+            Deletes a bunch of custom tags specified in the request.
+            </summary>
+            <short>Delete tags</short>
+            <category>Rooms</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.BatchTagsRequestDto, ASC.Files.Core" name="inDto">Batch tags request parameters</param>
+            <returns></returns>
+            <path>api/2.0/files/tags</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsCommonController.UploadRoomLogo(Microsoft.AspNetCore.Http.IFormCollection)">
+            <summary>
+            Uploads a temporary image to create a room logo.
+            </summary>
+            <short>Upload an image for room logo</short>
+            <category>Rooms</category>
+            <param type="Microsoft.AspNetCore.Http.IFormCollection, Microsoft.AspNetCore.Http" name="formCollection">Image data</param>
+            <returns type="ASC.Files.Core.ApiModels.ResponseDto.UploadResultDto, ASC.Files.Core">Upload result</returns>
+            <path>api/2.0/files/logos</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Files.Api.VirtualRoomsCommonController.SetSecurityByLink(ASC.Files.Core.ApiModels.RequestDto.AcceptInvitationDto)">
+            <summary>
+            Accepts an invitation to a room via an external link.
+            </summary>
+            <short>Accept an invitation</short>
+            <category>Rooms</category>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.AcceptInvitationDto, ASC.Files.Core" name="inDto">Request parameters for accepting invitations</param>
+            <returns></returns>
+            <path>api/2.0/files/rooms/accept</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="T:ASC.Api.Documents.PrivacyRoomController`1">
+            <summary>
+            Provides access to Private Room.
+            </summary>
+            <name>privacyroom</name>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomController`1.GetPublicKeysWithAccess(`0)">
+            <summary>
+            Returns all the key pairs of the users who have access to the file with the ID specified in the request.
+            </summary>
+            <short>Get file key pairs</short>
+            <param type="System.Int32, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Web.Files.Core.Entries.EncryptionKeyPairDto, ASC.Files.Core">List of encryption key pairs</returns>
+            <path>api/2.0/privacyroom/access/{fileId}</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomControllerCommon.GetKeys">
+            <summary>
+            Returns a key pair for the current user.
+            </summary>
+            <short>Get encryption keys</short>
+            <returns type="ASC.Web.Files.Core.Entries.EncryptionKeyPairDto, ASC.Files.Core">Encryption key pair: private key, public key, user ID</returns>
+            <path>api/2.0/privacyroom/keys</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomControllerCommon.PrivacyRoom">
+            <summary>
+            Checks if the Private Room settings are enabled or not.
+            </summary>
+            <short>Check the Private Room settings</short>
+            <returns type="System.Boolean, System">Boolean value: true - the Private Room settings are enabled, false - the Private Room settings are disabled</returns>
+            <path>api/2.0/privacyroom</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomControllerCommon.SetKeys(ASC.Files.Core.ApiModels.RequestDto.PrivacyRoomRequestDto)">
+            <summary>
+            Sets the key pair for the current user.
+            </summary>
+            <short>Set encryption keys</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.PrivacyRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for setting encryption keys</param>
+            <returns type="System.Object, System">Boolean value: true - the key pair is set</returns>
+            <path>api/2.0/privacyroom/keys</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomControllerCommon.SetPrivacyRoom(ASC.Files.Core.ApiModels.RequestDto.PrivacyRoomRequestDto)">
+            <summary>
+            Enables the Private Room settings.
+            </summary>
+            <short>Enable the Private Room settings</short>
+            <param type="ASC.Files.Core.ApiModels.RequestDto.PrivacyRoomRequestDto, ASC.Files.Core" name="inDto">Request parameters for setting encryption keys</param>
+            <returns type="System.Boolean, System">Boolean value: true - the Private Room settings are enabled, false - the Private Room settings are disabled</returns>
+            <path>api/2.0/privacyroom</path>
+            <httpMethod>PUT</httpMethod>
+            <visible>false</visible>
+        </member>
+    </members>
+</doc>

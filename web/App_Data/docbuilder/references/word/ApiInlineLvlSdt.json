@@ -109,7 +109,7 @@
         {
           "type": "string",
           "name": "sLabel",
-          "description": "<p>The label which will be added to the current inline text content control. Can be a positive or negative integer from <strong>-2147483647</strong> to <strong>2147483647</strong>.</p>",
+          "description": "<p>The label which will be added to the current inline text content control. Can be a positive or negative integer from <b>-2147483647</b> to <b>2147483647</b>.</p>",
           "optional": false
         }
       ]
@@ -247,7 +247,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -264,7 +264,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -273,7 +273,7 @@
         {
           "type": "ParagraphContent",
           "name": "oElement",
-          "description": "<p>The document element which will be added at the position specified. Returns <strong>false</strong> if the type of <em>oElement</em> is not supported by an inline text content control.</p>",
+          "description": "<p>The document element which will be added at the position specified. Returns <b>false</b> if the type of <em>oElement</em> is not supported by an inline text content control.</p>",
           "optional": false
         },
         {
@@ -295,7 +295,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -320,7 +320,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -345,14 +345,14 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "keepContent",
           "description": "<p>Specifies if the content will be deleted or not.</p>",
           "optional": false
@@ -395,7 +395,7 @@
       },
       "returns": [
         [
-          "ApiBlockLvlSdt",
+          "ApiParagraph",
           "null"
         ]
       ],
@@ -414,6 +414,7 @@
       "returns": [
         [
           "ApiBlockLvlSdt",
+          "ApiInlineLvlSdt",
           "null"
         ]
       ],
@@ -504,6 +505,31 @@
       "see": null,
       "inherits": null
     },
+    "ToJSON": {
+      "memberof": "ApiInlineLvlSdt",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiInlineLvlSdt object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the used styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
+    },
     "GetPlaceholderText": {
       "memberof": "ApiInlineLvlSdt",
       "name": "GetPlaceholderText",
@@ -562,8 +588,40 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "AddComment": {
+      "memberof": "ApiInlineLvlSdt",
+      "name": "AddComment",
+      "description": "<p>Adds a comment to the current inline content control.\n<note>Please note that this inline content control must be in the document.</note></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiComment"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>The comment text (required).</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sAuthor",
+          "description": "<p>The author's name (optional).</p>",
+          "optional": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a container for the paragraph elements.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a container for the paragraph elements.</p>",
   "scope": "global",

@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Highlight duplicates in the selected area with different colors to recognize duplicated values quickly.</p>
+<p class="dscr">Highlights duplicates in the selected area with different colors to recognize duplicated values quickly.</p>
 
 <pre>(function () 
 {
@@ -115,4 +115,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Highlight duplicates" src="<%= Url.Content("~/content/img/plugins/highlight_duplicates.png") %>" />
+<img class="screenshot max-width-832" alt="Highlight duplicates" src="<%= Url.Content("~/content/img/plugins/highlight_duplicates.png") %>" />

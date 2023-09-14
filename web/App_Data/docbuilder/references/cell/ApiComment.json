@@ -41,13 +41,14 @@
       },
       "returns": [
         [
-          "number"
+          "\"comment\""
         ]
       ],
       "see": null,
       "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a comment.\n\t * @constructor\n\t * @property {string} Text - Returns the text from the first cell in range.\n\t */",
   "description": "<p>Class representing a comment.</p>",
   "scope": "global",

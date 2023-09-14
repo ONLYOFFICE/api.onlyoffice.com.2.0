@@ -31,7 +31,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/templates" target="_blank">https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/templates</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>templates.js</em></li>
     <li>Icons</li>
     <li>The <em>templates</em> folder contains document templates.</li>
 </ol>
@@ -69,9 +69,9 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul>
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#onExternalMouseUp">onExternalMouseUp</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onExternalMouseUp") %>">onExternalMouseUp</a></li>
     <li><a href="<%= Url.Action("callmodule") %>">callModule</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
     <li><a href="<%= Url.Action("info") %>#recalculate">info.recalculate</a></li>

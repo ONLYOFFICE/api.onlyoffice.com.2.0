@@ -31,7 +31,7 @@
 git clone https://github.com/onlyoffice/rails-docbuilder-example.git</code></pre>
                 </li>--%>
                 <li>Download the archive with the Ruby example and unpack the it:
-                    <pre>wget "https://api.onlyoffice.com/app_data/docbuilder/Ruby%20Example.zip"
+                    <pre>wget "https://github.com/ONLYOFFICE/document-builder-integration/releases/latest/download/Ruby.Example.zip"
 unzip rails-docbuilder-example-master.zip</pre>
                 </li>
                 <li>Change the current directory for the project directory:

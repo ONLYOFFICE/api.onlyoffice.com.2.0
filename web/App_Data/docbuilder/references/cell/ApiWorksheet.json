@@ -11,7 +11,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -31,7 +31,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isVisible",
           "description": "<p>Specifies if the sheet is visible or not.</p>",
           "optional": false
@@ -96,7 +96,8 @@
       },
       "returns": [
         [
-          "ApiRange"
+          "ApiRange",
+          "Error"
         ]
       ],
       "see": null,
@@ -127,7 +128,8 @@
       },
       "returns": [
         [
-          "ApiRange"
+          "ApiRange",
+          "Error"
         ]
       ],
       "see": null,
@@ -257,8 +259,14 @@
       "inherits": null,
       "params": [
         {
-          "type": "string",
-          "name": "sRange",
+          "type": "string | ApiRange",
+          "name": "Range1",
+          "description": "<p>The range of cells from the current sheet.</p>",
+          "optional": false
+        },
+        {
+          "type": "string | ApiRange",
+          "name": "Range2",
           "description": "<p>The range of cells from the current sheet.</p>",
           "optional": false
         }
@@ -384,7 +392,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isDisplayed",
           "description": "<p>Specifies whether the current sheet gridlines must be displayed or not. The default value is <b>true</b>.</p>",
           "optional": false
@@ -405,7 +413,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isDisplayed",
           "description": "<p>Specifies whether the current sheet row/column headers must be displayed or not. The default value is <b>true</b>.</p>",
           "optional": false
@@ -613,7 +621,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -633,7 +641,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bPrint",
           "description": "<p>Specifies whether the current sheet row/column headers must be printed or not.</p>",
           "optional": false
@@ -651,7 +659,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -671,7 +679,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bPrint",
           "description": "<p>Defines if cell gridlines are printed on this page or not.</p>",
           "optional": false
@@ -752,7 +760,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isHidden",
           "description": "<p>Defines if the range name is hidden or not.</p>",
           "optional": false
@@ -816,7 +824,13 @@
         },
         {
           "type": "string",
-          "name": "ScreenTip",
+          "name": "subAddress",
+          "description": "<p>The link subaddress to insert internal sheet hyperlinks.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sScreenTip",
           "description": "<p>The screen tip text.</p>",
           "optional": false
         },
@@ -852,7 +866,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bInRows",
           "description": "<p>Specifies whether to take the data from the rows or from the columns. If true, the data from the rows will be used.</p>",
           "optional": false
@@ -1042,6 +1056,182 @@
         }
       ]
     },
+    "AddWordArt": {
+      "memberof": "ApiWorksheet",
+      "name": "AddWordArt",
+      "description": "<p>Adds a Text Art object to the current sheet with the parameters specified.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiDrawing"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiTextPr",
+          "name": "oTextPr",
+          "description": "<p>The text properties.</p>",
+          "optional": true,
+          "defaultValue": "Api.CreateTextPr()"
+        },
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>The text for the Text Art object.</p>",
+          "optional": true,
+          "defaultValue": "\"Your text here\""
+        },
+        {
+          "type": "TextTransform",
+          "name": "sTransform",
+          "description": "<p>Text transform type.</p>",
+          "optional": true,
+          "defaultValue": "\"textNoShape\""
+        },
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The color or pattern used to fill the Text Art object.</p>",
+          "optional": true,
+          "defaultValue": "Api.CreateNoFill()"
+        },
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the Text Art object shadow.</p>",
+          "optional": true,
+          "defaultValue": "Api.CreateStroke(0, Api.CreateNoFill())"
+        },
+        {
+          "type": "number",
+          "name": "nRotAngle",
+          "description": "<p>Rotation angle.</p>",
+          "optional": true,
+          "defaultValue": 0
+        },
+        {
+          "type": "EMU",
+          "name": "nWidth",
+          "description": "<p>The Text Art width measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": 1828800
+        },
+        {
+          "type": "EMU",
+          "name": "nHeight",
+          "description": "<p>The Text Art heigth measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": 1828800
+        },
+        {
+          "type": "number",
+          "name": "nFromCol",
+          "description": "<p>The column number where the beginning of the Text Art object will be placed.</p>",
+          "optional": true,
+          "defaultValue": 0
+        },
+        {
+          "type": "number",
+          "name": "nFromRow",
+          "description": "<p>The row number where the beginning of the Text Art object will be placed.</p>",
+          "optional": true,
+          "defaultValue": 0
+        },
+        {
+          "type": "EMU",
+          "name": "nColOffset",
+          "description": "<p>The offset from the nFromCol column to the left part of the Text Art object measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": 0
+        },
+        {
+          "type": "EMU",
+          "name": "nRowOffset",
+          "description": "<p>The offset from the nFromRow row to the upper part of the Text Art object measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": 0
+        }
+      ]
+    },
+    "AddOleObject": {
+      "memberof": "ApiWorksheet",
+      "name": "AddOleObject",
+      "description": "<p>Adds an OLE object to the current sheet with the parameters specified.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiOleObject"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sImageSrc",
+          "description": "<p>The image source where the image to be inserted should be taken from (currently, only internet URL or Base64 encoded images are supported).</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nWidth",
+          "description": "<p>The OLE object width in English measure units.</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nHeight",
+          "description": "<p>The OLE object height in English measure units.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sData",
+          "description": "<p>The OLE object string data.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sAppId",
+          "description": "<p>The application ID associated with the current OLE object.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nFromCol",
+          "description": "<p>The number of the column where the beginning of the OLE object will be placed.</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nColOffset",
+          "description": "<p>The offset from the nFromCol column to the left part of the OLE object measured in English measure units.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "nFromRow",
+          "description": "<p>The number of the row where the beginning of the OLE object will be placed.</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nRowOffset",
+          "description": "<p>The offset from the nFromRow row to the upper part of the OLE object measured in English measure units.</p>",
+          "optional": false
+        }
+      ]
+    },
     "ReplaceCurrentImage": {
       "memberof": "ApiWorksheet",
       "name": "ReplaceCurrentImage",
@@ -1057,7 +1247,7 @@
       "params": [
         {
           "type": "string",
-          "name": "sImageSrc",
+          "name": "sImageUrl",
           "description": "<p>The image source where the image to be inserted should be taken from (currently only internet URL or Base64 encoded images are supported).</p>",
           "optional": false
         },
@@ -1074,15 +1264,128 @@
           "optional": false
         }
       ]
+    },
+    "GetAllDrawings": {
+      "memberof": "ApiWorksheet",
+      "name": "GetAllDrawings",
+      "description": "<p>Returns all drawings from the current sheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiDrawing>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetAllImages": {
+      "memberof": "ApiWorksheet",
+      "name": "GetAllImages",
+      "description": "<p>Returns all images from the current sheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiImage>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetAllShapes": {
+      "memberof": "ApiWorksheet",
+      "name": "GetAllShapes",
+      "description": "<p>Returns all shapes from the current sheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiShape>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetAllCharts": {
+      "memberof": "ApiWorksheet",
+      "name": "GetAllCharts",
+      "description": "<p>Returns all charts from the current sheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiChart>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetAllOleObjects": {
+      "memberof": "ApiWorksheet",
+      "name": "GetAllOleObjects",
+      "description": "<p>Returns all OLE objects from the current sheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiOleObject>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "Move": {
+      "memberof": "ApiWorksheet",
+      "name": "Move",
+      "description": "<p>Moves the current sheet to another location in the workbook.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiWorksheet",
+          "name": "before",
+          "description": "<p>The sheet before which the current sheet will be placed. You cannot specify &quot;before&quot; if you specify &quot;after&quot;.</p>",
+          "optional": false
+        },
+        {
+          "type": "ApiWorksheet",
+          "name": "after",
+          "description": "<p>The sheet after which the current sheet will be placed. You cannot specify &quot;after&quot; if you specify &quot;before&quot;.</p>",
+          "optional": false
+        }
+      ]
     }
   },
-  "comment": "/**\n\t * Class representing a sheet.\n\t * @constructor\n\t * @property {bool} Visible - Returns or sets the state of sheet visibility.\n\t * @property {number} Active - Makes the current sheet active.\n\t * @property {ApiRange} ActiveCell - Returns an object that represents an active cell.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t * @property {ApiRange} Cells - Returns ApiRange that represents all the cells on the worksheet (not just the cells that are currently in use).\n\t * @property {ApiRange} Rows - Returns ApiRange that represents all the cells of the rows range.\n\t * @property {ApiRange} Cols - Returns ApiRange that represents all the cells of the columns range.\n\t * @property {ApiRange} UsedRange - Returns ApiRange that represents the used range on the specified worksheet.\n\t * @property {string} Name - Returns or sets a name of the active sheet.\n\t * @property {number} Index - Returns a sheet index.\n\t * @property {number} LeftMargin - Returns or sets the size of the sheet left margin measured in points.\n\t * @property {number} RightMargin - Returns or sets the size of the sheet right margin measured in points.\n\t * @property {number} TopMargin - Returns or sets the size of the sheet top margin measured in points.\n\t * @property {number} BottomMargin - Returns or sets the size of the sheet bottom margin measured in points.\n\t * @property {PageOrientation} PageOrientation - Returns or sets the page orientation.\n\t * @property {bool} PrintHeadings - Returns or sets the page PrintHeadings property.\n\t * @property {bool} PrintGridlines - Returns or sets the page PrintGridlines property.\n\t * @property {Array} Defnames - Returns an array of the ApiName objects.\n\t * @property {Array} Comments - Returns an array of the ApiComment objects.\n\t */",
+  "events": {},
+  "comment": "/**\n\t * Class representing a sheet.\n\t * @constructor\n\t * @property {boolean} Visible - Returns or sets the state of sheet visibility.\n\t * @property {number} Active - Makes the current sheet active.\n\t * @property {ApiRange} ActiveCell - Returns an object that represents an active cell.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t * @property {ApiRange} Cells - Returns ApiRange that represents all the cells on the worksheet (not just the cells that are currently in use).\n\t * @property {ApiRange} Rows - Returns ApiRange that represents all the cells of the rows range.\n\t * @property {ApiRange} Cols - Returns ApiRange that represents all the cells of the columns range.\n\t * @property {ApiRange} UsedRange - Returns ApiRange that represents the used range on the specified worksheet.\n\t * @property {string} Name - Returns or sets a name of the active sheet.\n\t * @property {number} Index - Returns a sheet index.\n\t * @property {number} LeftMargin - Returns or sets the size of the sheet left margin measured in points.\n\t * @property {number} RightMargin - Returns or sets the size of the sheet right margin measured in points.\n\t * @property {number} TopMargin - Returns or sets the size of the sheet top margin measured in points.\n\t * @property {number} BottomMargin - Returns or sets the size of the sheet bottom margin measured in points.\n\t * @property {PageOrientation} PageOrientation - Returns or sets the page orientation.\n\t * @property {boolean} PrintHeadings - Returns or sets the page PrintHeadings property.\n\t * @property {boolean} PrintGridlines - Returns or sets the page PrintGridlines property.\n\t * @property {Array} Defnames - Returns an array of the ApiName objects.\n\t * @property {Array} Comments - Returns an array of the ApiComment objects.\n\t */",
   "description": "<p>Class representing a sheet.</p>",
   "scope": "global",
   "params": [],
   "properties": [
     {
-      "type": "bool",
+      "type": "boolean",
       "name": "Visible",
       "description": "<p>Returns or sets the state of sheet visibility.</p>"
     },
@@ -1157,12 +1460,12 @@
       "description": "<p>Returns or sets the page orientation.</p>"
     },
     {
-      "type": "bool",
+      "type": "boolean",
       "name": "PrintHeadings",
       "description": "<p>Returns or sets the page PrintHeadings property.</p>"
     },
     {
-      "type": "bool",
+      "type": "boolean",
       "name": "PrintGridlines",
       "description": "<p>Returns or sets the page PrintGridlines property.</p>"
     },

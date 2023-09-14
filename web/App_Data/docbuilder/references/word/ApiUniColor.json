@@ -18,8 +18,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiUniColor",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiUniColor object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a base class for color types.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a base class for color types.</p>",
   "scope": "global",

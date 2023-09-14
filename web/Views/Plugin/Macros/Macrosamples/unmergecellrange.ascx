@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Unmerge selected cell range.</p>
+<p class="dscr">Unmerges the selected cell range.</p>
 
 <pre>(function()
 {
@@ -28,5 +28,5 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Unmerge-before" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_before.png") %>" />
-<img alt="Unmerge-after" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_after.png") %>" />
+<img class="screenshot max-width-832" alt="Unmerge-before" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_before.png") %>" />
+<img class="screenshot max-width-832" alt="Unmerge-after" src="<%= Url.Content("~/content/img/plugins/unmerge_cells_after.png") %>" />

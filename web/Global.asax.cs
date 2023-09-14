@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -134,6 +134,10 @@ namespace ASC.Api.Web.Help
             bundles.Add(new Bundle("~/content/get-docs", new CssMinify())
                 .Include(
                     "~/content/get-docs.css"));
+
+            bundles.Add(new Bundle("~/content/connector", new CssMinify())
+                .Include(
+                    "~/content/connector.css"));
         }
 
         protected void Application_Start()
@@ -144,7 +148,6 @@ namespace ASC.Api.Web.Help
                 AreaRegistration.RegisterAllAreas();
                 RegisterRoutes(RouteTable.Routes);
                 RegisterBundles(BundleTable.Bundles);
-                ClassNamePluralizer.LoadAndWatch(HttpContext.Current.Server.MapPath("~/App_Data/portals/class_descriptions.xml"));
 
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             }
@@ -181,7 +184,23 @@ namespace ASC.Api.Web.Help
 
                             try
                             {
-                                Documentation.Load();
+                                CommunityServerDocumentation.Load();
+                            }
+                            catch (Exception error)
+                            {
+                                LogManager.GetLogger("ASC.Api").Error(error);
+                            }
+                        }
+
+                        if (enabledProducts.Contains("docspace", StringComparer.InvariantCultureIgnoreCase))
+                        {
+                            CacheManifest.AddCached(new Uri("/docspace/basic", UriKind.Relative));
+                            CacheManifest.AddOnline(new Uri("/docspace/search", UriKind.Relative));
+                            CacheManifest.AddFallback(new Uri("/docspace/search", UriKind.Relative), new Uri("/docspace/notfound", UriKind.Relative));
+
+                            try
+                            {
+                                DocSpaceDocumentation.Load();
                             }
                             catch (Exception error)
                             {
@@ -193,11 +212,23 @@ namespace ASC.Api.Web.Help
                         {
                             try
                             {
-                                DocBuilderDocumentation.Load();
+                                DocBuilderDocumentation.Instance.Load();
                             }
                             catch (Exception error)
                             {
                                 LogManager.GetLogger("ASC.DocumentBuilder").Error(error);
+                            }
+                        }
+
+                        if (enabledProducts.Contains("plugin", StringComparer.InvariantCulture))
+                        {
+                            try
+                            {
+                                DocPluginsDocumentation.Instance.Load();
+                            }
+                            catch (Exception error)
+                            {
+                                LogManager.GetLogger("ASC.Plugins").Error(error);
                             }
                         }
                     }

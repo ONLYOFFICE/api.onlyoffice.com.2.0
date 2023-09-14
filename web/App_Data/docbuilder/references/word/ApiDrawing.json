@@ -300,7 +300,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -380,7 +380,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "beRNewPara",
           "description": "<p>Defines if this method returns a new paragraph (true) or the current ApiDrawing (false).</p>",
           "optional": false
@@ -411,7 +411,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -445,7 +445,7 @@
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bFlip",
           "description": "<p>Specifies if the figure will be flipped horizontally or not.</p>",
           "optional": false
@@ -463,14 +463,14 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
       "inherits": null,
       "params": [
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "bFlip",
           "description": "<p>Specifies if the figure will be flipped vertically or not.</p>",
           "optional": false
@@ -488,7 +488,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -513,7 +513,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -538,7 +538,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -563,7 +563,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -612,8 +612,159 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiDrawing",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiDrawing object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteNumberings",
+          "description": "<p>Specifies if the used numberings will be written to the JSON object or not.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the used styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetWidth": {
+      "memberof": "ApiDrawing",
+      "name": "GetWidth",
+      "description": "<p>Returns the width of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "EMU"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetHeight": {
+      "memberof": "ApiDrawing",
+      "name": "GetHeight",
+      "description": "<p>Returns the height of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "EMU"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetLockValue": {
+      "memberof": "ApiDrawing",
+      "name": "GetLockValue",
+      "description": "<p>Returns the lock value for the specified lock type of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "bool"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "\"noGrp\" | \"noUngrp\" | \"noSelect\" | \"noRot\" | \"noChangeAspect\" | \"noMove\" | \"noResize\" | \"noEditPoints\" | \"noAdjustHandles\" | \"noChangeArrowheads\" | \"noChangeShapeType\" | \"noDrilldown\" | \"noTextEdit\" | \"noCrop\" | \"txBox\"",
+          "name": "sType",
+          "description": "<p>Lock type in the string format.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetLockValue": {
+      "memberof": "ApiDrawing",
+      "name": "SetLockValue",
+      "description": "<p>Sets the lock value to the specified lock type of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "bool"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "\"noGrp\" | \"noUngrp\" | \"noSelect\" | \"noRot\" | \"noChangeAspect\" | \"noMove\" | \"noResize\" | \"noEditPoints\" | \"noAdjustHandles\" | \"noChangeArrowheads\" | \"noChangeShapeType\" | \"noDrilldown\" | \"noTextEdit\" | \"noCrop\" | \"txBox\"",
+          "name": "sType",
+          "description": "<p>Lock type in the string format.</p>",
+          "optional": false
+        },
+        {
+          "type": "bool",
+          "name": "bValue",
+          "description": "<p>Specifies if the specified lock is applied to the current drawing.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetDrawingPrFromDrawing": {
+      "memberof": "ApiDrawing",
+      "name": "SetDrawingPrFromDrawing",
+      "description": "<p>Sets the properties from another drawing to the current drawing.\nThe following properties will be copied: horizontal and vertical alignment, distance between the edges of the current drawing object and any subsequent text, wrapping style, drawing name, title and description.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiDrawing",
+          "name": "oAnotherDrawing",
+          "description": "<p>The drawing which properties will be set to the current drawing.</p>",
+          "optional": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a graphical object.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a graphical object.</p>",
   "scope": "global",

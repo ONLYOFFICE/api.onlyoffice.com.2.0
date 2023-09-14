@@ -47,7 +47,7 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
 <h2 id="win-3" class="copy-link"><span class="style_step">Step 3. </span>Install Node.js environment</h2>
 <p>
     Install the <b>node.js</b> environment which is going to be used to run the Node.js project.
-    Please follow the link at the <a href="https://nodejs.org/en/download/">official website</a> choosing the correct version for your Windows OS (32-bit or 64-bit).
+    Please follow the link at the <a href="https://nodejs.org/en/download/" target="_blank">official website</a> choosing the correct version for your Windows OS (32-bit or 64-bit).
 </p>
 
 <h2 id="win-4" class="copy-link"><span class="style_step">Step 4. </span>Run the Node.js code</h2>
@@ -90,7 +90,7 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
         <div class="commandline">sudo apt-get install -y nodejs</div>
     </li>
     <li>Download the archive with the Node.js example and unpack the archive:
-        <div class="commandline">wget https://api.onlyoffice.com/app_data/editor/Node.js%20Example.zip</div>
+        <div class="commandline">wget https://github.com/ONLYOFFICE/document-server-integration/releases/latest/download/Node.js.Example.zip</div>
         <div class="commandline">unzip Node.js\ Example.zip</div>
     </li>
     <li>Change the current directory for the project directory:
@@ -99,7 +99,7 @@ You can set an absolute path. For example, <em>D:\\folder</em>. Please note that
     <li>Install the dependencies:
         <div class="commandline">npm install</div>
     </li>
-    <li>Edit the <em>default.json</em> configuration file.
+    <li>Edit the <em>config/default.json</em> configuration file.
         Specify the name of your local server with the ONLYOFFICE Document Server installed.
         <div class="commandline">nano config/default.json</div>
         <p>Edit the following lines:</p>

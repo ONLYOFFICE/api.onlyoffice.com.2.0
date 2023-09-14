@@ -35,7 +35,7 @@
         <div class="commandline">\curl -sSL https://get.rvm.io | bash -s stable --ruby</div>
     </li>
     <li>Download the archive with the Ruby example and unpack the archive:
-        <div class="commandline">wget "https://api.onlyoffice.com/app_data/editor/Ruby%20Example.zip"</div>
+        <div class="commandline">wget "https://github.com/ONLYOFFICE/document-server-integration/releases/latest/download/Ruby.Example.zip"</div>
         <div class="commandline">unzip Ruby\ Example.zip</div>
     </li>
     <li>Change the current directory for the project directory:
@@ -44,7 +44,7 @@
     <li>Install the dependencies:
         <div class="commandline">bundle install</div>
     </li>
-    <li>Edit the <em>application.rb</em> configuration file.
+    <li>Edit the <em>config/application.rb</em> configuration file.
         Specify the name of your local server with the ONLYOFFICE Document Server installed.
         <div class="commandline">nano config/application.rb</div>
         <p>Edit the following lines:</p>
@@ -57,6 +57,7 @@ Rails.configuration.urlSite="https://documentserver/"</pre>
         You can set an absolute path. For example, <em>D:\\folder</em>. Please note that on Windows OS the double backslash must be used as a separator.</p>
     </li>
     <li>Run the <b>Rails</b> application:
+        <div class="commandline">rails server -u webrick</div>
         <div class="commandline">rails s -b 0.0.0.0 -p 80</div>
     </li>
     <li>See the result in your browser using the address:

@@ -64,8 +64,26 @@
           "optional": false
         }
       ]
+    },
+    "ToJSON": {
+      "memberof": "ApiTableRowPr",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTableRowPr object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing the table row properties.\n\t * @constructor\n\t */",
   "description": "<p>Class representing the table row properties.</p>",
   "scope": "global",

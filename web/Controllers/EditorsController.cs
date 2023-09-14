@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -40,6 +40,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "ActionLink",
                 "Advanced",
                 "Alfresco",
+                "Angular",
                 "AnonymousUsers",
                 "Basic",
                 "Callback",
@@ -65,10 +66,13 @@ namespace ASC.Api.Web.Help.Controllers
                 "Config/Editor/Plugins",
                 "Config/Events",
                 "Confluence",
+                "Connector",
                 "Conversion",
                 "ConversionApi",
                 "DemoPreview",
                 "DocumentBuilderApi",
+                "Drupal",
+                "EmbeddingForms",
                 "Example/Java",
                 "Example/JavaSpring",
                 "Example/Nodejs",
@@ -89,11 +93,17 @@ namespace ASC.Api.Web.Help.Controllers
                 "FAQ/Security",
                 "FAQ/Sharing",
                 "FAQ/UsingWOPI",
+                "Frameworks",
                 "GetDocs",
                 "History",
                 "HowItWorks",
                 "HumHub",
                 "InlineEditors",
+                "InsertingExternalData",
+                "InteractingOutside",
+                "InteractingOutside/Comments",
+                "InteractingOutside/FillingForm",
+                "InteractingOutside/ReviewWork",
                 "Jira",
                 "Liferay",
                 "Mattermost",
@@ -103,10 +113,13 @@ namespace ASC.Api.Web.Help.Controllers
                 "Moodle",
                 "Nextcloud",
                 "Nuxeo",
+                "Odoo",
                 "Open",
                 "OwnCloud",
                 "Plone",
                 "Plugins",
+                "ProtectingRanges",
+                "React",
                 "Redmine",
                 "Rename",
                 "Review",
@@ -118,11 +131,16 @@ namespace ASC.Api.Web.Help.Controllers
                 "Signature/Browser",
                 "Signature/Request",
                 "Strapi",
+                "SuiteCRM",
                 "Troubleshooting",
                 "Try",
+                "Viewing",
+                "Vue",
                 "WOPI",
                 "WOPI/ApiVsWopi",
+                "WOPI/ConversionApi",
                 "WOPI/Discovery",
+                "WOPI/EditingBinary",
                 "WOPI/HostPage",
                 "WOPI/PostMessage",
                 "WOPI/ProofKeys",
@@ -131,6 +149,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "WOPI/RestApi/GetFile",
                 "WOPI/RestApi/Lock",
                 "WOPI/RestApi/PutFile",
+                "WOPI/RestApi/PutRelativeFile",
                 "WOPI/RestApi/RefreshLock",
                 "WOPI/RestApi/RenameFile",
                 "WOPI/RestApi/Unlock",
@@ -167,6 +186,11 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult Alfresco()
+        {
+            return View();
+        }
+
+        public ActionResult Angular()
         {
             return View();
         }
@@ -240,6 +264,11 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult Connector()
+        {
+            return View();
+        }
+
         public ActionResult Conversion()
         {
             return View();
@@ -275,11 +304,7 @@ namespace ASC.Api.Web.Help.Controllers
 
         public ActionResult DemoPreview()
         {
-            var directoryInfo = new DirectoryInfo(Request.MapPath("~/app_data/editor"));
-
-            var examples = directoryInfo.GetFiles("*.zip", SearchOption.TopDirectoryOnly).Select(fileInfo => fileInfo.Name).ToList();
-
-            return View(examples);
+            return View();
         }
 
         public ActionResult DocumentBuilderApi()
@@ -287,7 +312,22 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult Drupal()
+        {
+            return View();
+        }
+
         public ActionResult Editor()
+        {
+            return View();
+        }
+
+        public ActionResult EmbeddingForms()
+        {
+            return View();
+        }
+
+        public ActionResult Frameworks()
         {
             return View();
         }
@@ -310,6 +350,20 @@ namespace ASC.Api.Web.Help.Controllers
         public ActionResult InlineEditors()
         {
             return View();
+        }
+
+        public ActionResult InsertingExternalData()
+        {
+            return View();
+        }
+
+        public ActionResult InteractingOutside(string catchall)
+        {
+            if (!_actionMap.Contains("interactingoutside/" + catchall, StringComparer.OrdinalIgnoreCase))
+            {
+                catchall = null;
+            }
+            return View("InteractingOutside", (object)catchall);
         }
 
         public ActionResult Jira()
@@ -357,6 +411,11 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult Odoo()
+        {
+            return View();
+        }
+
         public ActionResult Open()
         {
             return View();
@@ -373,6 +432,16 @@ namespace ASC.Api.Web.Help.Controllers
         }
 
         public ActionResult Plugins()
+        {
+            return View();
+        }
+
+        public ActionResult ProtectingRanges()
+        {
+            return View();
+        }
+
+        public ActionResult React()
         {
             return View();
         }
@@ -421,12 +490,27 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult SuiteCRM()
+        {
+            return View();
+        }
+
         public ActionResult Troubleshooting()
         {
             return View();
         }
 
         public ActionResult Try()
+        {
+            return View();
+        }
+
+        public ActionResult Viewing()
+        {
+            return View();
+        }
+
+        public ActionResult Vue()
         {
             return View();
         }

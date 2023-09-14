@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Merge selected cell range.</p>
+<p class="dscr">Merges the selected cell range.</p>
 
 <pre>(function()
 {
@@ -28,4 +28,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Merge cells" src="<%= Url.Content("~/content/img/plugins/merge_cells.png") %>" />
+<img class="screenshot max-width-832" alt="Merge cells" src="<%= Url.Content("~/content/img/plugins/merge_cells.png") %>" />

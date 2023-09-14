@@ -18,8 +18,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiPresetColor",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiPresetColor object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a Preset Color.\n\t * @constructor\n\t * */",
   "description": "<p>Class representing a Preset Color.</p>",
   "scope": "global",

@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -27,6 +27,7 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using ASC.Api.Web.Help.DocumentGenerator;
 using ASC.Api.Web.Help.Helpers;
 
 namespace ASC.Api.Web.Help.Controllers
@@ -39,15 +40,12 @@ namespace ASC.Api.Web.Help.Controllers
                 "Basic",
                 "Code",
                 "Config",
-                "callCommand",
-                "callModule",
-                "createInputHelper",
+                "changelog",
                 "events",
                 "example",
                 "example/addcommentincell",
                 "example/addcustomfields",
                 "example/autocomplete",
-                "example/cbr",
                 "example/chess",
                 "example/clippy",
                 "example/countwordsandcharacters",
@@ -61,7 +59,6 @@ namespace ASC.Api.Web.Help.Controllers
                 "example/loadcustomfields",
                 "example/customfields",
                 "example/movecursor",
-                "example/num2word",
                 "example/ocr",
                 "example/photoeditor",
                 "example/searchandchangetextbackgroundcolor",
@@ -80,93 +77,40 @@ namespace ASC.Api.Web.Help.Controllers
                 "example/workwithcontentcontrolstags",
                 "example/youtube",
                 "example/zotero",
-                "ExecuteCommand",
-                "executemethod",
-                "executemethod/addcomment",
-                "executemethod/addcontentcontrol",
-                "executemethod/addcontentcontrolcheckbox",
-                "executemethod/addcontentcontroldatepicker",
-                "executemethod/addcontentcontrollist",
-                "executemethod/addcontentcontrolpicture",
-                "executemethod/addoleobject",
-                "executemethod/changecomment",
-                "executemethod/changeoleobjects",
-                "executemethod/coauthoringchatsendmessage",
-                "executemethod/convertdocument",
-                "executemethod/editoleobject",
-                "executemethod/endaction",
-                "executemethod/getallcomments",
-                "executemethod/getallcontentcontrols",
-                "executemethod/getalloleobjects",
-                "executemethod/getcurrentcontentcontrolpr",
-                "executemethod/getcurrentcontentcontrol",
-                "executemethod/getfields",
-                "executemethod/getfilehtml",
-                "executemethod/getfontlist",
-                "executemethod/getmacros",
-                "executemethod/getselectedtext",
-                "executemethod/getselectiontype",
-                "executemethod/getversion",
-                "executemethod/inputtext",
-                "executemethod/insertandreplacecontentcontrols",
-                "executemethod/insertoleobject",
-                "executemethod/movecursortocontentcontrol",
-                "executemethod/movecursortoend",
-                "executemethod/movecursortostart",
-                "executemethod/movetocomment",
-                "executemethod/openfile",
-                "executemethod/onencryption",
-                "executemethod/pastehtml",
-                "executemethod/pastetext",
-                "executemethod/removecomments",
-                "executemethod/removecontentcontrols",
-                "executemethod/removecontentcontrol",
-                "executemethod/removeoleobject",
-                "executemethod/removeoleobjects",
-                "executemethod/removeselectedcontent",
-                "executemethod/replacetextsmart",
-                "executemethod/searchandreplace",
-                "executemethod/selectcontentcontrol",
-                "executemethod/selectoleobject",
-                "executemethod/setdisplaymodeinreview",
-                "executemethod/setmacros",
-                "executemethod/setproperties",
-                "executemethod/showinputhelper",
-                "executemethod/startaction",
-                "executemethod/unshowinputhelper",
                 "FAQ",
-                "getInputHelper",
                 "GettingStarted",
                 "Icons",
                 "IndexHtml",
                 "Info",
-                "inputHelper",
                 "installation",
                 "installation/cloud",
                 "installation/desktop",
                 "installation/onpremises",
-                "loadModule",
                 "Localization",
                 "macros/Macros",
                 "macros/Writing",
+                "macros/Debugging",
                 "macros/ConvertingVBA",
                 "macros/macrosamples",
                 "macros/macrosamples/addchart",
                 "macros/macrosamples/changecellbackgroundcolor",
                 "macros/macrosamples/changecellfontcolor",
+                "macros/macrosamples/completeaddressinformation",
                 "macros/macrosamples/currencyexchangerates",
                 "macros/macrosamples/formatrangeasatable",
                 "macros/macrosamples/highlightduplicates",
+                "macros/macrosamples/importcsv",
+                "macros/macrosamples/insertid",
                 "macros/macrosamples/inserttext",
                 "macros/macrosamples/makecellfontbold",
                 "macros/macrosamples/mergecellrange",
                 "macros/macrosamples/nextblankrow",
+                "macros/macrosamples/recalculatevalues",
+                "macros/macrosamples/removeshapes",
                 "macros/macrosamples/setcolumnwidth",
+                "macros/macrosamples/unhideallrows",
                 "macros/macrosamples/unmergecellrange",
                 "macros/macrosamples/writedatatoworksheetcell",
-                "Objects",
-                "Plugin",
-                "resizeWindow",
                 "scope",
                 "Structure",
                 "Styles",
@@ -207,22 +151,36 @@ namespace ASC.Api.Web.Help.Controllers
 
         public ActionResult callCommand()
         {
-            return View();
+            return RenderBaseMethod("callCommand");
         }
 
         public ActionResult callModule()
+        {
+            return RenderBaseMethod("callModule");
+        }
+
+        public ActionResult Changelog()
         {
             return View();
         }
 
         public ActionResult createInputHelper()
         {
-            return View();
+            return RenderBaseMethod("createInputHelper");
         }
 
-        public ActionResult Events()
+        public ActionResult Events(string catchall)
         {
-            return View();
+            if (string.IsNullOrEmpty(catchall))
+            {
+                return View(DocPluginsDocumentation.Instance.GetSection("pluginBase", "plugin"));
+            }
+            else
+            {
+                var evt = DocPluginsDocumentation.Instance.GetEvent("pluginBase", "plugin", catchall);
+                if (evt == null) return View("methodnotfound");
+                return View("eventpartial", evt);
+            }
         }
 
         public ActionResult example(string catchall)
@@ -236,31 +194,69 @@ namespace ASC.Api.Web.Help.Controllers
 
         public ActionResult ExecuteCommand()
         {
-            return View();
+            return RenderBaseMethod("ExecuteCommand");
         }
 
         public ActionResult Executemethod(string catchall)
         {
-            if (!_actionMap.Contains("executemethod/" + catchall, StringComparer.OrdinalIgnoreCase))
+            if (string.IsNullOrEmpty(catchall))
             {
-                catchall = null;
+                return RenderBaseMethod("Executemethod");
             }
-            return View("Executemethod", (object)catchall);
+            else
+            {
+                return FindMethod(catchall);
+            }
+        }
+
+        public ActionResult CommonMethods(string catchall)
+        {
+            return RenderSectionOrMethod("sharedPluginMethods", "api", catchall);
+        }
+
+        public ActionResult TextMethods(string catchall)
+        {
+            return RenderSectionOrMethod("wordPluginMethods", "api", catchall);
+        }
+        
+        public ActionResult CellMethods(string catchall)
+        {
+            return RenderSectionOrMethod("cellPluginMethods", "api", catchall);
+        }
+        
+        public ActionResult SlideMethods(string catchall)
+        {
+            return RenderSectionOrMethod("slidePluginMethods", "api", catchall);
+        }
+
+        public ActionResult FormMethods(string catchall)
+        {
+            return RenderSectionOrMethod("formPluginMethods", "api", catchall);
         }
 
         public ActionResult getInputHelper()
         {
-            return View();
+            return RenderBaseMethod("getInputHelper");
+        }
+
+        public ActionResult Global()
+        {
+            return View(DocPluginsDocumentation.Instance.GetGlobals());
         }
 
         public ActionResult loadModule()
         {
-            return View();
+            return RenderBaseMethod("loadModule");
         }
 
         public ActionResult resizeWindow()
         {
-            return View();
+            return RenderBaseMethod("resizeWindow");
+        }
+
+        public ActionResult sendToPlugin()
+        {
+            return RenderBaseMethod("sendToPlugin");
         }
 
         public ActionResult GettingStarted()
@@ -288,9 +284,9 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
-        public ActionResult inputHelper()
+        public ActionResult inputHelper(string catchall)
         {
-            return View();
+            return RenderSectionOrMethod("pluginBase", "inputHelper", catchall);
         }
 
         public ActionResult Installation(string catchall)
@@ -307,14 +303,9 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
-        public ActionResult Objects()
+        public ActionResult Plugin(string catchall)
         {
-            return View();
-        }
-
-        public ActionResult Plugin()
-        {
-            return View();
+            return RenderBaseMethod(catchall);
         }
 
         public ActionResult scope()
@@ -366,6 +357,55 @@ namespace ASC.Api.Web.Help.Controllers
             return View("Macros/WritingMacros");
         }
 
+        public ActionResult Debugging()
+        {
+            return View("Macros/Debugging");
+        }
 
+        private ActionResult RenderBaseMethod(string methodName)
+        {
+            return RenderSectionOrMethod("pluginBase", "plugin", methodName);
+        }
+
+        private ActionResult RenderSectionOrMethod(string module, string sectionName, string methodName = null)
+        {
+            if (string.IsNullOrEmpty(methodName))
+            {
+                var section = DocPluginsDocumentation.Instance.GetSection(module, sectionName);
+                if (section == null) return View("sectionnotfound");
+                return View("sectionpartial", section);
+            }
+            else
+            {
+                var method = DocPluginsDocumentation.Instance.GetMethod(module, sectionName, methodName);
+                if (method == null) return View("methodnotfound");
+                return View("methodpartial", method);
+            }
+        }
+
+        private ActionResult FindMethod(string path)
+        {
+            var split = path.Split('/');
+            var module = DocPluginsDocumentation.Instance.GetModuleFromPath(split[0]);
+            var method = split.Length > 1 ? split[1] : null;
+
+            if (string.IsNullOrEmpty(module))
+            {
+                return View("sectionnotfound");
+            }
+
+            if (string.IsNullOrEmpty(method))
+            {
+                var sec = DocPluginsDocumentation.Instance.GetSection(module, "api");
+                if (sec == null) return View("sectionnotfound");
+                return View("sectionpartial", sec);
+            }
+            else
+            {
+                var met = DocPluginsDocumentation.Instance.GetMethod(module, "api", method);
+                if (met == null) return View("methodnotfound");
+                return View("methodpartial", met);
+            }
+        }
     }
 }

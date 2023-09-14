@@ -26,12 +26,17 @@
     <li><a href="#customer">customer</a></li>
     <li><a href="#features">features</a></li>
     <li><a href="#feedback">feedback</a></li>
+    <% if (license)
+       { %>
+    <li><a href="#font">font</a></li>
+    <% } %>
     <li><a href="#forcesave">forcesave</a></li>
     <li><a href="#goback">goback</a></li>
     <li><a href="#help">help</a></li>
     <li><a href="#hideNotes">hideNotes</a></li>
     <li><a href="#hideRightMenu">hideRightMenu</a></li>
     <li><a href="#hideRulers">hideRulers</a></li>
+    <li><a href="#integrationMode">integrationMode</a></li>
     <% if (license)
        { %>
     <li><a href="#layout">layout</a></li>
@@ -85,7 +90,7 @@
         <% if (license)
            { %>
         <tr class="tablerow">
-            <td id="about" class="copy-link">about<span class="required">**</span></td>
+            <td id="about" class="copy-link">about<a href="#requiredDescr2" class="required">**</a></td>
             <td>
                 Defines if the <b>About</b> menu button is displayed or hidden.
                 The default value is <b>true</b>.
@@ -118,11 +123,14 @@
                 </ul>
             </td>
             <td>object</td>
-            <td></td>
+            <td>{
+    "request": true,
+    "label": "Guest"
+}</td>
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/anonymous.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/anonymous.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -140,7 +148,7 @@
                 <div class="note">Please note that in case this setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.customization.autosave</em> parameter.</div>
             </td>
         </tr>
-        <tr class="tablerow">
+        <tr>
             <td id="chat" class="copy-link">chat</td>
             <td>
                 Defines if the <b>Chat</b> menu button is displayed or hidden.
@@ -152,6 +160,11 @@
             <td>true</td>
         </tr>
         <tr class="tablerow">
+            <td colspan="4">
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/chat.png") %>" alt="" />
+            </td>
+        </tr>
+        <tr class="tablerow">
             <td id="commentAuthorOnly" class="copy-link">commentAuthorOnly</td>
             <td>
                 Defines if the user can edit and delete only his comments.
@@ -161,7 +174,7 @@
             <td>boolean</td>
             <td>true</td>
         </tr>
-        <tr class="tablerow">
+        <tr>
             <td id="comments" class="copy-link">comments</td>
             <td>
                 Defines if the <b>Comments</b> menu button is displayed or hidden.
@@ -170,6 +183,11 @@
             </td>
             <td>boolean</td>
             <td>true</td>
+        </tr>
+        <tr class="tablerow">
+            <td colspan="4">
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/comment.png") %>" alt="" />
+            </td>
         </tr>
         <tr>
             <td id="compactHeader" class="copy-link">compactHeader</td>
@@ -182,7 +200,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/compactHeader.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/compactHeader.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -197,7 +215,7 @@
         <tr class="tablerow tablerow-note">
             <td colspan="4">
                 <div class="note">Please note that in case this setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.customization.compactToolbar</em> parameter.</div>
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/compactToolbar.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/compactToolbar.png") %>" alt="" />
             </td>
         </tr>
         <tr class="tablerow">
@@ -210,8 +228,8 @@
             <td>boolean</td>
             <td>false</td>
         </tr>
-        <tr class="tablerow">
-            <td id="customer" class="copy-link">customer<span class="required">*</span></td>
+        <tr>
+            <td id="customer" class="copy-link">customer<a href="#requiredDescr" class="required">*</a></td>
             <td>
                 Contains the information which will be displayed in the editor <b>About</b> section and visible to all the editor users.
                 The object has the following parameters:
@@ -261,6 +279,13 @@
                         <b>example</b>: "John Smith and Co.";
                     </li>
                     <li>
+                        <b>phone</b> - the phone of the company or person who gives access to the editors or the editor authors,
+                        <br />
+                        <b>type</b>: string,
+                        <br />
+                        <b>example</b>: "123456789";
+                    </li>
+                    <li>
                         <b>www</b> - home website address of the above company or person,
                         <br />
                         <b>type</b>: string,
@@ -270,7 +295,21 @@
                 </ul>
             </td>
             <td>object</td>
-            <td></td>
+            <td>{
+    "address": "My City, 123a-45",
+    "info": "Some additional information",
+    "logo": "https://example.com/logo-big.png",
+    "logoDark": "https://example.com/dark-logo-big.png",
+    "mail": "john@example.com",
+    "name": "John Smith and Co.",
+    "phone": "123456789",
+    "www": "example.com"
+}</td>
+        </tr>
+        <tr class="tablerow">
+            <td colspan="4">
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/customer.png") %>" alt="" />
+            </td>
         </tr>
         <tr>
             <td id="features" class="copy-link">features</td>
@@ -297,7 +336,7 @@
                     <% if (license)
                        { %>
                     <li>
-                        <b>spellcheck.change<span class="required">**</span></b> - defines if the spell checker setting will be displayed or not. Spell checker setting is available in all editor types,
+                        <b>spellcheck.change<a href="#requiredDescr2" class="required">**</a></b> - defines if the spell checker setting will be displayed or not. Spell checker setting is available in all editor types,
                         <br />
                         <b>type</b>: boolean,
                         <br />
@@ -307,14 +346,20 @@
                 </ul>
             </td>
             <td>object</td>
-            <td></td>
+            <td>{
+    "spellcheck": {
+        "mode": true<% if (license)
+        { %>,
+        "change": true<% } %>
+    }
+}</td>
         </tr>
         <tr class="tablerow">
             <td colspan="4">
                 <div class="note">Please note that in case <em>spellcheck</em> setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.customization.features.spellcheck</em> parameter.</div>
             </td>
         </tr>
-        <tr class="tablerow">
+        <tr>
             <td id="feedback" class="copy-link">feedback</td>
             <td>
                 Defines settings for the <b>Feedback &amp; Support</b> menu button.
@@ -341,6 +386,40 @@
             <td>boolean or object</td>
             <td>true</td>
         </tr>
+        <tr class="tablerow">
+            <td colspan="4">
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/feedback.png") %>" alt="" />
+            </td>
+        </tr>
+        <% if (license)
+           { %>
+        <tr class="tablerow">
+            <td id="font" class="copy-link">font<a href="#requiredDescr2" class="required">**</a></td>
+            <td>
+                Defines the font for the interface elements (buttons, tabs, etc.):
+                <ul>
+                    <li>
+                        <b>name</b> - the font name,
+                        <br />
+                        <b>type</b>: string,
+                        <br />
+                        <b>example</b>: "Arial";
+                    </li>
+                    <li>
+                        <b>size</b> - the font size,
+                        <br />
+                        <b>type</b>: string,
+                        <br />
+                        <b>example</b>: "11px".
+                    </li>
+                </ul>
+            </td>
+            <td>object</td>
+            <td>{
+    "name": "Arial", "size": "11px"
+}</td>
+        </tr>
+        <% } %>
         <tr>
             <td id="forcesave" class="copy-link">forcesave</td>
             <td>
@@ -398,7 +477,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/goback.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/goback.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -412,7 +491,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/help.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/help.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -431,7 +510,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/hideNotes.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/hideNotes.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -459,13 +538,22 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/hideRulers.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/hideRulers.png") %>" alt="" />
             </td>
+        </tr>
+        <tr class="tablerow">
+            <td id="integrationMode" class="copy-link">integrationMode</td>
+            <td>
+                Defines the mode of embedding editors into the web page.
+                The <b>embed</b> value disables scrolling to the editor frame when it is loaded as the focus is not captured.
+            </td>
+            <td>string</td>
+            <td>embed</td>
         </tr>
         <% if (license)
            { %>
         <tr class="tablerow">
-            <td id="layout" class="copy-link">layout<span class="required">**</span></td>
+            <td id="layout" class="copy-link">layout<a href="#requiredDescr2" class="required">**</a></td>
             <td>
                 Defines the parameters that the user can use to hide the interface elements but not to disable features completely
                 (for example, if this functionality is available from other elements such as context menu, or via hotkeys):
@@ -495,6 +583,17 @@
                         The default value is <b>true</b>,
                         <br />
                         <b>type</b>: object or boolean,
+                        <br />
+                        <b>example</b>: true;
+                    </li>
+                    <li>
+                        <b>leftMenu.mode</b> - defines the initial value of the left panel visibility - displayed or hidden.
+                        It is used for the <b>Left panel</b> menu option on the <b>View</b> tab.
+                        The default value is <b>true</b>,
+                        <br />
+                        <b>type</b>: boolean,
+                        <br />
+                        <b>example</b>: true;
                     </li>
                     <li>
                         <b>leftMenu.navigation</b> - defines if the <b>Navigation</b> button is displayed or hidden. The default value is <b>true</b>.
@@ -513,7 +612,17 @@
                         <b>example</b>: true;
                     </li>
                     <li>
-                        <b>rightMenu</b> - defines if the right menu is displayed or hidden. The default value is <b>true</b>,
+                        <b>rightMenu</b> - defines the right menu settings. If this parameter is a boolean value, then it specifies whether the right menu will be displayed or hidden.
+                        The default value is <b>true</b>,
+                        <br />
+                        <b>type</b>: object or boolean,
+                        <br />
+                        <b>example</b>: true;
+                    </li>
+                    <li>
+                        <b>rightMenu.mode</b> - defines the initial value of the right panel visibility - displayed or hidden.
+                        It is used for the <b>Right panel</b> menu option on the <b>View</b> tab.
+                        The default value is <b>true</b>,
                         <br />
                         <b>type</b>: boolean,
                         <br />
@@ -525,6 +634,8 @@
                         The default value is <b>true</b>,
                         <br />
                         <b>type</b>: object or boolean,
+                        <br />
+                        <b>example</b>: true;
                     </li>
                     <li>
                         <b>statusBar.actionStatus</b> - defines if an action status is displayed or hidden. The default value is <b>true</b>,
@@ -554,10 +665,20 @@
                         If this parameter is a boolean value, then it specifies whether the toolbar will be displayed or hidden.
                         The default value is <b>true</b>,
                         <br />
-                        <b>type</b>: object or boolean;
+                        <b>type</b>: object or boolean,
+                        <br />
+                        <b>example</b>: true;
                     </li>
                     <li>
                         <b>toolbar.collaboration</b> - defines if the <b>Collaboration</b> tab is displayed or hidden.
+                        The default value is <b>true</b>,
+                        <br />
+                        <b>type</b>: boolean,
+                        <br />
+                        <b>example</b>: true;
+                    </li>
+                    <li>
+                        <b>toolbar.draw</b> - defines if the <b>Draw</b> tab is displayed or hidden.
                         The default value is <b>true</b>,
                         <br />
                         <b>type</b>: boolean,
@@ -669,9 +790,49 @@
                 </ul>
             </td>
             <td>object</td>
+            <td>{
+    "header": {
+        "save": true,
+        "users": true
+    },
+    "leftMenu": {
+        "mode": true,
+        "navigation": true,
+        "spellcheck": true
+    },
+    "rightMenu": {
+        "mode": true
+    },
+    "statusBar": {
+        "actionStatus": true,
+        "docLang": true,
+        "textLang": true
+    },
+    "toolbar": {
+        "collaboration": true,
+        "draw": true,
+        "file": {
+            "close": true,
+            "info": true,
+            "save": true,
+            "settings": true
+        },
+        "home": {
+            "mailmerge": true
+        },
+        "layout": true,
+        "plugins": true,
+        "protect": true,
+        "references": true,
+        "save": true,
+        "view": {
+            "navigation": true
+        }
+    }
+}</td>
         </tr>
         <tr>
-            <td id="leftMenu" class="copy-link">leftMenu<span class="required">**</span></td>
+            <td id="leftMenu" class="copy-link">leftMenu<a href="#requiredDescr2" class="required">**</a></td>
             <td>
                 Defines if the left menu panel is displayed or hidden.
                 The default value is <b>true</b>.
@@ -685,7 +846,7 @@
             </td>
         </tr>
         <tr class="tablerow">
-            <td id="loaderLogo" class="copy-link">loaderLogo<span class="required">**</span></td>
+            <td id="loaderLogo" class="copy-link">loaderLogo<a href="#requiredDescr2" class="required">**</a></td>
             <td>
                 Defines the path to the image logo which will be displayed while the document is being loaded (there are no special recommendations for this file, but it would be better if it were in .png format with transparent background).
                 The image will be proportionally resized to the height of 160 pixels when displayed in the editors.
@@ -694,14 +855,14 @@
             <td>"https://example.com/loader-logo.png"</td>
         </tr>
         <tr class="tablerow">
-            <td id="loaderName" class="copy-link">loaderName<span class="required">**</span></td>
+            <td id="loaderName" class="copy-link">loaderName<a href="#requiredDescr2" class="required">**</a></td>
             <td>Defines the text which will be displayed while the document is being loaded.</td>
             <td>string</td>
             <td>"The document is loading, please wait..."</td>
         </tr>
         <% } %>
         <tr class="tablerow">
-            <td id="logo" class="copy-link">logo<span class="required">*</span></td>
+            <td id="logo" class="copy-link">logo<a href="#requiredDescr" class="required">*</a></td>
             <td>
                 Changes the image file at the top left corner of the editor header.
                 The recommended image height is 20 pixels.
@@ -743,13 +904,17 @@
                 </ul>
             </td>
             <td>object</td>
-            <td></td>
+            <td>{
+    "image": "https://example.com/logo.png",
+    "imageDark": "https://example.com/dark-logo.png",
+    "url": "https://example.com"
+}</td>
         </tr>
         <tr class="tablerow">
             <td id="macros" class="copy-link">macros</td>
             <td>
-                Defines if document macros will be run.
-                The default value is <b>true</b>.
+                Defines if document macros will be automatically run when the editor opens.
+                The default value is <b>true</b>. The <b>false</b> value hides the <a href="#macrosMode">macros settings</a> from the user.
             </td>
             <td>boolean</td>
             <td>true</td>
@@ -757,12 +922,12 @@
         <tr>
             <td id="macrosMode" class="copy-link">macrosMode</td>
             <td>
-                Defines the macro run mode.
+                Defines the macros run mode when autostart is enabled.
                 Can take the following values:
                 <ul>
-                    <li><b>disable</b> - don't run at all;</li>
+                    <li><b>disable</b> - don't run macros at all;</li>
                     <li><b>enable</b> - run all macros automatically;</li>
-                    <li><b>warn</b> - warn about macros and ask permission to run.</li>
+                    <li><b>warn</b> - warn about macros and ask permission to run them.</li>
                 </ul>
                 The default value is <b>warn</b>.
             </td>
@@ -788,7 +953,7 @@
         <tr class="tablerow tablerow-note">
             <td colspan="4">
                 <div class="note">Please note that it will only be available for the comments if the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event is set.</div>
-                <img src="<%= Url.Content("~/content/img/editor/mentionShare.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/mentionShare.png") %>" alt="" />
             </td>
         </tr>
         <tr class="tablerow">
@@ -856,7 +1021,13 @@
                 </ul>
             </td>
             <td>object</td>
-            <td></td>
+            <td>{
+    "hideReviewDisplay": false,
+    "showReviewChanges": false,
+    "reviewDisplay": "original",
+    "trackChanges": true,
+    "hoverMode": false
+}</td>
         </tr>
         <tr class="tablerow tablerow-note">
             <td colspan="4">
@@ -865,7 +1036,7 @@
                     Please use the <em>review</em> parameter instead.
                 </div>
                 <div class="note">Please note that in case this setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the <em>editorConfig.customization.review.hoverMode</em> and the <em>editorConfig.customization.review.reviewDisplay</em> parameters.</div>
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/reviewDisplay.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/reviewDisplay.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -893,7 +1064,7 @@
         <% if (license)
            { %>
         <tr>
-            <td id="rightMenu" class="copy-link">rightMenu<span class="required">**</span></td>
+            <td id="rightMenu" class="copy-link">rightMenu<a href="#requiredDescr2" class="required">**</a></td>
             <td>
                 Defines if the right menu panel is displayed or hidden.
                 The default value is <b>true</b>.
@@ -940,7 +1111,7 @@
         <% if (license)
            { %>
         <tr>
-            <td id="statusBar" class="copy-link">statusBar<span class="required">**</span></td>
+            <td id="statusBar" class="copy-link">statusBar<a href="#requiredDescr2" class="required">**</a></td>
             <td>
                 Defines if the status bar is displayed or hidden.
                 The default value is <b>true</b>.
@@ -972,7 +1143,7 @@
         <% if (license)
             { %>
         <tr>
-            <td id="toolbar" class="copy-link">toolbar<span class="required">**</span></td>
+            <td id="toolbar" class="copy-link">toolbar<a href="#requiredDescr2" class="required">**</a></td>
             <td>
                 Defines if the top toolbar is displayed or hidden.
                 The default value is <b>true</b>.
@@ -998,7 +1169,7 @@
         <tr class="tablerow tablerow-note">
             <td colspan="4">
                 <div class="note">Please note that this setting is used when the <a href="<%= Url.Action("config/editor/customization") %>#compactHeader">compactHeader</a> and <a href="<%= Url.Action("config/editor/customization") %>#toolbarNoTabs">toolbarNoTabs</a> parameters are set to <b>true</b>.</div>
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/toolbarHideFileName.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/toolbarHideFileName.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -1012,7 +1183,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img width="832px" src="<%= Url.Content("~/content/img/editor/toolbarNoTabs.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/toolbarNoTabs.png") %>" alt="" />
             </td>
         </tr>
         <tr>
@@ -1035,13 +1206,15 @@
                 Defines the editor theme settings.
                 It can be set in two ways:
                 <ul>
-                    <li><b>theme id</b> - the user sets the theme parameter by its id (<b>theme-light</b>, <b>theme-classic-light</b>, <b>theme-dark</b>),</li>
+                    <li><b>theme id</b> - the user sets the theme parameter by its id (<b>theme-light</b>, <b>theme-classic-light</b>, <b>theme-dark</b>, <b>theme-contrast-dark</b>),</li>
                     <li>
                         <b>default theme</b> - the default dark or light theme value will be set (<b>default-dark</b>, <b>default-light</b>).
                         The default light theme is <b>theme-classic-light</b>.
                     </li>
                 </ul>
                 The first option has higher priority.
+                <p></p>
+                Apart from the available editor themes, the user can also customize their own <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-change-theme.aspx" target="_blank">color themes</a> for the application interface.
             </td>
             <td>string</td>
             <td>theme-dark</td>
@@ -1089,16 +1262,16 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/customization.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/customization.png") %>" alt="" />
             </td>
         </tr>
     </tbody>
 </table>
 <div class="mobile-content"></div>
-<span class="required-descr"><span class="required">*</span><em> - available for editing only for ONLYOFFICE Developer Edition</em></span>
+<span id="requiredDescr" class="required-descr"><span class="required">*</span><em> - available for editing only for ONLYOFFICE Developer Edition</em></span>
 <% if (license)
    { %>
-<span class="required-descr"><span class="required">**</span><em> - extended white label option for Developer Edition</em></span>
+<span id="requiredDescr2" class="required-descr"><span class="required">**</span><em> - extended white label option for Developer Edition</em></span>
 <% } %>
 
 <div class="header-gray">Example</div>
@@ -1123,20 +1296,26 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
                 "logoDark": "https://example.com/dark-logo-big.png",
                 "mail": "john@example.com",
                 "name": "John Smith and Co.",
+                "phone": "123456789",
                 "www": "example.com"
             },
             "features": {
                 "spellcheck": {
-                    "mode": true,
-                <% if (license)
-                    { %>    "change": true
-                <% } %>}
+                    "mode": true<% if (license)
+                    { %>,
+                    "change": true<% } %>
+                }
             },
             "feedback": {
                 "url": "https://example.com",
                 "visible": true
             },
-            "forcesave": false,
+            <% if (license)
+               { %>"font": {
+                "name": "Arial",
+                "size": "11px"
+            },
+            <% } %>"forcesave": false,
             "goback": {
                 "blank": true,
                 "requestClose": false,
@@ -1147,6 +1326,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
             "hideNotes": false,
             "hideRightMenu": false,
             "hideRulers": false,
+            "integrationMode": "embed",
             <% if (license)
                { %>"layout": {
                 "header": {
@@ -1154,10 +1334,13 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
                     "users": true
                 },
                 "leftMenu": {
+                    "mode": true,
                     "navigation": true,
                     "spellcheck": true
                 },
-                "rightMenu": true,
+                "rightMenu": {
+                    "mode": true
+                },
                 "statusBar": {
                     "actionStatus": true,
                     "docLang": true,
@@ -1165,6 +1348,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
                 },
                 "toolbar": {
                     "collaboration": true,
+                    "draw": true,
                     "file": {
                         "close": true,
                         "info": true,
@@ -1189,7 +1373,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
             <% } %>"logo": {
                 "image": "https://example.com/logo.png",
                 "imageDark": "https://example.com/dark-logo.png",
-                "url": "https://www.onlyoffice.com"
+                "url": "https://example.com"
             },
             "macros": true,
             "macrosMode": "warn",

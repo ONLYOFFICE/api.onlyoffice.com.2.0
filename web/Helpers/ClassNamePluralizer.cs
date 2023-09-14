@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -31,7 +31,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 using System.Web.Caching;
-using ASC.Api.Collections;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace ASC.Api.Web.Help.Helpers
 {
@@ -57,6 +58,8 @@ namespace ASC.Api.Web.Help.Helpers
 
         public bool IsCollection { get; set; }
 
+        public TypeDescription() { }
+
         public TypeDescription(string description, string example)
         {
             Description = description;
@@ -77,11 +80,11 @@ namespace ASC.Api.Web.Help.Helpers
     [DataContract(Namespace = "")]
     public class TypeDescriptor
     {
-        internal const string SystemNullable = "System.Nullable`1[";
-        internal const string SystemIEnumerable = "System.Collections.Generic.IEnumerable`1[";
+        internal const string SystemNullable = "System.Nullable{";
+        internal const string SystemIEnumerable = "System.Collections.Generic.IEnumerable{";
 
         [DataMember(Name = "Names")]
-        public ItemDictionary<string, TypeDescription> Names = new ItemDictionary<string, TypeDescription>();
+        public Dictionary<string, TypeDescription> Names = new Dictionary<string, TypeDescription>();
 
         public TypeDescriptor()
         {
@@ -119,34 +122,55 @@ namespace ASC.Api.Web.Help.Helpers
         }
     }
 
-    public static class ClassNamePluralizer
+    public class ClassNamePluralizer
     {
-        private static TypeDescriptor _descriptor;
+        private TypeDescriptor _descriptor;
 
-        public static void LoadClassNames(Stream data)
+        public void LoadClassNames(Stream data)
         {
-            var serializer = new DataContractSerializer(typeof(TypeDescriptor));
-            _descriptor = serializer.ReadObject(data) as TypeDescriptor;
+            var xdoc = XDocument.Load(data);
+            var descriptor = new TypeDescriptor()
+            {
+                Names = new Dictionary<string, TypeDescription>()
+            };
+
+            var serializer = new XmlSerializer(typeof(TypeDescription));
+            foreach (XElement node in xdoc.Root.Element("Names").Nodes())
+            {
+                var key = node.Element("key").Value;
+                var value = node.Element("value");
+                var description = new TypeDescription()
+                {
+                    Description = value.Element(nameof(TypeDescription.Description))?.Value,
+                    Example = value.Element(nameof(TypeDescription.Example))?.Value,
+                    ExampleJson = value.Element(nameof(TypeDescription.ExampleJson))?.Value,
+                    Note = value.Element(nameof(TypeDescription.Note))?.Value
+                };
+
+                descriptor.Names.Add(key, description);
+            }
+
+            _descriptor = descriptor;
         }
 
-        public static bool IsOptional(string typeName)
+        public bool IsOptional(string typeName)
         {
             if (!string.IsNullOrEmpty(typeName))
                 return typeName.StartsWith(TypeDescriptor.SystemNullable);
             return false;
         }
 
-        public static bool IsCollection(string typeName)
+        public bool IsCollection(string typeName)
         {
             if (!string.IsNullOrEmpty(typeName))
                 return typeName.StartsWith(TypeDescriptor.SystemIEnumerable);
             return false;
         }
 
-        public static TypeDescription ToHumanName(string typeName, Type type = null)
+        public TypeDescription ToHumanName(string typeName)
         {
             var desc = _descriptor == null ? new TypeDescription(typeName, "") : _descriptor.Get(typeName);
-            if (type != null && desc.JsonParam == null && !string.IsNullOrEmpty(desc.ExampleJson))
+            if (desc.JsonParam == null && !string.IsNullOrEmpty(desc.ExampleJson))
             {
                 if (desc.ExampleJson.StartsWith("\"") && desc.ExampleJson.EndsWith("\""))
                 {
@@ -158,14 +182,13 @@ namespace ASC.Api.Web.Help.Helpers
                 }
                 else
                 {
-                    desc.JsonParam = Newtonsoft.Json.JsonConvert.DeserializeObject(desc.ExampleJson, type);
+                    desc.JsonParam = Newtonsoft.Json.JsonConvert.DeserializeObject(desc.ExampleJson);
                 }
             }
-
             return desc;
         }
 
-        public static void LoadAndWatch(string path)
+        public void LoadAndWatch(string path)
         {
             if (!string.IsNullOrEmpty(path))
             {
@@ -178,7 +201,7 @@ namespace ASC.Api.Web.Help.Helpers
             }
         }
 
-        private static void OnRemove(string key, object value, CacheItemRemovedReason reason)
+        private void OnRemove(string key, object value, CacheItemRemovedReason reason)
         {
             if (reason == CacheItemRemovedReason.DependencyChanged)
             {

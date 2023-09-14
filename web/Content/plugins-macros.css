@@ -97,6 +97,36 @@
     background-repeat: no-repeat;
 }
 
+.import-csv{
+    background-image: url("img/macros/import-csv.svg");
+    background-repeat: no-repeat;
+}
+
+.recalculate-values {
+    background-image: url("img/macros/recalculate-values.svg");
+    background-repeat: no-repeat;
+}
+
+.replace-shapes-with-charts {
+    background-image: url("img/macros/replace-shapes-with-charts.svg");
+    background-repeat: no-repeat;
+}
+
+.unhide_all_rows {
+    background-image: url("img/macros/unhide-all-rows-and-columns.svg");
+    background-repeat: no-repeat;
+}
+
+.assign_unique_id {
+    background-image: url("img/macros/assign_unique_id.svg");
+    background-repeat: no-repeat;
+}
+
+.complete_address_information {
+    background-image: url("img/macros/complete_address_information.svg");
+    background-repeat: no-repeat;
+}
+
 .example-plug-img {
     height: 120px;
     margin: auto;
@@ -219,11 +249,6 @@
     background-repeat: no-repeat;
 }
 
-.num2word {
-    background-image: url("img/plugin/num2word.svg");
-    background-repeat: no-repeat;
-}
-
 .replace-on-start {
     background-image: url("img/plugin/replace-start.svg");
     background-repeat: no-repeat;
@@ -271,11 +296,6 @@
 
 .example-add {
     background-image: url("img/plugin/example.svg");
-    background-repeat: no-repeat;
-}
-
-.cbr {
-    background-image: url("img/plugin/cbr.svg");
     background-repeat: no-repeat;
 }
 

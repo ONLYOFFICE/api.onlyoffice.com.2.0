@@ -49,11 +49,12 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/plugins.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/plugins.png") %>" alt="" />
             </td>
         </tr>
     </tbody>
 </table>
+<div class="mobile-content"></div>
 
 <div class="header-gray">Example</div>
 <pre>

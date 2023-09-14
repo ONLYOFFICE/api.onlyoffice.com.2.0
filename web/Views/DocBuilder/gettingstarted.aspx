@@ -19,12 +19,7 @@
     <p><b>ONLYOFFICE Document Builder</b> is a C++ library used to create and edit Office Open XML format files (documents, spreadsheets and presentations) and save them to DOCX, XSLX, PPTX and PDF formats.</p>
     <p>There are two ways to use <b>ONLYOFFICE Document Builder</b> in your own project:</p>
     <ol>
-        <li><p>Integrate this library into your own application. Use the buttons below to download these libraries:</p>
-            <ul class="list-buttons">
-                <li><a class="button" href="https://download.onlyoffice.com/install/desktop/docbuilder/documentbuilder-x64.tar.gz">Linux x64</a></li>
-                <li><a class="button" href="https://download.onlyoffice.com/install/desktop/docbuilder/documentbuilder-x64.zip">Windows x64</a></li>
-                <li><a class="button" href="https://download.onlyoffice.com/install/desktop/docbuilder/documentbuilder-x86.zip">Windows x86</a></li>
-            </ul>
+        <li><p>Integrate this library into your own application. You can download <b>ONLYOFFICE Document Builder</b> <a target="blank" href="https://www.onlyoffice.com/download-builder.aspx?utm_source=api">here</a>.</p>
             <p>After you download and unpack the files, the library is ready for <a href="<%= Url.Action("integrationapi/cdocbuilder") %>">integration</a>.</p>
         </li>
         <li>Use the provided executive binary wrapper for an easy start. The latest versions of executable files can always be downloaded <a target="_blank" href="https://www.onlyoffice.com/document-builder.aspx">here</a>. After the file download, run it and see the examples of how <b>ONLYOFFICE Document Builder</b> can be used without the need to write any application.</li>
@@ -37,8 +32,8 @@ sudo apt-get install fonts-liberation ttf-mscorefonts-installer fonts-crosextra-
         <pre>sudo yum install glibc libcurl libxml2 dejavu-lgc-sans-fonts dejavu-lgc-sans-mono-fonts dejavu-lgc-serif-fonts dejavu-sans-fonts dejavu-sans-mono-fonts dejavu-serif-fonts libreoffice-opensymbol-fonts</pre>
     </div>
     <p>To launch <b>ONLYOFFICE Document Builder</b> run the following command:</p>
-    <pre>documentbuilder mydocument.docbuilder</pre>
-    <p>Here <b>documentbuilder</b> is the name of <b>ONLYOFFICE Document Builder</b> (together with the path, if the command is run from the folder different from where the executive is placed) executive file (it will look like <b>docbuilder.exe</b> for Windows version, <b>documentbuilder</b> for Linux and Mac OS), and the <b>mydocument.docbuilder</b> parameter is the name (again, together with the path, if needed) of the script file that will form the document contents.</p>
+    <pre>docbuilder mydocument.docbuilder</pre>
+    <p>Here <b>docbuilder</b> is the name of <b>ONLYOFFICE Document Builder</b> (together with the path, if the command is run from the folder different from where the executive is placed) executive file (it will look like <b>docbuilder.exe</b> for Windows version, <b>documentbuilder</b> for Linux and Mac OS), and the <b>mydocument.docbuilder</b> parameter is the name (again, together with the path, if needed) of the script file that will form the document contents.</p>
     <p>Read the <a href="<%= Url.Action("integrationapi/cdocbuilder") %>">Integration</a> section for more information on how to integrate <b>ONLYOFFICE Document Builder</b> into your own application.</p>
     <h2>Where to start?</h2>
     <p>If you are not sure where to start, you can use the list of most common tasks below to find where to go and start creating your document:</p>

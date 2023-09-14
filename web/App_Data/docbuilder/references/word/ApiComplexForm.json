@@ -1,0 +1,471 @@
+{
+  "methods": {
+    "GetClassType": {
+      "memberof": "ApiComplexForm",
+      "name": "GetClassType",
+      "description": "<p>Returns a type of the ApiFormBase class.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "\"form\""
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#GetClassType}"
+    },
+    "GetFormType": {
+      "memberof": "ApiComplexForm",
+      "name": "GetFormType",
+      "description": "<p>Returns a type of the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "FormType"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#GetFormType}"
+    },
+    "GetFormKey": {
+      "memberof": "ApiComplexForm",
+      "name": "GetFormKey",
+      "description": "<p>Returns the current form key.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#GetFormKey}"
+    },
+    "SetFormKey": {
+      "memberof": "ApiComplexForm",
+      "name": "SetFormKey",
+      "description": "<p>Sets a key to the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#SetFormKey}",
+      "params": [
+        {
+          "type": "string",
+          "name": "sKey",
+          "description": "<p>Form key.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetTipText": {
+      "memberof": "ApiComplexForm",
+      "name": "GetTipText",
+      "description": "<p>Returns the tip text of the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#GetTipText}"
+    },
+    "SetTipText": {
+      "memberof": "ApiComplexForm",
+      "name": "SetTipText",
+      "description": "<p>Sets the tip text to the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#SetTipText}",
+      "params": [
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>Tip text.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "IsRequired": {
+      "memberof": "ApiComplexForm",
+      "name": "IsRequired",
+      "description": "<p>Checks if the current form is required.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#IsRequired}"
+    },
+    "SetRequired": {
+      "memberof": "ApiComplexForm",
+      "name": "SetRequired",
+      "description": "<p>Specifies if the current form should be required.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#SetRequired}",
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bRequired",
+          "description": "<p>Defines if the current form is required (true) or not (false).</p>",
+          "optional": false
+        }
+      ]
+    },
+    "IsFixed": {
+      "memberof": "ApiComplexForm",
+      "name": "IsFixed",
+      "description": "<p>Checks if the current form is fixed size.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#IsFixed}"
+    },
+    "ToFixed": {
+      "memberof": "ApiComplexForm",
+      "name": "ToFixed",
+      "description": "<p>Converts the current form to a fixed size form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#ToFixed}",
+      "params": [
+        {
+          "type": "twips",
+          "name": "nWidth",
+          "description": "<p>The wrapper shape width measured in twentieths of a point (1/1440 of an inch).</p>",
+          "optional": false
+        },
+        {
+          "type": "twips",
+          "name": "nHeight",
+          "description": "<p>The wrapper shape height measured in twentieths of a point (1/1440 of an inch).</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ToInline": {
+      "memberof": "ApiComplexForm",
+      "name": "ToInline",
+      "description": "<p>Converts the current form to an inline form.\n<em>Picture form can't be converted to an inline form, it's always a fixed size object.</em></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#ToInline}"
+    },
+    "SetBorderColor": {
+      "memberof": "ApiComplexForm",
+      "name": "SetBorderColor",
+      "description": "<p>Sets the border color to the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#SetBorderColor}",
+      "params": [
+        {
+          "type": "byte",
+          "name": "r",
+          "description": "<p>Red color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "byte",
+          "name": "g",
+          "description": "<p>Green color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "byte",
+          "name": "b",
+          "description": "<p>Blue color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bNone",
+          "description": "<p>Defines that border color will not be set.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetBackgroundColor": {
+      "memberof": "ApiComplexForm",
+      "name": "SetBackgroundColor",
+      "description": "<p>Sets the background color to the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#SetBackgroundColor}",
+      "params": [
+        {
+          "type": "byte",
+          "name": "r",
+          "description": "<p>Red color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "byte",
+          "name": "g",
+          "description": "<p>Green color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "byte",
+          "name": "b",
+          "description": "<p>Blue color component value.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bNone",
+          "description": "<p>Defines that background color will not be set.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetText": {
+      "memberof": "ApiComplexForm",
+      "name": "GetText",
+      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#GetText}"
+    },
+    "Clear": {
+      "memberof": "ApiComplexForm",
+      "name": "Clear",
+      "description": "<p>Clears the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#Clear}"
+    },
+    "GetWrapperShape": {
+      "memberof": "ApiComplexForm",
+      "name": "GetWrapperShape",
+      "description": "<p>Returns a shape in which the form is placed to control the position and size of the fixed size form frame.\nThe null value will be returned for the inline forms.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiShape"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#GetWrapperShape}"
+    },
+    "SetPlaceholderText": {
+      "memberof": "ApiComplexForm",
+      "name": "SetPlaceholderText",
+      "description": "<p>Sets the placeholder text to the current form.\n<em>Can't be set to checkbox or radio button.</em></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#SetPlaceholderText}",
+      "params": [
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>The text that will be set to the current form.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetTextPr": {
+      "memberof": "ApiComplexForm",
+      "name": "SetTextPr",
+      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#SetTextPr}",
+      "params": [
+        {
+          "type": "ApiTextPr",
+          "name": "oTextPr",
+          "description": "<p>The text properties that will be set to the current form.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetTextPr": {
+      "memberof": "ApiComplexForm",
+      "name": "GetTextPr",
+      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiTextPr"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
+    },
+    "Copy": {
+      "memberof": "ApiComplexForm",
+      "name": "Copy",
+      "description": "<p>Copies the current form (copies with the shape if it exists).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiForm"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#Copy}"
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Class representing a complex field.\n\t * @param oSdt\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @extends {ApiFormBase}\n\t */",
+  "description": "<p>Class representing a complex field.</p>",
+  "scope": "global",
+  "params": []
+}

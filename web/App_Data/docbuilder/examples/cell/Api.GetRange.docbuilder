@@ -1,0 +1,7 @@
+builder.CreateFile("xlsx");
+var oWorksheet = Api.GetActiveSheet();
+var oRange = Api.GetRange("A1:C1");
+oRange.SetFillColor(Api.CreateColorFromRGB(255, 213, 191));
+oWorksheet.GetRange("A3").SetValue("The color was set to the background of cells A1:C1.");
+builder.SaveFile("xlsx", "GetRange.xlsx");
+builder.CloseFile();

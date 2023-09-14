@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 
 <h1>
-    <a class="up" href="<%= Url.Action("example") %>"></a>
     <span class="hdr">Plugin example</span>
 </h1>
 
@@ -69,14 +68,6 @@
                 <p>Helps the user to input text quickly.</p>
             </div>
         <p class="block_more plug_more"><a href="<%= Url.Action("example/autocomplete") %>">More</a></p>
-    </li>
-    <li class="plugin-example" data-types="spreadsheet,non-visual,non-system">
-        <a href="<%= Url.Action("example/cbr") %>"><div class="example-plug-img cbr"></div></a>
-            <div class="plugin-info">
-                <p class="name-example-plugin"><a href="<%= Url.Action("example/cbr") %>">CBR</a></p>
-                <p>Connects Fixer API for inserting foreign exchange (forex) rates into the document.</p>
-            </div>
-        <p class="block_more plug_more"><a href="<%= Url.Action("example/cbr") %>">More</a></p>
     </li>
     <li class="plugin-example" data-types="text-editor,spreadsheet,presentation,visual,non-system,ole-object,other">
         <a href="<%= Url.Action("example/chess") %>"><div class="example-plug-img chess"></div></a>
@@ -165,14 +156,6 @@
                 <p>Moves the text cursor to the document start/end.</p>
             </div>
         <p class="block_more plug_more"><a href="<%= Url.Action("example/movecursor") %>">More</a></p>
-    </li>
-    <li class="plugin-example" data-types="spreadsheet,non-visual,non-system">
-        <a href="<%= Url.Action("example/num2word") %>"><div class="example-plug-img num2word"></div></a>
-            <div class="plugin-info">
-                <p class="name-example-plugin"><a href="<%= Url.Action("example/num2word") %>">Num2Word</a></p>
-                <p>Converts a number to a word (a number written as a string).</p>
-            </div>
-        <p class="block_more plug_more"><a href="<%= Url.Action("example/num2word") %>">More</a></p>
     </li>
     <li class="plugin-example" data-types="text-editor,spreadsheet,presentation,visual,non-system">
         <a href="<%= Url.Action("example/ocr") %>"><div class="example-plug-img ocr"></div></a>

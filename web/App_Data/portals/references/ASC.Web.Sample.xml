@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Web.Sample</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.Web.Sample.Api.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Sample.Database.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Sample.UserControls.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Sample.Elements.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Sample.Styles.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Sample.DefaultPage.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Sample.Help.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Sample.Masters.BasicTemplate.CreateButtonContent">
+            <summary>
+            CreateButtonContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Sample.Masters.BasicTemplate.SideNavigation">
+            <summary>
+            SideNavigation control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:ASC.Web.Sample.Masters.BasicTemplate.BTPageContent">
+            <summary>
+            BTPageContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="P:ASC.Web.Sample.Masters.BasicTemplate.Master">
+            <summary>
+            Master property.
+            </summary>
+            <remarks>
+            Auto-generated property.
+            </remarks>
+        </member>
+        <member name="T:ASC.Web.Sample.Resources.SampleResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Api">
+            <summary>
+              Looks up a localized string similar to Api.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Controls">
+            <summary>
+              Looks up a localized string similar to Controls.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.CreateModule">
+            <summary>
+              Looks up a localized string similar to Create Module.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Database">
+            <summary>
+              Looks up a localized string similar to Database.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Elements">
+            <summary>
+              Looks up a localized string similar to Elements.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.ExtendedProductDescription">
+            <summary>
+              Looks up a localized string similar to Extended Sample Product Description.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.ForkGitHub">
+            <summary>
+              Looks up a localized string similar to Fork me on GitHub.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Help">
+            <summary>
+              Looks up a localized string similar to Help.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.MoreActions">
+            <summary>
+              Looks up a localized string similar to More actions.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.NavigateTo">
+            <summary>
+              Looks up a localized string similar to Navigate To.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.ProductAdminOpportunities">
+            <summary>
+              Looks up a localized string similar to Do everything|Create items|Edit items|Delete items.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.ProductDescription">
+            <summary>
+              Looks up a localized string similar to Sample Product Description.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.ProductName">
+            <summary>
+              Looks up a localized string similar to Sample.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.ProductUserOpportunities">
+            <summary>
+              Looks up a localized string similar to Do not everything|View Items.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Search">
+            <summary>
+              Looks up a localized string similar to Search.
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Sample.Resources.SampleResource.Styles">
+            <summary>
+              Looks up a localized string similar to Styles.
+            </summary>
+        </member>
+    </members>
+</doc>

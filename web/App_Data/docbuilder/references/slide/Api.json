@@ -28,8 +28,7 @@
       },
       "returns": [
         [
-          "ApiMaster",
-          "null"
+          "ApiMaster"
         ]
       ],
       "see": null,
@@ -334,6 +333,55 @@
         }
       ]
     },
+    "CreateOleObject": {
+      "memberof": "Api",
+      "name": "CreateOleObject",
+      "description": "<p>Creates an OLE object with the parameters specified.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiOleObject"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sImageSrc",
+          "description": "<p>The image source where the image to be inserted should be taken from (currently, only internet URL or Base64 encoded images are supported).</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nWidth",
+          "description": "<p>The OLE object width in English measure units.</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nHeight",
+          "description": "<p>The OLE object height in English measure units.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sData",
+          "description": "<p>The OLE object string data.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sAppId",
+          "description": "<p>The application ID associated with the current OLE object.</p>",
+          "optional": false
+        }
+      ]
+    },
     "CreateShape": {
       "memberof": "Api",
       "name": "CreateShape",
@@ -447,6 +495,12 @@
           "name": "nStyleIndex",
           "description": "<p>The chart color style index (can be <b>1 - 48</b>, as described in OOXML specification).</p>",
           "optional": false
+        },
+        {
+          "type": "Array.<NumFormat> | Array.<String>",
+          "name": "aNumFormats",
+          "description": "<p>Numeric formats which will be applied to the series (can be custom formats).\nThe default numeric format is &quot;General&quot;.</p>",
+          "optional": false
         }
       ]
     },
@@ -514,8 +568,167 @@
       "returns": [],
       "see": null,
       "inherits": null
+    },
+    "CreateWordArt": {
+      "memberof": "Api",
+      "name": "CreateWordArt",
+      "description": "<p>Creates a Text Art object with the parameters specified.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiDrawing"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiTextPr",
+          "name": "oTextPr",
+          "description": "<p>The text properties.</p>",
+          "optional": true,
+          "defaultValue": "Api.CreateTextPr()"
+        },
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>The text for the Text Art object.</p>",
+          "optional": true,
+          "defaultValue": "\"Your text here\""
+        },
+        {
+          "type": "TextTransform",
+          "name": "sTransform",
+          "description": "<p>Text transform type.</p>",
+          "optional": true,
+          "defaultValue": "\"textNoShape\""
+        },
+        {
+          "type": "ApiFill",
+          "name": "oFill",
+          "description": "<p>The color or pattern used to fill the Text Art object.</p>",
+          "optional": true,
+          "defaultValue": "Api.CreateNoFill()"
+        },
+        {
+          "type": "ApiStroke",
+          "name": "oStroke",
+          "description": "<p>The stroke used to create the Text Art object shadow.</p>",
+          "optional": true,
+          "defaultValue": "Api.CreateStroke(0, Api.CreateNoFill())"
+        },
+        {
+          "type": "number",
+          "name": "nRotAngle",
+          "description": "<p>Rotation angle.</p>",
+          "optional": true,
+          "defaultValue": 0
+        },
+        {
+          "type": "EMU",
+          "name": "nWidth",
+          "description": "<p>The Text Art width measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": 1828800
+        },
+        {
+          "type": "EMU",
+          "name": "nHeight",
+          "description": "<p>The Text Art heigth measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": 1828800
+        },
+        {
+          "type": "EMU",
+          "name": "nIndLeft",
+          "description": "<p>The Text Art left side indentation value measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": "ApiPresentation.GetWidth() / 2"
+        },
+        {
+          "type": "EMU",
+          "name": "nIndTop",
+          "description": "<p>The Text Art top side indentation value measured in English measure units.</p>",
+          "optional": true,
+          "defaultValue": "ApiPresentation.GetHeight() / 2"
+        }
+      ]
+    },
+    "FromJSON": {
+      "memberof": "Api",
+      "name": "FromJSON",
+      "description": "<p>Converts the specified JSON object into the Document Builder object of the corresponding type.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "JSON",
+          "name": "sMessage",
+          "description": "<p>The JSON object to convert.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "attachEvent": {
+      "memberof": "Api",
+      "name": "attachEvent",
+      "description": "<p>Subscribes to the specified event and calls the callback function when the event fires.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "eventName",
+          "description": "<p>The event name.</p>",
+          "optional": false
+        },
+        {
+          "type": "function",
+          "name": "callback",
+          "description": "<p>Function to be called when the event fires.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "detachEvent": {
+      "memberof": "Api",
+      "name": "detachEvent",
+      "description": "<p>Unsubscribes from the specified event.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "eventName",
+          "description": "<p>The event name.</p>",
+          "optional": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n     * @global\n     * @class\n     * @name Api\n     */",
   "scope": "global"
 }

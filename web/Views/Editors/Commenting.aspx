@@ -18,7 +18,7 @@
         The <b>Comment option</b> allows you to leave comments on the specific words, phrases, sentences and other document parts, edit and remove these comments. 
         All the comments will be saved and shown to other document users.
     </p>
-    <img src="<%= Url.Content("~/content/img/editor/comment.png") %>" alt="" />
+    <img class="screenshot max-width-832" src="<%= Url.Content("~/content/img/editor/comment.png") %>" alt="" />
 
     <h2 id="access-rights" class="copy-link">Comment access rights</h2>
     <p>
@@ -28,7 +28,7 @@
     <p>
         In case the <em>edit</em> parameter is set to <b>true</b> and the <em>comment</em> parameter is also set to <b>true</b>, the user will be able to edit the document and comment.
     </p>
-    <img alt="Commenting" width="832px" src="<%= Url.Content("~/content/img/editor/commenting.png") %>" />
+    <img class="screenshot max-width-832" alt="Commenting" src="<%= Url.Content("~/content/img/editor/commenting.png") %>" />
     <p>
         In case the <em>edit</em> parameter is set to <b>false</b> and the <em>comment</em> parameter is set to <b>true</b>, the document will be available for commenting only.
     </p>
@@ -167,7 +167,7 @@ reply1
 ${author2}:
 reply2
 </pre>
-            <img width="832px" src="<%= Url.Content("~/content/img/editor/comments-threaded.png") %>" alt="" />
+            <img class="screenshot max-width-832" src="<%= Url.Content("~/content/img/editor/comments-threaded.png") %>" alt="" />
         </li>
         <li>
             To convert the original comments format into the <b>threaded comments</b>, the <em>"${author}:\n"</em> string is deleted if the comment starts with it.

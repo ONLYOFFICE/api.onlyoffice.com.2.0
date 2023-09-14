@@ -13,10 +13,16 @@ const files = {
     "sdkjs/master": {
         "word.js": "word/apiBuilder.js",
         "cell.js": "cell/apiBuilder.js",
-        "slide.js": "slide/apiBuilder.js"
+        "slide.js": "slide/apiBuilder.js",
+        "wordPluginMethods.js": "word/api_plugins.js",
+        "cellPluginMethods.js": "cell/api_plugins.js",
+        "slidePluginMethods.js": "slide/api_plugins.js",
+        "sharedPluginMethods.js": "common/apiBase_plugins.js",
+        "pluginBase.js": "common/plugins/plugin_base_api.js"
     },
     "sdkjs-forms/master": {
-        "form.js": "apiBuilder.js"
+        "form.js": "apiBuilder.js",
+        "formPluginMethods.js": "apiPlugins.js"
     }
 };
 

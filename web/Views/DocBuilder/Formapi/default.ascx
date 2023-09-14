@@ -6,8 +6,8 @@
 
 <p class="dscr">A form document has exactly the same structure as a <a href="<%= Url.Action("textdocumentapi") %>">text document</a>.
 The only difference is a new <em>forms</em> entity placed with other paragraph elements – text runs, inline text content controls and hyperlinks.
-There are four form types: <em>text field</em>, <em>combo box</em>, <em>checkbox</em> and <em>picture form</em>.</p>
-<p>Thus any form document structure with ONLYOFFICE Document Builder API used to create it can be outlined like this:</p>
+There are seven form types: <em>text field</em>, <em>combo box</em>, <em>dropdown list</em>, <em>checkbox</em>, <em>radio button</em>, <em>picture form</em>, and <em>complex field</em>.</p>
+<p>Thus any form document structure with ONLYOFFICE Document Builder API used to create it can be outlined like this:</p>
 
 <div class="document_structure">
         <p class="node_label"><b>ONLYOFFICE Document Builder API</b></p>
@@ -88,35 +88,43 @@ There are four form types: <em>text field</em>, <em>combo box</em>, <em>checkbox
                         </div>
                     </div>
                     <div class="document_structure textform_node">
-                        <p class="node_label">Text form</p>
+                        <p class="node_label">Text field</p>
                         <p class="node_description">
-                            Common object properties, common text properties, current text form properties:
+                            Common object properties, common text properties, current text field properties:
                             <br />
                             <a href="<%= Url.Action("textdocumentapi/apiformbase") %>">ApiFormBase</a>, <a href="<%= Url.Action("textdocumentapi/apitextpr") %>">ApiTextPr</a>, <a href="<%= Url.Action("textdocumentapi/apitextform") %>">ApiTextForm</a>
                         </p>
                     </div>
                     <div class="document_structure combobox_node">
-                        <p class="node_label">Combo box form</p>
+                        <p class="node_label">Combo box / dropdown list</p>
                         <p class="node_description">
-                            Common object properties, common text properties, current combo box form properties:
+                            Common object properties, common text properties, current combo box / dropdown list properties:
                             <br />
                             <a href="<%= Url.Action("textdocumentapi/apiformbase") %>">ApiFormBase</a>, <a href="<%= Url.Action("textdocumentapi/apitextpr") %>">ApiTextPr</a>, <a href="<%= Url.Action("textdocumentapi/apicomboboxform") %>">ApiComboBoxForm</a>
                         </p>
                     </div>
                     <div class="document_structure checkbox_node">
-                        <p class="node_label">Checkbox form</p>
+                        <p class="node_label">Checkbox / radio button</p>
                         <p class="node_description">
-                            Common object properties, common text properties, current checkbox form properties:
+                            Common object properties, current checkbox / radio button properties:
                             <br />
-                            <a href="<%= Url.Action("textdocumentapi/apiformbase") %>">ApiFormBase</a>, <a href="<%= Url.Action("textdocumentapi/apitextpr") %>">ApiTextPr</a>, <a href="<%= Url.Action("textdocumentapi/apicheckboxform") %>">ApiCheckBoxForm</a>
+                            <a href="<%= Url.Action("textdocumentapi/apiformbase") %>">ApiFormBase</a>, <a href="<%= Url.Action("textdocumentapi/apicheckboxform") %>">ApiCheckBoxForm</a>
                         </p>
                     </div>
                     <div class="document_structure picture_node">
                         <p class="node_label">Picture form</p>
                         <p class="node_description">
-                            Common object properties, common text properties, current picture form properties:
+                            Common object properties, current picture form properties:
                             <br />
-                            <a href="<%= Url.Action("textdocumentapi/apiformbase") %>">ApiFormBase</a>, <a href="<%= Url.Action("textdocumentapi/apitextpr") %>">ApiTextPr</a>, <a href="<%= Url.Action("textdocumentapi/apipictureform") %>">ApiPictureForm</a>
+                            <a href="<%= Url.Action("textdocumentapi/apiformbase") %>">ApiFormBase</a>, <a href="<%= Url.Action("textdocumentapi/apipictureform") %>">ApiPictureForm</a>
+                        </p>
+                    </div>
+                    <div class="document_structure complex_node">
+                        <p class="node_label">Complex field</p>
+                        <p class="node_description">
+                            Common object properties, common text properties, current complex field properties:
+                            <br />
+                            <a href="<%= Url.Action("textdocumentapi/apiformbase") %>">ApiFormBase</a>, <a href="<%= Url.Action("textdocumentapi/apitextpr") %>">ApiTextPr</a>, <a href="<%= Url.Action("textdocumentapi/apicomplexform") %>">ApiComplexForm</a>
                         </p>
                     </div>
                     <div class="document_structure hyperlink_node">

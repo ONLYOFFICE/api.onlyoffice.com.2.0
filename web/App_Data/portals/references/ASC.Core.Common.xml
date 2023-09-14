@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Core.Common</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.Core.Common.Contracts.BackupProgress.IsCompleted">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupProgress.Progress">
+            <example type="int">44</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupProgress.Error">
+            <example>null</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupProgress.Link">
+            <example>Link</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupHistoryRecord.Id">
+            <example>38c0f464-f1e7-493e-8d95-dc4ee8ee834a</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupHistoryRecord.FileName">
+            <example>FileName</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupHistoryRecord.StorageType">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupHistoryRecord.CreatedOn">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Common.Contracts.BackupHistoryRecord.ExpiresOn">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="M:ASC.Core.Common.Notify.MentionProvider.GetMentionedUsers(System.String)">
+            <summary>
+            Returns array of users that were mentioned in comments
+            </summary>
+            <param name="content">Comment content</param>
+            <returns>Array of users</returns>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.QuotaId">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.State">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.DueDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.DelayDueDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.LicenseDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.Autorenewal">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.Prolongable">
+            <example>true</example>
+        </member>
+        <member name="M:ASC.Core.Caching.CachedUserService.GetUserForPersonal(System.Int32,System.Guid)">
+            <summary>
+            For Personal only
+            </summary>
+            <param name="tenant"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.ID">
+            <example>38c0f464-f1e7-493e-8d95-dc4ee8ee834a</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.FirstName">
+            <example>FirstName</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.LastName">
+            <example>LastName</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.UserName">
+            <example>UserName</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.BirthDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Sex">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Status">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.ActivationStatus">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.TerminatedDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Title">
+            <example>Title</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.WorkFromDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Email">
+            <example>Email</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Contacts">
+            <example>Contacts</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Location">
+            <example>Location</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Notes">
+            <example>Notes</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Removed">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.LastModified">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Tenant">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Lead">
+            <example>072A8452-ADF3-40AA-B359-22DA7B8923E2</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.IsActive">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.CultureName">
+            <example>CultureName</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.MobilePhone">
+            <example>MobilePhone</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.MobilePhoneActivationStatus">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Sid">
+            <example>Sid</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.LdapQouta">
+            <example>LdapQouta</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.SsoNameId">
+            <example>SsoNameId</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.SsoSessionId">
+            <example>SsoSessionId</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.CreateDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.UsedSpace">
+            <example>UsedSpace</example>
+        </member>
+        <member name="M:ASC.Core.Notify.RecipientProviderImpl.FilterRecipientAddresses(ASC.Notify.Recipients.IDirectRecipient)">
+            <summary>
+            Check if user with this email is activated
+            </summary>
+            <param name="recipient"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Id">
+            <example type="int">234</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Name">
+            <example>Name</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.MaxFileSize">
+            <example type="int">12345</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.MaxTotalSize">
+            <example type="int">12345</example>
+            <order>40</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.ActiveUsers">
+            <example type="int">2</example>
+            <order>50</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Features">
+            <example>Features</example>
+            <order>60</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Price">
+            <example type="double">22.5</example>
+            <order>70</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.AvangateId">
+            <example>AvangateId</example>
+            <order>90</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Visible">
+            <example>true</example>
+            <order>100</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Year">
+            <example>true</example>
+            <order>110</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Year3">
+            <example>true</example>
+            <order>110</order>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.TenantId">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.TenantAlias">
+            <example>TenantAlias</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.MappedDomain">
+            <example>MappedDomain</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Version">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.VersionChanged">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.TenantDomain">
+            <example>TenantDomain</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.HostedRegion">
+            <example>HostedRegion</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Name">
+            <example>Name</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Language">
+            <example>Language</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.TimeZone">
+            <example>TimeZone</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.TrustedDomains">
+            <example>TrustedDomains</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.TrustedDomainsType">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.OwnerId">
+            <example>38c0f464-f1e7-493e-8d95-dc4ee8ee834a</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.CreatedDateTime">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="M:ASC.Core.Tenants.Tenant.GetCulture">
+            <example>ru-RU</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.LastModified">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Status">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.StatusChangeDate">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.PartnerId">
+            <example>PartnerId</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.AffiliateId">
+            <example>AffiliateId</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Campaign">
+            <example>Campaign</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.PaymentId">
+            <example>PaymentId</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Industry">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Spam">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Core.Tenants.Tenant.Calls">
+            <example>true</example>
+        </member>
+    </members>
+</doc>

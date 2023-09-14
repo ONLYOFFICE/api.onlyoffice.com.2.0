@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Set the font of the cell <b>A2</b> to bold.</p>
+<p class="dscr">Sets the font of the cell <b>A2</b> to bold.</p>
 
 <pre>(function()
 {
@@ -28,4 +28,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Font bold" src="<%= Url.Content("~/content/img/plugins/font_bold.png") %>" />
+<img class="screenshot max-width-832" alt="Font bold" src="<%= Url.Content("~/content/img/plugins/font_bold.png") %>" />

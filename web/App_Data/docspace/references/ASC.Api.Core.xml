@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Core</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.Api.Core.ApiContext.FilterToType">
+            <summary>
+            Filters responce to specific type from request parameter "type"
+            </summary>
+            <remarks>
+            The type name is retrieved from [DataContractAttribute] name
+            </remarks>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.Count">
+            <summary>
+            Gets count to get item from collection. Request parameter "count"
+            </summary>
+            <remarks>
+            Don't forget to call _context.SetDataPaginated() to prevent SmartList from filtering response if you fetch data from DB with TOP &amp; COUNT
+            </remarks>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.StartIndex">
+            <summary>
+            Gets start index to get item from collection. Request parameter "startIndex"
+            </summary>
+            <remarks>
+            Don't forget to call _context.SetDataPaginated() to prevent SmartList from filtering response if you fetch data from DB with TOP &amp; COUNT
+            </remarks>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.SortBy">
+            <summary>
+            Gets field to sort by from request parameter "sortBy"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.FilterBy">
+            <summary>
+            Gets field to filter from request parameter "filterBy"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.FilterOp">
+            <summary>
+            Gets filter operation from request parameter "filterOp"
+            can be one of the following:"contains","equals","startsWith","present"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.FilterValue">
+            <summary>
+            Gets value to filter from request parameter "filterValue"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.SortDescending">
+            <summary>
+            Sort direction. From request parameter "sortOrder" can be "descending" or "ascending"
+            Like ...&amp;sortOrder=descending&amp;...
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Core.ApiContext.UpdatedSince">
+            <summary>
+            Gets value to filter from request parameter "updatedSince"
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Core.ApiContext.SetDataPaginated">
+            <summary>
+            Set mark that data is already paginated and additional filtering is not needed
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Core.Core.WarmupServicesStartupTask">
+            <summary>
+                https://andrewlock.net/reducing-latency-by-pre-building-singletons-in-asp-net-core/
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Core.Module">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Core.Module.Id">
+            <summary>ID</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.AppName">
+            <summary>Product class name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.Title">
+            <summary>Title</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.Link">
+            <summary>Start link</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.IconUrl">
+            <summary>Icon URL</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.ImageUrl">
+            <summary>Large image URL</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.HelpUrl">
+            <summary>Help URL</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.Description">
+            <summary>Description</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Module.IsPrimary">
+            <summary>Specifies if the module is primary or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="M:ASC.Api.Core.Extensions.ServiceCollectionExtension.AddActivePassiveHostedService``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,ASC.Common.DIHelper)">
+            <remarks>
+            Add a IHostedService for given type. 
+            Only one copy of this instance type will active in multi process architecture.
+            </remarks>
+        </member>
+        <member name="T:ASC.Api.Core.Model.TaskProgressDto">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Core.Model.TaskProgressDto.IsCompleted">
+            <summary>Specifies if the operation is completed or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Api.Core.Model.TaskProgressDto.Progress">
+            <summary>Progress percentage</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="T:ASC.Web.Api.Models.Contact">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Api.Models.Contact.Type">
+            <summary>Contact type</summary>
+            <type>System.String, System</type>
+            <example>GTalk</example>
+        </member>
+        <member name="P:ASC.Web.Api.Models.Contact.Value">
+            <summary>Contact value</summary>
+            <type>System.String, System</type>
+            <example>my@gmail.com</example>
+        </member>
+        <member name="T:ASC.Web.Api.Models.EmployeeDto">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeDto.Id">
+            <summary>ID</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeDto.DisplayName">
+            <summary>Display name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeDto.Title">
+            <summary>Title</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeDto.AvatarSmall">
+            <summary>Small avatar</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeDto.ProfileUrl">
+            <summary>Profile URL</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeDto.HasAvatar">
+            <summary>Specifies if the user has an avatar or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="T:ASC.Web.Api.Models.EmployeeFullDto">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.FirstName">
+            <summary>First name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.LastName">
+            <summary>Last name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.UserName">
+            <summary>Username</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Email">
+            <summary>Email</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Contacts">
+            <summary>List of contacts</summary>
+            <type>System.Collections.Generic.List{ASC.Web.Api.Models.Contact}, System.Collections.Generic</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Birthday">
+            <summary>Birthday</summary>
+            <type>ASC.Api.Core.ApiDateTime, ASC.Api.Core</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Sex">
+            <summary>Sex (male or female)</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Status">
+            <summary>Employee status</summary>
+            <type>ASC.Core.Users.EmployeeStatus, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.ActivationStatus">
+            <summary>Employee activation status</summary>
+            <type>ASC.Core.Users.EmployeeActivationStatus, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Terminated">
+            <summary>The date when the user account was terminated</summary>
+            <type>ASC.Api.Core.ApiDateTime, ASC.Api.Core</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Department">
+            <summary>Department</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.WorkFrom">
+            <summary>Registration date</summary>
+            <type>ASC.Api.Core.ApiDateTime, ASC.Api.Core</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Groups">
+            <summary>List of groups</summary>
+            <type>System.Collections.Generic.List{ASC.Web.Api.Models.GroupSummaryDto}, System.Collections.Generic</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Location">
+            <summary>Location</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Notes">
+            <summary>Notes</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.AvatarMax">
+            <summary>Maximum size avatar</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.AvatarMedium">
+            <summary>Medium size avatar</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Avatar">
+            <summary>Avatar</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.IsAdmin">
+            <summary>Specifies if the user is an administrator or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.IsLDAP">
+            <summary>Specifies if the LDAP settings are enabled for the user or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.ListAdminModules">
+            <summary>List of administrator modules</summary>
+            <type>System.Collections.Generic.List{System.String}, System.Collections.Generic</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.IsOwner">
+            <summary>Specifies if the user is a portal owner or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.IsVisitor">
+            <summary>Specifies if the user is a portal visitor or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.IsCollaborator">
+            <summary>Specifies if the user is a portal collaborator or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.CultureName">
+            <summary>Language</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.MobilePhone">
+            <summary>Mobile phone number</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.MobilePhoneActivationStatus">
+            <summary>Mobile phone activation status</summary>
+            <type>ASC.Core.Users.MobilePhoneActivationStatus, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.IsSSO">
+            <summary>Specifies if the SSO settings are enabled for the user or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.Theme">
+            <summary>Theme</summary>
+            <type>System.Nullable{ASC.Web.Core.Users.DarkThemeSettingsEnum}, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.QuotaLimit">
+            <summary>Quota limit</summary>
+            <type>System.Int64, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.EmployeeFullDto.UsedSpace">
+            <summary>Portal used space</summary>
+            <type>System.Double, System</type>
+        </member>
+        <member name="T:ASC.Web.Api.Models.GroupSummaryDto">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Api.Models.GroupSummaryDto.Id">
+            <summary>ID</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.GroupSummaryDto.Name">
+            <summary>Name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Api.Models.GroupSummaryDto.Manager">
+            <summary>Manager</summary>
+            <type>System.String, System</type>
+        </member>
+    </members>
+</doc>

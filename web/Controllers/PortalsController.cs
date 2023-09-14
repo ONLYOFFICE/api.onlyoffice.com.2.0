@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -36,6 +36,7 @@ namespace ASC.Api.Web.Help.Controllers
     [Redirect]
     public class PortalsController : AsyncController
     {
+
         private readonly BreadCrumbsBuilder _breadCrumbsBuilder;
 
         public PortalsController()
@@ -43,6 +44,34 @@ namespace ASC.Api.Web.Help.Controllers
             _breadCrumbsBuilder = new BreadCrumbsBuilder(this);
         }
 
+        private readonly string[] _actionMap = new[]
+            {
+                "Auth",
+                "Basic",
+                "Faq",
+                "Filters",
+                "Batch",
+                "ApiSystem",
+                "ApiSystem/Authentication",
+                "ApiSystem/PortalSection",
+                "ApiSystem/PortalSection/PortalGet",
+                "ApiSystem/PortalSection/PortalRegister",
+                "ApiSystem/PortalSection/PortalRemove",
+                "ApiSystem/PortalSection/PortalStatus",
+                "ApiSystem/PortalSection/ValidatePortalName",
+                "ApiSystem/TariffSection",
+                "ApiSystem/TariffSection/TariffGet",
+                "ApiSystem/TariffSection/TariffSet",
+            };
+
+        public ActionResult ApiSystem(string catchall)
+        {
+            if (!_actionMap.Contains("apisystem/" + catchall, StringComparer.OrdinalIgnoreCase))
+            {
+                catchall = null;
+            }
+            return View("ApiSystem", (object)catchall);
+        }
 
         public ActionResult Index()
         {
@@ -51,7 +80,7 @@ namespace ASC.Api.Web.Help.Controllers
 
         public ActionResult Navigation()
         {
-            return View(Documentation.GetAll());
+            return View(CommunityServerDocumentation.GetAll());
         }
 
         public ActionResult Auth()
@@ -79,7 +108,6 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
-
         [ValidateInput(false)]
         public ActionResult Search(string query)
         {
@@ -90,14 +118,14 @@ namespace ASC.Api.Web.Help.Controllers
         {
             if (string.IsNullOrEmpty(section))
             {
-                var firstPoint = Documentation.GetAll().OrderBy(x => x.Name).ToList().FirstOrDefault();
+                var firstPoint = CommunityServerDocumentation.GetAll().OrderBy(x => x.Name).ToList().FirstOrDefault();
 
                 if (firstPoint == null) return View("sectionnotfound");
 
                 return Redirect(Url.Action("section", new { section = firstPoint.Name }));
             }
 
-            var docsSection = Documentation.GetDocs(section);
+            var docsSection = CommunityServerDocumentation.GetDocs(section);
             if (docsSection == null || !docsSection.Methods.Any())
                 return View("sectionnotfound");
 
@@ -131,7 +159,7 @@ namespace ASC.Api.Web.Help.Controllers
             if (string.IsNullOrEmpty(section))
                 return View("sectionnotfound");
 
-            var docsSection = Documentation.GetDocs(section);
+            var docsSection = CommunityServerDocumentation.GetDocs(section);
             if (docsSection == null)
                 return View("sectionnotfound");
 

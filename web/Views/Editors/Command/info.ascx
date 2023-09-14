@@ -14,16 +14,17 @@ The response will be sent to the <a href="<%= Url.Action("callback") %>">callbac
 <pre>
 {
     "c": "info",
-    "key": "Khirz6zTPdfd7"
+    "key": "Khirz6zTPdfd7",
+    "userdata": "sample userdata"
 }
 </pre>
 <div class="header-gray">Parameters</div>
 <table class="table">
     <colgroup>
-        <col style="width: 100px;" />
+        <col class="table-name" />
         <col />
-        <col style="width: 100px;" />
-        <col style="width: 150px;" />
+        <col class="table-type" />
+        <col class="table-example" />
     </colgroup>
     <thead>
         <tr class="tablerow">
@@ -46,6 +47,12 @@ The response will be sent to the <a href="<%= Url.Action("callback") %>">callbac
             <td>string</td>
             <td>required</td>
         </tr>
+        <tr class="tablerow">
+            <td>userdata</td>
+            <td>Defines some custom identifier which will help distinguish the specific request in case there were more than one.</td>
+            <td>string</td>
+            <td>optional</td>
+        </tr>
     </tbody>
 </table>
 <div class="mobile-content"></div>
@@ -62,10 +69,10 @@ The response will be sent to the <a href="<%= Url.Action("callback") %>">callbac
 <div class="header-gray">Parameters</div>
 <table class="table">
     <colgroup>
-        <col style="width: 100px;" />
+        <col class="table-name" />
         <col />
-        <col style="width: 100px;" />
-        <col style="width: 150px;" />
+        <col class="table-type" />
+        <col class="table-example" />
     </colgroup>
     <thead>
         <tr class="tablerow">

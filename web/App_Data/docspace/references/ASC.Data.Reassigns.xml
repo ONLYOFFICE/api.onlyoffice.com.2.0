@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Data.Reassigns</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Data.Reassigns.ReassignProgressItem">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.FromUser">
+            <summary>The user whose data is reassigned</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.ToUser">
+            <summary>The user to whom this data is reassigned</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="T:ASC.Data.Reassigns.RemoveProgressItem">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.FromUser">
+            <summary>ID of the user whose data is deleted</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.User">
+            <summary>The user whose data is deleted</summary>
+            <type>ASC.Core.Users.UserInfo, ASC.Core.Common</type>
+        </member>
+    </members>
+</doc>

@@ -46,6 +46,6 @@ builder.CloseFile();
     </li>
     <li>
         <p>Download the document from the received link. Now you can check all the document differences and accept or reject them using the corresponding buttons on the top toolbar.</p>
-        <img alt="Compare documents" width="834px" src="<%= Url.Content("~/content/img/docbuilder/compare-documents.png") %>" />
+        <img class="screenshot max-width-832" alt="Compare documents" src="<%= Url.Content("~/content/img/docbuilder/compare-documents.png") %>" />
     </li>
 </ol>

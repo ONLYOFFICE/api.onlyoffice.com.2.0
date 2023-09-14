@@ -1,0 +1,41 @@
+{
+  "ContentControl": {
+    "name": "ContentControl",
+    "description": "<p>Content control object.</p>",
+    "type": [
+      "Object"
+    ],
+    "properties": [
+      {
+        "type": "string",
+        "name": "Tag",
+        "description": "<p>A tag assigned to the content control. The same tag can be assigned to several content controls so that it is possible to make reference to them in your code.</p>"
+      },
+      {
+        "type": "string",
+        "name": "Id",
+        "description": "<p>A unique identifier of the content control. It can be used to search for a certain content control and make reference to it in the code.</p>"
+      },
+      {
+        "type": "ContentControlLock",
+        "name": "Lock",
+        "description": "<p>A value that defines if it is possible to delete and/or edit the content control or not: 0 - only deleting, 1 - no deleting or editing, 2 - only editing, 3 - full access.</p>"
+      },
+      {
+        "type": "string",
+        "name": "InternalId",
+        "description": "<p>A unique internal identifier of the content control. It is used for all operations with content controls.</p>"
+      }
+    ]
+  },
+  "ContentControlLock": {
+    "name": "ContentControlLock",
+    "description": "<p>A value that defines if it is possible to delete and/or edit the content control or not:</p>\n<ul>\n<li><strong>0</strong> - only deleting</li>\n<li><strong>1</strong> - disable deleting or editing</li>\n<li><strong>2</strong> - only editing</li>\n<li><strong>3</strong> - full access</li>\n</ul>",
+    "type": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  }
+}

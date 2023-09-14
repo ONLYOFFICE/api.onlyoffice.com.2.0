@@ -77,12 +77,12 @@
         <pre>
 {
     "name" : "Nextcloud",
-        "check": {
-            "url": "status.php",
-            "headers": 
-                    "OCS-APIREQUEST": true
-            }
-}               
+    "check": {
+        "url": "status.php",
+        "headers": 
+            "OCS-APIREQUEST": true
+        }
+}
 </pre>
     </dd>
 </dl>
@@ -91,7 +91,7 @@
     <dd>
         <p>Declare the following global function:</p>
         <pre>
-window.DesktopUpdateFile = function ()          
+window.DesktopUpdateFile = function ()
 </pre>
         <p>It will be called by the desktop app to notify the user about the completion of file editing.</p>
     </dd>

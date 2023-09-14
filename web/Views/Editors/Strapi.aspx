@@ -62,7 +62,7 @@
             <span class="commandline">npm install onlyoffice-stapi --save</span>
         </li>
         <li>
-            <p>After successful installation you have to rebuild the admin UI so it'll include this plugin. To rebuild and restart Strapi run:</p>
+            <p>After successful installation, you have to rebuild the admin UI so it'll include this plugin. To rebuild and restart Strapi, run:</p>
             <span class="commandline"># using yarn
 yarn build
 yarn develop
@@ -79,7 +79,8 @@ npm run develop
     <p>You can configure ONLYOFFICE app via Strapi <b>Dashboard -> Settings -> Global settings -> ONLYOFFICE</b>. On the settings page, enter:</p>
     <ul>
         <li><b>Document server address</b>. The URL of the installed ONLYOFFICE Document Server.</li>
-        <li><b>Document server JWT secret key</b>. To protect your documents from unauthorized access, enable JWT (further information can be found <a href="<%= Url.Action("signature/") %>">here</a>).</li>
+        <li><b>Document server JWT secret key</b>. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+            Specify your own secret key on the Strapi settings page. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</li>
     </ul>
 
 

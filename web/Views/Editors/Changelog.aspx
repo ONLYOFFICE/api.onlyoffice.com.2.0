@@ -16,12 +16,43 @@
     </h1>
 
     <p class="dscr">The list of changes of ONLYOFFICE Document Server API.</p>
+    <h2 id="74" class="copy-link">Version 7.4</h2>
+    <ul>
+        <li>Added opening for <a href="<%= Url.Action("config/") %>#documentType">dps, dpt, et, ett, mhtml, stw, sxc, sxi, sxw, wps, wpt</a> formats.</li>
+        <li>Added the <em>users.id</em> field to the <a href="<%= Url.Action("methods") %>#setUsers">setUsers</a> method.</li>
+        <li>Added the <em>c</em> parameter to the <a href="<%= Url.Action("methods") %>#setUsers">setUsers</a> method and <a href="<%= Url.Action("config/events") %>#onRequestUsers">events.onRequestUsers</a> event.</li>
+    </ul>
+
+    <h2 id="73" class="copy-link">Version 7.3</h2>
+    <ul>
+        <li>Added the WOPI <a href="<%= Url.Action("wopi/conversionapi") %>">Conversion API</a>.</li>
+        <li>Added the <a href="<%= Url.Action("methods") %>#setReferenceData">setReferenceData</a> method.</li>
+        <li>Added the <a href="<%= Url.Action("config/events") %>#onRequestReferenceData">events.onRequestReferenceData</a> event.</li>
+        <li>Added the <a href="<%= Url.Action("config/document") %>#referenceData">document.referenceData</a> parameter.</li>
+        <li>Added the <a href="<%= Url.Action("wopi/restapi/checkfileinfo") %>#UserCanNotWriteRelative">UserCanNotWriteRelative</a> property to the <em>CheckFileInfo</em> WOPI operation.</li>
+        <li>Added a scheme for <a href="<%= Url.Action("wopi/editingbinary") %>">editing binary document formats</a>.</li>
+        <li>Added the <a href="<%= Url.Action("wopi/discovery") %>#convert">convert</a> action to the WOPI discovery.</li>
+        <li>Added the <a href="<%= Url.Action("wopi/restapi/putrelativefile") %>">PutRelativeFile</a> WOPI operation.</li>
+    </ul>
+
+    <h2 id="72" class="copy-link">Version 7.2</h2>
+    <ul>
+        <li>Added the <a href="<%= Url.Action("config/editor/customization") %>#integrationMode">editorConfig.customization.integrationMode</a> parameter.</li>
+        <li>Added the <a href="<%= Url.Action("connector") %>">Connector</a> class to interact with text documents, spreadsheets, presentations, and fillable forms from the outside.</li>
+        <li>Added the <em>theme-contrast-dark</em> theme id to the <a href="<%= Url.Action("config/editor/customization") %>#uiTheme">editorConfig.customization.uiTheme</a> parameter.</li>
+        <li>Added the <em>phone</em> field to the <a href="<%= Url.Action("config/editor/customization") %>#customer">editorConfig.customization.customer</a> parameter.</li>
+        <li>Added the <a href="<%= Url.Action("command/license") %>#license">connections_view</a>, <a href="<%= Url.Action("command/license") %>#license">users_view_count</a> and <a href="<%= Url.Action("command/license") %>#quota">users_view</a> parameters to the license response.</li>
+        <li>Added the <a href="<%= Url.Action("viewing") %>">live viewer</a> mode to the text document, spreadsheet and presentation editors.</li>
+        <li>Added the <a href="<%= Url.Action("wopi/discovery") %>#embedview">embedview</a> action to the WOPI discovery.</li>
+        <li>The <a href="<%= Url.Action("signature/") %>#services.CoAuthoring.secret.browser.string">services.CoAuthoring.secret.browser.string</a> parameter is deprecated, please use the <a href="<%= Url.Action("signature/") %>#services.CoAuthoring.secret.inbox.string">services.CoAuthoring.secret.inbox.string</a> parameter instead.</li>
+    </ul>
+
     <h2 id="71" class="copy-link">Version 7.1</h2>
     <ul>
         <li>The <em>services.CoAuthoring.token.inbox.inBody</em> and <em>services.CoAuthoring.token.outbox.inBody</em> parameters for enabling <a href="<%= Url.Action("signature/body") %>">token in body</a> are deprecated.</li>
         <li>Added the <em>X-LOOL-WOPI-IsModifiedByUser</em>, <em>X-LOOL-WOPI-IsAutosave</em> and <em>X-LOOL-WOPI-IsExitSave</em> request headers to the <a href="<%= Url.Action("wopi/restapi/putfile") %>">PutFile</a> WOPI operation to distinguish between the type of document saving.</li>
         <li>The <a href="<%= Url.Action("config/editor/customization") %>#chat">editorConfig.customization.chat</a> parameter is deprecated, please use the <a href="<%= Url.Action("config/document/permissions") %>#chat">document.permissions.chat</a> parameter instead.</li>
-        <li>Added conversion from <a href="<%= Url.Action("conversionapi") %>#spreadsheet-matrix">xlsb</a> format.</li>
+        <li>Added conversion from <a href="<%= Url.Action("conversionapi") %>#text-matrix">dps, dpt, et, ett, htm, mhtml, stw, sxc, sxi, sxw, wps, wpt, xlsb, xml</a> format.</li>
         <li>Added opening for <a href="<%= Url.Action("config/") %>#documentType">xlsb</a> format.</li>
         <li>The parameter list in the initialization config <a href="<%= Url.Action("signature/browser") %>#open">signature</a> has become strictly regulated.</li>
         <li>The <a href="<%= Url.Action("config/editor/customization") %>#spellcheck">editorConfig.customization.spellcheck</a> field is deprecated, please use the <a href="<%= Url.Action("config/editor/customization") %>#features">editorConfig.customization.features.spellcheck</a> field instead.</li>
@@ -30,6 +61,8 @@
         <li>Added the <a href="<%= Url.Action("conversionapi") %>#documentRenderer">documentRenderer</a> parameter to the conversion request.</li>
         <li>Added conversion from <a href="<%= Url.Action("conversionapi") %>#text-matrix">pdf/xps/oxps</a> formats to <em>docx</em>.</li>
         <li>Added the <a href="<%= Url.Action("config/document/permissions") %>#userInfoGroups">document.permissions.userInfoGroups</a> parameter.</li>
+        <li>Added conversion from <a href="<%= Url.Action("conversionapi") %>#text-matrix">djvu</a> format to <em>pdf</em>.</li>
+        <li>Added conversion to <a href="<%= Url.Action("conversionapi") %>#presentation-matrix">ppsm, ppsx</a> formats.</li>
     </ul>
 
     <h2 id="70" class="copy-link">Version 7.0</h2>

@@ -1,0 +1,10 @@
+builder.CreateFile("pptx");
+var oPresentation = Api.GetPresentation();
+var oSlide = oPresentation.GetSlideByIndex(0);
+var oMaster = oPresentation.GetMaster(0);
+var oLayout = oMaster.GetLayout(0);
+var oFill = Api.CreateSolidFill(Api.CreateRGBColor(255, 111, 61));
+oLayout.SetBackground(oFill);
+oSlide.FollowLayoutBackground();
+builder.SaveFile("pptx", "FollowLayoutBackground.pptx");
+builder.CloseFile();

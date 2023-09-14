@@ -18,8 +18,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiGradientStop",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiGradientStop object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing gradient stop.\n\t * @constructor\n\t * */",
   "description": "<p>Class representing gradient stop.</p>",
   "scope": "global",

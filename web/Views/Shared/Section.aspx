@@ -36,9 +36,9 @@
     <% } %>
     <table class="table hover">
         <colgroup>
-            <col style="width: 25%"/>
-            <col style="width: 25%"/>
-            <col/>
+            <col class="table-name" />
+            <col />
+            <col />
         </colgroup>
         <thead>
             <tr class="tablerow">

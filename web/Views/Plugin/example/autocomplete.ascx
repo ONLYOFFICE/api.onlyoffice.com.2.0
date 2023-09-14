@@ -31,9 +31,11 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <div class="header-gray">Plugin structure</div>
 
-<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/plugin-autocomplete" target="_blank">https://github.com/ONLYOFFICE/plugin-autocomplete</a>.</p>
+<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/autocomplete" target="_blank">https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/autocomplete</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>code.js</em></li>
+    <li>Icons</li>
+    <li>The <em>translations</em> folder which contains translations into Russian, German, Spanish, Czech and French.</li>
     <li>The <em>dictionary.js</em> file contains words for autocompletion.</li>
 </ol>
 
@@ -41,31 +43,47 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Config</div>
 <pre>
 {
-    "name" : "example_autocomplete",
+    "name": "Autocomplete",
+    "nameLocale": {
+        "fr": "Autocomplete",
+        "es": "Autocomplete",
+        "de": "Autocomplete"
+    },
     "guid" : "asc.{A103601F-FDA0-418A-BC37-A514031894C0}",
-    "version" : "1.0",
+    "version" : "1.0.0",
 
     "variations" : [
         {
-            "description" : "example_autocomplete",
-            "url"         : "index.html",
-
-            "icons"           : ["resources/img/icon.png", "resources/img/icon@2x.png"],
-            "isViewer"        : false,
-            "EditorsSupport"  : ["word", "slide", "cell"],
-
-            "isVisual"        : false,
-            "isSystem"        : true,
-
-            "initDataType"    : "none",
-            "initData"        : "",
-
-            "buttons"        : [ ],
-
+            "description": "Use an input assistant while typing in the editors.",
+            "descriptionLocale": {
+                "fr": "Utilisez un assistant de saisie pendant que vous tapez dans les &#233;diteurs.",
+                "es": "Utilice un asistente de entrada mientras escribe en los editores.",
+                "de": "Verwenden Sie einen Assistenten bei der Eingabe in den Editoren."
+            },
+            "url"                 : "index.html",
+            "icons"               : ["resources/img/icon.png", "resources/img/icon@2x.png"],
+            "screens"             : ["resources/store/screen_1.png"],
+            "isViewer"            : false,
+            "EditorsSupport"      : ["word", "slide", "cell"],
+            "isVisual"            : false,
+            "isSystem"            : true,
+            "initDataType"        : "none",
+            
             "events" : [
                 "onInputHelperClear",
                 "onInputHelperInput"
-            ]
+            ],
+            "store": {
+                "background": {
+                    "light" : "#F5F5F5",
+                    "dark" : "#444444"
+                },
+                "screenshots" : ["resources/store/screenshots/screen_1.png"],
+                "icons"       : {
+                    "light" : "resources/store/icons",
+                    "dark"  : "resources/store/icons"
+                }
+            }
         }
     ]
 }
@@ -75,23 +93,24 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul class="columns-2">
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#inputHelper_onSelectItem">inputHelper_onSelectItem</a></li>
-    <li><a href="<%= Url.Action("events") %>#onInputHelperClear">onInputHelperClear</a></li>
-    <li><a href="<%= Url.Action("events") %>#onInputHelperInput">onInputHelperInput</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/inputHelper_onSelectItem") %>">inputHelper_onSelectItem</a></li>
+    <li><a href="<%= Url.Action("events/onInputHelperClear") %>">onInputHelperClear</a></li>
+    <li><a href="<%= Url.Action("events/onInputHelperInput") %>">onInputHelperInput</a></li>
     <li><a href="<%= Url.Action("createinputhelper") %>">createInputHelper</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/inputtext") %>">executeMethod ("InputText")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/inputtext") %>">executeMethod ("InputText")</a></li>
     <li><a href="<%= Url.Action("getinputhelper") %>">getInputHelper</a></li>
-    <li><a href="<%= Url.Action("inputhelper") %>#createWindow">InputHelper.createWindow</a></li>
-    <li><a href="<%= Url.Action("inputhelper") %>#getItems">InputHelper.getItems</a></li>
-    <li><a href="<%= Url.Action("inputhelper") %>#setItems">InputHelper.setItems</a></li>
-    <li><a href="<%= Url.Action("inputhelper") %>#show">InputHelper.show</a></li>
-    <li><a href="<%= Url.Action("inputhelper") %>#unShow">InputHelper.unShow</a></li>  
+    <li><a href="<%= Url.Action("inputhelper/createWindow") %>">InputHelper.createWindow</a></li>
+    <li><a href="<%= Url.Action("inputhelper/getItems") %>">InputHelper.getItems</a></li>
+    <li><a href="<%= Url.Action("inputhelper/getScrollSizes") %>">InputHelper.getScrollSizes</a></li>
+    <li><a href="<%= Url.Action("inputhelper/setItems") %>">InputHelper.setItems</a></li>
+    <li><a href="<%= Url.Action("inputhelper/show") %>">InputHelper.show</a></li>
+    <li><a href="<%= Url.Action("inputhelper/unShow") %>">InputHelper.unShow</a></li>  
 </ul>
 
 
 <div class="header-gray">Support</div>
 
-<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/plugin-autocomplete/issues" target="_blank">GitHub</a>.</p>
+<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/issues" target="_blank">GitHub</a>.</p>

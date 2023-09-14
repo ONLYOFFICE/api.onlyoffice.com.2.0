@@ -32,7 +32,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/chess" target="_blank">https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/chess</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>chess.js</em></li>
     <li>Icons</li>
     <li><em>index_about.html</em> for the plugin <b>About</b> window</li>
 </ol>
@@ -92,20 +92,20 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul class="columns-2">
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("onexternalmouseup") %>">onExternalMouseUp</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onexternalmouseup") %>">onExternalMouseUp</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/addoleobject") %>">executeMethod ("AddOleObject")</a></li>
-    <li><a href="<%= Url.Action("executemethod/editoleobject") %>">executeMethod ("EditOleObject")</a></li>
-    <li><a href="<%= Url.Action("info/data") %>">info.data</a></li>
-    <li><a href="<%= Url.Action("info/guid") %>">info.guid</a></li>
-    <li><a href="<%= Url.Action("info/height") %>">info.height</a></li>
-    <li><a href="<%= Url.Action("info/imgscr") %>">info.imgScr</a></li>
-    <li><a href="<%= Url.Action("info/mmtopx") %>">info.mmToPx</a></li>
-    <li><a href="<%= Url.Action("info/objectid") %>">info.objectId</a></li>
-    <li><a href="<%= Url.Action("info/resize") %>">info.resize</a></li>
-    <li><a href="<%= Url.Action("info/width") %>">info.width</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/addoleobject") %>">executeMethod ("AddOleObject")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/editoleobject") %>">executeMethod ("EditOleObject")</a></li>
+    <li><a href="<%= Url.Action("info") %>#data">info.data</a></li>
+    <li><a href="<%= Url.Action("info") %>#guid">info.guid</a></li>
+    <li><a href="<%= Url.Action("info") %>#height">info.height</a></li>
+    <li><a href="<%= Url.Action("info") %>#imgSrc">info.imgSrc</a></li>
+    <li><a href="<%= Url.Action("info") %>#mmToPx">info.mmToPx</a></li>
+    <li><a href="<%= Url.Action("info") %>#objectId">info.objectId</a></li>
+    <li><a href="<%= Url.Action("info") %>#resize">info.resize</a></li>
+    <li><a href="<%= Url.Action("info") %>#width">info.width</a></li>
 </ul>
 
 

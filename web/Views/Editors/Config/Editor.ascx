@@ -43,10 +43,10 @@
             <td id="actionLink" class="copy-link">actionLink</td>
             <td>Specifies the data received from the <b>document editing service</b> using the <a href="<%= Url.Action("config/events") %>#onMakeActionLink">onMakeActionLink</a> event or the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event in <em>data.actionLink</em> parameter, which contains the information about the action in the document that will be scrolled to.</td>
             <td>object</td>
-            <td></td>
+            <td>ACTION_DATA</td>
         </tr>
         <tr class="tablerow">
-            <td id="callbackUrl" class="copy-link">callbackUrl<span class="required">*</span></td>
+            <td id="callbackUrl" class="copy-link">callbackUrl<a href="#requiredDescr" class="required">*</a></td>
             <td>Specifies absolute URL to the <b>document storage service</b> (which <a href="<%= Url.Action("callback") %>">must be implemented</a> by the software integrators who use ONLYOFFICE Document Server on their own server).</td>
             <td>string</td>
             <td>"https://example.com/url-to-callback.ashx"</td>
@@ -58,23 +58,27 @@
                 The object has the following parameters:
                 <ul>
                     <li>
-                        <b>mode</b> - the co-editing mode (<em>fast</em> or <em>strict</em>),
+                        <b>mode</b> - the co-editing mode (<em>fast</em> or <em>strict</em>). The default value is <b>fast</b>,
                         <br />
                         <b>type</b>: string,
                         <br />
                         <b>example</b>:  "fast";
                     </li>
                     <li>
-                        <b>change</b> - defines if the co-editing mode can be changed in the editor interface or not,
+                        <b>change</b> - defines if the co-editing mode can be changed in the editor interface or not. The default value is <b>true</b>,
                         <br />
                         <b>type</b>: boolean,
                         <br />
                         <b>example</b>:  true.
                     </li>
                 </ul>
+                <p>This parameter is used to apply the <a href="<%= Url.Action("coedit") %>#modes">co-editing</a> and <a href="<%= Url.Action("viewing") %>">viewing</a> modes.</p>
             </td>
             <td>object</td>
-            <td></td>
+            <td>{
+    "mode": "fast",
+    "change": true
+}</td>
         </tr>
         <tr class="tablerow-note">
             <td colspan="4">
@@ -83,7 +87,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/coediting-mode.png") %>" width="832px" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/coediting-mode.png") %>" width="832px" alt="" />
             </td>
         </tr>
         <tr>
@@ -98,10 +102,10 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/create.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/create.png") %>" alt="" />
             </td>
         </tr>
-        <tr class="tablerow">
+        <tr>
             <td id="lang" class="copy-link">lang</td>
             <td>
                 Defines the editor interface language (if some other languages other than English are present).
@@ -110,6 +114,13 @@
             </td>
             <td>string</td>
             <td>"en"</td>
+        </tr>
+        <tr class="tablerow tablerow-note">
+            <td colspan="4">
+                <div class="note">Please note that to translate the editor interface into Portuguese (Portugal) or Chinese (Traditional, Taiwan)
+                (these languages were added in version 7.2), you need to use the four letter language codes - <b>pt-PT</b> or <b>zh-TW</b>, respectively.
+                The two letter <b>pt</b> language code sets Portuguese (Brazil) and the <b>zh</b> code specifies Chinese (People's Republic of China).</div>
+            </td>
         </tr>
         <tr>
             <td id="location" class="copy-link">location</td>
@@ -164,11 +175,17 @@
                 </ul>
             </td>
             <td>array of object</td>
-            <td></td>
+            <td>[
+    {
+        "folder": "Example Files",
+        "title": "exampledocument1.docx",
+        "url": "https://example.com/exampledocument1.docx"
+    }
+]</td>
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/recent.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/recent.png") %>" alt="" />
             </td>
         </tr>
         <tr class="tablerow">
@@ -209,11 +226,17 @@
                 </ul>
             </td>
             <td>array of object</td>
-            <td></td>
+            <td>[
+    {
+        "image": "https://example.com/exampletemplate1.png",
+        "title": "exampletemplate1.docx",
+        "url": "https://example.com/url-to-create-template1"
+    }
+]</td>
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/templates.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/templates.png") %>" alt="" />
             </td>
         </tr>
         <tr class="tablerow">
@@ -268,13 +291,17 @@
                 </ul>
             </td>
             <td>object</td>
-            <td></td>
+            <td>{
+    "group": "Group1",
+    "id": "78e1e841",
+    "name": "John Smith"
+}</td>
         </tr>
     </tbody>
 </table>
 <div class="mobile-content"></div>
 
-<span class="required-descr"><span class="required">*</span><em> - required field</em></span>
+<span id="requiredDescr" class="required-descr"><span class="required">*</span><em> - required field</em></span>
 <div class="header-gray">Example</div>
 <pre>
 var docEditor = new DocsAPI.DocEditor("placeholder", {

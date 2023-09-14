@@ -161,7 +161,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -178,7 +178,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -209,8 +209,120 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "GetWidth": {
+      "memberof": "ApiDrawing",
+      "name": "GetWidth",
+      "description": "<p>Returns the width of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "EMU"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetHeight": {
+      "memberof": "ApiDrawing",
+      "name": "GetHeight",
+      "description": "<p>Returns the height of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "EMU"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetLockValue": {
+      "memberof": "ApiDrawing",
+      "name": "GetLockValue",
+      "description": "<p>Returns the lock value for the specified lock type of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "bool"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "\"noGrp\" | \"noUngrp\" | \"noSelect\" | \"noRot\" | \"noChangeAspect\" | \"noMove\" | \"noResize\" | \"noEditPoints\" | \"noAdjustHandles\" | \"noChangeArrowheads\" | \"noChangeShapeType\" | \"noDrilldown\" | \"noTextEdit\" | \"noCrop\" | \"txBox\"",
+          "name": "sType",
+          "description": "<p>Lock type in the string format.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetLockValue": {
+      "memberof": "ApiDrawing",
+      "name": "SetLockValue",
+      "description": "<p>Sets the lock value to the specified lock type of the current drawing.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "bool"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "\"noGrp\" | \"noUngrp\" | \"noSelect\" | \"noRot\" | \"noChangeAspect\" | \"noMove\" | \"noResize\" | \"noEditPoints\" | \"noAdjustHandles\" | \"noChangeArrowheads\" | \"noChangeShapeType\" | \"noDrilldown\" | \"noTextEdit\" | \"noCrop\" | \"txBox\"",
+          "name": "sType",
+          "description": "<p>Lock type in the string format.</p>",
+          "optional": false
+        },
+        {
+          "type": "bool",
+          "name": "bValue",
+          "description": "<p>Specifies if the specified lock is applied to the current drawing.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "ToJSON": {
+      "memberof": "ApiDrawing",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiDrawing object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a graphical object.\n     * @constructor\n     */",
   "description": "<p>Class representing a graphical object.</p>",
   "scope": "global",

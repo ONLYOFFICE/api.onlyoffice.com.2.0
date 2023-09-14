@@ -1,10 +1,10 @@
 'use strict';
 let fs = require('fs');
 let data;
-exports.publish = function(taffyData) {
+exports.publish = function (taffyData) {
     data = taffyData;
     let main_data = {};
-    data().each(function(doclet) {
+    data().each(function (doclet) {
         if (!doclet.undocumented) {
             if (doclet.kind === "class") {
                 create_class_if_not_exist(doclet, main_data);
@@ -13,6 +13,11 @@ exports.publish = function(taffyData) {
                 add_method(doclet, main_data);
             } else if (doclet.kind === "typedef") {
                 add_typedef(doclet, main_data);
+            } else if (doclet.kind === "event") {
+                add_event(doclet, main_data);
+            } else if (doclet.kind === "member") { // hack for attach & detach event
+                create_class_if_not_exist(doclet, main_data);
+                add_method(doclet, main_data);
             }
         }
         doclet.attribs = '';
@@ -29,6 +34,7 @@ function create_class_if_not_exist(doclet, main_data) {
 
     let type = {
         "methods": {},
+        "events": {},
         "comment": doclet.comment,
         "description": doclet.description,
         "scope": doclet.scope
@@ -52,7 +58,7 @@ function add_method(doclet, main_data) {
     if (!doclet.memberof || doclet.name.includes("private")) return;
 
     method.memberof = doclet.memberof;
-    method.name = doclet.name;
+    method.name = doclet.name.replace(/"/g, "");
     method.description = doclet.description;
     method.tags = get_tags(doclet.tags);
     method.returns = get_returns(doclet.returns);
@@ -75,6 +81,27 @@ function add_typedef(doclet, main_data) {
         description: doclet.description,
         type: doclet.type.names
     };
+
+    if (doclet.properties) {
+        main_data.Globals[doclet.name].properties = get_props(doclet.properties);
+    }
+}
+
+function add_event(doclet, main_data) {
+    let event = {};
+    if (!doclet.memberof || doclet.name.includes("private")) return;
+
+    event.memberof = doclet.memberof;
+    event.name = doclet.name;
+    event.description = doclet.description;
+    event.tags = get_tags(doclet.tags);
+    event.see = doclet.see ? doclet.see[0] : null;
+
+    if (doclet.params) {
+        event.params = get_params(doclet.params);
+    }
+
+    main_data[doclet.memberof].events[event.name] = event;
 }
 
 function get_props(data) {

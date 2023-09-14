@@ -60,6 +60,7 @@
       "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing the areas.\n\t * @constructor\n\t * @property {number} Count - Returns a value that represents the number of objects in the collection.\n\t * @property {ApiRange} Parent - Returns the parent object for the specified collection.\n\t */",
   "description": "<p>Class representing the areas.</p>",
   "scope": "global",

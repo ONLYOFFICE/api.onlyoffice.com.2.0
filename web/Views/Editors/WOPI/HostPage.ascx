@@ -84,7 +84,7 @@
 
     <note>Please note that the <em>"&lt;%= actionUrl %&gt;"</em>, <em>"&lt;%= token %&gt;"</em>, <em>"&lt;%= tokenTtl %&gt;"</em> strings will be rendered with the appropriate parameters.</note>
     <div class="header-gray">Parameters</div>
-        <table class="table">
+    <table class="table">
         <colgroup>
             <col class="table-name" />
             <col />
@@ -111,4 +111,5 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>
     <p>Further information about building a host page can be found <a href="https://docs.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/hostpage" target="_blank">here</a>.</p>

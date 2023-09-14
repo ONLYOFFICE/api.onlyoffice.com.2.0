@@ -96,6 +96,10 @@
             "<a href="<%= Url.Action("config/document/permissions") %>#reviewGroups">reviewGroups</a>": ["Group1", "Group2", ""],
             "<a href="<%= Url.Action("config/document/permissions") %>#userInfoGroups">userInfoGroups</a>": ["Group1", ""]
         },
+        "<a href="<%= Url.Action("config/document") %>#referenceData">referenceData</a>": {
+            "fileKey": "BCFA2CED",
+            "instanceId": "https://example.com"
+        },
         "<a href="<%= Url.Action("config/document") %>#title">title</a>": "Example Document Title.docx",
         "<a href="<%= Url.Action("config/document") %>#url">url</a>": "https://example.com/url-to-example-document.docx"
     },
@@ -125,6 +129,7 @@
                 "logoDark": "https://example.com/dark-logo-big.png",
                 "mail": "john@example.com",
                 "name": "John Smith and Co.",
+                "phone": "123456789",
                 "www": "example.com"
             },
             "<a href="<%= Url.Action("config/editor/customization") %>#features">features</a>": {
@@ -148,6 +153,7 @@
             "<a href="<%= Url.Action("config/editor/customization") %>#hideNotes">hideNotes</a>": false,
             "<a href="<%= Url.Action("config/editor/customization") %>#hideRightMenu">hideRightMenu</a>": false,
             "<a href="<%= Url.Action("config/editor/customization") %>#hideRulers">hideRulers</a>": false,
+            "<a href="<%= Url.Action("config/editor/customization") %>#integrationMode">integrationMode</a>": "embed",
             "<a href="<%= Url.Action("config/editor/customization") %>#logo">logo</a>": {
                 "image": "https://example.com/logo.png",
                 "imageDark": "https://example.com/dark-logo.png",
@@ -246,6 +252,7 @@
         "<a href="<%= Url.Action("config/events") %>#onRequestHistoryData">onRequestHistoryData</a>": onRequestHistoryData,
         "<a href="<%= Url.Action("config/events") %>#onRequestInsertImage">onRequestInsertImage</a>": onRequestInsertImage,
         "<a href="<%= Url.Action("config/events") %>#onRequestMailMergeRecipients">onRequestMailMergeRecipients</a>": onRequestMailMergeRecipients,
+        "<a href="<%= Url.Action("config/events") %>#onRequestReferenceData">onRequestReferenceData</a>": onRequestReferenceData,
         "<a href="<%= Url.Action("config/events") %>#onRequestRename">onRequestRename</a>": onRequestRename,
         "<a href="<%= Url.Action("config/events") %>#onRequestRestore">onRequestRestore</a>": onRequestRestore,
         "<a href="<%= Url.Action("config/events") %>#onRequestSaveAs">onRequestSaveAs</a>": onRequestSaveAs,
@@ -255,7 +262,7 @@
         "<a href="<%= Url.Action("config/events") %>#onWarning">onWarning</a>": onWarning
     },
     "<a href="<%= Url.Action("config/") %>#height">height</a>": "100%",
-    "<a href="<%= Url.Action("config/") %>#token">token</a>": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.t-IDcSemACt8x4iTMCda8Yhe3iZaWbvV5XKSTbuAn0M",
+    "<a href="<%= Url.Action("config/") %>#token">token</a>": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.LwimMJA3puF3ioGeS-tfczR3370GXBZMIL-bdpu4hOU",
     "<a href="<%= Url.Action("config/") %>#type">type</a>": "desktop",
     "<a href="<%= Url.Action("config/") %>#width">width</a>": "100%"
 };

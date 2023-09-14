@@ -15,6 +15,7 @@
         <li><a href="<%= Url.Action("wopi/restapi/refreshlock") %>">RefreshLock</a> - refreshes the lock on a file by resetting its automatic expiration timer to 30 minutes.</li>
         <li><a href="<%= Url.Action("wopi/restapi/unlock") %>">Unlock</a> - allows for file editing.</li>
         <li><a href="<%= Url.Action("wopi/restapi/putfile") %>">PutFile</a> - requests a message to update a file for the <em>HTTP://server/&lt;...&gt;/wopi*/files/&lt;id&gt;/contents</em> operation.</li>
+        <li><a href="<%= Url.Action("wopi/restapi/putrelativefile") %>">PutRelativeFile</a> - creates a new file on the host based on the current file.</li>
         <li><a href="<%= Url.Action("wopi/restapi/renamefile") %>">RenameFile</a> - renames a file.</li>
     </ul>
 
@@ -69,3 +70,4 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>

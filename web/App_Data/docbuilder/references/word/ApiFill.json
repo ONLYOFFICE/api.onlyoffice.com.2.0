@@ -18,8 +18,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiFill",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiFill object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a base class for fill.\n\t * @constructor\n\t * */",
   "description": "<p>Class representing a base class for fill.</p>",
   "scope": "global",

@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Data.Storage</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.Data.Storage.Configuration.BaseStorageSettings`1.Module">
+            <example>Module</example>
+        </member>
+        <member name="P:ASC.Data.Storage.Configuration.BaseStorageSettings`1.Props">
+            <example>Props</example>
+            <collection>list</collection>
+        </member>
+        <member name="T:ASC.Data.Storage.Configuration.StorageSettings">
+            <inherited>ASC.Data.Storage.Configuration.BaseStorageSettings`1, ASC.Data.Storage</inherited>
+        </member>
+        <member name="T:ASC.Data.Storage.Configuration.CdnStorageSettings">
+            <inherited>ASC.Data.Storage.Configuration.BaseStorageSettings`1, ASC.Data.Storage</inherited>
+        </member>
+        <member name="T:ASC.Data.Storage.IDataStore">
+            <summary>
+             Interface for working with files
+            </summary>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.GetUri(System.String)">
+            <summary>
+             Get absolute Uri for html links to handler
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.GetUri(System.String,System.String)">
+            <summary>
+             Get absolute Uri for html links to handler
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.GetPreSignedUri(System.String,System.String,System.TimeSpan,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get absolute Uri for html links to handler
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="expire"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ASC.Data.Storage.IDataStore.IsSupportInternalUri">
+            <summary>
+             Supporting generate uri to the file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.GetInternalUri(System.String,System.String,System.TimeSpan,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get absolute Uri for html links
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="expire"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.GetReadStream(System.String,System.String)">
+            <summary>
+             A stream of read-only. In the case of the C3 stream NetworkStream general, and with him we have to work
+             Very carefully as a Jedi cutter groin lightsaber.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.GetReadStream(System.String,System.String,System.Int64)">
+            <summary>
+             A stream of read-only. In the case of the C3 stream NetworkStream general, and with him we have to work
+             Very carefully as a Jedi cutter groin lightsaber.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Save(System.String,System.String,System.IO.Stream)">
+            <summary>
+             Saves the contents of the stream in the repository.
+            </summary>
+             <param Name="domain"> </param>
+             <param Name="path"> </param>
+             <param Name="stream"> flow. Is read from the current position! Desirable to set to 0 when the transmission MemoryStream instance </param>
+             <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Save(System.String,System.String,System.IO.Stream,ASC.Data.Storage.Configuration.ACL)">
+            <summary>
+            Saves the contents of the stream in the repository.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="stream"></param>
+            <param name="acl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Save(System.String,System.String,System.IO.Stream,System.String)">
+            <summary>
+            Saves the contents of the stream in the repository.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="stream"></param>
+            <param name="attachmentFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Save(System.String,System.String,System.Guid,System.IO.Stream,System.String)">
+            <summary>
+            Saves the contents of the stream in the repository.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="ownerId"></param>
+            <param name="stream"></param>
+            <param name="attachmentFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Save(System.String,System.String,System.IO.Stream,System.String,System.String)">
+            <summary>
+            Saves the contents of the stream in the repository.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="stream"></param>
+            <param name="contentType"></param>
+            <param name="contentDisposition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Save(System.String,System.String,System.IO.Stream,System.String,System.Int32)">
+            <summary>
+            Saves the contents of the stream in the repository.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="stream"></param>
+            <param name="contentEncoding"></param>
+            <param name="cacheDays"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Delete(System.String,System.String)">
+            <summary>
+             Deletes file
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.DeleteFiles(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+             Deletes file by mask
+            </summary>
+            <param name="domain"></param>
+            <param name="folderPath"></param>
+            <param name="pattern">Wildcard mask (*.png)</param>
+            <param name="recursive"></param>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.DeleteFiles(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+             Deletes files
+            </summary>
+            <param name="domain"></param>
+            <param name="paths"></param>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.DeleteFiles(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+             Deletes file by last modified date
+            </summary>
+            <param name="domain"></param>
+            <param name="folderPath"></param>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.MoveDirectory(System.String,System.String,System.String,System.String)">
+            <summary>
+             Moves the contents of one directory to another. s3 for a very expensive procedure.
+            </summary>
+            <param name="srcdomain"></param>
+            <param name="srcdir"></param>
+            <param name="newdomain"></param>
+            <param name="newdir"></param>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.Move(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+             Moves file
+            </summary>
+            <param name="srcdomain"></param>
+            <param name="srcpath"></param>
+            <param name="newdomain"></param>
+            <param name="newpath"></param>
+            <param name="quotaCheckFileSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.SaveTemp(System.String,System.String@,System.IO.Stream)">
+            <summary>
+             Saves the file in the temp. In fact, almost no different from the usual Save except that generates the file name itself. An inconvenient thing.
+            </summary>
+            <param name="domain"></param>
+            <param name="assignedPath"></param>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.ListDirectoriesRelative(System.String,System.String,System.Boolean)">
+            <summary>
+             Returns a list of links to all subfolders
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="recursive">iterate subdirectories or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.ListFiles(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+             Returns a list of links to all files
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="pattern">Wildcard mask (*. jpg for example)</param>
+            <param name="recursive">iterate subdirectories or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.ListFilesRelative(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+             Returns a list of relative paths for all files
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <param name="pattern">Wildcard mask (*. jpg for example)</param>
+            <param name="recursive">iterate subdirectories or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.IsFile(System.String,System.String)">
+            <summary>
+             Checks whether a file exists. On s3 it took long time.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Data.Storage.IDataStore.IsDirectory(System.String,System.String)">
+            <summary>
+             Checks whether a directory exists. On s3 it took long time.
+            </summary>
+            <param name="domain"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

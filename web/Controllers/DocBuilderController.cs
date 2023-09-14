@@ -1,6 +1,6 @@
 /*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -55,6 +55,7 @@ namespace ASC.Api.Web.Help.Controllers
                 "changelog",
                 "classlist",
                 "csharpexample",
+                "debugging",
                 "formapi",
                 "gettingstarted",
                 "global",
@@ -64,21 +65,117 @@ namespace ASC.Api.Web.Help.Controllers
                 "howitworks/globalvariable",
                 "integratingdocumentbuilder",
                 "integrationapi",
+                "integrationapi/c",
+                "integrationapi/c/cdocbuilder",
+                "integrationapi/c/cdocbuilder/closefile",
+                "integrationapi/c/cdocbuilder/createfile",
+                "integrationapi/c/cdocbuilder/dispose",
+                "integrationapi/c/cdocbuilder/executecommand",
+                "integrationapi/c/cdocbuilder/getcontext",
+                "integrationapi/c/cdocbuilder/getversion",
+                "integrationapi/c/cdocbuilder/initialize",
+                "integrationapi/c/cdocbuilder/issavewithdoctrenderermode",
+                "integrationapi/c/cdocbuilder/openfile",
+                "integrationapi/c/cdocbuilder/run",
+                "integrationapi/c/cdocbuilder/runtexta",
+                "integrationapi/c/cdocbuilder/runtextw",
+                "integrationapi/c/cdocbuilder/savefile",
+                "integrationapi/c/cdocbuilder/setproperty",
+                "integrationapi/c/cdocbuilder/setpropertyw",
+                "integrationapi/c/cdocbuilder/settmpfolder",
+                "integrationapi/c/cdocbuilder/writedata",
+                "integrationapi/c/cdocbuildervalue",
+                "integrationapi/c/cdocbuildervalue/isempty",
+                "integrationapi/c/cdocbuildervalue/clear",
+                "integrationapi/c/cdocbuildervalue/isnull",
+                "integrationapi/c/cdocbuildervalue/isundefined",
+                "integrationapi/c/cdocbuildervalue/isbool",
+                "integrationapi/c/cdocbuildervalue/isint",
+                "integrationapi/c/cdocbuildervalue/isdouble",
+                "integrationapi/c/cdocbuildervalue/isstring",
+                "integrationapi/c/cdocbuildervalue/isfunction",
+                "integrationapi/c/cdocbuildervalue/isobject",
+                "integrationapi/c/cdocbuildervalue/isarray",
+                "integrationapi/c/cdocbuildervalue/istypedarray",
+                "integrationapi/c/cdocbuildervalue/getlength",
+                "integrationapi/c/cdocbuildervalue/tobool",
+                "integrationapi/c/cdocbuildervalue/toint",
+                "integrationapi/c/cdocbuildervalue/todouble",
+                "integrationapi/c/cdocbuildervalue/tostring",
+                "integrationapi/c/cdocbuildervalue/getproperty",
+                "integrationapi/c/cdocbuildervalue/get",
+                "integrationapi/c/cdocbuildervalue/set",
+                "integrationapi/c/cdocbuildervalue/setproperty",
+                "integrationapi/c/cdocbuildervalue/createundefined",
+                "integrationapi/c/cdocbuildervalue/createnull",
+                "integrationapi/c/cdocbuildervalue/call",
+                "integrationapi/c/cdocbuildercontextscope",
+                "integrationapi/c/cdocbuildercontextscope/close",
+                "integrationapi/c/cdocbuildercontext",
+                "integrationapi/c/cdocbuildercontext/createundefined",
+                "integrationapi/c/cdocbuildercontext/createnull",
+                "integrationapi/c/cdocbuildercontext/createobject",
+                "integrationapi/c/cdocbuildercontext/createarray",
+                "integrationapi/c/cdocbuildercontext/createtypedarray",
+                "integrationapi/c/cdocbuildercontext/allocmemorytypedarray",
+                "integrationapi/c/cdocbuildercontext/freememorytypedarray",
+                "integrationapi/c/cdocbuildercontext/getglobal",
+                "integrationapi/c/cdocbuildercontext/createscope",
+                "integrationapi/c/cdocbuildercontext/iserror",
+                "integrationapi/net",
+                "integrationapi/net/cdocbuilder",
+                "integrationapi/net/cdocbuilder/closefile",
+                "integrationapi/net/cdocbuilder/createfile",
+                "integrationapi/net/cdocbuilder/destroy",
+                "integrationapi/net/cdocbuilder/executecommand",
+                "integrationapi/net/cdocbuilder/getcontext",
+                "integrationapi/net/cdocbuilder/getversion",
+                "integrationapi/net/cdocbuilder/initialize",
+                "integrationapi/net/cdocbuilder/issavewithdoctrenderermode",
+                "integrationapi/net/cdocbuilder/openfile",
+                "integrationapi/net/cdocbuilder/run",
+                "integrationapi/net/cdocbuilder/runtext",
+                "integrationapi/net/cdocbuilder/savefile",
+                "integrationapi/net/cdocbuilder/setproperty",
+                "integrationapi/net/cdocbuilder/settmpfolder",
+                "integrationapi/net/cdocbuilder/writedata",
+                "integrationapi/net/cdocbuildervalue",
+                "integrationapi/net/cdocbuildervalue/isempty",
+                "integrationapi/net/cdocbuildervalue/clear",
+                "integrationapi/net/cdocbuildervalue/isnull",
+                "integrationapi/net/cdocbuildervalue/isundefined",
+                "integrationapi/net/cdocbuildervalue/isbool",
+                "integrationapi/net/cdocbuildervalue/isint",
+                "integrationapi/net/cdocbuildervalue/isdouble",
+                "integrationapi/net/cdocbuildervalue/isstring",
+                "integrationapi/net/cdocbuildervalue/isfunction",
+                "integrationapi/net/cdocbuildervalue/isobject",
+                "integrationapi/net/cdocbuildervalue/isarray",
+                "integrationapi/net/cdocbuildervalue/istypedarray",
+                "integrationapi/net/cdocbuildervalue/getlength",
+                "integrationapi/net/cdocbuildervalue/tobool",
+                "integrationapi/net/cdocbuildervalue/toint",
+                "integrationapi/net/cdocbuildervalue/todouble",
+                "integrationapi/net/cdocbuildervalue/tostring",
+                "integrationapi/net/cdocbuildervalue/getproperty",
+                "integrationapi/net/cdocbuildervalue/get",
+                "integrationapi/net/cdocbuildervalue/set",
+                "integrationapi/net/cdocbuildervalue/setproperty",
+                "integrationapi/net/cdocbuildervalue/createundefined",
+                "integrationapi/net/cdocbuildervalue/createnull",
+                "integrationapi/net/cdocbuildervalue/call",
+                "integrationapi/net/cdocbuildercontextscope",
+                "integrationapi/net/cdocbuildercontextscope/close",
+                "integrationapi/net/cdocbuildercontext",
+                "integrationapi/net/cdocbuildercontext/createundefined",
+                "integrationapi/net/cdocbuildercontext/createnull",
+                "integrationapi/net/cdocbuildercontext/createobject",
+                "integrationapi/net/cdocbuildercontext/createarray",
+                "integrationapi/net/cdocbuildercontext/createtypedarray",
+                "integrationapi/net/cdocbuildercontext/getglobal",
+                "integrationapi/net/cdocbuildercontext/createscope",
+                "integrationapi/net/cdocbuildercontext/iserror",
                 "integrationapi/arguments",
-                "integrationapi/cdocbuilder",
-                "integrationapi/cdocbuilder/closefile",
-                "integrationapi/cdocbuilder/createfile",
-                "integrationapi/cdocbuilder/dispose",
-                "integrationapi/cdocbuilder/executecommand",
-                "integrationapi/cdocbuilder/initialize",
-                "integrationapi/cdocbuilder/openfile",
-                "integrationapi/cdocbuilder/run",
-                "integrationapi/cdocbuilder/runtexta",
-                "integrationapi/cdocbuilder/runtextw",
-                "integrationapi/cdocbuilder/setproperty",
-                "integrationapi/cdocbuilder/setpropertyw",
-                "integrationapi/cdocbuilder/settmpfolder",
-                "integrationapi/cdocbuilder/savefile",
                 "integrationapi/usingdocbuilderfile",
                 "phpexample",
                 "presentationapi",
@@ -119,6 +216,11 @@ namespace ASC.Api.Web.Help.Controllers
             return View();
         }
 
+        public ActionResult Debugging()
+        {
+            return View();
+        }
+
         public ActionResult Gettingstarted()
         {
             return View();
@@ -146,11 +248,7 @@ namespace ASC.Api.Web.Help.Controllers
 
         public ActionResult Integratingdocumentbuilder()
         {
-            var directoryInfo = new DirectoryInfo(Request.MapPath("~/app_data/docbuilder"));
-
-            var examples = directoryInfo.GetFiles("*.zip", SearchOption.TopDirectoryOnly).Select(fileInfo => fileInfo.Name).ToList();
-
-            return View(examples);
+            return View();
         }
 
         public ActionResult Integrationapi(string catchall)
@@ -179,7 +277,7 @@ namespace ASC.Api.Web.Help.Controllers
         [HttpPost]
         public string Try(string module, string section, string method)
         {
-            var dbMethod = DocBuilderDocumentation.GetMethod(module, section, method);
+            var dbMethod = DocBuilderDocumentation.Instance.GetMethod(module, section, method);
             if (dbMethod != null && dbMethod.Example != null)
                 return dbMethod.Example.Script;
             return "";
@@ -211,7 +309,7 @@ namespace ASC.Api.Web.Help.Controllers
 
         public ActionResult Global()
         {
-            return View(DocBuilderDocumentation.GetGlobals());
+            return View(DocBuilderDocumentation.Instance.GetGlobals());
         }
 
         public ActionResult Classlist()
@@ -283,15 +381,24 @@ namespace ASC.Api.Web.Help.Controllers
 
             if (string.IsNullOrEmpty(method))
             {
-                var sec = DocBuilderDocumentation.GetSection(module, section);
+                var sec = DocBuilderDocumentation.Instance.GetSection(module, section);
                 if (sec == null) return View("sectionnotfound");
                 return View("sectionpartial", sec);
             }
             else
             {
-                var met = DocBuilderDocumentation.GetMethod(module, section, method);
-                if (met == null) return View("methodnotfound");
-                return View("methodpartial", met);
+                if (method.StartsWith("event-"))
+                {
+                    var ev = DocBuilderDocumentation.Instance.GetEvent(module, section, method.Substring("event-".Length));
+                    if (ev == null) return View("eventnotfound");
+                    return View("eventpartial", ev);
+                }
+                else
+                {
+                    var met = DocBuilderDocumentation.Instance.GetMethod(module, section, method);
+                    if (met == null) return View("methodnotfound");
+                    return View("methodpartial", met);
+                }
             }
         }
     }

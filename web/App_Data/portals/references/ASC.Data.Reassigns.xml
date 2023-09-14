@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Data.Reassigns</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.Id">
+            <example type="int">123124</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.Status">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.Error">
+            <example>error</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.Percentage">
+            <example type="double">55.5</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.IsCompleted">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.RemoveProgressItem.FromUser">
+            <example>f528a377-b268-4cdb-8209-91d0fa1417c2</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.Id">
+            <example type="int">123124</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.Status">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.Error">
+            <example>error</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.Percentage">
+            <example type="double">55.5</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.IsCompleted">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.FromUser">
+            <example>f528a377-b268-4cdb-8209-91d0fa1417c2</example>
+        </member>
+        <member name="P:ASC.Data.Reassigns.ReassignProgressItem.ToUser">
+            <example>f528a377-b268-4cdb-8209-91d0fa1417ca</example>
+        </member>
+    </members>
+</doc>

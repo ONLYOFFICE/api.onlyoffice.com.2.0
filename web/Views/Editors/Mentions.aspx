@@ -28,13 +28,27 @@
         <li>Create an empty <em>html</em> file to <a href="<%= Url.Action("open") %>#apply">Open the document</a>.</li>
         <li>
             <p>
-                Specify the event handler for the hint about mentioning users in the comments to be displayed in the configuration script for Document Editor initialization.
+                In the configuration script for Document Editor initialization, specify the event handler for the hint about mentioning users in the comments to be displayed.
                 When the user types the <b>+</b> sign, the <a href="<%= Url.Action("config/events") %>#onRequestUsers">onRequestUsers</a> event is called and the commenter can select other users for mentioning in the comments.
+                The <em>data.c</em> parameter with the <em>mention</em> operation type is passed in this event.
             </p>
-            <img alt="Mentions" src="<%= Url.Content("~/content/img/editor/onRequestUsers.png") %>" />
+            <img class="screenshot max-width-300" alt="Mentions" src="<%= Url.Content("~/content/img/editor/onRequestUsers.png") %>" />
             <pre>
-var onRequestUsers = function() {
-    ...
+var onRequestUsers = function(event) {
+    docEditor.setUsers({
+        "c": event.data.c,
+        "users": [
+            {
+                "email": "john@example.com",
+                "name": "John Smith"
+            },
+            {
+                "email": "kate@example.com",
+                "name": "Kate Cage"
+            },
+            ...
+        ]
+    });
 };
 
 var docEditor = new DocsAPI.DocEditor("placeholder", {
@@ -52,6 +66,7 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
             </p>
             <pre>
 docEditor.setUsers({
+    "c": "mention",
     "users": [
         {
             "email": "john@example.com",
@@ -69,43 +84,6 @@ docEditor.setUsers({
                 Where the <b>example.com</b> is the name of the server where <b>document manager</b> and <b>document storage service</b> are installed.
                 See the <a href="<%= Url.Action("howitworks") %>">How it works</a> section to find out more on Document Server service client-server interactions.
             </p>
-            <table class="table">
-                <colgroup>
-                    <col style="width: 100px;" />
-                    <col />
-                    <col style="width: 100px;" />
-                    <col style="width: 150px;" />
-                </colgroup>
-                <thead>
-                    <tr class="tablerow">
-                        <td>Parameter</td>
-                        <td>Description</td>
-                        <td>Type</td>
-                        <td>Presence</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tablerow">
-                        <td>users</td>
-                        <td>Defines the list of the users.</td>
-                        <td>array of strings</td>
-                        <td>optional</td>
-                    </tr>
-                    <tr class="tablerow">
-                        <td>users.email</td>
-                        <td>Defines the email address of the user.</td>
-                        <td>string</td>
-                        <td>required</td>
-                    </tr>
-                    <tr class="tablerow">
-                        <td>users.name</td>
-                        <td>Defines the full name of the user.</td>
-                        <td>string</td>
-                        <td>required</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="mobile-content"></div>
         </li>
     </ol>
 
@@ -144,14 +122,14 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
 });
 </pre>
 
-    <h2 id="apply-changes" class="copy-link">Sharing settings</h2>
+    <h2 id="sharing-setttings" class="copy-link">Sharing settings</h2>
     <p>
         When the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event is called, the software integrators provide access to the file, send notifications to the mentioned users with the action link which allows scrolling to the comment position in the document.
     </p>
     <p>
         In the case when the <a href="<%= Url.Action("config/document/info") %>#sharingSettings">document.info.sharingSettings</a> field is used in the document initialization but the list of the users from the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event is different, the <a href="<%= Url.Action("methods") %>#setSharingSettings">setSharingSettings</a> method must be called.
     </p>
-    <img width="832px" alt="Mentions" src="<%= Url.Content("~/content/img/editor/sharing_settings.png") %>" />
+    <img class="screenshot max-width-832" alt="Mentions" src="<%= Url.Content("~/content/img/editor/sharing_settings.png") %>" />
     <pre>
 docEditor.setSharingSettings({
     "sharingSettings": [
@@ -167,48 +145,11 @@ docEditor.setSharingSettings({
     ]
 });
 </pre>
-            <table class="table">
-                <colgroup>
-                    <col style="width: 100px;" />
-                    <col />
-                    <col style="width: 100px;" />
-                    <col style="width: 150px;" />
-                </colgroup>
-                <thead>
-                    <tr class="tablerow">
-                        <td>Parameter</td>
-                        <td>Description</td>
-                        <td>Type</td>
-                        <td>Presence</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tablerow">
-                        <td>sharingSettings</td>
-                        <td>Defines the settings which allow sharing the document with other users.</td>
-                        <td>array of object</td>
-                        <td>optional</td>
-                    </tr>
-                    <tr class="tablerow">
-                        <td>sharingSettings.permissions</td>
-                        <td>Defines the access rights for the user with the name above.</td>
-                        <td>string</td>
-                        <td>optional</td>
-                    </tr>
-                    <tr class="tablerow">
-                        <td>sharingSettings.user</td>
-                        <td>Defines the name of the user with whom the document will be shared.</td>
-                        <td>string</td>
-                        <td>optional</td>
-                    </tr>
-                </tbody>
-            </table>
-    <div class="mobile-content"></div>
     <p>
         In the case when the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event does not provide access to the file, the <a href="<%= Url.Action("config/editor/customization") %>#mentionShare">mentionShare</a> parameter in the customization section of the editor configuration must be set to <b>false</b>.
     </p>
     <div class="note">
         Please note that it will only be available for the comments if the <a href="<%= Url.Action("config/events") %>#onRequestSendNotify">onRequestSendNotify</a> event is set.
     </div>
-    <img alt="Mentions" src="<%= Url.Content("~/content/img/editor/mentionShare.png") %>" />
+    <img class="screenshot max-width-300" alt="Mentions" src="<%= Url.Content("~/content/img/editor/mentionShare.png") %>" />
 </asp:Content>

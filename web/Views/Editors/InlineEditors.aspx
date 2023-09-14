@@ -42,8 +42,9 @@
         <li>
             <p>
                 Add the script initializing the <b>Document Editor</b> for the <em>div</em> element with the configuration for the document you want to open.
-                Each editor has its own initialization script:
+                Be sure to add a <a href="<%= Url.Action("security") %>">token</a> when using local links. Otherwise, an error will occur.
             </p>
+            <p>Each editor has its own initialization script:</p>
             <pre>
 var documentEditor = new DocsAPI.DocEditor("placeholder1", {
     "document": {
@@ -52,7 +53,8 @@ var documentEditor = new DocsAPI.DocEditor("placeholder1", {
         "title": "Example Document Title.docx",
         "url": "https://example.com/url-to-example-document.docx"
     },
-    "documentType": "word"
+    "documentType": "word",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6eyJmaWxlVHlwZSI6ImRvY3giLCJrZXkiOiJLaGlyejZ6VFBkZmQ3IiwidGl0bGUiOiJFeGFtcGxlIERvY3VtZW50IFRpdGxlLmRvY3giLCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLWRvY3VtZW50LmRvY3gifSwiZG9jdW1lbnRUeXBlIjoid29yZCJ9.7IpEJxdOvBQ0kJ8l6ZegIV4tX5vsPbZZCDDVmcFROXc"
 });
 
 var spreadsheetEditor = new DocsAPI.DocEditor("placeholder2", {
@@ -62,7 +64,8 @@ var spreadsheetEditor = new DocsAPI.DocEditor("placeholder2", {
         "title": "Example Spreadsheet Title.xlsx",
         "url": "https://example.com/url-to-example-spreadsheet.xlsx"
     },
-    "documentType": "cell"
+    "documentType": "cell",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6eyJmaWxlVHlwZSI6Inhsc3giLCJrZXkiOiJhZjg2QzdlNzFDYTgiLCJ0aXRsZSI6IkV4YW1wbGUgU3ByZWFkc2hlZXQgVGl0bGUueGxzeCIsInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtc3ByZWFkc2hlZXQueGxzeCJ9LCJkb2N1bWVudFR5cGUiOiJjZWxsIn0.8CklPIjYSEkgM7swGAC7-85ICcq_42be3WTWNOuvhlg"
 });
 
 var presentationEditor = new DocsAPI.DocEditor("placeholder3", {
@@ -72,7 +75,8 @@ var presentationEditor = new DocsAPI.DocEditor("placeholder3", {
         "title": "Example Presentation Title.pptx",
         "url": "https://example.com/url-to-example-presentation.pptx"
     },
-    "documentType": "slide"
+    "documentType": "slide",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6eyJmaWxlVHlwZSI6InBwdHgiLCJrZXkiOiJidjQ4TTVyNjRTZjkiLCJ0aXRsZSI6IkV4YW1wbGUgUHJlc2VudGF0aW9uIFRpdGxlLnBwdHgiLCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLXByZXNlbnRhdGlvbi5wcHR4In0sImRvY3VtZW50VHlwZSI6InNsaWRlIn0.FKaDWfJE-OuODhtpq-8Qv6BdDy_evgdpaBw616T7zOs"
 });
 ...
 </pre>

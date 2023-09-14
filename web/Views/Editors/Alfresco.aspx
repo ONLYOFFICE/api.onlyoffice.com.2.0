@@ -21,17 +21,17 @@
 
     <h2 id="features" class="copy-link">Features</h2>
     <ul>
-        <li>Currently the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.</li>
+        <li>Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.</li>
         <li>
             <p>The plugin will create a new <b>Edit in ONLYOFFICE</b> menu option within the document library for Office documents.</p>
-            <img alt="Edit in OnlyOffice" src="<%= Url.Content("~/content/img/editor/alfresco.png") %>"/>
+            <img class="screenshot max-width-832" alt="Edit in OnlyOffice" src="<%= Url.Content("~/content/img/editor/alfresco.png") %>"/>
             <p>This allows multiple users to collaborate in real time and to save back those changes to Alfresco.</p>
         </li>
         <li>To convert ODT, ODP, ODS, DOC, XLS, PPT files into their OOXML counterparts, select the <b>Convert using ONLYOFFICE</b> option. Resulting files will be placed in the same folder. 
             You can also configure rules for a folder, that will automatically convert files on upload or on change. Details you can find <a href="https://docs.alfresco.com/content-services/latest/using/content/rules/" target="_blank">here</a>.</li>
         <li>
             To create a new document, choose the context menu <b>Create new...</b> option within document library.
-            <img alt="Create new..." src="<%= Url.Content("~/content/img/editor/alfresco-create.png") %>"/>
+            <img class="screenshot max-width-832" alt="Create new..." src="<%= Url.Content("~/content/img/editor/alfresco-create.png") %>"/>
         </li>
     </ul>
 
@@ -49,12 +49,20 @@
 
     <p>To start using ONLYOFFICE Docs with Alfresco, the following steps must be performed for Ubuntu 14.04:</p>
     <ol>
-        <li>Upload the compiled <b>*.jar</b> packages to directories accordingly for your Alfresco installation:
+        <li>Upload the compiled <b>*.amp</b> packages to directories accordingly for your Alfresco installation:
             <ul>
-                <li>from <em>onlyoffice-alfresco/repo/target/</em> to <em>/webapps/alfresco/WEB-INF/lib/</em> for Alfresco repository,</li>
-                <li>from <em>onlyoffice-alfresco/share/target/</em> to <em>/webapps/share/WEB-INF/lib/</em> for Share.</li>
+                <li>from <em>onlyoffice-alfresco/repo/target/</em> to <em>/usr/local/tomcat/amps/</em> for Alfresco repository,</li>
+                <li>from <em>onlyoffice-alfresco/share/target/</em> to <em>/usr/local/tomcat/amps_share/</em> for Share.</li>
             </ul>
             <div class="note">You can download the already compiled package files <a target="_blank" href="https://github.com/onlyoffice/onlyoffice-alfresco/releases">here</a> and place them to the respective directories.</div>
+        </li>
+        <li>
+            <p>Use the <b>Module Management Tool (MMT)</b> to install modules, run this commands:</p>
+            <p><b>Alfresco</b></p>
+            <span class="commandline">java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt.jar install /usr/local/tomcat/amps/onlyoffice-integration-repo.amp /usr/local/tomcat/webapps/alfresco</span>
+            <p><b>Share</b></p>
+            <span class="commandline">java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt.jar install /usr/local/tomcat/amps_share/onlyoffice-integration-share.amp /usr/local/tomcat/webapps/share</span>
+            <p>More details about using MMT can be found at the following address - <em>https://docs.alfresco.com/content-services/latest/install/zip/amp/</em>.</p>
         </li>
         <li>Make sure that Document Server will be able to POST to Alfresco.
             <p>You may need to change these lines in <b>alfresco-global.properties</b> or you can set it using <a href="#configuration">configuration page</a>:</p>
@@ -80,8 +88,9 @@ sudo ./alfresco.sh start</span>
         You can also add <em>onlyoffice.url</em> to <b>alfresco-global.properties</b>.
         Configuration made via settings page will override <b>alfresco-global.properties</b>.
     </div>
-    <p>JWT can be configured via <a href="#configuration">configuration page</a> or by adding <em>onlyoffice.jwtsecret</em> to <b>alfresco-global.properties</b>.</p>
-    <p>The JWT configuration on the Document Server side can be found <a href="/editors/signature/">here</a>.</p>
+    <p>Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+        Specify your own <b>Secret key</b> on the Alfresco configuration page or by adding <em>onlyoffice.jwtsecret</em> to <b>alfresco-global.properties</b>.
+        In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</p>
 
     <h2 id="compile" class="copy-link">Compiling ONLYOFFICE Alfresco module package</h2>
 
@@ -111,6 +120,7 @@ mvn clean install</span>
     <span class="commandline">docker-compose up</span>
 
     <h2 id="howitworks" class="copy-link">How it works</h2>
+    <p>The ONLYOFFICE integration follows the API documented <a href="<%= Url.Action("basic") %>">here</a>.</p>
     <ol>
         <li>User navigates to a document within Alfresco Share and selects the <b>Edit in ONLYOFFICE</b> menu option.</li>
         <li>Alfresco Share makes a request to the repo end (URL of the form: <em>/parashift/onlyoffice/prepare?nodeRef={nodeRef}</em>).</li>
@@ -127,10 +137,10 @@ mvn clean install</span>
         <li>Alfresco Share takes this object and constructs a page from a freemarker template, filling in all of those values so that the client browser can load up the editor.</li>
         <li>The client browser makes a request to the JavaScript library from ONLYOFFICE Docs and sends ONLYOFFICE Docs the DocEditor configuration with the above properties.</li>
         <li>Then ONLYOFFICE Docs downloads the document from Alfresco and the user begins editing.</li>
-        <li>ONLYOFFICE Docs sends a POST request to the <em>callback</em> URL to inform Alfresco that a user is editing the document.</li>
+        <li>ONLYOFFICE Docs sends a POST request to <em>callbackUrl</em> to inform Alfresco that a user is editing the document.</li>
         <li>Alfresco locks the document, but still allows other users with write access to collaborate in real time with ONLYOFFICE Docs by leaving the Action present.</li>
         <li>When all users and client browsers are done with editing, they close the editing window.</li>
-        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to the <em>callback</em> URL letting Alfresco know that the clients have finished editing the document and closed it.</li>
+        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to <em>callbackUrl</em> letting Alfresco know that the clients have finished editing the document and closed it.</li>
         <li>Alfresco downloads a new version of the document, replacing the old one.</li>
     </ol>
 

@@ -22,7 +22,7 @@
         <%= method.Name %>(<%= method.Params != null ? string.Join(", ", method.Params.Select(p => p.Optional ? string.Format("[{0}]", p.Name) : p.Name)) : "" %>)
         <% if (method.Returns != null && method.Returns.Any())
            { %>
-            &rarr; { <%= DocBuilderDocumentation.ReturnTypeToHtml(method) %> }
+            &rarr; { <%= DocBuilderDocumentation.Instance.ReturnTypeToHtml(method) %> }
         <% } %>
     </h4>
 
@@ -62,7 +62,7 @@
                     <tr class="tablerow">
                         <td><em><%= p.Name %></em></td>
                         <td>
-                            <em><%= DocBuilderDocumentation.ParamTypeToHtml(p) %></em>
+                            <em><%= DocBuilderDocumentation.Instance.ParamTypeToHtml(p) %></em>
                         </td>
                         <% if (hasOptional) { %>
                             <td><%= p.DefaultValue == null ? (p.Optional ? "null" : "") : p.DefaultValue %></td>
@@ -86,7 +86,7 @@
     <dl class="param-type">
         <dt>Type</dt>
         <dd>
-            <%= DocBuilderDocumentation.ReturnTypeToHtml(method) %>
+            <%= DocBuilderDocumentation.Instance.ReturnTypeToHtml(method) %>
         </dd>
     </dl>
     <% } else { %>
@@ -157,33 +157,28 @@
                                         },
                                     HideRightMenu = true,
                                     HideRulers = true,
+                                    IntegrationMode = "embed",
                                     ToolbarHideFileName = true,
                                     ToolbarNoTabs = true
-                                },
-                            Plugins = new Config.EditorConfigConfiguration.PluginsConfig()
-                                {
-                                    PluginsData = new List<string>
-                                        {
-                                            new UriBuilder(Request.Url.AbsoluteUri) {Path = Url.Content("~/externallistener/config.json"), Query = ""}.ToString()
-                                        }
                                 }
                         },
                     Height = "550px",
                     Width = "100%"
                 }) %>;
 
-        window.addEventListener("message", function (message) {
-            if (message && message.data == "externallistenerReady") {
-                document.getElementsByName("frameEditor")[0].contentWindow.postMessage(JSON.stringify({
-                    guid : "asc.{A8705DEE-7544-4C33-B3D5-168406D92F72}",
-                    type : "onExternalPluginMessage",
-                    data : {
-                        type: "executeCommand",
-                        text: "<%= Regex.Replace(method.Example.Script.Replace("\"", "\\\"").Replace("builder.CreateFile", "").Replace("builder.SaveFile", "").Replace("builder.CloseFile()", ""), "\\r*\\n", "") %>"
-                    }
-                }), "<%= ConfigurationManager.AppSettings["editor_url"] ?? "*" %>");
-            }
-        }, false);
+        var onDocumentReady = function () {
+            window.connector = docEditor.createConnector();
+
+            connector.callCommand(
+                "function () {" +
+                "<%= Regex.Replace(method.Example.Script.Replace("\"", "\\\"").Replace("builder.CreateFile", "").Replace("builder.SaveFile", "").Replace("builder.CloseFile()", ""), "\\r*\\n", "") %>" +
+                "}"
+            );
+        };
+
+        config.events = {
+            onDocumentReady: onDocumentReady,
+        };
 
         window.docEditor = new DocsAPI.DocEditor("placeholder", config);
     </script>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Thrdparty</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Thrdparty.Message">
+            <summary>
+            Represents an user activity message
+            </summary>
+        </member>
+        <member name="P:ASC.Thrdparty.Message.UserName">
+            <summary>
+            User name
+            </summary>
+            <example>Name user</example>
+        </member>
+        <member name="P:ASC.Thrdparty.Message.Text">
+            <summary>
+            Message text
+            </summary>
+            <example>text</example>
+        </member>
+        <member name="P:ASC.Thrdparty.Message.PostedOn">
+            <summary>
+            The date of message post
+            </summary>
+            <example>2008-04-10T06-30-00.000Z</example>
+        </member>
+        <member name="P:ASC.Thrdparty.Message.Source">
+            <summary>
+            Social network
+            </summary>
+            <example type="int">0</example>
+        </member>
+        <member name="T:ASC.Thrdparty.Twitter.TwitterDataProvider">
+            <summary>
+            Contains methods for getting data from Twitter
+            </summary>
+        </member>
+        <member name="M:ASC.Thrdparty.Twitter.TwitterDataProvider.#ctor(ASC.Thrdparty.Twitter.TwitterApiInfo)">
+            <summary>
+            Costructor
+            </summary>
+            <param name="apiInfo">TwitterApiInfo object</param>
+        </member>
+        <member name="M:ASC.Thrdparty.Twitter.TwitterDataProvider.GetUserTweets(System.String,System.Int32)">
+            <summary>
+            Gets tweets posted by specified user
+            </summary>   
+            <returns>Message list</returns>
+        </member>
+        <member name="M:ASC.Thrdparty.Twitter.TwitterDataProvider.FindUsers(System.String)">
+            <summary>
+            Gets last 20 users
+            </summary>
+            <param name="search">Search string</param>
+            <returns>TwitterUserInfo list</returns>
+        </member>
+        <member name="M:ASC.Thrdparty.Twitter.TwitterDataProvider.GetUrlOfUserImage(System.String,ASC.Thrdparty.Twitter.TwitterDataProvider.ImageSize)">
+            <summary>
+            Gets url of User image
+            </summary>
+            <returns>Url of image or null if resource does not exist</returns>
+        </member>
+        <member name="P:ASC.Thrdparty.Twitter.TwitterUserInfo.UserID">
+            <example type="dobule">1,1</example>
+        </member>
+        <member name="P:ASC.Thrdparty.Twitter.TwitterUserInfo.ScreenName">
+            <example>Screen name</example>
+        </member>
+        <member name="P:ASC.Thrdparty.Twitter.TwitterUserInfo.UserName">
+            <example>User Name</example>
+        </member>
+        <member name="P:ASC.Thrdparty.Twitter.TwitterUserInfo.SmallImageUrl">
+            <example>url to img</example>
+        </member>
+        <member name="P:ASC.Thrdparty.Twitter.TwitterUserInfo.Description">
+            <example>Description</example>
+        </member>
+    </members>
+</doc>

@@ -65,6 +65,7 @@
       ]
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a table row.\n     * @param oTableRow\n     * @constructor\n     */",
   "description": "<p>Class representing a table row.</p>",
   "scope": "global",

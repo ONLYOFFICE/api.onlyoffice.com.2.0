@@ -1,6 +1,6 @@
 ﻿/*
  *
- * (c) Copyright Ascensio System Limited 2021
+ * (c) Copyright Ascensio System SIA 2023
  *
  * This program is freeware. You can redistribute it and/or modify it under the terms of the GNU 
  * General Public License (GPL) version 3 as published by the Free Software Foundation (https://www.gnu.org/copyleft/gpl.html). 
@@ -27,7 +27,7 @@
 /* HEAD */
 
 .icon-program-block {
-    margin: 70px auto 110px auto;
+    margin: 46px auto 110px auto;
     justify-content: space-between;
     display: flex;
     max-width: 1120px;
@@ -72,10 +72,6 @@
     background-image: url("img/main-page/document_builder.svg");
 }
 
-.img-title-apisystem {
-    background-image: url("img/main-page/hosted_solution.svg");
-}
-
 .img-title-plugin {
     background-image: url("img/main-page/plugins_and_macros.svg");
 }
@@ -86,6 +82,10 @@
 
 .img-title-desktop {
     background-image: url("img/main-page/desktop.svg");
+}
+
+.img-title-docspace {
+    background-image: url("img/main-page/docspace.svg");
 }
 
 .block-img {
@@ -250,7 +250,7 @@
         max-width: 580px;
         display: block;
         line-height: 100px;
-        margin: 70px auto auto auto;
+        margin-bottom: auto;
     }
 
     .body-block {

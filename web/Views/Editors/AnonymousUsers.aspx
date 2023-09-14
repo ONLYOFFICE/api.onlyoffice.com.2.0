@@ -16,7 +16,10 @@
     <p class="dscr">The reference figure and the steps below explain the process of setting a name to an anonymous user in ONLYOFFICE Document Server.</p>
     <img alt="Anonymous" src="<%= Url.Content("~/content/img/editor/anonymous-user.png") %>" />
     <ol>
-        <li>The anonymous user uses the <b>document manager</b> to open a document for viewing or editing.</li>
+        <li>
+            <p>The anonymous user uses the <b>document manager</b> to open a document for viewing or editing.</p>
+            <note>Anonymous user is a user with an empty <a href="<%= Url.Action("config/editor") %>#user">user id</a>.</note>
+        </li>
         <li>The <b>document storage service</b> sends the initialization config to the <b>document editor</b> using the <a href="<%= Url.Action("basic") %>">JavaScript API</a> but the user name is not specified there.</li>
         <li>The <b>document editor</b> requests the user name.</li>
         <li>The <b>document editor</b> sends the received name to the <b>document editing service</b>.</li>
@@ -30,12 +33,12 @@
         <li>
             <p>If the user name is not specified, it will be requested. The request can be turned off with 
             the <em>"request"=false</em> value of the <a href="<%= Url.Action("config/editor/customization") %>#anonymous">editorConfig.customization.anonymous</a> parameter.</p>
-            <img width="832px" alt="Name request" src="<%= Url.Content("~/content/img/editor/name-request.png") %>" />
+            <img class="screenshot max-width-832" alt="Name request" src="<%= Url.Content("~/content/img/editor/name-request.png") %>" />
         </li>
         <li>
             <p>After the anonymous user&#8217;s name is set, the postfix is added to it via the <em>label</em> field of 
                 the <em>editorConfig.customization.anonymous</em> parameter to distinguish guests during the coediting session. By default this postfix is <em>"Guest"</em>.</p>
-            <img alt="Label" src="<%= Url.Content("~/content/img/editor/label.png") %>" />
+            <img class="screenshot max-width-832" alt="Label" src="<%= Url.Content("~/content/img/editor/label.png") %>" />
             <pre>
 var docEditor = new DocsAPI.DocEditor("placeholder", {
     "editorConfig": {
@@ -56,5 +59,12 @@ var docEditor = new DocsAPI.DocEditor("placeholder", {
         <li>To change this name, click it on the top toolbar and enter a new one in the opened window.</li>
         <li>All the co-authors will see the new name.</li>
     </ol>
+
+
+    <h2 id="restricting-access" class="copy-link">Restricting access to the editor or live viewer</h2>
+    <p>To restrict anonymous users access to the editor or live viewer, set the <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-configuring.aspx#services-CoAuthoring-server-isAnonymousSupport" target="_blank">services.CoAuthoring.server.isAnonymousSupport</a> parameter in the configuration file to <b>false</b>.
+        In this case, when the anonymous user tries to open the editor, a warning will occur.</p>
+    <img class="screenshot max-width-400" alt="Anonymous user warning" src="<%= Url.Content("~/content/img/editor/anonymous-warning.jpg") %>" />
+    <p>The live viewer will switch to the offline viewer without warnings.</p>
 
 </asp:Content>

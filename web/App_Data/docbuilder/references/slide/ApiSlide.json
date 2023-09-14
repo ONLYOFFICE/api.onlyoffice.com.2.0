@@ -41,7 +41,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -66,7 +66,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -96,7 +96,11 @@
           "CPE"
         ]
       },
-      "returns": [],
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
       "see": null,
       "inherits": null,
       "params": [
@@ -145,7 +149,7 @@
     "ApplyLayout": {
       "memberof": "ApiSlide",
       "name": "ApplyLayout",
-      "description": "<p>Applies the specified layout to the current slide.</p>",
+      "description": "<p>Applies the specified layout to the current slide.\nThe layout must be in slide master.</p>",
       "tags": {
         "typeofeditors": [
           "CPE"
@@ -153,7 +157,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -178,7 +182,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -240,7 +244,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -282,7 +286,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -299,7 +303,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -316,7 +320,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -333,7 +337,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -449,8 +453,73 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "GetAllOleObjects": {
+      "memberof": "ApiSlide",
+      "name": "GetAllOleObjects",
+      "description": "<p>Returns an array with all the OLE objects from the slide.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiOleObject>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiSlide",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiSlide object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "bool",
+          "name": "bWriteLayout",
+          "description": "<p>Specifies if the slide layout will be written to the JSON object or not.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "bool",
+          "name": "bWriteMaster",
+          "description": "<p>Specifies if the slide master will be written to the JSON object or not (bWriteMaster is false if bWriteLayout === false).</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "bool",
+          "name": "bWriteAllMasLayouts",
+          "description": "<p>Specifies if all child layouts from the slide master will be written to the JSON object or not.</p>",
+          "optional": true,
+          "defaultValue": false
+        },
+        {
+          "type": "bool",
+          "name": "bWriteTableStyles",
+          "description": "<p>Specifies whether to write used table styles to the JSON object (true) or not (false).</p>",
+          "optional": true,
+          "defaultValue": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a slide.\n     * @constructor\n     */",
   "description": "<p>Class representing a slide.</p>",
   "scope": "global",

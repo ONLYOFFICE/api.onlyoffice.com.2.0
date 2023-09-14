@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Set the font color of the cell <b>B4</b> to red.</p>
+<p class="dscr">Sets the font color of the cell <b>B4</b> to red.</p>
 
 <pre>(function()
 {
@@ -28,4 +28,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Font color" src="<%= Url.Content("~/content/img/plugins/font_color.png") %>" />
+<img class="screenshot max-width-832" alt="Font color" src="<%= Url.Content("~/content/img/plugins/font_color.png") %>" />

@@ -25,18 +25,21 @@
         <li><a href="<%= Url.Action("alfresco") %>">ONLYOFFICE Alfresco module package</a></li>
         <li><a href="<%= Url.Action("chamilo") %>">Chamilo ONLYOFFICE integration plugin</a></li>
         <li><a href="<%= Url.Action("confluence") %>">Confluence ONLYOFFICE integration app</a></li>
-        <li><a href="<%= Url.Action("HumHub") %>">HumHub ONLYOFFICE connector</a></li>
+        <li><a href="<%= Url.Action("drupal") %>">Drupal ONLYOFFICE connector module</a></li>
+        <li><a href="<%= Url.Action("humhub") %>">HumHub ONLYOFFICE connector</a></li>
         <li><a href="<%= Url.Action("jira") %>">Jira ONLYOFFICE integration app</a></li>
-        <li><a href="<%= Url.Action("liferay") %>">Liferay ONLYOFFICE connector</a></li>
+        <li><a href="<%= Url.Action("liferay") %>">ONLYOFFICE Connector for Liferay</a></li>
         <li><a href="<%= Url.Action("mattermost") %>">Mattermost ONLYOFFICE integration plugin</a></li>
         <li><a href="<%= Url.Action("moodle") %>">Moodle ONLYOFFICE integration plugin</a></li>
         <li><a href="<%= Url.Action("nextcloud") %>">Nextcloud ONLYOFFICE integration app</a></li>
         <li><a href="<%= Url.Action("nuxeo") %>">Nuxeo ONLYOFFICE integration plugin</a></li>
+        <li><a href="<%= Url.Action("odoo") %>">Odoo ONLYOFFICE integration app</a></li>
         <li><a href="<%= Url.Action("owncloud") %>">ownCloud ONLYOFFICE integration app</a></li>
         <li><a href="<%= Url.Action("plone") %>">Plone ONLYOFFICE integration plugin</a></li>
         <li><a href="<%= Url.Action("redmine") %>">Redmine ONLYOFFICE integration plugin</a></li>
         <li><a href="<%= Url.Action("sharepoint") %>">SharePoint ONLYOFFICE integration solution</a></li>
         <li><a href="<%= Url.Action("strapi") %>">Strapi ONLYOFFICE integration plugin</a></li>
+        <li><a href="<%= Url.Action("suitecrm") %>">SuiteCRM ONLYOFFICE integration plugin</a></li>
         <li><a href="<%= Url.Action("wordpress") %>">WordPress ONLYOFFICE integration plugin</a></li>
     </ul>
 

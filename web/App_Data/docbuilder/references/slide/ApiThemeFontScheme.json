@@ -11,7 +11,7 @@
       },
       "returns": [
         [
-          "\"fontScheme\""
+          "\"themeFontScheme\""
         ]
       ],
       "see": null,
@@ -28,7 +28,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -109,8 +109,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiThemeFontScheme",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiThemeFontScheme object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a theme font scheme.\n     * @constructor\n     */",
   "description": "<p>Class representing a theme font scheme.</p>",
   "scope": "global",

@@ -1,5 +1,6 @@
 {
   "methods": {},
+  "events": {},
   "comment": "/**\n\t * Class representing the Markdown conversion processing.\n\t * Each Range object is determined by the position of the start and end characters.\n\t * @constructor\n\t */",
   "description": "<p>Class representing the Markdown conversion processing.\nEach Range object is determined by the position of the start and end characters.</p>",
   "scope": "global",

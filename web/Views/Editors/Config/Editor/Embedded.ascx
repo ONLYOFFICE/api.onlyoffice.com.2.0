@@ -60,7 +60,7 @@
         </tr>
         <tr class="tablerow">
             <td colspan="4">
-                <img src="<%= Url.Content("~/content/img/editor/embedded.png") %>" alt="" />
+                <img class="screenshot" src="<%= Url.Content("~/content/img/editor/embedded.png") %>" alt="" />
             </td>
         </tr>
     </tbody>

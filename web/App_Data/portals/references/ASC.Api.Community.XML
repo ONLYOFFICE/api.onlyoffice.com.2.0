@@ -1,0 +1,1742 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Community</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Api.Community.CommunityApi">
+            <summary>
+            Community API.
+            </summary>
+            <name>community</name>
+            <name>community</name>
+            <name>community</name>
+            <name>community</name>
+            <name>community</name>
+        </member>
+        <member name="P:ASC.Api.Community.CommunityApi.Name">
+            <summary>
+             Starting entry point name.
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.#ctor(ASC.Api.Impl.ApiContext)">
+            <summary>
+             Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetPosts">
+            <summary>
+             Returns a list of all the posts from the portal blogs with the post titles, dates of creation and update, post texts, and authors.
+            </summary>
+            <short>Get posts</short>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperSummary, ASC.Api.Community">List of all posts</returns>
+            <category>Blogs</category>
+            <path>api/2.0/community/blog</path>
+            <collection>list</collection>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.CreatePost(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a blog post with the specified title, content, tags and subscription to comments defined in the request body.
+            </summary>
+            <short>Create a post</short>
+            <param type="System.String, System" name="title">Post title</param>
+            <param type="System.String, System" name="content">Post text</param>
+            <param type="System.String, System" name="tags">List of tags separated with comma</param>
+            <param type="System.Boolean, System" name="subscribeComments">Subscribes to the post comments or not</param>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperFull, ASC.Api.Community">Newly created post</returns>
+            <example>
+            <![CDATA[Sending data in application/json:
+            
+            {
+                 title:"My post",
+                 content:"Post content",
+                 tags:"Me,Post,News",
+                 subscribeComments: "true"
+            }
+            
+            Sending data in application/x-www-form-urlencoded
+            title="My post"&content="Post content"&tags="Me,Post,News"&subscribeComments="true"]]>
+            </example>
+            <exception cref="T:ASC.Api.Exceptions.ItemNotFoundException"></exception>
+            <category>Blogs</category>
+             <path>api/2.0/community/blog</path>
+             <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdatePost(System.Guid,System.String,System.String,System.String)">
+            <summary>
+            Updates the selected post changing the post title, content or/and tags specified in the request.
+            </summary>
+            <short>Update a post</short>
+            <param type="System.Guid, System" method="url" name="postid">Post ID</param>
+            <param type="System.String, System" name="title">New title</param>
+            <param type="System.String, System" name="content">New post text</param>
+            <param type="System.String, System" name="tags">New list of tags separated with comma</param>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperFull, ASC.Api.Community">Updated post</returns>
+            <example>
+            <![CDATA[
+            Sending data in application/json:
+            {
+                 title:"My post",
+                 content:"Post content",
+                 tags:"Me,Post,News"
+            }
+            
+            Sending data in application/x-www-form-urlencoded
+            title="My post"&content="Post content"&tags="Me,Post,News"
+            ]]>
+            
+            </example>
+            <exception cref="T:ASC.Api.Exceptions.ItemNotFoundException"></exception>
+            <category>Blogs</category>
+            <path>api/2.0/community/blog/{postid}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeletePost(System.Guid)">
+            <summary>
+            Deletes a post with the ID specified in the request from blogs.
+            </summary>
+            <short>Delete a post</short>
+            <param type="System.Guid, System" method="url" name="postid">Post ID</param>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperFull, ASC.Api.Community">Deleted post</returns>
+            <exception cref="T:ASC.Api.Exceptions.ItemNotFoundException"></exception>
+            <category>Blogs</category>
+            <path>api/2.0/community/blog/{postid}</path>
+             <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetMyPosts">
+            <summary>
+            Returns a list of all the blog posts for the current user with the post titles, dates of creation and update, post texts, and author.
+            </summary>
+            <category>Blogs</category>
+            <short>Get my posts</short>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperSummary, ASC.Api.Community">List of my posts</returns>
+            <colletion>list</colletion>
+            <path>api/2.0/community/blog/@self</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetSearchPosts(System.String)">
+            <summary>
+            Returns a list of blog posts matching the search query specified in the request with the post titles, dates of creation and update, post texts, and authors.
+            </summary>
+            <category>Blogs</category>
+            <short>
+            Search posts
+            </short>
+             <param type="System.String, System" method="url" name="query">Search query</param>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperSummary, ASC.Api.Community">List of found posts</returns>
+            <path>api/2.0/community/blog/@search/{query}</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetUserPosts(System.String)">
+            <summary>
+            Returns a list of blog posts for the specified user with the post titles, dates of creation and update and post texts.
+            </summary>
+            <short>Get user posts</short>
+            <category>Blogs</category>
+            <param type="System.String, System" method="url" name="username" remark="You can retrieve the user name through the 'people' API">User name</param>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperSummary, ASC.Api.Community">List of user posts</returns>
+            <path>api/2.0/community/blog/user/{username}</path>
+            <httpMethod>GET</httpMethod>
+             <colletion>list</colletion>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetPostsByTag(System.String)">
+            <summary>
+            Returns a list of blog posts containing the tag specified in the request with the post titles, dates of creation and update, post texts, and authors.
+            </summary>
+            <short>Get posts by tag</short>
+            <category>Blogs</category>
+            <param type="System.String, System" method="url" name="tag">Tag name</param>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperSummary, ASC.Api.Community">List of posts with the specified tag name</returns>
+            <collection>list</collection>
+            <path>api/2.0/community/blog/tag/{tag}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetTags">
+            <summary>
+            Returns a list of all the tags used in the blog posts with a number specifying the tag usage.
+            </summary>
+             <category>Blogs</category>
+             <short>Get tags</short>
+            <returns type="ASC.Api.Blogs.BlogTagWrapper, ASC.Api.Community">List of tags</returns>
+            <path>api/2.0/community/blog/tag</path>
+            <httpMethod>GET</httpMethod>
+            <colletion>list</colletion>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetPost(System.Guid)">
+            <summary>
+             Returns the detailed information on the blog post with the ID specified in the request.
+            </summary>
+            <short>Get a post</short>
+            <category>Blogs</category>
+            <param type="System.Guid, System" method="url" name="postid">Post ID</param>
+            <returns type="ASC.Api.Blogs.BlogPostWrapperFull, ASC.Api.Community">Post information</returns>
+            <path>api/2.0/community/blog/{postid}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetComments(System.Guid)">
+            <summary>
+             Returns a list of all the comments on the blog post with the ID specified in the request.
+            </summary>
+            <category>Blogs</category>
+             <short>Get post comments</short>
+            <param type="System.Guid, System" method="url" name="postid">Post ID (GUID)</param>
+            <returns type="ASC.Api.Blogs.BlogPostCommentWrapper, ASC.Api.Community">List of post comments</returns>
+            <path>api/2.0/community/blog/{postid}/comment</path>
+            <httpMethod>GET</httpMethod>
+             <colletion>list</colletion>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddComment(System.Guid,System.String,System.Guid)">
+            <summary>
+             Adds a comment to the post with the ID specified in the request. The parent comment ID can be also specified if needed.
+            </summary>
+             <short>Add a post comment</short>
+             <category>Blogs</category>
+            <param type="System.Guid, System" method="url" name="postid">Post ID</param>
+            <param type="System.String, System" name="content">Comment text</param>
+            <param type="System.Guid, System" name="parentId">Parent comment ID</param>
+            <returns type="ASC.Api.Blogs.BlogPostCommentWrapper, ASC.Api.Community">List of post comments</returns>
+             <example>
+             <![CDATA[
+             Sending data in application/json:
+             
+             {
+                 content:"My comment",
+                 parentId:"9924256A-739C-462b-AF15-E652A3B1B6EB"
+             }
+             
+             Sending data in application/x-www-form-urlencoded
+             content="My comment"&parentId="9924256A-739C-462b-AF15-E652A3B1B6EB"
+             ]]>
+             </example>
+             <remarks>
+             Send parentId=00000000-0000-0000-0000-000000000000 or don't send it at all if you want your comment to be on the root level.
+             </remarks>
+             <path>api/2.0/community/blog/{postid}/comment</path>
+             <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetBlogCommentPreview(System.String,System.String)">
+            <summary>
+            Returns a comment preview with the content specified in the request.
+            </summary>
+            <short>Get a comment preview</short>
+            <section>Comments</section>
+            <param type="System.String, System" name="commentid">Comment ID</param>
+            <param type="System.String, System" name="htmltext">Comment text in the HTML format</param>
+            <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">Comment information</returns>
+            <category>Blogs</category>
+            <path>api/2.0/community/blog/comment/preview</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.RemoveBlogComment(System.String)">
+            <summary>
+            Removes a comment with the ID specified in the request.
+            </summary>
+            <short>Remove a comment</short>
+            <section>Comments</section>
+            <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+            <returns>Comment ID</returns>
+            <category>Blogs</category>
+            <path>api/2.0/community/blog/comment/{commentid}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddBlogComment(System.String,System.String,System.String)">
+            <summary>
+            Adds a blog comment with the comment text specified in the request. The parent comment ID can be also specified if needed.
+            </summary>
+            <short>Add a blog comment</short>
+            <section>Comments</section>
+            <param type="System.String, System" name="parentcommentid">Parent comment ID</param>
+            <param type="System.String, System" name="entityid">Entity ID where a comment will be added</param>
+            <param type="System.String, System" name="content">Comment text</param>
+            <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">Comment information</returns>
+            <category>Blogs</category>
+            <path>api/2.0/community/blog/comment</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdateBlogComment(System.String,System.String)">
+            <summary>
+            Updates a blog comment specified in the request changing its content.
+            </summary>
+            <short>Update a blog comment</short>
+            <section>Comments</section>
+            <category>Blogs</category>
+            <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+            <param type="System.String, System" name="content">New comment text</param>
+            <returns>Updated blog comment</returns>
+            <path>api/2.0/community/blog/comment/{commentid}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetBookmarks">
+            <summary>
+            Returns a list of all the portal bookmarks with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of all bookmarks</returns>
+            <collection>list</collection>
+            <path>api/2.0/community/bookmark</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetMyBookmarks">
+            <summary>
+            Returns a list of all the bookmarks for the current user with the bookmark titles, dates of creation and update, bookmark texts, and author.
+            </summary>
+            <short>
+            Get my bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <path>api/2.0/community/bookmark/@self</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.SearchBookmarks(System.String)">
+            <summary>
+            Returns a list of bookmarks matching the search query specified in the request with the bookmark titles, dates of creation and update, bookmark descriptions, and authors.
+            </summary>
+            <short>
+            Search bookmarks
+            </short>
+            <category>Bookmarks</category>
+             <param type="System.String, System" method="url" name="query">Search query</param>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <path>api/2.0/community/bookmark/@search/{query}</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetFavsBookmarks">
+            <summary>
+            Returns a list of favorite bookmarks for the current user with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get my favorite bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <path>api/2.0/community/bookmark/@favs</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetBookmarksTags">
+            <summary>
+            Returns a list of all the bookmark tags with a number specifying the tag usage.
+            </summary>
+            <short>
+            Get tags
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.TagWrapper, ASC.Api.Community">List of tags</returns>
+            <collection>list</collection>
+            <path>api/2.0/community/bookmark/tag</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetBookmarksByTag(System.String)">
+            <summary>
+            Returns a list of all the bookmarks marked by the tag specified in the request with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get bookmarks by tag
+            </short>
+            <category>Bookmarks</category>
+            <param type="System.String, System" method="url" name="tag">Tag name</param>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <collection>list</collection>
+            <path>api/2.0/community/bookmark/bytag</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetRecentBookmarks">
+            <summary>
+            Returns a list of recently added bookmarks with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get recent bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <path>api/2.0/community/bookmark/top/recent</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetTopDayBookmarks">
+            <summary>
+            Returns a list of the most popular bookmarks for the current date with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get top of the day bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <path>api/2.0/community/bookmark/top/day</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetTopMonthBookmarks">
+            <summary>
+            Returns a list of the most popular bookmarks for the current month with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get top of the month bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <path>api/2.0/community/bookmark/top/month</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetTopWeekBookmarks">
+            <summary>
+            Returns a list of the most popular bookmarks for the current week with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get top of the week bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+            <path>api/2.0/community/bookmark/top/week</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetTopYearBookmarks">
+            <summary>
+            Returns a list of the most popular bookmarks for the current year with the bookmark titles, dates of creation and update, bookmark texts, and authors.
+            </summary>
+            <short>
+            Get top of the year bookmarks
+            </short>
+            <category>Bookmarks</category>
+            <returns  type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">List of bookmarks</returns>
+             <path>api/2.0/community/bookmark/top/year</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetBookmarkComments(System.Int64)">
+            <summary>
+             Returns a list of all the comments on the bookmark with the ID specified in the request.
+            </summary>
+            <short>
+             Get bookmark comments
+            </short>
+            <category>Bookmarks</category>
+            <param type="System.Int64, System" method="url" name="id">Bookmark ID</param>
+            <returns type="ASC.Api.Bookmarks.BookmarkCommentWrapper, ASC.Api.Community">List of bookmark comments</returns>
+            <path>api/2.0/community/bookmark/{id}/comment</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddBookmarkComment(System.Int64,System.String,System.Guid)">
+            <summary>
+             Adds a comment to the bookmark with the ID specified in the request. The parent bookmark ID can be also specified if needed.
+            </summary>
+            <short>
+             Add a bookmark comment by bookmark ID
+            </short>
+            <param type="System.Int64, System" method="url" name="id">Bookmark ID</param>
+            <param type="System.String, System" name="content">Comment text</param>
+            <param type="System.Guid, System" name="parentId">Parent comment ID</param>
+            <returns type="ASC.Api.Bookmarks.BookmarkCommentWrapper, ASC.Api.Community">List of bookmark comments</returns>
+             <example>
+             <![CDATA[
+             Sending data in application/json:
+             
+             {
+                 content:"My comment",
+                 parentId:"9924256A-739C-462b-AF15-E652A3B1B6EB"
+             }
+             
+             Sending data in application/x-www-form-urlencoded
+             content="My comment"&parentId="9924256A-739C-462b-AF15-E652A3B1B6EB"
+             ]]>
+             </example>
+             <remarks>
+             Send parentId=00000000-0000-0000-0000-000000000000 or doesn't send it at all if you want your comment to be on the root level.
+             </remarks>
+             <category>Bookmarks</category>
+             <path>api/2.0/community/bookmark/{id}/comment</path>
+             <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetBookmarkById(System.Int64)">
+            <summary>
+             Returns the detailed information on the bookmark with the ID specified in the request.
+            </summary>
+            <short>
+             Get a bookmark
+            </short>
+            <param type="System.Int64, System" method="url" name="id">Bookmark ID</param>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">Bookmark information</returns>
+            <category>Bookmarks</category>
+            <path>api/2.0/community/bookmark/{id}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddBookmark(System.String,System.String,System.String,System.String)">
+            <summary>
+             Adds a bookmark with the title, description and tags specified in the request.
+            </summary>
+            <short>
+             Add a bookmark
+            </short>
+            <param type="System.String, System" name="url">Absolute URL to the bookmark page</param>
+            <param type="System.String, System" name="title">Bookmark title</param>
+            <param type="System.String, System" name="description">Bookmark description</param>
+            <param type="System.String, System" name="tags">Bookmark tags separated with semicolon</param>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">Newly added bookmark</returns>
+             <example>
+             <![CDATA[
+             Sending data in application/json:
+             
+             {
+                 url:"https://www.teamlab.com",
+                 title: "TeamLab",
+                 description: "best site i've ever seen",
+                 tags: "project management, collaboration"
+             }
+             
+             Sending data in application/x-www-form-urlencoded
+             url="https://www.teamlab.com"&title="TeamLab"&description="best site i've ever seen"&tags="project management, collaboration"
+             ]]>
+             </example>
+             <category>Bookmarks</category>
+             <path>api/2.0/community/bookmark</path>
+             <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetBookmarkCommentPreview(System.String,System.String)">
+            <summary>
+            Returns a comment preview with the content specified in the request.
+            </summary>
+            <short>Get a comment preview</short>
+            <section>Comments</section>
+            <param type="System.String, System" name="commentid">Comment ID</param>
+            <param type="System.String, System" name="htmltext">Comment content in the HTML format</param>
+            <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">Comment information</returns>
+            <category>Bookmarks</category>
+            <path>api/2.0/community/bookmark/comment/preview</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.RemoveBookmarkComment(System.String)">
+             <summary>
+            Removes a comment with the ID specified in the request.
+             </summary>
+             <short>Remove a comment</short>
+             <section>Comments</section>
+             <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+             <returns>Comment ID</returns>
+             <category>Bookmarks</category>
+             <path>api/2.0/community/bookmark/comment/{commentid}</path>
+             <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddBookmarkComment(System.String,System.Int64,System.String)">
+            <summary>
+             Adds a comment to the entity with the ID specified in the request. The parent bookmark ID can be also specified if needed.
+            </summary>
+            <short>
+             Add a bookmark comment by entity ID
+            </short>
+            <param type="System.String, System" name="parentcommentid">Parent comment ID</param>
+            <param type="System.Int64, System" name="entityid">Entity ID</param>
+            <param type="System.String, System" name="content">Comment text</param>
+             <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">List of bookmark comments</returns>
+             <path>api/2.0/community/bookmark/comment</path>
+             <httpMethod>POST</httpMethod>
+             <category>Bookmarks</category>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdateBookmarkComment(System.String,System.String)">
+            <summary>
+            Updates the selected bookmark comment with the content specified in the request.
+            </summary>
+            <short>Update a bookmark comment</short>
+            <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+            <param type="System.String, System" name="content">New comment text</param>
+            <returns>Updated bookmark</returns>
+            <path>api/2.0/community/bookmark/comment/{commentid}</path>
+            <httpMethod>PUT</httpMethod>
+            <category>Bookmarks</category>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.RemoveBookmarkFromFavourite(System.Int64)">
+            <summary>
+            Removes a bookmark from favorites. If after removing the user bookmark, its rating is 0, then the bookmark will be removed completely.
+            </summary>
+            <short>Remove a bookmark from favorites</short>
+            <param type="System.Int64, System" method="url" name="id">Bookmark ID</param>
+            <returns type="ASC.Api.Bookmarks.BookmarkWrapper, ASC.Api.Community">Bookmark</returns>
+            <category>Bookmarks</category>
+            <path>api/2.0/community/bookmark/@favs/{id}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.RemoveBookmark(System.Int64)">
+            <summary>
+            Removes a bookmark with the ID specified in the request.
+            </summary>
+            <short>Remove a bookmark</short>
+            <param type="System.Int64, System" method="url" name="id">Bookmark ID</param>
+            <returns></returns>
+            <category>Bookmarks</category>
+            <path>api/2.0/community/bookmark/{id}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetEvents">
+            <summary>
+            Returns a list of all the portal events with the event titles, dates of creation and update, event texts, and authors.
+            </summary>
+            <short>
+            Get events
+            </short>
+            <returns type="ASC.Api.Events.EventWrapper, ASC.Api.Community">List of events</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.CreateEvent(System.String,System.String,ASC.Web.Community.News.Code.FeedType)">
+            <summary>
+            Creates a new event with the parameters (title, content, type) specified in the request.
+            </summary>
+            <short>
+            Create an event
+            </short>        
+             <param type="System.String, System" name="title">Event title</param>
+             <param type="System.String, System" name="content">Event content</param>
+             <param type="ASC.Web.Community.News.Code.FeedType, ASC.Web.Community.News.Code" name="type">Event type</param>
+            <returns type="ASC.Api.Events.EventWrapperFull, ASC.Api.Community">Newly created event</returns>
+            <path>api/2.0/community/event</path>
+            <httpMethod>POST</httpMethod>
+            <category>Events</category>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdateEvent(System.Int32,System.String,System.String,ASC.Web.Community.News.Code.FeedType)">
+            <summary>
+            Updates the selected event changing the event title, content or/and event type specified in the request.
+            </summary>
+            <short>
+            Update an event
+            </short>
+             <param type="System.Int32, System" method="url" name="feedid">Feed ID</param>
+             <param type="System.String, System" name="title">New event title</param>
+             <param type="System.String, System" name="content">New event content</param>
+             <param type="ASC.Web.Community.News.Code.FeedType, ASC.Web.Community.News.Code" name="type">New event type</param>
+            <returns type="ASC.Api.Events.EventWrapperFull, ASC.Api.Community">List of events</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event/{feedid}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeleteEvent(System.Int32)">
+            <summary>
+            Deletes an event with the ID specified in the request.
+            </summary>
+            <short>Delete an event</short>
+            <param type="System.Int32, System" method="url" name="feedid">Feed ID</param>
+            <returns type="ASC.Api.Events.EventWrapperFull, ASC.Api.Community">Deleted event</returns>
+            <exception cref="T:ASC.Api.Exceptions.ItemNotFoundException"></exception>
+            <category>Events</category>
+            <path>api/2.0/community/event/{feedid}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetMyEvents">
+            <summary>
+            Returns a list of all the events for the current user with the event titles, dates of creation and update, event texts, and author.
+            </summary>
+            <short>
+            Get my events
+            </short>
+            <returns type="ASC.Api.Events.EventWrapper, ASC.Api.Community">List of events</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event/@self</path>
+            <httpMethod>GET</httpMethod>
+             <colletion>list</colletion>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.SearchEvents(System.String)">
+            <summary>
+            Returns a list of events matching the search query specified in the request with the event titles, dates of creation and update, event types, and authors.
+            </summary>
+            <short>
+            Search events
+            </short>
+             <param type="System.String, System" method="url" name="query">Search query</param>
+            <returns type="ASC.Api.Events.EventWrapper, ASC.Api.Community">List of events</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event/@search/{query}</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetEvent(System.Int32)">
+            <summary>
+            Returns the detailed information on the event with the ID specified in the request.
+            </summary>
+            <short>
+            Get an event
+            </short>
+            <param type="System.Int32, System" method="url" name="feedid">Event ID</param>
+            <returns type="ASC.Api.Events.EventWrapperFull, ASC.Api.Community">Event information</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event/{feedid}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetEventComments(System.Int32)">
+            <summary>
+            Returns a list of all the comments on the event with the ID specified in the request.
+            </summary>
+            <short>
+            Get event comments
+            </short>
+            <param type="System.Int32, System" method="url" name="feedid">Event ID</param>
+            <returns type="ASC.Api.Events.EventCommentWrapper, ASC.Api.Community">List of comments</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event/{feedid}/comment</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddEventComments(System.Int32,System.String,System.Int64)">
+            <summary>
+            Adds a comment to the event with the ID specified in the request. The parent event ID can be also specified if needed.
+            </summary>
+            <short>
+            Add an event comment by feed ID
+            </short>
+            <param type="System.Int32, System" method="url" name="feedid">Feed ID</param>
+            <param type="System.String, System" name="content">Comment text</param>
+            <param type="System.Int64, System" name="parentId">Comment parent ID</param>
+            <returns type="ASC.Api.Events.EventCommentWrapper, ASC.Api.Community">Comment</returns>
+             <example>
+             <![CDATA[
+             Sending data in application/json:
+             
+             {
+                 content:"My comment",
+                 parentId:"9924256A-739C-462b-AF15-E652A3B1B6EB"
+             }
+             
+             Sending data in application/x-www-form-urlencoded
+             content="My comment"&parentId="9924256A-739C-462b-AF15-E652A3B1B6EB"
+             ]]>
+             </example>
+             <remarks>
+             Send parentId=0 or doesn't send it at all if you want your comment to be on the root level.
+             </remarks>
+             <category>Events</category>
+             <path>api/2.0/community/event/{feedid}/comment</path>
+             <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.VoteForEvent(System.Int32,System.Int64[])">
+            <summary>
+             Sends a vote for a certain option in a poll-type event with the ID specified in the request.
+            </summary>
+            <short>
+             Vote for an option
+            </short>
+            <param type="System.Int32, System" method="url" name="feedid">Event ID</param>
+            <param type="System.Int64[], System" name="variants">Options</param>
+            <returns type="ASC.Api.Events.EventWrapperFull, ASC.Api.Community">Event</returns>
+            <exception cref="T:System.ArgumentException">Thrown if not a Poll</exception>
+            <exception cref="T:System.Exception">General error</exception>
+             <example>
+             <![CDATA[
+             Sending data in application/json:
+             {
+                 variants:[1,2,3],
+             }
+              Sending data in application/x-www-form-urlencoded
+             variants=[1,2,3]
+             ]]>
+             </example>
+             <remarks>
+             If an event is not a poll, then you'll get an error.
+             </remarks>
+             <category>Events</category>
+             <path>api/2.0/community/event/{feedid}/vote</path>
+             <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.SubscribeOnComments(System.Boolean,System.String)">
+            <summary>
+             Subscribes to or unsubscribes from the comments of the event with the ID specified in the request.
+            </summary>
+            <short>
+             Comment subscription
+            </short>
+            <param type="System.Boolean, System" name="isSubscribe">Subscribes to the event comments or unsubscribes from them</param>
+            <param type="System.String, System" method="url" name="feedid">Feed ID</param>
+            <returns>Boolean value: true means that the user is subscribed to the event comments</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event/{feedid}/subscribe</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetEventCommentPreview(System.String,System.String)">
+            <summary>
+            Returns a comment preview with the content specified in the request.
+            </summary>
+            <short>Get a comment preview</short>
+            <section>Comments</section>
+            <param type="System.String, System" name="commentid">Comment ID</param>
+            <param type="System.String, System" name="htmltext">Comment text in the HTML format</param>
+            <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">Comment information</returns>
+            <category>Events</category>
+            <path>api/2.0/community/event/comment/preview</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.RemoveEventComment(System.String)">
+             <summary>
+            Removes a comment with the ID specified in the request.
+             </summary>
+             <short>Remove a comment</short>
+             <section>Comments</section>
+             <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+             <returns>Comment information</returns>
+             <category>Events</category>
+             <path>api/2.0/community/event/comment/{commentid}</path>
+             <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddEventComment(System.String,System.String,System.String)">
+            <summary>
+            Adds a comment to the entity with the ID specified in the request. The parent event ID can be also specified if needed.
+            </summary>
+            <short>
+            Add an event comment by entity ID
+            </short>
+            <param type="System.String, System" name="parentcommentid">Comment parent ID</param>
+            <param type="System.String, System" name="entityid">Entity ID</param>
+            <param type="System.String, System" name="content">Comment text</param>
+             <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">Comment information</returns>
+             <path>api/2.0/community/event/comment</path>
+             <httpMethod>POST</httpMethod>
+             <category>Events</category>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdateComment(System.String,System.String)">
+            <summary>
+            Updates the selected event comment with the content specified in the request.
+            </summary>
+            <short>
+            Update a comment
+            </short>
+             <category>Events</category>
+             <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+             <param type="System.String, System" name="content">New comment text</param>
+             <returns>Updated comment</returns>
+             <path>api/2.0/community/event/comment/{commentid}</path>
+             <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetForums">
+            <summary>
+            Returns a list of all the portal forums with the topic/thread titles, dates of creation and update, post texts, and authors.
+            </summary>
+            <short>
+            Get forums
+            </short>
+            <returns type="ASC.Api.Forums.ForumWrapper, ASC.Api.Community">List of forums</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetForumsCount">
+            <summary>
+            Returns a number of all the portal forums.
+            </summary>
+            <short>
+            Count forums
+            </short>
+            <returns>Number of forums</returns>
+            <visible>false</visible>
+            <category>Forums</category>
+             <path>api/2.0/community/forum/count</path>
+             <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetThreadTopics(System.Int32)">
+            <summary>
+            Returns a list of all the thread topics with the topic titles, dates of creation and update, post texts, and authors.
+            </summary>
+            <short>
+            Get thread topics
+            </short>
+            <param type="System.Int32, System" method="url" name="threadid">Thread ID</param>
+            <returns type="ASC.Api.Forums.ForumThreadWrapperFull, ASC.Api.Community">List of thread topics</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/{threadid}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetLastTopics">
+            <summary>
+            Returns a list of all the recently updated topics in the portal forums with the topic titles, dates of creation and update, post texts, and authors.
+            </summary>
+            <short>
+            Get recently updated topics
+            </short>
+            <returns type="ASC.Api.Forums.ForumTopicWrapper, ASC.Api.Community">List of recently updated topics</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/topic/recent</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetTopicPosts(System.Int32)">
+            <summary>
+            Returns a list of all the posts of the selected forum topic with the dates of creation and update, post texts, and authors.
+            </summary>
+            <short>
+            Get topic posts
+            </short>
+            <param type="System.Int32, System" method="url" name="topicid">Topic ID</param>
+            <returns type="ASC.Api.Forums.ForumTopicWrapperFull, ASC.Api.Community">List of topic posts</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/topic/{topicid}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddThreadToCategory(System.Int32,System.String,System.String,System.String)">
+            <summary>
+             Adds a thread to the category with the ID specified in the request.
+            </summary>
+            <short>
+             Add a thread to a category
+            </short>
+             <param type="System.Int32, System" name="categoryId">Category ID (-1 for a new category)</param>
+             <param type="System.String, System" name="categoryName">Category name</param>
+             <param type="System.String, System" name="threadName">Thread name</param>
+             <param type="System.String, System" name="threadDescription">Thread description</param>
+            <returns type="ASC.Api.Forums.ForumThreadWrapper, ASC.Api.Community">Added thread</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddTopic(System.Int32,System.String,System.String,ASC.Forum.TopicType)">
+            <summary>
+             Adds a new topic to the existing thread with a subject, content and topic type specified in the request.
+            </summary>
+            <short>
+             Add a topic to a thread
+            </short>
+             <param type="System.Int32, System" method="url" name="threadid">Thread ID</param>
+             <param type="System.String, System" name="subject">Topic subject</param>
+             <param type="System.String, System" name="content">Topic text</param>
+             <param type="ACS.Forum.TopicType, ACS.Forum" name="topicType">Topic type</param>
+            <returns type="ASC.Api.Forums.ForumTopicWrapperFull, ASC.Api.Community">Added topic</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/{threadid}</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdateTopic(System.Int32,System.String,System.Boolean,System.Boolean)">
+            <summary>
+             Updates a topic with the ID specified in the request, changing a topic subject, making it sticky, or closing it.
+            </summary>
+            <short>
+             Update a topic
+            </short>
+             <param type="System.Int32, System" method="url" name="topicid">Topic ID</param>
+             <param type="System.String, System" name="subject">New subject</param>
+             <param type="System.Boolean, System" name="sticky">Makes a topic sticky</param>
+             <param type="System.Boolean, System" name="closed">Closes a topic</param>
+            <returns type="ASC.Api.Forums.ForumTopicWrapperFull, ASC.Api.Community">Updated topic</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/topic/{topicid}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddTopicPosts(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+             Adds a post to the selected topic with a post subject and content specified in the request.
+            </summary>
+            <short>
+             Add a post to a topic
+            </short>
+            <param type="System.Int32, System" method="url" name="topicid">Topic ID</param>
+            <param type="System.Int32, System" name="parentPostId">Parent post ID</param>
+            <param type="System.String, System" name="subject">Post subject (required)</param>
+            <param type="System.String, System" name="content">Post text</param>
+            <returns type="ASC.Api.Forums.ForumTopicPostWrapper, ASC.Api.Community">New post</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/topic/{topicid}</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdateTopicPosts(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+             Updates a post in the selected topic changing the post subject or/and content specified in the request.
+            </summary>
+            <short>
+             Update a topic post
+            </short>
+            <param type="System.Int32, System" method="url" name="topicid">Topic ID</param>
+            <param type="System.Int32, System" method="url" name="postid">Post ID</param>
+            <param type="System.String, System" name="subject">New post subject (required)</param>
+            <param type="System.String, System" name="content">New post text</param>
+            <returns type="ASC.Api.Forums.ForumTopicPostWrapper, ASC.Api.Community">Updated post</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/topic/{topicid}/{postid}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.SearchTopics(System.String)">
+            <summary>
+            Returns a list of topics matching the search query specified in the request with the topic titles, dates of creation and update, post texts, and authors.
+            </summary>
+            <short>
+            Search topics
+            </short>
+            <param type="System.String, System" method="url" name="query">Search query</param>
+            <returns type="ASC.Api.Forums.ForumTopicWrapper, ASC.Api.Community">List of topics</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/@search/{query}</path>
+            <httpMethod>GET</httpMethod>
+             <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeletePost(System.Int32)">
+            <summary>
+             Deletes a post with the ID specified in the request.
+            </summary>
+            <short>
+             Delete a post
+            </short>
+            <param type="System.Int32, System" method="url" name="postid">Post ID</param>
+            <returns type="ASC.Api.Forums.ForumTopicPostWrapper, ASC.Api.Community">Post</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/post/{postid}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeleteTopic(System.Int32)">
+            <summary>
+             Deletes a topic with the ID specified in the request.
+            </summary>
+            <short>
+             Delete a topic
+            </short>
+            <param type="System.Int32, System" method="url" name="topicid">Topic ID</param>
+            <returns type="ASC.Api.Forums.ForumTopicWrapper, ASC.Api.Community">Topic</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/topic/{topicid}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeleteThread(System.Int32)">
+            <summary>
+             Deletes a thread with the ID specified in the request.
+            </summary>
+            <short>
+             Delete a thread
+            </short>
+            <param type="System.Int32, System" method="url" name="threadid">Thread ID</param>
+            <returns type="ASC.Api.Forums.ForumThreadWrapper, ASC.Api.Community">Thread</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/thread/{threadid}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeleteThreadCategory(System.Int32)">
+            <summary>
+             Deletes a category with the ID specified in the request.
+            </summary>
+            <short>
+             Delete a category
+            </short>
+            <param type="System.Int32, System" method="url" name="categoryid">Category ID</param>
+            <returns type="ASC.Api.Forums.ForumCategoryWrapper, ASC.Api.Community">Category</returns>
+            <category>Forums</category>
+            <path>api/2.0/community/forum/category/{categoryid}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetPreview(System.String,System.String)">
+            <summary>
+            Returns the preview information about the specified category from the community section.
+            </summary>
+            <short>Get preview</short>
+            <param type="System.String, System" name="title">Category title</param>
+            <param type="System.String, System" name="content">Category content</param>
+            <returns>Preview information</returns>
+            <path>api/2.0/community/preview</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.CreatePage(System.String,System.String)">
+            <summary>
+            Creates a new wiki page with the page name and content specified in the request.
+            </summary>
+            <short>Create a page</short>
+            <param type="System.String, System" name="name">Page name</param>
+            <param type="System.String, System" name="body">Page content</param>
+            <returns type="ASC.Api.Wiki.Wrappers.PageWrapper, ASC.Api.Community">Page information</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetPages(System.String)">
+            <summary>
+            Returns a list of all the pages from the wiki or wiki category specified in the request.
+            </summary>
+            <short>Get pages</short>
+            <section>Pages</section>
+            <param type="System.String, System" method="url" name="category">Category name</param>
+            <returns type="ASC.Api.Wiki.Wrappers.PageWrapper, ASC.Api.Community">Pages</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetPage(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Returns the detailed information on a wiki page with the name and version specified in the request.
+            </summary>
+            <short>Get a page</short>
+            <section>Pages</section>
+            <param type="System.String, System" method="url" name="name">Page name</param>
+            <param type="System.Nullable{System.Int32}, System" method="url" name="version">Page version</param>
+            <returns type="ASC.Api.Wiki.Wrappers.PageWrapper, ASC.Api.Community">Page information</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/{name}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetHistory(System.String)">
+            <summary>
+            Returns a list of history changes for a wiki page with the name specified in the request.
+            </summary>
+            <short>Get the page history</short>
+            <section>Pages</section>
+            <param type="System.String, System" method="url" name="page">Page name</param>
+            <returns type="ASC.Api.Wiki.Wrappers.PageWrapper, ASC.Api.Community">List of history changes</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/{page}/story</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.SearchPages(System.String)">
+            <summary>
+            Returns a list of wiki pages with the name matching the search query specified in the request.
+            </summary>
+            <short>Search pages by name</short>
+            <section>Pages</section>
+            <param type="System.String, System" method="url" name="name">Search query</param>
+            <returns type="ASC.Api.Wiki.Wrappers.PageWrapper, ASC.Api.Community">List of pages</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/search/byname/{name}</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.SearchPagesByContent(System.String)">
+            <summary>
+            Returns a list of wiki pages with the content matching the search query specified in the request.
+            </summary>
+            <short>Search pages by content</short>
+            <section>Pages</section>
+            <param type="System.String, System" method="url" name="content">Search query</param>
+            <returns type="ASC.Api.Wiki.Wrappers.PageWrapper, ASC.Api.Community">List of pages</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/search/bycontent/{content}</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdatePage(System.String,System.String)">
+            <summary>
+            Updates a wiki page with the name and content specified in the request.
+            </summary>
+            <short>Update a page</short>
+            <section>Pages</section>
+            <param type="System.String, System" method="url" name="name">New page name</param>
+            <param type="System.String, System" name="body">New page content</param>
+            <returns type="ASC.Api.Wiki.Wrappers.PageWrapper, ASC.Api.Community">Page information</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/{name}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeletePage(System.String)">
+            <summary>
+            Deletes a wiki page with the name specified in the request.
+            </summary>
+            <short>Delete a page</short>
+            <section>Pages</section>
+            <param type="System.String, System" method="url" name="name">Page name</param>
+            <returns></returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/{name}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.CreateComment(System.String,System.String,System.String)">
+            <summary>
+            Creates a comment on the selected wiki page with the content specified in the request.
+            </summary>
+            <short>Create a page comment</short>
+            <section>Comments</section>
+            <param type="System.String, System" method="url" name="page">Page name</param>
+            <param type="System.String, System" name="content">Comment text</param>
+            <param type="System.String, System" name="parentId">Comment parent ID</param>
+            <returns type="ASC.Api.Wiki.Wrappers.CommentWrapper, ASC.Api.Community">Comment information</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/{page}/comment</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetComments(System.String)">
+            <summary>
+            Returns a list of all the comments on the wiki page with the name specified in the request.
+            </summary>
+            <short>Get page comments</short>
+            <section>Comments</section>
+            <param type="System.String, System" method="url" name="page">Page name</param>
+            <returns type="ASC.Api.Wiki.Wrappers.CommentWrapper, ASC.Api.Community">List of comments</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/{page}/comment</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UploadFiles(System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase})">
+            <summary>
+            Uploads the selected files to the wiki page 'Files' section.
+            </summary>
+            <short>Upload files</short>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="files">List of files to upload</param>
+            <returns type="ASC.Api.Wiki.Wrappers.FileWrapper, ASC.Api.Community">List of files</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/file</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetFile(System.String)">
+            <summary>
+            Returns the detailed information about a file with the name specified in the request from the wiki page 'Files' section.
+            </summary>
+            <short>Get a file</short>
+            <section>Files</section>
+            <param type="System.String, System" method="url" name="name">File name</param>
+            <returns type="ASC.Api.Wiki.Wrappers.FileWrapper, ASC.Api.Community">File information</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/file/{name}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.DeleteFile(System.String)">
+            <summary>
+            Deletes a file with the name specified in the request from the wiki page 'Files' section.
+            </summary>
+            <short>Delete a file</short>
+            <param type="System.String, System" method="url" name="name">File name</param>
+            <returns></returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/file/{name}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.GetWikiCommentPreview(System.String,System.String)">
+            <summary>
+            Returns a comment preview with the content specified in the request.
+            </summary>
+            <short>Get a comment preview</short>
+            <section>Comments</section>
+            <param type="System.String, System" name="commentid">Comment ID</param>
+            <param type="System.String, System" name="htmltext">Comment text in the HTML format</param>
+            <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">Comment information</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/comment/preview</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.RemoveWikiComment(System.String)">
+             <summary>
+            Removes a comment with the ID specified in the request.
+             </summary>
+             <short>Remove a comment</short>
+             <section>Comments</section>
+             <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+             <returns>Comment ID</returns>
+             <category>Wiki</category>
+             <path>api/2.0/community/wiki/comment/{commentid}</path>
+             <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.AddWikiComment(System.String,System.String,System.String)">
+            <summary>
+            Adds a comment to the selected entity with the content specified in the request.
+            </summary>
+            <short>Add an entity comment</short>
+            <section>Comments</section>
+            <category>Wiki</category>
+            <param type="System.String, System" name="parentcommentid">Comment parent ID</param>
+            <param type="System.String, System" name="entityid">Entity ID</param>
+            <param type="System.String, System" name="content">Comment text</param>
+            <path>api/2.0/community/wiki/comment</path>
+            <httpMethod>POST</httpMethod>
+            <returns type="ASC.Web.Studio.UserControls.Common.Comments.CommentInfo, ASC.Web.Studio">Comment information</returns>
+        </member>
+        <member name="M:ASC.Api.Community.CommunityApi.UpdateWikiComment(System.String,System.String)">
+            <summary>
+            Updates a comment on the selected wiki page with the content specified in the request.
+            </summary>
+            <short>Update a comment</short>
+            <section>Comments</section>
+            <param type="System.String, System" method="url" name="commentid">Comment ID</param>
+            <param type="System.String, System" name="content">New comment text</param>
+            <returns>Updated comment</returns>
+            <category>Wiki</category>
+            <path>api/2.0/community/wiki/comment/{commentid}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostCommentWrapper.Text">
+            <example>comment text</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostCommentWrapper.Created">
+            <example>2020-12-03T21:36:13.0325127Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostCommentWrapper.Updated">
+            <example>c2020-12-03T21:36:13.0325127Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostCommentWrapper.Id">
+            <example>c2020-12-03T21:36:13.0325127Z</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostCommentWrapper.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostCommentWrapper.ParentId">
+            <example>c2020-12-03T21:36:13.0325127Z</example>
+            <order>16</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperFull.Text">
+            <example>Post text</example>
+            <order>100</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperFull.Title">
+            <example>Example post</example>
+            <order>5</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperFull.Created">
+            <example>2020-12-06T07:36:14.7981820Z</example>
+            <order></order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperFull.Updated">
+            <example>2020-12-06T07:36:14.7981820Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperFull.Id">
+            <example>00000000-0000-0000-0000-000000000000</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperFull.Tags">
+            <example>Tag1,Tag2</example>
+            <order>11</order>
+            <collection split=",">list</collection>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperFull.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.Preview">
+            <example>Preview post</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.Title">
+            <example>Example post</example>
+            <order>5</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.Created">
+            <example>2020-12-03T21:36:12.0774137Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.Updated">
+            <example>2020-12-03T21:36:12.0774137Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.Id">
+            <example>00000000-0000-0000-0000-000000000000</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.Tags">
+            <example>Tag1,Tag1</example>
+            <order>11</order>
+            <collection split=",">list</collection>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogPostWrapperSummary.BlogTitle">
+            <example>Blog Title</example>
+            <order>12</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogTagWrapper.Name">
+            <example>Sample tag</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Blogs.BlogTagWrapper.Count">
+            <example type="int">10</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkCommentWrapper.Text">
+            <example>comment text</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkCommentWrapper.Created">
+            <example>2020-12-06T07:36:14.8151911Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkCommentWrapper.Updated">
+            <example>2020-12-06T07:36:14.8151911Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkCommentWrapper.Id">
+            <example>00000000-0000-0000-0000-000000000000</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkCommentWrapper.ParentId">
+            <example>00000000-0000-0000-0000-000000000000</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkCommentWrapper.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.Id">
+            <example>11</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.Title">
+            <example>Google inc.</example>
+            <order></order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.Url">
+            <example>http:\/\/www.google.com</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.Thumbnail">
+            <example>Url to thumbnail</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.Created">
+            <example>2020-12-06T07:36:14.8181893Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.Updated">
+            <example>2020-12-06T07:36:14.8181893Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.Description">
+            <example>Google</example>
+            <order>4</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.BookmarkWrapper.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.TagWrapper.Name">
+            <example>Sample tag</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Bookmarks.TagWrapper.Count">
+            <example type="int">10</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventCommentWrapper.Text">
+            <example>comment text</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventCommentWrapper.Created">
+            <example>2020-12-07T13:56:02.2899133Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventCommentWrapper.Updated">
+            <example>2020-12-07T13:56:02.2899133Z</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventCommentWrapper.Id">
+            <example type="int">10</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventCommentWrapper.ParentId">
+            <example type="int">123</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventCommentWrapper.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapper.Id">
+            <example type="int">10</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapper.Title">
+            <example>Manager</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapper.Created">
+            <example>2020-12-07T13:56:02.2729203Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapper.Updated">
+            <example>2020-12-07T13:56:02.2729203Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapper.Type">
+            <example type="int">1</example>
+            <order>4</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapper.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="T:ASC.Api.Events.EventWrapperFull">
+            <inherited>ASC.Api.Events.EventWrapper, ASC.Api.Community</inherited>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapperFull.Text">
+            <example>Text of feed</example>
+            <order>100</order>
+        </member>
+        <member name="P:ASC.Api.Events.EventWrapperFull.Poll">
+            <type>ASC.Api.Events.PollWrapper, ASC.Api.Community</type>
+            <order>200</order>
+        </member>
+        <member name="P:ASC.Api.Events.PollWrapper.PollType">
+            <example type="int">0</example>
+            <order>200</order>
+        </member>
+        <member name="P:ASC.Api.Events.PollWrapper.EndDate">
+            <example>2020-12-07T13:56:02.2859248Z</example>
+            <order>200</order>
+        </member>
+        <member name="P:ASC.Api.Events.PollWrapper.StartDate">
+            <example>2020-12-07T13:56:02.2859248Z</example>
+            <order>200</order>
+        </member>
+        <member name="P:ASC.Api.Events.PollWrapper.Voted">
+            <example>false</example>
+            <order></order>
+        </member>
+        <member name="P:ASC.Api.Events.PollWrapper.Votes">
+            <type>ASC.Api.Events.VoteWrapper, ASC.Api.Community</type>
+            <order>300</order>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Events.VoteWrapper.Id">
+            <example type="int">133</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Events.VoteWrapper.Name">
+            <example>Variant 1</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Events.VoteWrapper.Votes">
+            <example type="int">100</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumCategoryWrapper.Id">
+            <example type="int">0</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumCategoryWrapper.Title">
+            <example>Sample title</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumCategoryWrapper.Created">
+            <example>2020-12-07T13:56:02.3459179Z</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumCategoryWrapper.Updated">
+            <example>2020-12-07T13:56:02.3459179Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumCategoryWrapper.Description">
+            <example>Sample category</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumCategoryWrapper.Threads">
+            <type>ASC.Api.Forums.ForumThreadWrapper, ASC.Api.Community</type>
+            <order>100</order>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.Id">
+            <example type="int">10</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.Title">
+            <example>The Thread</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.Description">
+            <example>Sample thread</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.Created">
+            <example>2020-12-07T13:56:02.3249197Z</example>
+            <order>20</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.Updated">
+            <example>2020-12-07T13:56:02.3249197Z</example>
+            <order>21</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.RecentTopicId">
+            <example type="int">1234</example>
+            <order></order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.RecentTopicTitle">
+            <example>Sample topic</example>
+            <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapper.UpdatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="T:ASC.Api.Forums.ForumThreadWrapperFull">
+            <inherited>ASC.Api.Forums.ForumThreadWrapper, ASC.Api.Community</inherited>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumThreadWrapperFull.Topics">
+            <type>ASC.Api.Forums.ForumTopicWrapper, ASC.Api.Community</type>
+            <order>100</order>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostAttachmentWrapper.Created">
+            <example>2020-12-07T13:56:02.3269198Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostAttachmentWrapper.Updated">
+            <example>2020-12-07T13:56:02.3269198Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostAttachmentWrapper.Name">
+            <example>picture.jpg</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostAttachmentWrapper.ContentType">
+            <example>image/jpeg</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostAttachmentWrapper.Size">
+            <example type="int">122345</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostAttachmentWrapper.Path">
+            <example>url to file</example>
+            <order>5</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.Id">
+            <example type="int">123</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.Subject">
+            <example>Sample subject</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.Text">
+            <example>Post text</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.Created">
+            <example>2020-12-07T13:56:02.3269198Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.Updated">
+            <example>2020-12-07T13:56:02.3269198Z</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.CreatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.ThreadTitle">
+            <example>Title</example>
+            <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicPostWrapper.Attachments">
+            <type>ASC.Api.Forums.ForumTopicPostAttachmentWrapper, ASC.Api.Community</type>
+            <order>100</order>
+            <collection></collection>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Id">
+            <example type="int">10</example>
+             <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Title">
+            <example>Sample topic</example>
+             <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Created">
+            <example>2020-12-07T13:56:02.3259212Z</example>
+             <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Updated">
+            <example>2020-12-07T13:56:02.3259212Z</example>
+             <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Text">
+            <example>This is sample post</example>
+             <order>8</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.UpdatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+             <order>9</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.ThreadTitile">
+            <example>null</example>
+             <order>10</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Status">
+            <example type="int">0</example>
+             <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Type">
+            <example type="int">0</example>
+             <order>30</order>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapper.Tags">
+            <example>Tag1,Tag2</example>
+             <order>100</order>
+             <collection split=",">100</collection>
+        </member>
+        <member name="T:ASC.Api.Forums.ForumTopicWrapperFull">
+            <inherited>ASC.Api.Forums.ForumTopicWrapper, ASC.Api.Community</inherited>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumTopicWrapperFull.Posts">
+            <type>ASC.Api.Forums.ForumTopicPostWrapper, ASC.Api.Community</type>
+            <order>100</order>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Forums.ForumWrapper.Categories">
+            <type>ASC.Api.Forums.ForumCategoryWrapper, ASC.Api.Community</type>
+            <order>100</order>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.CommentWrapper.Id">
+            <example>00000000-0000-0000-0000-000000000000</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.CommentWrapper.ParentId">
+            <example>00000000-0000-0000-0000-000000000000</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.CommentWrapper.Page">
+            <example>Some page</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.CommentWrapper.Content">
+            <example>Comment content</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.CommentWrapper.Author">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>4</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.CommentWrapper.LastModified">
+            <example>2020-12-08T17:37:03.3304954Z</example>
+            <order>4</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.CommentWrapper.Inactive">
+            <example>false</example>
+            <order>5</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.FileWrapper.Name">
+            <example>File name</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.FileWrapper.UpdatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.FileWrapper.Updated">
+            <example>2020-12-08T17:37:03.3424957Z</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.FileWrapper.Location">
+            <example>4\\46\\File name</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.PageWrapper.Name">
+            <example>Page name</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.PageWrapper.Content">
+            <example>Page content</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.PageWrapper.UpdatedBy">
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Api.Wiki.Wrappers.PageWrapper.Updated">
+            <example>2020-12-08T17:37:03.3164965Z</example>
+            <order>3</order>
+        </member>
+    </members>
+</doc>

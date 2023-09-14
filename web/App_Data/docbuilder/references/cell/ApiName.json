@@ -112,6 +112,7 @@
       "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a name.\n\t * @constructor\n\t * @property {string} Name - Sets a name to the active sheet.\n\t * @property {string} RefersTo - Returns or sets a formula that the name is defined to refer to.\n\t * @property {ApiRange} RefersToRange - Returns the ApiRange object by reference.\n\t */",
   "description": "<p>Class representing a name.</p>",
   "scope": "global",

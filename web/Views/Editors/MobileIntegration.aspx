@@ -26,14 +26,12 @@
 
             <h2>Integration based on the ONLYOFFICE test sample</h2>
             <p>This example demonstrates how to integrate ONLYOFFICE mobile web editors with the ONLYOFFICE <a href="<%= Url.Action("demopreview") %>">test or DMS sample</a>.</p>
-            <p><img alt="iOS integration via test sample" src="<%= Url.Content("~/content/img/editor/ios-test-sample.png") %>" /></p>
+            <p><img class="screenshot max-width-832" alt="iOS integration via test sample" src="<%= Url.Content("~/content/img/editor/ios-test-sample.png") %>" /></p>
             <p><b>Opening ONLYOFFICE editors</b></p>
             <ol>
                 <li>Download and install ONLYOFFICE Docs <a href="https://www.onlyoffice.com/docs-enterprise.aspx" target="_blank">Enterprise</a> or <a href="https://www.onlyoffice.com/developer-edition.aspx" target="_blank">Developer</a> edition.</li>
-                <li>
-                    <p>Download the mobile demo sample for iOS from <a href="https://github.com/ONLYOFFICE/editors-webview-ios" target="_blank">GitHub</a>.</p>
-                    <p>Now you can modify code fragments of this example for your DMS to work correctly.</p>
-                </li>
+                <li>Download the mobile demo sample for iOS from <a href="https://github.com/ONLYOFFICE/editors-webview-ios" target="_blank">GitHub</a>.</li>
+                <li>Open the <em>EditorWebViewDemo.xcodeproj</em> project with <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> to modify code fragments of this example for your DMS to work correctly.</li>
                 <li>
                     <p>To display the main page of your DMS, specify the address of the Document Server web interface in the value of the <b>DocumentServerURL</b> property in the <em>Info.plist</em> file:</p>
                     <pre>
@@ -44,7 +42,7 @@
 &lt;/dict&gt;
 </pre>
                     <p>where the <b>documentserver</b> is the name of the server with the ONLYOFFICE Document Server installed.</p>
-                    <p>An error occurs if <b>DocumentServerURL</b> is not specified. Otherwise, the DMS main page is loaded:</p>
+                    <p>If <b>DocumentServerURL</b> is specified, the DMS main page is loaded. Otherwise, an error occurs:</p>
                     <pre>
 private func load() {
     if documentServerUrlString.isEmpty {
@@ -61,12 +59,12 @@ private func load() {
 </pre>
                     <div class="img-block-2">
                         <div>
-                            <img alt="iOS error" src="<%= Url.Content("~/content/img/editor/ios-error.png") %>" />
-                            <p>DocumentServerURL is not specified</p>
+                            <img class="screenshot max-width-260" alt="iOS error" src="<%= Url.Content("~/content/img/editor/ios-error.png") %>" />
+                            <p><b>DocumentServerURL is not specified</b></p>
                         </div>
                         <div>
-                            <img alt="iOS managing" src="<%= Url.Content("~/content/img/editor/ios-managing.png") %>" />
-                            <p>DocumentServerURL is specified</p>
+                            <img class="screenshot max-width-260" alt="iOS managing" src="<%= Url.Content("~/content/img/editor/ios-managing.png") %>" />
+                            <p><b>DocumentServerURL is specified</b></p>
                         </div>
                     </div>
                 </li>
@@ -114,16 +112,16 @@ func webView(_ webView: WKWebView,
                     <p>The full code for <b>DocumentServerViewController</b> can be found <a href="https://github.com/ONLYOFFICE/editors-webview-ios/blob/ad146259742d0cecb7b10e67e19b4594730663e0/EditorWebViewDemo/PresentationLayer/UserStories/DocumentServerDemo/DocumentServerViewController.swift" target="_blank">here</a>.</p>
                     <div class="img-block-3">
                         <div>
-                            <img alt="Activity indicator" src="<%= Url.Content("~/content/img/editor/activity-indicator.png") %>" />
-                            <p align="center">Activity Indicator</p>
+                            <img class="screenshot max-width-260" alt="Activity indicator" src="<%= Url.Content("~/content/img/editor/activity-indicator.png") %>" />
+                            <p align="center"><b>Activity Indicator</b></p>
                         </div>
                         <div>
-                            <img alt="Progress view" src="<%= Url.Content("~/content/img/editor/progress-view.png") %>" />
-                            <p align="center">Progress View</p>
+                            <img class="screenshot max-width-260" alt="Progress view" src="<%= Url.Content("~/content/img/editor/progress-view.png") %>" />
+                            <p align="center"><b>Progress View</b></p>
                         </div>
                         <div>
-                            <img alt="Buttons" src="<%= Url.Content("~/content/img/editor/buttons.png") %>" />
-                            <p align="center">Buttons</p>
+                            <img class="screenshot max-width-260" alt="Buttons" src="<%= Url.Content("~/content/img/editor/buttons.png") %>" />
+                            <p align="center"><b>Buttons</b></p>
                         </div>
                     </div>
                 </li>
@@ -155,7 +153,7 @@ private func configureView() {
 }
 </pre>
                 </li>
-                <li>Open the <em>EditorWebViewDemo.xcodeproj</em> project in Xcode. In the toolbar, select a build scheme and a device where the app will be run.
+                <li>In the Xcode toolbar, select a build scheme and a device where the app will be run.
                     After that, choose <b>Product -> Run</b>, or click the <b>Run</b> button in the project toolbar to build and run your code.</li>
                 <li>On the main screen of the application, select the <b>Using DocumentServer</b> option to demonstrate an example of integrating ONLYOFFICE mobile web editors with the ONLYOFFICE test or DMS sample.</li>
             </ol>
@@ -184,20 +182,20 @@ func webView(_ webView: WKWebView,
     }
 }
 </pre>
-            <p><img alt="Go back" src="<%= Url.Content("~/content/img/editor/exit-button.png") %>" /></p>
-            <p>Button to exit the editor</p>
+            <div>
+                <img class="screenshot max-width-260" alt="Go back" src="<%= Url.Content("~/content/img/editor/exit-button.png") %>" />
+                <p style="margin-left: 40px;"><b>Button to exit the editor</b></p>
+            </div>
             <p>The full code for <b>DocumentServerEditorViewController</b> can be found <a href="https://github.com/ONLYOFFICE/editors-webview-ios/blob/ad146259742d0cecb7b10e67e19b4594730663e0/EditorWebViewDemo/PresentationLayer/UserStories/DocumentServerEditor/DocumentServerEditorViewController.swift" target="_blank">here</a>.</p>
 
             <h2>Integration based on the ONLYOFFICE Docs API</h2>
             <p>This example demonstrates how to open the ONLYOFFICE editors via WKWebView using the editor configuration described in the <a href="<%= Url.Action("basic") %>">API documentation</a> and the <a href="<%= Url.Action("try") %>">configuration examples</a>.</p>
-            <p><img alt="iOS integration via api" src="<%= Url.Content("~/content/img/editor/ios-api-config.png") %>" /></p>
+            <p><img class="screenshot max-width-832" alt="iOS integration via api" src="<%= Url.Content("~/content/img/editor/ios-api-config.png") %>" /></p>
             <p><b>Opening ONLYOFFICE editors</b></p>
             <ol>
                 <li>Download and install ONLYOFFICE Docs <a href="https://www.onlyoffice.com/docs-enterprise.aspx" target="_blank">Enterprise</a> or <a href="https://www.onlyoffice.com/developer-edition.aspx" target="_blank">Developer</a> edition.</li>
-                <li>
-                    <p>Download the mobile demo sample for iOS from <a href="https://github.com/ONLYOFFICE/editors-webview-ios" target="_blank">GitHub</a>.</p>
-                    <p>Now you can modify code fragments of this example for your DMS to work correctly.</p>
-                </li>
+                <li>Download the mobile demo sample for iOS from <a href="https://github.com/ONLYOFFICE/editors-webview-ios" target="_blank">GitHub</a>.</li>
+                <li>Open the <em>EditorWebViewDemo.xcodeproj</em> project with <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> to modify code fragments of this example for your DMS to work correctly.</li>
                 <li>Create an empty <em>html</em> file. The demo project <a href="https://github.com/ONLYOFFICE/editors-webview-ios/blob/ad146259742d0cecb7b10e67e19b4594730663e0/EditorWebViewDemo/Resources/editor.html" target="_blank">editor.html</a> resource is used as a template.</p></li>
                 <li>
                     <p>Add the <em>div</em> element as shown below:</p>
@@ -256,11 +254,13 @@ private func load() {
     webView.loadHTMLString(html, baseURL: nil)
 }
 </pre>
-                    <p><img alt="Editor samples" src="<%= Url.Content("~/content/img/editor/editor-samples.png") %>" /></p>
-                    <p>ONLYOFFICE Editor Samples</p>
+                    <div>
+                        <img class="screenshot max-width-260" alt="Editor samples" src="<%= Url.Content("~/content/img/editor/editor-samples.png") %>" />
+                        <p style="margin-left: 25px;"><b>ONLYOFFICE Editor Samples</b></p>
+                    </div>
                     <p>The full code for <b>EditorViewController</b> can be found <a href="https://github.com/ONLYOFFICE/editors-webview-ios/blob/ad146259742d0cecb7b10e67e19b4594730663e0/EditorWebViewDemo/PresentationLayer/UserStories/Editor/EditorViewController.swift" target="_blank">here</a>.</p>
                 </li>
-                <li>Open the <em>EditorWebViewDemo.xcodeproj</em> project in Xcode. In the toolbar, select a build scheme and a device where the app will be run.
+                <li>In the Xcode toolbar, select a build scheme and a device where the app will be run.
                     After that, choose <b>Product -> Run</b>, or click the <b>Run</b> button in the project toolbar to build and run your code.</li>
                 <li>On the main screen of the application, select the <b>Using API Configuration</b> option to demonstrate how to open the ONLYOFFICE mobile web editors
                     using the editor configuration described in the API documentation and the configuration examples.</li>
@@ -377,21 +377,19 @@ func present(url: URL, in parent: UIViewController, complation: @escaping (() ->
             <h2>Integration based on the ONLYOFFICE test sample</h2>
             <p>This example demonstrates how to integrate ONLYOFFICE mobile web editors with the ONLYOFFICE <a href="<%= Url.Action("demopreview") %>">test or DMS sample</a>.</p>
             
-            <p><img alt="Android integration via test sample" src="<%= Url.Content("~/content/img/editor/android-test-sample.png") %>" /></p>
+            <p><img class="screenshot max-width-832" alt="Android integration via test sample" src="<%= Url.Content("~/content/img/editor/android-test-sample.png") %>" /></p>
             <p><b>Opening ONLYOFFICE editors</b></p>
             <ol>
                 <li>Download and install ONLYOFFICE Docs <a href="https://www.onlyoffice.com/docs-enterprise.aspx" target="_blank">Enterprise</a> or <a href="https://www.onlyoffice.com/developer-edition.aspx" target="_blank">Developer</a> edition.</li>
+                <li>Download the mobile demo sample for Android from <a href="https://github.com/ONLYOFFICE/editors-webview-android" target="_blank">GitHub</a>.</li>
+                <li>Open the top-level <em>build.gradle</em> file with <a href="https://developer.android.com/studio" target="_blank">Android Studio</a> to modify code fragments of this example for your DMS to work correctly.</li>
                 <li>
-                    <p>Download the mobile demo sample for Android from <a href="https://github.com/ONLYOFFICE/editors-webview-android" target="_blank">GitHub</a>.</p>
-                    <p>Now you can modify code fragments of this example for your DMS to work correctly.</p>
-                </li>
-                <li>
-                    <p>To display the main page of your DMS, specify the address of the Document Server web interface in the value of the <b>DOCUMENT_SERVER_URL</b> property in the <em>build.gradle</em> file:</p>
+                    <p>To display the main page of your DMS, specify the address of the Document Server web interface in the value of the <b>DOCUMENT_SERVER_URL</b> property in the module-level <em>build.gradle</em> file:</p>
                     <pre>
 buildConfigField("String", "DOCUMENT_SERVER_URL", "https://documentserver/")
 </pre>
                     <p>where the <b>documentserver</b> is the name of the server with the ONLYOFFICE Document Server installed.</p>
-                    <p>An error occurs if <b>DOCUMENT_SERVER_URL</b> is not specified. Otherwise, the DMS main page is loaded:</p>
+                    <p>If <b>DOCUMENT_SERVER_URL</b> is specified, the DMS main page is loaded. Otherwise, an error occurs:</p>
                     <pre>
 private fun showDialog() {
     AlertDialog.Builder(requireContext())
@@ -406,12 +404,12 @@ private fun showDialog() {
 </pre>
                     <div class="img-block-2">
                         <div>
-                            <img alt="Android error" src="<%= Url.Content("~/content/img/editor/android-error.png") %>" />
-                            <p>DocumentServerURL is not specified</p>
+                            <img class="screenshot max-width-260" alt="Android error" src="<%= Url.Content("~/content/img/editor/android-error.png") %>" />
+                            <p><b>DocumentServerURL is not specified</b></p>
                         </div>
                         <div>
-                            <img alt="Android managing" src="<%= Url.Content("~/content/img/editor/android-managing.png") %>" />
-                            <p>DocumentServerURL is specified</p>
+                            <img class="screenshot max-width-260" alt="Android managing" src="<%= Url.Content("~/content/img/editor/android-managing.png") %>" />
+                            <p><b>DocumentServerURL is specified</b></p>
                         </div>
                     </div>
                 </li>
@@ -458,7 +456,7 @@ private fun setSettings() {
 }
 </pre>
                 </li>
-                <li>Open the <em>editors-webview-android</em> project in Android Studio. In the toolbar, select your application and the device where the app will be run.
+                <li>In the Android Studio toolbar, select your application and the device where the app will be run.
                     After that, click the <b>Run</b> button in the project toolbar to build and run your code.</li>
                 <li>The application will be opened to demonstrate an example of integrating ONLYOFFICE mobile web editors with the ONLYOFFICE test or DMS sample.</li>
             </ol>

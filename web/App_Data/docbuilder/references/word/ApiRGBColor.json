@@ -18,8 +18,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiRGBColor",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiRGBColor object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing an RGB Color.\n\t * @constructor\n\t */",
   "description": "<p>Class representing an RGB Color.</p>",
   "scope": "global",

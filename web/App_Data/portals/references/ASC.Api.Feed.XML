@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Feed</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Api.Feed.FeedApi">
+            <summary>
+            Feed API.
+            </summary>
+            <name>feed</name>
+        </member>
+        <member name="M:ASC.Api.Feed.FeedApi.Read">
+            <summary>
+            Opens feeds for reading.
+            </summary>
+            <short>
+            Read feeds
+            </short>
+             <path>api/2.0/feed/read</path>
+             <httpMethod>PUT</httpMethod>
+             <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Feed.FeedApi.GetFeed(System.String,ASC.Specific.ApiDateTime,ASC.Specific.ApiDateTime,System.Nullable{System.Guid},System.Nullable{System.Boolean},ASC.Specific.ApiDateTime)">
+            <summary>
+            Returns a list of feeds that are filtered by the parameters specified in the request.
+            </summary>
+            <short>
+            Get feeds
+            </short>
+             <param type="System.String, System" name="product">Product which feeds you want to read</param>
+             <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="from">Time from which the feeds should be displayed</param>
+             <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="to">Time until which the feeds should be displayed</param>
+             <param type="System.Nullable{System.Guid}, System" name="author">Author whose feeds you want to read</param>
+             <param type="System.Nullable{System.Boolean}, System" name="onlyNew">Displays only fresh feeds</param>
+             <param type="ASC.Specific.ApiDateTime, ASC.Specific" name="timeReaded">Time when the feeds were read</param>
+             <returns>List of filtered feeds</returns>
+             <path>api/2.0/feed/filter</path>
+             <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Feed.FeedApi.GetFreshNewsCount">
+            <summary>
+            Returns a number of fresh feeds.
+            </summary>
+            <short>
+            Count fresh feeds
+            </short>
+            <returns>Number of fresh feeds</returns>
+             <path>api/2.0/feed/newfeedscount</path>
+             <httpMethod>GET</httpMethod>
+        </member>
+    </members>
+</doc>

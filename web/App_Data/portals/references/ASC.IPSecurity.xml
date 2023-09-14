@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.IPSecurity</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.IPSecurity.IPRestriction.Id">
+            <example type="int">123</example>
+        </member>
+        <member name="P:ASC.IPSecurity.IPRestriction.TenantId">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.IPSecurity.IPRestrictionBase.Ip">
+            <example>Ip</example>
+        </member>
+        <member name="P:ASC.IPSecurity.IPRestrictionBase.ForAdmin">
+            <example>false</example>
+        </member>
+    </members>
+</doc>

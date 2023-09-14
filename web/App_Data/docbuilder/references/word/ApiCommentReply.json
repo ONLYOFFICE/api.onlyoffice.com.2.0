@@ -1,0 +1,152 @@
+{
+  "methods": {
+    "GetClassType": {
+      "memberof": "ApiCommentReply",
+      "name": "GetClassType",
+      "description": "<p>Returns a type of the ApiCommentReply class.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "\"commentReply\""
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetText": {
+      "memberof": "ApiCommentReply",
+      "name": "GetText",
+      "description": "<p>Returns the comment reply text.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetText": {
+      "memberof": "ApiCommentReply",
+      "name": "SetText",
+      "description": "<p>Sets the comment reply text.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiCommentReply"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sText",
+          "description": "<p>The comment reply text.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetAuthorName": {
+      "memberof": "ApiCommentReply",
+      "name": "GetAuthorName",
+      "description": "<p>Returns the comment reply author's name.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetAuthorName": {
+      "memberof": "ApiCommentReply",
+      "name": "SetAuthorName",
+      "description": "<p>Sets the comment reply author's name.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiCommentReply"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sAuthorName",
+          "description": "<p>The comment reply author's name.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetUserId": {
+      "memberof": "ApiCommentReply",
+      "name": "GetUserId",
+      "description": "<p>Returns the user ID of the comment reply author.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetUserId": {
+      "memberof": "ApiCommentReply",
+      "name": "SetUserId",
+      "description": "<p>Sets the user ID to the comment reply author.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiCommentReply"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sUserId",
+          "description": "<p>The user ID of the comment reply author.</p>",
+          "optional": false
+        }
+      ]
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Class representing a comment reply.\n\t * @constructor\n\t */",
+  "description": "<p>Class representing a comment reply.</p>",
+  "scope": "global",
+  "params": []
+}

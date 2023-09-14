@@ -1,0 +1,428 @@
+<TypeDescriptor xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Names>
+    <entry>
+      <key>ASC.Files.Core.Security.FileShare</key>
+      <value>
+        <Description>None, ReadWrite, Read, Restrict, Varies, Review, Comment, FillForms, CustomFilter, RoomAdmin, Editing, Collaborator</Description>
+        <Example>ReadWrite</Example>
+        <ExampleJson>"ReadWrite"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Boolean</key>
+      <value>
+        <Description>Bool value</Description>
+        <Example>true</Example>
+        <ExampleJson>true</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.DateTime</key>
+      <value>
+        <Description>Date and Time</Description>
+        <Example>2011-10-1</Example>
+        <ExampleJson>"2008-04-10T06-30-00.000Z"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.String</key>
+      <value>
+        <Description>string</Description>
+        <Example>some text</Example>
+        <ExampleJson>"some text"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Decimal</key>
+      <value>
+        <Description>decimal</Description>
+        <Example>1.1</Example>
+        <ExampleJson>1.1</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Int32</key>
+      <value>
+        <Description>number</Description>
+        <Example>1234</Example>
+        <ExampleJson>1234</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.UInt32</key>
+      <value>
+        <Description>number</Description>
+        <Example>1234</Example>
+        <ExampleJson>1234</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Single</key>
+      <value>
+        <Description>number</Description>
+        <Example>1234</Example>
+        <ExampleJson>1234</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Int64</key>
+      <value>
+        <Description>number</Description>
+        <Example>1234</Example>
+        <ExampleJson>1234</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Int64[]</key>
+      <value>
+        <Description>array of numbers</Description>
+        <Example>[1234,123]</Example>
+        <ExampleJson>[1234, 123]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.String[]</key>
+      <value>
+        <Description>array of strings</Description>
+        <Example>[some string,another string]</Example>
+        <ExampleJson>["some string","another string"]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Float</key>
+      <value>
+        <Description>floating point number</Description>
+        <Example>123.45</Example>
+        <ExampleJson>123.45</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Guid</key>
+      <value>
+        <Description>guid</Description>
+        <Example>9924256A-739C-462b-AF15-E652A3B1B6EB</Example>
+        <ExampleJson>"9924256A-739C-462b-AF15-E652A3B1B6EB"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Guid[]</key>
+      <value>
+        <Description>Collection of Guids</Description>
+        <Example>9924256A-739C-462b-AF15-E652A3B1B6EB</Example>
+        <ExampleJson>[
+    "9924256a-739c-462b-af15-e652a3b1b6eb",
+    "98777e9c-f2a7-4e97-b314-ba9f92c2e882"
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.IO.Stream</key>
+      <value>
+        <Description>A stream for uploading files without multipart request</Description>
+        <Example>N/A</Example>
+        <ExampleJson>"N/A"</ExampleJson>
+        <Note></Note>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Net.Mime.ContentType</key>
+      <value>
+        <Description>A content type for stream when uploading files without multipart request</Description>
+        <Example>application/octet-stream</Example>
+        <Note>Set Content-Type header</Note>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Net.Mime.ContentDisposition</key>
+      <value>
+        <Description>A Content Disposition with file name for stream when uploading files without multipart request</Description>
+        <Example>attachment; filename="file1.png"</Example>
+        <Note>Set Content-Disposition header</Note>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}</key>
+      <value>
+        <Description>Files for adding using multipart/form-data</Description>
+        <Example>N/A</Example>
+        <ExampleJson> []</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Api.Employee.Contact</key>
+      <value>
+        <Description>Contact</Description>
+        <Example>contacts[0][Type]=GTalk&amp;contacts[0][Value]=my@gmail.com</Example>
+        <ExampleJson>{"type": "GTalk", "value": "my@gmail.com"}</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Specific.ApiDateTime</key>
+      <value>
+        <Description>Date and Time</Description>
+        <Example>Roundtrip format: 2008-04-10T06-30-00.000Z</Example>
+        <ExampleJson>"2008-04-10T06-30-00.000Z"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Studio.Core.Backup.BackupAjaxHandler+StorageParams</key>
+      <value>
+        <Description>Object with fields: AccessKeyId, SecretAccessKey, Bucket, FolderId, FilePath, Region</Description>
+        <Example></Example>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.List{System.String}</key>
+      <value>
+      <Description>Collection of strings</Description>
+        <Example>some text</Example>
+        <ExampleJson>[
+    "some text"
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.Int32,System.String}}</key>
+      <value>
+      <Description>Dictionary(key:int, value:string)</Description>
+        <Example>[{"Key": 0,"Value": "some text"}]</Example>
+        <ExampleJson>[
+    {
+      "Key": 0,
+      "Value": "some text"
+    }
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.Boolean}}</key>
+      <value>
+      <Description>Dictionary(key:string, value:bool)</Description>
+        <Example>[{"Key": "one","Value": true}]</Example>
+        <ExampleJson>[
+    {
+      "Key": "one",
+      "Value": true
+    }
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}}</key>
+      <value>
+      <Description>Dictionary(key:string, value:string)</Description>
+        <Example>[{"Key": "some text","Value": "some text"}]</Example>
+        <ExampleJson>[
+    {
+      "Key": "some text",
+      "Value": "some text"
+    }
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.FilterType</key>
+      <value>
+      <Description>None, FilesOnly, FoldersOnly, DocumentsOnly, PresentationsOnly, SpreadsheetsOnly, ImagesOnly, ByUser, ByDepartment, ArchiveOnly, ByExtension, MediaOnly, EditingRooms, CustomRooms, OFormTemplateOnly, OFormOnly</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Files.Services.WCFService.FileOperations.FileConflictResolveType</key>
+      <value>
+      <Description>Skip, Overwrite, Duplicate</Description>
+        <Example>Skip</Example>
+        <ExampleJson>"Skip"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Byte</key>
+      <value>
+      <Description>byte</Description>
+        <Example>0</Example>
+        <ExampleJson>0</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Users.EmployeeStatus</key>
+      <value>
+      <Description>	Active, Terminated, LeaveOfAbsence, Default, All</Description>
+        <Example>Active</Example>
+        <ExampleJson>"Active"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Users.EmployeeActivationStatus</key>
+      <value>
+      <Description>	NotActivated, Activated, Pending, AutoGenerated</Description>
+        <Example>NotActivated</Example>
+        <ExampleJson>"NotActivated"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Users.EmployeeType</key>
+      <value>
+      <Description>	All, RoomAdmin, User, DocSpaceAdmin, Collaborator</Description>
+        <Example>All</Example>
+        <ExampleJson>"All"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Studio.Core.Backup.BackupAjaxHandler.CronParams</key>
+      <value>
+      <Description>ASC.Web.Studio.Core.Backup.BackupAjaxHandler.CronParams</Description>
+        <Example></Example>
+        <ExampleJson>{
+    "Period": 0,
+    "Hour": 0,
+    "Day": 0
+  }</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Studio.Utility.ConfirmType</key>
+      <value>
+      <Description>EmpInvite, LinkInvite, PortalSuspend, PortalContinue, PortalRemove, DnsChange, PortalOwnerChange, Activation, EmailChange, EmailActivation, PasswordChange, ProfileRemove, PhoneActivation, PhoneAuth, Auth, TfaActivation, TfaAuth, Wizard</Description>
+        <Example>LinkInvite</Example>
+        <ExampleJson>"LinkInvite"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.DateToAutoCleanUp</key>
+      <value>
+      <Description>OneWeek, TwoWeeks, OneMonth, ThirtyDays, TwoMonths, ThreeMonths</Description>
+        <Example>OneWeek</Example>
+        <ExampleJson>"OneWeek"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.ApiModels.RequestDto.RoomType</key>
+      <value>
+      <Description>EditingRoom, CustomRoom</Description>
+        <Example>EditingRoom</Example>
+        <ExampleJson>"EditingRoom"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.ApiModels.RequestDto.RoomFilterType</key>
+      <value>
+      <Description>EditingRoomOnly, CustomRoomOnly, FoldersOnly</Description>
+        <Example>EditingRoomOnly</Example>
+        <ExampleJson>"EditingRoomOnly"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.VirtualRooms.SearchArea</key>
+      <value>
+      <Description>Active, Archive, Any</Description>
+        <Example>Active</Example>
+        <ExampleJson>"Active"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.ProviderFilter</key>
+      <value>
+      <Description>None, Box, DropBox, GoogleDrive, kDrive, OneDrive, SharePoint, WebDav, Yandex</Description>
+        <Example>Box</Example>
+        <ExampleJson>"Box"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.Core.SubjectFilter</key>
+      <value>
+      <Description>Owner, Member</Description>
+        <Example>Owner</Example>
+        <ExampleJson>"Owner"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Payments</key>
+      <value>
+      <Description>Paid, Free</Description>
+        <Example>Paid</Example>
+        <ExampleJson>"Paid"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Core.Users.DarkThemeSettingsEnum</key>
+      <value>
+      <Description>Base, Dark, System</Description>
+        <Example>Base</Example>
+        <ExampleJson>"Base"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Common.Notify.Push.MobileAppType</key>
+      <value>
+      <Description>IosProjects, AndroidProjects, IosDocuments, AndroidDocuments, DesktopEditor</Description>
+        <Example>IosProjects</Example>
+        <ExampleJson>"IosProjects"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.AuditTrail.Types.ProductType</key>
+      <value>
+      <Description>None, CRM, Documents, Login, Others, People, Projects, Settings</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.AuditTrail.Types.ModuleType</key>
+      <value>
+      <Description>None, Files, Folders, DocumentsSettings, Companies, Persons, Contacts, CrmTasks, Opportunities, Invoices, Cases, CommonCrmSettings, ContactsSettings, ContactTypes, InvoiceSettings, OtherCrmSettings, Users, Groups, Projects, Milestones, Tasks, Discussions, TimeTracking, Reports, ProjectsSettings, General, Products, Rooms</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.AuditTrail.Types.ActionType</key>
+      <value>
+      <Description>None, Create, Update, Delete, Link, Unlink, Attach, Detach, Send, Import, Export, UpdateAccess, Download, Upload, Copy, Move, Reassigns, Follow, Unfollow, Logout</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.AuditTrail.Types.EntryType</key>
+      <value>
+      <Description>None, File, Folder, Project, Contact, Milestone, Task, Comment, SubTask, Message, TimeSpend, ReportTemplate, Template, Relationship, CRMTask, Opportunity, Invoice, Case, ListItem, InvoiceItem, InvoiceTax, FieldDescription, OpportunityMilestone, User, Group, Room, Tag</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.FederatedLogin.LoginProviders.LoginProviderEnum</key>
+      <value>
+      <Description>Facebook, Google, Dropbox, Docusign, Box, OneDrive, GosUslugi, LinkedIn, MailRu, VK, Wordpress, Yahoo, Yandex</Description>
+        <Example>Facebook</Example>
+        <ExampleJson>"Facebook"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Tenants.TenantTrustedDomainsType</key>
+      <value>
+      <Description>None, Custom, All</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.ActiveDirectory.Base.Settings.LdapSettings.MappingFields</key>
+      <value>
+      <Description>FirstNameAttribute, SecondNameAttribute, BirthDayAttribute, GenderAttribute, MobilePhoneAttribute, MailAttribute, TitleAttribute, LocationAttribute, AvatarAttribute, AdditionalPhone, AdditionalMobilePhone, AdditionalMail, Skype, UserQuotaLimit</Description>
+        <Example>FirstNameAttribute</Example>
+        <ExampleJson>"FirstNameAttribute"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.ActiveDirectory.Base.Settings.LdapSettings.AccessRight</key>
+      <value>
+      <Description>FullAccess, Documents, Projects, CRM, Community, People, Mail</Description>
+        <Example>FullAccess</Example>
+        <ExampleJson>"FullAccess"</ExampleJson>
+      </value>
+    </entry>
+    </Names>
+</TypeDescriptor>

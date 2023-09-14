@@ -41,6 +41,7 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>
 
     <div class="header-gray">Query parameters</div>
     <table class="table">
@@ -64,6 +65,7 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>
 
     <div class="header-gray">Request headers</div>
     <table class="table">
@@ -102,6 +104,7 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>
 
     <div class="header-gray">Response headers</div>
     <table class="table">
@@ -142,3 +145,31 @@
             </tr>
         </tbody>
     </table>
+    <div class="mobile-content"></div>
+
+    <div class="header-gray">Response body</div>
+    <table class="table">
+        <colgroup>
+            <col class="table-name" />
+            <col />
+            <col class="table-type" />
+            <col />
+        </colgroup>
+        <thead>
+            <tr class="tablerow">
+                <td>Name</td>
+                <td>Description</td>
+                <td>Type</td>
+                <td>Presence</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>The renamed file name without a path or file extension.</td>
+                <td>string</td>
+                <td>required</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="mobile-content"></div>

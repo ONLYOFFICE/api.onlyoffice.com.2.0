@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api</name>
+    </assembly>
+    <members>
+        <member name="P:ASC.Api.Impl.ApiContext.FilterToType">
+            <summary>
+            Filters responce to specific type from request parameter "type"
+            </summary>
+            <remarks>
+            The type name is retrieved from [DataContractAttribute] name
+            </remarks>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.Count">
+            <summary>
+            Gets count to get item from collection. Request parameter "count"
+            </summary>
+            <remarks>
+            Don't forget to call _context.SetDataPaginated() to prevent SmartList from filtering response if you fetch data from DB with TOP &amp; COUNT
+            </remarks>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.StartIndex">
+            <summary>
+            Gets start index to get item from collection. Request parameter "startIndex"
+            </summary>
+            <remarks>
+            Don't forget to call _context.SetDataPaginated() to prevent SmartList from filtering response if you fetch data from DB with TOP &amp; COUNT
+            </remarks>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.SortBy">
+            <summary>
+            Gets field to sort by from request parameter "sortBy"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.FilterBy">
+            <summary>
+            Gets field to filter from request parameter "filterBy"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.FilterOp">
+            <summary>
+            Gets filter operation from request parameter "filterOp"
+            can be one of the following:"contains","equals","startsWith","present"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.FilterValue">
+            <summary>
+            Gets value to filter from request parameter "filterValue"
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.SortDescending">
+            <summary>
+            Sort direction. From request parameter "sortOrder" can be "descending" or "ascending"
+            Like ...&amp;sortOrder=descending&amp;...
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Impl.ApiContext.UpdatedSince">
+            <summary>
+            Gets value to filter from request parameter "updatedSince"
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Impl.ApiContext.SetDataPaginated">
+            <summary>
+            Set mark that data is already paginated and additional filtering is not needed
+            </summary>
+        </member>
+    </members>
+</doc>

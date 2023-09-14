@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Format the range of cells <b>A1:D10</b> as a table.</p>
+<p class="dscr">Formats the range of cells <b>A1:D10</b> as a table.</p>
 
 <pre>(function()
 {
@@ -28,4 +28,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Range as a table" src="<%= Url.Content("~/content/img/plugins/range_as_a_table.png") %>" />
+<img class="screenshot max-width-832" alt="Range as a table" src="<%= Url.Content("~/content/img/plugins/range_as_a_table.png") %>" />

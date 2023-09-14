@@ -1,8 +1,135 @@
 # Change Log
 
 - docbuilder: added the Builder samples section
+## 4.2.0
+- docspace: v1.1.2
+- docspace: added the DocSpace frame SDK
+- editors: added the SuiteCRM plugin
+- editor: added the argument parameter to the Web Document Builder API
+- editors: added the lang parameter to the WOPI discovery
+- editors: download examples from github
+- plugins: added the store.categories config parameter
+- macros: added the Complete address information macro
+
+## 4.1.0
+- editors: added a link to the list of error codes
+- editors: added the Protecting ranges page
+- editors: added the c parameter to the setUsers method and onRequestUsers event
+- editors: added the users.id field to the setUsers method
+- editors: added the draw field to the editorConfig.customization.layout.toolbar parameter
+- editors: added opening for .dps, .dpt, .et, .ett, .mhtml, .stw, .sxc, .sxi, .sxw, .wps, .wpt formats
+- editors: added the size field to the editorConfig.customization.font parameter
+- editors: added the onRequestHistoryClose event to the Document History page
+- editors: added the userdata parameter to the info command
+- editors: added the Odoo app
+- plugins: v7.4.0
+- plugins: added the ability to download ready-to-use plugins from ONLYOFFICE Plugin Marketplace in ONLYOFFICE Desktop Editors
+- plugins: added the pluginsmanager utility
+- plugins: added the store.categories config parameter
+- docbuilder: v7.4.0
+- docbuilder: added the JS debugging in the Chrome/Chromium browser
+
+## 4.0.0
+- docspace: added the DocSpace section
+- portals: moved the Hosted solution section to the Community server section
+- editors: services.CoAuthoring.secret.browser.string is deprecated
+
+## 3.1.0
+- editors: test examples v1.5.1
+- editors: added conversion from dps, dpt, et, ett, htm, mhtml, stw, sxc, sxi, sxw, wps, wpt, xml format
+- editors: added the examples of interaction with the documents from the outside
+- editors: added the Embedding forms into a web page page
+- editors: conversion to ppsm, ppsx
+- editors: added the Go signature code example
+- plugins: v7.3.3
+- macros: added the Insert unique id macro sample
+- docbuilder: v7.3.3
+- docbuilder: changed the color scheme of the builder examples
+- portals: api v12.5
+- portals: moved the Hosted solution section to the Community server section
+
+## 3.0.4
+- editors: changed drupal description
+- editors: changed alfresco description
+- editors: changed the Alfresco installation instruction (moving from a Simple Module to AMP)
+
+## 3.0.3
+- docbuilder: fix class links for integration api
+
+## 3.0.2
+- docbuilder: fix class links
+
+## 3.0.1
+- docbuilder: fix method links
+
+## 3.0.0
+- editors: added the WOPI Conversion API
+- editors: added the UserCanNotWriteRelative property to the CheckFileInfo WOPI operation
+- editors: added the scheme for editing binary document formats
+- editors: added the convert action to the WOPI discovery
+- editors: added the PutRelativeFile WOPI operation
+- editors: added the Inserting external data page
+- editors: added the setReferenceData method
+- editors: added the events.onRequestReferenceData event
+- editors: added the document.referenceData parameter
+- editors: added the mode field to the editorConfig.customization.layout.leftMenu and editorConfig.customization.layout.rightMenu parameters
+- editors: added the editorConfig.customization.font parameter
+- editors: added the EnableInsertRemoteImage, CopyPasteRestrictions, SupportsLocks, and SupportsUpdate CheckFileInfo properties
+- editors: added the Action_InsertGraphic, Blur_Focus, Grab_Focus, and Host_PostmessageReady PostMessage messages
+- editors: added the information about the syncronous conversion timeout
+- editors: added the history.serverVersion parameter description
+- editors: added the conversion limitation for the spreadsheets
+- editors: added the information about hiding changes when the server version is updated
+- plugins: v7.3
+- plugins: changed the structure of the Plugins and Macros section
+- plugins: parsing documentation from source code
+- plugins: added the icons2 and store parameters to the plugin config
+- docbuilder: v7.3
+- portals: generate documentation without dll
+
+## 2.11.0
+- editors: mobile edit, mobile view and embedded view buttons on try page
+- editors: test examples v1.4.0
+- editors: conversion djvu to pdf
+- macros: added the Remove shapes from slides macro
+- macros: added the Unhide all rows and columns macro
+
+## 2.10.0
+- editors: added the editorConfig.customization.integrationMode parameter
+- editors: added the integration with frontent frameworks
+- editors: JWT is enabled by default
+- plugins: added the onAddComment, onChangeCommentData and onRemoveComment events
+- plugins: added the AcceptReviewChanges, MoveToNextReviewChange and RejectReviewChanges methods
+- macros: added the Import CSV/text data macro
+- macros: added the Recalculate worksheet values macro sample
+- docbuilder: added global examples
+- docbuilder: added the onWorksheetChange event to Spreadsheet API
+- docbuilder: events documentation
+- docbuilder: global member properties
+
+## 2.9.0
+- editors: added the Version and LastModifiedTime properties to the CheckFileInfo WOPI operation
+- editors: added the Connector class to interact with text documents, spreadsheets, presentations, and fillable forms from the outside
+- editors: added the theme-contrast-dark theme id to the editorConfig.customization.uiTheme parameter
+- editors: added the phone field to the editorConfig.customization.customer parameter
+- editors: added the four letter language codes to the editorConfig.lang parameter
+- editors: added the connections_view, users_view_count and users_view parameters to the license response
+- editors: added the information about co-editing modes
+- editors: added the live viewer mode to the text document, spreadsheet and presentation editors
+- editors: added the embedview action to the WOPI discovery
+- editors: added the information about highlighting document changes in the forcefully saved document versions
+- editors: signature code examples
+- editors: added the Drupal ONLYOFFICE connector module
 - editors: added the Mobile integration page
 - editors: added the WordPress plugin
+- editors: test examples v1.3.0
+- plugins: added the onBlurContentControl, onChangeContentControl and onFocusContentControl events
+- plugins: added the ChangeOleObject, GetAllForms, GetFileToDownload, GetFormsByTag, GetFormValue, GetImageDataFromSelection, GetInstalledPlugins, InstallPlugin, PutImageDataToSelection, RemovePlugin, SetFormValue, ShowButton and UpdatePlugin methods
+- plugins: changed the plugin localization scheme
+- macros: added the Debugging page
+- docbuilder: added the C++ and .Net wrappers
+- docbuilder: v7.2
+- portals: api v12.1.0
 
 ## 2.8.1
 - docbuilder: fix run examples

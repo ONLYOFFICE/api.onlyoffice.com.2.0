@@ -36,26 +36,24 @@
         <% Html.RenderPartial("TopNavigation");%>
     </div>
     <div class="background-body <%= Html.IfController("Home") ? "mainBody" : string.Empty %>">
-        <table class="layout-table <%= Html.IfController("Home") ? "home" : string.Empty %>">
-            <tr>
+        <div class="layout-table <%= Html.IfController("Home") ? "home" : string.Empty %>">
                 <% if (!Html.IfController("Home"))
                    { %>
-                <td class="layout-table-side">
+                <div class="layout-table-side">
                     <div class="layout-side">
                         <% Html.RenderPartial("SearchForm"); %>
                         <% Html.RenderAction("Navigation"); %>
                     </div>
-                </td>
+                </div>
                 <% } %>
 
-                <td class="layout-table-content" <%= Html.IfController("Home") ? "colspan=\"2\"" : ""  %>>
+                <div class="layout-table-content" <%= Html.IfController("Home") ? "colspan=\"2\"" : ""  %>>
                     <div class="layout-content">
                         <%--<% Html.RenderPartial("BreadCrumbs");%>--%>
                         <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
                     </div>
-                </td>
-            </tr>
-        </table>
+                </div>
+        </div>
     </div>
     <div>
         <div class="layout-table-footer">

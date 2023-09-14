@@ -1,0 +1,120 @@
+{
+  "methods": {
+    "GetClassType": {
+      "memberof": "ApiOleObject",
+      "name": "GetClassType",
+      "description": "<p>Returns a type of the ApiOleObject class.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "\"oleObject\""
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetData": {
+      "memberof": "ApiOleObject",
+      "name": "SetData",
+      "description": "<p>Sets the data to the current OLE object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sData",
+          "description": "<p>The OLE object string data.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetData": {
+      "memberof": "ApiOleObject",
+      "name": "GetData",
+      "description": "<p>Returns the string data from the current OLE object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetApplicationId": {
+      "memberof": "ApiOleObject",
+      "name": "SetApplicationId",
+      "description": "<p>Sets the application ID to the current OLE object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sAppId",
+          "description": "<p>The application ID associated with the curent OLE object.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetApplicationId": {
+      "memberof": "ApiOleObject",
+      "name": "GetApplicationId",
+      "description": "<p>Returns the application ID from the current OLE object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE",
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Class representing an Ole-object.\n\t * @constructor\n\t */",
+  "description": "<p>Class representing an Ole-object.</p>",
+  "scope": "global",
+  "params": []
+}

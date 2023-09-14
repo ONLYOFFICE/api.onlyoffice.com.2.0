@@ -605,8 +605,110 @@
           "optional": false
         }
       ]
+    },
+    "SetTableTitle": {
+      "memberof": "ApiTablePr",
+      "name": "SetTableTitle",
+      "description": "<p>Sets the table title (caption).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sTitle",
+          "description": "<p>The table title to be set.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetTableTitle": {
+      "memberof": "ApiTablePr",
+      "name": "GetTableTitle",
+      "description": "<p>Returns the table title (caption).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetTableDescription": {
+      "memberof": "ApiTablePr",
+      "name": "SetTableDescription",
+      "description": "<p>Sets the table description.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sDescr",
+          "description": "<p>The table description to be set.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetTableDescription": {
+      "memberof": "ApiTablePr",
+      "name": "GetTableDescription",
+      "description": "<p>Returns the table description.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiTablePr",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTablePr object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing the table properties.\n\t * @constructor\n\t */",
   "description": "<p>Class representing the table properties.</p>",
   "scope": "global",

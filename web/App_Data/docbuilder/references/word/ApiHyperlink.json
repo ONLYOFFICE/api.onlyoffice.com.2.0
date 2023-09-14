@@ -28,7 +28,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -53,7 +53,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -78,7 +78,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -196,7 +196,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -232,8 +232,34 @@
           "optional": false
         }
       ]
+    },
+    "ToJSON": {
+      "memberof": "ApiHyperlink",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiHyperlink object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteStyles",
+          "description": "<p>Specifies if the used styles will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a Paragraph hyperlink.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a Paragraph hyperlink.</p>",
   "scope": "global",

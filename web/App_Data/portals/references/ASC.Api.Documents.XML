@@ -1,0 +1,1850 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Documents</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Api.Documents.DocumentsApi">
+            <summary>
+            Provides access to documents.
+            </summary>
+            <name>files</name>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.Name">
+            <summary>
+            Api name entry
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.#ctor(ASC.Api.Impl.ApiContext,ASC.Web.Files.Services.WCFService.IFileStorageService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+            <param name="fileStorageService"></param>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetRootFolders(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns all the sections matching the parameters specified in the request.
+            </summary>
+            <short>Get filtered sections</short>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <param type="System.Boolean, System" name="withoutTrash">Specifies whether to return sections with or without trash folder</param>
+            <param type="System.Boolean, System" name="withoutAdditionalFolder">Specifies whether to return sections with or without additional folders</param>
+            <category>Folders</category>
+            <returns>Contents of the sections</returns>
+            <path>api/2.0/files/@root</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetMyFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files and folders located in the "My documents" section.
+            </summary>
+            <short>Get the "My documents" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "My documents" section contents</returns>
+            <path>api/2.0/files/@my</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetProjectsFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files and folders located in the "In projects" section.
+            </summary>
+            <short>Get the "In projects" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "In projects" section contents</returns>
+            <path>api/2.0/files/@projects</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetCommonFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files and folders located in the "Common" section.
+            </summary>
+            <short>Get the "Common" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "Common" section contents</returns>
+            <path>api/2.0/files/@common</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetShareFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files and folders located in the "Shared with me" section.
+            </summary>
+            <short>Get the "Shared with me" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "Shared with me" section contents</returns>
+            <path>api/2.0/files/@share</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetRecentFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files located in the "Recent" section.
+            </summary>
+            <short>Get the "Recent" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "Recent" section contents</returns>
+            <path>api/2.0/files/@recent</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFavoritesFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files and folders located in the "Favorites" section.
+            </summary>
+            <short>Get the "Favorites" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "Favorites" section contents</returns>
+            <path>api/2.0/files/@favorites</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetTemplatesFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files located in the "Templates" section.
+            </summary>
+            <short>Get the "Templates" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "Templates" section contents</returns>
+            <path>api/2.0/files/@templates</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetTrashFolder(System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files and folders located in the "Trash" section.
+            </summary>
+            <short>Get the "Trash" section</short>
+            <category>Folders</category>
+            <param type="System.Guid, System" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" name="filterType" optional="true">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">The "Trash" section contents</returns>
+            <path>api/2.0/files/@trash</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFolder(System.String,System.Guid,ASC.Files.Core.FilterType,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the detailed list of files and folders located in the folder with the ID specified in the request.
+            </summary>
+            <short>
+            Get a folder by ID
+            </short>
+            <category>Folders</category>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.Guid, System" method="url" name="userIdOrGroupId" optional="true">User or group ID</param>
+            <param type="ASC.Files.Core.FilterType, ASC.Files.Core" method="url" name="filterType" optional="true" remark="Allowed values: None (0), FilesOnly (1), FoldersOnly (2), DocumentsOnly (3), PresentationsOnly (4), SpreadsheetsOnly (5) or ImagesOnly (7)">Filter type</param>
+            <param type="System.Boolean, System" name="searchInContent">Specifies whether to search within the section contents or not</param>
+            <param type="System.Boolean, System" name="withSubfolders">Specifies whether to return sections with or without subfolders</param>
+            <returns type="ASC.Api.Documents.FolderContentWrapper, ASC.Api.Documents">Folder contents</returns>
+            <path>api/2.0/files/{folderId}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.UploadFileToMy(System.IO.Stream,System.Net.Mime.ContentType,System.Net.Mime.ContentDisposition,System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase})">
+            <summary>
+            Uploads a file specified in the request to the "My documents" section by single file uploading or standart multipart/form-data method.
+            </summary>
+            <short>Upload a file to the "My documents" section</short>
+            <category>Folders</category>
+            <param type="System.IO.Stream, System.IO" name="file" visible="false">Request input stream</param>
+            <param type="System.Net.Mime.ContentType, System.Net.Mime" name="contentType" visible="false">Content-Type header</param>
+            <param type="System.Net.Mime.ContentDisposition, System.Net.Mime" name="contentDisposition" visible="false">Content-Disposition header</param>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="files" visible="false">List of files when specified as multipart/form-data</param>
+            <remarks>
+            <![CDATA[
+             You can upload files in two different ways:
+             <ol>
+            <li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>
+            <li>Using standart multipart/form-data method.</li>
+            </ol>]]>
+            </remarks>
+            <returns>Uploaded file(s)</returns>
+            <path>api/2.0/files/@my/upload</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.UploadFileToCommon(System.IO.Stream,System.Net.Mime.ContentType,System.Net.Mime.ContentDisposition,System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase})">
+            <summary>
+            Uploads a file specified in the request to the "Common" section by single file uploading or standart multipart/form-data method.
+            </summary>
+            <short>Upload a file to the "Common" section</short>
+            <category>Folders</category>
+            <param type="System.IO.Stream, System.IO" name="file" visible="false">Request input stream</param>
+            <param type="System.Net.Mime.ContentType, System.Net.Mime" name="contentType" visible="false">Content-Type header</param>
+            <param type="System.Net.Mime.ContentDisposition, System.Net.Mime" name="contentDisposition" visible="false">Content-Disposition header</param>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="files" visible="false">List of files when specified as multipart/form-data</param>
+            <remarks>
+            <![CDATA[
+             You can upload files in two different ways:
+             <ol>
+            <li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>
+            <li>Using standart multipart/form-data method.</li>
+            </ol>]]>
+            </remarks>
+            <returns>Uploaded file(s)</returns>
+            <path>api/2.0/files/@common/upload</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.UploadFile(System.String,System.IO.Stream,System.Net.Mime.ContentType,System.Net.Mime.ContentDisposition,System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Uploads a file specified in the request to the selected folder by single file uploading or standart multipart/form-data method.
+            </summary>
+            <short>Upload a file</short>
+            <category>Folders</category>
+            <remarks>
+            <![CDATA[
+             You can upload files in two different ways:
+             <ol>
+            <li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>
+            <li>Using standart multipart/form-data method.</li>
+            </ol>]]>
+            </remarks>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.IO.Stream, System.IO" name="file" visible="false">Request input stream</param>
+            <param type="System.Net.Mime.ContentType, System.Net.Mime" name="contentType" visible="false">Content-Type header</param>
+            <param type="System.Net.Mime.ContentDisposition, System.Net.Mime" name="contentDisposition" visible="false">Content-Disposition header</param>
+            <param type="System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}, System.Collections.Generic" name="files" visible="false">List of files when specified as multipart/form-data</param>
+            <param type="System.Nullable{System.Boolean}, System" name="createNewIfExist" visible="false">Specifies whether to create a new file if it already exists or not</param>
+            <param type="System.Nullable{System.Boolean}, System" name="storeOriginalFileFlag" visible="false">Specifies whether to upload documents in the original formats as well or not</param>
+            <param type="System.Boolean, System" name="keepConvertStatus" visible="false">Specifies whether to keep the file converting status or not</param>
+            <returns>Uploaded file(s)</returns>
+            <path>api/2.0/files/{folderId}/upload</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.InsertFileToMy(System.IO.Stream,System.String,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Inserts a file specified in the request to the "My documents" section by single file uploading.
+            </summary>
+            <short>Insert a file to the "My documents" section</short>
+            <param type="System.IO.Stream, System.IO" name="file" visible="false">Request input stream</param>
+            <param type="System.String, System" name="title">File name</param>
+            <param type="System.Nullable{System.Boolean}, System" name="createNewIfExist" visible="false">Specifies whether to create a new file if it already exists or not</param>
+            <param type="System.Boolean, System" name="keepConvertStatus" visible="false">Specifies whether to keep the file converting status or not</param>
+            <category>Folders</category>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">Inserted file</returns>
+            <path>api/2.0/files/@my/insert</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.InsertFileToCommon(System.IO.Stream,System.String,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Inserts a file specified in the request to the "Common" section by single file uploading.
+            </summary>
+            <short>Insert a file to the "Common" section</short>
+            <param type="System.IO.Stream, System.IO" name="file" visible="false">Request input stream</param>
+            <param type="System.String, System" name="title">File name</param>
+            <param type="System.Nullable{System.Boolean}, System" name="createNewIfExist" visible="false">Specifies whether to create a new file if it already exists or not</param>
+            <param type="System.Boolean, System" name="keepConvertStatus" visible="false">Specifies whether to keep the file converting status or not</param>
+            <category>Folders</category>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">Inserted file</returns>
+            <path>api/2.0/files/@common/insert</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.InsertFile(System.String,System.IO.Stream,System.String,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Inserts a file specified in the request to the selected folder by single file uploading.
+            </summary>
+            <short>Insert a file</short>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.IO.Stream, System.IO" name="file" visible="false">Request input stream</param>
+            <param type="System.String, System" name="title">File name</param>
+            <param type="System.Nullable{System.Boolean}, System" name="createNewIfExist" visible="false">Specifies whether to create a new file if it already exists or not</param>
+            <param type="System.Boolean, System" name="keepConvertStatus" visible="false">Specifies whether to keep the file converting status or not</param>
+            <category>Folders</category>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">Inserted file</returns>
+            <path>api/2.0/files/{folderId}/insert</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.UpdateFileStream(System.IO.Stream,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Updates the content of a file with the ID specified in the request.
+            </summary>
+            <short>Update file content</short>
+            <category>Files</category>
+            <param type="System.IO.Stream, System.IO" name="file">Request input stream</param>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.String, System" name="fileExtension">File extension</param>
+            <param type="System.Boolean, System" name="encrypted" visible="false">Specifies whether to encrypt a file or not</param>
+            <param type="System.Boolean, System" name="forcesave" visible="false">Specifies whether to force save a file or not</param>
+            <path>api/2.0/files/{fileId}/update</path>
+            <httpMethod>PUT</httpMethod>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">Updated file</returns>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.SaveEditing(System.String,System.String,System.String,System.IO.Stream,System.String,System.Boolean)">
+            <summary>
+            Saves edits to a file with the ID specified in the request.
+            </summary>
+            <short>Save file edits</short>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.String, System" name="fileExtension">File extension</param>
+            <param type="System.String, System" name="downloadUri">URI to download a file</param>
+            <param type="System.IO.Stream, System.IO" name="stream">Request file stream</param>
+            <param type="System.String, System" name="doc">Shared token</param>
+            <param type="System.Boolean, System" name="forcesave" visible="false">Specifies whether to force save a file or not</param>
+            <category>Files</category>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">Saved file</returns>
+            <path>api/2.0/files/file/{fileId}/saveediting</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.StartEdit(System.String,System.Boolean,System.String)">
+            <summary>
+            Informs about opening a file with the ID specified in the request for editing, locking it from being deleted or moved (this method is called by the mobile editors).
+            </summary>
+            <short>Start file editing</short>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.Boolean, System" name="editingAlone" visible="false">Specifies whether to share a file with other users for editing or not</param>
+            <param type="System.String, System" name="doc" visible="false">Shared token</param>
+            <category>Files</category>
+            <returns>File key for Document Service</returns>
+            <path>api/2.0/files/file/{fileId}/startedit</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.TrackEditFile(System.String,System.Guid,System.String,System.String,System.Boolean)">
+            <summary>
+            Tracks file changes when editing.
+            </summary>
+            <short>Track file editing</short>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.Guid, System" name="tabId" visible="false">Tab ID</param>
+            <param type="System.String, System" name="docKeyForTrack" visible="false">Document key for tracking</param>
+            <param type="System.String, System" name="doc" visible="false">Shared token</param>
+            <param type="System.Boolean, System" method="url" name="isFinish">Specifies whether to finish file tracking or not</param>
+            <category>Files</category>
+            <returns>File changes</returns>
+            <path>api/2.0/files/file/{fileId}/trackeditfile</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.OpenEdit(System.String,System.Int32,System.String)">
+            <summary>
+            Returns the initialization configuration of a file to open it in the editor.
+            </summary>
+            <short>Open a file</short>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.Int32, System" method="url" name="version">File version</param>
+            <param type="System.String, System" method="url" name="doc" visible="false">Shared token</param>
+            <category>Files</category>
+            <returns type="ASC.Web.Files.Services.DocumentService.Configuration, ASC.Web.Files">Configuration</returns>
+            <path>api/2.0/files/file/{fileId}/openedit</path>
+            <requiresAuthorization>false</requiresAuthorization>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateUploadSession(System.String,System.String,System.Int64,System.String,System.Boolean)">
+            <summary>
+            Creates a session to upload large files in multiple chunks to the folder with the ID specified in the request.
+            </summary>
+            <short>Chunked upload</short>
+            <category>Operations</category>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.String, System" name="fileName">File name</param>
+            <param type="System.Int64, System" name="fileSize">File length in bytes</param>
+            <param type="System.String, System" name="relativePath">Relative path to the folder</param>
+            <param type="System.Boolean, System" name="encrypted" visible="false">Specifies whether to encrypt a file or not</param>
+            <remarks>
+            <![CDATA[
+            Each chunk can have different length but the length should be multiple of <b>512</b> and greater or equal to <b>10 mb</b>. Last chunk can have any size.
+            After the initial response to the request with the <b>200 OK</b> status, you must get the <em>location</em> field value from the response. Send all your chunks to this location.
+            Each chunk must be sent in the exact order the chunks appear in the file.
+            After receiving each chunk, the server will respond with the current information about the upload session if no errors occurred.
+            When the number of bytes uploaded is equal to the number of bytes you sent in the initial request, the server responds with the <b>201 Created</b> status and sends you information about the uploaded file.
+            ]]>
+            </remarks>
+            <returns>
+            <![CDATA[
+            Information about created session which includes:
+            <ul>
+            <li><b>id:</b> unique ID of this upload session</li>
+            <li><b>created:</b> UTC time when the session was created</li>
+            <li><b>expired:</b> UTC time when the session will expire if no chunks are sent before that time</li>
+            <li><b>location:</b> URL where you should send your next chunk</li>
+            <li><b>bytes_uploaded:</b> number of bytes uploaded for the specific upload ID</li>
+            <li><b>bytes_total:</b> total number of bytes which will be uploaded</li>
+            </ul>
+            ]]>
+            </returns>
+            <path>api/2.0/files/{folderId}/upload/create_session</path>
+            <httpMethod>POST</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateEditSession(System.Object,System.Int64)">
+            <summary>
+            Creates a session to edit the existing file with multiple chunks (needed for WebDAV).
+            </summary>
+            <short>Create the editing session</short>
+            <category>Files</category>
+            <param type="System.Object, System" name="fileId">File ID</param>
+            <param type="System.Int64, System" name="fileSize">File size in bytes</param>
+            <returns>Upload session</returns>
+            <path>api/2.0/files/file/{fileId}/edit_session</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateTextFileInMy(System.String,System.String)">
+            <summary>
+            Creates a text (.txt) file in the "My documents" section with the title and contents specified in the request.
+            </summary>
+            <short>Create a txt file in the "My documents" section</short>
+            <category>Files</category>
+            <param type="System.String, System" name="title">File title</param>
+            <param type="System.String, System" name="content">File contents</param>
+            <returns>File contents</returns>
+            <path>api/2.0/files/@my/text</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateTextFileInCommon(System.String,System.String)">
+            <summary>
+            Creates a text (.txt) file in the "Common" section with the title and contents specified in the request.
+            </summary>
+            <short>Create a txt file in the "Common" section</short>
+            <category>Files</category>
+            <param type="System.String, System" name="title">File title</param>
+            <param type="System.String, System" name="content">File contents</param>
+            <returns>File contents</returns>
+            <path>api/2.0/files/@common/text</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateTextFile(System.String,System.String,System.String)">
+            <summary>
+            Creates a text (.txt) file in the selected folder with the title and contents specified in the request.
+            </summary>
+            <short>Create a txt file</short>
+            <category>Files</category>
+            <param type="System.String, System" name="folderId">Folder ID</param>
+            <param type="System.String, System" name="title">File title</param>
+            <param type="System.String, System" name="content">File contents</param>
+            <returns>File contents</returns>
+            <path>api/2.0/files/{folderId}/text</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateHtmlFile(System.String,System.String,System.String)">
+            <summary>
+            Creates an HTML (.html) file in the selected folder with the title and contents specified in the request.
+            </summary>
+            <short>Create an HTML file</short>
+            <category>Files</category>
+            <param type="System.String, System" name="folderId">Folder ID</param>
+            <param type="System.String, System" name="title">File title</param>
+            <param type="System.String, System" name="content">File contents</param>
+            <returns>File contents</returns>
+            <path>api/2.0/files/{folderId}/html</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateHtmlFileInMy(System.String,System.String)">
+            <summary>
+            Creates an HTML (.html) file in the "My documents" section with the title and contents specified in the request.
+            </summary>
+            <short>Create an HTML file in the "My documents" section</short>
+            <category>Files</category>
+            <param type="System.String, System" name="title">File title</param>
+            <param type="System.String, System" name="content">File contents</param>
+            <returns>File contents</returns>
+            <path>api/2.0/files/@my/html</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateHtmlFileInCommon(System.String,System.String)">
+            <summary>
+            Creates an HTML (.html) file in the "Common" section with the title and contents specified in the request.
+            </summary>
+            <short>Create an HTML file in the "Common" section</short>
+            <category>Files</category>
+            <param type="System.String, System" name="title">File title</param>
+            <param type="System.String, System" name="content">File contents</param>
+            <returns>File contents</returns>
+            <path>api/2.0/files/@common/html</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateFolder(System.String,System.String)">
+            <summary>
+            Creates a new folder with the title specified in the request. The parent folder ID can be also specified.
+            </summary>
+            <short>
+            Create a folder
+            </short>
+            <category>Folders</category>
+            <param type="System.String, System" method="url" name="folderId">Parent folder ID</param>
+            <param type="System.String, System" name="title">Folder title</param>
+            <returns type="ASC.Api.Documents.FolderWrapper, ASC.Api.Documents">New folder contents</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateFolders(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new folder structure specified in the request in a folder with a specific ID.
+            </summary>
+            <short>
+            Create a folder structure
+            </short>
+            <category>Folders</category>
+            <param type="System.String, System" name="folderId">Parent folder ID</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="relativePaths">Relative paths to create a folder structure</param>
+            <returns>Main folder contents</returns>
+            <path>api/2.0/files/folders/{folderId}</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateFile(System.String)">
+            <summary>
+            Creates a new file in the "My documents" section with the title specified in the request.
+            </summary>
+            <short>Create a file in the "My documents" section</short>
+            <category>Files</category>
+            <param type="System.String, System" name="title" remark="Allowed values: the file must have one of the following extensions: DOCX, XLSX, PPTX">File title</param>
+            <remarks>If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.</remarks>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">New file information</returns>
+            <path>api/2.0/files/@my/file</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateFile(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a new file in the specified folder with the title specified in the request.
+            </summary>
+            <short>Create a file</short>
+            <category>Files</category>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.String, System" name="title" remark="Allowed values: the file must have one of the following extensions: DOCX, XLSX, PPTX">File title</param>
+            <param type="System.String, System" name="templateId">Template file ID</param>
+            <param type="System.Boolean, System" name="enableExternalExt">Specifies whether to allow the creation of external extension files or not</param>
+            <remarks>If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.</remarks>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">New file information</returns>
+            <path>api/2.0/files/{folderId}/file</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.RenameFolder(System.String,System.String)">
+            <summary>
+            Renames the selected folder with a new title specified in the request.
+            </summary>
+            <short>
+            Rename a folder
+            </short>
+            <category>Folders</category>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.String, System" name="title">New folder title</param>
+            <returns type="ASC.Api.Documents.FolderWrapper, ASC.Api.Documents">Folder contents</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFolderInfo(System.String)">
+            <summary>
+            Returns the detailed information about a folder with the ID specified in the request.
+            </summary>
+            <short>Get the folder information</short>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <category>Folders</category>
+            <returns type="ASC.Api.Documents.FolderWrapper, ASC.Api.Documents">Folder information</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFolderPath(System.String)">
+            <summary>
+            Returns a path to the folder with the ID specified in the request.
+            </summary>
+            <short>Get the folder path</short>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <category>Folders</category>
+            <returns type="ASC.Api.Documents.FolderWrapper, ASC.Api.Documents">Folder path</returns>
+            <path>api/2.0/files/folder/{folderId}/path</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFileInfo(System.String,System.Int32)">
+            <summary>
+            Returns the detailed information about a file with the ID specified in the request.
+            </summary>
+            <short>Get the file information</short>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <param type="System.Int32, System" name="version">File version</param>
+            <category>Files</category>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">File information</returns>
+            <path>api/2.0/files/file/{fileId}</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CopyFileAs(System.String,System.String,System.String)">
+            <summary>
+            Copies (and converts if possible) an existing file to the specified folder.
+            </summary>
+            <short>Copy a file</short>
+            <category>Files</category>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.String, System" name="destFolderId">Destination folder ID</param>
+            <param type="System.String, System" name="destTitle">Destination file title</param>
+            <returns>Copied file</returns>
+            <path>api/2.0/files/file/{fileId}/copyas</path>
+            <httpMethod>POST</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.UpdateFile(System.String,System.String,System.Int32)">
+            <summary>
+            Updates the information of the selected file with the parameters specified in the request.
+            </summary>
+            <short>Update a file</short>
+            <category>Files</category>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <param type="System.String, System" name="title">New file title</param>
+            <param type="System.Int32, System" name="lastVersion">Number of the latest file version</param>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">File information</returns>
+            <path>api/2.0/files/file/{fileId}</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DeleteFile(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Deletes a file with the ID specified in the request.
+            </summary>
+            <short>Delete a file</short>
+            <category>Files</category>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.Boolean, System" name="deleteAfter">Specifies whether to delete a file after the editing session is finished or not</param>
+            <param type="System.Boolean, System" name="immediately">Specifies whether to move a file to the "Trash" folder or delete it immediately</param>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/file/{fileId}</path>
+            <httpMethod>DELETE</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.StartConversion(System.String)">
+            <summary>
+            Starts a conversion operation of a file with the ID specified in the request.
+            </summary>
+            <short>Start file conversion</short>
+            <category>Operations</category>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Api.Documents.DocumentsApi.ConversationResult, ASC.Api.Documents">Operation result</returns>
+            <path>api/2.0/files/file/{fileId}/checkconversion</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CheckConversion(System.String,System.Boolean)">
+            <summary>
+            Checks the conversion status of a file with the ID specified in the request.
+            </summary>
+            <short>Get conversion status</short>
+            <category>Operations</category>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.Boolean, System" method="url" name="start">Specifies if a conversion operation is started or not</param>
+            <returns type="ASC.Api.Documents.DocumentsApi.ConversationResult, ASC.Api.Documents">Operation result</returns>
+            <path>api/2.0/files/file/{fileId}/checkconversion</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetPresignedUri(System.String)">
+            <summary>
+            Returns a link to download a file with the ID specified in the request.
+            </summary>
+            <short>Get file download link</short>
+            <category>Files</category>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <returns>File download link</returns>
+            <path>api/2.0/files/file/{fileId}/presigneduri</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DeleteFolder(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Deletes a folder with the ID specified in the request.
+            </summary>
+            <short>Delete a folder</short>
+            <category>Folders</category>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.Boolean, System" name="deleteAfter">Specifies whether to delete a folder after the editing session is finished or not</param>
+            <param type="System.Boolean, System" name="immediately">Specifies whether to move a folder to the "Trash" folder or delete it immediately</param>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/folder/{folderId}</path>
+            <httpMethod>DELETE</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.MoveOrCopyBatchCheck(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Checks a batch of files and folders for conflicts when moving or copying them to the folder with the ID specified in the request.
+            </summary>
+            <short>Check files and folders for conflicts</short>
+            <category>Operations</category>
+            <param type="System.String, System" method="url" name="destFolderId">Destination folder ID</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" method="url" name="folderIds">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" method="url" name="fileIds">List of file IDs</param>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">IDs of files with conflicts</returns>
+            <path>api/2.0/files/fileops/move</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.MoveBatchItems(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},ASC.Web.Files.Services.WCFService.FileOperations.FileConflictResolveType,System.Boolean)">
+            <summary>
+            Moves all the selected files and folders to the folder with the ID specified in the request.
+            </summary>
+            <short>Move to a folder</short>
+            <category>Operations</category>
+            <param type="System.String, System" name="destFolderId">Destination folder ID</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <param type="ASC.Web.Files.Services.WCFService.FileOperations.FileConflictResolveType, ASC.Web.Files.Services.WCFService.FileOperations" name="conflictResolveType">Overwriting behavior: skip (0), overwrite (1) or duplicate (2)</param>
+            <param type="System.Boolean, System" name="deleteAfter">Specifies whether to delete a folder after the editing session is finished or not</param>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops/move</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CopyBatchItems(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},ASC.Web.Files.Services.WCFService.FileOperations.FileConflictResolveType,System.Boolean)">
+            <summary>
+            Copies all the selected files and folders to the folder with the ID specified in the request.
+            </summary>
+            <short>Copy to a folder</short>
+            <category>Operations</category>
+            <param type="System.String, System" name="destFolderId">Destination folder ID</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <param type="ASC.Web.Files.Services.WCFService.FileOperations.FileConflictResolveType, ASC.Web.Files.Services.WCFService.FileOperations" name="conflictResolveType">Overwriting behavior: skip (0), overwrite (1) or duplicate (2)</param>
+            <param type="System.Boolean, System" name="deleteAfter">Specifies whether to delete a folder after the editing session is finished or not</param>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops/copy</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.MarkAsRead(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Marks the files and folders with the IDs specified in the request as read.
+            </summary>
+            <short>Mark as read</short>
+            <category>Operations</category>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops/markasread</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.TerminateTasks">
+            <summary>
+            Finishes all the active operations.
+            </summary>
+            <short>Finish active operations</short>
+            <category>Operations</category>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops/terminate</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetOperationStatuses">
+            <summary>
+             Returns a list of all the active operations.
+            </summary>
+            <short>Get active operations</short>
+            <category>Operations</category>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.BulkDownload(System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Starts the download process of files and folders with the IDs specified in the request.
+            </summary>
+            <short>Bulk download</short>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String, System.String}}, System.Collections.Generic" name="fileConvertIds" visible="false">List of file IDs which will be converted</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds">List of folder IDs</param>
+            <category>Operations</category>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops/bulkdownload</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DeleteBatchItems(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)">
+            <summary>
+            Deletes the files and folders with the IDs specified in the request.
+            </summary>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <param type="System.Boolean, System" name="deleteAfter">Specifies whether to delete a file after the editing session is finished or not</param>
+            <param type="System.Boolean, System" name="immediately">Specifies whether to move a file to the "Trash" folder or delete it immediately</param>
+            <short>Delete files and folders</short>
+            <category>Operations</category>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops/delete</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.EmptyTrash">
+            <summary>
+            Deletes all the files and folders from the "Trash" folder.
+            </summary>
+            <short>Empty the "Trash" folder</short>
+            <category>Operations</category>
+            <returns type="ASC.Api.Documents.FileOperationWraper, ASC.Api.Documents">List of file operations</returns>
+            <path>api/2.0/files/fileops/emptytrash</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFileVersionInfo(System.String)">
+            <summary>
+            Returns the detailed information about all the available file versions with the ID specified in the request.
+            </summary>
+            <short>Get file versions</short>
+            <category>Files</category>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">File information</returns>
+            <path>api/2.0/files/file/{fileId}/history</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.ChangeHistory(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Changes version history of a file with the ID specified in the request.
+            </summary>
+            <short>Change version history</short>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.Int32, System" name="version">History version</param>
+            <param type="System.Boolean, System" name="continueVersion">Specifies whether to continue the current version and mark it as a revision or create a new one</param>
+            <category>Files</category>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">File history</returns>
+            <path>api/2.0/files/file/{fileId}/history</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFileSecurityInfo(System.String)">
+            <summary>
+            Returns the detailed information about the shared file with the ID specified in the request.
+            </summary>
+            <short>Get the shared file information</short>
+            <category>Sharing</category>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <returns type="ASC.Api.Documents.FileShareWrapper, ASC.Api.Documents">Shared file information</returns>
+            <path>api/2.0/files/file/{fileId}/share</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetFolderSecurityInfo(System.String)">
+            <summary>
+            Returns the detailed information about the shared folder with the ID specified in the request.
+            </summary>
+            <short>Get the shared folder information</short>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <category>Sharing</category>
+            <returns type="ASC.Api.Documents.FileShareWrapper, ASC.Api.Documents">Shared folder information</returns>
+            <path>api/2.0/files/folder/{folderId}/share</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.SetFileSecurityInfo(System.String,System.Collections.Generic.IEnumerable{ASC.Api.Documents.FileShareParams},System.Boolean,System.String,ASC.Web.Files.Services.WCFService.AceAdvancedSettingsWrapper)">
+            <summary>
+            Sets the sharing settings to a file with the ID specified in the request.
+            </summary>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Documents.FileShareParams}, System.Collections.Generic" file="ASC.Api.Documents" name="share">Collection of sharing parameters</param>
+            <param type="System.Boolean, System" name="notify">Notifies users about the shared file or not</param>
+            <param type="System.String, System" name="sharingMessage">Message to send when notifying about the shared file</param>
+            <param type="ASC.Web.Files.Services.WCFService.AceAdvancedSettingsWrapper, ASC.Web.Files.Services.WCFService" name="advancedSettings">Advanced settings which prohibit printing, downloading, copying the file, and changing sharing settings</param>
+            <short>Share a file</short>
+            <category>Sharing</category>
+            <remarks>
+            Each of the sharing parameters must contain two values: "ShareTo" - ID of the user with whom we want to share a file, "Access" - access type which we want to give to the user (Read, ReadWrite, etc).
+            </remarks>
+            <returns type="ASC.Api.Documents.FileShareWrapper, ASC.Api.Documents">Shared file information</returns>
+            <path>api/2.0/files/file/{fileId}/share</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.SetFolderSecurityInfo(System.String,System.Collections.Generic.IEnumerable{ASC.Api.Documents.FileShareParams},System.Boolean,System.String)">
+            <summary>
+            Sets the sharing settings to a folder with the ID specified in the request.
+            </summary>
+            <short>Share a folder</short>
+            <param type="System.String, System" method="url" name="folderId">Folder ID</param>
+            <param type="System.Collections.Generic.IEnumerable{ASC.Api.Documents.FileShareParams}, System.Collections.Generic" file="ASC.Api.Documents" name="share">Collection of sharing parameters</param>
+            <param type="System.Boolean, System" name="notify">Notifies users about the shared folder or not</param>
+            <param type="System.String, System" name="sharingMessage">Message to send when notifying about the shared folder</param>
+            <remarks>
+            Each of the sharing parameters must contain two values: "ShareTo" - ID of the user with whom we want to share a folder, "Access" - access type which we want to give to the user (Read, ReadWrite, etc). 
+            </remarks>
+            <category>Sharing</category>
+            <returns type="ASC.Api.Documents.FileShareWrapper, ASC.Api.Documents">Shared folder information</returns>
+            <path>api/2.0/files/folder/{folderId}/share</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.RemoveSecurityInfo(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Removes the sharing rights for the group of folders and files with the IDs specified in the request.
+            </summary>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <short>Remove sharing rights</short>
+            <category>Sharing</category>
+            <returns>Bool value: true if the operation is successful</returns>
+            <path>api/2.0/files/share</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GenerateSharedLink(System.String,ASC.Files.Core.Security.FileShare)">
+            <summary>
+            Returns an external link to the shared file with the ID specified in the request.
+            </summary>
+            <short>Get the shared link</short>
+            <param type="System.String, System" method="url" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.Security.FileShare, ASC.Files.Core.Security" name="share">Sharing rights</param>
+            <category>Sharing</category>
+            <returns>Shared file link</returns>
+            <path>api/2.0/files/{fileId}/sharedlink</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.ApplyShareLinkPassword(System.String,System.String,System.Boolean)">
+            <summary>
+            Sets a cookie after verifying the password for a password-protected external link and returns a link to the shared file.
+            </summary>
+            <short>Set a cookie for a password-protected external link</short>
+            <param type="System.String, System" name="key">Link signature</param>
+            <param type="System.String, System" name="passwordHash">Password hash</param>
+            <param type="System.Boolean, System" name="isFolder">Specifies if a link is to the shared folder or not</param>
+            <category>Sharing</category>
+            <returns>Shared file link</returns>
+            <path>api/2.0/files/sharedlink/password</path>
+            <httpMethod>POST</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetTokenForSharedLink(System.String,System.Guid,System.String,System.String)">
+            <summary>
+            Returns a token after verifying the password or password hash for a password-protected external link.
+            </summary>
+            <short>Get a token for a password-protected external link</short>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <param type="System.Guid, System" name="linkId">Link ID</param>
+            <param type="System.String, System" name="password">Password</param>
+            <param type="System.String, System" name="passwordHash">Password hash</param>
+            <category>Sharing</category>
+            <returns>Token for a password-protected external link</returns>
+            <remarks>The token is used in the cookies with the 'sharelink[linkId]' name when calling API methods.</remarks>
+            <path>api/2.0/files/{fileId}/sharedlink/{linkId}/password</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetShareLinkTemplate(System.String,System.Boolean)">
+            <summary>
+            Returns a new unsaved link object to the file with the ID specified in the request.
+            </summary>
+            <short>Get the shared link template</short>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <param type="System.Boolean, System" name="isFolder">Specifies if a link is to the shared folder or not</param>
+            <category>Sharing</category>
+            <returns>Shared link template</returns>
+            <path>api/2.0/files/{fileId}/sharedlink/template</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetProperties(System.String)">
+            <summary>
+            Returns file properties of the specified file.
+            </summary>
+            <short>Get file properties</short>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <category>Files</category>
+            <returns>File properties</returns>
+            <path>api/2.0/files/{fileId}/properties</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.SetProperties(System.String,ASC.Files.Core.EntryProperties)">
+            <summary>
+            Saves file properties to the specified file.
+            </summary>
+            <short>Save file properties to a file</short>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <param type="ASC.Files.Core.EntryProperties, ASC.Files.Core" name="fileProperties">File properties</param>
+            <category>Files</category>
+            <returns>File properties</returns>
+            <path>api/2.0/files/{fileId}/properties</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.SetProperties(System.String[],System.Boolean,ASC.Files.Core.EntryProperties)">
+            <summary>
+            Saves file properties to the specified files.
+            </summary>
+            <short>Save file properties to files</short>
+            <param type="System.String[], System" name="filesId">IDs of files</param>
+            <param type="System.Boolean, System" name="createSubfolder">Creates a subfolder or not</param>
+            <param type="ASC.Files.Core.EntryProperties, ASC.Files.Core" name="fileProperties">File properties</param>
+            <category>Files</category>
+            <returns>List of file properties</returns>
+            <path>api/2.0/files/batch/properties</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.Capabilities">
+            <summary>
+            Returns a list of the available providers.
+            </summary>
+            <short>Get providers</short>
+            <category>Third-party integration</category>
+            <returns>List of provider keys</returns>
+            <remarks>List of provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.</remarks>
+            <path>api/2.0/files/thirdparty/capabilities</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.SaveThirdParty(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Saves the third-party storage service account. For WebDav, Yandex, kDrive and SharePoint, the login and password are used for authentication. For other providers, the authentication is performed using a token received via OAuth 2.0.
+            </summary>
+            <short>Save a third-party account</short>
+            <param type="System.String, System" name="url">Connection URL for the sharepoint</param>
+            <param type="System.String, System" name="login">Login</param>
+            <param type="System.String, System" name="password">Password</param>
+            <param type="System.String, System" name="token">Authentication token</param>
+            <param type="System.Boolean, System" name="isCorporate">Specifies if this is a corporate account or not</param>
+            <param type="System.String, System" name="customerTitle">Customer title</param>
+            <param type="System.String, System" name="providerKey">Provider key</param>
+            <param type="System.String, System" name="providerId">Provider ID</param>
+            <category>Third-party integration</category>
+            <returns type="ASC.Api.Documents.FolderWrapper, ASC.Api.Documents">Folder contents</returns>
+            <remarks>List of provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.</remarks>
+            <exception cref="T:System.ArgumentException"></exception>
+            <path>api/2.0/files/thirdparty</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetThirdPartyAccounts">
+            <summary>
+            Returns a list of all the connected third-party services.
+            </summary>
+            <category>Third-party integration</category>
+            <short>Get third-party services</short>
+            <returns type="ASC.Web.Files.Services.WCFService.ThirdPartyParams, ASC.Web.Files">Connected providers</returns>
+            <path>api/2.0/files/thirdparty</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetCommonThirdPartyFolders">
+            <summary>
+            Returns a list of the third-party services connected to the "Common" section.
+            </summary>
+            <category>Third-party integration</category>
+            <short>Get common third-party services</short>
+            <returns type="ASC.Files.Core.Folder, ASC.Web.Files">Common third-party folders</returns>
+            <path>api/2.0/files/thirdparty/common</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DeleteThirdParty(System.Int32)">
+             <summary>
+             Removes the third-party storage service account with the ID specified in the request.
+             </summary>
+             <param type="System.Int32, System" method="url" name="providerId">Provider ID. It is a part of the folder ID. Example: folder ID is "sbox-123", then provider ID is "123".</param>
+             <short>Remove a third-party account</short>
+             <category>Third-party integration</category>
+             <returns>Deleted third-party account</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <path>api/2.0/files/thirdparty/{providerId}</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.Search(System.String)">
+            <summary>
+            Searches for files and folders by the query specified in the request.
+            </summary>
+            <short>Search for files and folders</short>
+            <category>Operations</category>
+            <param type="System.String, System" method="url" name="query">Query string</param>
+            <returns type="ASC.Api.Documents.FileWrapper, ASC.Api.Documents">Files and folders</returns>
+            <path>api/2.0/files/@search/{query}</path>
+            <httpMethod>GET</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.AddFavorites(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Adds files and folders with the IDs specified in the request to the favorite list.
+            </summary>
+            <short>Add favorite files and folders</short>
+            <category>Operations</category>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds" visible="false">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <returns>Bool value: true if the operation is successful</returns>
+            <path>api/2.0/files/favorites</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DeleteFavorites(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Removes files and folders with the IDs specified in the request from the favorite list.
+            </summary>
+            <short>Delete favorite files and folders</short>
+            <category>Operations</category>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="folderIds" visible="false">List of folder IDs</param>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <returns>Bool value: true if the operation is successful</returns>
+            <path>api/2.0/files/favorites</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.AddTemplates(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Adds files with the IDs specified in the request to the template list.
+            </summary>
+            <short>Add template files</short>
+            <category>Files</category>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <returns>Bool value: true if the operation is successful</returns>
+            <path>api/2.0/files/templates</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DeleteTemplates(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Removes files with the IDs specified in the request from the template list.
+            </summary>
+            <short>Delete template files</short>
+            <category>Files</category>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <returns>Bool value: true if the operation is successful</returns>
+            <path>api/2.0/files/templates</path>
+            <httpMethod>DELETE</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.StoreOriginal(System.Boolean)">
+            <summary>
+            Stores files in the original formats as well when uploading and converting.
+            </summary>
+            <short>Store original formats</short>
+            <param type="System.Boolean, System" name="set">Turns the parameter on or off</param>
+            <category>Settings</category>
+            <returns>Bool value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/storeoriginal</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.HideConfirmConvert(System.Boolean)">
+            <summary>
+            Hides the confirmation dialog for saving the file copy in the original format when converting a file.
+            </summary>
+            <short>Hide the confirmation dialog when converting</short>
+            <param type="System.Boolean, System" name="save">Specifies whether to save the file in the original format or not</param>
+            <category>Settings</category>
+            <visible>false</visible>
+            <returns>Bool value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/hideconfirmconvert</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.UpdateIfExist(System.Boolean)">
+            <summary>
+            Updates a file version if a file with such a name already exists.
+            </summary>
+            <short>Update a file version if it exists</short>
+            <param type="System.Boolean, System" name="set">Turns the parameter on or off</param>
+            <category>Settings</category>
+            <returns>Bool value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/updateifexist</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DisplayRecent(System.Boolean)">
+            <summary>
+            Displays the "Recent" folder.
+            </summary>
+            <short>Display the "Recent" folder</short>
+            <param type="System.Boolean, System" name="set">Turns the parameter on or off</param>
+            <category>Settings</category>
+            <returns>Bool value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/displayRecent</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DisplayFavorite(System.Boolean)">
+            <summary>
+            Displays the "Favorites" folder.
+            </summary>
+            <short>Display the "Favorites" folder</short>
+            <param type="System.Boolean, System" name="set">Turns the parameter on or off</param>
+            <category>Settings</category>
+            <returns>Bool value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/settings/favorites</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DisplayTemplates(System.Boolean)">
+            <summary>
+            Displays the "Templates" folder.
+            </summary>
+            <short>Display the "Templates" folder</short>
+            <param type="System.Boolean, System" name="set">Turns the parameter on or off</param>
+            <category>Settings</category>
+            <returns>Bool value: true if the parameter is enabled</returns>
+            <path>api/2.0/files/settings/templates</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.ChangeAutomaticallyCleanUp(System.Boolean,ASC.Files.Core.DateToAutoCleanUp)">
+            <summary>
+            Updates the trash bin auto-clearing setting.
+            </summary>
+            <short>Update the trash bin auto-clearing setting</short>
+            <param type="System.Boolean, System" name="set">Enables the auto-clearing or not</param>
+            <param type="ASC.Files.Core.DateToAutoCleanUp, ASC.Files.Core" name="gap">A time interval when the auto-clearing will be performed (one week, two weeks, one month, two months, three months)</param>
+            <category>Settings</category>
+            <returns>The auto-clearing setting properties</returns>
+            <path>api/2.0/files/settings/autocleanup</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetSettingsAutomaticallyCleanUp">
+            <summary>
+            Returns the auto-clearing setting properties.
+            </summary>
+            <short>Get the auto-clearing setting properties</short>
+            <category>Settings</category>
+            <returns>The auto-clearing setting properties</returns>
+            <path>api/2.0/files/settings/autocleanup</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.ChangeDafaultAccessRights(System.Collections.Generic.List{ASC.Files.Core.Security.FileShare})">
+            <summary>
+            Changes the default access rights in the sharing settings.
+            </summary>
+            <short>Change the default access rights</short>
+            <param type="System.Collections.Generic.List{ASC.Files.Core.Security.FileShare}, System.Collections.Generic" name="value">Default access rights</param>
+            <category>Settings</category>
+            <returns>Default access rights</returns>
+            <path>api/2.0/files/settings/dafaultaccessrights</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.ChangeDownloadZip(System.Boolean)">
+            <summary>
+            Changes the format of the downloaded archive from .zip to .tar.gz.
+            </summary>
+            <short>Change the archive format</short>
+            <param type="System.Boolean, System" name="set">Turns the parameter on or off</param>
+            <category>Settings</category>
+            <returns>Archive</returns>
+            <path>api/2.0/files/settings/downloadtargz</path>
+            <httpMethod>PUT</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CheckDocServiceUrl(System.String,System.String,System.String)">
+            <summary>
+            Checks the document service location.
+            </summary>
+            <short>Check the document service URL</short>
+            <param type="System.String, System" name="docServiceUrl">The address of Document Server</param>
+            <param type="System.String, System" name="docServiceUrlInternal">The address of Document Server in the local private network</param>
+            <param type="System.String, System" name="docServiceUrlPortal">The address of Community Server</param>
+            <category>Settings</category>
+            <returns>Document service information</returns>
+            <path>api/2.0/files/docservice</path>
+            <httpMethod>PUT</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetDocServiceUrl(System.Boolean)">
+            <summary>
+            Returns the address of the connected editors.
+            </summary>
+            <short>Get the document service URL</short>
+            <category>Settings</category>
+            <param type="System.Boolean, System" name="version" visible="false">Specifies the editor version or not</param>
+            <returns>Address</returns>
+            <path>api/2.0/files/docservice</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateThumbnails(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates thumbnails for the files with the IDs specified in the request.
+            </summary>
+            <short>Create thumbnails</short>
+            <category>Files</category>
+            <param type="System.Collections.Generic.IEnumerable{System.String}, System.Collections.Generic" name="fileIds">List of file IDs</param>
+            <visible>false</visible>
+            <returns>List of file IDs</returns>
+            <path>api/2.0/files/thumbnails</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetWordpressInfo">
+            <summary>
+            Returns the WordPress plugin information.
+            </summary>
+            <short>Get the WordPress information</short>
+            <category>WordPress</category>
+            <returns>WordPress information</returns>
+            <path>api/2.0/files/wordpress-info</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.DeleteWordpressInfo">
+            <summary>
+            Deletes the WordPress plugin information.
+            </summary>
+            <short>Delete the WordPress information</short>
+            <category>WordPress</category>
+            <returns>Object with the bool value: true if the operation is successful</returns>
+            <path>api/2.0/files/wordpress-delete</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.WordpressSave(System.String)">
+            <summary>
+            Saves the user WordPress information when logging in.
+            </summary>
+            <short>Save the user WordPress information</short>
+            <param type="System.String, System" name="code">Authorization code</param>
+            <category>WordPress</category>
+            <returns>User WordPress information</returns>
+            <path>api/2.0/files/wordpress-save</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.CreateWordpressPost(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Creates a WordPress post with the parameters specified in the request.
+            </summary>
+            <short>Create a WordPress post</short>
+            <param type="System.String, System" name="code">Authorization code</param>
+            <param type="System.String, System" name="title">Post title</param>
+            <param type="System.String, System" name="content">Post content</param>
+            <param type="System.Int32, System" name="status">Operation status</param>
+            <category>WordPress</category>
+            <returns>Boolean value: true if the operation is successful</returns>
+            <path>api/2.0/files/wordpress</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetEasybibCitationList(System.Int32,System.String)">
+            <summary>
+            Returns the EasyBib citation list.
+            </summary>
+            <short>Get the EasyBib citation list</short>
+            <param type="System.Int32, System" name="source">Citation source: book (0), journal (1) or website (2)</param>
+            <param type="System.String, System" name="data">Citation data</param>
+            <category>EasyBib</category>
+            <returns>EasyBib citation list</returns>
+            <path>api/2.0/files/easybib-citation-list</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.GetEasybibStyles">
+            <summary>
+            Returns the EasyBib styles.
+            </summary>
+            <short>Get the EasyBib styles</short>
+            <category>EasyBib</category>
+            <returns>List of EasyBib styles</returns>
+            <path>api/2.0/files/easybib-styles</path>
+            <httpMethod>GET</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.DocumentsApi.EasyBibCitationBook(System.String)">
+            <summary>
+            Returns the EasyBib citation book.
+            </summary>
+            <short>Get the EasyBib citation book</short>
+            <param type="System.String, System" name="citationData">Citation data</param>
+            <category>EasyBib</category>
+            <returns>EasyBib citation</returns>
+            <path>api/2.0/files/easybib-citation</path>
+            <httpMethod>POST</httpMethod>
+            <visible>false</visible>
+        </member>
+        <member name="T:ASC.Api.Documents.DocumentsApi.ConversationResult">
+            <summary>
+            Result of the file conversion operation.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.ConversationResult.Id">
+            <summary>
+            Operation ID.
+            </summary>
+            <example name="id">d5490cba-a5e6-40db-acb2-94203dba12d6</example>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.ConversationResult.OperationType">
+            <summary>
+            Operation type.
+            </summary>
+            <example type="int" name="operation">6</example>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.ConversationResult.Progress">
+            <summary>
+            Operation progress.
+            </summary>
+            <example type="int" name="progress">30</example>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.ConversationResult.Source">
+            <summary>
+            Source files for operation.
+            </summary>
+            <example name="source">source</example>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.ConversationResult.File">
+            <summary>
+            Result file of operation.
+            </summary>
+            <type name="result">ASC.Api.Documents.FileWrapper, ASC.Api.Documents</type>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.ConversationResult.Error">
+            <summary>
+            Error during conversion.
+            </summary>
+            <example name="error"></example>
+        </member>
+        <member name="P:ASC.Api.Documents.DocumentsApi.ConversationResult.Processed">
+            <summary>
+            Is operation processed.
+            </summary>
+            <example name="processed">1</example>
+        </member>
+        <member name="T:ASC.Api.Documents.FileEntryWrapper">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.Id">
+            <summary>
+            </summary>
+            <example type="int">857864274</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.Title">
+            <summary>
+            </summary>
+            <example>Some titile.txt</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.Access">
+            <summary>
+            </summary>
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.Shared">
+            <summary>
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.Created">
+            <summary>
+            </summary>
+            <example>2020-12-13T17:13:31.5902727Z</example>
+            <order>50</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.CreatedBy">
+            <summary>
+            </summary>
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>51</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.Updated">
+            <summary>
+            </summary>
+            <example>2020-12-13T17:13:31.5902727Z</example>
+            <order>52</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.RootFolderType">
+            <summary>
+            </summary>
+            <example type="int">2</example>
+            <order>41</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.UpdatedBy">
+            <summary>
+            </summary>
+            <type>ASC.Api.Employee.EmployeeWraper, ASC.Api.Employee</type>
+            <order>41</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.ProviderItem">
+            <summary>
+            </summary>
+            <example>true</example>
+            <order>55</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.ProviderKey">
+            <summary>
+            </summary>
+             <example>1234d</example>
+            <order>56</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.ProviderId">
+            <summary>
+            </summary>
+             <example type="int">1234</example>
+            <order>57</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.DenyDownload">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Documents.FileEntryWrapper.DenySharing">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Documents.FileEntryWrapper.#ctor(ASC.Files.Core.FileEntry)">
+            <summary>
+            
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:ASC.Api.Documents.FileEntryWrapper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Documents.FileShareParams">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Documents.FileShareParams.ShareTo">
+            <summary>
+            </summary>
+            <example name="shareTo">2fdfe577-3c26-4736-9df9-b5a683bb8520</example>
+            <order>0</order>
+        </member>
+        <member name="P:ASC.Api.Documents.FileShareParams.Access">
+            <summary>
+            </summary>
+            <example name="access">0</example>
+            <order>1</order>
+        </member>
+        <member name="M:ASC.Api.Documents.FileShareParams.ToAceObject">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ASC.Api.Documents.FileShareWrapper">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Documents.FileShareWrapper.#ctor(ASC.Web.Files.Services.WCFService.AceWrapper)">
+            <summary>
+            </summary>
+            <param name="aceWrapper"></param>
+        </member>
+        <member name="P:ASC.Api.Documents.FileShareWrapper.Access">
+            <summary>
+            </summary>
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileShareWrapper.SharedTo">
+            <summary>
+            </summary>
+            <object>
+                <member>
+                    <example name="id">00000000-0000-0000-0000-000000000000</example>
+                </member>
+                <member>
+                    <example name="displayName">Mike Zanyatski</example>
+                </member>
+                <member>
+                    <example name="title">Manager</example>
+                </member>
+                <member>
+                    <example name="avatarSmall">url to small avatar</example>
+                </member>
+                <member>
+                    <example name="profileUrl"></example>
+                </member>
+            </object>
+        </member>
+        <member name="P:ASC.Api.Documents.FileShareWrapper.IsLocked">
+            <summary>
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileShareWrapper.IsOwner">
+            <summary>
+            </summary>
+            <example>true</example>
+        </member>
+        <member name="M:ASC.Api.Documents.FileShareWrapper.GetSample">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ASC.Api.Documents.FileShareLink">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:ASC.Api.Documents.FileShareLink.Id">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:ASC.Api.Documents.FileShareLink.ShareLink">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Documents.FileWrapper">
+            <summary>
+            </summary>
+            <inherited>ASC.Api.Documents.FileEntryWrapper, ASC.Api.Documents</inherited>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.FolderId">
+            <summary>
+            </summary>
+            <example type="int">12334</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.Version">
+            <summary>
+            </summary>
+            <example type="int">3</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.VersionGroup">
+            <summary>
+            </summary>
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.ContentLength">
+            <summary>
+            </summary>
+            <example>12.06 KB</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.PureContentLength">
+            <summary>
+            </summary>
+            <example type="int">12345</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.FileStatus">
+            <summary>
+            </summary>
+            <example type="int">2</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.ViewUrl">
+            <summary>
+            </summary>
+            <example>http:\/\/www.onlyoffice.com\/viewfile?fileid=2221</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.WebUrl">
+            <summary>
+            </summary>
+            <example>http:\/\/www.onlyoffice.com\/viewfile?fileid=2221</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.FileType">
+            <summary>
+                
+            </summary>
+            <example type="int">7</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.FileExst">
+            <summary>
+                
+            </summary>
+            <example>.txt</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.Comment">
+            <summary>
+            </summary>
+            <example>null</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.Encrypted">
+            <summary>
+            </summary>
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileWrapper.ThumbnailUrl">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Documents.FileWrapper.#ctor(ASC.Files.Core.File)">
+            <summary>
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:ASC.Api.Documents.FileWrapper.GetSample">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ASC.Api.Documents.FolderContentWrapper">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.Files">
+            <summary>
+            </summary>
+            <type>ASC.Api.Documents.FileWrapper, ASC.Api.Documents</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.Folders">
+            <summary>
+            </summary>
+            <type>ASC.Api.Documents.FolderWrapper, ASC.Api.Documents</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.Current">
+            <summary>
+            </summary>
+            <type>ASC.Api.Documents.FolderWrapper, ASC.Api.Documents</type>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.PathParts">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.StartIndex">
+            <summary>
+            </summary>
+            <example type="int">0</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.Count">
+            <summary>
+            </summary>
+            <example type="int">4</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.Total">
+            <summary>
+            </summary>
+            <example type="int">4</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderContentWrapper.New">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Documents.FolderContentWrapper.#ctor(ASC.Web.Files.Services.WCFService.DataWrapper,System.Int32)">
+            <summary>
+            </summary>
+            <param name="folderItems"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:ASC.Api.Documents.FolderContentWrapper.GetSample">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ASC.Api.Documents.FileOperationWraper">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Id">
+            <summary>
+            </summary>
+            <example name="id">d5490cba-a5e6-40db-acb2-94203dba12d6</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.OperationType">
+            <summary>
+            </summary>
+            <example type="int" name="operation">1</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Progress">
+            <summary>
+            </summary>
+            <example type="int" name="progress">100</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Error">
+            <summary>
+            </summary>
+            <example name="error"></example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Processed">
+            <summary>
+            </summary>
+            <example name="processed">1</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Finished">
+            <summary>
+            </summary>
+            <example name="finished">false</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Url">
+            <summary>
+            </summary>
+            <example name="url">null</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Files">
+            <summary>
+            </summary>
+            <type name="files">ASC.Api.Documents.FileWrapper, ASC.Api.Documents</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Api.Documents.FileOperationWraper.Folders">
+            <summary>
+            </summary>
+            <type name="folders">ASC.Api.Documents.FolderWrapper, ASC.Api.Documents</type>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Documents.FileOperationWraper.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Documents.FileOperationWraper.#ctor(ASC.Web.Files.Services.WCFService.FileOperations.FileOperationResult)">
+            <summary>
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:ASC.Api.Documents.FileOperationWraper.GetSample">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ASC.Api.Documents.FolderWrapper">
+            <summary>
+            </summary>
+            <inherited>ASC.Api.Documents.FileEntryWrapper, ASC.Api.Documents</inherited>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderWrapper.ParentId">
+            <summary>
+            </summary>
+            <example type="int">1840746475</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderWrapper.FilesCount">
+            <summary>
+            </summary>
+            <example type="int">1840746475</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderWrapper.FoldersCount">
+            <summary>
+            </summary>
+            <example type="int">1840746475</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderWrapper.IsShareable">
+            <summary>
+            </summary>
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Api.Documents.FolderWrapper.IsFavorite">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Documents.FolderWrapper.#ctor(ASC.Files.Core.Folder)">
+            <summary>
+            </summary>
+            <param name="folder"></param>
+        </member>
+        <member name="M:ASC.Api.Documents.FolderWrapper.GetSample">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomApi.SetKeys(System.String,System.String,System.Boolean)">
+            <summary>
+            Sets the user's public and private keys when the user enters the login and password on the Desktop Editors authorization page.
+            </summary>
+            <short>Set public and private keys</short>
+            <param type="System.String, System" name="publicKey">The user's public key</param>
+            <param type="System.String, System" name="privateKeyEnc">The user's encrypted private key</param>
+            <param type="System.Boolean, System" name="update">Specifies whether to update the key pair or not</param>
+            <returns>Bool value: true if the operation is successful</returns>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomApi.GetPublicKeysWithAccess(System.String)">
+            <summary>
+            Get the pairs of the encrypted document passwords and public keys of all users who have access to the specified file.
+            </summary>
+            <short>Get public keys</short>
+            <param type="System.String, System" name="fileId">File ID</param>
+            <returns>The pairs of the encrypted document passwords and public keys</returns>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomApi.PrivacyRoom">
+            <summary>
+            Checks if the Private Room settings is enabled or not for the current portal.
+            </summary>
+            <short>Check the Private Room settings</short>
+            <returns>Bool value: true if the Private Room settings is enabled</returns>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Api.Documents.PrivacyRoomApi.SetPrivacyRoom(System.Boolean)">
+            <summary>
+            Sets the Private Room settings for the current portal.
+            </summary>
+            <short>Set the Private Room settings</short>
+            <param type="System.Boolean, System" name="enable">Enables or disables the Private Room settings for the current portal</param>
+            <returns>Bool value: true if the Private Room settings is enabled</returns>
+            <visible>false</visible>
+        </member>
+    </members>
+</doc>

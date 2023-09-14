@@ -174,7 +174,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -343,7 +343,7 @@
           "optional": false
         },
         {
-          "type": "bool",
+          "type": "boolean",
           "name": "isHidden",
           "description": "<p>Defines if the range name is hidden or not.</p>",
           "optional": false
@@ -413,6 +413,61 @@
         }
       ]
     },
+    "GetRangeByNumber": {
+      "memberof": "Api",
+      "name": "GetRangeByNumber",
+      "description": "<p>Returns an object that represents the range of the specified sheet using the maximum and minimum row/column coordinates.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiRange"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiWorksheet",
+          "name": "ws",
+          "description": "<p>The sheet where the specified range is represented.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "r1",
+          "description": "<p>The minimum row number of the specified range.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "c1",
+          "description": "<p>The minimum column number of the specified range.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "r2",
+          "description": "<p>The maximum row number of the specified range.</p>",
+          "optional": false
+        },
+        {
+          "type": "number",
+          "name": "c2",
+          "description": "<p>The maximum column number of the specified range.</p>",
+          "optional": false
+        },
+        {
+          "type": "ApiAreas",
+          "name": "areas",
+          "description": "<p>A collection of the ranges from the specified range.</p>",
+          "optional": false
+        }
+      ]
+    },
     "GetMailMergeData": {
       "memberof": "Api",
       "name": "GetMailMergeData",
@@ -456,7 +511,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -469,9 +524,91 @@
           "optional": false
         }
       ]
+    },
+    "attachEvent": {
+      "memberof": "Api",
+      "name": "attachEvent",
+      "description": "<p>Subscribes to the specified event and calls the callback function when the event fires.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "eventName",
+          "description": "<p>The event name.</p>",
+          "optional": false
+        },
+        {
+          "type": "function",
+          "name": "callback",
+          "description": "<p>Function to be called when the event fires.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "detachEvent": {
+      "memberof": "Api",
+      "name": "detachEvent",
+      "description": "<p>Unsubscribes from the specified event.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "eventName",
+          "description": "<p>The event name.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetComments": {
+      "memberof": "Api",
+      "name": "GetComments",
+      "description": "<p>Returns an array of ApiComment objects.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiComment>"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
-  "comment": "/**\n\t * Base class.\n\t * @global\n\t * @class\n\t * @name Api\n\t * @property {Array} Sheets - Returns the Sheets collection that represents all the sheets in the active workbook.\n\t * @property {ApiWorksheet} ActiveSheet - Returns an object that represents the active sheet.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t */",
+  "events": {
+    "onWorksheetChange": {
+      "memberof": "Api",
+      "name": "onWorksheetChange",
+      "description": "<p>The callback function which is called when the specified range of the current sheet changes.\n<note>Please note that the event is not called for the undo/redo operations.</note></p>",
+      "tags": {},
+      "see": null,
+      "params": [
+        {
+          "type": "ApiRange",
+          "name": "range",
+          "description": "<p>The modified range represented as the ApiRange object.</p>",
+          "optional": false
+        }
+      ]
+    }
+  },
+  "comment": "/**\n\t * Base class.\n\t * @global\n\t * @class\n\t * @name Api\n\t * @property {Array} Sheets - Returns the Sheets collection that represents all the sheets in the active workbook.\n\t * @property {ApiWorksheet} ActiveSheet - Returns an object that represents the active sheet.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t * @property {ApiComment[]} Comments - Returns an array of ApiComment objects.\n\t */",
   "description": "<p>Base class.</p>",
   "scope": "global",
   "properties": [
@@ -489,6 +626,11 @@
       "type": "ApiRange",
       "name": "Selection",
       "description": "<p>Returns an object that represents the selected range.</p>"
+    },
+    {
+      "type": "Array.<ApiComment>",
+      "name": "Comments",
+      "description": "<p>Returns an array of ApiComment objects.</p>"
     }
   ]
 }

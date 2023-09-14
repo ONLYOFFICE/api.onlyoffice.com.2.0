@@ -1,0 +1,12 @@
+builder.CreateFile("docx");
+var oDocument = editor.GetDocument();
+var oFParagraph = oDocument.GetElement(0);
+oFParagraph.AddText("First paragraph");
+var oSParagraph = editor.CreateParagraph();
+oSParagraph.AddText("Second Paragraph");
+oDocument.Push(oSParagraph);
+var oRange = oDocument.GetRange(0, 28);
+var arrParagraphs = oRange.GetAllParagraphs();
+arrParagraphs[0].SetBold("true");
+builder.SaveFile("docx", "GetAllParagraphs.docx");
+builder.CloseFile();

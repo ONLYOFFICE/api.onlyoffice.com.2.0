@@ -118,8 +118,26 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "ToJSON": {
+      "memberof": "ApiTableStylePr",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiTableStylePr object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a set of formatting properties which shall be conditionally applied to the parts of a table\n\t * which match the requirement specified on the <code>Type</code>.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a set of formatting properties which shall be conditionally applied to the parts of a table\nwhich match the requirement specified on the <code>Type</code>.</p>",
   "scope": "global",

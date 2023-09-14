@@ -1,0 +1,790 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Core.Common</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Core.Common.Configuration.ConsumerCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/consumer_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Common.Configuration.ConsumerCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/consumer_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Configuration.ConsumerCacheItem.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Configuration.ConsumerCacheItem.TenantIdFieldNumber">
+            <summary>Field number for the "tenant_id" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Common.EF.FireBaseUser">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Common.EF.FireBaseUser.Id">
+            <summary>ID</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Common.EF.FireBaseUser.UserId">
+            <summary>User ID</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Core.Common.EF.FireBaseUser.TenantId">
+            <summary>Tenant ID</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Common.EF.FireBaseUser.FirebaseDeviceToken">
+            <summary>Firebase device token</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Common.EF.FireBaseUser.Application">
+            <summary>Application</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Common.EF.FireBaseUser.IsSubscribed">
+            <summary>Specifies if the user is subscribed to the push notifications or not</summary>
+            <type>System.Nullable{System.Boolean}, System</type>
+        </member>
+        <member name="T:ASC.Core.Common.Log.DispatchEngineLogger.__LogMessageStruct">
+            <summary> This API supports the logging infrastructure and is not intended to be used directly from your code. It is subject to change in the future. </summary>
+        </member>
+        <member name="T:ASC.Core.Common.Notify.CreateClientProtoReflection">
+            <summary>Holder for reflection information generated from protos/create_client_proto.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Common.Notify.CreateClientProtoReflection.Descriptor">
+            <summary>File descriptor for protos/create_client_proto.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.CreateClientProto.TenantIdFieldNumber">
+            <summary>Field number for the "tenant_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.CreateClientProto.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.CreateClientProto.TokenLifespanFieldNumber">
+            <summary>Field number for the "token_lifespan" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.CreateClientProto.ProxyFieldNumber">
+            <summary>Field number for the "proxy" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.CreateClientProto.TimeFieldNumber">
+            <summary>Field number for the "time" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Common.Notify.DisableClientProtoReflection">
+            <summary>Holder for reflection information generated from protos/disable_client_proto.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Common.Notify.DisableClientProtoReflection.Descriptor">
+            <summary>File descriptor for protos/disable_client_proto.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.DisableClientProto.TenantIdFieldNumber">
+            <summary>Field number for the "tenant_id" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Common.Notify.RegisterUserProtoReflection">
+            <summary>Holder for reflection information generated from protos/register_user_proto.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Common.Notify.RegisterUserProtoReflection.Descriptor">
+            <summary>File descriptor for protos/register_user_proto.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.RegisterUserProto.UserIdFieldNumber">
+            <summary>Field number for the "user_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.RegisterUserProto.TenantIdFieldNumber">
+            <summary>Field number for the "tenant_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Common.Notify.RegisterUserProto.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Billing.License">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Billing.License.OriginalLicense">
+            <summary>Original license</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.Customization">
+            <summary>Specifies if the license is customizable or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.DueDate">
+            <summary>License due date</summary>
+            <type>System.DateTime, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.Trial">
+            <summary>Specifies if the license is trial or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.CustomerId">
+            <summary>Customer ID</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.DSUsersCount">
+            <summary>Number of document server users</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.DSUsersExpire">
+            <summary>Number of users whose licenses have expired</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.DSConnections">
+            <summary>Number of document server connections</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.License.Signature">
+            <summary>License signature</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="T:ASC.Core.Billing.Tariff">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.Id">
+            <summary>ID</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.State">
+            <summary>Tariff state</summary>
+            <type>ASC.Core.Billing.TariffState, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.DueDate">
+            <summary>Due date</summary>
+            <type>System.DateTime, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.DelayDueDate">
+            <summary>Delay due date</summary>
+            <type>System.DateTime, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.LicenseDate">
+            <summary>License date</summary>
+            <type>System.DateTime, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.CustomerId">
+            <summary>Customer ID</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.Tariff.Quotas">
+            <summary>List of quotas</summary>
+            <type>System.Collections.Generic.List{ASC.Core.Billing.Quota}, System.Collections.Generic</type>
+        </member>
+        <member name="T:ASC.Core.Billing.Quota">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Billing.Quota.Id">
+            <summary>ID</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Billing.Quota.Quantity">
+            <summary>Quantity</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="T:ASC.Core.Billing.TariffCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/tariff_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Billing.TariffCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/tariff_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Billing.TariffCacheItem.TenantIdFieldNumber">
+            <summary>Field number for the "tenant_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Billing.TariffCacheItem.TariffIdFieldNumber">
+            <summary>Field number for the "tariff_id" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Caching.TenantCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/tenant_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Caching.TenantCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/tenant_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.TenantCacheItem.TenantIdFieldNumber">
+            <summary>Field number for the "tenant_id" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Caching.GroupCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/group_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Caching.GroupCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/group_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.GroupCacheItem.IdFieldNumber">
+            <summary>Field number for the "id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.GroupCacheItem.TenantFieldNumber">
+            <summary>Field number for the "tenant" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Caching.UserGroupRefCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/user_group_ref_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Caching.UserGroupRefCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/user_group_ref_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserGroupRefCacheItem.UserIdFieldNumber">
+            <summary>Field number for the "user_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserGroupRefCacheItem.GroupIdFieldNumber">
+            <summary>Field number for the "group_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserGroupRefCacheItem.RemovedFieldNumber">
+            <summary>Field number for the "removed" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserGroupRefCacheItem.RefTypeFieldNumber">
+            <summary>Field number for the "ref_type" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserGroupRefCacheItem.LastModifiedFieldNumber">
+            <summary>Field number for the "last_modified" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserGroupRefCacheItem.TenantFieldNumber">
+            <summary>Field number for the "tenant" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Caching.UserInfoCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/user_info_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Caching.UserInfoCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/user_info_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserInfoCacheItem.IdFieldNumber">
+            <summary>Field number for the "id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserInfoCacheItem.TenantFieldNumber">
+            <summary>Field number for the "tenant" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Caching.UserPhotoCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/user_photo_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Caching.UserPhotoCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/user_photo_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.UserPhotoCacheItem.KeyFieldNumber">
+            <summary>Field number for the "key" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Caching.TenantSettingReflection">
+            <summary>Holder for reflection information generated from protos/tenant_setting.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Caching.TenantSettingReflection.Descriptor">
+            <summary>File descriptor for protos/tenant_setting.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.TenantSetting.KeyFieldNumber">
+            <summary>Field number for the "key" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Caching.QuotaCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/quota_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Caching.QuotaCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/quota_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Caching.QuotaCacheItem.KeyFieldNumber">
+            <summary>Field number for the "key" field.</summary>
+        </member>
+        <member name="T:ASC.Core.CoreSettings">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.CoreSettings.BaseDomain">
+            <summary>Base domain</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="T:ASC.Core.AccountLoginType">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Core.Users.EmployeeActivationStatus">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Core.Users.EmployeeStatus">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Core.Users.EmployeeType">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Core.Users.UserInfo">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Id">
+            <summary>ID</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.FirstName">
+            <summary>First name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.LastName">
+            <summary>Last name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.UserName">
+            <summary>Username</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.BirthDate">
+            <summary>Birthday</summary>
+            <type>System.Nullable{System.DateTime}, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Sex">
+            <summary>Sex (male or female)</summary>
+            <type>System.Nullable{System.Boolean}, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Status">
+            <summary>Status</summary>
+            <type>ASC.Core.Users.EmployeeStatus, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.ActivationStatus">
+            <summary>Activation status</summary>
+            <type>ASC.Core.Users.EmployeeActivationStatus, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.TerminatedDate">
+            <summary>The date and time when the user account was terminated</summary>
+            <type>System.Nullable{System.DateTime}, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Title">
+            <summary>Title</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.WorkFromDate">
+            <summary>Registration date</summary>
+            <type>System.Nullable{System.DateTime}, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Email">
+            <summary>Email</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Contacts">
+            <summary>List of contacts in the string format</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.ContactsList">
+            <summary>List of contacts</summary>
+            <type>System.Collections.Generic.List{System.String}, System.Collections.Generic</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Location">
+            <summary>Location</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Notes">
+            <summary>Notes</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Removed">
+            <summary>Specifies if the user account was removed or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.LastModified">
+            <summary>Last modified date</summary>
+            <type>System.DateTime, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Tenant">
+            <summary>Tenant</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.IsActive">
+            <summary>Spceifies if the user is active or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.CultureName">
+            <summary>Language</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.MobilePhone">
+            <summary>Mobile phone</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.MobilePhoneActivationStatus">
+            <summary>Mobile phone activation status</summary>
+            <type>ASC.Core.Users.MobilePhoneActivationStatus, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.Sid">
+            <summary>LDAP user identificator</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.LdapQouta">
+            <summary>LDAP user quota attribute</summary>
+            <type>System.Int64, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.SsoNameId">
+            <summary>SSO SAML user identificator</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.SsoSessionId">
+            <summary>SSO SAML user session identificator</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Users.UserInfo.CreateDate">
+            <summary>Creation date</summary>
+            <type>System.DateTime, System</type>
+        </member>
+        <member name="T:ASC.Core.Payments">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionRecord.RecipientIdFieldNumber">
+            <summary>Field number for the "recipient_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionRecord.ActionIdFieldNumber">
+            <summary>Field number for the "action_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionRecord.ObjectIdFieldNumber">
+            <summary>Field number for the "object_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionRecord.SourceIdFieldNumber">
+            <summary>Field number for the "source_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionRecord.SubscribedFieldNumber">
+            <summary>Field number for the "subscribed" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionRecord.TenantFieldNumber">
+            <summary>Field number for the "tenant" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Tenants.TenantAuditSettings">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantAuditSettings.LoginHistoryLifeTime">
+            <summary>Login history lifetime</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantAuditSettings.AuditTrailLifeTime">
+            <summary>Audit trail lifetime</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="T:ASC.Core.Tenants.TenantAuditSettingsWrapper">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantAuditSettingsWrapper.Settings">
+            <summary>Audit trail settingse</summary>
+            <type>ASC.Core.Tenants.TenantAuditSettings, ASC.Core.Common</type>
+        </member>
+        <member name="T:ASC.Core.Tenants.TenantQuota">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Tenant">
+            <summary>Tenant</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Name">
+            <summary>Name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Price">
+            <summary>Price</summary>
+            <type>System.Decimal, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.PriceCurrencySymbol">
+            <summary>Price currency symbol</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.ProductId">
+            <summary>Product ID</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Visible">
+            <summary>Specifies if the tenant quota is visible or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Features">
+            <summary>Tenant quota features</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.MaxFileSize">
+            <summary>Maximum file size</summary>
+            <type>System.Int64, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.MaxTotalSize">
+            <summary>Maximum total size</summary>
+            <type>System.Int64, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.CountUser">
+            <summary>Number of portal users</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.CountRoomAdmin">
+            <summary>Number of portal room administrators</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.UsersInRoom">
+            <summary>Number of room users</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.CountRoom">
+            <summary>Number of rooms</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.NonProfit">
+            <summary>Specifies if the tenant quota is nonprofit or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Trial">
+            <summary>Specifies if the tenant quota is trial or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Free">
+            <summary>Specifies if the tenant quota is free or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Update">
+            <summary>Specifies if the tenant quota is updated or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Audit">
+            <summary>Specifies if the audit trail is available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.DocsEdition">
+            <summary>Specifies if this tenant quota is Docs edition or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Ldap">
+            <summary>Specifies if the LDAP settings are available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Sso">
+            <summary>Specifies if the SSO settings are available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.WhiteLabel">
+            <summary>Specifies if the white label settings are available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Customization">
+            <summary>Specifies if the customization settings are available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Custom">
+            <summary>Specifies if the custom domain URL is available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.AutoBackupRestore">
+            <summary>Specifies if the automatic Backup&amp;Restore feature is available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.Oauth">
+            <summary>Specifies if Oauth is available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.ContentSearch">
+            <summary>Specifies if the content search is available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Core.Tenants.TenantQuota.ThirdParty">
+            <summary>Specifies if the third-party accounts linking is available or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="T:ASC.Core.Tenants.TenantTrustedDomainsType">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Core.Data.SettingsCacheItemReflection">
+            <summary>Holder for reflection information generated from protos/settings_cache_item.proto</summary>
+        </member>
+        <member name="P:ASC.Core.Data.SettingsCacheItemReflection.Descriptor">
+            <summary>File descriptor for protos/settings_cache_item.proto</summary>
+        </member>
+        <member name="F:ASC.Core.Data.SettingsCacheItem.KeyFieldNumber">
+            <summary>Field number for the "key" field.</summary>
+        </member>
+        <member name="T:ASC.Core.Encryption.EncryptionSettings">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.Encryption.EncryptionSettings.Password">
+            <summary>Password</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Core.Encryption.EncryptionSettings.Status">
+            <summary>Status</summary>
+            <type>ASC.Core.Encryption.EncryprtionStatus, ASC.Core.Common</type>
+        </member>
+        <member name="P:ASC.Core.Encryption.EncryptionSettings.NotifyUsers">
+            <summary>Specifies if the users will be notified or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="M:ASC.Core.Notify.RecipientProviderImpl.FilterRecipientAddresses(ASC.Notify.Recipients.IDirectRecipient)">
+            <summary>
+            Check if user with this email is activated
+            </summary>
+            <param name="recipient"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ASC.Core.TenantVersion">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Core.TenantVersion.Id">
+            <summary>ID</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Core.TenantVersion.Name">
+            <summary>Name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="T:ASC.Core.SubscriptionMethodCacheReflection">
+            <summary>Holder for reflection information generated from protos/subscription_method_cache.proto</summary>
+        </member>
+        <member name="P:ASC.Core.SubscriptionMethodCacheReflection.Descriptor">
+            <summary>File descriptor for protos/subscription_method_cache.proto</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionMethodCache.RecipientIdFieldNumber">
+            <summary>Field number for the "recipient_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionMethodCache.ActionIdFieldNumber">
+            <summary>Field number for the "action_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionMethodCache.SourceIdFieldNumber">
+            <summary>Field number for the "source_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionMethodCache.MethodsFieldNumber">
+            <summary>Field number for the "methods" field.</summary>
+        </member>
+        <member name="F:ASC.Core.SubscriptionMethodCache.TenantFieldNumber">
+            <summary>Field number for the "tenant" field.</summary>
+        </member>
+        <member name="T:ASC.Core.SubscriptionRecordReflection">
+            <summary>Holder for reflection information generated from protos/subscription_record.proto</summary>
+        </member>
+        <member name="P:ASC.Core.SubscriptionRecordReflection.Descriptor">
+            <summary>File descriptor for protos/subscription_record.proto</summary>
+        </member>
+        <member name="T:ASC.Core.AzRecordCacheReflection">
+            <summary>Holder for reflection information generated from protos/az_record_cache.proto</summary>
+        </member>
+        <member name="P:ASC.Core.AzRecordCacheReflection.Descriptor">
+            <summary>File descriptor for protos/az_record_cache.proto</summary>
+        </member>
+        <member name="F:ASC.Core.AzRecordCache.SubjectIdFieldNumber">
+            <summary>Field number for the "subject_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.AzRecordCache.ActionIdFieldNumber">
+            <summary>Field number for the "action_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.AzRecordCache.ObjectIdFieldNumber">
+            <summary>Field number for the "object_id" field.</summary>
+        </member>
+        <member name="F:ASC.Core.AzRecordCache.ReactionFieldNumber">
+            <summary>Field number for the "reaction" field.</summary>
+        </member>
+        <member name="F:ASC.Core.AzRecordCache.TenantFieldNumber">
+            <summary>Field number for the "tenant" field.</summary>
+        </member>
+        <member name="T:ASC.MessagingSystem.Core.MessageAction">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Common.Notify.Engine.CallContext">
+            <summary>
+            Provides a way to set contextual data that flows with the call and 
+            async context of a test or invocation.
+            </summary>
+        </member>
+        <member name="M:ASC.Common.Notify.Engine.CallContext.SetData(System.String,System.Object)">
+            <summary>
+            Stores a given object and associates it with the specified name.
+            </summary>
+            <param name="name">The name with which to associate the new item in the call context.</param>
+            <param name="data">The object to store in the call context.</param>
+        </member>
+        <member name="M:ASC.Common.Notify.Engine.CallContext.GetData(System.String)">
+            <summary>
+            Retrieves an object with the specified name from the <see cref="T:ASC.Common.Notify.Engine.CallContext"/>.
+            </summary>
+            <param name="name">The name of the item in the call context.</param>
+            <returns>The object in the call context associated with the specified name, or <see langword="null"/> if not found.</returns>
+        </member>
+        <member name="T:ASC.Common.Radicale.DavResponse">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Common.Radicale.DavResponse.Completed">
+            <summary>Specifies if the operation is completed or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Common.Radicale.DavResponse.StatusCode">
+            <summary>Status code</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Common.Radicale.DavResponse.Data">
+            <summary>Link to the CardDav address book</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Common.Radicale.DavResponse.Error">
+            <summary>Error</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="T:ASC.Security.Cryptography.EmailValidationKeyModel">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Security.Cryptography.EmailValidationKeyModel.Key">
+            <summary>Key</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Security.Cryptography.EmailValidationKeyModel.EmplType">
+            <summary>Employee type</summary>
+            <type>System.Nullabel{ASC.Core.Users.EmployeeType}, System</type>
+        </member>
+        <member name="P:ASC.Security.Cryptography.EmailValidationKeyModel.Email">
+            <summary>Email</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Security.Cryptography.EmailValidationKeyModel.UiD">
+            <summary>User ID</summary>
+            <type>System.Nullabel{System.Guid}, System</type>
+        </member>
+        <member name="P:ASC.Security.Cryptography.EmailValidationKeyModel.Type">
+            <summary>Confirmation email type</summary>
+            <type>System.Nullabel{ASC.Web.Studio.Utility.ConfirmType}, System</type>
+        </member>
+        <member name="T:ASC.Web.Studio.Utility.ConfirmType">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Web.Core.Users.DarkThemeSettings">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Core.Users.DarkThemeSettings.ID">
+            <summary>ID</summary>
+            <type>System.Guid, System</type>
+        </member>
+        <member name="P:ASC.Web.Core.Users.DarkThemeSettings.Theme">
+            <summary>Theme</summary>
+            <type>ASC.Web.Core.Users.DarkThemeSettingsEnum, ASC.Core.Common</type>
+        </member>
+        <member name="T:ASC.Web.Core.Users.DarkThemeSettingsEnum">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings.FooterEnabled">
+            <summary>Specifies if the mail footer is enabled or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings.FooterSocialEnabled">
+            <summary>Specifies if the footer with social media contacts is enabled or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings.SupportUrl">
+            <summary>Support URL</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings.SupportEmail">
+            <summary>Support email</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings.SalesEmail">
+            <summary>Sales email</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings.DemoUrl">
+            <summary>Demo URL</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Web.Core.WhiteLabel.MailWhiteLabelSettings.SiteUrl">
+            <summary>Site URL</summary>
+            <type>System.String, System</type>
+        </member>
+    </members>
+</doc>

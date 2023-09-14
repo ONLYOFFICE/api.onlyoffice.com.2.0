@@ -18,6 +18,7 @@
       "inherits": null
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing an unsupported element.\n\t * @constructor\n\t */",
   "description": "<p>Class representing an unsupported element.</p>",
   "scope": "global",

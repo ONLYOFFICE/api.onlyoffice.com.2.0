@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Mail.Server</name>
+    </assembly>
+    <members>
+        <member name="F:ASC.Mail.Server.Utils.Md5Crypt.magic">
+            Password hash magic 
+        </member>
+        <member name="F:ASC.Mail.Server.Utils.Md5Crypt.itoa64">
+            Characters for base64 encoding 
+        </member>
+        <member name="M:ASC.Mail.Server.Utils.Md5Crypt.crypt(System.String,System.String)">
+            <summary>
+            Unix-like Crypt-MD5 function
+            </summary>
+            <param name="password">The user password</param>
+            <param name="salt">The salt or the pepper of the password</param>
+            <returns>a human readable string</returns>
+        </member>
+    </members>
+</doc>

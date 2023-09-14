@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Api.Migration</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Api.Migration.MigrationApi">
+            <summary>
+            Migration API.
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigrationApi.Name">
+            <summary>
+            Api name entry
+            </summary>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.#ctor(ASC.Api.Impl.ApiContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.GetTmpFolder">
+            <summary>
+            Returns the temporary folder where all the created backups are stored.
+            </summary>
+            <short>
+            Get backup folder
+            </short>
+            <returns>Path to the backup folder</returns>
+            <path>api/2.0/migration/backuptmp</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.List">
+            <summary>
+            Returns all the available migrations.
+            </summary>
+            <short>
+            Get migrations
+            </short>
+            <returns>List of migrations</returns>
+            <collection>list</collection>
+            <path>api/2.0/migration/list</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.MigratorsInfo(System.String[])">
+            <summary>
+            Returns the information about the migrators with the names specified in the request.
+            </summary>
+            <short>
+            Get migrator information
+            </short>
+            <param type="System.String[], System" name="migratorsName">List of migrator names</param>
+            <returns>List of migrator information</returns>
+            <collection>list</collection>
+            <path>api/2.0/migration/migratorsInfo</path>
+            <httpMethod>POST</httpMethod>
+            <collection>list</collection>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.UploadAndInit(System.String,System.String)">
+            <summary>
+            Uploads a backup of a migrator specified in the request and initializes the import.
+            </summary>
+            <short>
+            Initialize migration
+            </short>
+            <param type="System.String, System" name="migratorName">Migrator name</param>
+            <param type="System.String, System" name="path">Path to the backup file</param>
+            <path>api/2.0/migration/init/{migratorName}</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.Status">
+            <summary>
+            Returns a status of the running migration process.
+            </summary>
+            <short>
+            Get migration status
+            </short>
+            <returns>Object with the information about migration status</returns>
+            <path>api/2.0/migration/status</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.Cancel">
+            <summary>
+            Cancels the running migration process.
+            </summary>
+            <short>
+            Cancel migration
+            </short>
+            <path>api/2.0/migration/cancel</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.Migrate(ASC.Migration.Core.Models.Api.MigrationApiInfo)">
+            <summary>
+            Starts the migration process specifying the migration information to be imported (users, modules, groups, etc.).
+            </summary>
+            <short>
+            Start migration
+            </short>
+            <param type="ASC.Migration.Core.Models.Api.MigrationApiInfo, ASC.Migration.Core.Models.Api" name="info">Migration information</param>
+            <path>api/2.0/migration/migrate</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.Logs">
+            <summary>
+            Returns the logs of the migration process.
+            </summary>
+            <short>
+            Get migration logs
+            </short>
+            <returns>Migration logs</returns>
+            <path>api/2.0/migration/logs</path>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="M:ASC.Api.Migration.MigrationApi.Finish(System.Boolean)">
+            <summary>
+            Completes the migration process.
+            </summary>
+            <short>
+            Complete migration
+            </short>
+            <param type="System.Boolean, System" name="isSendWelcomeEmail">Specifies whether to send a welcome letter to the imported users or not</param>
+            <path>api/2.0/migration/finish</path>
+            <httpMethod>POST</httpMethod>
+        </member>
+        <member name="T:ASC.Api.Migration.MigrationStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigrationStatus.Progress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigrationStatus.ProgressStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigrationStatus.ParseResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigrationStatus.MigrationEnded">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigrationStatus.MigratorName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigrationStatus.ParsingEnded">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Migration.MigratorInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigratorInfo.MigratorName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigratorInfo.NumberOfSteps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.MigratorInfo.ArchivesIsMultiple">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ASC.Api.Migration.OngoingMigration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.OngoingMigration.IsCancel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.OngoingMigration.CancelTokenSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.OngoingMigration.Migration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.OngoingMigration.ParseTask">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.OngoingMigration.MigrationTask">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ASC.Api.Migration.OngoingMigration.MigrationEnded">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

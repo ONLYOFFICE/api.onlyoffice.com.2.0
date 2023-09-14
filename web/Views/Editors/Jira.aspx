@@ -22,7 +22,7 @@
     <h2 id="features" class="copy-link">Features</h2>
     <ul>
         <li>Currently, the following document formats can be edited: DOCX, XLSX, PPTX, DOCXF, OFORM.</li>
-        <li>The following formats are available for viewing: DOC, DOCM, DOC, DOTX, DOTM, ODT, FODT, OTT, RTF, TXT, HTML, HTM, MHT, PDF, DJVU, FB2, EPUB, XPS, XLS, XLSM, XLTZ , XLTX, XLTM, ODS, FODS, OTS, CSV, PPS, PPSX, PPSM, PPT, PPTM, POT, POTX, POTM, ODP, FODP, OTP.</li>
+        <li>The following formats are available for viewing only: DOC, DOCM, DOC, DOTX, DOTM, ODT, FODT, OTT, RTF, TXT, HTML, HTM, MHT, PDF, DJVU, FB2, EPUB, XPS, XLS, XLSM, XLTZ , XLTX, XLTM, ODS, FODS, OTS, CSV, PPS, PPSX, PPSM, PPT, PPTM, POT, POTX, POTM, ODP, FODP, OTP.</li>
         <li>The plugin will create a new <b>Edit in ONLYOFFICE</b> menu option within the document library for Office documents. 
             This allows multiple users to collaborate in real time and to save back those changes to Jira.</li>
     </ul>
@@ -61,10 +61,12 @@
         The address must be accessible for the user browser and from the Jira server.
         The Jira server address must also be accessible from <b>ONLYOFFICE Docs</b> for correct work.
     </p>
-    <p>Enter the <b>Secret key</b> to enable JWT protection of your documents from unauthorized access (further information can be found <a href="<%= Url.Action("signature/") %>">here</a>).</p>
-    <p>Sometimes your network configuration might not allow the requests between Jira and ONLYOFFICE Document Server using the public addresses. 
-        The <b>Advanced server settings</b> section allows you to set the ONLYOFFICE Document Server address for internal requests from Jira 
-        and the returning Jira address for internal requests from ONLYOFFICE Document Server.</p>
+    <p>Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity.
+        Specify your own <b>Secret key</b> on the Jira administration page. In the ONLYOFFICE Docs <a href="/editors/signature/">config file</a>, specify the same secret key and enable the validation.</p>
+
+    <p>Sometimes your network configuration might not allow the requests between Jira and ONLYOFFICE Docs using the public addresses. 
+        The <b>Advanced server settings</b> section allows you to set the ONLYOFFICE Docs address for internal requests from Jira 
+        and the returning Jira address for internal requests from ONLYOFFICE Docs.</p>
 
 
     <h2 id="compiling" class="copy-link">Compiling Jira ONLYOFFICE integration app</h2>
@@ -96,6 +98,7 @@ sudo apt-get install openjdk-8-jdk</span>
 
     <h2 id="how-it-works" class="copy-link">How it works</h2>
 
+    <p>The ONLYOFFICE integration follows the API documented <a href="<%= Url.Action("basic") %>">here</a>.</p>
     <ol>
         <li>User navigates to the Jira attachments and selects the <b>Edit in ONLYOFFICE</b> action.</li>
         <li>Jira makes a request to <b>OnlyOfficeEditorServlet</b> (URL of the form: <em>/plugins/servlet/onlyoffice/doceditor?attachmentId=$attachment.id</em>).</li>
@@ -103,10 +106,10 @@ sudo apt-get install openjdk-8-jdk</span>
         <li>
             <p>Jira prepares a JSON object with the following properties:</p>
             <ul>
-                <li><b>url</b>: the temporary link that ONLYOFFICE Docs uses to download the document,</li>
-                <li><b>callbackUrl</b>: the URL that ONLYOFFICE Docs informs about status of the document editing,</li>
-                <li><b>docserviceApiUrl</b>: the URL that the client needs to reply to ONLYOFFICE Docs (provided by the <em>files.docservice.url.api</em> property),</li>
-                <li><b>key</b>: the UUID to instruct ONLYOFFICE Docs whether to download the document again or not,</li>
+                <li><b>url</b>: the temporary link that ONLYOFFICE Docs uses to download the document;</li>
+                <li><b>callbackUrl</b>: the URL that ONLYOFFICE Docs informs about status of the document editing;</li>
+                <li><b>docserviceApiUrl</b>: the URL that the client needs to reply to ONLYOFFICE Docs (provided by the <em>files.docservice.url.api</em> property);</li>
+                <li><b>key</b>: the UUID to instruct ONLYOFFICE Docs whether to download the document again or not;</li>
                 <li><b>title</b>: the document title (name).</li>
             </ul>
         </li>
@@ -114,7 +117,7 @@ sudo apt-get install openjdk-8-jdk</span>
         <li>The client browser makes a request to the JavaScript library from ONLYOFFICE Docs and sends ONLYOFFICE Docs the DocEditor configuration with the above properties.</li>
         <li>Then ONLYOFFICE Docs downloads the document from document storage and the user begins editing.</li>
         <li>When all users and client browsers are done with editing, they close the editing window.</li>
-        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to the callback URL letting Jira know that the clients have finished editing the document and closed it.</li>
+        <li>After <a href="<%= Url.Action("save") %>#savedelay">10 seconds</a> of inactivity, ONLYOFFICE Docs sends a POST to <em>callbackUrl</em> letting Jira know that the clients have finished editing the document and closed it.</li>
         <li>The document with all the changes is saved as a new attachment with the postfix added to the file name.</li>
     </ol>
 

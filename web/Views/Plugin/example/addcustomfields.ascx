@@ -23,8 +23,8 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <ol>
     <li>Open the <b>Plugins</b> tab and press <b>Example add custom fields</b>.</li>
-    <li>To add a <b>simple field</b> type your question and its label in the necessary fields and press the <b>Add simple field</b> button</li>
-    <li>To add a <b>drop down field</b> type your question and its label in the necessary fields and add answer options. To add an answer option, type it in the <b>Type your item</b> field and press the <b>Add</b> button. Repeat it if you need more options. To remove any answer option, select it in the combo box and press the <b>Remove</b> button. When the field is ready, press the <b>Add drop down field</b> button.</li>
+    <li>To add a <b>simple field</b>, type your question and its label in the necessary fields and press the <b>Add simple field</b> button</li>
+    <li>To add a <b>drop down field</b>, type your question and its label in the necessary fields and add answer options. To add an answer option, type it in the <b>Type your item</b> field and press the <b>Add</b> button. Repeat it if you need more options. To remove any answer option, select it in the combo box and press the <b>Remove</b> button. When the field is ready, press the <b>Add drop down field</b> button.</li>
     <li>The field will be added in the current text cursor position.</li>
 </ol>
 
@@ -33,7 +33,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_customfields_add" target="_blank">https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_customfields_add</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>code.js</em></li>
     <li>Icons</li>
 </ol>
 
@@ -110,12 +110,12 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul>
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#onMethodReturn">onMethodReturn</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onMethodReturn") %>">onMethodReturn</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/addcontentcontrol") %>">executeMethod ("AddContentControl")</a></li>
-    <li><a href="<%= Url.Action("executemethod/insertandreplacecontentcontrols") %>">executeMethod ("InsertAndReplaceContentControls")</a></li>
+    <li><a href="<%= Url.Action("executemethod/text/addcontentcontrol") %>">executeMethod ("AddContentControl")</a></li>
+    <li><a href="<%= Url.Action("executemethod/text/insertandreplacecontentcontrols") %>">executeMethod ("InsertAndReplaceContentControls")</a></li>
 </ul>
 
 

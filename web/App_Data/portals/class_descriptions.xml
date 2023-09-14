@@ -1,6 +1,22 @@
 <TypeDescriptor xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
   <Names>
     <entry>
+      <key>ASC.Files.Core.Security.FileShare</key>
+      <value>
+        <Description>None, ReadWrite, Read, Restrict, Varies, Review, Comment, FillForms, CustomFilter,</Description>
+        <Example>true</Example>
+        <ExampleJson>true</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.VoipService.AgentStatus</key>
+      <value>
+        <Description>Online, Paused, Offline</Description>
+        <Example>Online</Example>
+        <ExampleJson>"Online"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
       <key>System.Boolean</key>
       <value>
         <Description>Bool value</Description>
@@ -25,7 +41,23 @@
       </value>
     </entry>
     <entry>
+      <key>System.Decimal</key>
+      <value>
+        <Description>decimal</Description>
+        <Example>1.1</Example>
+        <ExampleJson>1.1</ExampleJson>
+      </value>
+    </entry>
+    <entry>
       <key>System.Int32</key>
+      <value>
+        <Description>number</Description>
+        <Example>1234</Example>
+        <ExampleJson>1234</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.UInt32</key>
       <value>
         <Description>number</Description>
         <Example>1234</Example>
@@ -81,42 +113,76 @@
       </value>
     </entry>
     <entry>
+      <key>System.Guid[]</key>
+      <value>
+        <Description>Collection of Guids</Description>
+        <Example>9924256A-739C-462b-AF15-E652A3B1B6EB</Example>
+        <ExampleJson>[
+    "9924256a-739c-462b-af15-e652a3b1b6eb",
+    "98777e9c-f2a7-4e97-b314-ba9f92c2e882"
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
       <key>ASC.Projects.Core.Domain.TaskPriority</key>
       <value>
-        <Description>task priority</Description>
-        <Example>High = 1, Normal = 0, Low = -1</Example>
+        <Description>High = 1, Normal = 0, Low = -1</Description>
+        <Example>Normal</Example>
+        <ExampleJson>"Normal"</ExampleJson>
       </value>
     </entry>
     <entry>
       <key>ASC.Projects.Core.Domain.TaskStatus</key>
       <value>
-        <Description>task status</Description>
-        <Example>NotAccept = 0,Open = 1, Closed = 2,Disable = 3,Unclassified = 4,NotInMilestone = 5</Example>
+        <Description>NotAccept = 0,Open = 1, Closed = 2,Disable = 3,Unclassified = 4,NotInMilestone = 5</Description>
+        <Example>NotAccept</Example>
+        <ExampleJson>"NotAccept"</ExampleJson>
       </value>
     </entry>
     <entry>
       <key>ASC.Projects.Core.Domain.ProjectStatus</key>
       <value>
-        <Description>project status</Description>
-        <Example>Open = 0, Closed = 1</Example>
+        <Description>Open, Closed, Paused</Description>
+        <Example>Open</Example>
+        <ExampleJson>"Open"</ExampleJson>
       </value>
     </entry>
     <entry>
       <key>ASC.Projects.Core.Domain.MilestoneStatus</key>
       <value>
-        <Description>milestone status</Description>
-        <Example>Open = 0, Closed = 1, Late = 2, Disable = 3</Example>
+        <Description>Open, Closed</Description>
+        <Example>Open</Example>
+        <ExampleJson>"Open"</ExampleJson>
       </value>
     </entry>
     <entry>
       <key>ASC.Forum.TopicType</key>
       <value>
-        <Description>topic type</Description>
-        <Example>Informational=0,Poll=1</Example>
-        <Note>What is this?</Note>
+        <Description>Informational, Poll</Description>
+        <ExampleJson>"Informational"</ExampleJson>
       </value>
     </entry>
-
+    <entry>
+      <key>ASC.Web.Projects.StartModuleType</key>
+      <value>
+        <Description>Projects, Tasks, Discussions, TimeTracking</Description>
+        <ExampleJson>"Projects"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Projects.Core.Domain.ProjectTeamSecurity</key>
+      <value>
+        <Description>None, Messages, Tasks, Files, Milestone, Contacts</Description>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Projects.Core.Domain.TaskLinkType</key>
+      <value>
+        <Description>Start, End, EndStart</Description>
+        <ExampleJson>"Start"</ExampleJson>
+      </value>
+    </entry>
     <entry>
       <key>System.IO.Stream</key>
       <value>
@@ -126,7 +192,6 @@
         <Note></Note>
       </value>
     </entry>
-
     <entry>
       <key>System.Net.Mime.ContentType</key>
       <value>
@@ -135,7 +200,6 @@
         <Note>Set Content-Type header</Note>
       </value>
     </entry>
-
     <entry>
       <key>System.Net.Mime.ContentDisposition</key>
       <value>
@@ -144,36 +208,18 @@
         <Note>Set Content-Disposition header</Note>
       </value>
     </entry>
-
     <entry>
-      <key>System.Collections.Generic.IEnumerable`1[System.Web.HttpPostedFileBase]</key>
+      <key>System.Collections.Generic.IEnumerable{System.Web.HttpPostedFileBase}</key>
       <value>
         <Description>Files for adding using multipart/form-data</Description>
         <Example>N/A</Example>
+        <ExampleJson> []</ExampleJson>
       </value>
     </entry>
     <entry>
-      <key>System.Collections.Generic.IEnumerable`1[ASC.Mail.Data.Contracts.CrmContactData]</key>
+      <key>System.Collections.Generic.IEnumerable{ASC.Mail.Data.Contracts.CrmContactData}</key>
       <value>
         <ExampleJson>![{"entity_id": 0, "entity_type": 1}]</ExampleJson>
-      </value>
-    </entry>
-    <entry>
-      <key>System.Collections.Generic.IEnumerable`1[ASC.Projects.Core.Domain.Task]</key>
-      <value>
-        <ExampleJson>![]</ExampleJson>
-      </value>
-    </entry>
-    <entry>
-      <key>System.Collections.Generic.IEnumerable`1[ASC.Projects.Core.Domain.Milestone]</key>
-      <value>
-        <ExampleJson>![]</ExampleJson>
-      </value>
-    </entry>
-    <entry>
-      <key>System.Collections.Generic.List`1[ASC.Mail.Data.Contracts.MailAttachmentData]</key>
-      <value>
-        <ExampleJson>![]</ExampleJson>
       </value>
     </entry>
     <entry>
@@ -185,14 +231,6 @@
       </value>
     </entry>
     <entry>
-      <key>System.Guid[]</key>
-      <value>
-        <Description>Collection of Guids</Description>
-        <Example></Example>
-        <ExampleJson>["9924256A-739C-462b-AF15-E652A3B1B6EB", "98777E9C-F2A7-4E97-B314-BA9F92C2E882"]</ExampleJson>
-      </value>
-    </entry>
-    <entry>
       <key>ASC.Specific.ApiDateTime</key>
       <value>
         <Description>Date and Time</Description>
@@ -201,17 +239,13 @@
       </value>
     </entry>
     <entry>
-      <key>System.Collections.Generic.List`1[ASC.Api.Calendar.CalendarApi+SharingParam]</key>
+      <key>System.Collections.Generic.List{ASC.Api.Calendar.CalendarApi.SharingParam}</key>
       <value>
         <Description>list of sharing options</Description>
         <Example></Example>
-      </value>
-    </entry>
-    <entry>
-      <key>ASC.Api.Documents.FileShareParams</key>
-      <value>
-        <Description>FileShareParams</Description>
-        <Example>share[0].ShareTo=9924256A-739C-462b-AF15-E652A3B1B6EB&amp;share[0].Access=0</Example>
+        <ExampleJson> [
+    {}
+  ]</ExampleJson>
       </value>
     </entry>
     <entry>
@@ -219,6 +253,409 @@
       <value>
         <Description>Object with fields: AccessKeyId, SecretAccessKey, Bucket, FolderId, FilePath, Region</Description>
         <Example></Example>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Core.Calendars.EventAlertType</key>
+      <value>
+        <Description>Never, FiveMinutes, FifteenMinutes, HalfHour, Hour, TwoHours, Day, Default</Description>
+        <Example>Never</Example>
+        <ExampleJson>"never"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.List{System.String}</key>
+      <value>
+      <Description>Collection of strings</Description>
+        <Example>some text</Example>
+        <ExampleJson>[
+    "some text"
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Api.Calendar.CalendarApi.EventRemoveType</key>
+      <value>
+      <Description>Single, AllFollowing, AllSeries</Description>
+        <Example>Single</Example>
+        <ExampleJson>"Single"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Core.Calendars.EventStatus</key>
+      <value>
+      <Description>	Tentative, Confirmed, Cancelled</Description>
+        <Example>Tentative</Example>
+        <ExampleJson>"tentative"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Community.News.Code.FeedType</key>
+      <value>
+      <Description>	None, News, Order, Advert, AllNews, Poll, All</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.CRM.Core.ContactInfoType</key>
+      <value>
+      <Description>	Phone, Email, Website, Skype, Twitter, LinkedIn, Facebook, Address, LiveJournal, MySpace, GMail, Blogger, Yahoo, MSN, ICQ, Jabber, AIM, VK</Description>
+        <Example>Phone</Example>
+        <ExampleJson>"phone"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.Int32,System.String}}</key>
+      <value>
+      <Description>Dictionary(key:int, value:string)</Description>
+        <Example>[{"Key": 0,"Value": "some text"}]</Example>
+        <ExampleJson>[
+    {
+      "Key": 0,
+      "Value": "some text"
+    }
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.Boolean}}</key>
+      <value>
+      <Description>Dictionary(key:string, value:bool)</Description>
+        <Example>[{"Key": "one","Value": true}]</Example>
+        <ExampleJson>[
+    {
+      "Key": "one",
+      "Value": true
+    }
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Collections.Generic.IEnumerable{ASC.Api.Collections.ItemKeyValuePair{System.String,System.String}}</key>
+      <value>
+      <Description>Dictionary(key:string, value:string)</Description>
+        <Example>[{"Key": "some text","Value": "some text"}]</Example>
+        <ExampleJson>[
+    {
+      "Key": "some text",
+      "Value": "some text"
+    }
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.CRM.Core.ContactListViewType</key>
+      <value>
+      <Description>All, Company, Person, WithOpportunity</Description>
+        <Example></Example>
+        <ExampleJson>"company"</ExampleJson>
+      </value>
+    </entry>
+        <entry>
+      <key>ASC.Api.CRM.Wrappers.Address</key>
+      <value>
+      <Description>ASC.Api.CRM.Wrappers.Address</Description>
+        <Example></Example>
+        <ExampleJson>{}</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.CRM.Core.Enums.ShareType</key>
+      <value>
+      <Description>None, ReadWrite, Read</Description>
+        <Example>none</Example>
+        <ExampleJson>"none"</ExampleJson>
+      </value>
+    </entry>
+        <entry>
+      <key>System.Collections.Generic.List{ASC.Api.CRM.Wrappers.ContactInfoWrapper}</key>
+      <value>
+      <Description>list of ContactInfoWrapper</Description>
+        <Example></Example>
+        <ExampleJson>[
+    {
+      "id": 0,
+      "InfoType": 0,
+      "Category": 0,
+      "Data": "support@onlyoffice.com",
+      "CategoryName": "Home",
+      "IsPrimary": false
+    }
+  ]</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Thrdparty.SocialNetworks</key>
+      <value>
+      <Description>Twitter</Description>
+        <Example>twitter</Example>
+        <ExampleJson>"twitter"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.CRM.Core.InvoiceStatus</key>
+      <value>
+      <Description>Draft, Sent, Rejected, Paid, Archived</Description>
+        <Example>Draft</Example>
+        <ExampleJson>"Draft"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.CRM.Core.DealMilestoneStatus</key>
+      <value>
+      <Description>Open, ClosedAndWon, ClosedAndLost</Description>
+        <Example>Open</Example>
+        <ExampleJson>"Open"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.CRM.Core.BidType</key>
+      <value>
+      <Description>FixedBid, PerHour, PerDay, PerWeek, PerMonth, PerYear</Description>
+        <Example>FixedBid</Example>
+        <ExampleJson>"FixedBid"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.CRM.Core.ReportType</key>
+      <value>
+      <Description>SalesByManagers, SalesForecast, SalesFunnel, WorkloadByContacts, WorkloadByTasks, WorkloadByDeals, WorkloadByInvoices, WorkloadByVoip, SummaryForThePeriod, SummaryAtThisMoment</Description>
+        <Example>SalesByManagers</Example>
+        <ExampleJson>"FixedBid"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.CRM.Core.ReportTimePeriod</key>
+      <value>
+      <Description>Today, Yesterday, Tomorrow, CurrentWeek, PreviousWeek, NextWeek, CurrentMonth, PreviousMonth, NextMonth, CurrentQuarter, PreviousQuarter, NextQuarter, CurrentYear, PreviousYear, NextYear, DuringAllTime</Description>
+        <Example>Today</Example>
+        <ExampleJson>"Today"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Files.Core.FilterType</key>
+      <value>
+      <Description>None, FilesOnly, FoldersOnly, DocumentsOnly, PresentationsOnly, SpreadsheetsOnly, ImagesOnly,  ByUser, ByDepartment, ArchiveOnly, ByExtension, MediaOnly</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Files.Services.WCFService.FileOperations.FileConflictResolveType</key>
+      <value>
+      <Description>Skip, Overwrite, Duplicate</Description>
+        <Example>Skip</Example>
+        <ExampleJson>"Skip"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>System.Byte</key>
+      <value>
+      <Description>byte</Description>
+        <Example>0</Example>
+        <ExampleJson>0</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Mail.Enums.SaslMechanism</key>
+      <value>
+      <Description>None, Login, CramMd5, OAuth2</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Mail.Enums.EncryptionType</key>
+      <value>
+      <Description>None, SSL, StartTLS</Description>
+        <Example>None</Example>
+        <ExampleJson>"None"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Mail.Enums.ContactInfoType</key>
+      <value>
+      <Description>Email, Phone</Description>
+        <Example>Email</Example>
+        <ExampleJson>"Email"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Mail.Data.Contracts.MailSieveFilterData</key>
+      <value>
+      <Description>ASC.Mail.Data.Contracts.MailSieveFilterData</Description>
+        <Example></Example>
+        <ExampleJson>{
+    "id": 1,
+    "name": "name",
+    "position": 2,
+    "enabled": true,
+    "conditions": [
+      {
+        "key": 1,
+        "operation": 1,
+        "value": "value"
+      }
+    ],
+    "actions": [
+      {
+        "action": 1,
+        "data": "data"
+      }
+    ],
+    "options": [
+      {
+        "matchMultiConditions": 1,
+        "applyTo": {
+          "folders": [
+            1
+          ],
+          "mailboxes": [
+            1
+          ],
+          "withAttachments": 1
+        },
+        "ignoreOther": true
+      }
+    ]
+  }</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Users.EmployeeStatus</key>
+      <value>
+      <Description>	Active, Terminated, LeaveOfAbsence, Default, All</Description>
+        <Example>Active</Example>
+        <ExampleJson>"Active"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Users.EmployeeActivationStatus</key>
+      <value>
+      <Description>	NotActivated, Activated, Pending, AutoGenerated</Description>
+        <Example>NotActivated</Example>
+        <ExampleJson>"NotActivated"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Users.EmployeeType</key>
+      <value>
+      <Description>	All, User, Visitor</Description>
+        <Example>All</Example>
+        <ExampleJson>"All"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Projects.Core.Domain.MessageStatus</key>
+      <value>
+      <Description>Open, Archived</Description>
+        <Example>Open</Example>
+        <ExampleJson>"Open"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Projects.Core.Domain.EntityType</key>
+      <value>
+      <Description>Project, Milestone, Task, SubTask, Team, Comment, Message, File, TimeSpend</Description>
+        <Example>Project</Example>
+        <ExampleJson>"Project"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Projects.Core.Domain.PaymentStatus</key>
+      <value>
+      <Description>NotChargeable, NotBilled, Billed</Description>
+        <Example>NotChargeable</Example>
+        <ExampleJson>"NotChargeable"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Core.Common.Contracts.BackupStorageType</key>
+      <value>
+      <Description>Documents, ThridpartyDocuments, CustomCloud, Local, DataStore, ThirdPartyConsumer</Description>
+        <Example>Documents</Example>
+        <ExampleJson>"Documents"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Web.Studio.Core.Backup.BackupAjaxHandler.CronParams</key>
+      <value>
+      <Description>ASC.Web.Studio.Core.Backup.BackupAjaxHandler.CronParams</Description>
+        <Example></Example>
+        <ExampleJson>{
+    "Period": 0,
+    "Hour": 0,
+    "Day": 0
+  }</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.ElasticSearch.Core.SearchSettingsItem</key>
+      <value>
+      <Description>ASC.ElasticSearch.Core.SearchSettingsItem</Description>
+        <Example></Example>
+        <ExampleJson>{
+      "ID": "some text",
+      "Enabled": false,
+      "Title": "some text"
+    }</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Projects.Core.Domain.Reports.ReportType</key>
+      <value>
+      <Description>MilestonesExpired, MilestonesNearest, UsersWithoutActiveTasks, ProjectsWithoutActiveMilestones, ProjectsWithoutActiveTasks, UsersActivity, UsersWorkload, ProjectsList, TimeSpend, TasksByProjects, TasksByUsers, TasksExpired, EmptyReport</Description>
+        <Example>MilestonesExpired</Example>
+        <ExampleJson>"MilestonesExpired"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Projects.Core.Domain.Reports.ReportTimeInterval</key>
+      <value>
+      <Description>Absolute, Relative, Today, Yesterday, Tomorrow, CurrWeek, PrevWeek, NextWeek, CurrMonth, PrevMonth, NextMonth, CurrYear, PrevYear, NextYear</Description>
+        <Example>Absolute</Example>
+        <ExampleJson>"Absolute"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.VoipService.Twilio.PhoneNumberType</key>
+      <value>
+      <Description>Local, TollFreeNextYear</Description>
+        <Example>Local</Example>
+        <ExampleJson>"Local"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.VoipService.AudioType</key>
+      <value>
+      <Description>Greeting, HoldUp, VoiceMail, Queue</Description>
+        <Example>Greeting</Example>
+        <ExampleJson>"Greeting"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.Api.CRM.CRMApi.UpdateOperator</key>
+      <value>
+      <Description>Online, Paused, Offline</Description>
+        <Example>Online</Example>
+        <ExampleJson>"Online"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.VoipService.AnswerType</key>
+      <value>
+      <Description>Number, Sip, Client</Description>
+        <Example>Number</Example>
+        <ExampleJson>"Number"</ExampleJson>
+      </value>
+    </entry>
+    <entry>
+      <key>ASC.VoipService.VoipCallStatus</key>
+      <value>
+      <Description>Incoming, Outcoming, Answered, Missed</Description>
+        <Example>Incoming</Example>
+        <ExampleJson>"Incoming"</ExampleJson>
       </value>
     </entry>
   </Names>

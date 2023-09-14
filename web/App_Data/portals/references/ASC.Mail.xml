@@ -1,0 +1,1431 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Mail</name>
+    </assembly>
+    <members>
+        <member name="E:ASC.Mail.Clients.MailClient.Authenticated">
+            <summary>
+            Occurs when the client has been successfully authenticated.
+            </summary>
+            <remarks>
+            The <see cref="E:MailClientBase.Authenticated" /> event is raised whenever the client
+            has been authenticated.
+            </remarks>
+        </member>
+        <member name="E:ASC.Mail.Clients.MailClient.GetMessage">
+            <summary>
+            Occurs when the client has been successfully loaded message.
+            </summary>
+            <remarks>
+            The <see cref="E:MailClientBase.GetMessage" /> event is raised whenever the client
+            has been loaded message.
+            </remarks>
+        </member>
+        <member name="E:ASC.Mail.Clients.MailClient.SendMessage">
+            <summary>
+            Occurs when the client has been successfully sent message.
+            </summary>
+            <remarks>
+            The <see cref="E:MailClientBase.SendMessage" /> event is raised whenever the client
+            has been sent message.
+            </remarks>
+        </member>
+        <member name="T:ASC.Mail.Clients.MailClientEventArgs">
+            <summary>Authenticated event arguments.</summary>
+            <remarks>
+            Some servers, such as GMail IMAP, will send some free-form text in
+            the response to a successful login.
+            </remarks>
+        </member>
+        <member name="P:ASC.Mail.Clients.MailClientEventArgs.Message">
+            <summary>Get the free-form text sent by the server.</summary>
+            <remarks>Gets the free-form text sent by the server.</remarks>
+            <value>The free-form text sent by the server.</value>
+        </member>
+        <member name="M:ASC.Mail.Clients.MailClientEventArgs.#ctor(System.String,ASC.Mail.Data.Contracts.MailBoxData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MailClientEventArgs" /> class.
+            </summary>
+            <remarks>
+            Creates a new <see cref="T:MailKit.AuthenticatedEventArgs" />.
+            </remarks>
+            <param name="message">The free-form text.</param>
+            <param name="mailBoxData"></param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFilterDao.GetList">
+            <summary>
+                Get a list of filters
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFilterDao.Get(System.Int32)">
+            <summary>
+                Get filter by id.
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFilterDao.Save(ASC.Mail.Core.Entities.Filter)">
+            <summary>
+                Save or update filter
+            </summary>
+            <param name="filter"></param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFilterDao.Delete(System.Int32)">
+            <summary>
+                Delete filter
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IUserFolderDao.ChangeFolderCounters(System.UInt32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+                Update folder counters
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagMailDao.SetMessagesTag(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)">
+            <summary>
+                Set tag on messages
+            </summary>
+            <param name="messageIds"></param>
+            <param name="tagId"></param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IAlertDao.GetAlert(System.Int64)">
+            <summary>
+                Get alert by id.
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IAlertDao.GetAlerts(System.Int32,ASC.Mail.Enums.MailAlertTypes)">
+            <summary>
+                Get a list of alerts
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IAlertDao.SaveAlert(ASC.Mail.Core.Entities.Alert,System.Boolean)">
+            <summary>
+                Save or update alert
+            </summary>
+            <param name="alert"></param>
+            <param name="unique"></param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IAlertDao.DeleteAlert(System.Int64)">
+            <summary>
+                Delete alert
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IAlertDao.DeleteAlerts(System.Int32)">
+            <summary>
+                Delete all mailbox's alerts
+            </summary>
+            <param name="mailboxId">id mailbox</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IAlertDao.DeleteAlerts(System.Collections.Generic.List{System.Int32})">
+            <summary>
+                Delete alerts
+            </summary>
+            <param name="ids">list of id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IDisplayImagesAddressDao.GetDisplayImagesAddresses">
+            <summary>
+                Get Addresses for display images.
+            </summary>
+            <returns>List of string emails</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IDisplayImagesAddressDao.AddDisplayImagesAddress(System.String)">
+            <summary>
+                Add address for display images
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IDisplayImagesAddressDao.RemovevDisplayImagesAddress(System.String)">
+            <summary>
+                Delete address for display images
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.GetTag(System.Int32)">
+            <summary>
+                Get tag by id.
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.GetCrmTag(System.Int32)">
+            <summary>
+                Get CRM tag by id.
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.GetTag(System.String)">
+            <summary>
+                Get tag by name.
+            </summary>
+            <param name="name">name</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.GetTags">
+            <summary>
+                Get a list of tags
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.GetCrmTags">
+            <summary>
+                Get a list of CRM tags
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.GetCrmTags(System.Collections.Generic.List{System.Int32})">
+            <summary>
+                Get a list of CRM tags
+            </summary>
+            <param name="contactIds">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.SaveTag(ASC.Mail.Core.Entities.Tag)">
+            <summary>
+                Save or update tag
+            </summary>
+            <param name="tag"></param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.DeleteTag(System.Int32)">
+            <summary>
+                Delete tag
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.ITagDao.DeleteTags(System.Collections.Generic.List{System.Int32})">
+            <summary>
+                Delete tags
+            </summary>
+            <param name="tagIds">id</param>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxAutoreplyHistoryDao.GetAutoreplyHistorySentEmails(System.Int32,System.String,System.Int32)">
+            <summary>
+                Get autoreplyHistory emails by mailbox id.
+            </summary>
+            <param name="mailboxId"></param>
+            <param name="email"></param>
+            <param name="autoreplyDaysInterval"></param>
+            <returns>list of emails</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxAutoreplyHistoryDao.SaveAutoreplyHistory(ASC.Mail.Core.Entities.MailboxAutoreplyHistory)">
+            <summary>
+                Save or update autoreplyHistory
+            </summary>
+            <param name="autoreplyHistory"></param>
+            <returns>count of affected rows: 1 - OK, 0 - Fail</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxAutoreplyHistoryDao.DeleteAutoreplyHistory(System.Int32)">
+            <summary>
+                Delete autoreplyHistory
+            </summary>
+            <param name="mailboxId">id</param>
+            <returns>count of affected rows: 1 - OK, 0 - Fail</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxAutoreplyDao.GetAutoreply(System.Int32)">
+            <summary>
+                Get autoreply by mailbox id.
+            </summary>
+            <param name="mailboxId"></param>
+            <returns>signature</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxAutoreplyDao.GetAutoreplies(System.Collections.Generic.List{System.Int32})">
+            <summary>
+                Get a list of autoreply.
+            </summary>
+            <param name="mailboxIds"></param>
+            <returns>list of autoreply</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxAutoreplyDao.SaveAutoreply(ASC.Mail.Core.Entities.MailboxAutoreply)">
+            <summary>
+                Save or update autoreply
+            </summary>
+            <param name="autoreply"></param>
+            <returns>count of affected rows: 1 - OK, 0 - Fail</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxAutoreplyDao.DeleteAutoreply(System.Int32)">
+            <summary>
+                Delete signature
+            </summary>
+            <param name="mailboxId">id</param>
+            <returns>count of affected rows: 1 - OK, 0 - Fail</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IImapSpecialMailboxDao.GetImapSpecialMailboxes">
+            <summary>
+                Get a list of defined IMAP special mailboxes.
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFolderDao.GetFolder(ASC.Mail.Enums.FolderType)">
+            <summary>
+                Get folder by id.
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFolderDao.GetFolders">
+            <summary>
+                Get a list of folders.
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFolderDao.Save(ASC.Mail.Core.Entities.Folder)">
+            <summary>
+                Save folder
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IFolderDao.ChangeFolderCounters(ASC.Mail.Enums.FolderType,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+                Update folder counters
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IImapFlagsDao.GetImapFlags">
+            <summary>
+                Get a list of defined IMAP flags.
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxSignatureDao.GetSignature(System.Int32)">
+            <summary>
+                Get signature by mailbox id.
+            </summary>
+            <param name="mailboxId"></param>
+            <returns>signature</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxSignatureDao.GetSignatures(System.Collections.Generic.List{System.Int32})">
+            <summary>
+                Get a list of signature.
+            </summary>
+            <param name="mailboxIds"></param>
+            <returns>list of signature</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxSignatureDao.SaveSignature(ASC.Mail.Core.Entities.MailboxSignature)">
+            <summary>
+                Save or update signature
+            </summary>
+            <param name="signature"></param>
+            <returns>count of affected rows: 1 - OK, 0 - Fail</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Dao.Interfaces.IMailboxSignatureDao.DeleteSignature(System.Int32)">
+            <summary>
+                Delete signature
+            </summary>
+            <param name="mailboxId">id</param>
+            <returns>count of affected rows: 1 - OK, 0 - Fail</returns>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.Completed">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.Id">
+            <example>Id</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.Status">
+            <example>Status</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.Error">
+            <example>Error</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.Percents">
+            <example type="int">100</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.Source">
+            <example>Source</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.OperationType">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Engine.Operations.Base.MailOperationStatus.Operation">
+            <example>Operation</example>
+        </member>
+        <member name="M:ASC.Mail.Core.Engine.ContactEngine.SearchEmails(System.Int32,System.String,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Search emails in Accounts, Mail, CRM, Peaople Contact System
+            </summary>
+            <param name="tenant">Tenant id</param>
+            <param name="userName">User id</param>
+            <param name="term">Search word</param>
+            <param name="maxCountPerSystem">limit result per Contact System</param>
+            <param name="timeout">Timeout in milliseconds</param>
+            <param name="httpContextScheme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Engine.MailboxEngine.RemoveMailBoxInfo(ASC.Mail.Data.Contracts.MailBoxData)">
+            <summary>
+            Set mailbox removed
+            </summary>
+            <param name="mailBoxData"></param>
+            <returns>Return freed quota value</returns>
+        </member>
+        <member name="M:ASC.Mail.Core.Engine.MailboxEngine.RemoveMailBoxInfo(ASC.Mail.Core.Dao.Interfaces.IDaoFactory,ASC.Mail.Data.Contracts.MailBoxData)">
+            <summary>
+            Set mailbox removed
+            </summary>
+            <param name="daoFactory"></param>
+            <param name="mailBoxData"></param>
+            <returns>Return freed quota value</returns>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.Id">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.ProviderId">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.Type">
+            <example>Type</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.Hostname">
+            <example>Hostname</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.Port">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.SocketType">
+            <example>SocketType</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.Username">
+            <example>Username</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.Authentication">
+            <example>Authentication</example>
+        </member>
+        <member name="P:ASC.Mail.Core.Entities.MailboxServer.IsUserData">
+            <example>true</example>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.Address.#ctor">
+            <summary>
+            The default constructor. Set all properties to string.Empty.
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.Address.#ctor(System.String)">
+            <summary>
+            Creates the Address using the specified Internet email (RFC 2822 addr-spec).
+            </summary>
+            <param name="email">The email address to use.</param>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.Address.#ctor(System.String,System.String)">
+            <summary>
+            Creates the Address using the specified Internet email (RFC 2822 addr-spec) and fullname.
+            </summary>
+            <param name="email">The email address to use.</param>
+            <param name="name">The owner's name.</param>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.Address.Email">
+            <summary>
+            The Internet email address (RFC 2822 addr-spec).
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.Address.Name">
+            <summary>
+            The Address owner's fullname.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.Address.LocalPart">
+            <summary>
+            The Address owner's localpart.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.Address.Domain">
+            <summary>
+            The Address owner's domain.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.Address.Merged">
+            <summary>
+            Gets a string compliant with RFC2822 address specification that represents the Address with the owner's fullname.
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.Address.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ContactInfo.Id">
+            <example name="id" type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ContactInfo.Value">
+            <example name="value">value</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ContactInfo.IsPrimary">
+            <example name="isPrimary">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterOptionsData.MatchMultiConditions">
+            <example name="matchMultiConditions" type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterOptionsData.ApplyTo">
+            <type name="applyTo">ASC.Mail.Data.Contracts.MailSieveFilterOptionsApplyToData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterOptionsData.IgnoreOther">
+            <example name="ignoreOther">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterOptionsApplyToData.Folders">
+            <example name="folders" type="int">1</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterOptionsApplyToData.Mailboxes">
+            <example name="mailboxes" type="int">1</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterOptionsApplyToData.WithAttachments">
+            <example name="withAttachments" type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterActionData.Action">
+            <example name="action" type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterActionData.Data">
+            <example name="data">data</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterConditionData.Key">
+            <example name="key" type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterConditionData.Operation">
+            <example name="operation" type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterConditionData.Value">
+            <example name="value">value</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterData.Id">
+            <example type="int" name="id">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterData.Name">
+            <example name="name">name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterData.Position">
+            <example type="int" name="position">2</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterData.Enabled">
+            <example name="enabled">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterData.Conditions">
+            <type name="conditions">ASC.Mail.Data.Contracts.MailSieveFilterConditionData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterData.Actions">
+            <type name="actions">ASC.Mail.Data.Contracts.MailSieveFilterActionData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSieveFilterData.Options">
+            <type name="options">ASC.Mail.Data.Contracts.MailSieveFilterOptionsData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.CrmContactData.Id">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.CrmContactData.Type">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.CrmContactData.EntityTypeName">
+            <example>contact</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.MailboxId">
+            <example name="mailboxId" type="int">12</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.Email">
+            <example name="email">email@only.com</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.Enabled">
+            <example name="enabled">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.Name">
+            <example name="name">name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.OAuthConnection">
+            <example name="oAuthConnection">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.Signature">
+            <type name="signature">ASC.Mail.Data.Contracts.MailSignatureData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.Autoreply">
+            <type name="autoreply">ASC.Mail.Data.Contracts.MailAutoreplyData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.EMailInFolder">
+            <example name="eMailInFolder">eMailInFolder</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.QuotaError">
+            <example name="quotaError">false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.AuthError">
+            <example name="authError">false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.IsGroup">
+            <example name="isGroup">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.IsAlias">
+            <example name="isAlias">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.IsTeamlabMailbox">
+            <example name="isTeamlabMailbox">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.IsDefault">
+            <example name="isDefault">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAccountData.IsSharedDomainMailbox">
+            <example name="isSharedDomainMailbox">true</example>
+        </member>
+        <member name="F:ASC.Mail.Data.Contracts.MailAlertData.id">
+            <example type="int">1234</example>
+        </member>
+        <member name="F:ASC.Mail.Data.Contracts.MailAlertData.type">
+            <example type="int">1</example>
+        </member>
+        <member name="F:ASC.Mail.Data.Contracts.MailAlertData.id_mailbox">
+            <example type="int">1234</example>
+        </member>
+        <member name="F:ASC.Mail.Data.Contracts.MailAlertData.data">
+            <example>data</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.fileId">
+            <example type="int" name="fileId">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.fileName">
+            <example name="fileName">fileName</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.size">
+            <example type="int" name="size">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.contentType">
+            <example name="contentType">contentType</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.needSaveToTemp">
+            <example name="needSaveToTemp">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.contentId">
+            <example name="contentId">contentId</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.fileNumber">
+            <example type="int" name="fileNumber">333</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.storedName">
+            <example name="storedName">storedName</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.streamId">
+            <example name="streamId">streamId</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.attachedAsLink">
+            <example name="savedToMyDocuments">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAttachmentData.tempStoredUrl">
+            <example name="tempStoredUrl">tempStoredUrl</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.MailboxId">
+            <example type="int" name="mailboxId">33</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.TurnOn">
+            <example name="turnOn">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.OnlyContacts">
+            <example name="onlyContacts">false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.TurnOnToDate">
+            <example name="turnOnToDate">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.FromDate">
+            <example name="fromDate">2020-10-01T17:04:32.0000000</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.ToDate">
+            <example name="toDate">2020-10-01T17:04:32.0000000</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.Subject">
+            <example name="subject">subject</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailAutoreplyData.Html">
+            <example name="html">html</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.MailBoxId">
+            <example name="id">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.EMailView">
+            <example name="email">email.only.com</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Name">
+            <example name="name">name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Account">
+            <example name="account">account</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Password">
+            <example name="password">password</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Server">
+            <example name="server">server</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.SmtpServer">
+            <example name="smtp_server">smtp_server</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.SmtpPortStr">
+            <example name="smtp_port">smtp_port</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.SmtpAccount">
+            <example name="smtp_account">smtp_account</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.SmtpPassword">
+            <example name="smtp_password">smtp_password</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.SmtpAuth">
+            <example name="smtp_auth">smtp_auth</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.PortStr">
+            <example name="port">port</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Encryption">
+            <example type="int" name="incoming_encryption_type">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.SmtpEncryption">
+            <example type="int" name="outcoming_encryption_type">2</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Authentication">
+            <example type="int" name="auth_type_in">2</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.SmtpAuthentication">
+            <example type="int" name="auth_type_smtp">2</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.ServerLoginDelay">
+            <summary>
+            This value is the initialized while testing a created mail account. 
+            It is obtained from "LOGIN-DELAY" tag of CAPA command
+            Measured in seconds
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.MailLimitedTimeDelta">
+            <summary>
+            Limiting the period of time when limiting download emails
+            Measured in seconds
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.MailBeginTimestamp">
+            <summary>
+            Begin timestamp loading mails
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Data.Contracts.MailBoxData.DefaultServerLoginDelay">
+            <summary>
+            This default value is assumed based on experiments on the following mail servers: qip.ru, 
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Data.Contracts.MailBoxData.DefaultMailLimitedTimeDelta">
+            <summary>
+            Limiting the period of time when limiting download emails
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Data.Contracts.MailBoxData.DefaultMailBeginTimestamp">
+            <summary>
+            Default begin timestamp loading emails
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Imap">
+            <example name="imap">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.BeginDate">
+            <example name="begin_date">2020-10-01T17:04:32.0000000</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.IsOAuth">
+            <example name="is_oauth">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.Restrict">
+            <example name="restrict">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.EMailInFolder">
+            <example name="email_in_folder">email_in_folder</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailBoxData.IsTeamlab">
+            <example name="is_teamlab">is_teamlab</example>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.EntityBase`1.Serialize">
+            <summary>
+            Serializes current EntityBase object into an XML document
+            </summary>
+            <returns>string XML value</returns>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.EntityBase`1.SaveToFile(System.String,System.Exception@)">
+            <summary>
+            Serializes current EntityBase object into file
+            </summary>
+            <param name="fileName">full path of outupt xml file</param>
+            <param name="exception">output Exception value if failed</param>
+            <returns>true if can serialize and save into file; otherwise, false</returns>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.EntityBase`1.LoadFromFile(System.String,`0@,System.Exception@)">
+            <summary>
+            Deserializes xml markup from file into an EntityBase object
+            </summary>
+            <param name="fileName">string xml file to load and deserialize</param>
+            <param name="obj">Output EntityBase object</param>
+            <param name="exception">output Exception value if deserialize failed</param>
+            <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.ClientConfig.#ctor">
+            <summary>
+            clientConfig class constructor
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Data.Contracts.ClientConfigEmailProvider.#ctor">
+            <summary>
+            clientConfigEmailProvider class constructor
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailCommonSettings.EnableConversationsSetting">
+            <example name="EnableConversations">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailCommonSettings.AlwaysDisplayImagesSetting">
+            <example name="AlwaysDisplayImages">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailCommonSettings.CacheUnreadMessagesSetting">
+            <example name="CacheUnreadMessages">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailCommonSettings.EnableGoNextAfterMoveSetting">
+            <example name="EnableGoNextAfterMove">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailCommonSettings.ReplaceMessageBodySetting">
+            <example name="ReplaceMessageBody">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.ContactId">
+            <example name="id" type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.Name">
+            <example name="name">name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.Description">
+            <example name="description">description</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.Emails">
+            <type name="emails">ASC.Mail.Data.Contracts.ContactInfo, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.PhoneNumbers">
+            <type name="phones">ASC.Mail.Data.Contracts.ContactInfo, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.Type">
+            <example name="type" type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.SmallFotoUrl">
+            <example name="smallFotoUrl">smallFotoUrl</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailContactData.MediumFotoUrl">
+            <example name="mediumFotoUrl">mediumFotoUrl</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailCrmStatus.MessageId">
+            <example type="int" name="messageId">12354</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailCrmStatus.IsLinked">
+            <example name="isLinked">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailFolderData.Id">
+            <example type="int" name="id">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailFolderData.UnreadCount">
+            <example type="int" name="unread">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailFolderData.UnreadMessagesCount">
+            <example type="int" name="unread_messages">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailFolderData.TotalCount">
+            <example type="int" name="total_count">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailFolderData.TotalMessgesCount">
+            <example type="int" name="total_messages_count">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailFolderData.TimeModified">
+            <example name="time_modified">2020-10-01T17:04:32.0000000</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Attachments">
+            <type>ASC.Mail.Data.Contracts.MailAttachmentData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Introduction">
+            <example>Introduction</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.HtmlBody">
+            <example>HtmlBody</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.ContentIsBlocked">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Important">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Subject">
+            <example>Subject</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.HasAttachments">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Bcc">
+            <example>Bcc</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Cc">
+            <example>Cc</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.To">
+            <example>To</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Address">
+            <example>Address</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.From">
+            <example>From</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.ReplyTo">
+            <example>ReplyTo</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Id">
+            <example type="int">555</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.ChainId">
+            <example>ChainId</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.ChainDateString">
+            <example name="ChainDate">ChainDate</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.DateString">
+            <example name="Date">Date</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.DateDisplay">
+            <example name="DateDisplay">DateDisplay</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.TagIds">
+            <example type="int" name="TagIds">1234</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.LabelsInString">
+            <example name="LabelsInString">LabelsInString</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.IsNew">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.IsAnswered">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.IsForwarded">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.TextBodyOnly">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Size">
+            <example type="int">555555</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.EMLLink">
+            <example>EMLLink</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.StreamId">
+            <example>StreamId</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.RestoreFolderId">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.Folder">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.UserFolderId">
+            <example type="int">144</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.ChainLength">
+            <example type="int">144</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.WasNew">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.IsToday">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.IsYesterday">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.ReceivedDate">
+            <example>2020-12-18T08:12:09.1209967Z</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.IsBodyCorrupted">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.HasParseError">
+            <example>false</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.MimeMessageId">
+            <example>MimeMessageId</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.MimeReplyToId">
+            <example>MimeReplyToId</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailMessageData.CalendarUid">
+            <example>CalendarUid</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSignatureData.MailboxId">
+            <example name="mailboxId">132</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSignatureData.Html">
+            <example name="html">html</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailSignatureData.IsActive">
+            <example name="isActive">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailTagData.Id">
+            <example type="int" name="id">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailTagData.Name">
+            <example name="name">name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailTagData.Style">
+            <example name="style">style</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailTagData.Addresses">
+            <example name="addresses">addresses</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailTagData.LettersCount">
+            <example type="int" name="lettersCount">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.Id">
+            <example type="int" name="id">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.ParentId">
+            <example type="int" name="parent">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.Name">
+            <example name="name">name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.UnreadCount">
+            <example type="int" name="unread_count">123</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.TotalCount">
+            <example type="int" name="total_count">123</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.UnreadChainCount">
+            <example type="int" name="unread_chain_count">123</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.TotalChainCount">
+            <example type="int" name="total_chain_count">123</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.MailUserFolderData.FolderCount">
+            <example type="int" name="folder_count">123</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerData.Id">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerData.Dns">
+            <type>ASC.Mail.Data.Contracts.ServerDomainDnsData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerData.ServerLimits">
+            <type>ASC.Mail.Data.Contracts.ServerLimitData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerData.InServer">
+            <type>ASC.Mail.Core.Entities.MailboxServer, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerData.OutServer">
+            <type>ASC.Mail.Core.Entities.MailboxServer, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainAddressData.Id">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainAddressData.DomainId">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainAddressData.Email">
+            <example>Email@only.com</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainData.Id">
+            <example type="int">id</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainData.IsSharedDomain">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainData.Name">
+            <example>Name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainData.Dns">
+            <type>ASC.Mail.Data.Contracts.ServerDomainDnsData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDkimRecordData.Selector">
+            <example>Selector</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDkimRecordData.PublicKey">
+            <example>PublicKey</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDkimRecordData.IsVerified">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsData.Id">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsData.MxRecord">
+            <type>ASC.Mail.Data.Contracts.ServerDomainMxRecordData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsData.SpfRecord">
+            <type>ASC.Mail.Data.Contracts.ServerDomainDnsRecordData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsData.DkimRecord">
+            <type>ASC.Mail.Data.Contracts.ServerDomainDkimRecordData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsData.DomainCheckRecord">
+            <type>ASC.Mail.Data.Contracts.ServerDomainDnsRecordData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsRecordData.Name">
+            <example>name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsRecordData.Value">
+            <example>value</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainDnsRecordData.IsVerified">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainGroupData.Id">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainGroupData.Address">
+            <type>ASC.Mail.Data.Contracts.ServerDomainAddressData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainGroupData.Addresses">
+            <type>ASC.Mail.Data.Contracts.ServerDomainAddressData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainMxRecordData.Host">
+            <example>Host</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainMxRecordData.Priority">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerDomainMxRecordData.IsVerified">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerFullData.Server">
+            <type>ASC.Mail.Data.Contracts.ServerData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerFullData.Domains">
+            <type>ASC.Mail.Data.Contracts.ServerDomainData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerFullData.Mailboxes">
+            <type>ASC.Mail.Data.Contracts.ServerMailboxData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerFullData.Mailgroups">
+            <type>ASC.Mail.Data.Contracts.ServerDomainGroupData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerLimitData.MailboxMaxCountPerUser">
+            <example type="int">5</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerMailboxData.Id">
+            <example type="int">1234</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerMailboxData.UserId">
+            <example>UserId</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerMailboxData.UserDisplayName">
+            <example>UserDisplayName</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerMailboxData.Address">
+            <type>ASC.Mail.Data.Contracts.ServerDomainAddressData, ASC.Mail</type>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerMailboxData.Name">
+            <example>Name</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerMailboxData.Aliases">
+            <type>ASC.Mail.Data.Contracts.ServerDomainAddressData, ASC.Mail</type>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerNotificationAddressData.Email">
+            <example>Email</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerNotificationAddressData.SmtpServer">
+            <example name="smtp_server">smtp_server</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerNotificationAddressData.SmtpPort">
+            <example type="int" name="smtp_port">33</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerNotificationAddressData.SmtpAccount">
+            <example name="smtp_account">smtp_account</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerNotificationAddressData.SmtpAuth">
+            <example name="smtp_auth">true</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerNotificationAddressData.SmptEncryptionType">
+            <example name="smtp_encryption_type">smtp_encryption_type</example>
+        </member>
+        <member name="P:ASC.Mail.Data.Contracts.ServerNotificationAddressData.SmtpAuthenticationType">
+            <example name="smtp_auth_type">smtp_auth_type</example>
+        </member>
+        <member name="P:ASC.Mail.Defines.TcpTimeout">
+            <summary>
+            Test mailbox connection tcp timeout (10 sec is default)
+            </summary>
+        </member>
+        <member name="T:ASC.Mail.Enums.SaslMechanism">
+            <summary>
+            Mechanisms available for authentication.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.SaslMechanism.None">
+            <summary>
+            Authentication doesn't needed
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.SaslMechanism.Login">
+            <summary>
+            The LOGIN mechanism (BASE64 encoded exchanges).
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.SaslMechanism.CramMd5">
+            <summary>
+            The CRAM-MD5 mechanism. [RFC2195]
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.SaslMechanism.OAuth2">
+            <summary>
+            The OAuth 2.0 mechanism. [draft-ietf-oauth-v2-31]
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.SaslMechanism.Ntlm">
+            <summary>
+            The NTLM mechanism. [RFC4559]
+            </summary>
+        </member>
+        <member name="T:ASC.Mail.Enums.WellKnownPorts">
+            <summary>
+            This class provides well known TCP/UDP service ports.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.DNS">
+            <summary>
+            DNS protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.FTP_CONTROL">
+            <summary>
+            FTP - control (command) port.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.FTP_CONTROL_SSL">
+            <summary>
+            FTP over SSL protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.FTP_DATA">
+            <summary>
+            FTP - data port.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.HTTP">
+            <summary>
+            HTTP protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.HTTPS">
+            <summary>
+            HTTPS protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.IMAP4">
+            <summary>
+            IMAP4 protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.IMAP4_SSL">
+            <summary>
+            IMAP4 over SSL protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.NNTP">
+            <summary>
+            NNTP (Network News Transfer Protocol)  protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.NTP">
+            <summary>
+            NTP (Network Time Protocol) protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.POP3">
+            <summary>
+            POP3 protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.POP3_SSL">
+            <summary>
+            POP3 over SSL protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.SMTP">
+            <summary>
+            SMTP protocol.
+            </summary>
+        </member>
+        <member name="F:ASC.Mail.Enums.WellKnownPorts.SMTP_SSL">
+            <summary>
+            SMTP over SSL protocol.
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Extensions.DateTimeExtensions.CutToSecond(System.DateTime)">
+            <summary>
+            Cuts off precision beyond a second on a DateTime value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>A DateTime with a 0 millisecond component.</returns>
+        </member>
+        <member name="T:ASC.Mail.Iterators.IMailboxIterator">
+            <summary>
+            The 'Iterator' interface
+            </summary>
+        </member>
+        <member name="T:ASC.Mail.Iterators.MailboxIterator">
+            <summary>
+            The 'ConcreteIterator' class
+            </summary>
+        </member>
+        <member name="T:ASC.Mail.Iterators.IMailboxMessagesIterator">
+            <summary>
+            The 'Iterator' interface
+            </summary>
+        </member>
+        <member name="T:ASC.Mail.Iterators.MailboxMessagesIterator">
+            <summary>
+            The 'ConcreteIterator' class
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Utils.ApiHelper.#ctor(System.String,ASC.Common.Logging.ILog)">
+            <summary>
+            Constructor of class ApiHelper
+            </summary>
+            <param name="scheme">Uri.UriSchemeHttps or Uri.UriSchemeHttp</param>
+            <param name="log"></param>
+            <exception cref="T:ASC.Mail.Exceptions.ApiHelperException">Exception happens when scheme is invalid.</exception>>
+        </member>
+        <member name="M:ASC.Mail.Utils.EncodingTools.#cctor">
+            <summary>
+            Static constructor that fills the default preferred codepages
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Utils.EncodingTools.GetEncodingByCodepageName(System.String)">
+            <summary>
+            Create an Encoding instance by codepage name using additional jdk aliases
+            Doesn't throw if codepage name is not supported
+            </summary>
+            <param name="codepageName">codepage name</param>
+            <returns>Created Encoding instance or null if codepage name is not supported</returns>
+        </member>
+        <member name="M:ASC.Mail.Utils.EncodingTools.GetEncodingByCodepageName_Throws(System.String)">
+            <summary>
+            Create an Encoding instance by codepage name using additional jdk aliases
+            Throws if codepage name is not supported
+            </summary>
+            <param name="codepageName">codepage name</param>
+            <returns>Created Encoding instance</returns>
+            <exception cref="T:System.ArgumentException">Throws if codepage name is not supported</exception>
+        </member>
+        <member name="M:ASC.Mail.Utils.MailUtil.Quote(System.String,System.Boolean)">
+            <summary>
+            Quotes the specified text.
+            </summary>
+            <remarks>
+            Quotes the specified text, enclosing it in double-quotes and escaping
+            any backslashes and double-quotes within.
+            </remarks>
+            <returns>The quoted text.</returns>
+            <param name="text">The text to quote.</param>
+            <param name="skipFirstAndLastQuotes">skip addition of first and last quotes</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="text"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:ASC.Mail.Utils.MailUtil.Unquote(System.String)">
+            <summary>
+            Unquotes the specified text.
+            </summary>
+            <remarks>
+            Unquotes the specified text, removing any escaped backslashes within.
+            </remarks>
+            <returns>The unquoted text.</returns>
+            <param name="text">The text to unquote.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="text"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:ASC.Mail.Utils.MailUtil.TryExtractTextFromHtml(System.String,System.String@,System.Int32)">
+            <summary>
+            Extract Text from Html string
+            </summary>
+            <param name="html">Html string</param>
+            <param name="text">[out] Text without html tags</param>
+            <param name="maxLength" optional="true">max length of text</param>
+            <returns>true if success</returns>
+        </member>
+        <member name="M:ASC.Mail.Utils.MailUtil.ExtractTextFromHtml(System.String,System.Int32)">
+            <summary>
+            Extract Text from Html string
+            </summary>
+            <param name="html">Html string</param>
+            <param name="maxLength" optional="true">max length of text</param>
+            <returns>Text without html tags</returns>
+            <exception cref="T:HtmlAgilityPack.RecursionDepthException">Exception happens when in html contains too many recursion of unclosed tags.</exception>
+        </member>
+        <member name="M:ASC.Mail.Utils.MailUtil.GetEncoding(System.String)">
+            <summary>
+            Return encoding based on encoding name
+            Tries to resolve some wrong-formatted encoding names
+            </summary>
+            <param name="encodingName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Mail.Utils.MailUtil.CreateMessageId(ASC.Common.Logging.ILog)">
+            <summary>
+            Creates Rfc 2822 3.6.4 message-id. Syntax: id-left '@' id-right
+            </summary>
+        </member>
+        <member name="M:ASC.Mail.Utils.Parser.ParseAddress(System.String)">
+            <summary>
+            Parses the address.
+            </summary>
+            <param name="input">The input.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.Mail.Utils.Parser.IsEmailLocalPartValid(System.String)">
+            <summary>
+            Check email's local part validity.
+            </summary>
+            <param name="input">Email's local part.</param>
+            <returns>true - valid, false - invalid</returns>
+        </member>
+        <member name="M:ASC.Mail.Utils.Parser.IsDomainValid(System.String)">
+            <summary>
+            Check domain validity.
+            </summary>
+            <param name="input">Domain string.</param>
+            <returns>true - valid, false - invalid</returns>
+        </member>
+        <member name="M:ASC.Mail.Utils.Parser.GetValidPassword(System.String)">
+            <summary>
+            Get valid password or throw exception.
+            </summary>
+            <param name="password">String contains valid password according to portal settings</param>
+            <returns>trimmed password or exception</returns>
+        </member>
+        <member name="T:ASC.Mail.Resources.MailCoreResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Resources.MailCoreResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Resources.MailCoreResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Resources.MailCoreResource.FileNotFoundOrDamaged">
+            <summary>
+              Looks up a localized string similar to File &apos;{0}&apos; not found.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Resources.MailCoreResource.FilesNotFound">
+            <summary>
+              Looks up a localized string similar to {0} files not found.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Resources.MailCoreResource.IndexTitle">
+            <summary>
+              Looks up a localized string similar to Search in mail messages content.
+            </summary>
+        </member>
+        <member name="P:ASC.Mail.Resources.MailCoreResource.NoAttachmentsInMessage">
+            <summary>
+              Looks up a localized string similar to No attachments in message.
+            </summary>
+        </member>
+    </members>
+</doc>

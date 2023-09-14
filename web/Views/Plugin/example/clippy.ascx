@@ -32,13 +32,13 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 
 <p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/clippy" target="_blank">https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/clippy</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>code.js</em></li>
     <li>Icons</li>
     <li><em>index_about.html</em> for the plugin <b>About</b> window</li>
     <li>Third-party services:
         <ul>
-            <li><b>jQuery</b> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development (<a href="https://jquery.com" target="_blank">https://jquery.com</a>). License: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
-            <li><b>clippy.js</b> is a full Javascript implementation of Microsoft Agent (AKA Clippy and friends), ready to be embedded in any website (<a href="https://www.smore.com/clippy-js" target="_blank">https://www.smore.com/clippy-js</a>). License: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/clippy.license" target="_blank">MIT License</a>.</li>
+            <li><a href="https://jquery.com" target="_blank">jQuery</a> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
+            <li><a href="https://www.smore.com/clippy-js" target="_blank">clippy.js</a> is a full Javascript implementation of Microsoft Agent (AKA Clippy and friends), ready to be embedded in any website. License: <a href="https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/clippy.license" target="_blank">MIT License</a>.</li>
         </ul>
     </li>
 </ol>
@@ -55,7 +55,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
             "description": "Clippy",
             "url": "index.html",
 
-            "icons": [ "resources/img/icon.png", "resources/img/icon@2x.png", "resources/img/icon.png", "resources/img/icon@2x.png" ],
+            "icons": [ "resources/img/icon.png", "resources/img/icon@2x.png"],
             "isViewer": true,
             "EditorsSupport": [ "word", "slide", "cell" ],
 
@@ -72,7 +72,7 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
             "description": "About",
             "url": "index_about.html",
 
-            "icons": [ "resources/img/icon.png", "resources/img/icon@2x.png", "resources/img/icon.png", "resources/img/icon@2x.png" ],
+            "icons": [ "resources/img/icon.png", "resources/img/icon@2x.png"],
             "isViewer": false,
             "EditorsSupport": [ "word", "slide", "cell" ],
 
@@ -100,8 +100,8 @@ or <a href="<%= Url.Action("installation/cloud") %>">cloud</a> installation inst
 <div class="header-gray">Methods and events</div>
 
 <ul>
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
 </ul>
 

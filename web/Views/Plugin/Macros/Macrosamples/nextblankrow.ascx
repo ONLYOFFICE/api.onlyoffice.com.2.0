@@ -7,7 +7,7 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Find the next available blank row in a worksheet. This macro allows you to get the blank at the very end of your data (not between it).</p>
+<p class="dscr">Finds the next available blank row in a worksheet. This macro allows you to get the blank at the very end of your data (not between it).</p>
 
 <pre>(function () 
 {
@@ -48,4 +48,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Next blank row" src="<%= Url.Content("~/content/img/plugins/next_blank_row.png") %>" />
+<img class="screenshot max-width-832" alt="Next blank row" src="<%= Url.Content("~/content/img/plugins/next_blank_row.png") %>" />

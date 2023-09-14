@@ -23,27 +23,38 @@
 
 <ol>
     <li>Find the plugin in the <b>Plugins</b> tab.</li>
-    <li>Paste the code into the plugin window</li>
-    <li>The language is detected automatically, but you can change it. You can also customize the code display style, tabs and background color.</li>
+    <li>Paste the code into the plugin window.</li>
+    <li>The language is detected automatically, but you can change it. You can also customize the code display style, tabs, and background color.</li>
     <li>Click the <b>Ok</b> button to paste the code into the document.</li>
 </ol>
 
 
+<div class="header-gray">Known issues</div>
+
+<ul>
+    <li><b>Supported languages</b>: Apache, Access Log, Bash, Shell, MATLAB, Erlang, JavaScript, Ruby, Prolog, Swift, SQL, Java, HTTP, Fortran, Perl, XML, CPP, JSON, C Sharp, NGINX, BASIC, Markdown, CSS, Python, Objective-C, PHP, Delphi, Go, Kotlin, Rust, Shell, TypeScript.</li>
+    <li><b>Supported styles</b>: Googlecode, GitHub, GitHub Gist, Android Studio, Visual Studio, Visual Studio 2015, Idea, Qtcreator Dark, Qtcreator Light, XCode, Fortran, Foundation, XML 1, XML 2.</li>
+</ul>
+
+
 <div class="header-gray">Plugin structure</div>
 
-<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/plugin-highlightcode" target="_blank">https://github.com/ONLYOFFICE/plugin-highlightcode</a>.</p>
+<p>Repository on GitHub: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/highlightcode" target="_blank">https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/highlightcode</a>.</p>
 <ol>
-    <li><em>config.json</em>, <em>index.html</em> and <em>code.js</em></li>
+    <li><em>config.json</em>, <em>index.html</em>, and <em>code.js</em></li>
     <li>Icons</li>
-    <li>The <em>translations</em> folder contains translations into Russian, German, Spanish and French.</li>
-    <li>The <em>styles</em> folder contains all the code styles that the plugin supports.</li>
+    <li>The <em>translations</em> folder contains translations into Russian, German, Spanish, Czech, and French.</li>
     <li><em>plugin_style.css</em> and <em>scrollable_div.js</em> are used to adjust the plugin style.</li>
     <li>Third-party service:
     <ul>
-        <li><b>Highlight.js library</b> - a syntax highlighter written in JavaScript (<a href="https://highlightjs.org/" target="_blank">https://highlightjs.org/</a>). License: <a href="https://github.com/ONLYOFFICE/plugin-highlightcode/blob/master/licenses/Highlight.license" target="_blank">BSD License</a>.</li>
-        <li><b>Spectrum</b> - a JavaScriptcolorpickerplugin that uses the jQuery framework. License: <a href="https://github.com/ONLYOFFICE/plugin-highlightcode/blob/master/licenses/spectrum.license" target="_blank">MIT License</a>.</li>
-        <li><b>jQuery</b> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development (<a href="https://jquery.com" target="_blank">https://jquery.com</a>). License: <a href="https://github.com/ONLYOFFICE/plugin-highlightcode/blob/master/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
-        <li><b>Select2</b> gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options (<a href="https://select2.org/" target="_blank">https://select2.org/</a>). License:  <a href="https://github.com/ONLYOFFICE/plugin-highlightcode/blob/master/licenses/Select2.license" target="_blank">MIT</a>.</li>
+        <li><a href="https://highlightjs.org/" target="_blank">Highlight.js library</a> - a syntax highlighter written in JavaScript. License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/Highlight.license" target="_blank">BSD 3-Clause</a>.</li>
+        <li><a href="http://bgrins.github.io/spectrum/" target="_blank">Spectrum.js</a> - a JavaScript colorpicker plugin that uses the jQuery framework. License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/spectrum.license" target="_blank">MIT License</a>.</li>
+        <li><a href="https://jquery.com" target="_blank">jQuery</a> - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/jQuery.license" target="_blank">MIT License</a>.</li>
+        <li><a href="https://select2.org/" target="_blank">Select2</a> gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License:  <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/Select2.license" target="_blank">MIT</a>.</li>
+        <li><a href="https://github.com/beautify-web/js-beautify" target="_blank">js-beautify.js</a> - the code formatting library (CSS, HTML, JavaScript). License:  <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/js-beautify.license" target="_blank">MIT</a>.</li>
+        <li><a href="https://github.com/prettier/prettier" target="_blank">prettier.js</a> - an opinionated code formatter. License:  <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/prettier.license" target="_blank">MIT</a>.</li>
+        <li><a href="https://github.com/prettier/plugin-php" target="_blank">prettier-plugin-php.js</a> - a plugin that adds the PHP language support to Prettier. License:  <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/prettier%40plugin-php.license" target="_blank">MIT</a>.</li>
+        <li><a href="https://github.com/chrisbottin/xml-formatter" target="_blank">xml-formatter.js</a> converts XML into a human readable format (pretty print) while respecting the <em>xml:space</em> attribute. License:  <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/xml-formatter.license" target="_blank">MIT</a>.</li>
     </ul>
 </ol>
 
@@ -51,32 +62,47 @@
 <div class="header-gray">Config</div>
 <pre>
 {
+    "guid": "asc.{BE5CBF95-C0AD-4842-B157-AC40FEDD9841}",
     "name": "Highlight code",
     "nameLocale": {
-        "ru": "&#1055;&#1086;&#1076;&#1089;&#1074;&#1077;&#1090;&#1082;&#1072; &#1082;&#1086;&#1076;&#1072;",
-        "fr": "Code en surbrillance",
-        "es": "Resaltar el co&#769;digo",
-        "de": "Code hervorheben"
+        "de": "Code hervorheben",
+        "es": "Resaltar el c&#243;digo",
+        "fr": "Code en surbrillance"
     },
-    "guid": "asc.{BE5CBF95-C0AD-4842-B157-AC40FEDD9841}",
-    "version": "1.0",
-
     "variations": [
         {
-            "description": "Highlight code",
+            "EditorsSupport": [
+                "word",
+                "cell",
+                "slide"
+            ],
+            "buttons": [
+                {
+                    "primary": true,
+                    "text": "Ok"
+                },
+                {
+                    "primary": false,
+                    "text": "Cancel",
+                    "textLocale": {
+                        "de": "Abbrechen",
+                        "es": "Cancelar",
+                        "fr": "Annuler"
+                    }
+                }
+            ],
+            "description": "Highlight syntax of the code selecting the necessary language, style, and background color.",
             "descriptionLocale": {
-                "ru": "&#1055;&#1086;&#1076;&#1089;&#1074;&#1077;&#1090;&#1082;&#1072; &#1082;&#1086;&#1076;&#1072;",
-                "fr": "Code en surbrillance",
-                "es": "Resaltar el co&#769;digo",
-                "de": "Code hervorheben"
+                "de": "Heben Sie die Codesyntax hervor, indem Sie die gew&#252;nschte Sprache, den Stil und die Hintergrundfarbe ausw&#228;hlen.",
+                "es": "Resalte la sintaxis del c&#243;digo seleccionando el idioma, el estilo y el color de fondo necesarios.",
+                "fr": "Mettez en &#233;vidence la syntaxe du code en s&#233;lectionnant la langue, le style et la couleur de l'arri&#232;re-plan."
             },
-            "url": "index.html",
-
-            "icons": [ "resources/light/icon.png", "resources/light/icon@2x.png" ],
+            "icons": [
+                "resources/light/icon.png",
+                "resources/light/icon@2x.png"
+            ],
             "icons2": [
                 {
-                    "style" : "light",
-                    
                     "100%": {
                         "normal": "resources/light/icon.png"
                     },
@@ -91,11 +117,10 @@
                     },
                     "200%": {
                         "normal": "resources/light/icon@2x.png"
-                    }
+                    },
+                    "style": "light"
                 },
                 {
-                    "style" : "dark",
-                    
                     "100%": {
                         "normal": "resources/dark/icon.png"
                     },
@@ -110,39 +135,32 @@
                     },
                     "200%": {
                         "normal": "resources/dark/icon@2x.png"
-                    }
+                    },
+                    "style": "dark"
                 }
             ],
-            "isViewer": false,
-            "EditorsSupport": [ "word", "cell", "slide" ],
-
-            "isVisual": true,
-            "isModal": true,
-            "isInsideMode": false,
-
-            "initDataType": "html",
             "initData": "",
-
-            "buttons": [
-                {
-                    "text": "Ok",
-                    "primary": true
+            "initDataType": "html",
+            "initOnSelectionChanged": true,
+            "isInsideMode": false,
+            "isModal": true,
+            "isViewer": false,
+            "isVisual": true,
+            "url": "index.html",
+            "store": {
+                "background": {
+                    "light" : "#282C33",
+                    "dark" : "#282C33"
                 },
-                {
-                    "text": "Cancel",
-                    "primary": false,
-                    "textLocale": {
-                        "ru": "&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;",
-                        "fr": "Annuler",
-                        "es": "Cancelar",
-                        "de": "Abbrechen"
-                    }
-                }
-            ],
-
-            "initOnSelectionChanged": true
+                "screenshots" : ["resources/store/screenshots/screen_1.png"],
+                "icons"       : {
+                    "light" : "resources/store/icons",
+                    "dark"  : "resources/store/icons"
+                } 
+            }
         }
-    ]
+    ],
+    "version": "1.0.0"
 }
 </pre>
 
@@ -150,12 +168,12 @@
 <div class="header-gray">Methods and events</div>
 
 <ul class="columns-2">
-    <li><a href="<%= Url.Action("events") %>#button">button</a></li>
-    <li><a href="<%= Url.Action("events") %>#init">init</a></li>
-    <li><a href="<%= Url.Action("events") %>#onExternalMouseUp">onExternalMouseUp</a></li>
-    <li><a href="<%= Url.Action("events") %>#onTranslate">onTranslate</a></li>
+    <li><a href="<%= Url.Action("events/button") %>">button</a></li>
+    <li><a href="<%= Url.Action("events/init") %>">init</a></li>
+    <li><a href="<%= Url.Action("events/onExternalMouseUp") %>">onExternalMouseUp</a></li>
+    <li><a href="<%= Url.Action("events/onTranslate") %>">onTranslate</a></li>
     <li><a href="<%= Url.Action("executecommand") %>">executeCommand</a></li>
-    <li><a href="<%= Url.Action("executemethod/pastehtml") %>">executeMethod ("PasteHtml")</a></li>
+    <li><a href="<%= Url.Action("executemethod/common/pastehtml") %>">executeMethod ("PasteHtml")</a></li>
     <li><a href="<%= Url.Action("loadmodule") %>">loadModule</a></li>
     <li><a href="<%= Url.Action("resizewindow") %>">resizeWindow</a></li>
 </ul>
@@ -163,4 +181,4 @@
 
 <div class="header-gray">Support</div>
 
-<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/plugin-highlightcode/issues" target="_blank">GitHub</a>.</p>
+<p>If you want to request a feature or report a bug regarding this plugin, use the issues section on <a href="https://github.com/ONLYOFFICE/onlyoffice.github.io/issues" target="_blank">GitHub</a>.</p>

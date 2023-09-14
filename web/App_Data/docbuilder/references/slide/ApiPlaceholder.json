@@ -28,7 +28,7 @@
       },
       "returns": [
         [
-          "bool"
+          "boolean"
         ]
       ],
       "see": null,
@@ -43,6 +43,7 @@
       ]
     }
   },
+  "events": {},
   "comment": "/**\n     * Class representing a placeholder.\n     * @constructor\n     */",
   "description": "<p>Class representing a placeholder.</p>",
   "scope": "global",

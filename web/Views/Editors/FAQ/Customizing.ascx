@@ -47,7 +47,7 @@
             "logo": {
                 "image": "https://example.com/logo.png",
                 "imageDark": "https://example.com/dark-logo.png",
-                "url": "https://www.onlyoffice.com"
+                "url": "https://example.com"
             },
             ...
         },

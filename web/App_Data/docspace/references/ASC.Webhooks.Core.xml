@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Webhooks.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Webhooks.Core.Resources.WebHookResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Resources.WebHookResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Resources.WebHookResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Resources.WebHookResource.POST_api_2_0_files_file__fileId__startedit">
+            <summary>
+              Looks up a localized string similar to Start Edit.
+            </summary>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Resources.WebHookResource.POST_api_2_0_files_file__fileId__startedit_Description">
+            <summary>
+              Looks up a localized string similar to Start Edit Description.
+            </summary>
+        </member>
+        <member name="T:ASC.Webhooks.Core.Webhook">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Webhook.Id">
+            <summary>ID</summary>
+            <type>System.Int32, System</type>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Webhook.Route">
+            <summary>Route</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Webhook.Method">
+            <summary>Method</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Webhook.Disable">
+            <summary>Specifies if a webhook is disabled or not</summary>
+            <type>System.Boolean, System</type>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Webhook.Name">
+            <summary>Name</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Webhook.Description">
+            <summary>Description</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="P:ASC.Webhooks.Core.Webhook.Endpoint">
+            <summary>Endpoint</summary>
+            <type>System.String, System</type>
+        </member>
+        <member name="T:ASC.Web.Webhooks.WebhookRequestReflection">
+            <summary>Holder for reflection information generated from proto/webhook_request.proto</summary>
+        </member>
+        <member name="P:ASC.Web.Webhooks.WebhookRequestReflection.Descriptor">
+            <summary>File descriptor for proto/webhook_request.proto</summary>
+        </member>
+        <member name="F:ASC.Web.Webhooks.WebhookRequest.IdFieldNumber">
+            <summary>Field number for the "id" field.</summary>
+        </member>
+    </members>
+</doc>

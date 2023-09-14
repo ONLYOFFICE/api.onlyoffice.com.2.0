@@ -7,11 +7,11 @@
 
 <div class="header-gray">Description</div>
 
-<p class="dscr">Add new chart to the selected cell range.</p>
+<p class="dscr">Adds a new chart to the selected cell range.</p>
 
 <pre>(function()
 {
-    Api.GetActiveSheet().AddChart("'Sheet1'!$C$5:$D$7", true, "bar", 2, 105 * 36000, 105 * 36000, 5, 2 * 36000, 1, 3 * 36000);
+    Api.GetActiveSheet().AddChart("'Sheet1'!$C$5:$D$7", true, "bar", 2, 105 * 36000, 105 * 36000, 0, 0, 9, 0);
 })();</pre>
 
 <p>Methods used: 
@@ -29,4 +29,4 @@ End Sub</pre>
 
 <div class="header-gray">Result</div>
 </br >
-<img alt="Chart" src="<%= Url.Content("~/content/img/plugins/add_chart.png") %>" />
+<img class="screenshot max-width-832" alt="Chart" src="<%= Url.Content("~/content/img/plugins/add_chart.png") %>" />

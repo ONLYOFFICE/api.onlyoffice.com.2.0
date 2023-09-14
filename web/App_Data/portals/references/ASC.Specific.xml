@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.Specific</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint">
+            <summary>
+            Authorization API.
+            </summary>
+            <name>authentication</name>
+        </member>
+        <member name="P:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint.Name">
+            <summary>
+            Entry point name.
+            </summary>
+        </member>
+        <member name="M:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint.AuthenticateMe(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Authenticates the current user by SMS, authenticator app, or without two-factor authentication.
+            </summary>
+            <short>Authenticate a user</short>
+            <param type="System.String, System" name="userName">User name or email</param>
+            <param type="System.String, System" name="password">Password</param>
+            <param type="System.String, System" name="provider">Social media provider type</param>
+            <param type="System.String, System" name="accessToken">Provider token</param>
+            <param type="System.String, System" name="codeOAuth">Code for getting a token</param>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/authentication</path>
+            <returns type="ASC.Specific.AuthorizationApi.AuthenticationTokenData, ASC.Specific">Authentication token to use in the 'Authorization' header when calling API methods</returns>
+            <exception cref="T:System.Security.Authentication.AuthenticationException">Thrown when not authenticated</exception>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint.SaveMobilePhone(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Sets a mobile phone for the user with the name specified in the request.
+            </summary>
+            <short>Set a mobile phone</short>
+            <param type="System.String, System" name="userName">User name or email</param>
+            <param type="System.String, System" name="password">Password</param>
+            <param type="System.String, System" name="provider">Social media provider type</param>
+            <param type="System.String, System" name="accessToken">Provider token</param>
+            <param type="System.String, System" name="mobilePhone">New mobile phone</param>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/authentication/setphone</path>
+            <returns type="ASC.Specific.AuthorizationApi.AuthenticationTokenData, ASC.Specific">Authentication data: authentication by SMS or not, phone number, SMS expiration time</returns>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint.SendSmsCode(System.String,System.String,System.String,System.String)">
+            <summary>
+            Sends SMS with an authentication code.
+            </summary>
+            <short>Send SMS code</short>
+            <param type="System.String, System" name="userName">User name or email</param>
+            <param type="System.String, System" name="password">Password</param>
+            <param type="System.String, System" name="provider">Social media provider type</param>
+            <param type="System.String, System" name="accessToken">Provider token</param>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/authentication/sendsms</path>
+            <returns type="ASC.Specific.AuthorizationApi.AuthenticationTokenData, ASC.Specific">Authentication data: authentication by SMS or not, phone number, SMS expiration time</returns>
+            <requiresAuthorization>false</requiresAuthorization>
+        </member>
+        <member name="M:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint.AuthenticateMe(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Authenticates the current user by SMS or two-factor authentication code.
+            </summary>
+            <short>
+            Authenticate a user by code
+            </short>
+            <param type="System.String, System" name="userName">User name or email</param>
+            <param type="System.String, System" name="password">Password</param>
+            <param type="System.String, System" name="provider">Social media provider type</param>
+            <param type="System.String, System" name="accessToken">Provider token</param>
+            <param type="System.String, System" name="code" method="url">Two-factor authentication code</param>
+            <param type="System.String, System" name="codeOAuth">Code for getting a token</param>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/authentication/{code}</path>
+            <requiresAuthorization>false</requiresAuthorization>
+            <returns type="ASC.Specific.AuthorizationApi.AuthenticationTokenData, ASC.Specific">Two-factor authentication token to use in the 'Authorization' header when calling API methods</returns>
+        </member>
+        <member name="M:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint.RegisterUserOnPersonal(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Requests an email invitation from personal.onlyoffice.com.
+            </summary>
+            <short>Register a user on the Personal portal</short>
+            <param type="System.String, System" name="email">Email address</param>
+            <param type="System.String, System" name="lang">Culture</param>
+            <param type="System.Boolean, System" name="spam">User consent to subscribe to the ONLYOFFICE newsletter</param>
+            <param type="System.String, System" name="recaptchaResponse">ReCAPTCHA token</param>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/authentication/register</path>
+            <requiresAuthorization>false</requiresAuthorization>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Specific.AuthorizationApi.AuthenticationEntryPoint.AuthenticateMe(System.String,System.String,System.String)">
+            <summary>
+            Checks the username and password when logging in.
+            </summary>
+            <short>Log in</short>
+            <param type="System.String, System" name="userName">Username or email</param>
+            <param type="System.String, System" name="password">Password</param>
+            <param type="System.String, System" name="key">Email key</param>
+            <exception cref="T:System.Security.Authentication.AuthenticationException">Thrown when not authenticated.</exception>
+            <httpMethod>POST</httpMethod>
+            <path>api/2.0/authentication/login</path>
+            <requiresAuthorization>false</requiresAuthorization>
+            <visible>false</visible>
+        </member>
+        <member name="P:ASC.Specific.AuthorizationApi.AuthenticationTokenData.Token">
+            <example>abcde12345</example>
+            <order>1</order>
+        </member>
+        <member name="P:ASC.Specific.AuthorizationApi.AuthenticationTokenData.Expires">
+            <example>2020-11-24T05:36:20.4206897Z</example>
+            <order>2</order>
+        </member>
+        <member name="P:ASC.Specific.AuthorizationApi.AuthenticationTokenData.Sms">
+            <example>true</example>
+            <order>3</order>
+        </member>
+        <member name="P:ASC.Specific.AuthorizationApi.AuthenticationTokenData.PhoneNoise">
+            <example>8(999)999-99-99</example>
+            <order>4</order>
+        </member>
+        <member name="P:ASC.Specific.AuthorizationApi.AuthenticationTokenData.Tfa">
+            <example>true</example>
+            <order>5</order>
+        </member>
+        <member name="P:ASC.Specific.AuthorizationApi.AuthenticationTokenData.TfaKey">
+            <example>123dwa</example>
+            <order>6</order>
+        </member>
+        <member name="P:ASC.Specific.CapabilitiesApi.CapabilitiesData.LdapEnabled">
+            <example>false</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.Specific.CapabilitiesApi.CapabilitiesData.OauthEnabled">
+            <example>google,facebook,twitter,linkedin,mailru,vk,yandex,gosuslugi</example>
+            <collection split=",">list</collection>
+        </member>
+        <member name="P:ASC.Specific.CapabilitiesApi.CapabilitiesData.SsoLabel">
+            <example></example>
+        </member>
+        <member name="P:ASC.Specific.CapabilitiesApi.CapabilitiesData.SsoUrl">
+            <summary>
+            if empty sso is disabled
+            </summary>
+            <example></example>
+        </member>
+        <member name="T:ASC.Specific.CapabilitiesApi.CapabilitiesEntryPoint">
+            <summary>
+            Portal capabilities API.
+            </summary>
+            <name>capabilities</name>
+        </member>
+        <member name="P:ASC.Specific.CapabilitiesApi.CapabilitiesEntryPoint.Name">
+            <summary>
+            Entry point name.
+            </summary>
+        </member>
+        <member name="M:ASC.Specific.CapabilitiesApi.CapabilitiesEntryPoint.#ctor(ASC.Api.Impl.ApiContext)">
+            <summary>
+             Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ASC.Specific.CapabilitiesApi.CapabilitiesEntryPoint.GetPortalCapabilities">
+            <summary>
+            Returns the information about portal capabilities.
+            </summary>
+            <short>
+            Get portal capabilities
+            </short>
+            <returns type="ASC.Specific.CapabilitiesApi.CapabilitiesData, ASC.Specific">Portal capabilities</returns>
+            <path>api/2.0/capabilities</path>
+             <requiresAuthorization>false</requiresAuthorization>
+            <httpMethod>GET</httpMethod>
+        </member>
+        <member name="P:ASC.Specific.WarmupApi.WarmUpEntryPoint.Name">
+            <summary>
+            Warmup API.
+            </summary>
+            <name>warmup</name>
+        </member>
+        <member name="M:ASC.Specific.WarmupApi.WarmUpEntryPoint.#ctor(ASC.Api.Impl.ApiContext)">
+            <summary>
+             Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ASC.Specific.WarmupApi.WarmUpEntryPoint.GetWarmupProgress">
+            <summary>
+            Returns the warmup progress.
+            </summary>
+            <short>
+            Get warmup progress
+            </short>
+            <returns>Warmup progress</returns>
+            <path>api/2.0/warmup/progress</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <visible>false</visible>
+        </member>
+        <member name="M:ASC.Specific.WarmupApi.WarmUpEntryPoint.Restart">
+            <summary>
+            Restarts the warmup process.
+            </summary>
+            <short>
+            Restart warmup
+            </short>
+            <returns>The "Ok" message if the operation is successful</returns>
+            <path>api/2.0/warmup/restart</path>
+            <httpMethod>GET</httpMethod>
+            <requiresAuthorization>false</requiresAuthorization>
+            <visible>false</visible>
+        </member>
+    </members>
+</doc>

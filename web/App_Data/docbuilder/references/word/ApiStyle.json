@@ -203,8 +203,34 @@
           "defaultValue": "\"wholeTable\""
         }
       ]
+    },
+    "ToJSON": {
+      "memberof": "ApiStyle",
+      "name": "ToJSON",
+      "description": "<p>Converts the ApiStyle object into the JSON object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "JSON"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "bWriteNumberings",
+          "description": "<p>Specifies if the used numberings will be written to the JSON object or not.</p>",
+          "optional": false
+        }
+      ]
     }
   },
+  "events": {},
   "comment": "/**\n\t * Class representing a style.\n\t * @constructor\n\t */",
   "description": "<p>Class representing a style.</p>",
   "scope": "global",

@@ -1,0 +1,744 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASC.ActiveDirectory</name>
+    </assembly>
+    <members>
+        <member name="T:ASC.ActiveDirectory.Base.Data.LdapObjectExtension">
+            <summary>
+            LDAP object extensions class
+            </summary>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.Data.LdapObject">
+            <summary>
+            LDAP object class
+            </summary>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Data.LdapObject.GetValue(System.String,System.Boolean)">
+            <summary>
+            Get property object
+            </summary>
+            <param name="propertyName">property name</param>
+            <param name="getBytes"></param>
+            <returns>value object</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Data.LdapObject.GetValues(System.String)">
+            <summary>
+            Get property values
+            </summary>
+            <param name="propertyName">property name</param>
+            <returns>list of values</returns>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.Approved">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.Requested">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.SerialNumber">
+            <example>SerialNumber</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.IssuerName">
+            <example>IssuerName</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.SubjectName">
+            <example>SubjectName</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.ValidFrom">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.ValidUntil">
+            <example>2019-07-26T00:00:00</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.Hash">
+            <example>Hash</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest.CertificateErrors">
+            <example type="int">1</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.EnableLdapAuthentication">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.StartTls">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.Ssl">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.SendWelcomeEmail">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.Server">
+            <example>Server</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.UserDN">
+            <example>UserDN</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.PortNumber">
+            <example type="int">1</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.UserFilter">
+            <example>UserFilter</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.LoginAttribute">
+            <example>LoginAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.LdapMapping">
+            <example>null</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.AccessRights">
+            <example>null</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.FirstNameAttribute">
+            <example>FirstNameAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.SecondNameAttribute">
+            <example>SecondNameAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.MailAttribute">
+            <example>MailAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.TitleAttribute">
+            <example>TitleAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.MobilePhoneAttribute">
+            <example>MobilePhoneAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.LocationAttribute">
+            <example>LocationAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.GroupMembership">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.GroupDN">
+            <example>GroupDN</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.GroupNameAttribute">
+            <example>GroupNameAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.GroupFilter">
+            <example>GroupFilter</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.UserAttribute">
+            <example>UserAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.GroupAttribute">
+            <example>GroupAttribute</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.Authentication">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.Login">
+            <example>Login</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.Password">
+            <example>Password</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.PasswordBytes">
+            <example type="int">1</example>
+            <collection>list</collection>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.IsDefault">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.AcceptCertificate">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.Base.Settings.LdapSettings.AcceptCertificateHash">
+            <example>AcceptCertificateHash</example>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.LdapConstants">
+            <summary>
+            Constants of Active Directory
+            </summary>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.LdapConstants.AccountType">
+            <summary>
+            User Account type
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_DOMAIN_OBJECT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_GROUP_OBJECT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_NON_SECURITY_GROUP_OBJECT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_ALIAS_OBJECT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_NON_SECURITY_ALIAS_OBJECT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_USER_OBJECT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_MACHINE_ACCOUNT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_TRUST_ACCOUNT">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_APP_BASIC_GROUP">
+            <summary></summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.AccountType.SAM_APP_QUERY_GROUP">
+            <summary></summary>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl">
+            <summary>
+            User Account Control
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.EMPTY">
+            <summary>Zero flag</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_SCRIPT">
+            <summary>The logon script is executed.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_ACCOUNTDISABLE">
+            <summary>The user account is disabled.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_HOMEDIR_REQUIRED">
+            <summary>The home directory is required.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_LOCKOUT">
+            <summary>The account is currently locked out.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_PASSWD_NOTREQD">
+            <summary>No password is required.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_PASSWD_CANT_CHANGE">
+            <summary>The user cannot change the password</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED">
+            <summary>The user can send an encrypted password.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_TEMP_DUPLICATE_ACCOUNT">
+            <summary>This is an account for users whose primary account is in another domain. 
+            This account provides user access to this domain, but not to any domain that trusts 
+            this domain. Also known as a local user account.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_NORMAL_ACCOUNT">
+            <summary>This is a default account type that represents a typical user.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_WORKSTATION_TRUST_ACCOUNT">
+            <summary>This is a computer account for a computer that is a member of this domain.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_SERVER_TRUST_ACCOUNT">
+            <summary>This is a computer account for a system backup domain controller 
+            that is a member of this domain.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_DONT_EXPIRE_PASSWD">
+            <summary>The password for this account will never expire.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_SMARTCARD_REQUIRED">
+            <summary>The user must log on using a smart card.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_TRUSTED_FOR_DELEGATION">
+            <summary>The service account (user or computer account), under which a service runs, 
+            is trusted for Kerberos delegation. Any such service can impersonate a client 
+            requesting the service.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_NOT_DELEGATED">
+            <summary>The security context of the user will not be delegated to a service even 
+            if the service account is set as trusted for Kerberos delegation.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_USE_DES_KEY_ONLY">
+            <summary>Restrict this principal to use only Data Encryption Standard 
+            (DES) encryption types for keys.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_DONT_REQUIRE_PREAUTH">
+            <summary>This account does not require Kerberos pre-authentication for logon.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_PASSWORD_EXPIRED">
+            <summary>The user password has expired. This flag is created by the system 
+            using data from the Pwd-Last-Set attribute and the domain policy.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.UserAccountControl.ADS_UF_TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION">
+            <summary>The account is enabled for delegation. This is a security-sensitive 
+            setting; accounts with this option enabled should be strictly controlled. 
+            This setting enables a service running under the account to assume a client 
+            identity and authenticate as that user to other remote servers on the network.</summary>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.LdapConstants.GroupType">
+            <summary>
+            Type of Group
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.GroupType.SYSTEM">
+            <summary>System group</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.GroupType.GLOBAL_SCOPE">
+            <summary>Global scope group</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.GroupType.LOCAL_DOMAIN_SCOPE">
+            <summary>Local domain scope group</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.GroupType.UNIVERSAL_SCOPE">
+            <summary>Universal scope group</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.GroupType.APP_BASIC">
+            <summary>Specifies an APP_BASIC group for Windows Server Authorization Manager.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.GroupType.APP_QUERY">
+            <summary>Specifies an APP_QUERY group for Windows Server Authorization Manager.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.GroupType.SECURITY_GROUP">
+            <summary>Security group</summary>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes">
+            <summary>
+            Schema attributes of Active Directory
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.NAME">
+            <summary>Relative Distinguished Name </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.COMMON_NAME">
+            <summary>Common-Name</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.DISPLAY_NAME">
+            <summary>Display-Name</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OBJECT_CLASS">
+            <summary>The list of classes from which this class is derived.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OBJECT_CATEGORY">
+            <summary>DN category</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OBJECT_GUID">
+            <summary>The unique identifier for an object.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.SHOW_IN_ADVANCED_VIEW_ONLY">
+            <summary>Show-In-Advanced-View-Only</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.DISTINGUISHED_NAME">
+            <summary>Obj-Dist-Name</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.IS_CRITICAL_SYSTEM_OBJECT">
+            <summary>Is-Critical-System-Object</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.NT_SECURITY_DESCRIPTOR">
+            <summary>NT-Security-Descriptor in format SDDL</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.MEMBER_OF">
+            <summary>Is-Member-Of-DL</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.MEMBER">
+            <summary>Users which are members of this object</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.ORGANIZATIONAL_UNIT_NAME">
+            <summary>Organizational-Unit-Name</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.ORGANIZATION_NAME">
+            <summary>Organization-Name</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.ACCOUNT_NAME">
+            <summary>SAM-Account-Name</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.ACCOUNT_TYPE">
+            <summary>SAM-Account-Type</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OBJECT_SID">
+            <summary>A binary value that specifies the security identifier (SID) of the user. 
+            The SID is a unique value used to identify the user as a security principal.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.USER_ACCOUNT_CONTROL">
+            <summary>Flags that control the behavior of the user account.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.USER_PRINCIPAL_NAME">
+            <summary>This attribute contains the UPN that is an Internet-style login name 
+            for a user based on the Internet standard RFC 822. The UPN is shorter than 
+            the distinguished name and easier to remember. By convention, this should map 
+            to the user e-mail name. The value set for this attribute is equal to the length 
+            of the user's ID and the domain name. For more information about this attribute, 
+            see the Naming Properties topic in the Active Directory guide.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.FIRST_NAME">
+            <summary>Contains the given name (first name) of the user.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.SURNAME">
+            <summary>This attribute contains the family or last name for a user.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.PRIMARY_GROUP_ID">
+            <summary>Primary-Group-ID</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.DNS_HOST_NAME">
+            <summary>Name of computer as registered in DNS</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OPERATING_SYSTEM_VERSION">
+            <summary>The Operating System Version string </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OPERATING_SYSTEM_SERVICE_PACK">
+            <summary>The Operating System Service Pack ID String </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OPERATING_SYSTEM_HOTFIX">
+            <summary>The hotfix level of the operating system.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.OPERATING_SYSTEM">
+            <summary>The Operating System name .</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.NETWORK_ADDRESS">
+            <summary>The TCP/IP address for a network segment. Also called the subnet address.</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.MOBILE">
+            <summary>Mobile phone</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.MAIL">
+            <summary>Email address</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.TELEPHONE_NUMBER">
+            <summary>Telephone number</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.TITLE">
+            <summary>Title</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.STREET">
+            <summary>Street Address</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.POSTAL_CODE">
+            <summary>Postal code</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.HOME_PHONE">
+            <summary>Home phone</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.INITIALS">
+            <summary>Initials</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.DIVISION">
+            <summary>Department</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ADSchemaAttributes.COMPANY">
+            <summary>Company</summary>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues">
+            <summary>
+            Standart attributes of ObjectClass
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.TOP">
+            <summary>
+            top value
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.DOMAIN">
+            <summary>
+            Domain name
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.DOMAIN_DNS">
+            <summary>
+            Domain DNS
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.GROUP">
+            <summary>
+            Group name
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.POSIX_GROUP">
+            <summary>
+            posix-group
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.PERSON">
+            <summary>
+            Person
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.CONTAINER">
+            <summary>
+            Container
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.ORGANIZATIONAL_UNIT">
+            <summary>
+            Org unit
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.ORGANIZATION">
+            <summary>
+            Org name
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.POSIX_ACCOUNT">
+            <summary>
+            posix-account
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.ORGANIZATIONAL_PERSON">
+            <summary>
+            Org person
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.USER">
+            <summary>
+            User
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.COMPUTER">
+            <summary>
+            Computer
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.RPC_CONTAINER">
+            <summary>
+            RPC container
+            </summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.LdapConstants.ObjectClassKnowedValues.BUILD_IN_DOMAIN">
+            <summary>
+            Built in domain flag
+            </summary>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.Expressions.Criteria">
+            <summary>
+            Criteria
+            </summary>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.#ctor(ASC.ActiveDirectory.Base.Expressions.CriteriaType,ASC.ActiveDirectory.Base.Expressions.Expression[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">Type of critera</param>
+            <param name="expressions">Expressions</param>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.And(ASC.ActiveDirectory.Base.Expressions.Expression[])">
+            <summary>
+            Add nested expressions as And criteria
+            </summary>
+            <param name="expressions">Expressions</param>
+            <returns>Self</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.Or(ASC.ActiveDirectory.Base.Expressions.Expression[])">
+            <summary>
+            Add nested expressions as Or criteria
+            </summary>
+             <param name="expressions">Expressions</param>
+            <returns>Self</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.Add(ASC.ActiveDirectory.Base.Expressions.Criteria)">
+            <summary>
+            Add nested Criteria
+            </summary>
+            <param name="nested"></param>
+            <returns>Self</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.ToString">
+            <summary>
+             Criteria as a string
+            </summary>
+            <returns>Criteria string</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.All(ASC.ActiveDirectory.Base.Expressions.Expression[])">
+            <summary>
+            Group of Expression union as And
+            </summary>
+            <param name="expressions">Expressions</param>
+            <returns>new Criteria</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.Any(ASC.ActiveDirectory.Base.Expressions.Expression[])">
+            <summary>
+            Group of Expression union as Or
+            </summary>
+            <param name="expressions">Expressions</param>
+            <returns>new Criteria</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Criteria.Clone">
+            <summary>
+            ICloneable implemetation
+            </summary>
+            <returns>Clone object</returns>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.Expressions.CriteriaType">
+            <summary>
+            Criteria enum
+            </summary>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.#ctor(System.String,ASC.ActiveDirectory.Base.Expressions.Op)">
+            <summary>
+            To specify unary operations
+            </summary>
+            <param name="op">Operator</param>
+            <param name="attrbuteName">Attribute name</param>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.#ctor(System.String,ASC.ActiveDirectory.Base.Expressions.Op,System.String)">
+            <summary>
+            To specify binary operations
+            </summary>
+            <param name="op">Operator</param>
+            <param name="attrbuteName">Attribute name</param>
+            <param name="attrbuteValue">Attribute value</param>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.ToString">
+            <summary>
+            Expression as a string
+            </summary>
+            <returns>Expression string</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.EscapeLdapSearchFilter(System.String)">
+            <summary>
+            Escapes the LDAP search filter to prevent LDAP injection attacks.
+            </summary>
+            <param name="searchFilter">The search filter.</param>
+            <see href="https://blogs.oracle.com/shankar/entry/what_is_ldap_injection" />
+            <see href="http://msdn.microsoft.com/en-us/library/aa746475.aspx" />
+            <returns>The escaped search filter.</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.Negative">
+            <summary>
+            Negation
+            </summary>
+            <returns>Self</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.Exists(System.String)">
+            <summary>
+            Existence
+            </summary>
+            <param name="attrbuteName"></param>
+            <returns>New Expression</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.NotExists(System.String)">
+            <summary>
+            Non-Existence
+            </summary>
+            <param name="attrbuteName"></param>
+            <returns>New Expression</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.Equal(System.String,System.String)">
+            <summary>
+            Equality
+            </summary>
+            <param name="attrbuteName"></param>
+            <param name="attrbuteValue"></param>
+            <returns>New Expression</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.NotEqual(System.String,System.String)">
+            <summary>
+            Not equality
+            </summary>
+            <param name="attrbuteName"></param>
+            <param name="attrbuteValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Base.Expressions.Expression.Clone">
+            <summary>
+            ICloneable implemetation
+            </summary>
+            <returns>Clone object</returns>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Base.Expressions.Op">
+            <summary>
+            Operations
+            </summary>
+            <remarks>
+            [1 - negation][1 - binary][number]
+            </remarks>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.Exists">
+            <summary>Attribute exists</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.NotExists">
+            <summary>Attribute does not exist</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.Equal">
+            <summary>Equal</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.NotEqual">
+            <summary>Not equal</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.Less">
+            <summary>Strong less</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.LessOrEqual">
+            <summary>Less or equal</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.Greater">
+            <summary>Strong greater</summary>
+        </member>
+        <member name="F:ASC.ActiveDirectory.Base.Expressions.Op.GreaterOrEqual">
+            <summary>Greater or equal</summary>
+        </member>
+        <member name="M:ASC.ActiveDirectory.ComplexOperations.LdapSaveSyncOperation.RemoveOldDbUsers(System.Collections.Generic.List{ASC.Core.Users.UserInfo})">
+            <summary>
+            Remove old LDAP users from db
+            </summary>
+            <param name="ldapUsers">list of actual LDAP users</param>
+            <returns>New list of actual LDAP users</returns>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.Completed">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.Id">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.Status">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.Error">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.Warning">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.Percents">
+            <example>true</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.CertificateConfirmRequest">
+            <type>ASC.ActiveDirectory.Base.Data.LdapCertificateConfirmRequest, ASC.ActiveDirectory</type>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.Source">
+            <example>Source</example>
+        </member>
+        <member name="P:ASC.ActiveDirectory.ComplexOperations.LdapOperationStatus.OperationType">
+            <example>OperationType</example>
+        </member>
+        <member name="T:ASC.ActiveDirectory.Novell.Data.NovellLdapObject">
+            <summary>
+            Novell LDAP object class
+            </summary>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Novell.Data.NovellLdapObject.#ctor(Novell.Directory.Ldap.LdapEntry,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ldapEntry">init ldap entry</param>
+            <param name="ldapUniqueIdAttribute"></param>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Novell.Data.NovellLdapObject.GetValue(System.String,System.Boolean)">
+            <summary>
+            Get property object
+            </summary>
+            <param name="propertyName">property name</param>
+            <param name="getBytes"></param>
+            <returns>value object</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Novell.Data.NovellLdapObject.GetValues(System.String)">
+            <summary>
+            Get property values
+            </summary>
+            <param name="propertyName">property name</param>
+            <returns>list of values</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Novell.Extensions.NovellLdapEntryExtension.ToLdapObject(Novell.Directory.Ldap.LdapEntry,System.String)">
+            <summary>
+            Create LDAPObject by LdapEntry
+            </summary>
+            <param name="ldapEntry">init ldapEntry</param>
+            <param name="ldapUniqueIdAttribute"></param>
+            <returns>LDAPObject</returns>
+        </member>
+        <member name="M:ASC.ActiveDirectory.Novell.Extensions.NovellLdapEntryExtension.ToLdapObjects(System.Collections.Generic.IEnumerable{Novell.Directory.Ldap.LdapEntry},System.String)">
+            <summary>
+            Create lis of LDAPObject by LdapEntry list
+            </summary>
+            <param name="entries">list of LdapEntry</param>
+            <param name="ldapUniqueIdAttribute"></param>
+            <returns>list of LDAPObjects</returns>
+        </member>
+    </members>
+</doc>
