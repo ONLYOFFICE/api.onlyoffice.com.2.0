@@ -7,6 +7,20 @@ import type {Reference} from "@onlyoffice/declaration-reference"
 // Successful Examples
 // Unauthorized Response
 
+// todo: use enum interface instead of cases modifier
+// export interface EnumType extends TypeNode {
+//   type: "enum"
+//   cases?: Literal[]
+// }
+
+// export interface LiteralType extends TypeNode {
+//   type: "literal"
+//   type: Type
+//   value: unknown
+// }
+
+// todo: simplify value, see library-dec
+
 export type Declaration = DeclarationMap[keyof DeclarationMap]
 
 export interface DeclarationMap {
@@ -32,11 +46,36 @@ export interface RequestDeclaration extends DeclarationNode {
   responses?: Response[]
 }
 
+export function requestDeclaration(d: DeclarationNode): RequestDeclaration {
+  return {
+    ...d,
+    id: "",
+    kind: "request",
+    endpoint: "",
+    headerParameters: undefined,
+    cookieParameters: undefined,
+    pathParameters: undefined,
+    queryParameters: undefined,
+    bodyParameters: undefined,
+    examples: undefined,
+    responses: undefined
+  }
+}
+
 export interface DeclarationNode {
   kind: string
   slug: string
   title: string
   description?: string
+}
+
+export function declarationNode(): DeclarationNode {
+  return {
+    kind: "",
+    slug: "",
+    title: "",
+    description: undefined
+  }
 }
 
 export type Component = Response | Type
@@ -87,8 +126,6 @@ export interface NumberProperty extends PropertyNode, NumberValue {}
 
 export interface ObjectProperty extends PropertyNode, ObjectValue {}
 
-// export interface ReferenceProperty extends PropertyNode, ReferenceValue {}
-
 export interface StringProperty extends PropertyNode, StringValue {}
 
 export interface UnknownProperty extends PropertyNode, UnknownValue {}
@@ -127,8 +164,6 @@ export interface NumberValue extends ValueNode, NumberType {
 
 export interface ObjectValue extends ValueNode, ObjectType {}
 
-// export interface ReferenceValue extends ValueNode, ReferenceType {}
-
 export interface StringValue extends ValueNode, StringType {
   default?: string
 }
@@ -143,18 +178,14 @@ export interface ValueNode {
   required?: true
 }
 
-// export type Literal = any
-
 export type Type = TypeMap[keyof TypeMap] | Reference
 
 export interface TypeMap {
   array: ArrayType
   boolean: BooleanType
-  // enum: EnumType
   integer: IntegerType
   number: NumberType
   object: ObjectType
-  // reference: ReferenceType
   string: StringType
   unknown: UnknownType
 }
@@ -164,21 +195,32 @@ export interface ArrayType extends TypeNode {
   items?: Type
 }
 
+export function arrayType(t: TypeNode): ArrayType {
+  return {...t, type: "array", items: undefined}
+}
+
 export interface BooleanType extends TypeNode {
   type: "boolean"
 }
 
-// export interface EnumType extends TypeNode {
-//   type: "enum"
-//   cases?: Literal[]
-// }
+export function booleanType(t: TypeNode): BooleanType {
+  return {...t, type: "boolean"}
+}
 
 export interface IntegerType extends TypeNode {
   type: "integer"
 }
 
+export function integerType(t: TypeNode): IntegerType {
+  return {...t, type: "integer"}
+}
+
 export interface NumberType extends TypeNode {
   type: "number"
+}
+
+export function numberType(t: TypeNode): NumberType {
+  return {...t, type: "number"}
 }
 
 export interface ObjectType extends TypeNode {
@@ -186,25 +228,34 @@ export interface ObjectType extends TypeNode {
   properties?: Property[]
 }
 
-// export interface ReferenceType extends TypeNode {
-//   type: "reference"
-//   id: string
-// }
+export function objectType(t: TypeNode): ObjectType {
+  return {...t, type: "object", properties: undefined}
+}
 
 export interface StringType extends TypeNode {
   type: "string"
+}
+
+export function stringType(t: TypeNode): StringType {
+  return {...t, type: "string"}
 }
 
 export interface UnknownType extends TypeNode {
   type: "unknown"
 }
 
+export function unknownType(t: TypeNode): UnknownType {
+  return {...t, type: "unknown"}
+}
+
 export interface TypeNode {
   type: string
   format?: string
-  // required?: true
-  cases?: unknown[] // enum // todo: huh?
-  // value?: unknown // const // todo: huh?
+  cases?: unknown[]
+}
+
+export function typeNode(): TypeNode {
+  return {type: "", format: undefined, cases: undefined}
 }
 
 export {reference} from "@onlyoffice/declaration-reference"
