@@ -22,14 +22,14 @@ export function readURL(w: Writable, u: string): Promise<void> {
   })
 }
 
-export function declarationFile(n: string): string {
+export function declarationBasename(n: string): string {
   return `${n}.declaration.json`
 }
 
-export function indexFile(n: string): string {
+export function indexBasename(n: string): string {
   return `${n}.index.json`
 }
 
-export function resourceFile(n: string): string {
+export function resourceBasename(n: string): string {
   return `${n}.ts`
 }

@@ -9,7 +9,7 @@ import {Console} from "@onlyoffice/console"
 import {jq} from "@onlyoffice/jq"
 import {Cache, FirstIteration, SecondIteration, ThirdIteration} from "@onlyoffice/jsdoc-library"
 import {resource} from "@onlyoffice/library-resource"
-import {declarationFile, indexFile, rawURL, readURL, resourceFile} from "@onlyoffice/resource"
+import {declarationBasename, indexBasename, rawURL, readURL, resourceBasename} from "@onlyoffice/resource"
 import {StringWritable} from "@onlyoffice/stream-string"
 import Chain from "stream-chain"
 import StreamArray from "stream-json/streamers/StreamArray.js"
@@ -190,13 +190,13 @@ async function main(): Promise<void> {
       c.on("error", rej)
     })
 
-    const dn = declarationFile(cfg.name)
+    const dn = declarationBasename(cfg.name)
     const df = join(dd, dn)
 
-    const mn = indexFile(cfg.name)
+    const mn = indexBasename(cfg.name)
     const mf = join(dd, mn)
 
-    const rn = resourceFile(cfg.name)
+    const rn = resourceBasename(cfg.name)
     const rf = join(dd, rn)
 
     await Promise.all([

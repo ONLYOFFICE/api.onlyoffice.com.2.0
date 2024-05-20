@@ -1,7 +1,7 @@
 import {StringWritable} from "@onlyoffice/stream-string"
 import {is, match, unreachable} from "uvu/assert"
 import {test} from "uvu"
-import {rawURL, readURL, declarationFile, indexFile, resourceFile} from "./main.ts"
+import {rawURL, readURL, declarationBasename, indexBasename, resourceBasename} from "./main.ts"
 
 test("creates a raw github url", () => {
   const u = rawURL("o", "rp", "rf", "p")
@@ -24,18 +24,18 @@ test("throws an error if a status code is not 200", async () => {
   }
 })
 
-test("creates a declaration file name", () => {
-  const n = declarationFile("n")
+test("creates a declaration basename", () => {
+  const n = declarationBasename("n")
   is(n, "n.declaration.json")
 })
 
-test("creates an index file name", () => {
-  const n = indexFile("n")
+test("creates an index basename", () => {
+  const n = indexBasename("n")
   is(n, "n.index.json")
 })
 
-test("creates a resource file name", () => {
-  const n = resourceFile("n")
+test("creates a resource basename", () => {
+  const n = resourceBasename("n")
   is(n, "n.ts")
 })
 
