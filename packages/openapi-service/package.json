@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "@onlyoffice/console": "workspace:^",
+    "@onlyoffice/service-declaration": "workspace:^",
     "@sindresorhus/slugify": "^2.2.1"
   },
   "devDependencies": {
-    "@onlyoffice/service-declaration": "workspace:^",
     "c8": "^9.1.0",
     "openapi-types": "^12.1.3",
     "tsx": "^4.10.5",

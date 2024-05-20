@@ -507,13 +507,13 @@ importers:
       '@onlyoffice/console':
         specifier: workspace:^
         version: link:../console
+      '@onlyoffice/service-declaration':
+        specifier: workspace:^
+        version: link:../service-declaration
       '@sindresorhus/slugify':
         specifier: ^2.2.1
         version: 2.2.1
     devDependencies:
-      '@onlyoffice/service-declaration':
-        specifier: workspace:^
-        version: link:../service-declaration
       c8:
         specifier: ^9.1.0
         version: 9.1.0

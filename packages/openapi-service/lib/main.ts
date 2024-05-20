@@ -3,7 +3,9 @@ import process from "node:process"
 import type {TransformCallback} from "node:stream"
 import {Transform} from "node:stream"
 import {Console} from "@onlyoffice/console"
+import * as example from "@onlyoffice/service-declaration/example.ts"
 import type * as REST from "@onlyoffice/service-declaration"
+import * as service from "@onlyoffice/service-declaration"
 import slugify from "@sindresorhus/slugify"
 import type {OpenAPIV3_1 as OpenAPI} from "openapi-types"
 import pack from "../package.json" assert {type: "json"}
@@ -205,8 +207,8 @@ export class Cache {
 }
 
 function createRequest(c: Cache, m: string, p: string, s: OpenAPI.OperationObject): REST.RequestDeclaration {
-  const n = declarationNode()
-  const r = requestDeclaration(n)
+  const n = service.declarationNode()
+  const r = service.requestDeclaration(n)
   populateRequestHero(r, m, p, s)
   populateRequestParameters(r, s)
   populateRequestResponses(c, r, s)
@@ -339,165 +341,10 @@ function populateRequestParameters(req: REST.RequestDeclaration, s: OpenAPI.Oper
 }
 
 export function populateRequestExamples(req: REST.RequestDeclaration): void {
-  const qp = queryParametersToString(req)
   req.examples = [
-    createHTTPExample(req, qp),
-    createCURLExample(req, qp)
+    example.curlExample(req),
+    example.httpExample(req)
   ]
-}
-
-export function queryParametersToString(req: REST.RequestDeclaration): string {
-  let qp = "?"
-  if (req.queryParameters) {
-    for (const q of req.queryParameters) {
-      if ("id" in q) {
-        continue
-      }
-      qp += `${q.identifier}={${q.identifier}}&`
-    }
-  }
-  return qp.slice(0, -1)
-}
-
-export function createHTTPExample(req: REST.RequestDeclaration, qp: string): REST.Example {
-  const e = example()
-  const h = httpExample(e)
-  const [m, p] = req.endpoint.split(" ")
-  const hp = headers(req)
-  h.code = code(m, p, qp, hp)
-  return h
-
-  function headers(req: REST.RequestDeclaration): string {
-    let s = ""
-
-    if (!req.headerParameters) {
-      return s
-    }
-
-    for (const h of req.headerParameters) {
-      if ("id" in h) {
-        continue
-      }
-
-      s += `${h.identifier}: `
-
-      if (h.cases) {
-        s += h.cases.join(", ")
-      } else {
-        s += `${h.identifier}`
-      }
-
-      s += "\n"
-    }
-
-    s = s.slice(0, -1)
-
-    return s
-  }
-
-  function code(m: string, p: string, qp: string, hp: string): string {
-    let s = `${m} ${p}${qp} HTTP/1.1`
-    if (hp !== "") {
-      s += `\n${hp}`
-    }
-    return s
-  }
-}
-
-export function createCURLExample(req: REST.RequestDeclaration, qp: string): REST.Example {
-  const e = example()
-  const s = shellExample(e)
-  const [m, p] = req.endpoint.split(" ")
-  const x = method(m)
-  const hp = headers(req)
-  s.code = code(x, p, qp, hp)
-  return s
-
-  function method(m: string): string {
-    if (m === "GET") {
-      return ""
-    }
-    return `-X "${m}"`
-  }
-
-  function headers(req: REST.RequestDeclaration): string {
-    let s = ""
-
-    if (!req.headerParameters) {
-      return s
-    }
-
-    for (const h of req.headerParameters) {
-      if ("id" in h) {
-        continue
-      }
-
-      s += `\t-H "${h.identifier}": `
-
-      if (h.cases) {
-        s += `${h.cases.join(", ")} \\`
-      } else {
-        s += `${h.identifier} \\`
-      }
-
-      s += "\n"
-    }
-
-    s = s.slice(0, -1)
-
-    return s
-  }
-
-  function code(m: string, p: string, qp: string, hp: string): string {
-    let s = "curl -L"
-
-    if (m !== "") {
-      s += ` ${m} \\`
-    } else {
-      s += " \\"
-    }
-
-    if (hp !== "") {
-      s += `\n${hp}`
-    }
-
-    s += `\n\t{host}${p}${qp}`
-
-    return s
-  }
-}
-
-export function requestDeclaration(d: REST.DeclarationNode): REST.RequestDeclaration {
-  // todo: replace undefined with null
-  return {
-    ...d,
-    id: "",
-    kind: "request",
-    endpoint: "",
-    headerParameters: undefined,
-    cookieParameters: undefined,
-    pathParameters: undefined,
-    queryParameters: undefined,
-    bodyParameters: undefined,
-    examples: undefined,
-    responses: undefined
-  }
-}
-
-export function declarationNode(): REST.DeclarationNode {
-  return {kind: "", slug: "", title: "", description: undefined}
-}
-
-export function httpExample(e: REST.Example): REST.Example {
-  return {...e, syntax: "http"}
-}
-
-export function shellExample(e: REST.Example): REST.Example {
-  return {...e, syntax: "shell"}
-}
-
-export function example(): REST.Example {
-  return {syntax: "", code: ""}
 }
 
 function populateRequestResponses(cache: Cache, req: REST.RequestDeclaration, s: OpenAPI.OperationObject): void {
