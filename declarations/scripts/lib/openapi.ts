@@ -202,26 +202,12 @@ export class Cache {
 }
 
 function createRequest(c: Cache, m: string, p: string, s: OpenAPI.OperationObject): REST.RequestDeclaration {
-  // todo: replace undefined with null
-  const r: REST.RequestDeclaration = {
-    id: "",
-    kind: "request",
-    slug: "",
-    title: "",
-    endpoint: "",
-    description: undefined,
-    headerParameters: undefined,
-    cookieParameters: undefined,
-    pathParameters: undefined,
-    queryParameters: undefined,
-    bodyParameters: undefined,
-    examples: undefined,
-    responses: undefined,
-  }
+  const n = declarationNode()
+  const r = requestDeclaration(n)
   populateRequestHero(r, m, p, s)
   populateRequestParameters(r, s)
-  populateRequestExamples(r)
   populateRequestResponses(c, r, s)
+  populateRequestExamples(r)
   normalizeRequest(r)
   return r
 }
@@ -349,34 +335,166 @@ function populateRequestParameters(req: REST.RequestDeclaration, s: OpenAPI.Oper
   }
 }
 
-function populateRequestExamples(req: REST.RequestDeclaration): void {
-  // if (req.headerParameters) {
-  //   req.headerParameters.forEach((p) => {
-  //   })
-  // }
-
-  // if (req.pathParameters) {
-  //   req.pathParameters.forEach((p) => {
-  //   })
-  // }
-
-  // todo: add headers, query
-  // todo: use es6 string templates.
-  const examples: REST.Example[] = [
-    // {
-    //   syntax: "http",
-    //   // todo: take host from the meta object.
-    //   code: `${req.endpoint} HTTP/1.1\nAccept: application/json\nHost: example.com\n`
-    // },
-    // {
-    //   syntax: "shell",
-    //   // todo: omit the -X flag if the method is GET
-    //   code: `curl -L\n  -X "${"todo: m"}"\n  -H "Accept: application/json"\n  "https://example.com${"todo: p"}"`
-    // }
+export function populateRequestExamples(req: REST.RequestDeclaration): void {
+  const qp = queryParametersToString(req)
+  req.examples = [
+    createHTTPExample(req, qp),
+    createCURLExample(req, qp)
   ]
-  if (examples.length > 0) {
-    req.examples = examples
+}
+
+export function queryParametersToString(req: REST.RequestDeclaration): string {
+  let qp = "?"
+  if (req.queryParameters) {
+    for (const q of req.queryParameters) {
+      if ("id" in q) {
+        continue
+      }
+      qp += `${q.identifier}={${q.identifier}}&`
+    }
   }
+  return qp.slice(0, -1)
+}
+
+export function createHTTPExample(req: REST.RequestDeclaration, qp: string): REST.Example {
+  const e = example()
+  const h = httpExample(e)
+  const [m, p] = req.endpoint.split(" ")
+  const hp = headers(req)
+  h.code = code(m, p, qp, hp)
+  return h
+
+  function headers(req: REST.RequestDeclaration): string {
+    let s = ""
+
+    if (!req.headerParameters) {
+      return s
+    }
+
+    for (const h of req.headerParameters) {
+      if ("id" in h) {
+        continue
+      }
+
+      s += `${h.identifier}: `
+
+      if (h.cases) {
+        s += h.cases.join(", ")
+      } else {
+        s += `${h.identifier}`
+      }
+
+      s += "\n"
+    }
+
+    s = s.slice(0, -1)
+
+    return s
+  }
+
+  function code(m: string, p: string, qp: string, hp: string): string {
+    let s = `${m} ${p}${qp} HTTP/1.1`
+    if (hp !== "") {
+      s += `\n${hp}`
+    }
+    return s
+  }
+}
+
+export function createCURLExample(req: REST.RequestDeclaration, qp: string): REST.Example {
+  const e = example()
+  const s = shellExample(e)
+  const [m, p] = req.endpoint.split(" ")
+  const x = method(m)
+  const hp = headers(req)
+  s.code = code(x, p, qp, hp)
+  return s
+
+  function method(m: string): string {
+    if (m === "GET") {
+      return ""
+    }
+    return `-X "${m}"`
+  }
+
+  function headers(req: REST.RequestDeclaration): string {
+    let s = ""
+
+    if (!req.headerParameters) {
+      return s
+    }
+
+    for (const h of req.headerParameters) {
+      if ("id" in h) {
+        continue
+      }
+
+      s += `\t-H "${h.identifier}": `
+
+      if (h.cases) {
+        s += `${h.cases.join(", ")} \\`
+      } else {
+        s += `${h.identifier} \\`
+      }
+
+      s += "\n"
+    }
+
+    s = s.slice(0, -1)
+
+    return s
+  }
+
+  function code(m: string, p: string, qp: string, hp: string): string {
+    let s = "curl -L"
+
+    if (m !== "") {
+      s += ` ${m} \\`
+    } else {
+      s += " \\"
+    }
+
+    if (hp !== "") {
+      s += `\n${hp}`
+    }
+
+    s += `\n\t{host}${p}${qp}`
+
+    return s
+  }
+}
+
+export function requestDeclaration(d: REST.DeclarationNode): REST.RequestDeclaration {
+  // todo: replace undefined with null
+  return {
+    ...d,
+    id: "",
+    kind: "request",
+    endpoint: "",
+    headerParameters: undefined,
+    cookieParameters: undefined,
+    pathParameters: undefined,
+    queryParameters: undefined,
+    bodyParameters: undefined,
+    examples: undefined,
+    responses: undefined
+  }
+}
+
+export function declarationNode(): REST.DeclarationNode {
+  return {kind: "", slug: "", title: "", description: undefined}
+}
+
+export function httpExample(e: REST.Example): REST.Example {
+  return {...e, syntax: "http"}
+}
+
+export function shellExample(e: REST.Example): REST.Example {
+  return {...e, syntax: "shell"}
+}
+
+export function example(): REST.Example {
+  return {syntax: "", code: ""}
 }
 
 function populateRequestResponses(cache: Cache, req: REST.RequestDeclaration, s: OpenAPI.OperationObject): void {
