@@ -214,6 +214,45 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  packages/document-builder-resource:
+    devDependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/jq':
+        specifier: workspace:^
+        version: link:../jq
+      '@onlyoffice/jsdoc-library':
+        specifier: workspace:^
+        version: link:../jsdoc-library
+      '@onlyoffice/stream-string':
+        specifier: workspace:^
+        version: link:../stream-string
+      '@types/stream-chain':
+        specifier: ^2.0.4
+        version: 2.0.4
+      '@types/stream-json':
+        specifier: ^1.7.7
+        version: 1.7.7
+      c8:
+        specifier: ^9.1.0
+        version: 9.1.0
+      stream-chain:
+        specifier: ^2.2.5
+        version: 2.2.5
+      stream-json:
+        specifier: ^1.8.0
+        version: 1.8.0
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
+
   packages/document-builder-types: {}
 
   packages/document-builder-utils:
