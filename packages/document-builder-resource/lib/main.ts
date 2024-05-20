@@ -1,15 +1,14 @@
 import {mkdir, mkdtemp, rm} from "node:fs/promises"
 import {createWriteStream, existsSync} from "node:fs"
-import https from "node:https"
 import {tmpdir} from "node:os"
 import {join} from "node:path"
 import process from "node:process"
-import type {Writable} from "node:stream"
 import {Readable} from "node:stream"
 import {URL, fileURLToPath} from "node:url"
 import {Console} from "@onlyoffice/console"
 import {jq} from "@onlyoffice/jq"
 import {Cache, FirstIteration, SecondIteration, ThirdIteration} from "@onlyoffice/jsdoc-library"
+import {declarationFile, indexFile, rawURL, readURL} from "@onlyoffice/resource"
 import {StringWritable} from "@onlyoffice/stream-string"
 import Chain from "stream-chain"
 import StreamArray from "stream-json/streamers/StreamArray.js"
@@ -231,34 +230,6 @@ async function main(): Promise<void> {
   await rm(td, {recursive: true})
 
   console.log("Finish building")
-}
-
-function rawURL(o: string, rp: string, rf: string, p: string): string {
-  const u = new URL(`/${o}/${rp}/${rf}/${p}`, "https://raw.githubusercontent.com/")
-  return u.toString()
-}
-
-function readURL(w: Writable, u: string): Promise<void> {
-  return new Promise((res, rej) => {
-    https.get(u, (r) => {
-      if (r.statusCode !== 200) {
-        const e = new Error(`Bad status code: ${r.statusCode} ${r.statusMessage}`)
-        rej(e)
-        return
-      }
-      r.pipe(w)
-      w.on("error", rej)
-      w.on("close", res)
-    })
-  })
-}
-
-function declarationFile(n: string): string {
-  return `${n}.declaration.json`
-}
-
-function indexFile(n: string): string {
-  return `${n}.index.json`
 }
 
 function tempDir(): string {

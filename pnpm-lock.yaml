@@ -225,6 +225,9 @@ importers:
       '@onlyoffice/jsdoc-library':
         specifier: workspace:^
         version: link:../jsdoc-library
+      '@onlyoffice/resource':
+        specifier: workspace:^
+        version: link:../resource
       '@onlyoffice/stream-string':
         specifier: workspace:^
         version: link:../stream-string
