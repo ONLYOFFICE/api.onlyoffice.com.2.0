@@ -544,6 +544,8 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/library-declaration-fixtures: {}
+
   packages/openapi-service:
     dependencies:
       '@onlyoffice/console':

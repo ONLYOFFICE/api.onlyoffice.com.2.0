@@ -1,0 +1,8 @@
+{
+  "name": "@onlyoffice/library-declaration-fixtures",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./dist/*"
+  }
+}
