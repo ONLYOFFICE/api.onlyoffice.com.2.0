@@ -1,4 +1,5 @@
 import type {Example} from "@onlyoffice/declaration-code-example"
+import type {Reference} from "@onlyoffice/declaration-reference"
 
 // todo?:
 // content-type, accept
@@ -206,6 +207,4 @@ export interface TypeNode {
   // value?: unknown // const // todo: huh?
 }
 
-export interface Reference {
-  id: string
-}
+export {reference} from "@onlyoffice/declaration-reference"

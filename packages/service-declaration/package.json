@@ -6,6 +6,9 @@
   "scripts": {
     "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
   },
+  "dependencies": {
+    "@onlyoffice/declaration-reference": "workspace:^"
+  },
   "devDependencies": {
     "@onlyoffice/declaration-code-example": "workspace:^",
     "c8": "^9.1.0",

@@ -117,6 +117,21 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/declaration-reference:
+    devDependencies:
+      c8:
+        specifier: ^9.1.0
+        version: 9.1.0
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
+
   packages/declaration-tokenizer:
     devDependencies:
       c8:
@@ -463,6 +478,10 @@ importers:
         version: 0.5.6
 
   packages/library-declaration:
+    dependencies:
+      '@onlyoffice/declaration-reference':
+        specifier: workspace:^
+        version: link:../declaration-reference
     devDependencies:
       '@onlyoffice/declaration-code-example':
         specifier: workspace:^
@@ -611,6 +630,10 @@ importers:
         version: 0.5.6
 
   packages/service-declaration:
+    dependencies:
+      '@onlyoffice/declaration-reference':
+        specifier: workspace:^
+        version: link:../declaration-reference
     devDependencies:
       '@onlyoffice/declaration-code-example':
         specifier: workspace:^

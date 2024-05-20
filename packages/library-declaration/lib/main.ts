@@ -12,6 +12,7 @@
 // }
 
 import type {Example} from "@onlyoffice/declaration-code-example"
+import type {Reference} from "@onlyoffice/declaration-reference"
 import type {Token} from "@onlyoffice/declaration-tokenizer"
 
 export type Declaration = DeclarationMap[keyof DeclarationMap]
@@ -285,10 +286,4 @@ export function typeNode(): TypeNode {
   return {type: ""}
 }
 
-export interface Reference {
-  id: string
-}
-
-export function reference(id: string): Reference {
-  return {id}
-}
+export {reference} from "@onlyoffice/declaration-reference"

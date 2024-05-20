@@ -14,7 +14,6 @@ import {
   objectType,
   passthroughType,
   propertyDeclaration,
-  reference,
   typeDeclaration,
   typeNode,
   unionType,
@@ -22,17 +21,6 @@ import {
   value,
   voidType
 } from "./main.ts"
-
-test("creates a reference with correct order of keys", () => {
-  const r = reference("")
-  const a = Object.keys(r)
-  eq(a, ["id"])
-})
-
-test("creates a reference with id", () => {
-  const r = reference("id")
-  is(r.id, "id")
-})
 
 test("creates a type node with correct order of keys", () => {
   const t = typeNode()
