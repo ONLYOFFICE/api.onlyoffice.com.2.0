@@ -103,9 +103,6 @@ function query(req: RequestDeclaration): string {
   let qp = "?"
   if (req.queryParameters) {
     for (const q of req.queryParameters) {
-      if ("id" in q) {
-        throw new Error("query parameter references not supported")
-      }
       qp += `${q.identifier}={${q.identifier}}&`
     }
   }
