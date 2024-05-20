@@ -1,7 +1,7 @@
 import {StringWritable} from "@onlyoffice/stream-string"
 import {is, match, unreachable} from "uvu/assert"
 import {test} from "uvu"
-import {rawURL, readURL, declarationFile, indexFile} from "./main.ts"
+import {rawURL, readURL, declarationFile, indexFile, resourceFile} from "./main.ts"
 
 test("creates a raw github url", () => {
   const u = rawURL("o", "rp", "rf", "p")
@@ -32,6 +32,11 @@ test("creates a declaration file name", () => {
 test("creates an index file name", () => {
   const n = indexFile("n")
   is(n, "n.index.json")
+})
+
+test("creates a resource file name", () => {
+  const n = resourceFile("n")
+  is(n, "n.ts")
 })
 
 test.run()

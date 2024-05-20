@@ -13,6 +13,8 @@
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/jq": "workspace:^",
     "@onlyoffice/jsdoc-library": "workspace:^",
+    "@onlyoffice/library-declaration": "workspace:^",
+    "@onlyoffice/library-resource": "workspace:^",
     "@onlyoffice/resource": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
     "@types/stream-chain": "^2.0.4",

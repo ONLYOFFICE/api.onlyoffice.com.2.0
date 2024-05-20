@@ -1,4 +1,4 @@
-import {mkdir, mkdtemp, rm} from "node:fs/promises"
+import {mkdir, mkdtemp, rm, writeFile} from "node:fs/promises"
 import {createWriteStream, existsSync} from "node:fs"
 import {tmpdir} from "node:os"
 import {join} from "node:path"
@@ -8,7 +8,8 @@ import {URL, fileURLToPath} from "node:url"
 import {Console} from "@onlyoffice/console"
 import {jq} from "@onlyoffice/jq"
 import {Cache, FirstIteration, SecondIteration, ThirdIteration} from "@onlyoffice/jsdoc-library"
-import {declarationFile, indexFile, rawURL, readURL} from "@onlyoffice/resource"
+import {resource} from "@onlyoffice/library-resource"
+import {declarationFile, indexFile, rawURL, readURL, resourceFile} from "@onlyoffice/resource"
 import {StringWritable} from "@onlyoffice/stream-string"
 import Chain from "stream-chain"
 import StreamArray from "stream-json/streamers/StreamArray.js"
@@ -189,19 +190,24 @@ async function main(): Promise<void> {
       c.on("error", rej)
     })
 
+    const dn = declarationFile(cfg.name)
+    const df = join(dd, dn)
+
+    const mn = indexFile(cfg.name)
+    const mf = join(dd, mn)
+
+    const rn = resourceFile(cfg.name)
+    const rf = join(dd, rn)
+
     await Promise.all([
       (async () => {
-        const n = declarationFile(cfg.name)
-        const t = join(dd, n)
-        const w = createWriteStream(t)
+        const w = createWriteStream(df)
         await jq(w, [".", f])
         w.close()
       })(),
 
       (async () => {
-        const n = indexFile(cfg.name)
-
-        const f = join(td, n)
+        const f = join(td, mn)
         await new Promise((res, rej) => {
           const c = new Chain([
             Readable.from([cache.current.indexes]),
@@ -213,12 +219,16 @@ async function main(): Promise<void> {
           c.on("error", rej)
         })
 
-        const t = join(dd, n)
-        const w = createWriteStream(t)
+        const w = createWriteStream(mf)
         await jq(w, [".", f])
         w.close()
 
         await rm(f)
+      })(),
+
+      (async () => {
+        const r = await resource(df, mf)
+        await writeFile(rf, r)
       })()
     ])
 

@@ -225,6 +225,12 @@ importers:
       '@onlyoffice/jsdoc-library':
         specifier: workspace:^
         version: link:../jsdoc-library
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
+      '@onlyoffice/library-resource':
+        specifier: workspace:^
+        version: link:../library-resource
       '@onlyoffice/resource':
         specifier: workspace:^
         version: link:../resource

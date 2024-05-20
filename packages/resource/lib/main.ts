@@ -29,3 +29,7 @@ export function declarationFile(n: string): string {
 export function indexFile(n: string): string {
   return `${n}.index.json`
 }
+
+export function resourceFile(n: string): string {
+  return `${n}.ts`
+}
