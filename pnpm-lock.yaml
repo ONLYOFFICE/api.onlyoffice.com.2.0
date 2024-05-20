@@ -858,8 +858,6 @@ importers:
         specifier: ^4.10.5
         version: 4.10.5
 
-  server: {}
-
   site:
     devDependencies:
       '@11ty/eleventy':

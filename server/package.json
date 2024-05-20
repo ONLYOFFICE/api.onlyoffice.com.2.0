@@ -1,8 +1,0 @@
-{
-  "name": "@onlyoffice/documentation-server",
-  "private": true,
-  "type": "module",
-  "engines": {
-    "node": "^21"
-  }
-}
