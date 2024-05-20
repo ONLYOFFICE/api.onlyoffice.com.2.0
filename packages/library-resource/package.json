@@ -1,0 +1,19 @@
+{
+  "name": "@onlyoffice/library-resource",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "scripts": {
+    "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
+  },
+  "devDependencies": {
+    "@onlyoffice/library-declaration": "workspace:^",
+    "c8": "^9.1.0",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5",
+    "uvu": "^0.5.6"
+  },
+  "engines": {
+    "node": "^21"
+  }
+}
