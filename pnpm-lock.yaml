@@ -511,6 +511,34 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/openapi-service:
+    dependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@sindresorhus/slugify':
+        specifier: ^2.2.1
+        version: 2.2.1
+    devDependencies:
+      '@onlyoffice/service-declaration':
+        specifier: workspace:^
+        version: link:../service-declaration
+      c8:
+        specifier: ^9.1.0
+        version: 9.1.0
+      openapi-types:
+        specifier: ^12.1.3
+        version: 12.1.3
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
+
   packages/rehype-preact:
     dependencies:
       hast-util-to-jsx-runtime:
