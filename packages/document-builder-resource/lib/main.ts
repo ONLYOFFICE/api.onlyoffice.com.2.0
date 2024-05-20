@@ -1,4 +1,4 @@
-import {mkdir, mkdtemp, rm, writeFile} from "node:fs/promises"
+import {mkdir, mkdtemp, rm, rmdir, writeFile} from "node:fs/promises"
 import {createWriteStream, existsSync} from "node:fs"
 import {tmpdir} from "node:os"
 import {join} from "node:path"
@@ -237,7 +237,7 @@ async function main(): Promise<void> {
     console.log(`Finish building '${m}'`)
   }
 
-  await rm(td, {recursive: true})
+  await rmdir(td)
 
   console.log("Finish building")
 }
