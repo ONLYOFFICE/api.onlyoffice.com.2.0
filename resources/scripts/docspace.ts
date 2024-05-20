@@ -6,7 +6,7 @@ import {
   ProcessComponent,
   ProcessPath as OpenAPIProcessPath,
   ProcessRequest
-} from "@onlyoffice/documentation-declarations-scripts/openapi.ts"
+} from "@onlyoffice/openapi-service"
 import StreamArray from "stream-json/streamers/StreamArray.js"
 import StreamObject from "stream-json/streamers/StreamObject.js"
 import Disassembler from "stream-json/Disassembler.js"
