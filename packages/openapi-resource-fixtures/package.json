@@ -9,6 +9,9 @@
     "build": "tsx lib/main.ts",
     "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
   },
+  "dependencies": {
+    "@onlyoffice/service-declaration": "workspace:^"
+  },
   "devDependencies": {
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/jq": "workspace:^",
