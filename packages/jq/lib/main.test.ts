@@ -3,7 +3,12 @@ import {URL, fileURLToPath} from "node:url"
 import {StringWritable} from "@onlyoffice/stream-string"
 import {is} from "uvu/assert"
 import {test} from "uvu"
-import {jq} from "./main.ts"
+import {hasJQ, jq} from "./main.ts"
+
+test("checks jq", async () => {
+  const h = await hasJQ()
+  is(h, true)
+})
 
 test("executes jq", async () => {
   const f = join(fixturesDir(), "000.json")

@@ -528,6 +528,10 @@ importers:
         version: 0.5.6
 
   packages/jq:
+    dependencies:
+      '@onlyoffice/command':
+        specifier: workspace:^
+        version: link:../command
     devDependencies:
       '@onlyoffice/stream-string':
         specifier: workspace:^
