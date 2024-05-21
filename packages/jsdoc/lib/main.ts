@@ -1,3 +1,6 @@
+import {spawn} from "node:child_process"
+import type {Writable} from "node:stream"
+
 /**
  * {@link https://github.com/jsdoc/jsdoc/blob/4.0.2/lib/jsdoc/schema.js/#L186 JSDoc Reference}
  */
@@ -129,3 +132,14 @@ export type CatharsisType =
   "TypeUnion" |
   "UndefinedLiteral" |
   "UnknownLiteral"
+
+export function jsdoc(w: Writable, opts: string[]): Promise<void> {
+  return new Promise((res, rej) => {
+    const s = spawn("pnpm", ["exec", "--", "jsdoc", ...opts])
+    s.stdout.on("data", (ch) => {
+      w.write(ch)
+    })
+    s.on("close", res)
+    s.on("error", rej)
+  })
+}
