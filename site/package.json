@@ -28,7 +28,6 @@
     "@onlyoffice/eleventy-types": "workspace:^",
     "@onlyoffice/eleventy-yaml": "workspace:^",
     "@onlyoffice/library-declaration": "workspace:^",
-    "@onlyoffice/library-declaration-fixtures": "workspace:^",
     "@onlyoffice/rehype-preact": "workspace:^",
     "@onlyoffice/rehype-starry-night": "workspace:^",
     "@onlyoffice/remark-document-builder": "workspace:^",
