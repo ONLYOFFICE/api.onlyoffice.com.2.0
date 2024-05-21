@@ -235,51 +235,21 @@ importers:
       '@onlyoffice/console':
         specifier: workspace:^
         version: link:../console
-      '@onlyoffice/jq':
-        specifier: workspace:^
-        version: link:../jq
       '@onlyoffice/openapi-declaration':
         specifier: workspace:^
         version: link:../openapi-declaration
       '@onlyoffice/openapi-resource':
         specifier: workspace:^
         version: link:../openapi-resource
-      '@onlyoffice/path':
-        specifier: workspace:^
-        version: link:../path
       '@onlyoffice/resource':
         specifier: workspace:^
         version: link:../resource
-      '@onlyoffice/service-resource':
-        specifier: workspace:^
-        version: link:../service-resource
-      '@onlyoffice/stream-json':
-        specifier: workspace:^
-        version: link:../stream-json
       '@onlyoffice/stream-string':
         specifier: workspace:^
         version: link:../stream-string
-      '@types/multistream':
-        specifier: ^4.1.3
-        version: 4.1.3
-      '@types/stream-chain':
-        specifier: ^2.0.4
-        version: 2.0.4
-      '@types/stream-json':
-        specifier: ^1.7.7
-        version: 1.7.7
       c8:
         specifier: ^9.1.0
         version: 9.1.0
-      multistream:
-        specifier: ^4.1.0
-        version: 4.1.0
-      stream-chain:
-        specifier: ^2.2.5
-        version: 2.2.5
-      stream-json:
-        specifier: ^1.8.0
-        version: 1.8.0
       tsx:
         specifier: ^4.10.5
         version: 4.10.5
