@@ -28,7 +28,7 @@ export async function writeDeclaration(ch: Cache, rw: StringWritable, dw: Writab
     const c = new Chain([
       rw.toReadable(),
       new Parser(),
-      new PickPath(),
+      new Pick({filter: "paths"}),
       new StreamObject(),
       new ProcessPath(ch),
       new Disassembler(),
@@ -89,25 +89,18 @@ export async function writeDeclaration(ch: Cache, rw: StringWritable, dw: Writab
   }
 }
 
-export class PickPath extends Pick {
-  constructor() {
-    super({filter: "paths"})
-  }
-}
-
 export async function writeComponent(ch: Cache, rw: StringWritable, cw: Writable): Promise<void> {
   let from: StringWritable
   let to = new StringWritable()
 
-  const ks: ConstructorParameters<typeof PickComponent>[0][] =
-  ["schemas", "responses"]
+  const ks: (keyof OpenAPI.ComponentsObject)[] = ["schemas", "responses"]
   for (const k of ks) {
     // eslint-disable-next-line no-loop-func
     await new Promise((res, rej) => {
       const c = new Chain([
         rw.toReadable(),
         new Parser(),
-        new PickComponent(k),
+        new Pick({filter: `components.${k}`}),
         new StreamObject(),
         new ProcessComponent(ch, k),
         new UnstreamObject(),
@@ -151,12 +144,6 @@ export async function writeComponent(ch: Cache, rw: StringWritable, cw: Writable
     await jq(cw, [".", tf])
     await rm(tf)
     await rmdir(td)
-  }
-}
-
-export class PickComponent extends Pick {
-  constructor(key: keyof OpenAPI.ComponentsObject) {
-    super({filter: `components.${key}`})
   }
 }
 
