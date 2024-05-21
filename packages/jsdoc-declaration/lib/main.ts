@@ -22,7 +22,7 @@ import {fromMarkdown} from "mdast-util-from-markdown"
 import {toMarkdown} from "mdast-util-to-markdown"
 import {selectAll} from "unist-util-select"
 import {CONTINUE, SKIP, visit} from "unist-util-visit"
-import pack from "../package.json" assert {type: "json"}
+import pack from "../package.json" with {type: "json"}
 
 const console = new Console(pack.name, process.stdout, process.stderr)
 const model = new languagedetection.ModelOperations()

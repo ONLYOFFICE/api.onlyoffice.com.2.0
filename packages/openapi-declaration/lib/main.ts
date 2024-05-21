@@ -8,7 +8,7 @@ import type * as REST from "@onlyoffice/service-declaration"
 import * as service from "@onlyoffice/service-declaration"
 import slugify from "@sindresorhus/slugify"
 import type {OpenAPIV3_1 as OpenAPI} from "openapi-types"
-import pack from "../package.json" assert {type: "json"}
+import pack from "../package.json" with {type: "json"}
 
 const console = new Console(pack.name, process.stdout, process.stderr)
 

@@ -3,7 +3,7 @@ import {existsSync} from "node:fs"
 import {tmpdir} from "node:os"
 import {join} from "node:path"
 import {URL, fileURLToPath} from "node:url"
-import pack from "../package.json" assert {type: "json"}
+import pack from "../package.json" with {type: "json"}
 
 /**
  * Creates a temporary directory.
