@@ -3,7 +3,6 @@ import esMain from "es-main"
 import sade from "sade"
 import * as communityServer from "./scripts/community-server.ts"
 import * as docspace from "./scripts/docspace.ts"
-import * as documentBuilder from "./scripts/document-builder.ts"
 import * as hostedSolutions from "./scripts/hosted-solutions.ts"
 import {createTempDir, prepareLibDir} from "./utils/basedir.ts"
 
@@ -31,11 +30,11 @@ export async function build(opts: BuildOptions): Promise<void> {
     await m.build(tempDir, distDir)
   }
 
-  function resolve(a: string[]): typeof documentBuilder[] {
+  function resolve(a: string[]): typeof communityServer[] {
     if (a.length === 0) {
-      return [communityServer, docspace, documentBuilder, hostedSolutions]
+      return [communityServer, docspace, hostedSolutions]
     }
-    const r: typeof documentBuilder[] = []
+    const r: typeof communityServer[] = []
     for (const n of a) {
       const m = module(n)
       if (m) {
@@ -45,14 +44,12 @@ export async function build(opts: BuildOptions): Promise<void> {
     return r
   }
 
-  function module(n: string): typeof documentBuilder | undefined {
+  function module(n: string): typeof communityServer | undefined {
     switch (n) {
     case "community-server":
       return communityServer
     case "docspace":
       return docspace
-    case "document-builder":
-      return documentBuilder
     case "hosted-solutions":
       return hostedSolutions
     default:
