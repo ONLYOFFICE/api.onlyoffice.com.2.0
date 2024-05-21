@@ -1,0 +1,289 @@
+openapi: 3.1.0
+
+info:
+  title: Wildlife API
+  description: The Wildlife API allows you to manage wildlife animals.
+  version: 1.0.0
+
+paths:
+  /wildlife/animals:
+    get:
+      tags:
+      - Wildlife
+      summary: List Wildlife Animals
+      description: List of wildlife animals.
+      parameters:
+      - name: Accept
+        in: header
+        description: "The format of the response. Supported formats: JSON and XML."
+        required: false
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/xml
+
+      - name: Content-Type
+        in: header
+        description: "The format of the request. Supported formats: JSON and XML."
+        required: false
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/xml
+
+      - name: Authorization
+        in: header
+        description: The authentication token required for the request.
+        required: true
+        schema:
+          type: string
+
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/animal"
+        400:
+          $ref: "#/components/responses/400"
+        401:
+          $ref: "#/components/responses/401"
+        403:
+          $ref: "#/components/responses/403"
+        404:
+          $ref: "#/components/responses/404"
+        500:
+          $ref: "#/components/responses/500"
+
+  /wildlife/animals/{id}:
+    get:
+      tags:
+      - Wildlife
+      summary: Get Wildlife Animal
+      description: Get a wildlife animal by its ID.
+      parameters:
+      - name: Accept
+        in: header
+        description: "The format of the response. Supported formats: JSON and XML."
+        required: false
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/xml
+
+      - name: Content-Type
+        in: header
+        description: "The format of the request. Supported formats: JSON and XML."
+        required: false
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/xml
+
+      - name: Authorization
+        in: header
+        description: The authentication token required for the request.
+        required: true
+        schema:
+          type: string
+
+      - name: id
+        in: path
+        description: The ID of the wildlife animal.
+        required: true
+        schema:
+          type: string
+          format: uuid
+
+      - name: fields
+        in: query
+        description: The fields to be returned in the response.
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/animal"
+        400:
+          $ref: "#/components/responses/400"
+        401:
+          $ref: "#/components/responses/401"
+        403:
+          $ref: "#/components/responses/403"
+        404:
+          $ref: "#/components/responses/404"
+        500:
+          $ref: "#/components/responses/500"
+
+    put:
+      tags:
+      - Wildlife
+      summary: Update Wildlife Animal
+      description: Update a wildlife animal by its ID.
+      parameters:
+      - name: Accept
+        in: header
+        description: "The format of the response. Supported formats: JSON and XML."
+        required: false
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/xml
+
+      - name: Content-Type
+        in: header
+        description: "The format of the request. Supported formats: JSON and XML."
+        required: false
+        schema:
+          type: string
+          enum:
+          - application/json
+          - application/xml
+
+      - name: Authorization
+        in: header
+        description: The authentication token required for the request.
+        required: true
+        schema:
+          type: string
+
+      - name: id
+        in: path
+        description: The ID of the wildlife animal.
+        required: true
+        schema:
+          type: string
+          format: uuid
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                name:
+                  type: string
+                age:
+                  type: number
+                image:
+                  type: string
+                  format: uri
+
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/animal"
+        400:
+          $ref: "#/components/responses/400"
+        401:
+          $ref: "#/components/responses/401"
+        403:
+          $ref: "#/components/responses/403"
+        404:
+          $ref: "#/components/responses/404"
+        500:
+          $ref: "#/components/responses/500"
+
+components:
+  schemas:
+    animal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        pack:
+          $ref: "#/components/schemas/pack"
+        name:
+          type: string
+        age:
+          type: number
+        image:
+          type: string
+          format: uri
+
+    pack:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        size:
+          type: number
+        members:
+          type: array
+          items:
+            $ref: "#/components/schemas/animal"
+
+  responses:
+    400:
+      description: Bad Request.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+    401:
+      description: Unauthorized.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+    403:
+      description: Forbidden.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+    404:
+      description: Not Found.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+    500:
+      description: Internal Server Error.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
