@@ -1,7 +1,7 @@
 import {readFile, writeFile} from "node:fs/promises"
 import {createWriteStream} from "node:fs"
 import {createRequire} from "node:module"
-import {basename, dirname, extname, format, join, parse} from "node:path"
+import {format, join, parse} from "node:path"
 import {jq} from "@onlyoffice/jq"
 import {libDir} from "../utils/basedir.ts"
 
@@ -45,10 +45,6 @@ export async function createREST(r) {
   await writeTemplate("rest", r)
 }
 
-export async function writeCode(r) {
-  await writeTemplate("code", r)
-}
-
 /**
  * @param {"code" | "rest"} n
  * @param {string} r
@@ -74,14 +70,4 @@ export function capitalizeTitle(s) {
       return w.charAt(0).toUpperCase() + w.slice(1)
     })
     .join(" ")
-}
-
-/**
- * @param {string} s
- * @param {number} n
- * @returns {string}
- */
-export function num(s, n) {
-  const e = extname(s)
-  return join(dirname(s), `${basename(s, e)}${n}${e}`)
 }

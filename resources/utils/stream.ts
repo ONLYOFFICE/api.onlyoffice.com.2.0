@@ -115,21 +115,6 @@ export function createIndexes(from: string, to: string, by: string): Promise<voi
   )
 }
 
-export function createIndexes2(r: Readable, to: string, by: string): Promise<void> {
-  let i = -1
-  return chain(
-    r,
-    (ch) => {
-      i += 1
-      return {key: (ch as any)[by], value: i}
-    },
-    new UnStreamObject(),
-    makeObject(),
-    new Stringer(),
-    createWriteStream(to)
-  )
-}
-
 class StreamIndex extends Transform {
   _by: string
   _i: number
