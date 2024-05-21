@@ -1,4 +1,4 @@
-import {list, retrieve} from "@/resources/community-server.ts"
+import {list, resolve} from "@/resources/community-server.ts"
 
 export function data() {
   return {
@@ -9,7 +9,7 @@ export function data() {
       addAllPagesToCollections: true
     },
     items: list(),
-    onRetrieve: retrieve,
+    onRetrieve: resolve,
     permalink(data) {
       const d = data.pagination.items[0]
       return `/community-server/api-backend/${d.slug}/index.html`
