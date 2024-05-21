@@ -137,7 +137,7 @@ function config() {
         "@stylistic/array-element-newline": [e, "consistent"],
         "@stylistic/arrow-parens": e,
         "@stylistic/arrow-spacing": e,
-        "@stylistic/block-spacing": e,
+        "@stylistic/block-spacing": "off",
         "@stylistic/brace-style": e,
         "@stylistic/comma-dangle": e,
         "@stylistic/comma-spacing": e,
