@@ -138,6 +138,10 @@ export async function writeComponent(ch: Cache, rw: StringWritable, cw: Writable
     c.on("error", rej)
   })
 
+  if (to.buf === "") {
+    to.buf = "{}"
+  }
+
   if (!await hasJQ()) {
     cw.write(to.buf)
   } else {
