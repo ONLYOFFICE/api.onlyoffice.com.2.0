@@ -16,7 +16,7 @@
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/jq": "workspace:^",
     "@onlyoffice/jsdoc": "workspace:^",
-    "@onlyoffice/jsdoc-library": "workspace:^",
+    "@onlyoffice/jsdoc-declaration": "workspace:^",
     "@onlyoffice/library-resource": "workspace:^",
     "@onlyoffice/resource": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",

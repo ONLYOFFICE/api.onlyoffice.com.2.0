@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/jsdoc-library",
+  "name": "@onlyoffice/jsdoc-declaration",
   "private": true,
   "type": "module",
   "main": "lib/main.ts",

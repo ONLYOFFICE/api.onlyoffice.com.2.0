@@ -226,9 +226,9 @@ importers:
       '@onlyoffice/jq':
         specifier: workspace:^
         version: link:../jq
-      '@onlyoffice/jsdoc-library':
+      '@onlyoffice/jsdoc-declaration':
         specifier: workspace:^
-        version: link:../jsdoc-library
+        version: link:../jsdoc-declaration
       '@onlyoffice/library-resource':
         specifier: workspace:^
         version: link:../library-resource
@@ -468,7 +468,7 @@ importers:
 
   packages/jsdoc: {}
 
-  packages/jsdoc-library:
+  packages/jsdoc-declaration:
     dependencies:
       '@onlyoffice/async-transform':
         specifier: workspace:^
@@ -541,9 +541,9 @@ importers:
       '@onlyoffice/jsdoc':
         specifier: workspace:^
         version: link:../jsdoc
-      '@onlyoffice/jsdoc-library':
+      '@onlyoffice/jsdoc-declaration':
         specifier: workspace:^
-        version: link:../jsdoc-library
+        version: link:../jsdoc-declaration
       '@onlyoffice/library-resource':
         specifier: workspace:^
         version: link:../library-resource
@@ -915,9 +915,9 @@ importers:
       '@onlyoffice/jq':
         specifier: workspace:^
         version: link:../packages/jq
-      '@onlyoffice/jsdoc-library':
+      '@onlyoffice/jsdoc-declaration':
         specifier: workspace:^
-        version: link:../packages/jsdoc-library
+        version: link:../packages/jsdoc-declaration
       '@onlyoffice/openapi-service':
         specifier: workspace:^
         version: link:../packages/openapi-service
