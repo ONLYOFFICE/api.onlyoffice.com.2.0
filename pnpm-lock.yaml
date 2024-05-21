@@ -1227,6 +1227,9 @@ importers:
       '@onlyoffice/declaration-tokenizer':
         specifier: workspace:^
         version: link:../packages/declaration-tokenizer
+      '@onlyoffice/docspace-hosted-solutions-resource':
+        specifier: workspace:^
+        version: link:../packages/docspace-hosted-solutions-resource
       '@onlyoffice/document-builder-hast-element':
         specifier: workspace:^
         version: link:../packages/document-builder-hast-element
