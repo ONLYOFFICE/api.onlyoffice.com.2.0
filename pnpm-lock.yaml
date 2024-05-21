@@ -215,6 +215,10 @@ importers:
         version: 5.4.5
 
   packages/document-builder-resource:
+    dependencies:
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
     devDependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -225,9 +229,6 @@ importers:
       '@onlyoffice/jsdoc-library':
         specifier: workspace:^
         version: link:../jsdoc-library
-      '@onlyoffice/library-declaration':
-        specifier: workspace:^
-        version: link:../library-declaration
       '@onlyoffice/library-resource':
         specifier: workspace:^
         version: link:../library-resource
