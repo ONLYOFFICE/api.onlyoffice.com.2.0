@@ -30,6 +30,10 @@ export function indexBasename(n: string): string {
   return `${n}.index.json`
 }
 
+export function componentBasename(n: string): string {
+  return `${n}.component.json`
+}
+
 export function resourceBasename(n: string): string {
   return `${n}.ts`
 }
