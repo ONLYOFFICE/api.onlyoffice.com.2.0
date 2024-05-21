@@ -907,6 +907,9 @@ importers:
       '@onlyoffice/document-builder-html-element':
         specifier: workspace:^
         version: link:../packages/document-builder-html-element
+      '@onlyoffice/document-builder-resource':
+        specifier: workspace:^
+        version: link:../packages/document-builder-resource
       '@onlyoffice/document-builder-utils':
         specifier: workspace:^
         version: link:../packages/document-builder-utils
@@ -943,6 +946,9 @@ importers:
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../packages/library-declaration
+      '@onlyoffice/library-declaration-fixtures':
+        specifier: workspace:^
+        version: link:../packages/library-declaration-fixtures
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
