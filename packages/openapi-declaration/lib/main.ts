@@ -28,7 +28,7 @@ function hash(s: string): string {
 
 export type OpenAPIComponentsKey = keyof OpenAPI.ComponentsObject
 
-interface PathChunk {
+export interface PathChunk {
   key: string
   value: OpenAPI.PathItemObject
 }
@@ -110,7 +110,7 @@ export class ProcessPath extends Transform {
   }
 }
 
-interface RequestChunk {
+export interface RequestChunk {
   key: string
   value: REST.RequestDeclaration
 }
@@ -145,7 +145,7 @@ export class ProcessRequest extends Transform {
   }
 }
 
-function httpMethods(): OpenAPI.HttpMethods[] {
+export function httpMethods(): OpenAPI.HttpMethods[] {
   // I have no idea how to convert enum values to array.
   return [
     "delete", "get",  "head", "options",
