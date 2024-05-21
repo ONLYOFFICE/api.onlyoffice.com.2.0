@@ -1,7 +1,6 @@
 import {argv} from "node:process"
 import esMain from "es-main"
 import sade from "sade"
-import * as communityServer from "./scripts/community-server.ts"
 import * as docspace from "./scripts/docspace.ts"
 import * as hostedSolutions from "./scripts/hosted-solutions.ts"
 import {createTempDir, prepareLibDir} from "./utils/basedir.ts"
@@ -30,11 +29,11 @@ export async function build(opts: BuildOptions): Promise<void> {
     await m.build(tempDir, distDir)
   }
 
-  function resolve(a: string[]): typeof communityServer[] {
+  function resolve(a: string[]): typeof docspace[] {
     if (a.length === 0) {
-      return [communityServer, docspace, hostedSolutions]
+      return [docspace, hostedSolutions]
     }
-    const r: typeof communityServer[] = []
+    const r: typeof docspace[] = []
     for (const n of a) {
       const m = module(n)
       if (m) {
@@ -44,10 +43,8 @@ export async function build(opts: BuildOptions): Promise<void> {
     return r
   }
 
-  function module(n: string): typeof communityServer | undefined {
+  function module(n: string): typeof docspace | undefined {
     switch (n) {
-    case "community-server":
-      return communityServer
     case "docspace":
       return docspace
     case "hosted-solutions":
