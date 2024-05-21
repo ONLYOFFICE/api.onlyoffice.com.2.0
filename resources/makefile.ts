@@ -2,7 +2,6 @@ import {argv} from "node:process"
 import esMain from "es-main"
 import sade from "sade"
 import * as docspace from "./scripts/docspace.ts"
-import * as hostedSolutions from "./scripts/hosted-solutions.ts"
 import {createTempDir, prepareLibDir} from "./utils/basedir.ts"
 
 if (esMain(import.meta)) {
@@ -31,7 +30,7 @@ export async function build(opts: BuildOptions): Promise<void> {
 
   function resolve(a: string[]): typeof docspace[] {
     if (a.length === 0) {
-      return [docspace, hostedSolutions]
+      return [docspace]
     }
     const r: typeof docspace[] = []
     for (const n of a) {
@@ -47,8 +46,6 @@ export async function build(opts: BuildOptions): Promise<void> {
     switch (n) {
     case "docspace":
       return docspace
-    case "hosted-solutions":
-      return hostedSolutions
     default:
       return
     }
