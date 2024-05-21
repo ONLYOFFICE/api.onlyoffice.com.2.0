@@ -23,6 +23,7 @@ export interface Doclet {
   scope?: DocletScope
   summary?: string
   type?: DocletType
+  undocumented?: boolean
 }
 
 export function doclet(): Doclet {
