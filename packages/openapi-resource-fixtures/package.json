@@ -36,8 +36,5 @@
   },
   "engines": {
     "node": "^21"
-  },
-  "dependencies": {
-    "@onlyoffice/service-declaration": "workspace:^"
   }
 }
