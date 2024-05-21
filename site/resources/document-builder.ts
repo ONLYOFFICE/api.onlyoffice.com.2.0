@@ -1,31 +1,27 @@
 import {createRequire} from "node:module"
-import type * as Library from "@onlyoffice/library-declaration"
+import type {Resource} from "@onlyoffice/library-resource"
 import {isBuild, isPreview} from "../config/mode.ts"
 
 const require = createRequire(import.meta.url)
 
-export const document = createModule("document-builder.document")
-export const form = createModule("document-builder.form")
-export const presentation = createModule("document-builder.presentation")
-export const spreadsheet = createModule("document-builder.spreadsheet")
-export const pluginCommon = createModule("document-builder-plugin.common")
-export const pluginDocument = createModule("document-builder-plugin.document")
-export const pluginForm = createModule("document-builder-plugin.form")
-export const pluginPresentation = createModule("document-builder-plugin.presentation")
-export const pluginSpreadsheet = createModule("document-builder-plugin.spreadsheet")
+export const document = resource("document")
+export const form = resource("form")
+export const presentation = resource("presentation")
+export const spreadsheet = resource("spreadsheet")
+export const pluginCommon = resource("plugin-common")
+export const pluginDocument = resource("plugin-document")
+export const pluginForm = resource("plugin-form")
+export const pluginPresentation = resource("plugin-presentation")
+export const pluginSpreadsheet = resource("plugin-spreadsheet")
 
-function createModule(n: string) {
-  const r = isBuild() || isPreview()
-    ? require(`@onlyoffice/documentation-resources/${n}.ts`)
-    : require(`@onlyoffice/documentation-declarations-fixtures/code.ts`)
+function resource(n: string): Resource {
+  const f = file(n)
+  return require(f)
+}
 
-  function list(): Library.Declaration[] {
-    return r.list()
+function file(n: string): string {
+  if (isBuild() || isPreview()) {
+    return `@onlyoffice/document-builder-resource/${n}.ts`
   }
-
-  function retrieve(id: string): Library.Declaration | undefined {
-    return r.retrieve(id)
-  }
-
-  return {list, retrieve}
+  return "@onlyoffice/jsdoc-resource-fixtures/resource.ts"
 }

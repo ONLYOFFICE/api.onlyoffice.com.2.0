@@ -998,9 +998,15 @@ importers:
       '@onlyoffice/eleventy-yaml':
         specifier: workspace:^
         version: link:../packages/eleventy-yaml
+      '@onlyoffice/jsdoc-resource-fixtures':
+        specifier: workspace:^
+        version: link:../packages/jsdoc-resource-fixtures
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../packages/library-declaration
+      '@onlyoffice/library-resource':
+        specifier: workspace:^
+        version: link:../packages/library-resource
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
