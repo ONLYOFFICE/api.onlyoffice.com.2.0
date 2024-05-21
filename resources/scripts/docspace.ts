@@ -23,7 +23,7 @@ import {
   mergeArrays,
   mergeObjects
 } from "../utils/stream.ts"
-import { appendPathPostfix, capitalizeTitle, prettifyJSON, createREST } from "./utils.ts"
+import { appendPathPostfix, prettifyJSON, createREST } from "./utils.ts"
 
 const ref = "https://raw.githubusercontent.com/onlyoffice/docspace-declarations/dist/"
 const files = [
@@ -214,7 +214,6 @@ class ProcessPath extends OpenAPIProcessPath {
       // if (o.tags === undefined) {
       //   o.tags = [this._pack]
       // }
-      o.tags = o.tags.map(capitalizeTitle)
       if (o.description !== undefined) {
         o.description = `**Note**: ${o.description}`
       }

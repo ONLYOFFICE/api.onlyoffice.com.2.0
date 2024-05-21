@@ -56,18 +56,3 @@ export async function writeTemplate(n, r) {
   const t = join(libDir(), `${r}.ts`)
   await writeFile(t, c, "utf-8")
 }
-
-/**
- * Capitalizes the first letter of each word in a string.
- * @param {string} s The input string.
- * @returns {string} The capitalized string.
- */
-export function capitalizeTitle(s) {
-  return s
-    .toLowerCase()
-    .split(" ")
-    .map((w) => {
-      return w.charAt(0).toUpperCase() + w.slice(1)
-    })
-    .join(" ")
-}
