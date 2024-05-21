@@ -4,7 +4,7 @@ import {tmpdir} from "node:os"
 import {join} from "node:path"
 import {URL, fileURLToPath} from "node:url"
 import {Console} from "@onlyoffice/console"
-import {jq} from "@onlyoffice/jq"
+import {hasJQ, jq} from "@onlyoffice/jq"
 import {Cache, ProcessPath, ProcessRequest} from "@onlyoffice/openapi-declaration"
 import {PickPath} from "@onlyoffice/openapi-resource"
 import {relative} from "@onlyoffice/path"
@@ -124,18 +124,22 @@ async function writeDeclaration(td: string, dd: string, cfg: typeof config[0]): 
   })
 
   const n = declarationBasename(cfg.name)
+  const f = join(dd, n)
 
-  const tf = join(td, n)
-  await writeFile(tf, to.buf)
+  if (!await hasJQ()) {
+    await writeFile(f, to.buf)
+  } else {
+    const tf = join(td, n)
+    await writeFile(tf, to.buf)
 
-  const df = join(dd, n)
-  const dw = createWriteStream(df)
-  await jq(dw, [".", tf])
-  dw.close()
+    const dw = createWriteStream(f)
+    await jq(dw, [".", tf])
+    dw.close()
 
-  await rm(tf)
+    await rm(tf)
+  }
 
-  return df
+  return f
 }
 
 async function writeComponent(dd: string, cfg: typeof config[0]): Promise<string> {
