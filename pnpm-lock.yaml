@@ -625,7 +625,7 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
-  packages/openapi-service:
+  packages/openapi-declaration:
     dependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -918,9 +918,9 @@ importers:
       '@onlyoffice/jsdoc-declaration':
         specifier: workspace:^
         version: link:../packages/jsdoc-declaration
-      '@onlyoffice/openapi-service':
+      '@onlyoffice/openapi-declaration':
         specifier: workspace:^
-        version: link:../packages/openapi-service
+        version: link:../packages/openapi-declaration
       '@onlyoffice/stream-string':
         specifier: workspace:^
         version: link:../packages/stream-string

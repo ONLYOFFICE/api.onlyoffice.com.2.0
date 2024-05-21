@@ -1,4 +1,4 @@
-import type {OpenAPIComponentsKey} from "@onlyoffice/openapi-service"
+import type {OpenAPIComponentsKey} from "@onlyoffice/openapi-declaration"
 import Pick from "stream-json/filters/Pick.js"
 
 export class PickPath extends Pick {

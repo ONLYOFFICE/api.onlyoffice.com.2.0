@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/openapi-service",
+  "name": "@onlyoffice/openapi-declaration",
   "private": true,
   "type": "module",
   "main": "lib/main.ts",

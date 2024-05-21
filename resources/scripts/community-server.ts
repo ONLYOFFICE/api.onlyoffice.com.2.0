@@ -1,7 +1,7 @@
 import { mkdir, rm, rmdir } from "node:fs/promises"
 import { createReadStream, createWriteStream } from "node:fs"
 import { join } from "node:path"
-import { Cache, ProcessPath, ProcessRequest } from "@onlyoffice/openapi-service"
+import { Cache, ProcessPath, ProcessRequest } from "@onlyoffice/openapi-declaration"
 import StreamArray from "stream-json/streamers/StreamArray.js"
 import StreamObject from "stream-json/streamers/StreamObject.js"
 import Disassembler from "stream-json/Disassembler.js"

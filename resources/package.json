@@ -15,7 +15,7 @@
     "@onlyoffice/documentation-utils": "workspace:^",
     "@onlyoffice/jq": "workspace:^",
     "@onlyoffice/jsdoc-declaration": "workspace:^",
-    "@onlyoffice/openapi-service": "workspace:^",
+    "@onlyoffice/openapi-declaration": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
     "@stylistic/eslint-plugin-js": "^1.5.4",
     "@types/multistream": "^4.1.3",
