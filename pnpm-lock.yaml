@@ -104,9 +104,6 @@ importers:
 
   packages/community-server-resource:
     dependencies:
-      '@onlyoffice/path':
-        specifier: workspace:^
-        version: link:../path
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../service-declaration
@@ -123,6 +120,9 @@ importers:
       '@onlyoffice/openapi-resource':
         specifier: workspace:^
         version: link:../openapi-resource
+      '@onlyoffice/path':
+        specifier: workspace:^
+        version: link:../path
       '@onlyoffice/resource':
         specifier: workspace:^
         version: link:../resource

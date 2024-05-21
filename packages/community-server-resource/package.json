@@ -10,7 +10,6 @@
     "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
   },
   "dependencies": {
-    "@onlyoffice/path": "workspace:^",
     "@onlyoffice/service-declaration": "workspace:^"
   },
   "devDependencies": {
@@ -18,6 +17,7 @@
     "@onlyoffice/jq": "workspace:^",
     "@onlyoffice/openapi-declaration": "workspace:^",
     "@onlyoffice/openapi-resource": "workspace:^",
+    "@onlyoffice/path": "workspace:^",
     "@onlyoffice/resource": "workspace:^",
     "@onlyoffice/service-resource": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
