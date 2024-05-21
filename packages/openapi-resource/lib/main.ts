@@ -2,7 +2,7 @@ import {mkdtemp, rm, rmdir, writeFile} from "node:fs/promises"
 import type {WriteStream} from "node:fs"
 import {tmpdir} from "node:os"
 import {dirname, join} from "node:path"
-import type {Writable} from "node:stream"
+import type {Transform, Writable} from "node:stream"
 import {hasJQ, jq} from "@onlyoffice/jq"
 import type {Cache} from "@onlyoffice/openapi-declaration"
 import {ProcessComponent, ProcessPath, ProcessRequest} from "@onlyoffice/openapi-declaration"
@@ -21,7 +21,12 @@ import Parser from "stream-json/Parser.js"
 import Stringer from "stream-json/Stringer.js"
 import pack from "../package.json" with {type: "json"}
 
-export async function writeDeclaration(ch: Cache, rw: StringWritable, dw: Writable): Promise<void> {
+export async function writeDeclaration(
+  ch: Cache,
+  rw: StringWritable,
+  dw: Writable,
+  ts: Transform[] = []
+): Promise<void> {
   let from: StringWritable
   let to = new StringWritable()
   await new Promise((res, rej) => {
@@ -30,6 +35,7 @@ export async function writeDeclaration(ch: Cache, rw: StringWritable, dw: Writab
       new Parser(),
       new Pick({filter: "paths"}),
       new StreamObject(),
+      ts[0] ?? [],
       new ProcessPath(ch),
       new Disassembler(),
       new Stringer({makeArray: true}),
