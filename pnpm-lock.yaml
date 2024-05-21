@@ -233,6 +233,40 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/docspace-resource:
+    dependencies:
+      '@onlyoffice/service-declaration':
+        specifier: workspace:^
+        version: link:../service-declaration
+    devDependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/openapi-declaration':
+        specifier: workspace:^
+        version: link:../openapi-declaration
+      '@onlyoffice/openapi-resource':
+        specifier: workspace:^
+        version: link:../openapi-resource
+      '@onlyoffice/resource':
+        specifier: workspace:^
+        version: link:../resource
+      '@onlyoffice/stream-string':
+        specifier: workspace:^
+        version: link:../stream-string
+      c8:
+        specifier: ^9.1.0
+        version: 9.1.0
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
+
   packages/document-builder-hast-element:
     dependencies:
       '@onlyoffice/document-builder-html-element':
