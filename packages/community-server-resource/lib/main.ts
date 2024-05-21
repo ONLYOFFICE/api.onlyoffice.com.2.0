@@ -7,6 +7,7 @@ import {Console} from "@onlyoffice/console"
 import {jq} from "@onlyoffice/jq"
 import {Cache, ProcessPath, ProcessRequest} from "@onlyoffice/openapi-declaration"
 import {PickPath} from "@onlyoffice/openapi-resource"
+import {relative} from "@onlyoffice/path"
 import {componentBasename, declarationBasename, rawURL, readURL, resourceBasename} from "@onlyoffice/resource"
 import {resource} from "@onlyoffice/service-resource"
 import {StringReadable, StringWritable} from "@onlyoffice/stream-string"
@@ -145,6 +146,8 @@ async function writeComponent(dd: string, cfg: typeof config[0]): Promise<string
 }
 
 async function writeResource(dd: string, cfg: typeof config[0], df: string, cf: string): Promise<void> {
+  df = relative(dd, df)
+  cf = relative(dd, cf)
   const n = resourceBasename(cfg.name)
   const f = join(dd, n)
   const c = await resource(df, cf)

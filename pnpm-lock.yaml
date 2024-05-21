@@ -86,6 +86,9 @@ importers:
 
   packages/community-server-resource:
     dependencies:
+      '@onlyoffice/path':
+        specifier: workspace:^
+        version: link:../path
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../service-declaration
