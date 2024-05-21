@@ -802,12 +802,42 @@ importers:
 
   packages/openapi-resource:
     dependencies:
+      '@onlyoffice/jq':
+        specifier: workspace:^
+        version: link:../jq
+      '@onlyoffice/openapi-declaration':
+        specifier: workspace:^
+        version: link:../openapi-declaration
+      '@onlyoffice/path':
+        specifier: workspace:^
+        version: link:../path
+      '@onlyoffice/service-resource':
+        specifier: workspace:^
+        version: link:../service-resource
+      '@onlyoffice/stream-json':
+        specifier: workspace:^
+        version: link:../stream-json
+      '@onlyoffice/stream-string':
+        specifier: workspace:^
+        version: link:../stream-string
+      '@types/multistream':
+        specifier: ^4.1.3
+        version: 4.1.3
+      '@types/stream-chain':
+        specifier: ^2.0.4
+        version: 2.0.4
       '@types/stream-json':
         specifier: ^1.7.7
         version: 1.7.7
+      multistream:
+        specifier: ^4.1.0
+        version: 4.1.0
       openapi-types:
         specifier: ^12.1.3
         version: 12.1.3
+      stream-chain:
+        specifier: ^2.2.5
+        version: 2.2.5
       stream-json:
         specifier: ^1.8.0
         version: 1.8.0

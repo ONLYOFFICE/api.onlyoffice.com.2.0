@@ -7,8 +7,18 @@
     "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
   },
   "dependencies": {
+    "@onlyoffice/jq": "workspace:^",
+    "@onlyoffice/openapi-declaration": "workspace:^",
+    "@onlyoffice/path": "workspace:^",
+    "@onlyoffice/service-resource": "workspace:^",
+    "@onlyoffice/stream-json": "workspace:^",
+    "@onlyoffice/stream-string": "workspace:^",
+    "@types/multistream": "^4.1.3",
+    "@types/stream-chain": "^2.0.4",
     "@types/stream-json": "^1.7.7",
+    "multistream": "^4.1.0",
     "openapi-types": "^12.1.3",
+    "stream-chain": "^2.2.5",
     "stream-json": "^1.8.0"
   },
   "devDependencies": {
