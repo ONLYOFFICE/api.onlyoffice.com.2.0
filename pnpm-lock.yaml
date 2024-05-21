@@ -788,6 +788,9 @@ importers:
       '@onlyoffice/service-resource':
         specifier: workspace:^
         version: link:../service-resource
+      '@onlyoffice/stream-json':
+        specifier: workspace:^
+        version: link:../stream-json
       '@onlyoffice/stream-string':
         specifier: workspace:^
         version: link:../stream-string

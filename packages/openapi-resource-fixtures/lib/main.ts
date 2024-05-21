@@ -10,6 +10,7 @@ import {PickComponent, PickPath} from "@onlyoffice/openapi-resource"
 import {relative} from "@onlyoffice/path"
 import {componentBasename, declarationBasename, resourceBasename} from "@onlyoffice/resource"
 import {resource} from "@onlyoffice/service-resource"
+import {UnstreamObject, makeObject} from "@onlyoffice/stream-json"
 import {StringReadable, StringWritable} from "@onlyoffice/stream-string"
 import MultiStream from "multistream"
 import Chain from "stream-chain"
@@ -20,9 +21,6 @@ import Parser from "stream-json/Parser.js"
 import {parse} from "yaml"
 import Stringer from "stream-json/Stringer.js"
 import pack from "../package.json" with {type: "json"}
-
-import type {TransformCallback} from "node:stream"
-import {Transform} from "node:stream"
 
 const console = new Console(pack.name, process.stdout, process.stderr)
 
@@ -141,7 +139,7 @@ async function writeData(td: string, dd: string, rw: StringWritable): Promise<[s
         new PickComponent(k),
         new StreamObject(),
         new ProcessComponent(cache, k),
-        new UnStreamObject(),
+        new UnstreamObject(),
         makeObject(),
         new Stringer(),
         to
@@ -159,7 +157,7 @@ async function writeData(td: string, dd: string, rw: StringWritable): Promise<[s
       from.toReadable(),
       new Parser({jsonStreaming: true}),
       new StreamObject(),
-      new UnStreamObject(),
+      new UnstreamObject(),
       makeObject(),
       new Stringer(),
       to
@@ -216,52 +214,6 @@ function fixturesDir(d: string): string {
 
 function resourceFile(d: string): string {
   return join(d, "resource.yml")
-}
-
-/**
- * Returns a transform similar to the `stream-json/Stringer` with the
- * `makeArray` option is enabled. For more information, refer to the related
- * [issue](https://github.com/uhop/stream-json/pull/143/).
- */
-export function makeObject(): Transform {
-  return new Transform({
-    objectMode: true,
-    transform(ch, enc, cb) {
-      this.push({name: "startObject"})
-      this._transform = transformPassThrough
-      return this._transform(ch, enc, cb)
-    },
-    flush(cb) {
-      if (this._transform === transformPassThrough) {
-        this.push({name: "endObject"})
-      }
-      cb(null)
-    }
-  })
-
-  function transformPassThrough(
-    this: Transform,
-    ch: unknown,
-    enc: BufferEncoding,
-    cb: TransformCallback
-  ): void {
-    this.push(ch, enc)
-    cb(null)
-  }
-}
-
-interface ChainChunk {
-  key: unknown
-  value: unknown
-}
-
-export class UnStreamObject extends Disassembler {
-  _transform(ch: ChainChunk, _: BufferEncoding, cb: TransformCallback): void {
-    this.push({name: "startKey"})
-    this.push({name: "stringChunk", value: ch.key})
-    this.push({name: "endKey"})
-    super._transform(ch.value, _, cb)
-  }
 }
 
 await main()

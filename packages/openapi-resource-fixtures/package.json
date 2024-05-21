@@ -17,6 +17,7 @@
     "@onlyoffice/path": "workspace:^",
     "@onlyoffice/resource": "workspace:^",
     "@onlyoffice/service-resource": "workspace:^",
+    "@onlyoffice/stream-json": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
     "@types/multistream": "^4.1.3",
     "@types/stream-chain": "^2.0.4",
