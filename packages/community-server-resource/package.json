@@ -1,0 +1,37 @@
+{
+  "name": "@onlyoffice/community-server-resource",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./dist/*"
+  },
+  "scripts": {
+    "build": "tsx lib/main.ts",
+    "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
+  },
+  "dependencies": {
+    "@onlyoffice/service-declaration": "workspace:^"
+  },
+  "devDependencies": {
+    "@onlyoffice/console": "workspace:^",
+    "@onlyoffice/jq": "workspace:^",
+    "@onlyoffice/openapi-declaration": "workspace:^",
+    "@onlyoffice/openapi-resource": "workspace:^",
+    "@onlyoffice/resource": "workspace:^",
+    "@onlyoffice/service-resource": "workspace:^",
+    "@onlyoffice/stream-string": "workspace:^",
+    "@types/multistream": "^4.1.3",
+    "@types/stream-chain": "^2.0.4",
+    "@types/stream-json": "^1.7.7",
+    "c8": "^9.1.0",
+    "multistream": "^4.1.0",
+    "stream-chain": "^2.2.5",
+    "stream-json": "^1.8.0",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5",
+    "uvu": "^0.5.6"
+  },
+  "engines": {
+    "node": "^21"
+  }
+}
