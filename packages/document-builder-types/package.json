@@ -2,5 +2,8 @@
   "name": "@onlyoffice/document-builder-types",
   "private": true,
   "type": "module",
-  "types": "lib/types.d.ts"
+  "types": "lib/types.d.ts",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
 }

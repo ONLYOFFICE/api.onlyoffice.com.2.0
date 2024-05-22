@@ -3,10 +3,10 @@ import rehypeStringify from "rehype-stringify"
 import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
 import {unified} from "unified"
+import {visit} from "unist-util-visit"
 import {is, unreachable} from "uvu/assert"
 import {test} from "uvu"
 import {remarkDocumentBuilder} from "./main.ts"
-import {visit} from "unist-util-visit"
 
 test("does nothing if no option is specified", async () => {
   const c = "```\n\n```"

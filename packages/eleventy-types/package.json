@@ -2,5 +2,14 @@
   "name": "@onlyoffice/eleventy-types",
   "private": true,
   "type": "module",
-  "types": "lib/types.d.ts"
+  "main": "lib/main.ts",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./reference": {
+      "types": "./lib/reference.d.ts"
+    }
+  },
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
 }

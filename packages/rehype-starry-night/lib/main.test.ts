@@ -6,7 +6,7 @@ import remarkRehype from "remark-rehype"
 import {unified} from "unified"
 import {is, unreachable} from "uvu/assert"
 import {test} from "uvu"
-import {rehypeStarryNight} from "./main.ts"
+import {rehypeStarryNight} from "./main.js"
 
 const sn = await createStarryNight(all)
 

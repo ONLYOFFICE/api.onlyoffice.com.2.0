@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@onlyoffice/document-builder-html-element": "workspace:^",
-    "@onlyoffice/document-editor-hast-element": "workspace:^"
+    "@onlyoffice/document-editor-hast-element": "workspace:^",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@onlyoffice/document-editor-html-element": "workspace:^",
@@ -16,7 +17,6 @@
     "c8": "^9.1.0",
     "hast-util-to-html": "^9.0.1",
     "tsx": "^4.10.5",
-    "typescript": "^5.4.5",
     "uvu": "^0.5.6"
   },
   "engines": {

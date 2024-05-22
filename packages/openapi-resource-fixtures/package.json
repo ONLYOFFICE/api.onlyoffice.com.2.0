@@ -6,11 +6,12 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "build": "tsx lib/main.ts",
-    "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
+    "build": "tsx lib/main.ts"
   },
   "dependencies": {
-    "@onlyoffice/service-declaration": "workspace:^"
+    "@onlyoffice/service-declaration": "workspace:^",
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@onlyoffice/console": "workspace:^",
@@ -18,10 +19,7 @@
     "@onlyoffice/openapi-resource": "workspace:^",
     "@onlyoffice/resource": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
-    "c8": "^9.1.0",
     "tsx": "^4.10.5",
-    "typescript": "^5.4.5",
-    "uvu": "^0.5.6",
     "yaml": "^2.4.1"
   },
   "engines": {

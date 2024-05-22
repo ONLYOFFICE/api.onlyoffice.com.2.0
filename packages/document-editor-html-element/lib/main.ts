@@ -1,6 +1,4 @@
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
-import {uniqueString} from "@onlyoffice/unique-string"
-
 import type {
   DocEditor,
   DocEditorConfig,
@@ -24,6 +22,7 @@ import type {
   DocEditorRequestUsersEvent,
   DocEditorWarningEvent
 } from "@onlyoffice/document-server-types"
+import {uniqueString} from "@onlyoffice/unique-string"
 
 declare global {
   interface Window {

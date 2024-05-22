@@ -6,12 +6,13 @@
   "scripts": {
     "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/hast": "^3.0.4",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
     "c8": "^9.1.0",
-    "hast-util-to-html": "^9.0.1",
     "tsx": "^4.10.5",
-    "typescript": "^5.4.5",
     "uvu": "^0.5.6"
   },
   "engines": {

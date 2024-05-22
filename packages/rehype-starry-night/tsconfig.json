@@ -1,13 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
     "rootDir": "./lib",
     "outDir": "./dist"
   },
-  "include": [
-    "./lib/*"
-  ],
-  "exclude": [
-    "./lib/*.test.ts"
-  ]
+  "include": ["./lib/*"]
 }
