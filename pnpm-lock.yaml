@@ -1154,63 +1154,6 @@ importers:
 
   packages/xml-types: {}
 
-  resources:
-    devDependencies:
-      '@onlyoffice/console':
-        specifier: workspace:^
-        version: link:../packages/console
-      '@onlyoffice/documentation-declarations-fixtures':
-        specifier: workspace:^
-        version: link:../declarations/fixtures
-      '@onlyoffice/documentation-utils':
-        specifier: workspace:^
-        version: link:../utils
-      '@onlyoffice/jq':
-        specifier: workspace:^
-        version: link:../packages/jq
-      '@onlyoffice/jsdoc-declaration':
-        specifier: workspace:^
-        version: link:../packages/jsdoc-declaration
-      '@onlyoffice/openapi-declaration':
-        specifier: workspace:^
-        version: link:../packages/openapi-declaration
-      '@onlyoffice/stream-string':
-        specifier: workspace:^
-        version: link:../packages/stream-string
-      '@stylistic/eslint-plugin-js':
-        specifier: ^1.5.4
-        version: 1.6.3(eslint@9.2.0)
-      '@types/multistream':
-        specifier: ^4.1.3
-        version: 4.1.3
-      '@types/node':
-        specifier: ^20.11.5
-        version: 20.11.26
-      '@types/stream-chain':
-        specifier: ^2.0.4
-        version: 2.0.4
-      '@types/stream-json':
-        specifier: ^1.7.7
-        version: 1.7.7
-      es-main:
-        specifier: ^1.3.0
-        version: 1.3.0
-      multistream:
-        specifier: ^4.1.0
-        version: 4.1.0
-      sade:
-        specifier: ^1.8.1
-        version: 1.8.1
-      stream-chain:
-        specifier: ^2.2.5
-        version: 2.2.5
-      stream-json:
-        specifier: ^1.8.0
-        version: 1.8.0
-      tsx:
-        specifier: ^4.10.5
-        version: 4.10.5
-
   site:
     devDependencies:
       '@11ty/eleventy':
@@ -1255,9 +1198,6 @@ importers:
       '@onlyoffice/documentation-declarations-fixtures':
         specifier: workspace:^
         version: link:../declarations/fixtures
-      '@onlyoffice/documentation-resources':
-        specifier: workspace:^
-        version: link:../resources
       '@onlyoffice/documentation-ui-kit':
         specifier: workspace:^
         version: link:../ui/kit
@@ -3300,12 +3240,6 @@ packages:
 
   '@storybook/types@8.0.10':
     resolution: {integrity: sha512-S/hKS7+SqNnYIehwxdQ4M2nnlfGDdYWAXdtPCVJCmS+YF2amgAxeuisiHbUg7eypds6VL0Oxk/j2nPEHOHk9pg==}
-
-  '@stylistic/eslint-plugin-js@1.6.3':
-    resolution: {integrity: sha512-ckdz51oHxD2FaxgY2piJWJVJiwgp8Uu96s+as2yB3RMwavn3nHBrpliVukXY9S/DmMicPRB2+H8nBk23GDG+qA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      eslint: '>=8.40.0'
 
   '@stylistic/eslint-plugin-js@2.1.0':
     resolution: {integrity: sha512-gdXUjGNSsnY6nPyqxu6lmDTtVrwCOjun4x8PUn0x04d5ucLI74N3MT1Q0UhdcOR9No3bo5PGDyBgXK+KmD787A==}
@@ -9403,15 +9337,6 @@ snapshots:
       '@storybook/channels': 8.0.10
       '@types/express': 4.17.21
       file-system-cache: 2.3.0
-
-  '@stylistic/eslint-plugin-js@1.6.3(eslint@9.2.0)':
-    dependencies:
-      '@types/eslint': 8.56.10
-      acorn: 8.11.3
-      escape-string-regexp: 4.0.0
-      eslint: 9.2.0
-      eslint-visitor-keys: 3.4.3
-      espree: 9.6.1
 
   '@stylistic/eslint-plugin-js@2.1.0(eslint@9.1.1)':
     dependencies:
