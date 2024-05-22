@@ -55,4 +55,9 @@ test("does not continue execution after a file creation", () => {
   is(globalThis.UVU_VALUE, 1)
 })
 
+test("does not throw an error if the code is invalid", () => {
+  const t = fileType('builder.CreateFile("docx')
+  is(t, "")
+})
+
 test.run()

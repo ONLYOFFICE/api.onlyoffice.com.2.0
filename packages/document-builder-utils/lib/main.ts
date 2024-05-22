@@ -9,8 +9,8 @@ export function fileType(c: string): string {
     throw new Error("Stop execution")
   }
 
-  const f = new Function("builder", c)
   try {
+    const f = new Function("builder", c)
     f(b)
   } catch {
     // continue
