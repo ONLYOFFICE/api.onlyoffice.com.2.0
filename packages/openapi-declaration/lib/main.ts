@@ -59,17 +59,20 @@ export class ProcessPath extends Transform {
           s.tags.forEach((t) => {
             const a = t.split("/")
             a.forEach((t, i) => {
+              // todo: support overloading, ex portal and Portal.
+              // temp solution
               const g = a.slice(0, i + 1).join("/")
-              let ct = this._cache.groups[g]
+              const s = g.split("/").map(slugify).join("/")
+              let ct = this._cache.groups[s]
               if (ct === undefined) {
                 ct = {
                   kind: "group",
-                  slug: g.split("/").map(slugify).join("/"),
-                  title: t,
+                  slug: s,
+                  title: t
                   // description: null,
                   // requests: []
                 }
-                this._cache.groups[g] = ct
+                this._cache.groups[s] = ct
               }
             })
 
