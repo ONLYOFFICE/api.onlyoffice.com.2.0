@@ -1,4 +1,4 @@
-import {list, retrieve} from "@/resources/docspace.ts"
+import {people} from "@/resources/docspace.ts"
 
 export function data() {
   return {
@@ -8,8 +8,8 @@ export function data() {
       size: 1,
       addAllPagesToCollections: true
     },
-    items: list(),
-    onRetrieve: retrieve,
+    items: people.list(),
+    onRetrieve: people.resolve,
     permalink(data) {
       return permalink(data.pagination.items[0])
     },

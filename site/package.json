@@ -15,6 +15,7 @@
     "@onlyoffice/community-server-resource": "workspace:^",
     "@onlyoffice/declaration-tokenizer": "workspace:^",
     "@onlyoffice/docspace-hosted-solutions-resource": "workspace:^",
+    "@onlyoffice/docspace-resource": "workspace:^",
     "@onlyoffice/document-builder-hast-element": "workspace:^",
     "@onlyoffice/document-builder-html-element": "workspace:^",
     "@onlyoffice/document-builder-resource": "workspace:^",

@@ -1,16 +1,22 @@
-import { createRequire } from "module"
-import { isBuild, isPreview } from "../config/mode.ts"
+import {createRequire} from "node:module"
+import type {Resource} from "@onlyoffice/service-resource"
+import {isBuild, isPreview} from "../config/mode.ts"
 
 const require = createRequire(import.meta.url)
 
-const r = isBuild() || isPreview()
-  ? require("@onlyoffice/documentation-resources/docspace.ts")
-  : require("@onlyoffice/documentation-declarations-fixtures/rest.ts")
+export const data = resource("data")
+export const files = resource("files")
+export const people = resource("people")
+export const web = resource("web")
 
-export function list() {
-  return r.list()
+function resource(n: string): Resource {
+  const f = file(n)
+  return require(f)
 }
 
-export function retrieve(id) {
-  return r.resolve(id)
+function file(n: string): string {
+  if (isBuild() || isPreview()) {
+    return `@onlyoffice/docspace-resource/${n}.ts`
+  }
+  return "@onlyoffice/openapi-resource-fixtures/resource.ts"
 }
