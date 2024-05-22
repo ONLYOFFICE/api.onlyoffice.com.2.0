@@ -5,7 +5,6 @@ import { useStyles } from "@onlyoffice/documentation-ui-storybook"
 import type { JSX } from "preact"
 import { h } from "preact"
 import { default as chapterMeta, Composition as ChapterComposition } from "../chapter/Chapter.stories.tsx"
-import { list, retrieve } from "./fixtures/resource.ts"
 import { RESTDeclaration } from "./rest-declaration.ts"
 
 const styles: string[] = [
@@ -26,12 +25,13 @@ export function Composition(): JSX.Element {
   return (
     <ChapterComposition>
       <Content>
-        <RESTDeclaration
+        <div>todo</div>
+        {/* <RESTDeclaration
           declaration={list()[0]}
           onHighlightSyntax={({ children }) => children}
           onRenderDescription={({ children }) => children}
           onRetrieve={retrieve}
-        />
+        /> */}
       </Content>
     </ChapterComposition>
   )

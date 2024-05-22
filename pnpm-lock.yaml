@@ -57,15 +57,6 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
-  declarations/fixtures:
-    devDependencies:
-      '@onlyoffice/service-declaration':
-        specifier: workspace:^
-        version: link:../../packages/service-declaration
-      '@types/node':
-        specifier: ^20.11.5
-        version: 20.11.26
-
   packages/async-transform:
     devDependencies:
       '@onlyoffice/stream-string':
@@ -1195,9 +1186,6 @@ importers:
       '@onlyoffice/document-editor-html-element':
         specifier: workspace:^
         version: link:../packages/document-editor-html-element
-      '@onlyoffice/documentation-declarations-fixtures':
-        specifier: workspace:^
-        version: link:../declarations/fixtures
       '@onlyoffice/documentation-ui-kit':
         specifier: workspace:^
         version: link:../ui/kit

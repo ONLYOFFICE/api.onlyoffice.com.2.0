@@ -21,7 +21,6 @@
     "@onlyoffice/document-builder-resource": "workspace:^",
     "@onlyoffice/document-builder-utils": "workspace:^",
     "@onlyoffice/document-editor-html-element": "workspace:^",
-    "@onlyoffice/documentation-declarations-fixtures": "workspace:^",
     "@onlyoffice/documentation-ui-kit": "workspace:^",
     "@onlyoffice/documentation-ui-storybook": "workspace:^",
     "@onlyoffice/documentation-utils": "workspace:^",

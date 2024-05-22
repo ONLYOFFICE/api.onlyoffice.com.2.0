@@ -3,7 +3,6 @@ import kitRegular from "@onlyoffice/documentation-ui-kit/kit.regular.css?inline"
 import { Theme as StorybookTheme } from "@onlyoffice/documentation-ui-storybook"
 import type { JSX } from "preact"
 import { Fragment, h } from "preact"
-import { list, retrieve } from "./fixtures/resource.ts"
 import codeDeclaration from "./code-declaration.css?inline"
 import codeDeclarationRegular from "./code-declaration.regular.css?inline"
 import { CodeDeclaration } from "./code-declaration.ts"
@@ -31,13 +30,14 @@ export default {
 
 export function Composition(): JSX.Element {
   return (
-    <CodeDeclaration
-      declaration={list()[0]}
-      onProcessMarkdown={({ children }) => children }
-      onHighlightSyntax={({ children }) => children}
-      onLink={() => "https://example.com/"}
-      onRetrieve={retrieve}
-    />
+    <div>todo</div>
+    // <CodeDeclaration
+    //   declaration={list()[0]}
+    //   onProcessMarkdown={({ children }) => children }
+    //   onHighlightSyntax={({ children }) => children}
+    //   onLink={() => "https://example.com/"}
+    //   onRetrieve={retrieve}
+    // />
   )
 }
 
