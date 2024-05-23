@@ -1,16 +1,14 @@
-export function callerPosition(off: number): [number, number] {
-  // eslint-disable-next-line unicorn/error-message
-  const er = new Error()
-  if (!er.stack) {
+export function callerPosition(err: Error, off: number = 0): [number, number] {
+  if (!err.stack) {
     return [-1, -1]
   }
 
-  const ls = er.stack.split("\n")
+  const ls = err.stack.split("\n")
   if (ls[0].indexOf("Error") === 0) {
     ls.shift()
   }
 
-  const cl = ls[off + 1]
+  const cl = ls[off]
   if (!cl) {
     return [-1, -1]
   }
