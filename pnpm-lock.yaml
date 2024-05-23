@@ -469,6 +469,43 @@ importers:
         specifier: ^4.10.5
         version: 4.10.5
 
+  packages/document-editor-mirror-html-element:
+    dependencies:
+      '@onlyoffice/caller-position':
+        specifier: workspace:^
+        version: link:../caller-position
+      '@onlyoffice/document-editor-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-html-element
+      '@onlyoffice/document-server-types':
+        specifier: workspace:^
+        version: link:../document-server-types
+      '@onlyoffice/substring-position':
+        specifier: workspace:^
+        version: link:../substring-position
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@onlyoffice/unique-string':
+        specifier: workspace:^
+        version: link:../unique-string
+      '@types/node':
+        specifier: ^20.12.8
+        version: 20.12.12
+      '@web/dev-server':
+        specifier: ^0.4.4
+        version: 0.4.4
+      '@web/dev-server-esbuild':
+        specifier: ^1.0.2
+        version: 1.0.2
+      esbuild:
+        specifier: ^0.20.2
+        version: 0.20.2
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+
   packages/document-server-types:
     dependencies:
       typescript:

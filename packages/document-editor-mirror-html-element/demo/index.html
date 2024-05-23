@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ONLYOFFICE Document Editor Mirror HTML Element</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>body {height: 100vh; margin: 0} pre {padding: 40px}</style>
+    <script type="module" src="../node_modules/@onlyoffice/document-editor-html-element/lib/main.ts"></script>
+    <script type="module" src="../lib/main.ts"></script>
+  </head>
+  <body>
+    <template>
+      <pre><code></code></pre>
+      <document-editor-mirror>
+        <document-editor document-server-url="http://0.0.0.0:3000/"></document-editor>
+      </document-editor-mirror>
+    </template>
+
+    <script type="module">
+    const cu = new URL("/config", "http://0.0.0.0:4000/")
+    const cp = {documentType: "word", document: {fileType: "docx"}}
+    const cr = await fetch(cu, {
+      method: "POST",
+      body: JSON.stringify(cp),
+      headers: {"Content-Type": "application/json"}
+    })
+    const cf = await cr.json()
+
+    const tm = document.querySelector("template")
+    const tc = document.importNode(tm.content, true)
+
+    const de = tc.querySelector("document-editor")
+    de.config = cf
+    de.ondocumenteditorappready = function () {
+      // let's check the position detection
+        console.log("Document Editor is ready")
+      console.error("Are you sure?")
+    }
+    de.ondocumenteditordocumentready = function () {
+      console.log("Document Editor document is ready")
+      throw new Error("Something went wrong after the document is ready")
+    }
+
+    const dm = tc.querySelector("document-editor-mirror")
+    dm.ondocumenteditormirrorconsoleerror = function (e) {
+      const c = document.querySelector("code")
+      c.textContent += `${e.source} (console.error): ${e.args.join(" ")} (${e.lineno}:${e.colno})\n`
+    }
+    dm.ondocumenteditormirrorconsolelog = function (e) {
+      const c = document.querySelector("code")
+      c.textContent += `${e.source} (console.log): ${e.args.join(" ")} (${e.lineno}:${e.colno})\n`
+    }
+    dm.ondocumenteditormirrorthrow = function (e) {
+      const c = document.querySelector("code")
+      c.textContent += `${e.source} (throw): ${e.error.message} (${e.lineno}:${e.colno})\n`
+    }
+
+    document.body.insertBefore(tc, document.body.firstChild)
+    </script>
+  </body>
+</html>
