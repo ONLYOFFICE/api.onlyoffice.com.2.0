@@ -421,9 +421,9 @@ export class DocumentEditorMirrorThrowEvent extends Event {
     return "documenteditormirrorthrow"
   }
 
-  #source: string
+  #source: DocumentEditorEventHandlerName
 
-  get source(): string {
+  get source(): DocumentEditorEventHandlerName {
     return this.#source
   }
 
@@ -455,7 +455,7 @@ export class DocumentEditorMirrorThrowEvent extends Event {
 }
 
 export interface DocumentEditorMirrorThrowEventInit extends EventInit {
-  source: string
+  source: DocumentEditorEventHandlerName
   lineno: number
   colno: number
   error: Error
