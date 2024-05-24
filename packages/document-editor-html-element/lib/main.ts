@@ -302,12 +302,6 @@ export interface DocumentEditorErrorListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorErrorEvent): void
 }
 
-export type DocumentEditorOnErrorEventHandler = DocumentEditorOnErrorEventHandlerNonNull | null
-
-export interface DocumentEditorOnErrorEventHandlerNonNull extends OnErrorEventHandlerNonNull {
-  (this: DocumentEditor, event: DocumentEditorErrorEvent | string, source?: string, lineno?: number, colno?: number, error?: Error): any
-}
-
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onInfo ONLYOFFICE Reference}
  */
