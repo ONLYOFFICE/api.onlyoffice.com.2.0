@@ -1,5 +1,6 @@
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
 import {callerPosition} from "@onlyoffice/caller-position"
+import type {DocumentEditorEventHandlerName} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditor} from "@onlyoffice/document-editor-html-element"
 import {substringPosition} from "@onlyoffice/substring-position"
 
@@ -217,7 +218,7 @@ export class DocumentEditorMirror extends HTMLElement {
     return `try {(${fn}).call(this)} catch (e) {window.onthrow(e); throw e}`
   }
 
-  #createConsole(w: InternalWindow, p: [number, number], s: string): Pick<Console, "error" | "log"> {
+  #createConsole(w: InternalWindow, p: [number, number], s: DocumentEditorEventHandlerName): Pick<Console, "error" | "log"> {
     // eslint-disable-next-line unicorn/no-this-assignment, @typescript-eslint/no-this-alias
     const dm = this
     const co = w.console
@@ -270,7 +271,7 @@ export class DocumentEditorMirror extends HTMLElement {
     }
   }
 
-  #createThrow(p: [number, number], s: string): ThrowPseudoEventListener {
+  #createThrow(p: [number, number], s: DocumentEditorEventHandlerName): ThrowPseudoEventListener {
     // eslint-disable-next-line unicorn/no-this-assignment, @typescript-eslint/no-this-alias
     const dm = this
 
@@ -296,9 +297,9 @@ export class DocumentEditorMirror extends HTMLElement {
 }
 
 export class DocumentEditorMirrorConsoleEvent extends Event {
-  #source: string
+  #source: DocumentEditorEventHandlerName
 
-  get source(): string {
+  get source(): DocumentEditorEventHandlerName {
     return this.#source
   }
 
@@ -330,7 +331,7 @@ export class DocumentEditorMirrorConsoleEvent extends Event {
 }
 
 export interface DocumentEditorMirrorConsoleEventInit extends EventInit {
-  source: string
+  source: DocumentEditorEventHandlerName
   lineno: number
   colno: number
   args: any[]
