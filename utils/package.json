@@ -11,7 +11,7 @@
     "test": "tsx ./node_modules/uvu/bin.js ./lib/ ^.*\\.test\\.ts$"
   },
   "devDependencies": {
-    "@types/node": "^20.11.5",
+    "@types/node": "^20.12.12",
     "tsx": "^4.10.5",
     "typescript": "^5.4.5",
     "uvu": "^0.5.6"
