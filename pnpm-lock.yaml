@@ -1333,6 +1333,12 @@ importers:
       '@onlyoffice/document-editor-html-element':
         specifier: workspace:^
         version: link:../packages/document-editor-html-element
+      '@onlyoffice/document-editor-mirror-html-element':
+        specifier: workspace:^
+        version: link:../packages/document-editor-mirror-html-element
+      '@onlyoffice/document-editor-playground-html-element':
+        specifier: workspace:^
+        version: link:../packages/document-editor-playground-html-element
       '@onlyoffice/documentation-ui-kit':
         specifier: workspace:^
         version: link:../ui/kit
