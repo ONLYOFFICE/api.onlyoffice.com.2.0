@@ -6,7 +6,7 @@
   "scripts": {
     "demo:editor": "docker run --env JWT_HEADER=Authorization --env JWT_SECRET=your-256-bit-secret --publish 3000:80 onlyoffice/documentserver-de:8.0",
     "demo:site": "wds . --watch",
-    "demo:store": "tsx ./demo/main.ts"
+    "demo:store": "document-server-demo"
   },
   "dependencies": {
     "@onlyoffice/document-builder-utils": "workspace:^",
@@ -17,10 +17,9 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@types/node": "^20.12.8",
+    "@onlyoffice/document-server-demo": "workspace:^",
     "@web/dev-server": "^0.4.4",
     "@web/dev-server-esbuild": "^1.0.2",
-    "esbuild": "^0.20.2",
-    "tsx": "^4.10.5"
+    "esbuild": "^0.20.2"
   }
 }
