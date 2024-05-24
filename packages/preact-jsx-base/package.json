@@ -1,0 +1,12 @@
+{
+  "name": "@onlyoffice/preact-jsx-base",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": "^21"
+  }
+}

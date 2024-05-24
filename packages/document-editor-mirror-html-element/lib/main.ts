@@ -20,7 +20,7 @@ declare global {
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "document-editor-mirror": Partial<Omit<DocumentEditorMirror, keyof HTMLElement>>
+        "document-editor-mirror": Partial<Omit<DocumentEditorMirror, keyof HTMLElement>> & JSXBase["span"]
       }
     }
   }

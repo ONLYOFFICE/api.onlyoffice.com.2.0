@@ -69,7 +69,7 @@ declare global {
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "document-editor": Partial<Omit<DocumentEditor, keyof HTMLElement>>
+        "document-editor": Partial<Omit<DocumentEditor, keyof HTMLElement>> & JSXBase["span"]
       }
     }
   }

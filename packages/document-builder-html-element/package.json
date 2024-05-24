@@ -12,6 +12,7 @@
     "@onlyoffice/document-builder-utils": "workspace:^",
     "@onlyoffice/document-editor-html-element": "workspace:^",
     "@onlyoffice/document-server-types": "workspace:^",
+    "@onlyoffice/preact-jsx-base": "workspace:^",
     "@onlyoffice/unique-string": "workspace:^",
     "typescript": "^5.4.5"
   },

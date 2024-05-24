@@ -9,7 +9,8 @@
     "strict": true,
     "target": "ESNext"
   },
-  "files": [
-    "./lib/main.ts"
+  "include": [
+    "./lib/*",
+    "./index.d.ts"
   ]
 }

@@ -1,1 +1,1 @@
-/// <reference types="@onlyoffice/document-editor-html-element" />
+/// <reference types="@onlyoffice/preact-jsx-base" />

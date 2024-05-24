@@ -322,6 +322,9 @@ importers:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
+      '@onlyoffice/preact-jsx-base':
+        specifier: workspace:^
+        version: link:../preact-jsx-base
       '@onlyoffice/unique-string':
         specifier: workspace:^
         version: link:../unique-string
@@ -446,6 +449,9 @@ importers:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
+      '@onlyoffice/preact-jsx-base':
+        specifier: workspace:^
+        version: link:../preact-jsx-base
       '@onlyoffice/unique-string':
         specifier: workspace:^
         version: link:../unique-string
@@ -480,6 +486,9 @@ importers:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
+      '@onlyoffice/preact-jsx-base':
+        specifier: workspace:^
+        version: link:../preact-jsx-base
       '@onlyoffice/substring-position':
         specifier: workspace:^
         version: link:../substring-position
@@ -963,6 +972,12 @@ importers:
       uvu:
         specifier: ^0.5.6
         version: 0.5.6
+
+  packages/preact-jsx-base:
+    dependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
 
   packages/rehype-preact:
     dependencies:

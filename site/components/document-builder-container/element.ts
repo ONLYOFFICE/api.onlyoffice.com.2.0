@@ -12,9 +12,13 @@ declare global {
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "document-builder-container": Partial<Omit<DocumentBuilderContainer, keyof HTMLElement>>
+        "document-builder-container": Partial<Omit<DocumentBuilderContainer, keyof HTMLElement>> & JSXBase["span"]
       }
     }
+
+    type JSXBase = JSX.IntrinsicElements extends {span: unknown}
+      ? JSX.IntrinsicElements
+      : Record<string, Record<string, unknown>>
   }
 }
 
