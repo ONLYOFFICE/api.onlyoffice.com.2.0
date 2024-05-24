@@ -111,7 +111,39 @@ declare global {
   }
 
   interface GlobalEventHandlers {
-    // todo
+    ondocumenteditorappready: GlobalDocumentEditorAppReadyEventHandler | null
+    ondocumenteditorcollaborativechanges: GlobalDocumentEditorCollaborativeChangesEventHandler | null
+    ondocumenteditordocumentready: GlobalDocumentEditorDocumentReadyEventHandler | null
+    ondocumenteditordocumentstatechange: GlobalDocumentEditorDocumentStateChangeEventHandler | null
+    ondocumenteditordownloadas: GlobalDocumentEditorDownloadAsEventHandler | null
+    ondocumenteditorerror: GlobalDocumentEditorErrorEventHandler | null
+    ondocumenteditorinfo: GlobalDocumentEditorInfoEventHandler | null
+    ondocumenteditormakeactionlink: GlobalDocumentEditorMakeActionLinkEventHandler | null
+    ondocumenteditormetachange: GlobalDocumentEditorMetaChangeEventHandler | null
+    ondocumenteditoroutdatedversion: GlobalDocumentEditorOutdatedVersionEventHandler | null
+    ondocumenteditorpluginsready: GlobalDocumentEditorPluginsReadyEventHandler | null
+    ondocumenteditorready: GlobalDocumentEditorReadyEventHandler | null
+    ondocumenteditorrequestclose: GlobalDocumentEditorRequestCloseEventHandler | null
+    ondocumenteditorrequestcomparefile: GlobalDocumentEditorRequestCompareFileEventHandler | null
+    ondocumenteditorrequestcreatenew: GlobalDocumentEditorRequestCreateNewEventHandler | null
+    ondocumenteditorrequesteditrights: GlobalDocumentEditorRequestEditRightsEventHandler | null
+    ondocumenteditorrequesthistory: GlobalDocumentEditorRequestHistoryEventHandler | null
+    ondocumenteditorrequesthistoryclose: GlobalDocumentEditorRequestHistoryCloseEventHandler | null
+    ondocumenteditorrequesthistorydata: GlobalDocumentEditorRequestHistoryDataEventHandler | null
+    ondocumenteditorrequestinsertimage: GlobalDocumentEditorRequestInsertImageEventHandler | null
+    ondocumenteditorrequestmailmergerecipients: GlobalDocumentEditorRequestMailMergeRecipientsEventHandler | null
+    ondocumenteditorrequestopen: GlobalDocumentEditorRequestOpenEventHandler | null
+    ondocumenteditorrequestreferencedata: GlobalDocumentEditorRequestReferenceDataEventHandler | null
+    ondocumenteditorrequestreferencesource: GlobalDocumentEditorRequestReferenceSourceEventHandler | null
+    ondocumenteditorrequestrename: GlobalDocumentEditorRequestRenameEventHandler | null
+    ondocumenteditorrequestrestore: GlobalDocumentEditorRequestRestoreEventHandler | null
+    ondocumenteditorrequestsaveas: GlobalDocumentEditorRequestSaveAsEventHandler | null
+    ondocumenteditorrequestselectdocument: GlobalDocumentEditorRequestSelectDocumentEventHandler | null
+    ondocumenteditorrequestselectspreadsheet: GlobalDocumentEditorRequestSelectSpreadsheetEventHandler | null
+    ondocumenteditorrequestsendnotify: GlobalDocumentEditorRequestSendNotifyEventHandler | null
+    ondocumenteditorrequestsharingsettings: GlobalDocumentEditorRequestSharingSettingsEventHandler | null
+    ondocumenteditorrequestusers: GlobalDocumentEditorRequestUsersEventHandler | null
+    ondocumenteditorwarning: GlobalDocumentEditorWarningEventHandler | null
   }
 }
 
@@ -1135,6 +1167,10 @@ export interface DocumentEditorAppReadyListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorAppReadyEvent): void
 }
 
+export interface GlobalDocumentEditorAppReadyEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorAppReadyEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onCollaborativeChanges ONLYOFFICE Reference}
  */
@@ -1152,6 +1188,10 @@ export interface DocumentEditorCollaborativeChangesListener extends EventListene
   (this: DocumentEditor, event: DocumentEditorCollaborativeChangesEvent): void
 }
 
+export interface GlobalDocumentEditorCollaborativeChangesEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorCollaborativeChangesEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onDocumentReady ONLYOFFICE Reference}
  */
@@ -1167,6 +1207,10 @@ export class DocumentEditorDocumentReadyEvent extends Event {
 
 export interface DocumentEditorDocumentReadyListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorDocumentReadyEvent): void
+}
+
+export interface GlobalDocumentEditorDocumentReadyEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorDocumentReadyEvent): void
 }
 
 /**
@@ -1195,6 +1239,10 @@ export interface DocumentEditorDocumentStateChangeListener extends EventListener
   (this: DocumentEditor, event: DocumentEditorDocumentStateChangeEvent): void
 }
 
+export interface GlobalDocumentEditorDocumentStateChangeEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorDocumentStateChangeEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onDownloadAs ONLYOFFICE Reference}
  */
@@ -1219,6 +1267,10 @@ export interface DocumentEditorDownloadAsEventInit extends EventInit, DocEditorD
 
 export interface DocumentEditorDownloadAsListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorDownloadAsEvent): void
+}
+
+export interface GlobalDocumentEditorDownloadAsEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorDownloadAsEvent): void
 }
 
 /**
@@ -1251,6 +1303,10 @@ export interface DocumentEditorErrorListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorErrorEvent): void
 }
 
+export interface GlobalDocumentEditorErrorEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorErrorEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onInfo ONLYOFFICE Reference}
  */
@@ -1275,6 +1331,10 @@ export interface DocumentEditorInfoEventInit extends EventInit, DocEditorInfoEve
 
 export interface DocumentEditorInfoListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorInfoEvent): void
+}
+
+export interface GlobalDocumentEditorInfoEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorInfoEvent): void
 }
 
 /**
@@ -1303,6 +1363,10 @@ export interface DocumentEditorMakeActionLinkListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorMakeActionLinkEvent): void
 }
 
+export interface GlobalDocumentEditorMakeActionLinkEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorMakeActionLinkEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onMetaChange ONLYOFFICE Reference}
  */
@@ -1329,6 +1393,10 @@ export interface DocumentEditorMetaChangeListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorMetaChangeEvent): void
 }
 
+export interface GlobalDocumentEditorMetaChangeEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorMetaChangeEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onOutdatedVersion ONLYOFFICE Reference}
  */
@@ -1346,6 +1414,10 @@ export interface DocumentEditorOutdatedVersionListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorOutdatedVersionEvent): void
 }
 
+export interface GlobalDocumentEditorOutdatedVersionEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorOutdatedVersionEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onPluginsReady ONLYOFFICE Reference}
  */
@@ -1361,6 +1433,10 @@ export class DocumentEditorPluginsReadyEvent extends Event {
 
 export interface DocumentEditorPluginsReadyListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorPluginsReadyEvent): void
+}
+
+export interface GlobalDocumentEditorPluginsReadyEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorPluginsReadyEvent): void
 }
 
 /**
@@ -1384,6 +1460,10 @@ export interface DocumentEditorReadyListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorReadyEvent): void
 }
 
+export interface GlobalDocumentEditorReadyEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorReadyEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestClose ONLYOFFICE Reference}
  */
@@ -1399,6 +1479,10 @@ export class DocumentEditorRequestCloseEvent extends Event {
 
 export interface DocumentEditorRequestCloseListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestCloseEvent): void
+}
+
+export interface GlobalDocumentEditorRequestCloseEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestCloseEvent): void
 }
 
 /**
@@ -1422,6 +1506,10 @@ export interface DocumentEditorRequestCompareFileListener extends EventListener 
   (this: DocumentEditor, event: DocumentEditorRequestCompareFileEvent): void
 }
 
+export interface GlobalDocumentEditorRequestCompareFileEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestCompareFileEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestCreateNew ONLYOFFICE Reference}
  */
@@ -1437,6 +1525,10 @@ export class DocumentEditorRequestCreateNewEvent extends Event {
 
 export interface DocumentEditorRequestCreateNewListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestCreateNewEvent): void
+}
+
+export interface GlobalDocumentEditorRequestCreateNewEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestCreateNewEvent): void
 }
 
 /**
@@ -1456,6 +1548,10 @@ export interface DocumentEditorRequestEditRightsListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestEditRightsEvent): void
 }
 
+export interface GlobalDocumentEditorRequestEditRightsEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestEditRightsEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestHistory ONLYOFFICE Reference}
  */
@@ -1473,6 +1569,10 @@ export interface DocumentEditorRequestHistoryListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestHistoryEvent): void
 }
 
+export interface GlobalDocumentEditorRequestHistoryEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestHistoryEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestHistoryClose ONLYOFFICE Reference}
  */
@@ -1488,6 +1588,10 @@ export class DocumentEditorRequestHistoryCloseEvent extends Event {
 
 export interface DocumentEditorRequestHistoryCloseListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestHistoryCloseEvent): void
+}
+
+export interface GlobalDocumentEditorRequestHistoryCloseEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestHistoryCloseEvent): void
 }
 
 /**
@@ -1516,6 +1620,10 @@ export interface DocumentEditorRequestHistoryDataListener extends EventListener 
   (this: DocumentEditor, event: DocumentEditorRequestHistoryDataEvent): void
 }
 
+export interface GlobalDocumentEditorRequestHistoryDataEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestHistoryDataEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestInsertImage ONLYOFFICE Reference}
  */
@@ -1542,6 +1650,10 @@ export interface DocumentEditorRequestInsertImageListener extends EventListener 
   (this: DocumentEditor, event: DocumentEditorRequestInsertImageEvent): void
 }
 
+export interface GlobalDocumentEditorRequestInsertImageEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestInsertImageEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestMailMergeRecipients ONLYOFFICE Reference}
  * @deprecated Prefer {@link DocumentEditorRequestSelectSpreadsheetEvent} instead.
@@ -1561,6 +1673,10 @@ export class DocumentEditorRequestMailMergeRecipientsEvent extends Event {
  */
 export interface DocumentEditorRequestMailMergeRecipientsListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestMailMergeRecipientsEvent): void
+}
+
+export interface GlobalDocumentEditorRequestMailMergeRecipientsEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestMailMergeRecipientsEvent): void
 }
 
 /**
@@ -1589,6 +1705,10 @@ export interface DocumentEditorRequestOpenListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestOpenEvent): void
 }
 
+export interface GlobalDocumentEditorRequestOpenEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestOpenEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestReferenceData ONLYOFFICE Reference}
  */
@@ -1613,6 +1733,10 @@ export interface DocumentEditorRequestReferenceDataEventInit extends EventInit, 
 
 export interface DocumentEditorRequestReferenceDataListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestReferenceDataEvent): void
+}
+
+export interface GlobalDocumentEditorRequestReferenceDataEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestReferenceDataEvent): void
 }
 
 /**
@@ -1641,6 +1765,10 @@ export interface DocumentEditorRequestReferenceSourceListener extends EventListe
   (this: DocumentEditor, event: DocumentEditorRequestReferenceSourceEvent): void
 }
 
+export interface GlobalDocumentEditorRequestReferenceSourceEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestReferenceSourceEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestRename ONLYOFFICE Reference}
  */
@@ -1665,6 +1793,10 @@ export interface DocumentEditorRequestRenameEventInit extends EventInit, DocEdit
 
 export interface DocumentEditorRequestRenameListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestRenameEvent): void
+}
+
+export interface GlobalDocumentEditorRequestRenameEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestRenameEvent): void
 }
 
 /**
@@ -1693,6 +1825,10 @@ export interface DocumentEditorRequestRestoreListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestRestoreEvent): void
 }
 
+export interface GlobalDocumentEditorRequestRestoreEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestRestoreEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestSaveAs ONLYOFFICE Reference}
  */
@@ -1717,6 +1853,10 @@ export interface DocumentEditorRequestSaveAsEventInit extends EventInit, DocEdit
 
 export interface DocumentEditorRequestSaveAsListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestSaveAsEvent): void
+}
+
+export interface GlobalDocumentEditorRequestSaveAsEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestSaveAsEvent): void
 }
 
 /**
@@ -1745,6 +1885,10 @@ export interface DocumentEditorRequestSelectDocumentListener extends EventListen
   (this: DocumentEditor, event: DocumentEditorRequestSelectDocumentEvent): void
 }
 
+export interface GlobalDocumentEditorRequestSelectDocumentEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestSelectDocumentEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestSelectSpreadsheet ONLYOFFICE Reference}
  */
@@ -1769,6 +1913,10 @@ export interface DocumentEditorRequestSelectSpreadsheetEventInit extends EventIn
 
 export interface DocumentEditorRequestSelectSpreadsheetListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestSelectSpreadsheetEvent): void
+}
+
+export interface GlobalDocumentEditorRequestSelectSpreadsheetEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestSelectSpreadsheetEvent): void
 }
 
 /**
@@ -1797,6 +1945,10 @@ export interface DocumentEditorRequestSendNotifyListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestSendNotifyEvent): void
 }
 
+export interface GlobalDocumentEditorRequestSendNotifyEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestSendNotifyEvent): void
+}
+
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onRequestSharingSettings ONLYOFFICE Reference}
  */
@@ -1812,6 +1964,10 @@ export class DocumentEditorRequestSharingSettingsEvent extends Event {
 
 export interface DocumentEditorRequestSharingSettingsListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestSharingSettingsEvent): void
+}
+
+export interface GlobalDocumentEditorRequestSharingSettingsEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestSharingSettingsEvent): void
 }
 
 /**
@@ -1838,6 +1994,10 @@ export interface DocumentEditorRequestUsersEventInit extends EventInit, DocEdito
 
 export interface DocumentEditorRequestUsersListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorRequestUsersEvent): void
+}
+
+export interface GlobalDocumentEditorRequestUsersEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorRequestUsersEvent): void
 }
 
 /**
@@ -1868,6 +2028,10 @@ export interface DocumentEditorWarningEventInit extends ErrorEventInit {
 
 export interface DocumentEditorWarningListener extends EventListener {
   (this: DocumentEditor, event: DocumentEditorWarningEvent): void
+}
+
+export interface GlobalDocumentEditorWarningEventHandler {
+  (this: GlobalEventHandlers, ev: DocumentEditorWarningEvent): void
 }
 
 main()
