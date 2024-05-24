@@ -69,6 +69,21 @@ export class DocumentEditorMirror extends HTMLElement {
     return "document-editor-mirror"
   }
 
+  static isDocumentEditorMirrorConsoleErrorEvent(e: Event): e is DocumentEditorMirrorConsoleErrorEvent {
+    return e instanceof DocumentEditorMirrorConsoleErrorEvent ||
+      e.type === DocumentEditorMirrorConsoleErrorEvent.type
+  }
+
+  static isDocumentEditorMirrorConsoleLogEvent(e: Event): e is DocumentEditorMirrorConsoleLogEvent {
+    return e instanceof DocumentEditorMirrorConsoleLogEvent ||
+      e.type === DocumentEditorMirrorConsoleLogEvent.type
+  }
+
+  static isDocumentEditorMirrorThrowEvent(e: Event): e is DocumentEditorMirrorThrowEvent {
+    return e instanceof DocumentEditorMirrorThrowEvent ||
+      e.type === DocumentEditorMirrorThrowEvent.type
+  }
+
   #ondocumenteditormirrorconsoleerror: DocumentEditorMirrorConsoleErrorEventListener | null = null
 
   get ondocumenteditormirrorconsoleerror(): DocumentEditorMirrorConsoleErrorEventListener | null {
