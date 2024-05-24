@@ -188,11 +188,95 @@ function main(): void {
   window.DocumentEditorWarningEvent = DocumentEditorWarningEvent
 }
 
+export type DocumentEditorEventType = {
+  [K in keyof GlobalEventHandlersEventMap]: K extends `documenteditor${string}` ? K : never
+}[keyof GlobalEventHandlersEventMap]
+
+export type DocumentEditorEventHandlerName = {
+  [K in keyof GlobalEventHandlers]: K extends `ondocumenteditor${string}` ? K : never
+}[keyof GlobalEventHandlers]
+
 export type DocumentEditorConfig = Omit<DocEditorConfig, "events">
 
 export class DocumentEditor extends HTMLElement {
   static get tagName(): string {
     return "document-editor"
+  }
+
+  static get eventTypes(): DocumentEditorEventType[] {
+    return [
+      "documenteditorappready",
+      "documenteditorcollaborativechanges",
+      "documenteditordocumentready",
+      "documenteditordocumentstatechange",
+      "documenteditordownloadas",
+      "documenteditorerror",
+      "documenteditorinfo",
+      "documenteditormakeactionlink",
+      "documenteditormetachange",
+      "documenteditoroutdatedversion",
+      "documenteditorpluginsready",
+      "documenteditorready",
+      "documenteditorrequestclose",
+      "documenteditorrequestcomparefile",
+      "documenteditorrequestcreatenew",
+      "documenteditorrequesteditrights",
+      "documenteditorrequesthistory",
+      "documenteditorrequesthistoryclose",
+      "documenteditorrequesthistorydata",
+      "documenteditorrequestinsertimage",
+      "documenteditorrequestmailmergerecipients",
+      "documenteditorrequestopen",
+      "documenteditorrequestreferencedata",
+      "documenteditorrequestreferencesource",
+      "documenteditorrequestrename",
+      "documenteditorrequestrestore",
+      "documenteditorrequestsaveas",
+      "documenteditorrequestselectdocument",
+      "documenteditorrequestselectspreadsheet",
+      "documenteditorrequestsendnotify",
+      "documenteditorrequestsharingsettings",
+      "documenteditorrequestusers",
+      "documenteditorwarning"
+    ]
+  }
+
+  static get eventHandlerNames(): DocumentEditorEventHandlerName[] {
+    return [
+      "ondocumenteditorappready",
+      "ondocumenteditorcollaborativechanges",
+      "ondocumenteditordocumentready",
+      "ondocumenteditordocumentstatechange",
+      "ondocumenteditordownloadas",
+      "ondocumenteditorerror",
+      "ondocumenteditorinfo",
+      "ondocumenteditormakeactionlink",
+      "ondocumenteditormetachange",
+      "ondocumenteditoroutdatedversion",
+      "ondocumenteditorpluginsready",
+      "ondocumenteditorready",
+      "ondocumenteditorrequestclose",
+      "ondocumenteditorrequestcomparefile",
+      "ondocumenteditorrequestcreatenew",
+      "ondocumenteditorrequesteditrights",
+      "ondocumenteditorrequesthistory",
+      "ondocumenteditorrequesthistoryclose",
+      "ondocumenteditorrequesthistorydata",
+      "ondocumenteditorrequestinsertimage",
+      "ondocumenteditorrequestmailmergerecipients",
+      "ondocumenteditorrequestopen",
+      "ondocumenteditorrequestreferencedata",
+      "ondocumenteditorrequestreferencesource",
+      "ondocumenteditorrequestrename",
+      "ondocumenteditorrequestrestore",
+      "ondocumenteditorrequestsaveas",
+      "ondocumenteditorrequestselectdocument",
+      "ondocumenteditorrequestselectspreadsheet",
+      "ondocumenteditorrequestsendnotify",
+      "ondocumenteditorrequestsharingsettings",
+      "ondocumenteditorrequestusers",
+      "ondocumenteditorwarning"
+    ]
   }
 
   #documentServerURL: string = ""
