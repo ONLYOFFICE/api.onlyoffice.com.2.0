@@ -177,6 +177,10 @@ export class DocumentEditorMirror extends HTMLElement {
   }
 
   connectedCallback(): void {
+    this.setup()
+  }
+
+  setup(): void {
     const de = this.querySelector("document-editor")
     if (!de) {
       const er = new Error("DocumentEditor element not found")
@@ -185,7 +189,12 @@ export class DocumentEditorMirror extends HTMLElement {
       return
     }
 
-    const pt = this.#createPit()
+    let pt = this.querySelector("div[data-pit]")
+    if (pt) {
+      pt.remove()
+    }
+
+    pt = this.#createPit()
     this.append(pt)
 
     for (const en of DocumentEditor.eventHandlerNames) {
@@ -213,9 +222,10 @@ export class DocumentEditorMirror extends HTMLElement {
     }
   }
 
-  #createPit(): HTMLDivElement {
+  #createPit(): Element {
     const pt = document.createElement("div")
     pt.style.display = "none"
+    pt.dataset.pit = ""
     return pt
   }
 
