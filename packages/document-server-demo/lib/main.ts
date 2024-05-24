@@ -105,9 +105,10 @@ async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
       throw new Error("Missing fileType")
     }
 
-    const cd = currentDir()
-    const sd = join(cd, "samples")
-    const sf = join(sd, `sample.${fileType}`)
+    const rd = rootDir()
+    const fd = fixturesDir(rd)
+    const sn = sampleBasename(fileType)
+    const sf = join(fd, sn)
     const st = contentType(fileType)
     const ss = await stat(sf)
     res.statusCode = 200
@@ -120,9 +121,17 @@ async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
   throw new Error("Unknown route")
 }
 
-function currentDir(): string {
-  const u = new URL(".", import.meta.url)
+function rootDir(): string {
+  const u = new URL("..", import.meta.url)
   return fileURLToPath(u)
+}
+
+function fixturesDir(d: string): string {
+  return join(d, "fixtures")
+}
+
+function sampleBasename(t: string): string {
+  return `sample.${t}`
 }
 
 function contentType(t: string): string {

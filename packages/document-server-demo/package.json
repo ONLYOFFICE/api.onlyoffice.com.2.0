@@ -1,0 +1,14 @@
+{
+  "name": "@onlyoffice/document-server-demo",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "bin": "bin/document-server-demo.sh",
+  "dependencies": {
+    "@onlyoffice/document-editor-html-element": "workspace:^",
+    "@onlyoffice/unique-string": "workspace:^",
+    "@types/node": "^20.12.8",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5"
+  }
+}

@@ -561,12 +561,9 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
     devDependencies:
-      '@onlyoffice/unique-string':
+      '@onlyoffice/document-server-demo':
         specifier: workspace:^
-        version: link:../unique-string
-      '@types/node':
-        specifier: ^20.12.8
-        version: 20.12.12
+        version: link:../document-server-demo
       '@web/dev-server':
         specifier: ^0.4.4
         version: 0.4.4
@@ -576,9 +573,24 @@ importers:
       esbuild:
         specifier: ^0.20.2
         version: 0.20.2
+
+  packages/document-server-demo:
+    dependencies:
+      '@onlyoffice/document-editor-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-html-element
+      '@onlyoffice/unique-string':
+        specifier: workspace:^
+        version: link:../unique-string
+      '@types/node':
+        specifier: ^20.12.8
+        version: 20.12.12
       tsx:
         specifier: ^4.10.5
         version: 4.10.5
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
 
   packages/document-server-types:
     dependencies:
