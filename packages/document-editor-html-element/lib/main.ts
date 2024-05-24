@@ -894,9 +894,13 @@ export class DocumentEditor extends HTMLElement {
       const p = this.#createPlaceholder()
       const s = this.#createScript(p)
       this.append(p, s)
-    } catch (error) {
-      const e = new DocumentEditorErrorEvent({error})
-      this.dispatchEvent(e)
+    } catch (er) {
+      let m = ""
+      if (er instanceof Error) {
+        m = er.message
+      }
+      const ev = new DocumentEditorErrorEvent({error: er, message: m})
+      this.dispatchEvent(ev)
     }
   }
 
@@ -926,15 +930,15 @@ export class DocumentEditor extends HTMLElement {
     s.async = true
     s.src = u
     s.addEventListener("error", () => {
-      const error = new Error(`Failed to load the Document Editor API script from '${u}'`)
-      const e = new DocumentEditorErrorEvent({error})
-      this.dispatchEvent(e)
+      const er = new Error(`Failed to load the Document Editor API script from '${u}'`)
+      const ev = new DocumentEditorErrorEvent({error: er, message: er.message})
+      this.dispatchEvent(ev)
     })
     s.addEventListener("load", () => {
       if (!window.DocsAPI) {
-        const error = new Error("The Document Editor API is not defined")
-        const e = new DocumentEditorErrorEvent({error})
-        this.dispatchEvent(e)
+        const er = new Error("The Document Editor API is not defined")
+        const ev = new DocumentEditorErrorEvent({error: er, message: er.message})
+        this.dispatchEvent(ev)
         return
       }
       this.#editor = window.DocsAPI.DocEditor(p.id, c)
@@ -982,8 +986,8 @@ export class DocumentEditor extends HTMLElement {
           this.dispatchEvent(e)
         },
         onError: (ev) => {
-          const error = new Error(`${ev.data.errorDescription} (${ev.data.errorCode})`)
-          const e = new DocumentEditorErrorEvent({...ev, error})
+          const er = new Error(`${ev.data.errorDescription} (${ev.data.errorCode})`)
+          const e = new DocumentEditorErrorEvent({...ev, error: er, message: er.message})
           this.dispatchEvent(e)
         },
         onInfo: (ev) => {
@@ -1091,8 +1095,8 @@ export class DocumentEditor extends HTMLElement {
           this.dispatchEvent(e)
         },
         onWarning: (ev) => {
-          const error = new Error(`${ev.data.warningDescription} (${ev.data.warningCode})`)
-          const e = new DocumentEditorWarningEvent({...ev, error})
+          const er = new Error(`${ev.data.warningDescription} (${ev.data.warningCode})`)
+          const e = new DocumentEditorWarningEvent({...ev, error: er, message: er.message})
           this.dispatchEvent(e)
         }
       }
@@ -1111,19 +1115,6 @@ export class DocumentEditor extends HTMLElement {
     p.id = this.#placeholderID()
     const c = this.#scriptConfig()
     this.#editor = window.DocsAPI.DocEditor(p.id, c)
-  }
-}
-
-class InstanceErrorEvent extends ErrorEvent {
-  constructor(type: string, eventInitDict?: ErrorEventInit) {
-    let cp: ErrorEventInit = {}
-    if (eventInitDict) {
-      cp = {...eventInitDict}
-      if (cp.error instanceof Error) {
-        cp.message = cp.error.message
-      }
-    }
-    super(type, cp)
   }
 }
 
@@ -1233,7 +1224,7 @@ export interface DocumentEditorDownloadAsListener extends EventListener {
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onError ONLYOFFICE Reference}
  */
-export class DocumentEditorErrorEvent extends InstanceErrorEvent {
+export class DocumentEditorErrorEvent extends ErrorEvent {
   static get type(): string {
     return "documenteditorerror"
   }
@@ -1852,7 +1843,7 @@ export interface DocumentEditorRequestUsersListener extends EventListener {
 /**
  * {@link https://api.onlyoffice.com/editors/config/events#onWarning ONLYOFFICE Reference}
  */
-export class DocumentEditorWarningEvent extends InstanceErrorEvent {
+export class DocumentEditorWarningEvent extends ErrorEvent {
   static get type(): string {
     return "documenteditorwarning"
   }
