@@ -93,6 +93,10 @@ export class DocumentEditor extends HTMLElement {
     return "document-editor"
   }
 
+  static isDocumentEditorEventType(u: unknown): u is DocumentEditorEventType {
+    return this.eventTypes.includes(u as DocumentEditorEventType)
+  }
+
   static get eventTypes(): DocumentEditorEventType[] {
     return [
       "documenteditorappready",
@@ -129,6 +133,10 @@ export class DocumentEditor extends HTMLElement {
       "documenteditorrequestusers",
       "documenteditorwarning"
     ]
+  }
+
+  static isDocumentEditorEventHandlerName(u: unknown): u is DocumentEditorEventHandlerName {
+    return this.eventHandlerNames.includes(u as DocumentEditorEventHandlerName)
   }
 
   static get eventHandlerNames(): DocumentEditorEventHandlerName[] {
