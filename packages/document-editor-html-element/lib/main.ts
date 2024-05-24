@@ -194,7 +194,7 @@ export type DocumentEditorEventType = {
 
 export type DocumentEditorEventHandlerName = {
   [K in keyof GlobalEventHandlers]: K extends `ondocumenteditor${string}` ? K : never
-}[keyof GlobalEventHandlers]
+}[keyof GlobalEventHandlers], undefined>
 
 export type DocumentEditorConfig = Omit<DocEditorConfig, "events">
 
