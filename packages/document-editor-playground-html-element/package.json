@@ -1,0 +1,27 @@
+{
+  "name": "@onlyoffice/document-editor-playground-html-element",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "scripts": {
+    "demo:editor": "docker run --env JWT_HEADER=Authorization --env JWT_SECRET=your-256-bit-secret --publish 3000:80 onlyoffice/documentserver:8.0",
+    "demo:site": "wds . --watch",
+    "demo:store": "tsx ./demo/main.ts"
+  },
+  "dependencies": {
+    "@onlyoffice/document-editor-html-element": "workspace:^",
+    "@onlyoffice/document-editor-mirror-html-element": "workspace:^",
+    "@onlyoffice/document-server-types": "workspace:^",
+    "@onlyoffice/preact-jsx-base": "workspace:^",
+    "dot-prop": "^9.0.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@onlyoffice/unique-string": "workspace:^",
+    "@types/node": "^20.12.8",
+    "@web/dev-server": "^0.4.4",
+    "@web/dev-server-esbuild": "^1.0.2",
+    "esbuild": "^0.20.2",
+    "tsx": "^4.10.5"
+  }
+}

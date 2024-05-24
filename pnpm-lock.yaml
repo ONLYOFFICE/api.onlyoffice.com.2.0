@@ -540,6 +540,46 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/document-editor-playground-html-element:
+    dependencies:
+      '@onlyoffice/document-editor-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-html-element
+      '@onlyoffice/document-editor-mirror-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-mirror-html-element
+      '@onlyoffice/document-server-types':
+        specifier: workspace:^
+        version: link:../document-server-types
+      '@onlyoffice/preact-jsx-base':
+        specifier: workspace:^
+        version: link:../preact-jsx-base
+      dot-prop:
+        specifier: ^9.0.0
+        version: 9.0.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@onlyoffice/unique-string':
+        specifier: workspace:^
+        version: link:../unique-string
+      '@types/node':
+        specifier: ^20.12.8
+        version: 20.12.12
+      '@web/dev-server':
+        specifier: ^0.4.4
+        version: 0.4.4
+      '@web/dev-server-esbuild':
+        specifier: ^1.0.2
+        version: 1.0.2
+      esbuild:
+        specifier: ^0.20.2
+        version: 0.20.2
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+
   packages/document-server-types:
     dependencies:
       typescript:
@@ -4406,6 +4446,10 @@ packages:
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
 
+  dot-prop@9.0.0:
+    resolution: {integrity: sha512-1gxPBJpI/pcjQhKgIU91II6Wkay+dLcN3M6rf2uwP8hRur3HtQXjVrdAK3sjC0piaEuxzMwjXChcETiJl47lAQ==}
+    engines: {node: '>=18'}
+
   dotenv-expand@10.0.0:
     resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
     engines: {node: '>=12'}
@@ -7107,6 +7151,10 @@ packages:
   type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
+
+  type-fest@4.18.2:
+    resolution: {integrity: sha512-+suCYpfJLAe4OXS6+PPXjW3urOS4IoP9waSiLuXfLgqZODKw/aWwASvzqE886wA0kQgGy0mIWyhd87VpqIy6Xg==}
+    engines: {node: '>=16'}
 
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
@@ -10648,6 +10696,10 @@ snapshots:
       no-case: 3.0.4
       tslib: 2.6.2
 
+  dot-prop@9.0.0:
+    dependencies:
+      type-fest: 4.18.2
+
   dotenv-expand@10.0.0: {}
 
   dotenv@16.4.5: {}
@@ -14071,6 +14123,8 @@ snapshots:
   type-fest@0.8.1: {}
 
   type-fest@2.19.0: {}
+
+  type-fest@4.18.2: {}
 
   type-is@1.6.18:
     dependencies:
