@@ -1,6 +1,6 @@
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
 import {callerPosition} from "@onlyoffice/caller-position"
-import type {DocumentEditor} from "@onlyoffice/document-editor-html-element"
+import {DocumentEditor} from "@onlyoffice/document-editor-html-element"
 import {substringPosition} from "@onlyoffice/substring-position"
 
 declare global {
@@ -53,10 +53,6 @@ function main(): void {
   window.DocumentEditorMirrorThrowEvent = DocumentEditorMirrorThrowEvent
 }
 
-type DocumentEditorEventName = {
-  [K in keyof Omit<DocumentEditor, keyof HTMLElement>]: K extends `ondocumenteditor${string}` ? K : never
-}[keyof Omit<DocumentEditor, keyof HTMLElement>]
-
 interface InternalWindow extends Window {
   Function: FunctionConstructor
   console: Console
@@ -70,44 +66,6 @@ interface ThrowPseudoEventListener {
 export class DocumentEditorMirror extends HTMLElement {
   static get tagName(): string {
     return "document-editor-mirror"
-  }
-
-  static get #events(): DocumentEditorEventName[] {
-    return [
-      "ondocumenteditorappready",
-      "ondocumenteditorcollaborativechanges",
-      "ondocumenteditordocumentready",
-      "ondocumenteditordocumentstatechange",
-      "ondocumenteditordownloadas",
-      "ondocumenteditorerror",
-      "ondocumenteditorinfo",
-      "ondocumenteditormakeactionlink",
-      "ondocumenteditormetachange",
-      "ondocumenteditoroutdatedversion",
-      "ondocumenteditorpluginsready",
-      "ondocumenteditorready",
-      "ondocumenteditorrequestclose",
-      "ondocumenteditorrequestcomparefile",
-      "ondocumenteditorrequestcreatenew",
-      "ondocumenteditorrequesteditrights",
-      "ondocumenteditorrequesthistory",
-      "ondocumenteditorrequesthistoryclose",
-      "ondocumenteditorrequesthistorydata",
-      "ondocumenteditorrequestinsertimage",
-      "ondocumenteditorrequestmailmergerecipients",
-      "ondocumenteditorrequestopen",
-      "ondocumenteditorrequestreferencedata",
-      "ondocumenteditorrequestreferencesource",
-      "ondocumenteditorrequestrename",
-      "ondocumenteditorrequestrestore",
-      "ondocumenteditorrequestsaveas",
-      "ondocumenteditorrequestselectdocument",
-      "ondocumenteditorrequestselectspreadsheet",
-      "ondocumenteditorrequestsendnotify",
-      "ondocumenteditorrequestsharingsettings",
-      "ondocumenteditorrequestusers",
-      "ondocumenteditorwarning"
-    ]
   }
 
   #ondocumenteditormirrorconsoleerror: DocumentEditorMirrorConsoleErrorEventListener | null = null
@@ -214,7 +172,7 @@ export class DocumentEditorMirror extends HTMLElement {
     const pt = this.#createPit()
     this.append(pt)
 
-    for (const en of DocumentEditorMirror.#events) {
+    for (const en of DocumentEditor.eventHandlerNames) {
       const ln = de[en]
       if (ln === null) {
         continue
