@@ -27,6 +27,7 @@
     "@onlyoffice/documentation-ui-storybook": "workspace:^",
     "@onlyoffice/documentation-utils": "workspace:^",
     "@onlyoffice/eleventy-clean": "workspace:^",
+    "@onlyoffice/eleventy-playground-config": "workspace:^",
     "@onlyoffice/eleventy-starry-night": "workspace:^",
     "@onlyoffice/eleventy-types": "workspace:^",
     "@onlyoffice/eleventy-yaml": "workspace:^",
