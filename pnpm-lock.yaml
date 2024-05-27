@@ -1395,6 +1395,9 @@ importers:
       '@onlyoffice/eleventy-clean':
         specifier: workspace:^
         version: link:../packages/eleventy-clean
+      '@onlyoffice/eleventy-playground-config':
+        specifier: workspace:^
+        version: link:../packages/eleventy-playground-config
       '@onlyoffice/eleventy-starry-night':
         specifier: workspace:^
         version: link:../packages/eleventy-starry-night
