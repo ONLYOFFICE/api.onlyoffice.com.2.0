@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "main": "lib/main.ts",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./*": "./lib/*"
+  },
   "scripts": {
     "test": "c8 --all --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
   },
