@@ -3,15 +3,22 @@ import type * as Well from "./well.ts"
 import * as well from "./well.ts"
 
 export function config(r: Raw.Config): Well.Config {
-  const de = documentEditor(r.documentEditor)
+  let de: Well.DocumentEditor
+  if (!r.documentEditor) {
+    de = well.documentEditor()
+  } else {
+    de = documentEditor(r.documentEditor)
+  }
   return well.config(de)
 }
 
 export function documentEditor(r: Raw.DocumentEditor): Well.DocumentEditor {
   const de = well.documentEditor()
-  for (const rp of r.config) {
-    const p = property(rp)
-    de.config.push(p)
+  if (r.config) {
+    for (const rp of r.config) {
+      const p = property(rp)
+      de.config.push(p)
+    }
   }
   return de
 }

@@ -26,21 +26,19 @@ test("creates a document editor with correct order of keys", () => {
 
 test("creates an empty document editor", () => {
   const de = documentEditor()
-  is(de.documentServerURL, "")
-  is(de.config.length, 0)
+  is(de.documentServerURL, undefined)
+  is(de.config, undefined)
 })
 
 test("creates a config with correct order of keys", () => {
-  const de = documentEditor()
-  const c = config(de)
+  const c = config()
   const a = Object.keys(c)
   eq(a, ["documentEditor"])
 })
 
 test("creates an empty config", () => {
-  const de = documentEditor()
-  const c = config(de)
-  is(c.documentEditor.config.length, 0)
+  const c = config()
+  is(c.documentEditor, undefined)
 })
 
 test.run()

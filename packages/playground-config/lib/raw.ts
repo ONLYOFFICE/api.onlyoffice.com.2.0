@@ -1,22 +1,22 @@
 export interface Config {
-  documentEditor: DocumentEditor
+  documentEditor?: DocumentEditor
 }
 
-export function config(de: DocumentEditor): Config {
+export function config(): Config {
   return {
-    documentEditor: de
+    documentEditor: undefined
   }
 }
 
 export interface DocumentEditor {
-  documentServerURL: string
-  config: Property[]
+  documentServerURL?: string
+  config?: Property[]
 }
 
 export function documentEditor(): DocumentEditor {
   return {
-    documentServerURL: "",
-    config: []
+    documentServerURL: undefined,
+    config: undefined
   }
 }
 

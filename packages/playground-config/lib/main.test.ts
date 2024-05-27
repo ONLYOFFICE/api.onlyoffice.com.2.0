@@ -121,11 +121,20 @@ test("creates a document editor with a property", () => {
   eq(de, wde)
 })
 
-test("creates a config", () => {
-  const rde = raw.documentEditor()
-  const rc = raw.config(rde)
+test("creates an empty config", () => {
+  const rc = raw.config()
   const c = config(rc)
   const wde = well.documentEditor()
+  const wc = well.config(wde)
+  eq(c, wc)
+})
+
+test("creates a config with a document editor", () => {
+  const rde = raw.documentEditor()
+  const rc = raw.config()
+  rc.documentEditor = rde
+  const c = config(rc)
+  const wde = documentEditor(rde)
   const wc = well.config(wde)
   eq(c, wc)
 })
