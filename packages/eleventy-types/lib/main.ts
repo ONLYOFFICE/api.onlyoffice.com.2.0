@@ -70,3 +70,8 @@ export interface UserConfigDir {
  * {@link https://www.11ty.dev/docs/data-global-custom/ Eleventy Reference}
  */
 export interface GlobalData {}
+
+/**
+ * {@link https://www.11ty.dev/docs/data-eleventy-supplied/ Eleventy Reference}
+ */
+export interface Context {}
