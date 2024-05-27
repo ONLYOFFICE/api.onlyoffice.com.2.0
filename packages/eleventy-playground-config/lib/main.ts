@@ -2,8 +2,18 @@ import {readFile, readdir} from "node:fs/promises"
 import {join, parse} from "node:path"
 import type {UserConfig} from "@onlyoffice/eleventy-types"
 import type * as Raw from "@onlyoffice/playground-config/raw.ts"
+import type * as Well from "@onlyoffice/playground-config/well.ts"
 import {merge} from "@onlyoffice/playground-config/raw.ts"
 import {config} from "@onlyoffice/playground-config"
+
+declare module "@onlyoffice/eleventy-types" {
+  interface Context {
+    /**
+     * Eleventy Playground Config Plugin Reference
+     */
+    playground: Well.Config
+  }
+}
 
 export function eleventyPlaygroundConfig(uc: UserConfig, mode?: string): void {
   uc.addGlobalData("playground", async () => {
