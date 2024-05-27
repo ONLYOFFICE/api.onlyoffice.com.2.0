@@ -41,8 +41,21 @@ export function property(t: "boolean" | "function" | "number" | "string"): Prope
 }
 
 export function merge(a: Config, b: Config): Config {
-  const de = mergeDocumentEditor(a.documentEditor, b.documentEditor)
-  return config(de)
+  const c = config()
+
+  let de: DocumentEditor | undefined
+  if (a.documentEditor && b.documentEditor) {
+    de = mergeDocumentEditor(a.documentEditor, b.documentEditor)
+  } else if (a.documentEditor) {
+    de = a.documentEditor
+  } else if (b.documentEditor) {
+    de = b.documentEditor
+  }
+  if (de) {
+    c.documentEditor = de
+  }
+
+  return c
 }
 
 function mergeDocumentEditor(a: DocumentEditor, b: DocumentEditor): DocumentEditor {
@@ -52,5 +65,6 @@ function mergeDocumentEditor(a: DocumentEditor, b: DocumentEditor): DocumentEdit
     de.documentServerURL = b.documentServerURL
   }
   // todo?: support merging other properties
+  de.config = a.config
   return de
 }
