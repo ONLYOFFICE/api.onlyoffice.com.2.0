@@ -3,6 +3,11 @@
  */
 export interface UserConfig {
   /**
+   * {@link https://www.11ty.dev/docs/data-custom/ Eleventy Reference}
+   */
+  dataExtensions: Map<string, DataExtension>
+
+  /**
    * {@link https://www.11ty.dev/docs/config/ Eleventy Reference}
    */
   dir: UserConfigDir
@@ -44,11 +49,21 @@ export interface UserConfig {
 }
 
 /**
+ * {@link https://www.11ty.dev/docs/data-custom/ Eleventy Reference}
+ */
+export interface DataExtension {
+  extension: string
+  parser(...args: unknown[]): unknown
+  options: unknown
+}
+
+/**
  * {@link https://www.11ty.dev/docs/config/ Eleventy Reference}
  */
 export interface UserConfigDir {
   input: string
   output: string
+  data: string
 }
 
 /**
