@@ -38,4 +38,5 @@ function config(uc: Eleventy.UserConfig): unknown {
 }
 
 // Eleventy does not understand the default export.
+// eslint-disable-next-line unicorn/prefer-module
 module.exports = config
