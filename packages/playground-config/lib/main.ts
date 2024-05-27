@@ -14,6 +14,9 @@ export function config(r: Raw.Config): Well.Config {
 
 export function documentEditor(r: Raw.DocumentEditor): Well.DocumentEditor {
   const de = well.documentEditor()
+  if (r.documentServerURL) {
+    de.documentServerURL = r.documentServerURL
+  }
   if (r.config) {
     for (const rp of r.config) {
       const p = property(rp)

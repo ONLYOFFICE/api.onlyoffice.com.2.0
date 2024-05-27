@@ -108,7 +108,16 @@ test("creates an empty document editor", () => {
   eq(de, wde)
 })
 
-test("creates a document editor with a property", () => {
+test("creates a document editor with a document server URL", () => {
+  const rde = raw.documentEditor()
+  rde.documentServerURL = "http://localhost:3000/"
+  const de = documentEditor(rde)
+  const wde = well.documentEditor()
+  wde.documentServerURL = "http://localhost:3000/"
+  eq(de, wde)
+})
+
+test("creates a document editor with config", () => {
   const rp = raw.property("string")
   const rde = raw.documentEditor()
   rde.config = [rp]
