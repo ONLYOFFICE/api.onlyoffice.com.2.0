@@ -40,8 +40,17 @@ export function property(t: "boolean" | "function" | "number" | "string"): Prope
   }
 }
 
-// todo
-// export function merge(a: Config, b: Config): Config {
-//   const de = mergeDocumentEditor(a.documentEditor, b.documentEditor)
-//   return config(de)
-// }
+export function merge(a: Config, b: Config): Config {
+  const de = mergeDocumentEditor(a.documentEditor, b.documentEditor)
+  return config(de)
+}
+
+function mergeDocumentEditor(a: DocumentEditor, b: DocumentEditor): DocumentEditor {
+  const de = documentEditor()
+  de.documentServerURL = a.documentServerURL
+  if (b.documentServerURL !== "") {
+    de.documentServerURL = b.documentServerURL
+  }
+  // todo?: support merging other properties
+  return de
+}
