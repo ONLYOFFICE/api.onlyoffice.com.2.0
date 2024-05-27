@@ -9,11 +9,13 @@ export function config(de: DocumentEditor): Config {
 }
 
 export interface DocumentEditor {
+  documentServerURL: string
   config: Property[]
 }
 
 export function documentEditor(): DocumentEditor {
   return {
+    documentServerURL: "",
     config: []
   }
 }

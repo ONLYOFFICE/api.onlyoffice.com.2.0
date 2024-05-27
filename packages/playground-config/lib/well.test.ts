@@ -135,11 +135,12 @@ test("creates a property with the correct type", () => {
 test("creates a document editor with correct order of keys", () => {
   const d = documentEditor()
   const a = Object.keys(d)
-  eq(a, ["config"])
+  eq(a, ["documentServerURL", "config"])
 })
 
 test("creates a document editor with an empty config", () => {
   const d = documentEditor()
+  is(d.documentServerURL, "")
   eq(d.config, [])
 })
 
