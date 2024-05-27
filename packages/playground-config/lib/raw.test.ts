@@ -21,11 +21,12 @@ test("creates an empty property", () => {
 test("creates a document editor with correct order of keys", () => {
   const de = documentEditor()
   const a = Object.keys(de)
-  eq(a, ["config"])
+  eq(a, ["documentServerURL", "config"])
 })
 
 test("creates an empty document editor", () => {
   const de = documentEditor()
+  is(de.documentServerURL, "")
   is(de.config.length, 0)
 })
 
