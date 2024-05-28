@@ -2,6 +2,8 @@ import type * as Raw from "./raw.ts"
 import type * as Well from "./well.ts"
 import * as well from "./well.ts"
 
+export type * from "./well.ts"
+
 export function config(r: Raw.Config): Well.Config {
   let de: Well.DocumentEditor
   if (!r.documentEditor) {
