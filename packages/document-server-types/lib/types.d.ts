@@ -333,7 +333,11 @@ export interface DocEditorUsers {
   }[]
 }
 
-export interface DocEditorConfig {
+export interface DocEditorConfig extends
+  DocEditorConfigurableOptions,
+  DocEditorConfigurableEvents {}
+
+export interface DocEditorConfigurableOptions {
   /**
    * {@link https://api.onlyoffice.com/editors/config/#documentType ONLYOFFICE Reference}
    */
@@ -368,7 +372,9 @@ export interface DocEditorConfig {
    * {@link https://api.onlyoffice.com/editors/config/editor ONLYOFFICE Reference}
    */
   editorConfig?: DocEditorConfigEditorConfig
+}
 
+export interface DocEditorConfigurableEvents {
   /**
    * {@link https://api.onlyoffice.com/editors/config/events ONLYOFFICE Reference}
    */
