@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist",
+    "strict": true,
+    "target": "ESNext"
+  },
+  "include": [
+    "./lib/*",
+    "./index.d.ts"
+  ]
+}

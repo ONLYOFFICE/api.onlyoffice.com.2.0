@@ -5,20 +5,33 @@
   "main": "lib/main.ts",
   "exports": {
     ".": "./lib/main.ts",
+    "./client.ts": "./lib/client.ts",
     "./document-editor.ts": "./lib/document-editor.ts"
   },
   "scripts": {
-    "posttest": "c8 check-coverage --80",
-    "pretest": "tsc",
-    "test": "c8 --all --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
+    "playwright": "cd node_modules/@web/test-runner-playwright/node_modules/.bin && ./playwright",
+    "demo:server": "server-demo",
+    "test:all": "pnpm test:types && pnpm test:unit && pnpm test:e2e",
+    "test:e2e": "web-test-runner",
+    "test:types": "tsc",
+    "test:unit": "c8 --reporter html --reporter text --check-coverage --branches 80 --functions 80 --lines 80 --statements 80 --per-file tsx node_modules/uvu/bin.js lib ^.*\\.unit\\.ts$",
+    "test": "tsx test.ts"
   },
   "dependencies": {
     "@onlyoffice/document-server-types": "workspace:^",
-    "@types/node": "^20.12.12",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "@onlyoffice/node-http": "workspace:^",
+    "@onlyoffice/server-demo": "workspace:^",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.12.12",
+    "@web/dev-server": "^0.4.4",
+    "@web/dev-server-esbuild": "^1.0.2",
+    "@web/test-runner": "^0.18.2",
+    "@web/test-runner-playwright": "^0.11.0",
     "c8": "^9.1.0",
+    "esbuild": "^0.21.4",
     "tsx": "^4.10.5",
     "uvu": "^0.5.6"
   },

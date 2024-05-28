@@ -1,5 +1,5 @@
 import type {DocEditorConfigurableOptions} from "@onlyoffice/document-server-types"
-import type {Client} from "./main.ts"
+import type {Client} from "./client.ts"
 
 interface InternalAssignResponse {
   jsonConfig: string
