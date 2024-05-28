@@ -1164,6 +1164,28 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/server-client:
+    dependencies:
+      '@onlyoffice/document-server-types':
+        specifier: workspace:^
+        version: link:../document-server-types
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: ^9.1.0
+        version: 9.1.0
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
+
   packages/service-declaration:
     dependencies:
       '@onlyoffice/declaration-code-example':
