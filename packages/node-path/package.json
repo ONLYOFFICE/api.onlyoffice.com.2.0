@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/path",
+  "name": "@onlyoffice/node-path",
   "private": true,
   "type": "module",
   "main": "lib/main.ts",

@@ -6,7 +6,7 @@
   "dependencies": {
     "@onlyoffice/jq": "workspace:^",
     "@onlyoffice/openapi-declaration": "workspace:^",
-    "@onlyoffice/path": "workspace:^",
+    "@onlyoffice/node-path": "workspace:^",
     "@onlyoffice/service-resource": "workspace:^",
     "@onlyoffice/stream-json": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
