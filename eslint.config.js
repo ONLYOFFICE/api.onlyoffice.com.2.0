@@ -159,8 +159,11 @@ function config() {
           code: 100,
           ignorePattern: "^\\s*(async)?\\s*function\\s*(\\S*)\\(.*\\):\\s*(.*)$",
           ignoreComments: true,
+          ignoreTrailingComments: true,
           ignoreUrls: true,
-          ignoreStrings: true
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreRegExpLiterals: true
         }],
         "@stylistic/max-statements-per-line": e,
         "@stylistic/member-delimiter-style": [e, {
@@ -277,6 +280,7 @@ function config() {
         "unicorn/no-null": "off",
         "unicorn/prefer-at": "off",
         "unicorn/prefer-ternary": "off",
+        "unicorn/prefer-type-error": "off",
         "unicorn/prevent-abbreviations": "off",
         "unicorn/switch-case-braces": "off"
       }

@@ -320,7 +320,6 @@ test("throws an error when the response is not json", async (ctx) => {
     const [_, res] = await c.fetch(req)
     un(`Expected an error, but got '${res}'`)
   } catch (e) {
-    // eslint-disable-next-line @stylistic/max-len
     is(e instanceof Error && e.message, `GET ${u}: 200 Expected JSON response, but got 'text/plain'`)
   }
 })
