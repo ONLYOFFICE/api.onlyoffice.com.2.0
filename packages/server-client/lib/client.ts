@@ -1,5 +1,3 @@
-// We are in the browser.
-// import {URL} from "node:url"
 import {DocumentEditorService} from "./document-editor.ts"
 
 export class Client {

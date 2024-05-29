@@ -14,9 +14,7 @@ function config() {
   return {
     nodeResolve: true,
     plugins: [
-      esbuildPlugin({
-        ts: true
-      })
+      esbuildPlugin({ts: true})
     ],
     files: ["lib/*.e2e.ts"],
     browsers: [

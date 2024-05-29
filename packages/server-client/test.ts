@@ -7,6 +7,7 @@ async function main(): Promise<void> {
 
   const r = await waitServer()
   if (!r) {
+    s.kill()
     throw new Error("Server not ready")
   }
 
@@ -58,4 +59,5 @@ try {
   console.error(err)
   c = 1
 }
+
 exit(c)
