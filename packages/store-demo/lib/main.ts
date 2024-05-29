@@ -40,7 +40,6 @@ function main(): void {
     .option("--jwt-header", "JWT header", "Authorization")
     .option("--jwt-secret", "JWT secret", "your-256-bit-secret")
     .action((opts) => {
-      console.log(opts)
       serve({
         hostname: opts.hostname,
         port: opts.port,
