@@ -1243,12 +1243,18 @@ importers:
 
   packages/server-demo:
     dependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
       '@onlyoffice/node-http':
         specifier: workspace:^
         version: link:../node-http
       '@types/node':
         specifier: ^20.12.12
         version: 20.12.12
+      sade:
+        specifier: ^1.8.1
+        version: 1.8.1
       tsx:
         specifier: ^4.10.5
         version: 4.10.5

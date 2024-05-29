@@ -1,15 +1,24 @@
 import type {IncomingMessage, ServerResponse} from "node:http"
 import {createServer} from "node:http"
+import {argv, stderr, stdout} from "node:process"
+import {Console} from "@onlyoffice/console"
 import {body} from "@onlyoffice/node-http"
+import sade from "sade"
+import pack from "../package.json"
 
-const config = {
-  hostname: "0.0.0.0",
-  port: 4000
-}
-
-main()
+const console = new Console(pack.name, stdout, stderr)
 
 function main(): void {
+  sade("server-demo", true)
+    .option("--hostname", "Hostname to listen on", "0.0.0.0")
+    .option("--port", "Port to listen on", 4000)
+    .action((opts) => {
+      serve(opts.hostname, opts.port)
+    })
+    .parse(argv)
+}
+
+function serve(hostname: string, port: number): void {
   const s = createServer()
 
   s.on("request", async (req, res) => {
@@ -28,8 +37,8 @@ function main(): void {
     }
   })
 
-  s.listen(config.port, config.hostname, () => {
-    console.log(`Server running at http://${config.hostname}:${config.port}/`)
+  s.listen(port, hostname, () => {
+    console.log(`Listening on http://${hostname}:${port}/`)
   })
 }
 
@@ -48,10 +57,9 @@ async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
   if (req.url === "/editors/configcreate") {
     const b = await body(req)
     const j = JSON.parse(b)
-    const jj = JSON.parse(j.jsonConfig)
-    jj.token = "xxx"
-    const cc = JSON.stringify(jj)
-    j.jsonConfig = cc
+    const l = JSON.parse(j.jsonConfig)
+    l.token = "xxx"
+    j.jsonConfig = JSON.stringify(l)
     const c = JSON.stringify(j)
 
     res.statusCode = 200
@@ -63,3 +71,5 @@ async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
 
   throw new Error("Unknown route")
 }
+
+main()

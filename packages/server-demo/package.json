@@ -5,12 +5,15 @@
   "main": "lib/main.ts",
   "bin": "bin/server-demo.sh",
   "scripts": {
+    "bin": "tsx lib/main.ts",
     "test:types": "tsc",
     "test": "pnpm test:types"
   },
   "dependencies": {
+    "@onlyoffice/console": "workspace:^",
     "@onlyoffice/node-http": "workspace:^",
     "@types/node": "^20.12.12",
+    "sade": "^1.8.1",
     "tsx": "^4.10.5",
     "typescript": "^5.4.5"
   }
