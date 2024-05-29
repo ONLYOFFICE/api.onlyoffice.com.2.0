@@ -225,7 +225,18 @@ function config() {
           allowIIFEs: false
         }],
         "@typescript-eslint/no-namespace": [e, {allowDeclarations: true}],
-        "@typescript-eslint/no-unused-vars": [e, {varsIgnorePattern: "^h$"}],
+        "@typescript-eslint/no-unused-vars": [
+          e,
+          {
+            args: "all",
+            argsIgnorePattern: "^_",
+            caughtErrors: "all",
+            caughtErrorsIgnorePattern: "^_",
+            destructuredArrayIgnorePattern: "^_",
+            varsIgnorePattern: "^_",
+            ignoreRestSiblings: true
+          }
+        ],
 
         // import: Helpful warnings
         "import/export": e,
@@ -271,7 +282,7 @@ function config() {
       }
     },
     {
-      files: ["**/*.js"],
+      files: ["**/*.js", "**/*.mjs"],
       rules: {
         // Does not work with JSDoc @returns directive.
         "@typescript-eslint/explicit-function-return-type": "off"
