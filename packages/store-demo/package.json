@@ -1,9 +1,9 @@
 {
-  "name": "@onlyoffice/document-server-demo",
+  "name": "@onlyoffice/store-demo",
   "private": true,
   "type": "module",
   "main": "lib/main.ts",
-  "bin": "bin/document-server-demo.sh",
+  "bin": "bin/store-demo.sh",
   "scripts": {
     "bin": "tsx lib/main.ts",
     "test:types": "tsc",

@@ -31,7 +31,7 @@ interface Options {
 }
 
 function main(): void {
-  sade("document-server-demo", true)
+  sade("store-demo", true)
     .option("--hostname", "Hostname to listen on", "0.0.0.0")
     .option("--port", "Port to listen on", 4000)
     .option("--internal-hostname", "Hostname for internal requests", "host.docker.internal")

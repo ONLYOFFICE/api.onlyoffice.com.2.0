@@ -335,9 +335,9 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
     devDependencies:
-      '@onlyoffice/document-server-demo':
+      '@onlyoffice/store-demo':
         specifier: workspace:^
-        version: link:../document-server-demo
+        version: link:../store-demo
       '@web/dev-server':
         specifier: ^0.4.4
         version: 0.4.4
@@ -462,9 +462,9 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
     devDependencies:
-      '@onlyoffice/document-server-demo':
+      '@onlyoffice/store-demo':
         specifier: workspace:^
-        version: link:../document-server-demo
+        version: link:../store-demo
       '@web/dev-server':
         specifier: ^0.4.4
         version: 0.4.4
@@ -542,9 +542,9 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
     devDependencies:
-      '@onlyoffice/document-server-demo':
+      '@onlyoffice/store-demo':
         specifier: workspace:^
-        version: link:../document-server-demo
+        version: link:../store-demo
       '@web/dev-server':
         specifier: ^0.4.4
         version: 0.4.4
@@ -555,7 +555,7 @@ importers:
         specifier: ^0.20.2
         version: 0.20.2
 
-  packages/document-server-demo:
+  packages/store-demo:
     dependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -1499,6 +1499,9 @@ importers:
       '@onlyoffice/document-editor-playground-html-element':
         specifier: workspace:^
         version: link:../packages/document-editor-playground-html-element
+      '@onlyoffice/store-demo':
+        specifier: workspace:^
+        version: link:../packages/store-demo
       '@onlyoffice/documentation-ui-kit':
         specifier: workspace:^
         version: link:../ui/kit
