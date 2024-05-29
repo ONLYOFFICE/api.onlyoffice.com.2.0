@@ -1,0 +1,24 @@
+{
+  "name": "@onlyoffice/site-playground",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./client.ts": "./lib/client.ts",
+    "./server.tsx": "./lib/server.tsx"
+  },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/document-editor-html-element": "workspace:^",
+    "@onlyoffice/document-editor-mirror-html-element": "workspace:^",
+    "@onlyoffice/document-editor-playground-html-element": "workspace:^",
+    "@onlyoffice/playground-config": "workspace:^",
+    "@onlyoffice/server-client": "workspace:^",
+    "preact": "^10.19.3",
+    "typescript": "^5.4.5"
+  }
+}
