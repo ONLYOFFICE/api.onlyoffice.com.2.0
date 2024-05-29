@@ -4,7 +4,9 @@
   "type": "module",
   "main": "lib/main.ts",
   "scripts": {
-    "test": "tsc && c8 --reporter html --reporter text uvu dist ^.*\\.test\\.js$"
+    "test:types": "tsc",
+    "test:unit": "tsc --noEmit false --rootDir lib --outDir dist && c8 --reporter html --reporter text --check-coverage --branches 80 --functions 80 --lines 80 --statements 80 --per-file uvu dist ^.*\\.test\\.js$",
+    "test": "pnpm test:types && pnpm test:unit"
   },
   "dependencies": {
     "@types/hast": "^3.0.4",

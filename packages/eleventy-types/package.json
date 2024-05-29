@@ -9,6 +9,10 @@
       "types": "./lib/reference.d.ts"
     }
   },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
   "dependencies": {
     "typescript": "^5.4.5"
   }

@@ -6,7 +6,9 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "build": "tsx lib/main.ts"
+    "build": "tsx lib/main.ts",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
   },
   "dependencies": {
     "@onlyoffice/service-declaration": "workspace:^",

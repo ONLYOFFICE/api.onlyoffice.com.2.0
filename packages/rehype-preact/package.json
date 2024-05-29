@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "main": "lib/main.ts",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
   "dependencies": {
     "@types/hast": "^3.0.4",
     "hast-util-to-jsx-runtime": "^2.3.0",

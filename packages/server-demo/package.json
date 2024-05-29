@@ -4,6 +4,10 @@
   "type": "module",
   "main": "lib/main.ts",
   "bin": "bin/server-demo.sh",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
   "dependencies": {
     "@onlyoffice/node-http": "workspace:^",
     "@types/node": "^20.12.12",

@@ -4,7 +4,9 @@
   "type": "module",
   "main": "lib/main.ts",
   "scripts": {
-    "test": "c8 --reporter html --reporter text tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$"
+    "test:types": "tsc",
+    "test:unit": "c8 --reporter html --reporter text --check-coverage --branches 80 --functions 80 --lines 80 --statements 80 --per-file tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
+    "test": "pnpm test:types && pnpm test:unit"
   },
   "dependencies": {
     "@onlyoffice/command": "workspace:^",

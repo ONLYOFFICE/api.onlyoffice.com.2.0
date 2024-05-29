@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "main": "lib/main.ts",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
   "dependencies": {
     "@onlyoffice/async-transform": "workspace:^",
     "@onlyoffice/console": "workspace:^",

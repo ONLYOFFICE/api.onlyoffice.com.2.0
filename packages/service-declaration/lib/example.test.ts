@@ -36,7 +36,7 @@ test("throws an error if a header parameter is reference", () => {
     const e = httpExample(r)
     unreachable(`Expected an error, got ${e.code}`)
   } catch (e) {
-    is(e.message, "header parameter references not supported")
+    is(e instanceof Error && e.message, "header parameter references not supported")
   }
 })
 
@@ -109,7 +109,7 @@ test("throws an error if a header parameter is reference", () => {
     const e = curlExample(r)
     unreachable(`Expected an error, got ${e.code}`)
   } catch (e) {
-    is(e.message, "header parameter references not supported")
+    is(e instanceof Error && e.message, "header parameter references not supported")
   }
 })
 

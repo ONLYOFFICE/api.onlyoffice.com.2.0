@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "types": "lib/types.d.ts",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
   "dependencies": {
     "typescript": "^5.4.5"
   }

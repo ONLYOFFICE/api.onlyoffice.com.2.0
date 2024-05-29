@@ -3,8 +3,8 @@ import {test} from "uvu"
 import {builder, fileType} from "./main.ts"
 
 declare global {
-  // eslint-disable-next-line no-var, @typescript-eslint/no-explicit-any
-  var UVU_VALUE: any
+  // eslint-disable-next-line no-var
+  var UVU_VALUE: number | undefined
 }
 
 test.before.each(() => {

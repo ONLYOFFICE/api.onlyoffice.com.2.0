@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "main": "lib/main.ts",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
   "dependencies": {
     "@onlyoffice/jq": "workspace:^",
     "@onlyoffice/openapi-declaration": "workspace:^",

@@ -6,9 +6,10 @@ import {test} from "uvu"
 import {callerPosition} from "./main.ts"
 
 test("returns the position of the caller", () => {
-  const [l, c] = callerPosition(new Error())
+  const e = new Error()
+  const [l, c] = callerPosition(e)
   is(l, 9)
-  is(c, 33)
+  is(c, 13)
 })
 
 test.run()

@@ -6,7 +6,9 @@
   "scripts": {
     "demo:editor": "docker run --env JWT_HEADER=Authorization --env JWT_SECRET=your-256-bit-secret --publish 3000:80 onlyoffice/documentserver:8.0",
     "demo:site": "wds . --watch",
-    "demo:store": "tsx ./demo/main.ts"
+    "demo:store": "tsx ./demo/main.ts",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
   },
   "dependencies": {
     "@onlyoffice/caller-position": "workspace:^",
