@@ -1,37 +1,70 @@
-import {Buffer} from "node:buffer"
-import {createHmac} from "node:crypto"
 import {stat} from "node:fs/promises"
 import {createReadStream} from "node:fs"
 import type {IncomingMessage, ServerResponse} from "node:http"
 import {createServer} from "node:http"
 import {join} from "node:path"
+import {argv, stderr, stdout} from "node:process"
 import {URL, fileURLToPath} from "node:url"
+import {Console} from "@onlyoffice/console"
 import type {DocEditorConfigurableOptions} from "@onlyoffice/document-server-types"
 import {uniqueString} from "@onlyoffice/unique-string"
+import type {Algorithm} from "jsonwebtoken"
+import jwt from "jsonwebtoken"
+import sade from "sade"
+import pack from "../package.json"
 
-const config = {
-  hostname: "0.0.0.0",
-  port: 4000,
+const {sign} = jwt
+const console = new Console(pack.name, stdout, stderr)
+
+interface Options {
+  hostname: string
+  port: number
   internal: {
-    hostname: "host.docker.internal",
-    port: 4000
-  },
+    hostname: string
+    port: number
+  }
   jwt: {
-    algorithm: "HS256",
-    header: "Authorization",
-    secret: "your-256-bit-secret"
+    algorithm: Algorithm
+    header: string
+    secret: string
   }
 }
 
-main()
-
 function main(): void {
+  sade("document-server-demo", true)
+    .option("--hostname", "Hostname to listen on", "0.0.0.0")
+    .option("--port", "Port to listen on", 4000)
+    .option("--internal-hostname", "Hostname for internal requests", "host.docker.internal")
+    .option("--internal-port", "Port for internal requests", 4000)
+    .option("--jwt-algorithm", "JWT algorithm", "HS256")
+    .option("--jwt-header", "JWT header", "Authorization")
+    .option("--jwt-secret", "JWT secret", "your-256-bit-secret")
+    .action((opts) => {
+      console.log(opts)
+      serve({
+        hostname: opts.hostname,
+        port: opts.port,
+        internal: {
+          hostname: opts["internal-hostname"],
+          port: opts["internal-port"]
+        },
+        jwt: {
+          algorithm: opts["jwt-algorithm"],
+          header: opts["jwt-header"],
+          secret: opts["jwt-secret"]
+        }
+      })
+    })
+    .parse(argv)
+}
+
+function serve(opts: Options): void {
   const s = createServer()
 
   s.on("request", async (req, res) => {
     console.log(`${req.method} ${req.url}`)
     try {
-      await route(req, res)
+      await route(opts, req, res)
     } catch (e) {
       let m = "Internal Server Error"
       if (e instanceof Error) {
@@ -44,12 +77,12 @@ function main(): void {
     }
   })
 
-  s.listen(config.port, config.hostname, () => {
-    console.log(`Server running at http://${config.hostname}:${config.port}/`)
+  s.listen(opts.port, opts.hostname, () => {
+    console.log(`Listening on http://${opts.hostname}:${opts.port}/`)
   })
 }
 
-async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
+async function route(opts: Options, req: IncomingMessage, res: ServerResponse): Promise<void> {
   res.setHeader("Access-Control-Allow-Origin", "*")
 
   if (req.method === "OPTIONS") {
@@ -82,12 +115,10 @@ async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
     }
 
     co.document.key = uniqueString()
-    const du = new URL("/sample", `http://${config.internal.hostname}:${config.internal.port}/`)
+    const du = new URL("/sample", `http://${opts.internal.hostname}:${opts.internal.port}/`)
     du.searchParams.set("fileType", co.document.fileType)
     co.document.url = du.toString()
-
-    const cs = JSON.stringify(co)
-    co.token = encode(config.jwt.algorithm, config.jwt.secret, cs)
+    co.token = sign(co, opts.jwt.secret, {algorithm: opts.jwt.algorithm})
 
     const d = JSON.stringify(co)
     res.statusCode = 200
@@ -145,24 +176,4 @@ function contentType(t: string): string {
   }
 }
 
-function encode(alg: string, secret: string, payload: string): string {
-  const header = JSON.stringify({alg, typ: "JWT"})
-  const h = base64URLEncode(header)
-  const p = base64URLEncode(payload)
-  const hp = `${h}.${p}`
-  const s = createHmac("sha256", secret)
-    .update(hp)
-    .digest("base64")
-    .replace("+", "-")
-    .replace("/", "_")
-    .replace(/=+$/, "")
-  return `${hp}.${s}`
-  function base64URLEncode(s: string): string {
-    return Buffer
-      .from(s)
-      .toString("base64")
-      .replace("+", "-")
-      .replace("/", "_")
-      .replace(/=+$/, "")
-  }
-}
+main()
