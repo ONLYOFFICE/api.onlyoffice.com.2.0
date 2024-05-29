@@ -545,9 +545,9 @@ importers:
 
   packages/document-server-demo:
     dependencies:
-      '@onlyoffice/document-editor-html-element':
+      '@onlyoffice/document-server-types':
         specifier: workspace:^
-        version: link:../document-editor-html-element
+        version: link:../document-server-types
       '@onlyoffice/unique-string':
         specifier: workspace:^
         version: link:../unique-string

@@ -9,7 +9,7 @@
     "test": "pnpm test:types"
   },
   "dependencies": {
-    "@onlyoffice/document-editor-html-element": "workspace:^",
+    "@onlyoffice/document-server-types": "workspace:^",
     "@onlyoffice/unique-string": "workspace:^",
     "@types/node": "^20.12.12",
     "tsx": "^4.10.5",

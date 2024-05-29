@@ -6,7 +6,7 @@ import type {IncomingMessage, ServerResponse} from "node:http"
 import {createServer} from "node:http"
 import {join} from "node:path"
 import {URL, fileURLToPath} from "node:url"
-import type {DocumentEditorConfig} from "@onlyoffice/document-editor-html-element"
+import type {DocEditorConfigurableOptions} from "@onlyoffice/document-server-types"
 import {uniqueString} from "@onlyoffice/unique-string"
 
 const config = {
@@ -73,7 +73,7 @@ async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
       })
     })
 
-    const co: DocumentEditorConfig = JSON.parse(bo)
+    const co: DocEditorConfigurableOptions = JSON.parse(bo)
     if (!co.document) {
       throw new Error("Missing document")
     }

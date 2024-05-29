@@ -2,7 +2,8 @@
 
 import type {
   DocEditor,
-  DocEditorConfig
+  DocEditorConfig,
+  DocEditorConfigurableOptions
 } from "@onlyoffice/document-server-types"
 import {
   uniqueString
@@ -86,7 +87,7 @@ export type DocumentEditorEventHandlerName = Exclude<{
   [K in keyof GlobalEventHandlers]: K extends `ondocumenteditor${string}` ? K : never
 }[keyof GlobalEventHandlers], undefined>
 
-export type DocumentEditorConfig = Omit<DocEditorConfig, "events">
+export type DocumentEditorConfig = DocEditorConfigurableOptions
 
 export class DocumentEditor extends HTMLElement {
   static get tagName(): string {
