@@ -1,5 +1,5 @@
 documentEditor:
-  documentServerURL: http://0.0.0.0:3000/
+  documentServerURL: http://localhost:3000/
   config:
   - path: documentType
     href: docs/docs-api/usage-api/config/#documentType
@@ -12,6 +12,12 @@ documentEditor:
     type: number
     format: percent
     default: 100%
+
+  - path: document.fileType
+    href: docs/docs-api/usage-api/config/document/#fileType
+    type: string
+    cases: [docx, xlsx, pptx, pdf]
+    default: docx
 
   - path: editorConfig.customization.compactHeader
     href: docs/docs-api/usage-api/config/editor-config/customization/#compactHeader
