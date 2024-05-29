@@ -12,7 +12,9 @@
   "dependencies": {
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/node-http": "workspace:^",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.12.12",
+    "jsonwebtoken": "^9.0.2",
     "sade": "^1.8.1",
     "tsx": "^4.10.5",
     "typescript": "^5.4.5"

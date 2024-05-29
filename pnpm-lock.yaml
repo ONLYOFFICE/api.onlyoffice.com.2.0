@@ -1231,9 +1231,15 @@ importers:
       '@onlyoffice/node-http':
         specifier: workspace:^
         version: link:../node-http
+      '@types/jsonwebtoken':
+        specifier: ^9.0.6
+        version: 9.0.6
       '@types/node':
         specifier: ^20.12.12
         version: 20.12.12
+      jsonwebtoken:
+        specifier: ^9.0.2
+        version: 9.0.2
       sade:
         specifier: ^1.8.1
         version: 1.8.1

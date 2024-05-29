@@ -3,28 +3,52 @@ import {createServer} from "node:http"
 import {argv, stderr, stdout} from "node:process"
 import {Console} from "@onlyoffice/console"
 import {body} from "@onlyoffice/node-http"
+import type {Algorithm} from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 import sade from "sade"
 import pack from "../package.json"
 
+const {sign} = jwt
 const console = new Console(pack.name, stdout, stderr)
+
+interface Options {
+  hostname: string
+  port: number
+  jwt: {
+    algorithm: Algorithm
+    header: string
+    secret: string
+  }
+}
 
 function main(): void {
   sade("server-demo", true)
     .option("--hostname", "Hostname to listen on", "0.0.0.0")
     .option("--port", "Port to listen on", 4000)
+    .option("--jwt-algorithm", "JWT algorithm", "HS256")
+    .option("--jwt-header", "JWT header", "Authorization")
+    .option("--jwt-secret", "JWT secret", "your-256-bit-secret")
     .action((opts) => {
-      serve(opts.hostname, opts.port)
+      serve({
+        hostname: opts.hostname,
+        port: opts.port,
+        jwt: {
+          algorithm: opts["jwt-algorithm"],
+          header: opts["jwt-header"],
+          secret: opts["jwt-secret"]
+        }
+      })
     })
     .parse(argv)
 }
 
-function serve(hostname: string, port: number): void {
+function serve(opts: Options): void {
   const s = createServer()
 
   s.on("request", async (req, res) => {
     console.log(`${req.method} ${req.url}`)
     try {
-      await route(req, res)
+      await route(opts, req, res)
     } catch (e) {
       let m = "Internal Server Error"
       if (e instanceof Error) {
@@ -37,12 +61,12 @@ function serve(hostname: string, port: number): void {
     }
   })
 
-  s.listen(port, hostname, () => {
-    console.log(`Listening on http://${hostname}:${port}/`)
+  s.listen(opts.port, opts.hostname, () => {
+    console.log(`Listening on http://${opts.hostname}:${opts.port}/`)
   })
 }
 
-async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
+async function route(opts: Options, req: IncomingMessage, res: ServerResponse): Promise<void> {
   res.setHeader("Access-Control-Allow-Origin", "*")
 
   if (req.method === "OPTIONS") {
@@ -58,7 +82,7 @@ async function route(req: IncomingMessage, res: ServerResponse): Promise<void> {
     const b = await body(req)
     const j = JSON.parse(b)
     const l = JSON.parse(j.jsonConfig)
-    l.token = "xxx"
+    l.token = sign(l, opts.jwt.secret, {algorithm: opts.jwt.algorithm})
     j.jsonConfig = JSON.stringify(l)
     const c = JSON.stringify(j)
 
