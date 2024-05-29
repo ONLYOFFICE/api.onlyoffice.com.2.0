@@ -1577,6 +1577,9 @@ importers:
       '@onlyoffice/remark-document-builder':
         specifier: workspace:^
         version: link:../packages/remark-document-builder
+      '@onlyoffice/server-client':
+        specifier: workspace:^
+        version: link:../packages/server-client
       '@onlyoffice/server-demo':
         specifier: workspace:^
         version: link:../packages/server-demo
