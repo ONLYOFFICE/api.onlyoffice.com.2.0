@@ -63,6 +63,8 @@ export class ErrorResponse extends Error {
     this.response = res
     this.name = this.constructor.name
     this.message = `${req.method} ${req.url}: ${res.status} ${m}`
-    Error.captureStackTrace(this, ErrorResponse)
+    if ("captureStackTrace" in Error) {
+      Error.captureStackTrace(this, ErrorResponse)
+    }
   }
 }
