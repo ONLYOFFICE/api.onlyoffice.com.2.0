@@ -1,0 +1,16 @@
+{
+  "name": "@onlyoffice/utility-types",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": "^21"
+  }
+}
