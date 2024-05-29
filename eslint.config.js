@@ -233,7 +233,7 @@ function config() {
             caughtErrors: "all",
             caughtErrorsIgnorePattern: "^_",
             destructuredArrayIgnorePattern: "^_",
-            varsIgnorePattern: "^_",
+            varsIgnorePattern: "(^_)|(^h$)",
             ignoreRestSiblings: true
           }
         ],
