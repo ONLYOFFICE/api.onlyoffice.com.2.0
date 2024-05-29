@@ -8,6 +8,17 @@ export interface Resource {
   resolve(id: string): Component | undefined
 }
 
+export function nop(): Resource {
+  return {
+    list() {
+      return []
+    },
+    resolve(): undefined {
+      return undefined
+    }
+  }
+}
+
 export async function resource(df: string, cf: string): Promise<string> {
   const rd = rootDir()
   const fd = fixturesDir(rd)

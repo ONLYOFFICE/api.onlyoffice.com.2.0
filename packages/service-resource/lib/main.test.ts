@@ -5,7 +5,7 @@ import {join} from "node:path"
 import {equal as eq, is} from "uvu/assert"
 import {suite} from "uvu"
 import type {Resource} from "./main.ts"
-import {resource} from "./main.ts"
+import {nop, resource} from "./main.ts"
 import pack from "../package.json" with {type: "json"}
 
 const require = createRequire(import.meta.url)
@@ -22,6 +22,12 @@ test.before(async (ctx) => {
 
 test.after(async (ctx) => {
   await rm(ctx.td, {recursive: true})
+})
+
+test("creates nop resource", async () => {
+  const n = nop()
+  eq(n.list(), [])
+  is(n.resolve(""), undefined)
 })
 
 test("generates resource with empty data", async (ctx) => {
