@@ -15,6 +15,7 @@
     "@onlyoffice/document-editor-mirror-html-element": "workspace:^",
     "@onlyoffice/document-server-types": "workspace:^",
     "@onlyoffice/preact-jsx-base": "workspace:^",
+    "@onlyoffice/utility-types": "workspace:^",
     "dot-prop": "^9.0.0",
     "typescript": "^5.4.5"
   },

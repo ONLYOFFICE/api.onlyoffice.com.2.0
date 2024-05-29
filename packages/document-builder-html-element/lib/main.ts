@@ -2,6 +2,7 @@ import {DocumentEditor} from "@onlyoffice/document-editor-html-element"
 import {builder, fileType} from "@onlyoffice/document-builder-utils"
 import type {DocEditorConnector} from "@onlyoffice/document-server-types"
 import {uniqueString} from "@onlyoffice/unique-string"
+import type {Stringify} from "@onlyoffice/utility-types"
 
 declare global {
   interface Window {
@@ -17,7 +18,7 @@ declare global {
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "document-builder": Partial<Omit<DocumentBuilder, keyof HTMLElement>> & JSXBase["span"]
+        "document-builder": Partial<Stringify<Omit<DocumentBuilder, keyof HTMLElement>>> & JSXBase["span"]
       }
     }
   }

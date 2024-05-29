@@ -1,8 +1,10 @@
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
+
 import type {DocumentEditorEventHandlerName} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditor} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditorMirror} from "@onlyoffice/document-editor-mirror-html-element"
 import type {DocEditorConfig} from "@onlyoffice/document-server-types"
+import type {Stringify} from "@onlyoffice/utility-types"
 import {setProperty} from "dot-prop"
 
 declare global {
@@ -18,7 +20,7 @@ declare global {
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "document-editor-playground": Partial<Omit<DocumentEditorPlayground, keyof HTMLElement>> & JSXBase["span"]
+        "document-editor-playground": Partial<Stringify<Omit<DocumentEditorPlayground, keyof HTMLElement>>> & JSXBase["span"]
       }
     }
   }

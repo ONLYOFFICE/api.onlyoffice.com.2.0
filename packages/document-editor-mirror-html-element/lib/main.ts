@@ -1,8 +1,10 @@
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
+
 import {callerPosition} from "@onlyoffice/caller-position"
 import type {DocumentEditorEventHandlerName} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditor} from "@onlyoffice/document-editor-html-element"
 import {substringPosition} from "@onlyoffice/substring-position"
+import type {Stringify} from "@onlyoffice/utility-types"
 
 declare global {
   interface Window {
@@ -21,7 +23,7 @@ declare global {
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "document-editor-mirror": Partial<Omit<DocumentEditorMirror, keyof HTMLElement>> & JSXBase["span"]
+        "document-editor-mirror": Partial<Stringify<Omit<DocumentEditorMirror, keyof HTMLElement>>> & JSXBase["span"]
       }
     }
   }

@@ -328,6 +328,9 @@ importers:
       '@onlyoffice/unique-string':
         specifier: workspace:^
         version: link:../unique-string
+      '@onlyoffice/utility-types':
+        specifier: workspace:^
+        version: link:../utility-types
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -452,6 +455,9 @@ importers:
       '@onlyoffice/unique-string':
         specifier: workspace:^
         version: link:../unique-string
+      '@onlyoffice/utility-types':
+        specifier: workspace:^
+        version: link:../utility-types
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -486,6 +492,9 @@ importers:
       '@onlyoffice/substring-position':
         specifier: workspace:^
         version: link:../substring-position
+      '@onlyoffice/utility-types':
+        specifier: workspace:^
+        version: link:../utility-types
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -523,6 +532,9 @@ importers:
       '@onlyoffice/preact-jsx-base':
         specifier: workspace:^
         version: link:../preact-jsx-base
+      '@onlyoffice/utility-types':
+        specifier: workspace:^
+        version: link:../utility-types
       dot-prop:
         specifier: ^9.0.0
         version: 9.0.0

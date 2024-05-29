@@ -14,6 +14,7 @@
     "@onlyoffice/document-server-types": "workspace:^",
     "@onlyoffice/preact-jsx-base": "workspace:^",
     "@onlyoffice/unique-string": "workspace:^",
+    "@onlyoffice/utility-types": "workspace:^",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
