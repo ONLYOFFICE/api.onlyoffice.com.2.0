@@ -14,7 +14,7 @@
     "test:all": "pnpm test:types && pnpm test:unit && pnpm test:e2e",
     "test:e2e": "web-test-runner",
     "test:types": "tsc",
-    "test:unit": "c8 --reporter html --reporter text --check-coverage --branches 80 --functions 80 --lines 80 --statements 80 --per-file tsx node_modules/uvu/bin.js lib ^.*\\.unit\\.ts$",
+    "test:unit": "c8 --all --src lib --exclude main.ts --exclude main.e2e.ts --reporter html --reporter text --check-coverage --branches 80 --functions 80 --lines 80 --statements 80 --per-file tsx node_modules/uvu/bin.js lib ^.*\\.unit\\.ts$",
     "test": "tsx test.ts"
   },
   "dependencies": {
