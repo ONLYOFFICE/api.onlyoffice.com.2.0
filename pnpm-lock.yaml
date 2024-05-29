@@ -555,36 +555,6 @@ importers:
         specifier: ^0.20.2
         version: 0.20.2
 
-  packages/store-demo:
-    dependencies:
-      '@onlyoffice/console':
-        specifier: workspace:^
-        version: link:../console
-      '@onlyoffice/document-server-types':
-        specifier: workspace:^
-        version: link:../document-server-types
-      '@onlyoffice/unique-string':
-        specifier: workspace:^
-        version: link:../unique-string
-      '@types/jsonwebtoken':
-        specifier: ^9.0.6
-        version: 9.0.6
-      '@types/node':
-        specifier: ^20.12.12
-        version: 20.12.12
-      jsonwebtoken:
-        specifier: ^9.0.2
-        version: 9.0.2
-      sade:
-        specifier: ^1.8.1
-        version: 1.8.1
-      tsx:
-        specifier: ^4.10.5
-        version: 4.10.5
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-
   packages/document-server-types:
     dependencies:
       typescript:
@@ -1318,6 +1288,60 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/site-playground:
+    dependencies:
+      '@onlyoffice/document-editor-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-html-element
+      '@onlyoffice/document-editor-mirror-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-mirror-html-element
+      '@onlyoffice/document-editor-playground-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-playground-html-element
+      '@onlyoffice/playground-config':
+        specifier: workspace:^
+        version: link:../playground-config
+      '@onlyoffice/server-client':
+        specifier: workspace:^
+        version: link:../server-client
+      preact:
+        specifier: ^10.19.3
+        version: 10.19.6
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/store-demo:
+    dependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/document-server-types':
+        specifier: workspace:^
+        version: link:../document-server-types
+      '@onlyoffice/unique-string':
+        specifier: workspace:^
+        version: link:../unique-string
+      '@types/jsonwebtoken':
+        specifier: ^9.0.6
+        version: 9.0.6
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
+      jsonwebtoken:
+        specifier: ^9.0.2
+        version: 9.0.2
+      sade:
+        specifier: ^1.8.1
+        version: 1.8.1
+      tsx:
+        specifier: ^4.10.5
+        version: 4.10.5
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/stream-json:
     dependencies:
       '@types/node':
@@ -1499,9 +1523,6 @@ importers:
       '@onlyoffice/document-editor-playground-html-element':
         specifier: workspace:^
         version: link:../packages/document-editor-playground-html-element
-      '@onlyoffice/store-demo':
-        specifier: workspace:^
-        version: link:../packages/store-demo
       '@onlyoffice/documentation-ui-kit':
         specifier: workspace:^
         version: link:../ui/kit
@@ -1538,6 +1559,9 @@ importers:
       '@onlyoffice/openapi-resource-fixtures':
         specifier: workspace:^
         version: link:../packages/openapi-resource-fixtures
+      '@onlyoffice/playground-config':
+        specifier: workspace:^
+        version: link:../packages/playground-config
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
@@ -1547,12 +1571,21 @@ importers:
       '@onlyoffice/remark-document-builder':
         specifier: workspace:^
         version: link:../packages/remark-document-builder
+      '@onlyoffice/server-demo':
+        specifier: workspace:^
+        version: link:../packages/server-demo
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../packages/service-declaration
       '@onlyoffice/service-resource':
         specifier: workspace:^
         version: link:../packages/service-resource
+      '@onlyoffice/site-playground':
+        specifier: workspace:^
+        version: link:../packages/site-playground
+      '@onlyoffice/store-demo':
+        specifier: workspace:^
+        version: link:../packages/store-demo
       '@onlyoffice/template-hast-element':
         specifier: workspace:^
         version: link:../packages/template-hast-element
