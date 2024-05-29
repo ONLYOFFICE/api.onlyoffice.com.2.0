@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "demo:editor": "docker run --env JWT_HEADER=Authorization --env JWT_SECRET=your-256-bit-secret --publish 3000:80 onlyoffice/documentserver-de:8.0",
+    "demo:server": "server-demo --port 4000",
+    "demo:store": "store-demo --port 4001 --internal-port 4001",
     "build": "DOCUMENTATION_RUN_MODE=build node --require esbuild-register --max-old-space-size=8192 ./node_modules/@11ty/eleventy/cmd.js --config ./eleventy.config.ts",
     "preview": "DOCUMENTATION_RUN_MODE=preview node --require esbuild-register --max-old-space-size=8192 ./node_modules/@11ty/eleventy/cmd.js --config ./eleventy.config.ts",
     "serve": "DOCUMENTATION_RUN_MODE=serve node --require esbuild-register --max-old-space-size=8192 ./node_modules/@11ty/eleventy/cmd.js --serve --quiet --config ./eleventy.config.ts"
