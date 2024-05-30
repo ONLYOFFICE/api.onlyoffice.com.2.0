@@ -1189,9 +1189,9 @@ importers:
       '@onlyoffice/node-http':
         specifier: workspace:^
         version: link:../node-http
-      '@onlyoffice/server-demo':
+      '@onlyoffice/store-demo':
         specifier: workspace:^
-        version: link:../server-demo
+        version: link:../store-demo
       '@types/mocha':
         specifier: ^10.0.6
         version: 10.0.6
@@ -1222,33 +1222,6 @@ importers:
       uvu:
         specifier: ^0.5.6
         version: 0.5.6
-
-  packages/server-demo:
-    dependencies:
-      '@onlyoffice/console':
-        specifier: workspace:^
-        version: link:../console
-      '@onlyoffice/node-http':
-        specifier: workspace:^
-        version: link:../node-http
-      '@types/jsonwebtoken':
-        specifier: ^9.0.6
-        version: 9.0.6
-      '@types/node':
-        specifier: ^20.12.12
-        version: 20.12.12
-      jsonwebtoken:
-        specifier: ^9.0.2
-        version: 9.0.2
-      sade:
-        specifier: ^1.8.1
-        version: 1.8.1
-      tsx:
-        specifier: ^4.10.5
-        version: 4.10.5
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
 
   packages/service-declaration:
     dependencies:
@@ -1326,6 +1299,9 @@ importers:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
+      '@onlyoffice/node-http':
+        specifier: workspace:^
+        version: link:../node-http
       '@onlyoffice/unique-string':
         specifier: workspace:^
         version: link:../unique-string
@@ -1580,9 +1556,6 @@ importers:
       '@onlyoffice/server-client':
         specifier: workspace:^
         version: link:../packages/server-client
-      '@onlyoffice/server-demo':
-        specifier: workspace:^
-        version: link:../packages/server-demo
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../packages/service-declaration

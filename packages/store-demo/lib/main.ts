@@ -7,6 +7,7 @@ import {argv, stderr, stdout} from "node:process"
 import {URL, fileURLToPath} from "node:url"
 import {Console} from "@onlyoffice/console"
 import type {DocEditorConfigurableOptions} from "@onlyoffice/document-server-types"
+import {body} from "@onlyoffice/node-http"
 import {uniqueString} from "@onlyoffice/unique-string"
 import type {Algorithm} from "jsonwebtoken"
 import jwt from "jsonwebtoken"
@@ -93,36 +94,28 @@ async function route(opts: Options, req: IncomingMessage, res: ServerResponse): 
     return
   }
 
-  if (req.url && req.url.startsWith("/config")) {
-    const bo = await new Promise<string>((res, rej) => {
-      req.on("error", rej)
-      let bo = ""
-      req.on("data", (d) => {
-        bo += String(d)
-      })
-      req.on("end", () => {
-        res(bo)
-      })
-    })
+  if (req.url === "/config") {
+    const b = await body(req)
 
-    const co: DocEditorConfigurableOptions = JSON.parse(bo)
-    if (!co.document) {
+    const c: DocEditorConfigurableOptions = JSON.parse(b)
+    if (!c.document) {
       throw new Error("Missing document")
     }
-    if (!co.document.fileType) {
+    if (!c.document.fileType) {
       throw new Error("Missing fileType")
     }
 
-    co.document.key = uniqueString()
-    const du = new URL("/sample", `http://${opts.internal.hostname}:${opts.internal.port}/`)
-    du.searchParams.set("fileType", co.document.fileType)
-    co.document.url = du.toString()
-    co.token = sign(co, opts.jwt.secret, {algorithm: opts.jwt.algorithm})
+    c.document.key = uniqueString()
 
-    const d = JSON.stringify(co)
+    const u = new URL("/sample", `http://${opts.internal.hostname}:${opts.internal.port}/`)
+    u.searchParams.set("fileType", c.document.fileType)
+    c.document.url = u.toString()
+
+    c.token = sign(c, opts.jwt.secret, {algorithm: opts.jwt.algorithm})
+
     res.statusCode = 200
     res.setHeader("Content-Type", "application/json")
-    res.write(d)
+    res.write(JSON.stringify(c))
     res.end()
     return
   }
@@ -130,21 +123,55 @@ async function route(opts: Options, req: IncomingMessage, res: ServerResponse): 
   if (req.url && req.url.startsWith("/sample")) {
     const u = new URL(req.url, `http://${req.headers.host}/`)
 
-    const fileType = u.searchParams.get("fileType")
-    if (!fileType) {
+    const t = u.searchParams.get("fileType")
+    if (!t) {
       throw new Error("Missing fileType")
     }
 
     const rd = rootDir()
     const fd = fixturesDir(rd)
-    const sn = sampleBasename(fileType)
-    const sf = join(fd, sn)
-    const st = contentType(fileType)
+    const sb = sampleBasename(t)
+    const sf = join(fd, sb)
+    const st = contentType(t)
     const ss = await stat(sf)
+
     res.statusCode = 200
     res.setHeader("Content-Type", st)
     res.setHeader("Content-Length", ss.size)
     createReadStream(sf).pipe(res)
+    return
+  }
+
+  // todo: The store-demo package is specifically tailored for making demos of
+  // html-element packages. Endpoints mentioned below is a part of our site's
+  // documentation, also known as the server. Looking ahead, we should extract
+  // it from the store-demo package and utilize a independent mock server.
+
+  if (req.url === "/editors/configcreate") {
+    const b = await body(req)
+    const j = JSON.parse(b)
+
+    const c: DocEditorConfigurableOptions = JSON.parse(j.jsonConfig)
+    if (!c.document) {
+      throw new Error("Missing document")
+    }
+    if (!c.document.fileType) {
+      throw new Error("Missing fileType")
+    }
+
+    c.document.key = uniqueString()
+
+    const u = new URL("/sample", `http://${opts.internal.hostname}:${opts.internal.port}/`)
+    u.searchParams.set("fileType", c.document.fileType)
+    c.document.url = u.toString()
+
+    c.token = sign(c, opts.jwt.secret, {algorithm: opts.jwt.algorithm})
+    j.jsonConfig = JSON.stringify(c)
+
+    res.statusCode = 200
+    res.setHeader("Content-Type", "application/json")
+    res.write(JSON.stringify(j))
+    res.end()
     return
   }
 

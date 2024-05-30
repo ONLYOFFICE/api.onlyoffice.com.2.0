@@ -43,7 +43,6 @@
     "@onlyoffice/rehype-starry-night": "workspace:^",
     "@onlyoffice/remark-document-builder": "workspace:^",
     "@onlyoffice/server-client": "workspace:^",
-    "@onlyoffice/server-demo": "workspace:^",
     "@onlyoffice/service-declaration": "workspace:^",
     "@onlyoffice/service-resource": "workspace:^",
     "@onlyoffice/site-playground": "workspace:^",
