@@ -23,8 +23,5 @@
     "stream-chain": "^2.2.5",
     "stream-json": "^1.8.0",
     "typescript": "^5.4.5"
-  },
-  "engines": {
-    "node": "^21"
   }
 }

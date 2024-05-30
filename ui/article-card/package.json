@@ -23,8 +23,5 @@
     "@onlyoffice/documentation-ui-color": "workspace:^",
     "@onlyoffice/documentation-ui-content": "workspace:^",
     "@onlyoffice/documentation-ui-typography": "workspace:^"
-  },
-  "engines": {
-    "node": "^21"
   }
 }

@@ -32,8 +32,5 @@
   "peerDependencies": {
     "preact": "^10.19.3",
     "preact-render-to-string": "^6.4.1"
-  },
-  "engines": {
-    "node": "^21"
   }
 }

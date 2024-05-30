@@ -22,8 +22,5 @@
     "@onlyoffice/resource": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
     "tsx": "^4.10.5"
-  },
-  "engines": {
-    "node": "^21"
   }
 }

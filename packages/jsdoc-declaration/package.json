@@ -24,8 +24,5 @@
     "typescript": "^5.4.5",
     "unist-util-select": "^5.1.0",
     "unist-util-visit": "^5.0.0"
-  },
-  "engines": {
-    "node": "^21"
   }
 }

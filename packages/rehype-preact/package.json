@@ -13,8 +13,5 @@
     "preact": "^10.19.3",
     "typescript": "^5.4.5",
     "vfile": "^6.0.1"
-  },
-  "engines": {
-    "node": "^21"
   }
 }
