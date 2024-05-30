@@ -1670,9 +1670,6 @@ importers:
       vfile-matter:
         specifier: ^5.0.0
         version: 5.0.0
-      yaml:
-        specifier: ^2.4.1
-        version: 2.4.1
 
   storybook:
     devDependencies:
