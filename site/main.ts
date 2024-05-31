@@ -1,7 +1,7 @@
 import "@onlyoffice/document-builder-html-element"
+import "@onlyoffice/document-editor-config-html-element"
 import "@onlyoffice/document-editor-html-element"
 import "@onlyoffice/document-editor-mirror-html-element"
-import "@onlyoffice/document-editor-playground-html-element"
 import "@onlyoffice/documentation-ui-kit/kit.client.ts"
 import "@onlyoffice/site-playground/client.ts"
 import "./components/tree/tree.client.ts"

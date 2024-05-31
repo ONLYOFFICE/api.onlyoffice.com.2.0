@@ -8,20 +8,14 @@ export interface SitePlaygroundProperties {
 
 export function SitePlayground({config}: SitePlaygroundProperties): JSX.Element {
   return <site-playground>
-    <document-editor-playground>
+    <document-editor-config>
       <form>
-        <output>
-          <document-editor-mirror>
-            <document-editor
-              document-server-url={config.documentEditor.documentServerUrl}
-              config="{}"
-            >
-            </document-editor>
-          </document-editor-mirror>
-        </output>
         {config.documentEditor.config.map((p) => <Property property={p} />)}
       </form>
-    </document-editor-playground>
+    </document-editor-config>
+    <document-editor-mirror>
+      <document-editor document-server-url={config.documentEditor.documentServerUrl} config="{}"></document-editor>
+    </document-editor-mirror>
   </site-playground>
 }
 

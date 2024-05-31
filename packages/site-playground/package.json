@@ -5,6 +5,8 @@
   "main": "lib/main.ts",
   "exports": {
     ".": "./lib/main.ts",
+    "./client/define.ts": "./lib/client/define.ts",
+    "./client/element.ts": "./lib/client/element.ts",
     "./client.ts": "./lib/client.ts",
     "./server.tsx": "./lib/server.tsx"
   },
@@ -13,9 +15,9 @@
     "test": "pnpm test:types"
   },
   "dependencies": {
+    "@onlyoffice/document-editor-config-html-element": "workspace:^",
     "@onlyoffice/document-editor-html-element": "workspace:^",
     "@onlyoffice/document-editor-mirror-html-element": "workspace:^",
-    "@onlyoffice/document-editor-playground-html-element": "workspace:^",
     "@onlyoffice/server-client": "workspace:^",
     "@onlyoffice/site-config": "workspace:^",
     "preact": "^10.19.3",

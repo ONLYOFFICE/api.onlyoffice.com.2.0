@@ -1297,15 +1297,15 @@ importers:
 
   packages/site-playground:
     dependencies:
+      '@onlyoffice/document-editor-config-html-element':
+        specifier: workspace:^
+        version: link:../document-editor-config-html-element
       '@onlyoffice/document-editor-html-element':
         specifier: workspace:^
         version: link:../document-editor-html-element
       '@onlyoffice/document-editor-mirror-html-element':
         specifier: workspace:^
         version: link:../document-editor-mirror-html-element
-      '@onlyoffice/document-editor-playground-html-element':
-        specifier: workspace:^
-        version: link:../document-editor-playground-html-element
       '@onlyoffice/server-client':
         specifier: workspace:^
         version: link:../server-client
@@ -1524,15 +1524,15 @@ importers:
       '@onlyoffice/document-builder-utils':
         specifier: workspace:^
         version: link:../packages/document-builder-utils
+      '@onlyoffice/document-editor-config-html-element':
+        specifier: workspace:^
+        version: link:../packages/document-editor-config-html-element
       '@onlyoffice/document-editor-html-element':
         specifier: workspace:^
         version: link:../packages/document-editor-html-element
       '@onlyoffice/document-editor-mirror-html-element':
         specifier: workspace:^
         version: link:../packages/document-editor-mirror-html-element
-      '@onlyoffice/document-editor-playground-html-element':
-        specifier: workspace:^
-        version: link:../packages/document-editor-playground-html-element
       '@onlyoffice/documentation-ui-kit':
         specifier: workspace:^
         version: link:../ui/kit
