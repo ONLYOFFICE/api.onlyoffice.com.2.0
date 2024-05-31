@@ -79,6 +79,46 @@ import {
   DocumentEditorWarningEvent
 } from "./events.ts"
 
+export type DocumentEditorAttribute = Exclude<keyof DocumentEditorAttributes, undefined>
+
+export interface DocumentEditorAttributes {
+  "document-server-url"?: string
+  "config"?: string
+  "ondocumenteditorappready"?: string
+  "ondocumenteditorcollaborativechanges"?: string
+  "ondocumenteditordocumentready"?: string
+  "ondocumenteditordocumentstatechange"?: string
+  "ondocumenteditordownloadas"?: string
+  "ondocumenteditorerror"?: string
+  "ondocumenteditorinfo"?: string
+  "ondocumenteditormakeactionlink"?: string
+  "ondocumenteditormetachange"?: string
+  "ondocumenteditoroutdatedversion"?: string
+  "ondocumenteditorpluginsready"?: string
+  "ondocumenteditorready"?: string
+  "ondocumenteditorrequestclose"?: string
+  "ondocumenteditorrequestcomparefile"?: string
+  "ondocumenteditorrequestcreatenew"?: string
+  "ondocumenteditorrequesteditrights"?: string
+  "ondocumenteditorrequesthistory"?: string
+  "ondocumenteditorrequesthistoryclose"?: string
+  "ondocumenteditorrequesthistorydata"?: string
+  "ondocumenteditorrequestinsertimage"?: string
+  "ondocumenteditorrequestmailmergerecipients"?: string
+  "ondocumenteditorrequestopen"?: string
+  "ondocumenteditorrequestreferencedata"?: string
+  "ondocumenteditorrequestreferencesource"?: string
+  "ondocumenteditorrequestrename"?: string
+  "ondocumenteditorrequestrestore"?: string
+  "ondocumenteditorrequestsaveas"?: string
+  "ondocumenteditorrequestselectdocument"?: string
+  "ondocumenteditorrequestselectspreadsheet"?: string
+  "ondocumenteditorrequestsendnotify"?: string
+  "ondocumenteditorrequestsharingsettings"?: string
+  "ondocumenteditorrequestusers"?: string
+  "ondocumenteditorwarning"?: string
+}
+
 export type DocumentEditorEventType = {
   [K in keyof GlobalEventHandlersEventMap]: K extends `documenteditor${string}` ? K : never
 }[keyof GlobalEventHandlersEventMap]
@@ -178,14 +218,14 @@ export class DocumentEditor extends HTMLElement {
     ]
   }
 
-  #documentServerURL: string = ""
+  #documentServerUrl: string = ""
 
-  get documentServerURL(): string {
-    return this.#documentServerURL
+  get documentServerUrl(): string {
+    return this.#documentServerUrl
   }
 
-  set documentServerURL(u: string) {
-    this.#documentServerURL = u
+  set documentServerUrl(u: string) {
+    this.#documentServerUrl = u
   }
 
   #config: DocumentEditorConfig | null = null
@@ -752,7 +792,11 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  static get observedAttributes(): string[] {
+  static isDocumentEditorAttribute(u: unknown): u is DocumentEditorAttribute {
+    return this.observedAttributes.includes(u as DocumentEditorAttribute)
+  }
+
+  static get observedAttributes(): DocumentEditorAttribute[] {
     return [
       "document-server-url",
       "config",
@@ -795,7 +839,7 @@ export class DocumentEditor extends HTMLElement {
   attributeChangedCallback(n: string, _: string, v: string): void {
     switch (n) {
     case "document-server-url":
-      this.documentServerURL = v
+      this.documentServerUrl = v
       break
     case "config":
       this.config = JSON.parse(v) as DocumentEditorConfig
@@ -905,23 +949,97 @@ export class DocumentEditor extends HTMLElement {
   }
 
   connectedCallback(): void {
-    try {
-      const p = this.#createPlaceholder()
-      const s = this.#createScript(p)
-      this.append(p, s)
-    } catch (er) {
-      let m = ""
-      if (er instanceof Error) {
-        m = er.message
-      }
-      const ev = new DocumentEditorErrorEvent({error: er, message: m})
+    const f = this.#queryInstance()
+    if (f) {
+      const er = new Error("The Document Editor is already mounted")
+      const ev = new DocumentEditorErrorEvent({bubbles: true, error: er, message: er.message})
       this.dispatchEvent(ev)
+      return
     }
+
+    let u: string
+    try {
+      u = this.#scriptSource()
+    } catch (e) {
+      let m = "Unknown Error"
+      if (e instanceof Error) {
+        m = e.message
+      }
+      const ev = new DocumentEditorErrorEvent({bubbles: true, error: e, message: m})
+      this.dispatchEvent(ev)
+      return
+    }
+
+    let c: DocEditorConfig
+    try {
+      c = this.#scriptConfig()
+    } catch (e) {
+      let m = "Unknown Error"
+      if (e instanceof Error) {
+        m = e.message
+      }
+      const ev = new DocumentEditorErrorEvent({bubbles: true, error: e, message: m})
+      this.dispatchEvent(ev)
+      return
+    }
+
+    let p = this.#queryPlaceholder()
+    if (!p) {
+      p = this.#createPlaceholder()
+      this.insertBefore(p, this.lastChild)
+    }
+
+    let s = this.#queryScript(u)
+    if (!s) {
+      s = this.#createScript(u)
+
+      s.addEventListener("error", () => {
+        const er = new Error(`Failed to load the Document Editor API script from '${u}'`)
+        const ev = new DocumentEditorErrorEvent({bubbles: true, error: er, message: er.message})
+        this.dispatchEvent(ev)
+      })
+
+      s.addEventListener("load", () => {
+        try {
+          this.#mount(c, p)
+        } catch (e) {
+          let m = "Unknown Error"
+          if (e instanceof Error) {
+            m = e.message
+          }
+          const ev = new DocumentEditorErrorEvent({bubbles: true, error: e, message: m})
+          this.dispatchEvent(ev)
+        }
+      })
+
+      p.after(s)
+    } else {
+      this.#unmount()
+
+      try {
+        this.#mount(c, p)
+      } catch (e) {
+        let m = "Unknown Error"
+        if (e instanceof Error) {
+          m = e.message
+        }
+        const ev = new DocumentEditorErrorEvent({bubbles: true, error: e, message: m})
+        this.dispatchEvent(ev)
+      }
+    }
+  }
+
+  #queryInstance(): HTMLElement | null {
+    return this.querySelector("iframe")
+  }
+
+  #queryPlaceholder(): HTMLElement | null {
+    return this.querySelector("div[id$='-placeholder']")
   }
 
   #createPlaceholder(): HTMLElement {
     const e = document.createElement("div")
-    e.id = this.#placeholderID()
+    e.id = `${uniqueString()}-placeholder`
     e.textContent = "Waiting for the Document Editor API to load..."
     e.style.border = "0"
     e.style.clipPath = "rect(0, 0, 0, 0)"
@@ -934,202 +1052,183 @@ export class DocumentEditor extends HTMLElement {
     return e
   }
 
-  #placeholderID(): string {
-    return `${uniqueString()}-placeholder`
+  #queryScript(u: string): HTMLElement | null {
+    return this.querySelector(`script[src="${u}"]`)
   }
 
-  #createScript(p: HTMLElement): HTMLScriptElement {
-    const u = this.#scriptSource()
-    const c = this.#scriptConfig()
+  #createScript(u: string): HTMLElement {
     const s = document.createElement("script")
     s.async = true
     s.src = u
-    s.addEventListener("error", () => {
-      const er = new Error(`Failed to load the Document Editor API script from '${u}'`)
-      const ev = new DocumentEditorErrorEvent({error: er, message: er.message})
-      this.dispatchEvent(ev)
-    })
-    s.addEventListener("load", () => {
-      if (!window.DocsAPI) {
-        const er = new Error("The Document Editor API is not defined")
-        const ev = new DocumentEditorErrorEvent({error: er, message: er.message})
-        this.dispatchEvent(ev)
-        return
-      }
-      this.#editor = window.DocsAPI.DocEditor(p.id, c)
-    })
     return s
   }
 
   #scriptSource(): string {
-    const u = this.#documentServerURL
-    if (u === "") {
+    const b = this.#documentServerUrl
+    if (b === "") {
       throw new Error("The attribute 'document-server-url' is required, but it is missing")
     }
-    if (!u.endsWith("/")) {
+    if (!b.endsWith("/")) {
       throw new Error("The attribute 'document-server-url' must have a trailing slash, but it does not")
     }
-    return `${u}web-apps/apps/api/documents/api.js`
+    const u = new URL("web-apps/apps/api/documents/api.js", b)
+    return u.toString()
   }
 
   #scriptConfig(): DocEditorConfig {
-    const c = this.#config
-    if (!c) {
+    if (!this.#config) {
       throw new Error("The attribute 'config' is required, but it is missing")
     }
+
     return {
-      ...c,
+      ...structuredClone(this.#config),
       events: {
         onAppReady: () => {
-          const e = new DocumentEditorAppReadyEvent()
+          const e = new DocumentEditorAppReadyEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onCollaborativeChanges: () => {
-          const e = new DocumentEditorCollaborativeChangesEvent()
+          const e = new DocumentEditorCollaborativeChangesEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onDocumentReady: () => {
-          const e = new DocumentEditorDocumentReadyEvent()
+          const e = new DocumentEditorDocumentReadyEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onDocumentStateChange: (ev) => {
-          const e = new DocumentEditorDocumentStateChangeEvent(ev)
+          const e = new DocumentEditorDocumentStateChangeEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onDownloadAs: (ev) => {
-          const e = new DocumentEditorDownloadAsEvent(ev)
+          const e = new DocumentEditorDownloadAsEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onError: (ev) => {
           const er = new Error(`${ev.data.errorDescription} (${ev.data.errorCode})`)
-          const e = new DocumentEditorErrorEvent({...ev, error: er, message: er.message})
+          const e = new DocumentEditorErrorEvent({...ev, bubbles: true, error: er, message: er.message})
           this.dispatchEvent(e)
         },
         onInfo: (ev) => {
-          const e = new DocumentEditorInfoEvent(ev)
+          const e = new DocumentEditorInfoEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onMakeActionLink: (ev) => {
-          const e = new DocumentEditorMakeActionLinkEvent(ev)
+          const e = new DocumentEditorMakeActionLinkEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onMetaChange: (ev) => {
-          const e = new DocumentEditorMetaChangeEvent(ev)
+          const e = new DocumentEditorMetaChangeEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onOutdatedVersion: () => {
-          const e = new DocumentEditorOutdatedVersionEvent()
+          const e = new DocumentEditorOutdatedVersionEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onPluginsReady: () => {
-          const e = new DocumentEditorPluginsReadyEvent()
+          const e = new DocumentEditorPluginsReadyEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onReady: () => {
-          const e = new DocumentEditorReadyEvent()
+          const e = new DocumentEditorReadyEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestClose: () => {
-          const e = new DocumentEditorRequestCloseEvent()
+          const e = new DocumentEditorRequestCloseEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestCompareFile: () => {
-          const e = new DocumentEditorRequestCompareFileEvent()
+          const e = new DocumentEditorRequestCompareFileEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestCreateNew: () => {
-          const e = new DocumentEditorRequestCreateNewEvent()
+          const e = new DocumentEditorRequestCreateNewEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestEditRights: () => {
-          const e = new DocumentEditorRequestEditRightsEvent()
+          const e = new DocumentEditorRequestEditRightsEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestHistory: () => {
-          const e = new DocumentEditorRequestHistoryEvent()
+          const e = new DocumentEditorRequestHistoryEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestHistoryClose: () => {
-          const e = new DocumentEditorRequestHistoryCloseEvent()
+          const e = new DocumentEditorRequestHistoryCloseEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestHistoryData: (ev) => {
-          const e = new DocumentEditorRequestHistoryDataEvent(ev)
+          const e = new DocumentEditorRequestHistoryDataEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestInsertImage: (ev) => {
-          const e = new DocumentEditorRequestInsertImageEvent(ev)
+          const e = new DocumentEditorRequestInsertImageEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestMailMergeRecipients: () => {
-          const e = new DocumentEditorRequestMailMergeRecipientsEvent()
+          const e = new DocumentEditorRequestMailMergeRecipientsEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestOpen: (ev) => {
-          const e = new DocumentEditorRequestOpenEvent(ev)
+          const e = new DocumentEditorRequestOpenEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestReferenceData: (ev) => {
-          const e = new DocumentEditorRequestReferenceDataEvent(ev)
+          const e = new DocumentEditorRequestReferenceDataEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestReferenceSource: (ev) => {
-          const e = new DocumentEditorRequestReferenceSourceEvent(ev)
+          const e = new DocumentEditorRequestReferenceSourceEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestRename: (ev) => {
-          const e = new DocumentEditorRequestRenameEvent(ev)
+          const e = new DocumentEditorRequestRenameEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestRestore: (ev) => {
-          const e = new DocumentEditorRequestRestoreEvent(ev)
+          const e = new DocumentEditorRequestRestoreEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestSaveAs: (ev) => {
-          const e = new DocumentEditorRequestSaveAsEvent(ev)
+          const e = new DocumentEditorRequestSaveAsEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestSelectDocument: (ev) => {
-          const e = new DocumentEditorRequestSelectDocumentEvent(ev)
+          const e = new DocumentEditorRequestSelectDocumentEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestSelectSpreadsheet: (ev) => {
-          const e = new DocumentEditorRequestSelectSpreadsheetEvent(ev)
+          const e = new DocumentEditorRequestSelectSpreadsheetEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestSendNotify: (ev) => {
-          const e = new DocumentEditorRequestSendNotifyEvent(ev)
+          const e = new DocumentEditorRequestSendNotifyEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestSharingSettings: () => {
-          const e = new DocumentEditorRequestSharingSettingsEvent()
+          const e = new DocumentEditorRequestSharingSettingsEvent({bubbles: true})
           this.dispatchEvent(e)
         },
         onRequestUsers: (ev) => {
-          const e = new DocumentEditorRequestUsersEvent(ev)
+          const e = new DocumentEditorRequestUsersEvent({...ev, bubbles: true})
           this.dispatchEvent(e)
         },
         onWarning: (ev) => {
           const er = new Error(`${ev.data.warningDescription} (${ev.data.warningCode})`)
-          const e = new DocumentEditorWarningEvent({...ev, error: er, message: er.message})
+          const e = new DocumentEditorWarningEvent({...ev, bubbles: true, error: er, message: er.message})
           this.dispatchEvent(e)
         }
       }
     }
   }
 
-  // todo: rewrite and use only connectedCallback
-  reload(): void {
-    // or reuse events?
+  #unmount(): void {
+    this.#editor = null
+  }
+
+  #mount(c: DocEditorConfig, p: HTMLElement): void {
     if (!window.DocsAPI) {
       throw new Error("The Document Editor API is not defined")
     }
-    const p = this.querySelector("[id$=-placeholder]")
-    if (!p) {
-      throw new Error("The placeholder element is missing")
-    }
-    p.id = this.#placeholderID()
-    const c = this.#scriptConfig()
     this.#editor = window.DocsAPI.DocEditor(p.id, c)
   }
 }

@@ -69,7 +69,7 @@ export class DocumentBuilderContainer extends HTMLElement {
       }
     }
 
-    db.documentServerURL = "http://0.0.0.0:3000/"
+    db.documentServerUrl = "http://0.0.0.0:3000/"
     db.config = cs
     db.setAttribute("command", ce.textContent)
 

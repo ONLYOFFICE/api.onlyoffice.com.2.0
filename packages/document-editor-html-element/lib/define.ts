@@ -1,6 +1,6 @@
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
 
-import type {Stringify} from "@onlyoffice/utility-types"
+import type {DocumentEditorAttributes} from "./element.ts"
 import {DocumentEditor} from "./element.ts"
 import type {
   GlobalDocumentEditorAppReadyEventHandler,
@@ -118,7 +118,7 @@ declare global {
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "document-editor": Partial<Stringify<Omit<DocumentEditor, keyof HTMLElement>>> & JSXBase["span"]
+        "document-editor": HTMLAttributes<DocumentEditor> & DocumentEditorAttributes
       }
     }
   }

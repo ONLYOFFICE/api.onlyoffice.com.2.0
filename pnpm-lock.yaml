@@ -465,15 +465,9 @@ importers:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
-      '@onlyoffice/preact-jsx-base':
-        specifier: workspace:^
-        version: link:../preact-jsx-base
       '@onlyoffice/unique-string':
         specifier: workspace:^
         version: link:../unique-string
-      '@onlyoffice/utility-types':
-        specifier: workspace:^
-        version: link:../utility-types
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -490,6 +484,9 @@ importers:
       esbuild:
         specifier: ^0.20.2
         version: 0.20.2
+      preact:
+        specifier: ^10.19.3
+        version: 10.19.6
 
   packages/document-editor-mirror-html-element:
     dependencies:

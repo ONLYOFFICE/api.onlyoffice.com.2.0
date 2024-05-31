@@ -6,7 +6,7 @@ import {documentBuilder} from "./main.ts"
 test("initializes a document-builder with correct order of properties", () => {
   const d = documentBuilder()
   const a = Object.keys(d)
-  d.data.documentServerURL = "u"
+  d.data.documentServerUrl = "u"
   d.data.command = "hi"
   eq(a, ["type", "tagName", "properties", "children", "data"])
 })

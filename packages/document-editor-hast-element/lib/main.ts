@@ -12,7 +12,7 @@ export interface DocumentEditorProperties extends Properties {
 }
 
 export interface DocumentEditorData extends ElementData {
-  documentServerURL?: string
+  documentServerUrl?: string
   config?: DocumentEditorConfig
 }
 
@@ -23,11 +23,11 @@ export function documentEditor(): DocumentEditor {
     properties: {},
     children: [],
     data: {
-      get documentServerURL(): string | undefined {
+      get documentServerUrl(): string | undefined {
         return e.properties["document-server-url"]
       },
 
-      set documentServerURL(u: string | undefined) {
+      set documentServerUrl(u: string | undefined) {
         if (!u) {
           delete e.properties["document-server-url"]
           return

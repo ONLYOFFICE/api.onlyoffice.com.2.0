@@ -11,7 +11,7 @@ test("initializes a document-editor with correct orders", () => {
   eq(a, ["type", "tagName", "properties", "children", "data"])
 
   a = Object.keys(e.data)
-  eq(a, ["documentServerURL", "config"])
+  eq(a, ["documentServerUrl", "config"])
 })
 
 test("initializes a document-editor with defaults", () => {
@@ -19,39 +19,39 @@ test("initializes a document-editor with defaults", () => {
   is(e.type, "element")
   is(e.tagName, "document-editor")
   eq(e.properties, {})
-  is(e.data.documentServerURL, undefined)
+  is(e.data.documentServerUrl, undefined)
   is(e.data.config, undefined)
   eq(e.children, [])
 })
 
 test("sets and gets the document server url data", () => {
   const e = documentEditor()
-  e.data.documentServerURL = "u"
-  eq(e.data.documentServerURL, "u")
+  e.data.documentServerUrl = "u"
+  eq(e.data.documentServerUrl, "u")
 })
 
 test("resets the document server url", () => {
   const e = documentEditor()
-  e.data.documentServerURL = "u"
-  e.data.documentServerURL = undefined
-  is(e.data.documentServerURL, undefined)
+  e.data.documentServerUrl = "u"
+  e.data.documentServerUrl = undefined
+  is(e.data.documentServerUrl, undefined)
 })
 
 test("proxies the document server url to properties", () => {
   const e = documentEditor()
-  e.data.documentServerURL = "u"
+  e.data.documentServerUrl = "u"
   eq(e.properties["document-server-url"], "u")
 })
 
 test("proxies the document server url to the data", () => {
   const e = documentEditor()
   e.properties["document-server-url"] = "u"
-  eq(e.data.documentServerURL, "u")
+  eq(e.data.documentServerUrl, "u")
 })
 
 test("includes the document server url in the html output", () => {
   const e = documentEditor()
-  e.data.documentServerURL = "u"
+  e.data.documentServerUrl = "u"
   const h = toHtml(e)
   is(h, '<document-editor document-server-url="u"></document-editor>')
 })
