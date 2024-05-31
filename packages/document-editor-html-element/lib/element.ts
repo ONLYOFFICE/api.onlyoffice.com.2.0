@@ -1118,6 +1118,7 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
+  // todo: rewrite and use only connectedCallback
   reload(): void {
     // or reuse events?
     if (!window.DocsAPI) {
