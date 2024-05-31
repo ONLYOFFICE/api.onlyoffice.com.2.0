@@ -1,0 +1,23 @@
+{
+  "name": "@onlyoffice/document-editor-config-element",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./define.ts": "./lib/define.ts",
+    "./element.ts": "./lib/element.ts"
+  },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/document-server-types": "workspace:^",
+    "dot-prop": "^9.0.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "preact": "^10.19.3"
+  }
+}

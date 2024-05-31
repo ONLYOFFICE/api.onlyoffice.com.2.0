@@ -419,6 +419,22 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/document-editor-config-element:
+    dependencies:
+      '@onlyoffice/document-server-types':
+        specifier: workspace:^
+        version: link:../document-server-types
+      dot-prop:
+        specifier: ^9.0.0
+        version: 9.0.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      preact:
+        specifier: ^10.19.3
+        version: 10.19.6
+
   packages/document-editor-hast-element:
     dependencies:
       '@onlyoffice/document-editor-html-element':
