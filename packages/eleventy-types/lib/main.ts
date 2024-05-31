@@ -67,6 +67,26 @@ export interface UserConfigDir {
 }
 
 /**
+ * {@link https://www.11ty.dev/docs/data/ Eleventy Reference}
+ */
+export interface Data {
+  /**
+   * {@link https://www.11ty.dev/docs/collections/ Eleventy Reference}
+   */
+  tags?: string[]
+
+  /**
+   * {@link https://www.11ty.dev/docs/collections/#how-to-exclude-content-from-collections Eleventy Reference}
+   */
+  eleventyExcludeFromCollections?: boolean
+
+  /**
+   * {@link https://www.11ty.dev/docs/data-computed/ Eleventy Reference}
+   */
+  eleventyComputed?: Record<string, unknown>
+}
+
+/**
  * {@link https://www.11ty.dev/docs/data-global-custom/ Eleventy Reference}
  */
 export interface GlobalData {}
