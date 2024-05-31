@@ -894,6 +894,15 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/node-assert:
+    dependencies:
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/node-http:
     dependencies:
       '@types/node':
