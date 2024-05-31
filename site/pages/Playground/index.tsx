@@ -1,11 +1,12 @@
-import type {Context} from "@onlyoffice/eleventy-types"
+import type {Data, Context} from "@onlyoffice/eleventy-types"
 import {SitePlayground} from "@onlyoffice/site-playground"
 import type {JSX} from "preact"
 import {h} from "preact"
 
-export function data(): unknown {
+export function data(): Data {
   return {
-    layout: "blank"
+    layout: "blank",
+    eleventyExcludeFromCollections: true
   }
 }
 

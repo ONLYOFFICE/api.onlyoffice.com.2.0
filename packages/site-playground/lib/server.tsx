@@ -11,6 +11,8 @@ export function SitePlayground({config}: SitePlaygroundProperties): JSX.Element 
     <document-editor-config>
       <form>
         {config.documentEditor.config.map((p) => <Property property={p} />)}
+        <button type="submit" value="reset">Reset</button>
+        <button type="submit" value="play">Play</button>
       </form>
     </document-editor-config>
     <document-editor-mirror>

@@ -37,6 +37,14 @@ export class SitePlayground extends HTMLElement {
       return
     }
 
+    const fr = ec.querySelector("form")
+    if (!fr) {
+      const er = new Error("The form element for the 'document-editor-config' not found")
+      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      this.dispatchEvent(ev)
+      return
+    }
+
     const em = this.querySelector("document-editor-mirror")
     if (!em) {
       const er = new Error("The 'document-editor-mirror' element not found")
@@ -79,6 +87,8 @@ export class SitePlayground extends HTMLElement {
       return
     }
 
+    fr.onsubmit = this.#submit.bind(this)
+
     this.#handlers.clear()
     em.ondocumenteditormirrorconsoleerror = null
     em.ondocumenteditormirrorconsolelog = null
@@ -104,7 +114,32 @@ export class SitePlayground extends HTMLElement {
     em.connectedCallback()
     de.editor.requestClose()
     de.editor.destroyEditor()
-    de.reload()
+    de.connectedCallback()
+  }
+
+  #submit(se: SubmitEvent): void {
+    se.preventDefault()
+
+    if (!(se.submitter instanceof HTMLButtonElement)) {
+      const er = new Error("The submitter is not a button element")
+      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      this.dispatchEvent(ev)
+      return
+    }
+
+    if (se.submitter.value === "play") {
+      this.connectedCallback()
+      return
+    }
+
+    if (se.submitter.value === "reset") {
+      // todo: implement reset action
+      return
+    }
+
+    const er = new Error(`Unknown submitter value: ${se.submitter.value}`)
+    const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+    this.dispatchEvent(ev)
   }
 
   #handlerName(n: string): DocumentEditorEventHandlerName | undefined {
