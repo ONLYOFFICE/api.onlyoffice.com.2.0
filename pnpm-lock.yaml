@@ -419,7 +419,7 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
-  packages/document-editor-config-element:
+  packages/document-editor-config-html-element:
     dependencies:
       '@onlyoffice/document-server-types':
         specifier: workspace:^

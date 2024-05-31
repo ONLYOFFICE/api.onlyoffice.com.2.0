@@ -1,8 +1,9 @@
 {
-  "name": "@onlyoffice/document-editor-config-element",
+  "name": "@onlyoffice/document-editor-config-html-element",
   "private": true,
   "type": "module",
   "main": "lib/main.ts",
+  "types": "lib/main.d.ts",
   "exports": {
     ".": "./lib/main.ts",
     "./define.ts": "./lib/define.ts",
