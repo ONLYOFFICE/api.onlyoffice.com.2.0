@@ -11,7 +11,7 @@ export function data() {
   }
 }
 
-export function render({ site }: Eleventy.Context): JSX.Element {
+export function render({config}: Eleventy.Context): JSX.Element {
   return (
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       {list().map((p) => {
@@ -20,7 +20,7 @@ export function render({ site }: Eleventy.Context): JSX.Element {
         }
         return (
           <url>
-            <loc>{site.baseurl}{p.url}</loc>
+            <loc>{config.baseUrl}{p.url}</loc>
             <lastmod>{p.date.toISOString()}</lastmod>
           </url>
         )

@@ -1,9 +1,9 @@
-import type {Config, EnumType, Property} from "@onlyoffice/playground-config"
+import type * as SiteConfig from "@onlyoffice/site-config"
 import type {JSX} from "preact"
 import {h} from "preact"
 
 export interface SitePlaygroundProperties {
-  config: Config
+  config: SiteConfig.Playground
 }
 
 export function SitePlayground({config}: SitePlaygroundProperties): JSX.Element {
@@ -12,7 +12,10 @@ export function SitePlayground({config}: SitePlaygroundProperties): JSX.Element 
       <form>
         <output>
           <document-editor-mirror>
-            <document-editor document-server-url={config.documentEditor.documentServerURL}>
+            <document-editor
+              document-server-url={config.documentEditor.documentServerUrl}
+              config="{}"
+            >
             </document-editor>
           </document-editor-mirror>
         </output>
@@ -23,7 +26,7 @@ export function SitePlayground({config}: SitePlaygroundProperties): JSX.Element 
 }
 
 interface PropertyProperties {
-  property: Property
+  property: SiteConfig.Property
 }
 
 function Property({property}: PropertyProperties): JSX.Element {
@@ -53,8 +56,8 @@ function BooleanProperty({property}: PropertyProperties): JSX.Element {
 }
 
 interface EnumPropertyProperties {
-  property: Property
-  type: EnumType
+  property: SiteConfig.Property
+  type: SiteConfig.EnumType
 }
 
 function EnumProperty({property, type}: EnumPropertyProperties): JSX.Element {

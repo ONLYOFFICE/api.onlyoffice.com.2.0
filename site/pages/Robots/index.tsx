@@ -10,10 +10,10 @@ export function data() {
   }
 }
 
-export function render({ site }: Eleventy.Context): string {
+export function render({config}: Eleventy.Context): string {
   const sitemap = sitemapData()
   return (
-`Sitemap: ${site.baseurl}${sitemap.permalink}
+`Sitemap: ${config.baseUrl}${sitemap.permalink}
 User-agent: *`
   )
 }

@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment"
+  },
+  "include": ["./lib/*", "./index.d.ts", "lib/root/raw.ts", "lib/root/well.ts", "lib/playground/playground.test.ts", "lib/playground/playground.ts", "lib/test/root.test.ts", "lib/test/root.ts", "lib/test/playground.ts"]
+}

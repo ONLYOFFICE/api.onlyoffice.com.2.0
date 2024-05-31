@@ -9,6 +9,6 @@ export function data(): unknown {
   }
 }
 
-export function render(ctx: Context): JSX.Element {
-  return <SitePlayground config={ctx.playground}/>
+export function render({config}: Context): JSX.Element {
+  return <SitePlayground config={config.playground}/>
 }

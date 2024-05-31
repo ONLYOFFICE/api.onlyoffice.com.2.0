@@ -16,8 +16,8 @@
     "@onlyoffice/document-editor-html-element": "workspace:^",
     "@onlyoffice/document-editor-mirror-html-element": "workspace:^",
     "@onlyoffice/document-editor-playground-html-element": "workspace:^",
-    "@onlyoffice/playground-config": "workspace:^",
     "@onlyoffice/server-client": "workspace:^",
+    "@onlyoffice/site-config": "workspace:^",
     "preact": "^10.19.3",
     "typescript": "^5.4.5"
   }

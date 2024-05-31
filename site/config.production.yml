@@ -1,0 +1,8 @@
+baseUrl: https://api.onlyoffice.com/
+
+server:
+  baseUrl: https://api.docs.teamlab.info/
+
+playground:
+  documentEditor:
+    documentServerUrl: https://api.docs.teamlab.info/

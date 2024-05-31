@@ -25,8 +25,8 @@ import {remarkDocumentBuilder} from "@onlyoffice/remark-document-builder"
 import {rehypeDocumentBuilderContainer} from "../components/document-builder-container/rehype.ts"
 
 // todo: temp
-const doSkip = env.SKIP_REMOTE === "true"
-// const doSkip = true
+// const doSkip = env.SKIP_REMOTE === "true"
+const doSkip = true
 
 // todo: refactor it.
 // add support for hot reload

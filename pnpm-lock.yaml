@@ -586,14 +586,14 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
-  packages/eleventy-playground-config:
+  packages/eleventy-site-config:
     dependencies:
       '@onlyoffice/eleventy-types':
         specifier: workspace:^
         version: link:../eleventy-types
-      '@onlyoffice/playground-config':
+      '@onlyoffice/site-config':
         specifier: workspace:^
-        version: link:../playground-config
+        version: link:../site-config
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -601,15 +601,15 @@ importers:
       '@11ty/eleventy':
         specifier: ^2.0.1
         version: 2.0.1
-      '@onlyoffice/eleventy-yaml':
+      '@onlyoffice/node-assert':
         specifier: workspace:^
-        version: link:../eleventy-yaml
+        version: link:../node-assert
       c8:
         specifier: ^9.1.0
         version: 9.1.0
       tsx:
         specifier: ^4.10.5
-        version: 4.10.5
+        version: 4.11.0
       uvu:
         specifier: ^0.5.6
         version: 0.5.6
@@ -1044,22 +1044,6 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1
 
-  packages/playground-config:
-    dependencies:
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-    devDependencies:
-      c8:
-        specifier: ^9.1.0
-        version: 9.1.0
-      tsx:
-        specifier: ^4.10.5
-        version: 4.10.5
-      uvu:
-        specifier: ^0.5.6
-        version: 0.5.6
-
   packages/preact-jsx-base:
     dependencies:
       typescript:
@@ -1276,6 +1260,25 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/site-config:
+    dependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      yaml:
+        specifier: ^2.4.1
+        version: 2.4.1
+    devDependencies:
+      c8:
+        specifier: ^9.1.0
+        version: 9.1.0
+      tsx:
+        specifier: ^4.10.5
+        version: 4.11.0
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
+
   packages/site-playground:
     dependencies:
       '@onlyoffice/document-editor-html-element':
@@ -1287,12 +1290,12 @@ importers:
       '@onlyoffice/document-editor-playground-html-element':
         specifier: workspace:^
         version: link:../document-editor-playground-html-element
-      '@onlyoffice/playground-config':
-        specifier: workspace:^
-        version: link:../playground-config
       '@onlyoffice/server-client':
         specifier: workspace:^
         version: link:../server-client
+      '@onlyoffice/site-config':
+        specifier: workspace:^
+        version: link:../site-config
       preact:
         specifier: ^10.19.3
         version: 10.19.6
@@ -1526,9 +1529,9 @@ importers:
       '@onlyoffice/eleventy-clean':
         specifier: workspace:^
         version: link:../packages/eleventy-clean
-      '@onlyoffice/eleventy-playground-config':
+      '@onlyoffice/eleventy-site-config':
         specifier: workspace:^
-        version: link:../packages/eleventy-playground-config
+        version: link:../packages/eleventy-site-config
       '@onlyoffice/eleventy-starry-night':
         specifier: workspace:^
         version: link:../packages/eleventy-starry-night
@@ -1550,9 +1553,6 @@ importers:
       '@onlyoffice/openapi-resource-fixtures':
         specifier: workspace:^
         version: link:../packages/openapi-resource-fixtures
-      '@onlyoffice/playground-config':
-        specifier: workspace:^
-        version: link:../packages/playground-config
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
