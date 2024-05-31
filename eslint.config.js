@@ -291,6 +291,12 @@ function config() {
         // Does not work with JSDoc @returns directive.
         "@typescript-eslint/explicit-function-return-type": "off"
       }
+    },
+    {
+      files: ["**/fixtures/**/*.js"],
+      rules: {
+        "unicorn/prefer-module": "off"
+      }
     }
   ]
 }
