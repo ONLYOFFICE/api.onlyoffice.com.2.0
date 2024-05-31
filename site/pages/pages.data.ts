@@ -1,5 +1,12 @@
 import {default as slugify} from "@sindresorhus/slugify"
 
+declare module "@onlyoffice/eleventy-types" {
+  interface Data {
+    title?: "article" | "blank"
+    layout?: string
+  }
+}
+
 export function data() {
   return {
     title: "",
