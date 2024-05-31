@@ -5,6 +5,7 @@ export class Client {
   documentEditor: DocumentEditorService
 
   constructor() {
+    // todo?: use WeakRef
     this.documentEditor = new DocumentEditorService(this)
   }
 

@@ -14,8 +14,8 @@
  *
  * In a base-36 system, each digit can have 36 different values (0-9, A-Z). So,
  * for a 12-character string (6 from each component), there are 36^12 possible
- * combinations, which is over 4 billion. This should be unique enough for most
- * non-cryptographic use cases.
+ * combinations, which is over 4 billion. This should be unique enough simple
+ * most non-cryptographic use cases.
  */
 export function uniqueString(): string {
   const d = new Date()

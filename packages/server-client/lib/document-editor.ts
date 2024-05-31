@@ -14,6 +14,7 @@ export class DocumentEditorService {
     this.#c = c
   }
 
+  // todo: rename to sign
   async assign(config: DocEditorConfigurableOptions): Promise<[AssignResponse, Request, Response]> {
     const u = this.#c.url("editors/configcreate")
     const b = {jsonConfig: JSON.stringify(config)}
