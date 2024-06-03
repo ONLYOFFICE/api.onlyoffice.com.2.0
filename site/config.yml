@@ -15,8 +15,7 @@ playground:
 
     - path: height
       href: docs/docs-api/usage-api/config/#height
-      type: number
-      format: percent
+      type: string
       default: 100%
 
     - path: document.fileType

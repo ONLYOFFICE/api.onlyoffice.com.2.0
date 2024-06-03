@@ -226,7 +226,7 @@ export interface DocEditorInsertImagePayload {
   c: string
   fileType: string
   images: {
-    fileType: string,
+    fileType: string
     url: string
   }[]
   token?: string

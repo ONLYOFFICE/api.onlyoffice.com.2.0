@@ -9,8 +9,8 @@
     "./document-editor.ts": "./lib/document-editor.ts"
   },
   "scripts": {
-    "playwright": "cd node_modules/@web/test-runner-playwright/node_modules/.bin && ./playwright",
     "demo:server": "store-demo",
+    "playwright": "cd node_modules/@web/test-runner-playwright/node_modules/.bin && ./playwright",
     "test:all": "pnpm test:types && pnpm test:unit && pnpm test:e2e",
     "test:e2e": "web-test-runner",
     "test:types": "tsc",
