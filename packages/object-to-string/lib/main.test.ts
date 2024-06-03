@@ -137,6 +137,49 @@ test("stringifies an object with multiple types", () => {
   is(s, "{\n  a: 1,\n  b: \"a\",\n  c: true,\n  d: null,\n  e: [],\n  f: {}\n}")
 })
 
+test("stringifies a function", () => {
+  function fn(): void {}
+  const s = toString(fn)
+  is(s, "function fn(){}")
+})
+
+test("respects the function toString", () => {
+  function fn(): void {}
+  fn.toString = () => "function fn() {}"
+  const s = toString(fn)
+  is(s, "function fn() {}")
+})
+
+test("stringifies an arrow function", () => {
+  const fn = (): void => {}
+  const s = toString(fn)
+  is(s, "()=>{}")
+})
+
+test("respects the arrow function toString", () => {
+  const fn = (): void => {}
+  fn.toString = () => "() => {}"
+  const s = toString(fn)
+  is(s, "() => {}")
+})
+
+test("stringifies an object with a function", () => {
+  function fn(): void {}
+  const s = toString({a: fn})
+  is(s, "{\n  a: function fn(){}\n}")
+})
+
+test("stringifies an object with an arrow function", () => {
+  const fn = (): void => {}
+  const s = toString({a: fn})
+  is(s, "{\n  a: ()=>{}\n}")
+})
+
+test("stringifies an object with a method", () => {
+  const s = toString({a() {}})
+  is(s, "{\n  a: a(){}\n}")
+})
+
 test("allows to customize the indentation", () => {
   const s = toString({a: 1}, 4)
   is(s, "{\n    a: 1\n}")
