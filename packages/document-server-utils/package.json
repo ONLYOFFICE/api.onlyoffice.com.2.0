@@ -1,0 +1,21 @@
+{
+  "name": "@onlyoffice/document-server-utils",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "scripts": {
+    "test:types": "tsc",
+    "test:unit": "c8 --config c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
+    "test": "pnpm test:types && pnpm test:unit"
+  },
+  "dependencies": {
+    "@onlyoffice/document-server-types": "workspace:^",
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "c8": "^9.1.0",
+    "tsx": "^4.10.5",
+    "uvu": "^0.5.6"
+  }
+}

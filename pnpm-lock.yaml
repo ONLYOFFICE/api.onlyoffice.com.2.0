@@ -531,48 +531,33 @@ importers:
         specifier: ^4.10.5
         version: 4.10.5
 
-  packages/document-editor-playground-html-element:
-    dependencies:
-      '@onlyoffice/document-editor-html-element':
-        specifier: workspace:^
-        version: link:../document-editor-html-element
-      '@onlyoffice/document-editor-mirror-html-element':
-        specifier: workspace:^
-        version: link:../document-editor-mirror-html-element
-      '@onlyoffice/document-server-types':
-        specifier: workspace:^
-        version: link:../document-server-types
-      '@onlyoffice/preact-jsx-base':
-        specifier: workspace:^
-        version: link:../preact-jsx-base
-      '@onlyoffice/utility-types':
-        specifier: workspace:^
-        version: link:../utility-types
-      dot-prop:
-        specifier: ^9.0.0
-        version: 9.0.0
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-    devDependencies:
-      '@onlyoffice/store-demo':
-        specifier: workspace:^
-        version: link:../store-demo
-      '@web/dev-server':
-        specifier: ^0.4.4
-        version: 0.4.4
-      '@web/dev-server-esbuild':
-        specifier: ^1.0.2
-        version: 1.0.2
-      esbuild:
-        specifier: ^0.20.2
-        version: 0.20.2
-
   packages/document-server-types:
     dependencies:
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+
+  packages/document-server-utils:
+    dependencies:
+      '@onlyoffice/document-server-types':
+        specifier: workspace:^
+        version: link:../document-server-types
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: ^9.1.0
+        version: 9.1.0
+      tsx:
+        specifier: ^4.10.5
+        version: 4.11.0
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
 
   packages/eleventy-clean:
     dependencies:
