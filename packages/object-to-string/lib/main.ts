@@ -39,8 +39,9 @@ export function toString(o: unknown, d: number = 2): string {
     let p = ""
 
     for (const k in o) {
+      const r = o as Record<string, unknown>
       const s = " ".repeat(d * l)
-      const v = un(o[k], l + 1)
+      const v = un(r[k], l + 1)
       p += `${s}${k}: ${v},\n`
     }
 
