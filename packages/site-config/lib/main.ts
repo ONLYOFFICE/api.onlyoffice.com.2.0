@@ -206,6 +206,7 @@ export class DocumentEditor {
 
 export interface InputProperty {
   path?: string
+  tab?: string
   href?: string
   type?: "boolean" | "function" | "number" | "string"
   format?: "percent"
@@ -215,6 +216,7 @@ export interface InputProperty {
 
 export class Property {
   path = ""
+  tab = ""
   href = ""
   type: Type = new UndefinedType()
   // format?: Format = undefined
@@ -238,6 +240,10 @@ export class Property {
 
     if (ip.path) {
       p.path = ip.path
+    }
+
+    if (ip.tab) {
+      p.tab = ip.tab
     }
 
     if (ip.href) {

@@ -151,12 +151,17 @@ test("Property(): initializes a property with the correct order of keys", () => 
   const p = new Property()
   const a = Object.keys(p)
   // eq(a, ["path", "href", "type", "format", "default"])
-  eq(a, ["path", "href", "type", "default"])
+  eq(a, ["path", "tab", "href", "type", "default"])
 })
 
 test("Property(): initializes a property with an empty path", () => {
   const p = new Property()
   is(p.path, "")
+})
+
+test("Property(): initializes a property with an empty tab", () => {
+  const p = new Property()
+  is(p.tab, "")
 })
 
 test("Property(): initializes a property with an empty href", () => {
@@ -189,6 +194,12 @@ test("Property.fromJson(): initializes a property from json with the path", () =
   const j = '{"path":"p"}'
   const p = Property.fromJson(j)
   is(p.path, "p")
+})
+
+test("Property.fromJson(): initializes a property from json with the tab", () => {
+  const j = '{"tab":"t"}'
+  const p = Property.fromJson(j)
+  is(p.tab, "t")
 })
 
 test("Property.fromJson(): initializes a property from json with the href", () => {
