@@ -236,7 +236,7 @@ function config() {
             caughtErrors: "all",
             caughtErrorsIgnorePattern: "^_",
             destructuredArrayIgnorePattern: "^_",
-            varsIgnorePattern: "(^_)|(^h$)",
+            varsIgnorePattern: "(^_)|(^Fragment$)|(^h$)",
             ignoreRestSiblings: true
           }
         ],
