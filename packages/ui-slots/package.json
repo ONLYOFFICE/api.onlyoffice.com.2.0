@@ -1,0 +1,14 @@
+{
+  "name": "@onlyoffice/ui-slots",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "preact": "^10.19.3",
+    "typescript": "^5.4.5"
+  }
+}
