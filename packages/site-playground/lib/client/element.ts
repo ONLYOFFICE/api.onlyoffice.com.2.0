@@ -1,6 +1,8 @@
+import * as configSample from "@onlyoffice/document-editor-code-sample"
 import type {DocumentEditorEventHandlerName} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditor} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditorMirror} from "@onlyoffice/document-editor-mirror-html-element"
+import {cloneConfig} from "@onlyoffice/document-server-utils"
 import type {Client} from "@onlyoffice/server-client"
 import {SitePlaygroundErrorEvent} from "./events.ts"
 
@@ -62,21 +64,25 @@ export class SitePlayground extends HTMLElement {
     }
 
     if (!de.editor) {
-      const er = new Error("DocEditor instance is not registered")
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
-      this.dispatchEvent(ev)
+      de.ondocumenteditorappready = this.connectedCallback.bind(this)
       return
+      // const er = new Error("DocEditor instance is not registered")
+      // const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      // this.dispatchEvent(ev)
+      // return
     }
 
-    const cf = structuredClone(ec.config)
+    de.ondocumenteditorappready = null
 
-    const es = cf.events
-    if (es) {
-      delete cf.events
+    const cf = cloneConfig(ec.config)
+
+    const af = cf
+    if (af.events) {
+      delete af.events
     }
 
     try {
-      [de.config] = await this.#client.documentEditor.assign(cf)
+      [de.config] = await this.#client.documentEditor.assign(af)
     } catch (e) {
       let m = "Failed to sign DocEditor configuration"
       if (e instanceof Error) {
@@ -94,8 +100,8 @@ export class SitePlayground extends HTMLElement {
     em.ondocumenteditormirrorconsolelog = null
     em.ondocumenteditormirrorthrow = null
 
-    if (es) {
-      for (const [n, fn] of Object.entries(es)) {
+    if (cf.events) {
+      for (const [n, fn] of Object.entries(cf.events)) {
         const hn = this.#handlerName(n)
         if (!hn) {
           const er = new Error(`The '${hn}' (${n}) event does not exist in the DocumentEditor`)
@@ -115,6 +121,35 @@ export class SitePlayground extends HTMLElement {
     de.editor.requestClose()
     de.editor.destroyEditor()
     de.connectedCallback()
+
+    const sm = document.querySelectorAll<HTMLElement>("[data-config-sample]")
+    for (const e of sm) {
+      const v = e.dataset.configSample
+      if (!v) {
+        continue
+      }
+
+      let s = ""
+
+      switch (v) {
+      case "html":
+        s = configSample.html(de.documentServerUrl, cf)
+        break
+      case "js":
+        s = configSample.js(cf)
+        break
+      case "json":
+        s = configSample.json(cf)
+        break
+      default:
+        const er = new Error(`Unknown config sample type: ${v}`)
+        const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+        this.dispatchEvent(ev)
+        continue
+      }
+
+      e.textContent = s
+    }
   }
 
   #submit(se: SubmitEvent): void {

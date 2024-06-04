@@ -1332,6 +1332,9 @@ importers:
 
   packages/site-playground:
     dependencies:
+      '@onlyoffice/document-editor-code-sample':
+        specifier: workspace:^
+        version: link:../document-editor-code-sample
       '@onlyoffice/document-editor-config-html-element':
         specifier: workspace:^
         version: link:../document-editor-config-html-element
@@ -1341,12 +1344,21 @@ importers:
       '@onlyoffice/document-editor-mirror-html-element':
         specifier: workspace:^
         version: link:../document-editor-mirror-html-element
+      '@onlyoffice/document-server-utils':
+        specifier: workspace:^
+        version: link:../document-server-utils
       '@onlyoffice/server-client':
         specifier: workspace:^
         version: link:../server-client
       '@onlyoffice/site-config':
         specifier: workspace:^
         version: link:../site-config
+      '@onlyoffice/ui-content':
+        specifier: workspace:^
+        version: link:../ui-content
+      '@onlyoffice/ui-content-tab-container':
+        specifier: workspace:^
+        version: link:../ui-content-tab-container
       preact:
         specifier: ^10.19.3
         version: 10.19.6
