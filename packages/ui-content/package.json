@@ -4,7 +4,7 @@
   "type": "module",
   "main": "lib/main.tsx",
   "exports": {
-    ".": "lib/main.tsx",
+    ".": "./lib/main.tsx",
     "./content.css": "./lib/content.css"
   },
   "scripts": {
