@@ -15,7 +15,9 @@ export interface ContentTabListParameters {
 }
 
 export function ContentTabList({children, label}: ContentTabListParameters): JSX.Element {
-  return <div role="tablist" aria-label={label}>{children}</div>
+  return <div slot="tablist-wrapper">
+    <div role="tablist" aria-label={label}>{children}</div>
+  </div>
 }
 
 export interface ContentTabParameters {
