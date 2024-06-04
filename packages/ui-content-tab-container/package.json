@@ -17,5 +17,10 @@
     "@onlyoffice/tab-container-element-types": "workspace:^",
     "preact": "^10.19.3",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@onlyoffice/ui-colors": "workspace:^",
+    "@onlyoffice/ui-content": "workspace:^",
+    "vite": "^5.1.6"
   }
 }

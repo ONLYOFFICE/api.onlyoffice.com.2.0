@@ -1575,6 +1575,16 @@ importers:
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+    devDependencies:
+      '@onlyoffice/ui-colors':
+        specifier: workspace:^
+        version: link:../ui-colors
+      '@onlyoffice/ui-content':
+        specifier: workspace:^
+        version: link:../ui-content
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
 
   packages/ui-slots:
     dependencies:
