@@ -20,6 +20,18 @@ regular:
       - hsl(15, 100%, 62%)
       red:
       - hsl(0, 100%, 50%)
+    content:
+      background: scale.gray[1]
+      foreground: scale.gray[9]
+      heading-foreground: scale.orange[1]
+      link-foreground: scale.orange[1]
+      separator: scale.gray[4]
+      blockquote-border: scale.gray[8]
+      code-background: scale.gray[3]
+      code-border: scale.gray[4]
+      table-separator: scale.gray[4]
+      section-heading-background: scale.gray[2]
+      section-heading-foreground: scale.gray[9]
     code-listing:
       background: scale.gray[3]
       foreground: scale.gray[9]
@@ -44,6 +56,18 @@ regular:
       - hsl(15, 100%, 62%)
       red:
       - hsl(360, 54%, 47%)
+    content:
+      background: scale.white
+      foreground: scale.black
+      heading-foreground: scale.orange[1]
+      link-foreground: scale.orange[1]
+      separator: scale.gray[5]
+      blockquote-border: scale.gray[4]
+      code-background: scale.gray[7]
+      code-border: scale.gray[5]
+      table-separator: scale.gray[5]
+      section-heading-background: scale.gray[6]
+      section-heading-foreground: scale.black
     code-listing:
       background: scale.gray[7]
       foreground: scale.black
