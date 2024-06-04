@@ -1,17 +1,5 @@
-import type {TabContainerElement} from "@github/tab-container-element"
 import type {JSX} from "preact"
 import {h} from "preact"
-
-// https://github.com/github/tab-container-element/blob/v4.8.0/src/tab-container-element-define.ts#L18
-declare global {
-  namespace preact {
-    namespace JSX {
-      interface IntrinsicElements {
-        "tab-container": HTMLAttributes<TabContainerElement>
-      }
-    }
-  }
-}
 
 export interface TabContainerParameters {
   children: any

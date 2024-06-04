@@ -5,5 +5,5 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment"
   },
-  "include": ["lib"]
+  "include": ["lib", "index.d.ts"]
 }
