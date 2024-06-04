@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/ui-tab-container",
+  "name": "@onlyoffice/ui-content-tab-container",
   "private": true,
   "type": "module",
   "main": "lib/main.tsx",

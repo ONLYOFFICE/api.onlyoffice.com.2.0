@@ -1542,16 +1542,7 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
-  packages/ui-slots:
-    dependencies:
-      preact:
-        specifier: ^10.19.3
-        version: 10.19.6
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-
-  packages/ui-tab-container:
+  packages/ui-content-tab-container:
     dependencies:
       '@github/tab-container-element':
         specifier: ^4.8.0
@@ -1559,6 +1550,15 @@ importers:
       '@onlyoffice/tab-container-element-types':
         specifier: workspace:^
         version: link:../tab-container-element-types
+      preact:
+        specifier: ^10.19.3
+        version: 10.19.6
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/ui-slots:
+    dependencies:
       preact:
         specifier: ^10.19.3
         version: 10.19.6
