@@ -2,7 +2,7 @@ import type {JSX} from "preact"
 import {h} from "preact"
 
 export interface ContentTabContainerParameters {
-  children: any
+  children?: any
 }
 
 export function ContentTabContainer({children}: ContentTabContainerParameters): JSX.Element {
@@ -10,7 +10,7 @@ export function ContentTabContainer({children}: ContentTabContainerParameters): 
 }
 
 export interface ContentTabListParameters {
-  children: any
+  children?: any
   label: string
 }
 
@@ -19,7 +19,7 @@ export function ContentTabList({children, label}: ContentTabListParameters): JSX
 }
 
 export interface ContentTabParameters {
-  children: any
+  children?: any
   id: string
 }
 
@@ -29,7 +29,7 @@ export function ContentTab({children, id}: ContentTabParameters): JSX.Element {
 
 export interface ContentTabPanelParameters {
   by: string
-  children: any
+  children?: any
 }
 
 export function ContentTabPanel({by, children}: ContentTabPanelParameters): JSX.Element {
