@@ -1,0 +1,50 @@
+regular:
+  dark:
+    scale:
+      transparent: hsla(0, 0%, 100%, 0)
+      black: hsl(0, 0%, 12%)
+      white: hsl(0, 0%, 100%)
+      gray:
+      - hsl(0, 0%, 16%)
+      - hsl(0, 0%, 20%)
+      - hsl(0, 0%, 28%)
+      - hsl(0, 0%, 33%)
+      - hsl(0, 0%, 40%)
+      - hsl(0, 0%, 50%)
+      - hsl(0, 0%, 65%)
+      - hsl(0, 0%, 67%)
+      - hsl(0, 0%, 80%)
+      - hsl(0, 0%, 87%)
+      orange:
+      - hsl(0, 100%, 50%)
+      - hsl(15, 100%, 62%)
+      red:
+      - hsl(0, 100%, 50%)
+    code-listing:
+      background: scale.gray[3]
+      foreground: scale.gray[9]
+      border: scale.gray[4]
+
+  light:
+    scale:
+      transparent: hsla(0, 0%, 100%, 0)
+      black: hsl(0, 0%, 20%)
+      white: hsl(0, 0%, 100%)
+      gray:
+      - hsl(0, 0%, 20%)
+      - hsl(0, 0%, 45%)
+      - hsl(0, 0%, 50%)
+      - hsl(0, 0%, 80%)
+      - hsl(0, 0%, 83%)
+      - hsl(0, 0%, 89%)
+      - hsl(0, 0%, 94%)
+      - hsl(0, 0%, 98%)
+      orange:
+      - hsl(13, 86%, 60%)
+      - hsl(15, 100%, 62%)
+      red:
+      - hsl(360, 54%, 47%)
+    code-listing:
+      background: scale.gray[7]
+      foreground: scale.black
+      border: scale.gray[5]
