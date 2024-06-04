@@ -1520,6 +1520,15 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1
 
+  packages/ui-content:
+    dependencies:
+      preact:
+        specifier: ^10.19.3
+        version: 10.19.6
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/unique-string:
     dependencies:
       typescript:
