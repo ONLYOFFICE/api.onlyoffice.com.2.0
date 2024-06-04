@@ -105,10 +105,12 @@ export class Server {
 
 export interface InputPlayground {
   documentEditor?: InputDocumentEditor
+  tabs?: Record<string, string>
 }
 
 export class Playground {
   documentEditor = new DocumentEditor()
+  tabs: Tab[] = []
 
   static fromJson(data: string): Playground {
     const o = JSON.parse(data)
@@ -130,6 +132,15 @@ export class Playground {
       pl.documentEditor = DocumentEditor.fromInput(ip.documentEditor)
     }
 
+    if (ip.tabs) {
+      for (const [id, lb] of Object.entries(ip.tabs)) {
+        const t = new Tab()
+        t.id = id
+        t.label = lb
+        pl.tabs.push(t)
+      }
+    }
+
     return pl
   }
 
@@ -137,6 +148,14 @@ export class Playground {
     const pl = new Playground()
 
     pl.documentEditor = DocumentEditor.merge(a.documentEditor, b.documentEditor)
+
+    if (a.tabs.length !== 0 && b.tabs.length !== 0) {
+      throw new Error("Merging of tabs is not supported")
+    } else if (a.tabs.length !== 0) {
+      pl.tabs = a.tabs
+    } else if (b.tabs.length !== 0) {
+      pl.tabs = b.tabs
+    }
 
     return pl
   }
@@ -347,4 +366,9 @@ export class UndefinedType implements TypeNode {
 
 export interface TypeNode {
   type: string
+}
+
+export class Tab {
+  id: string = ""
+  label: string = ""
 }

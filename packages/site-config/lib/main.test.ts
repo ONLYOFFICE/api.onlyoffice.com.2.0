@@ -12,8 +12,30 @@ import {
   Property,
   Server,
   StringType,
+  Tab,
   UndefinedType
 } from "./main.ts"
+
+test("Tab(): initializes a tab", () => {
+  const t = new Tab()
+  is(t instanceof Tab, true)
+})
+
+test("Tab(): initializes a tab with the correct order of keys", () => {
+  const t = new Tab()
+  const a = Object.keys(t)
+  eq(a, ["id", "label"])
+})
+
+test("Tab(): initializes a tab with an empty id", () => {
+  const t = new Tab()
+  is(t.id, "")
+})
+
+test("Tab(): initializes a tab with an empty label", () => {
+  const t = new Tab()
+  is(t.label, "")
+})
 
 test("UndefinedType(): initializes a undefined type", () => {
   const t = new UndefinedType()
@@ -401,12 +423,17 @@ test("Playground(): initializes a playground", () => {
 test("Playground(): initializes a playground with the correct order of keys", () => {
   const p = new Playground()
   const a = Object.keys(p)
-  eq(a, ["documentEditor"])
+  eq(a, ["documentEditor", "tabs"])
 })
 
 test("Playground(): initializes a playground with an empty document editor", () => {
   const p = new Playground()
   eq(p.documentEditor, new DocumentEditor())
+})
+
+test("Playground(): initializes a playground with an empty tabs", () => {
+  const p = new Playground()
+  eq(p.tabs, [])
 })
 
 test("Playground.fromJson(): initializes a playground from json", () => {
@@ -421,6 +448,15 @@ test("Playground.fromJson(): initializes a playground from json with the documen
   const d = new DocumentEditor()
   d.documentServerUrl = "d"
   eq(p.documentEditor, d)
+})
+
+test("Playground.fromJson(): initializes a playground from json with the tabs", () => {
+  const j = '{"tabs":{"t":"l"}}'
+  const p = Playground.fromJson(j)
+  const t = new Tab()
+  t.id = "t"
+  t.label = "l"
+  eq(p.tabs, [t])
 })
 
 test("Playground.fromYaml(): initializes a playground from yaml", () => {
@@ -467,6 +503,54 @@ test("Playground.merge(): merges the document editor of the second playground wh
   b.documentEditor = e
   const c = Playground.merge(a, b)
   eq(c.documentEditor, e)
+})
+
+test("Playground.merge(): merges the tabs of two empty playgrounds", () => {
+  const a = new Playground()
+  const b = new Playground()
+  const c = Playground.merge(a, b)
+  eq(c.tabs, [])
+})
+
+test("Playground.merge(): uses the tabs of the first playground when the second one is empty", () => {
+  const a = new Playground()
+  const t = new Tab()
+  t.id = "t"
+  t.label = "l"
+  a.tabs = [t]
+  const b = new Playground()
+  const c = Playground.merge(a, b)
+  eq(c.tabs, [t])
+})
+
+test("Playground.merge(): uses the tabs of the second playground when the first one is empty", () => {
+  const a = new Playground()
+  const b = new Playground()
+  const t = new Tab()
+  t.id = "t"
+  t.label = "l"
+  b.tabs = [t]
+  const c = Playground.merge(a, b)
+  eq(c.tabs, [t])
+})
+
+test("Playground.merge(): throws an error when merging two non-empty tabs", () => {
+  const a = new Playground()
+  const t = new Tab()
+  t.id = "t"
+  t.label = "l"
+  a.tabs = [t]
+  const b = new Playground()
+  const u = new Tab()
+  u.id = "u"
+  u.label = "m"
+  b.tabs = [u]
+  try {
+    const c = Playground.merge(a, b)
+    un(`Expected an error, got ${c}`)
+  } catch (e) {
+    is(e instanceof Error && e.message, "Merging of tabs is not supported")
+  }
 })
 
 test("Server(): initializes a server", () => {
