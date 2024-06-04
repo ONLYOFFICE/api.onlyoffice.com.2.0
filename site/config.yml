@@ -8,27 +8,38 @@ playground:
     documentServerUrl: http://localhost:3000/
     config:
     - path: documentType
+      tab: base
       href: docs/docs-api/usage-api/config/#documentType
       type: string
       cases: [word, cell, slide, pdf]
       default: word
 
     - path: height
+      tab: base
       href: docs/docs-api/usage-api/config/#height
       type: string
       default: 100%
 
     - path: document.fileType
+      tab: document
       href: docs/docs-api/usage-api/config/document/#fileType
       type: string
       cases: [docx, xlsx, pptx, pdf]
       default: docx
 
     - path: editorConfig.customization.compactHeader
+      tab: customization
       href: docs/docs-api/usage-api/config/editor-config/customization/#compactHeader
       type: boolean
       default: false
 
     - path: events.onAppReady
+      tab: events
       href: docs/docs-api/usage-api/config/events/#onAppReady
       type: function
+
+  tabs:
+    base: Base
+    document: Document
+    customization: "Editor Config: Customization"
+    events: Events
