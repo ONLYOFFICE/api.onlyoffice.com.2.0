@@ -1474,6 +1474,19 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/tab-container-element-types:
+    dependencies:
+      '@github/tab-container-element':
+        specifier: ^4.8.0
+        version: 4.8.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      preact:
+        specifier: ^10.19.3
+        version: 10.19.6
+
   packages/template-hast-element:
     dependencies:
       '@types/hast':
