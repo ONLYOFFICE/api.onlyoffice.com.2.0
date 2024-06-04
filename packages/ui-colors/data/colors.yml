@@ -32,6 +32,11 @@ regular:
       table-separator: scale.gray[4]
       section-heading-background: scale.gray[2]
       section-heading-foreground: scale.gray[9]
+    content-tab-container:
+      separator: red
+      tab-foreground: red
+      tab-selected-foreground: red
+      tab-selected-decorator: red
     code-listing:
       background: scale.gray[3]
       foreground: scale.gray[9]
@@ -68,6 +73,11 @@ regular:
       table-separator: scale.gray[5]
       section-heading-background: scale.gray[6]
       section-heading-foreground: scale.black
+    content-tab-container:
+      separator: scale.gray[7]
+      tab-foreground: scale.black
+      tab-selected-foreground: scale.orange[1]
+      tab-selected-decorator: scale.orange[1]
     code-listing:
       background: scale.gray[7]
       foreground: scale.black
