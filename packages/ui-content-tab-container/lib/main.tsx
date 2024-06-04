@@ -26,7 +26,7 @@ export interface ContentTabParameters {
 }
 
 export function ContentTab({children, id}: ContentTabParameters): JSX.Element {
-  return <div id={id} role="tab">{children}</div>
+  return <button type="button" id={id} role="tab">{children}</button>
 }
 
 export interface ContentTabPanelParameters {
