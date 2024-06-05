@@ -1633,6 +1633,31 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
 
+  packages/ui-content-code-listing:
+    dependencies:
+      preact:
+        specifier: ^10.19.3
+        version: 10.19.6
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@onlyoffice/ui-code-listing':
+        specifier: workspace:^
+        version: link:../ui-code-listing
+      '@onlyoffice/ui-colors':
+        specifier: workspace:^
+        version: link:../ui-colors
+      '@onlyoffice/ui-content':
+        specifier: workspace:^
+        version: link:../ui-content
+      '@storybook/preact':
+        specifier: ^8.0.0
+        version: 8.0.0(preact@10.19.6)
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
+
   packages/ui-content-tab-container:
     dependencies:
       '@github/tab-container-element':

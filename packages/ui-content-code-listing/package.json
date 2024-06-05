@@ -1,0 +1,23 @@
+{
+  "name": "@onlyoffice/ui-content-code-listing",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./main.css": "./lib/main.css"
+  },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "preact": "^10.19.3",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@onlyoffice/ui-code-listing": "workspace:^",
+    "@onlyoffice/ui-colors": "workspace:^",
+    "@onlyoffice/ui-content": "workspace:^",
+    "@storybook/preact": "^8.0.0",
+    "vite": "^5.1.6"
+  }
+}
