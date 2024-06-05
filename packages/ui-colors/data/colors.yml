@@ -21,6 +21,24 @@ regular:
       red:
       - hsl(0, 100%, 50%)
 
+    button:
+      neutral:
+        background: red
+        foreground: red
+        border: red
+        focus:
+          background: red
+          foreground: red
+          border: red
+      accent:
+        background: red
+        foreground: red
+        border: red
+        focus:
+          background: red
+          foreground: red
+          border: red
+
     content:
       background: scale.gray[1]
       foreground: scale.gray[9]
@@ -72,6 +90,24 @@ regular:
       - hsl(15, 100%, 62%)
       red:
       - hsl(360, 54%, 47%)
+
+    button:
+      neutral:
+        background: scale.white
+        foreground: scale.black
+        border: scale.gray[4]
+        focus:
+          background: scale.gray[7]
+          foreground: scale.black
+          border: scale.gray[3]
+      accent:
+        background: scale.orange[1]
+        foreground: scale.white
+        border: scale.orange[1]
+        focus:
+          background: scale.orange[0]
+          foreground: scale.white
+          border: scale.orange[0]
 
     content:
       background: scale.white
