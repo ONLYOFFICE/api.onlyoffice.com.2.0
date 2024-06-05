@@ -61,7 +61,7 @@ function distDir(d: string): string {
 }
 
 function outputFile(d: string): string {
-  return join(d, "colors.css")
+  return join(d, "main.css")
 }
 
 main()

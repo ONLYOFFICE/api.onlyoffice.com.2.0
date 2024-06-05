@@ -5,7 +5,7 @@
   "main": "lib/main.tsx",
   "exports": {
     ".": "./lib/main.tsx",
-    "./content.css": "./lib/content.css"
+    "./main.css": "./lib/main.css"
   },
   "scripts": {
     "test:types": "tsc",

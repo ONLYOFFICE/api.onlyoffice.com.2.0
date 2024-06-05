@@ -1,7 +1,7 @@
-import colors from "@onlyoffice/ui-colors/colors.css?inline"
+import colors from "@onlyoffice/ui-colors/main.css?inline"
 import type {JSX} from "preact"
 import {Fragment, h} from "preact"
-import content from "./content.css?inline"
+import content from "./main.css?inline"
 import {Content} from "./main.tsx"
 
 const styles: string[] = [colors, content]

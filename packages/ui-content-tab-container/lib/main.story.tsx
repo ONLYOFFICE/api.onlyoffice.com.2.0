@@ -1,6 +1,6 @@
 import "./client.ts"
-import colors from "@onlyoffice/ui-colors/colors.css?inline"
-import content from "@onlyoffice/ui-content/content.css?inline"
+import colors from "@onlyoffice/ui-colors/main.css?inline"
+import content from "@onlyoffice/ui-content/main.css?inline"
 import {Content} from "@onlyoffice/ui-content"
 import type {JSX} from "preact"
 import {Fragment, h} from "preact"

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./colors.css": "./dist/colors.css"
+    "./main.css": "./dist/main.css"
   },
   "scripts": {
     "build": "tsx lib/main.ts",
