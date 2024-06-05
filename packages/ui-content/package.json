@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@onlyoffice/ui-colors": "workspace:^",
+    "@storybook/preact": "^8.0.0",
     "vite": "^5.1.6"
   }
 }

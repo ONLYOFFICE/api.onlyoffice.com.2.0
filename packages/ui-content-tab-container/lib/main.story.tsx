@@ -2,21 +2,15 @@ import "./client.ts"
 import colors from "@onlyoffice/ui-colors/main.css?inline"
 import content from "@onlyoffice/ui-content/main.css?inline"
 import {Content} from "@onlyoffice/ui-content"
+import type {Meta} from "@storybook/preact"
 import type {JSX} from "preact"
-import {Fragment, h} from "preact"
-import css from "./main.css?inline"
+import {h} from "preact"
+import contentTabContainer from "./main.css?inline"
 import {ContentTab, ContentTabContainer, ContentTabList, ContentTabPanel} from "./main.tsx"
 
-const styles: string[] = [colors, content, css]
-
-export default {
+const meta: Meta = {
   title: "UI/Content Tab Container",
-  decorators: [
-    (Story: () => JSX.Element): JSX.Element => <>
-      {styles.map((s) => <style key={s} dangerouslySetInnerHTML={{__html: s}} />)}
-      <Story />
-    </>
-  ]
+  parameters: {styles: [colors, content, contentTabContainer]}
 }
 
 export function Composition(): JSX.Element {
@@ -38,3 +32,5 @@ export function Composition(): JSX.Element {
     <p>Paragraph after tabs</p>
   </Content>
 }
+
+export default meta

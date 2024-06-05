@@ -1,19 +1,13 @@
 import colors from "@onlyoffice/ui-colors/main.css?inline"
+import type {Meta} from "@storybook/preact"
 import type {JSX} from "preact"
-import {Fragment, h} from "preact"
+import {h} from "preact"
 import content from "./main.css?inline"
 import {Content} from "./main.tsx"
 
-const styles: string[] = [colors, content]
-
-export default {
+const meta: Meta = {
   title: "UI/Content",
-  decorators: [
-    (Story: () => JSX.Element): JSX.Element => <>
-      {styles.map((s) => <style key={s} dangerouslySetInnerHTML={{__html: s}} />)}
-      <Story />
-    </>
-  ]
+  parameters: {styles: [colors, content]}
 }
 
 export function Composition(): JSX.Element {
@@ -140,3 +134,5 @@ export function Decomposition(): JSX.Element {
     </table>
   </Content>
 }
+
+export default meta
