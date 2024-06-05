@@ -124,11 +124,11 @@ export class Variant {
 }
 
 export interface InputComponent {
-  [k: string]: string | string[]
+  [k: string]: string | string[] | InputComponent
 }
 
 export class Component {
-  [k: string]: string | string[]
+  [k: string]: string | string[] | Component
 
   static fromJson(data: string): Component {
     const o = JSON.parse(data)
@@ -146,6 +146,15 @@ export class Component {
   static fromInput(ic: InputComponent): Component {
     const c = new Component()
     for (const k in ic) {
+      const v = ic[k]
+      if (Array.isArray(v)) {
+        c[k] = v
+        continue
+      }
+      if (typeof v === "object") {
+        c[k] = Component.fromInput(v)
+        continue
+      }
       c[k] = ic[k]
     }
     return c
@@ -155,15 +164,19 @@ export class Component {
     let s = ""
     for (const ck in c) {
       const cv = c[ck]
-      if (!Array.isArray(cv)) {
-        const h = value(v, cv)
-        s += `--color-${k}-${ck}: ${h};\n`
-      } else {
+      if (Array.isArray(cv)) {
         for (const [i, p] of cv.entries()) {
           const h = value(v, p)
           s += `--color-${k}-${ck}-${i}: ${h};\n`
         }
+        continue
       }
+      if (cv instanceof Component) {
+        s += Component.toStyles(v, `${k}-${ck}`, cv)
+        continue
+      }
+      const h = value(v, cv)
+      s += `--color-${k}-${ck}: ${h};\n`
     }
     return s
 
