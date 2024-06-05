@@ -66,6 +66,11 @@ regular:
           foreground: red
           decorator: red
 
+    code-editor:
+      background: scale.gray[3]
+      foreground: scale.gray[9]
+      border: scale.gray[4]
+
     code-listing:
       background: scale.gray[3]
       foreground: scale.gray[9]
@@ -141,6 +146,11 @@ regular:
         selected:
           foreground: scale.orange[1]
           decorator: scale.orange[1]
+
+    code-editor:
+      background: scale.gray[7]
+      foreground: scale.black
+      border: scale.gray[4]
 
     code-listing:
       background: scale.gray[7]
