@@ -1,4 +1,5 @@
 import type * as SiteConfig from "@onlyoffice/site-config"
+import {Button} from "@onlyoffice/ui-button"
 import {Content} from "@onlyoffice/ui-content"
 import {ContentTab, ContentTabContainer, ContentTabList, ContentTabPanel} from "@onlyoffice/ui-content-tab-container"
 import type {JSX} from "preact"
@@ -17,8 +18,8 @@ export function SitePlayground({config}: SitePlaygroundParameters): JSX.Element 
           <ContentTabContainer>
             <ContentTabList label="">
               {config.tabs.map((t) => <ContentTab id={t.id}>{t.label}</ContentTab>)}
-              <button type="submit" value="reset">Reset</button>
-              <button type="submit" value="play">Play</button>
+              <Button type="submit" value="play" variant="accent">Play</Button>
+              <Button type="submit" value="reset">Reset</Button>
             </ContentTabList>
             {config.tabs.map((t) => <ContentTabPanel by={t.id}>
               {config.documentEditor.config

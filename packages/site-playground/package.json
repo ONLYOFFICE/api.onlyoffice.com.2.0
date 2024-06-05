@@ -21,6 +21,7 @@
     "@onlyoffice/document-server-utils": "workspace:^",
     "@onlyoffice/server-client": "workspace:^",
     "@onlyoffice/site-config": "workspace:^",
+    "@onlyoffice/ui-button": "workspace:^",
     "@onlyoffice/ui-content": "workspace:^",
     "@onlyoffice/ui-content-tab-container": "workspace:^",
     "preact": "^10.19.3",

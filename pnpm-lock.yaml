@@ -1353,6 +1353,9 @@ importers:
       '@onlyoffice/site-config':
         specifier: workspace:^
         version: link:../site-config
+      '@onlyoffice/ui-button':
+        specifier: workspace:^
+        version: link:../ui-button
       '@onlyoffice/ui-content':
         specifier: workspace:^
         version: link:../ui-content
