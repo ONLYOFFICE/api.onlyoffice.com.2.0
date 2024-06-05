@@ -11,20 +11,10 @@ const meta: Meta = {
 }
 
 export function Composition(): JSX.Element {
-  return <div>
-    <p>Paragraph before buttons</p>
+  return <>
     <p><Button>Default</Button></p>
     <p><Button variant="neutral">Neutral</Button></p>
     <p><Button variant="accent">Accent</Button></p>
-    <p>Paragraph after buttons</p>
-  </div>
-}
-
-export function Decomposition(): JSX.Element {
-  return <>
-    <Button>Default</Button>
-    <Button variant="neutral">Neutral</Button>
-    <Button variant="accent">Accent</Button>
   </>
 }
 
