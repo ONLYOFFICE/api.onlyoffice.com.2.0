@@ -9,13 +9,13 @@ import contentTabContainer from "./main.css?inline"
 import {ContentTab, ContentTabContainer, ContentTabList, ContentTabPanel} from "./main.tsx"
 
 const meta: Meta = {
-  title: "UI/Content Tab Container",
+  title: "UI/Content/Tab Container",
   parameters: {styles: [colors, content, contentTabContainer]}
 }
 
 export function Composition(): JSX.Element {
   return <Content>
-    <h1>Content Tab Container</h1>
+    <h1>Tab Container</h1>
     <p>Paragraph before tabs</p>
     <ContentTabContainer>
       <ContentTabList label="Group of Tabs">
