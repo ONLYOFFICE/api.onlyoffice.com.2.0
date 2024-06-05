@@ -21,6 +21,8 @@ export default {
 
 export function Composition(): JSX.Element {
   return <Content>
+    <h1>Content Tab Container</h1>
+    <p>Paragraph before tabs</p>
     <ContentTabContainer>
       <ContentTabList label="Group of Tabs">
         <ContentTab id="first">First Tab</ContentTab>
@@ -33,5 +35,6 @@ export function Composition(): JSX.Element {
         <p>Second Tab Content</p>
       </ContentTabPanel>
     </ContentTabContainer>
+    <p>Paragraph after tabs</p>
   </Content>
 }
