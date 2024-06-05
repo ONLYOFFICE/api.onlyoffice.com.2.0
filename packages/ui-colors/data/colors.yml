@@ -74,7 +74,7 @@ regular:
       section-heading-background: scale.gray[6]
       section-heading-foreground: scale.black
     content-tab-container:
-      separator: scale.gray[7]
+      separator: scale.gray[5]
       tab-foreground: scale.black
       tab-selected-foreground: scale.orange[1]
       tab-selected-decorator: scale.orange[1]
