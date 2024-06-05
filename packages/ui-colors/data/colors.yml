@@ -70,6 +70,12 @@ regular:
       background: scale.gray[3]
       foreground: scale.gray[9]
       border: scale.gray[4]
+      tab:
+        background: red
+        foreground: red
+        selected:
+          background: red
+          foreground: red
 
   light:
     scale:
@@ -139,4 +145,13 @@ regular:
     code-listing:
       background: scale.gray[7]
       foreground: scale.black
-      border: scale.gray[5]
+      border: scale.gray[4]
+      tab:
+        background: scale.gray[6]
+        foreground: scale.black
+        selected:
+          background: scale.white
+          foreground: scale.black
+      action:
+        background: scale.transparent
+        foreground: scale.black

@@ -1,0 +1,54 @@
+.code-listing {
+  background-color: var(--color-code-listing-background);
+  border: 1px solid var(--color-code-listing-border);
+  display: block;
+  font-family: var(--typography-monospace-font);
+}
+
+.code-listing div[slot="tablist-wrapper"] {
+  background-color: var(--color-code-listing-tab-background);
+  border-bottom: 1px solid var(--color-code-listing-border);
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  line-height: 1;
+  width: 100%;
+}
+
+.code-listing div[role="tablist"] {
+  border-right: 1px solid var(--color-code-listing-border);
+  display: flex;
+}
+
+.code-listing button[role="tab"] {
+  background-color: var(--color-code-listing-tab-background);
+  border: none;
+  border-left: 1px solid var(--color-code-listing-border);
+  color: var(--color-code-listing-tab-foreground);
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 9.5px 12px;
+}
+
+.code-listing button[role="tab"]:first-of-type {
+  border-left: none;
+}
+
+.code-listing button[role="tab"][aria-selected="true"] {
+  background-color: var(--color-code-listing-tab-selected-background);
+}
+
+.code-listing__action-list {
+  display: flex;
+}
+
+.code-listing__action {
+  align-items: center;
+  background-color: var(--color-code-listing-action-background);
+  color: var(--color-code-listing-action-foreground);
+  display: flex;
+  padding: 4px;
+}
