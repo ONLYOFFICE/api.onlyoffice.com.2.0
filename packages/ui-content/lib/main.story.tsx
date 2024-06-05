@@ -95,7 +95,7 @@ export function Decomposition(): JSX.Element {
     <hr />
     <p>Paragraph, first line.<br />Same paragraph, second line.</p>
     <p><b>Bold</b>, <i>Italic</i>, <code>Code</code>, <a href="/">Link</a>.</p>
-    <pre><code dangerouslySetInnerHTML={{__html: "Code Listing"}}></code></pre>
+    <pre><code dangerouslySetInnerHTML={{__html: "Pre with Code"}}></code></pre>
     <blockquote>Quote</blockquote>
     <figure>
       <img src="https://pepelsbey.dev/articles/road-to-htmhell/images/semantics.svg" />
