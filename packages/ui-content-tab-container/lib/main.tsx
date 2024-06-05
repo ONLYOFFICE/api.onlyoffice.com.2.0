@@ -6,7 +6,7 @@ export interface ContentTabContainerParameters {
 }
 
 export function ContentTabContainer({children}: ContentTabContainerParameters): JSX.Element {
-  return <tab-container>{children}</tab-container>
+  return <tab-container class="tab-container">{children}</tab-container>
 }
 
 export interface ContentTabListParameters {

@@ -1,19 +1,19 @@
-.content tab-container {
+.content .tab-container {
   display: block;
   margin-top: 16px;
 }
 
-.content tab-container div[slot="tablist-wrapper"] {
+.content .tab-container div[slot="tablist-wrapper"] {
   border-bottom: 1px solid var(--color-content-tab-container-separator);
   display: flex;
   width: 100%;
 }
 
-.content tab-container div[role="tablist"] {
+.content .tab-container div[role="tablist"] {
   display: flex;
 }
 
-.content tab-container button[role="tab"] {
+.content .tab-container button[role="tab"] {
   background-color: transparent;
   border: none;
   color: var(--color-content-tab-container-tab-foreground);
@@ -27,7 +27,7 @@
   text-transform: uppercase;
 }
 
-.content tab-container button[role="tab"]::before {
+.content .tab-container button[role="tab"]::before {
   background-color: transparent;
   bottom: -1px;
   content: "";
@@ -37,14 +37,14 @@
   width: 100%;
 }
 
-.content tab-container button[role="tab"][aria-selected="true"] {
+.content .tab-container button[role="tab"][aria-selected="true"] {
   color: var(--color-content-tab-container-tab-selected-foreground);
 }
 
-.content tab-container button[role="tab"][aria-selected="true"]::before {
+.content .tab-container button[role="tab"][aria-selected="true"]::before {
   background-color: var(--color-content-tab-container-tab-selected-decorator);
 }
 
-.content tab-container button[role="tab"]:first-of-type {
+.content .tab-container button[role="tab"]:first-of-type {
   margin-left: 0;
 }
