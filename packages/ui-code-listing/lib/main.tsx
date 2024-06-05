@@ -43,10 +43,6 @@ export function CodeListingTab(
   return <button type="button" id={id} role="tab">{children}</button>
 }
 
-export interface CodeListingActionParameters {
-  children?: any
-}
-
 export interface CodeListingActionListParameters {
   children?: any
   label: string
@@ -56,6 +52,10 @@ export function CodeListingActionList(
   {children, label}: CodeListingActionListParameters
 ): JSX.Element {
   return <div class="code-listing__action-list" aria-label={label}>{children}</div>
+}
+
+export interface CodeListingActionParameters {
+  children?: any
 }
 
 export function CodeListingAction(
