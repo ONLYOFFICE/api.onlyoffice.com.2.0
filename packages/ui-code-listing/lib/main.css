@@ -1,8 +1,10 @@
 .code-listing {
   background-color: var(--color-code-listing-background);
+  border-radius: 3px;
   border: 1px solid var(--color-code-listing-border);
   display: block;
   font-family: var(--typography-monospace-font);
+  overflow: hidden;
 }
 
 .code-listing div[slot="tablist-wrapper"] {
