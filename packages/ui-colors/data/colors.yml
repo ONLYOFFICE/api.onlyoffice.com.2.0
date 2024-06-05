@@ -72,23 +72,34 @@ regular:
       - hsl(15, 100%, 62%)
       red:
       - hsl(360, 54%, 47%)
+
     content:
       background: scale.white
       foreground: scale.black
-      heading-foreground: scale.orange[1]
-      link-foreground: scale.orange[1]
       separator: scale.gray[5]
-      blockquote-border: scale.gray[4]
-      code-background: scale.gray[7]
-      code-border: scale.gray[5]
-      table-separator: scale.gray[5]
-      section-heading-background: scale.gray[6]
-      section-heading-foreground: scale.black
+      heading:
+        foreground: scale.orange[1]
+      link:
+        foreground: scale.orange[1]
+      blockquote:
+        border: scale.gray[4]
+      code:
+        background: scale.gray[7]
+        border: scale.gray[5]
+      table:
+        separator: scale.gray[5]
+      section-heading:
+        background: scale.gray[6]
+        foreground: scale.black
+
     content-tab-container:
       separator: scale.gray[5]
-      tab-foreground: scale.black
-      tab-selected-foreground: scale.orange[1]
-      tab-selected-decorator: scale.orange[1]
+      tab:
+        foreground: scale.black
+        selected:
+          foreground: scale.orange[1]
+          decorator: scale.orange[1]
+
     code-listing:
       background: scale.gray[7]
       foreground: scale.black
