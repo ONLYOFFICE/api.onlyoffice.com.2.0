@@ -4,5 +4,5 @@ var oDateForm = Api.CreateDateForm({"key": "Nowadays", "tip": "Enter current dat
 var oParagraph = oDocument.GetElement(0);
 oParagraph.AddElement(oDateForm);
 oDateForm.SetPlaceholderText("Your placeholder");
-builder.SaveFile("docxf", "SetPlaceholderText.docxf");
+builder.SaveFile("form", "SetPlaceholderText.pdf");
 builder.CloseFile();

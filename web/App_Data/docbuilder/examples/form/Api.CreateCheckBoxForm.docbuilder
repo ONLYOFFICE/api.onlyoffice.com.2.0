@@ -8,5 +8,5 @@ oParagraph.AddLineBreak();
 oCheckBoxForm = Api.CreateCheckBoxForm({"key": "Marital status", "tip": "Specify your marital status", "required": true, "placeholder": "Marital status", "radio": true});
 oParagraph.AddElement(oCheckBoxForm);
 oParagraph.AddText(" Single");
-builder.SaveFile("docxf", "CreateCheckBoxForm.docxf");
+builder.SaveFile("form", "CreateCheckBoxForm.pdf");
 builder.CloseFile();

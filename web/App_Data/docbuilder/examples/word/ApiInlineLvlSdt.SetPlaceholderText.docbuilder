@@ -7,5 +7,5 @@ oParagraph.AddElement(oRun);
 var aForms = oDocument.GetAllForms();
 oParagraph.RemoveElement(0);
 var sText = aForms[0].SetPlaceholderText("Name");
-builder.SaveFile("docxf", "SetPlaceholderText.docxf");
+builder.SaveFile("form", "SetPlaceholderText.pdf");
 builder.CloseFile();

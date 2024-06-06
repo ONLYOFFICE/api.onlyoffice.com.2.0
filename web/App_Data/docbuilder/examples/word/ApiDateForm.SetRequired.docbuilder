@@ -8,5 +8,5 @@ var bRequired = oDateForm.IsRequired();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("The first form from this document is required: " + bRequired);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "SetRequired.docxf");
+builder.SaveFile("form", "SetRequired.pdf");
 builder.CloseFile();

@@ -7,5 +7,5 @@ var sText = oDateForm.GetText();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("Form text: " + sText);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "GetText.docxf");
+builder.SaveFile("form", "GetText.pdf");
 builder.CloseFile();

@@ -7,5 +7,5 @@ oDateForm.ToFixed(10 * 240, 2 * 240);
 var oShape = oDateForm.GetWrapperShape();
 var oStroke = Api.CreateStroke(36000, Api.CreateSolidFill(Api.CreateRGBColor(255, 111, 61)));
 oShape.SetOutLine(oStroke);
-builder.SaveFile("docxf", "GetWrapperShape.docxf");
+builder.SaveFile("form", "GetWrapperShape.pdf");
 builder.CloseFile();

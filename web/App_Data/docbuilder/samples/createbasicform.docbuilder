@@ -17,5 +17,5 @@ oPictureForm.SetImage("https://api.onlyoffice.com/content/img/docbuilder/example
 oDocument.Push(oParagraph);
 
 Api.Save();
-builder.SaveFile("docxf", "PassCard.docxf");
+builder.SaveFile("form", "PassCard.pdf");
 builder.CloseFile();

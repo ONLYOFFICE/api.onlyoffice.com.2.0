@@ -8,5 +8,5 @@ var bFixed = oDateForm.IsFixed();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("The first form from this document is fixed: " + bFixed);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "IsFixed.docxf");
+builder.SaveFile("form", "IsFixed.pdf");
 builder.CloseFile();

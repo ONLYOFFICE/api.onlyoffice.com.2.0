@@ -58,5 +58,5 @@ addTextFormToParagraph(oParagraph, 35, "Issued by", "Issued by", 20, "center");
 
 oDocument.Push(oTable);
 Api.Save();
-builder.SaveFile("docxf", "Certificate.docxf");
+builder.SaveFile("form", "Certificate.pdf");
 builder.CloseFile();

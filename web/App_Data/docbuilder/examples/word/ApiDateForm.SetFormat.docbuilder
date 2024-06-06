@@ -4,5 +4,5 @@ var oDateForm = Api.CreateDateForm({"key": "Nowadays", "tip": "Enter current dat
 var oParagraph = oDocument.GetElement(0);
 oParagraph.AddElement(oDateForm);
 oDateForm.SetFormat("mm/dd/yyyy");
-builder.SaveFile("docxf", "SetFormat.docxf");
+builder.SaveFile("form", "SetFormat.pdf");
 builder.CloseFile();

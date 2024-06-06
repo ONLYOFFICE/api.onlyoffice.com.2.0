@@ -16,5 +16,5 @@ oParagraph.AddText("Date language: " + sLanguage);
 oParagraph.AddLineBreak();
 oParagraph.AddText("Date: " + new Date(nTime));
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "ApiDateForm.docxf");
+builder.SaveFile("form", "ApiDateForm.pdf");
 builder.CloseFile();
