@@ -10,5 +10,5 @@ oDateForm.SetTextPr(oTextPr);
 var oFormTextPr = oDateForm.GetTextPr();
 oFormTextPr.SetItalic(true);
 oDateForm.SetTextPr(oFormTextPr);
-builder.SaveFile("docxf", "GetTextPr.docxf");
+builder.SaveFile("form", "GetTextPr.pdf");
 builder.CloseFile();

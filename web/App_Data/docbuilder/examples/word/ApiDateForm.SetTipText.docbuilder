@@ -8,5 +8,5 @@ var sTipText = oDateForm.GetTipText();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("Tip text: " + sTipText);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "SetTipText.docxf");
+builder.SaveFile("form", "SetTipText.pdf");
 builder.CloseFile();

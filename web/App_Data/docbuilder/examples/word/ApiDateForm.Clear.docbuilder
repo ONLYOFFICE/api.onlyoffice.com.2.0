@@ -8,5 +8,5 @@ oDateForm.Clear();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("The first form from this document was cleared.");
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "Clear.docxf");
+builder.SaveFile("form", "Clear.pdf");
 builder.CloseFile();

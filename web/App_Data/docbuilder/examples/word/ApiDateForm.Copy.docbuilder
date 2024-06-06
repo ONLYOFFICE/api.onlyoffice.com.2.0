@@ -7,5 +7,5 @@ oParagraph.AddElement(oDateForm);
 var oCopyDateForm = oDateForm.Copy();
 oParagraph.AddLineBreak();
 oParagraph.AddElement(oCopyDateForm);
-builder.SaveFile("docxf", "Copy.docxf");
+builder.SaveFile("form", "Copy.pdf");
 builder.CloseFile();

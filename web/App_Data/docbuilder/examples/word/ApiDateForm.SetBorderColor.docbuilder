@@ -4,5 +4,5 @@ var oDateForm = Api.CreateDateForm({"key": "Nowadays", "tip": "Enter current dat
 var oParagraph = oDocument.GetElement(0);
 oParagraph.AddElement(oDateForm);
 oDateForm.SetBorderColor(255, 111, 61);
-builder.SaveFile("docxf", "SetBorderColor.docxf");
+builder.SaveFile("form", "SetBorderColor.pdf");
 builder.CloseFile();

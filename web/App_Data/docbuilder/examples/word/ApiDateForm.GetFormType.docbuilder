@@ -7,5 +7,5 @@ var sFormType = oDateForm.GetFormType();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("Form type: " + sFormType);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "GetFormType.docxf");
+builder.SaveFile("form", "GetFormType.pdf");
 builder.CloseFile();

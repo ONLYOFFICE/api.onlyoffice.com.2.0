@@ -8,5 +8,5 @@ var sLanguage = oDateForm.GetLanguage();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("Date language: " + sLanguage);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "GetLanguage.docxf");
+builder.SaveFile("form", "GetLanguage.pdf");
 builder.CloseFile();

@@ -8,5 +8,5 @@ var sFormat = oDateForm.GetFormat();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("Date format: " + sFormat);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "GetFormat.docxf");
+builder.SaveFile("form", "GetFormat.pdf");
 builder.CloseFile();

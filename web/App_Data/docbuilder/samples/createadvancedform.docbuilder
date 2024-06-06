@@ -91,5 +91,5 @@ oDocument.RemoveElement(0);
 oDocument.RemoveElement(1);
 
 Api.Save();
-builder.SaveFile("docxf", "Purchase order.docxf");
+builder.SaveFile("form", "Purchase order.pdf");
 builder.CloseFile();

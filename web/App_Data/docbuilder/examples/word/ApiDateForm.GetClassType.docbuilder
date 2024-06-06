@@ -7,5 +7,5 @@ var sClassType = oDateForm.GetClassType();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("Class type: " + sClassType);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "GetClassType.docxf");
+builder.SaveFile("form", "GetClassType.pdf");
 builder.CloseFile();

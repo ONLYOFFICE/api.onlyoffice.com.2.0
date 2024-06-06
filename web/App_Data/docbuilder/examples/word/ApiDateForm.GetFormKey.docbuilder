@@ -7,5 +7,5 @@ var sKey = oDateForm.GetFormKey();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("Form key: " + sKey);
 oDocument.Push(oParagraph);
-builder.SaveFile("docxf", "GetFormKey.docxf");
+builder.SaveFile("form", "GetFormKey.pdf");
 builder.CloseFile();

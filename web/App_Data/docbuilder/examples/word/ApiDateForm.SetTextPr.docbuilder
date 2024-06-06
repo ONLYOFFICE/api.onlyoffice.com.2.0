@@ -7,5 +7,5 @@ var oTextPr = Api.CreateTextPr();
 oTextPr.SetFontSize(30);
 oTextPr.SetBold(true);
 oDateForm.SetTextPr(oTextPr);
-builder.SaveFile("docxf", "SetTextPr.docxf");
+builder.SaveFile("form", "SetTextPr.pdf");
 builder.CloseFile();
