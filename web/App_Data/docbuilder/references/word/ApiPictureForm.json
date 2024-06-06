@@ -225,6 +225,18 @@
           "name": "sImageSrc",
           "description": "<p>The image source where the image to be inserted should be taken from (currently, only internet URL or base64 encoded images are supported).</p>",
           "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nWidth",
+          "description": "<p>The image width in English measure units.</p>",
+          "optional": false
+        },
+        {
+          "type": "EMU",
+          "name": "nHeight",
+          "description": "<p>The image height in English measure units.</p>",
+          "optional": false
         }
       ]
     },
@@ -555,7 +567,7 @@
     "GetText": {
       "memberof": "ApiPictureForm",
       "name": "GetText",
-      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text from the current form.\n<em>Returns the value as a string if possible for the given form type</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -631,7 +643,7 @@
     "SetTextPr": {
       "memberof": "ApiPictureForm",
       "name": "SetTextPr",
-      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Sets the text properties to the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -657,7 +669,7 @@
     "GetTextPr": {
       "memberof": "ApiPictureForm",
       "name": "GetTextPr",
-      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text properties from the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -671,6 +683,27 @@
       ],
       "see": null,
       "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
+    },
+    "MoveCursorOutside": {
+      "memberof": "ApiPictureForm",
+      "name": "MoveCursorOutside",
+      "description": "<p>Place cursor before/after the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#MoveCursorOutside}",
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAfter",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
     },
     "Copy": {
       "memberof": "ApiPictureForm",
@@ -692,35 +725,8 @@
     }
   },
   "events": {},
-  "comment": "/**\n\t * Class representing a document picture form.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @property {ScaleFlag} scaleFlag - The condition to scale an image in the picture form: \"always\", \"never\", \"tooBig\" or \"tooSmall\".\n\t * @property {boolean} lockAspectRatio - Specifies if the aspect ratio of the picture form is locked or not.\n\t * @property {boolean} respectBorders - Specifies if the form border width is respected or not when scaling the image.\n\t * @property {percentage} shiftX - Horizontal picture position inside the picture form measured in percent:\n\t * * <b>0</b> - the picture is placed on the left;\n\t * * <b>50</b> - the picture is placed in the center;\n\t * * <b>100</b> - the picture is placed on the right.\n\t * @property {percentage} shiftY - Vertical picture position inside the picture form measured in percent:\n\t * * <b>0</b> - the picture is placed on top;\n\t * * <b>50</b> - the picture is placed in the center;\n\t * * <b>100</b> - the picture is placed on the bottom.\n\t * @extends {ApiFormBase}\n\t */",
+  "comment": "/**\n\t * Class representing a document picture form.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @extends {ApiFormBase}\n\t */",
   "description": "<p>Class representing a document picture form.</p>",
   "scope": "global",
-  "params": [],
-  "properties": [
-    {
-      "type": "ScaleFlag",
-      "name": "scaleFlag",
-      "description": "<p>The condition to scale an image in the picture form: &quot;always&quot;, &quot;never&quot;, &quot;tooBig&quot; or &quot;tooSmall&quot;.</p>"
-    },
-    {
-      "type": "boolean",
-      "name": "lockAspectRatio",
-      "description": "<p>Specifies if the aspect ratio of the picture form is locked or not.</p>"
-    },
-    {
-      "type": "boolean",
-      "name": "respectBorders",
-      "description": "<p>Specifies if the form border width is respected or not when scaling the image.</p>"
-    },
-    {
-      "type": "percentage",
-      "name": "shiftX",
-      "description": "<p>Horizontal picture position inside the picture form measured in percent:</p>\n<ul>\n<li><b>0</b> - the picture is placed on the left;</li>\n<li><b>50</b> - the picture is placed in the center;</li>\n<li><b>100</b> - the picture is placed on the right.</li>\n</ul>"
-    },
-    {
-      "type": "percentage",
-      "name": "shiftY",
-      "description": "<p>Vertical picture position inside the picture form measured in percent:</p>\n<ul>\n<li><b>0</b> - the picture is placed on top;</li>\n<li><b>50</b> - the picture is placed in the center;</li>\n<li><b>100</b> - the picture is placed on the bottom.</li>\n</ul>"
-    }
-  ]
+  "params": []
 }

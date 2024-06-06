@@ -327,7 +327,7 @@
     "GetText": {
       "memberof": "ApiFormBase",
       "name": "GetText",
-      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text from the current form.\n<em>Returns the value as a string if possible for the given form type</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -403,7 +403,7 @@
     "SetTextPr": {
       "memberof": "ApiFormBase",
       "name": "SetTextPr",
-      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Sets the text properties to the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -429,7 +429,7 @@
     "GetTextPr": {
       "memberof": "ApiFormBase",
       "name": "GetTextPr",
-      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text properties from the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -443,6 +443,27 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "MoveCursorOutside": {
+      "memberof": "ApiFormBase",
+      "name": "MoveCursorOutside",
+      "description": "<p>Place cursor before/after the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAfter",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
     },
     "Copy": {
       "memberof": "ApiFormBase",
@@ -464,30 +485,8 @@
     }
   },
   "events": {},
-  "comment": "/**\n\t * Class representing a document form base.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @property {string} key - Form key.\n\t * @property {string} tip - Form tip text.\n\t * @property {boolean} required - Specifies if the form is required or not.\n\t * @property {string} placeholder - Form placeholder text.\n\t */",
+  "comment": "/**\n\t * Class representing a document form base.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t */",
   "description": "<p>Class representing a document form base.</p>",
   "scope": "global",
-  "params": [],
-  "properties": [
-    {
-      "type": "string",
-      "name": "key",
-      "description": "<p>Form key.</p>"
-    },
-    {
-      "type": "string",
-      "name": "tip",
-      "description": "<p>Form tip text.</p>"
-    },
-    {
-      "type": "boolean",
-      "name": "required",
-      "description": "<p>Specifies if the form is required or not.</p>"
-    },
-    {
-      "type": "string",
-      "name": "placeholder",
-      "description": "<p>Form placeholder text.</p>"
-    }
-  ]
+  "params": []
 }

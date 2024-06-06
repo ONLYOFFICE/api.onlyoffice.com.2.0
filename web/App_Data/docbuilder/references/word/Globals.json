@@ -935,6 +935,7 @@
       "ApiComboBoxForm",
       "ApiCheckBoxForm",
       "ApiPictureForm",
+      "ApiDateForm",
       "ApiComplexForm"
     ]
   },

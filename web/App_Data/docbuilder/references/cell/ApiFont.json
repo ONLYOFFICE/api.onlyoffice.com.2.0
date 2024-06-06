@@ -38,7 +38,7 @@
     "SetBold": {
       "memberof": "ApiFont",
       "name": "SetBold",
-      "description": "<p>Sets the bold property to the specified font.</p>",
+      "description": "<p>Sets the bold property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -77,7 +77,7 @@
     "SetItalic": {
       "memberof": "ApiFont",
       "name": "SetItalic",
-      "description": "<p>Sets the italic property to the specified font.</p>",
+      "description": "<p>Sets the italic property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -116,7 +116,7 @@
     "SetSize": {
       "memberof": "ApiFont",
       "name": "SetSize",
-      "description": "<p>Sets the font size property to the specified font.</p>",
+      "description": "<p>Sets the font size property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -155,7 +155,7 @@
     "SetStrikethrough": {
       "memberof": "ApiFont",
       "name": "SetStrikethrough",
-      "description": "<p>Sets the strikethrough property to the specified font.</p>",
+      "description": "<p>Sets the strikethrough property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -194,7 +194,7 @@
     "SetUnderline": {
       "memberof": "ApiFont",
       "name": "SetUnderline",
-      "description": "<p>Sets an underline of the type specified in the request to the current font.</p>",
+      "description": "<p>Sets an underline of the type specified in the request to the current font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -233,7 +233,7 @@
     "SetSubscript": {
       "memberof": "ApiFont",
       "name": "SetSubscript",
-      "description": "<p>Sets the subscript property to the specified font.</p>",
+      "description": "<p>Sets the subscript property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -272,7 +272,7 @@
     "SetSuperscript": {
       "memberof": "ApiFont",
       "name": "SetSuperscript",
-      "description": "<p>Sets the superscript property to the specified font.</p>",
+      "description": "<p>Sets the superscript property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -311,7 +311,7 @@
     "SetName": {
       "memberof": "ApiFont",
       "name": "SetName",
-      "description": "<p>Sets the font name property to the specified font.</p>",
+      "description": "<p>Sets the font name property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -350,7 +350,7 @@
     "SetColor": {
       "memberof": "ApiFont",
       "name": "SetColor",
-      "description": "<p>Sets the font color property to the specified font.</p>",
+      "description": "<p>Sets the font color property to the specified font.\n<note>This method will work only with the text format of the cell.</note></p>",
       "tags": {
         "typeofeditors": [
           "CSE"

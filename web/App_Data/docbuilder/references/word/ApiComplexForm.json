@@ -327,7 +327,7 @@
     "GetText": {
       "memberof": "ApiComplexForm",
       "name": "GetText",
-      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text from the current form.\n<em>Returns the value as a string if possible for the given form type</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -403,7 +403,7 @@
     "SetTextPr": {
       "memberof": "ApiComplexForm",
       "name": "SetTextPr",
-      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Sets the text properties to the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -429,7 +429,7 @@
     "GetTextPr": {
       "memberof": "ApiComplexForm",
       "name": "GetTextPr",
-      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text properties from the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -443,6 +443,27 @@
       ],
       "see": null,
       "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
+    },
+    "MoveCursorOutside": {
+      "memberof": "ApiComplexForm",
+      "name": "MoveCursorOutside",
+      "description": "<p>Place cursor before/after the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#MoveCursorOutside}",
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAfter",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
     },
     "Copy": {
       "memberof": "ApiComplexForm",

@@ -1,0 +1,183 @@
+{
+  "methods": {
+    "SetTitle": {
+      "memberof": "ApiProtectedRange",
+      "name": "SetTitle",
+      "description": "<p>Sets a title to the current protected range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sTitle",
+          "description": "<p>The title which will be displayed for the current protected range.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "SetRange": {
+      "memberof": "ApiProtectedRange",
+      "name": "SetRange",
+      "description": "<p>Sets a range to the current protected range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sRange",
+          "description": "<p>The cell range which will be set for the current protected range.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "AddUser": {
+      "memberof": "ApiProtectedRange",
+      "name": "AddUser",
+      "description": "<p>Sets a user to the current protected range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiProtectedRangeUserInfo",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sId",
+          "description": "<p>The user ID.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sName",
+          "description": "<p>The user name.</p>",
+          "optional": false
+        },
+        {
+          "type": "ProtectedRangeUserType",
+          "name": "protectedRangeUserType",
+          "description": "<p>The user type of the protected range.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "DeleteUser": {
+      "memberof": "ApiProtectedRange",
+      "name": "DeleteUser",
+      "description": "<p>Removes a user from the current protected range.</p>",
+      "tags": {},
+      "returns": [
+        [
+          "bool"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sId",
+          "description": "<p>The user ID.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetAllUsers": {
+      "memberof": "ApiProtectedRange",
+      "name": "GetAllUsers",
+      "description": "<p>Returns all users from the current protected range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiProtectedRangeUserInfo>",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetAnyoneType": {
+      "memberof": "ApiProtectedRange",
+      "name": "SetAnyoneType",
+      "description": "<p>Sets the type of the &quot;Anyone&quot; user to the current protected range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "bool"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ProtectedRangeUserType",
+          "name": "protectedRangeUserType",
+          "description": "<p>The user type of the protected range.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetUser": {
+      "memberof": "ApiProtectedRange",
+      "name": "GetUser",
+      "description": "<p>Returns an object that represents a user from the current protected range.</p>",
+      "tags": {},
+      "returns": [
+        [
+          "ApiProtectedRangeUserInfo",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sId",
+          "description": "<p>The user ID.</p>",
+          "optional": false
+        }
+      ]
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Class representing a user-protected range.\n\t * @constructor\n\t */",
+  "description": "<p>Class representing a user-protected range.</p>",
+  "scope": "global",
+  "params": []
+}

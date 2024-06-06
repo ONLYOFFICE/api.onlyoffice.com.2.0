@@ -1,5 +1,26 @@
 {
   "methods": {
+    "ApiWorksheet#Paste": {
+      "memberof": "ApiRange",
+      "name": "ApiWorksheet#Paste",
+      "description": "<p>Pastes the contents of the Clipboard onto the sheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiRange",
+          "name": "destination",
+          "description": "<p>Object that specifies where the Clipboard contents should be pasted. If this argument is omitted, the current selection is used.</p>",
+          "optional": true
+        }
+      ]
+    },
     "GetClassType": {
       "memberof": "ApiRange",
       "name": "GetClassType",
@@ -1165,7 +1186,7 @@
     "Copy": {
       "memberof": "ApiRange",
       "name": "Copy",
-      "description": "<p>Copies a range to the specified range.</p>",
+      "description": "<p>Copies the range to the specified range or to the Clipboard.</p>",
       "tags": {
         "typeofeditors": [
           "CSE"
@@ -1178,8 +1199,29 @@
         {
           "type": "ApiRange",
           "name": "destination",
-          "description": "<p>Specifies a new range to which the specified range will be copied.</p>",
-          "optional": false
+          "description": "<p>Specifies the new range to which the specified range will be copied. If this argument is omitted, Onlyoffice copies the range to the Clipboard.</p>",
+          "optional": true
+        }
+      ]
+    },
+    "Cut": {
+      "memberof": "ApiRange",
+      "name": "Cut",
+      "description": "<p>Cuts the range to the specified range or to the Clipboard.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ApiRange",
+          "name": "destination",
+          "description": "<p>Specifies the new range to which the specified range will be cuted. If this argument is omitted, Onlyoffice copies the range to the Clipboard.</p>",
+          "optional": true
         }
       ]
     },
@@ -1200,6 +1242,47 @@
           "type": "ApiRange",
           "name": "rangeFrom",
           "description": "<p>Specifies the range to be pasted to the current range</p>",
+          "optional": false
+        }
+      ]
+    },
+    "PasteSpecial": {
+      "memberof": "ApiRange",
+      "name": "PasteSpecial",
+      "description": "<p>Pastes the Range object to the specified range.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "PasteType",
+          "name": "sPasteType",
+          "description": "<p>Type of special paste</p>",
+          "optional": true,
+          "defaultValue": "\"xlPasteAll\""
+        },
+        {
+          "type": "PasteSpecialOperation",
+          "name": "sPasteSpecialOperation",
+          "description": "<p>Operation of special paste</p>",
+          "optional": true,
+          "defaultValue": "\"xlPasteSpecialOperationNone\""
+        },
+        {
+          "type": "boolean",
+          "name": "bSkipBlanks",
+          "description": "<p>[bSkipBlanks=false] - Case sensitive or not. The default value is &quot;false&quot;.</p>",
+          "optional": false
+        },
+        {
+          "type": "boolean",
+          "name": "bTranspose",
+          "description": "<p>[bTranspose=false] - Case sensitive or not. The default value is &quot;false&quot;.</p>",
           "optional": false
         }
       ]

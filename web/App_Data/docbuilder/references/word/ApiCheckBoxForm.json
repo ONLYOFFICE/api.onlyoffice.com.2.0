@@ -429,7 +429,7 @@
     "GetText": {
       "memberof": "ApiCheckBoxForm",
       "name": "GetText",
-      "description": "<p>Returns the text from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text from the current form.\n<em>Returns the value as a string if possible for the given form type</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -505,7 +505,7 @@
     "SetTextPr": {
       "memberof": "ApiCheckBoxForm",
       "name": "SetTextPr",
-      "description": "<p>Sets the text properties to the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Sets the text properties to the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -531,7 +531,7 @@
     "GetTextPr": {
       "memberof": "ApiCheckBoxForm",
       "name": "GetTextPr",
-      "description": "<p>Returns the text properties from the current form.\n<em>This method is used only for text and combo box forms.</em></p>",
+      "description": "<p>Returns the text properties from the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -545,6 +545,27 @@
       ],
       "see": null,
       "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
+    },
+    "MoveCursorOutside": {
+      "memberof": "ApiCheckBoxForm",
+      "name": "MoveCursorOutside",
+      "description": "<p>Place cursor before/after the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiFormBase#MoveCursorOutside}",
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAfter",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
     },
     "Copy": {
       "memberof": "ApiCheckBoxForm",
@@ -566,15 +587,8 @@
     }
   },
   "events": {},
-  "comment": "/**\n\t * Class representing a document checkbox / radio button.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @property {boolean} radio - Specifies if the current checkbox is a radio button. In this case, the key parameter is considered as an identifier for the group of radio buttons.\n\t * @extends {ApiFormBase}\n\t */",
+  "comment": "/**\n\t * Class representing a document checkbox / radio button.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @extends {ApiFormBase}\n\t */",
   "description": "<p>Class representing a document checkbox / radio button.</p>",
   "scope": "global",
-  "params": [],
-  "properties": [
-    {
-      "type": "boolean",
-      "name": "radio",
-      "description": "<p>Specifies if the current checkbox is a radio button. In this case, the key parameter is considered as an identifier for the group of radio buttons.</p>"
-    }
-  ]
+  "params": []
 }

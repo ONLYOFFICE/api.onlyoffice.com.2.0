@@ -83,6 +83,27 @@
           "optional": false
         }
       ]
+    },
+    "CreateDateForm": {
+      "memberof": "Api",
+      "name": "CreateDateForm",
+      "description": "<p>Creates a date form with the specified date form properties.</p>",
+      "tags": {},
+      "returns": [
+        [
+          "ApiDateForm"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "DateFormPr",
+          "name": "oFormPr",
+          "description": "<p>Date form properties.</p>",
+          "optional": false
+        }
+      ]
     }
   },
   "events": {},

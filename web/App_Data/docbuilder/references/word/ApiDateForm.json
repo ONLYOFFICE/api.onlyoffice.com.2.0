@@ -1,9 +1,9 @@
 {
   "methods": {
-    "IsAutoFit": {
-      "memberof": "ApiTextForm",
-      "name": "IsAutoFit",
-      "description": "<p>Checks if the text field content is autofit, i.e. whether the font size adjusts to the size of the fixed size form.</p>",
+    "GetFormat": {
+      "memberof": "ApiDateForm",
+      "name": "GetFormat",
+      "description": "<p>Gets the date format of the current form.</p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -12,201 +12,16 @@
       },
       "returns": [
         [
-          "boolean"
+          "string"
         ]
       ],
       "see": null,
       "inherits": null
     },
-    "SetAutoFit": {
-      "memberof": "ApiTextForm",
-      "name": "SetAutoFit",
-      "description": "<p>Specifies if the text field content should be autofit, i.e. whether the font size adjusts to the size of the fixed size form.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "boolean"
-        ]
-      ],
-      "see": null,
-      "inherits": null,
-      "params": [
-        {
-          "type": "boolean",
-          "name": "bAutoFit",
-          "description": "<p>Defines if the text field content is autofit (true) or not (false).</p>",
-          "optional": false
-        }
-      ]
-    },
-    "IsMultiline": {
-      "memberof": "ApiTextForm",
-      "name": "IsMultiline",
-      "description": "<p>Checks if the current text field is multiline.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "boolean"
-        ]
-      ],
-      "see": null,
-      "inherits": null
-    },
-    "SetMultiline": {
-      "memberof": "ApiTextForm",
-      "name": "SetMultiline",
-      "description": "<p>Specifies if the current text field should be miltiline.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "boolean"
-        ]
-      ],
-      "see": null,
-      "inherits": null,
-      "params": [
-        {
-          "type": "boolean",
-          "name": "bMultiline",
-          "description": "<p>Defines if the current text field is multiline (true) or not (false).</p>",
-          "optional": false
-        }
-      ]
-    },
-    "GetCharactersLimit": {
-      "memberof": "ApiTextForm",
-      "name": "GetCharactersLimit",
-      "description": "<p>Returns a limit of the text field characters.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "number"
-        ]
-      ],
-      "see": null,
-      "inherits": null
-    },
-    "SetCharactersLimit": {
-      "memberof": "ApiTextForm",
-      "name": "SetCharactersLimit",
-      "description": "<p>Sets a limit to the text field characters.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "boolean"
-        ]
-      ],
-      "see": null,
-      "inherits": null,
-      "params": [
-        {
-          "type": "number",
-          "name": "nChars",
-          "description": "<p>The maximum number of characters in the text field. If this parameter is equal to -1, no limit will be set.\nA limit is required to be set if a comb of characters is applied.\nMaximum value for this parameter is 1000000.</p>",
-          "optional": false
-        }
-      ]
-    },
-    "IsComb": {
-      "memberof": "ApiTextForm",
-      "name": "IsComb",
-      "description": "<p>Checks if the text field is a comb of characters with the same cell width.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "boolean"
-        ]
-      ],
-      "see": null,
-      "inherits": null
-    },
-    "SetComb": {
-      "memberof": "ApiTextForm",
-      "name": "SetComb",
-      "description": "<p>Specifies if the text field should be a comb of characters with the same cell width.\nThe maximum number of characters must be set to a positive value.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "boolean"
-        ]
-      ],
-      "see": null,
-      "inherits": null,
-      "params": [
-        {
-          "type": "boolean",
-          "name": "bComb",
-          "description": "<p>Defines if the text field is a comb of characters (true) or not (false).</p>",
-          "optional": false
-        }
-      ]
-    },
-    "SetCellWidth": {
-      "memberof": "ApiTextForm",
-      "name": "SetCellWidth",
-      "description": "<p>Sets the cell width to the applied comb of characters.</p>",
-      "tags": {
-        "typeofeditors": [
-          "CDE",
-          "CFE"
-        ]
-      },
-      "returns": [
-        [
-          "boolean"
-        ]
-      ],
-      "see": null,
-      "inherits": null,
-      "params": [
-        {
-          "type": "mm",
-          "name": "nCellWidth",
-          "description": "<p>The cell width measured in millimeters.\nIf this parameter is not specified or equal to 0 or less, then the width will be set automatically. Must be &gt;= 1 and &lt;= 558.8.</p>",
-          "optional": true,
-          "defaultValue": 0
-        }
-      ]
-    },
-    "SetText": {
-      "memberof": "ApiTextForm",
-      "name": "SetText",
-      "description": "<p>Sets the text to the current text field.</p>",
+    "SetFormat": {
+      "memberof": "ApiDateForm",
+      "name": "SetFormat",
+      "description": "<p>Sets the date format to the current form.</p>",
       "tags": {
         "typeofeditors": [
           "CDE",
@@ -223,14 +38,102 @@
       "params": [
         {
           "type": "string",
-          "name": "sText",
-          "description": "<p>The text that will be set to the current text field.</p>",
+          "name": "sFormat",
+          "description": "<p>The date format. For example, mm.dd.yyyy</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetLanguage": {
+      "memberof": "ApiDateForm",
+      "name": "GetLanguage",
+      "description": "<p>Gets the used date language of the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetLanguage": {
+      "memberof": "ApiDateForm",
+      "name": "SetLanguage",
+      "description": "<p>Sets the date language to the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sLangId",
+          "description": "<p>The date language. The possible value for this parameter is a language identifier as defined in\nRFC 4646/BCP 47. Example: &quot;en-CA&quot;.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetTime": {
+      "memberof": "ApiDateForm",
+      "name": "GetTime",
+      "description": "<p>Returns the timestamp of the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "number"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetTime": {
+      "memberof": "ApiDateForm",
+      "name": "SetTime",
+      "description": "<p>Sets the timestamp to the current form.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CFE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "number",
+          "name": "nTimeStamp",
+          "description": "<p>The timestamp that will be set to the current date form.</p>",
           "optional": false
         }
       ]
     },
     "GetClassType": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "GetClassType",
       "description": "<p>Returns a type of the ApiFormBase class.</p>",
       "tags": {
@@ -248,7 +151,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#GetClassType}"
     },
     "GetFormType": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "GetFormType",
       "description": "<p>Returns a type of the current form.</p>",
       "tags": {
@@ -266,7 +169,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#GetFormType}"
     },
     "GetFormKey": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "GetFormKey",
       "description": "<p>Returns the current form key.</p>",
       "tags": {
@@ -284,7 +187,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#GetFormKey}"
     },
     "SetFormKey": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "SetFormKey",
       "description": "<p>Sets a key to the current form.</p>",
       "tags": {
@@ -310,7 +213,7 @@
       ]
     },
     "GetTipText": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "GetTipText",
       "description": "<p>Returns the tip text of the current form.</p>",
       "tags": {
@@ -328,7 +231,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#GetTipText}"
     },
     "SetTipText": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "SetTipText",
       "description": "<p>Sets the tip text to the current form.</p>",
       "tags": {
@@ -354,7 +257,7 @@
       ]
     },
     "IsRequired": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "IsRequired",
       "description": "<p>Checks if the current form is required.</p>",
       "tags": {
@@ -372,7 +275,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#IsRequired}"
     },
     "SetRequired": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "SetRequired",
       "description": "<p>Specifies if the current form should be required.</p>",
       "tags": {
@@ -398,7 +301,7 @@
       ]
     },
     "IsFixed": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "IsFixed",
       "description": "<p>Checks if the current form is fixed size.</p>",
       "tags": {
@@ -416,7 +319,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#IsFixed}"
     },
     "ToFixed": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "ToFixed",
       "description": "<p>Converts the current form to a fixed size form.</p>",
       "tags": {
@@ -448,7 +351,7 @@
       ]
     },
     "ToInline": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "ToInline",
       "description": "<p>Converts the current form to an inline form.\n<em>Picture form can't be converted to an inline form, it's always a fixed size object.</em></p>",
       "tags": {
@@ -466,7 +369,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#ToInline}"
     },
     "SetBorderColor": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "SetBorderColor",
       "description": "<p>Sets the border color to the current form.</p>",
       "tags": {
@@ -510,7 +413,7 @@
       ]
     },
     "SetBackgroundColor": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "SetBackgroundColor",
       "description": "<p>Sets the background color to the current form.</p>",
       "tags": {
@@ -554,7 +457,7 @@
       ]
     },
     "GetText": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "GetText",
       "description": "<p>Returns the text from the current form.\n<em>Returns the value as a string if possible for the given form type</em></p>",
       "tags": {
@@ -572,7 +475,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#GetText}"
     },
     "Clear": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "Clear",
       "description": "<p>Clears the current form.</p>",
       "tags": {
@@ -586,7 +489,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#Clear}"
     },
     "GetWrapperShape": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "GetWrapperShape",
       "description": "<p>Returns a shape in which the form is placed to control the position and size of the fixed size form frame.\nThe null value will be returned for the inline forms.</p>",
       "tags": {
@@ -604,7 +507,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#GetWrapperShape}"
     },
     "SetPlaceholderText": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "SetPlaceholderText",
       "description": "<p>Sets the placeholder text to the current form.\n<em>Can't be set to checkbox or radio button.</em></p>",
       "tags": {
@@ -630,7 +533,7 @@
       ]
     },
     "SetTextPr": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "SetTextPr",
       "description": "<p>Sets the text properties to the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
@@ -656,7 +559,7 @@
       ]
     },
     "GetTextPr": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "GetTextPr",
       "description": "<p>Returns the text properties from the current form.\n<em>Used if possible for this type of form</em></p>",
       "tags": {
@@ -674,7 +577,7 @@
       "inherits": "Inherited From: {@link ApiFormBase#GetTextPr}"
     },
     "MoveCursorOutside": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "MoveCursorOutside",
       "description": "<p>Place cursor before/after the current form.</p>",
       "tags": {
@@ -695,7 +598,7 @@
       ]
     },
     "Copy": {
-      "memberof": "ApiTextForm",
+      "memberof": "ApiDateForm",
       "name": "Copy",
       "description": "<p>Copies the current form (copies with the shape if it exists).</p>",
       "tags": {
@@ -714,8 +617,8 @@
     }
   },
   "events": {},
-  "comment": "/**\n\t * Class representing a document text field.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @extends {ApiFormBase}\n\t */",
-  "description": "<p>Class representing a document text field.</p>",
+  "comment": "/**\n\t * Class representing a document date field.\n\t * @constructor\n\t * @typeofeditors [\"CDE\", \"CFE\"]\n\t * @extends {ApiFormBase}\n\t */",
+  "description": "<p>Class representing a document date field.</p>",
   "scope": "global",
   "params": []
 }

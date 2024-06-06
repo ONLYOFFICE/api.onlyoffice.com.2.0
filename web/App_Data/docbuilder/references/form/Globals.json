@@ -210,5 +210,32 @@
       "FormPrBase",
       "PictureFormPrBase"
     ]
+  },
+  "DateFormPrBase": {
+    "name": "DateFormPrBase",
+    "description": "<p>Specific date form properties.</p>",
+    "type": [
+      "Object"
+    ],
+    "properties": [
+      {
+        "type": "string",
+        "name": "format",
+        "description": "<p>The date format, ex: mm.dd.yyyy</p>"
+      },
+      {
+        "type": "string",
+        "name": "lang",
+        "description": "<p>The date language. Possible value for this parameter is a language identifier as defined by\nRFC 4646/BCP 47. Example: &quot;en-CA&quot;.</p>"
+      }
+    ]
+  },
+  "DateFormPr": {
+    "name": "DateFormPr",
+    "description": "<p>Date form properties.</p>",
+    "type": [
+      "FormPrBase",
+      "DateFormPrBase"
+    ]
   }
 }

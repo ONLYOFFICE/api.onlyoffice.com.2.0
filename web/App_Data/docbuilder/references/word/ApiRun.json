@@ -1023,6 +1023,334 @@
         }
       ]
     },
+    "GetStyle": {
+      "memberof": "ApiRun",
+      "name": "GetStyle",
+      "description": "<p>Gets the style of the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiStyle"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetStyle}"
+    },
+    "GetBold": {
+      "memberof": "ApiRun",
+      "name": "GetBold",
+      "description": "<p>Gets the bold property from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetBold}"
+    },
+    "GetItalic": {
+      "memberof": "ApiRun",
+      "name": "GetItalic",
+      "description": "<p>Gets the italic property from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetItalic}"
+    },
+    "GetStrikeout": {
+      "memberof": "ApiRun",
+      "name": "GetStrikeout",
+      "description": "<p>Gets the strikeout property from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetStrikeout}"
+    },
+    "GetUnderline": {
+      "memberof": "ApiRun",
+      "name": "GetUnderline",
+      "description": "<p>Gets the underline property from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetUnderline}"
+    },
+    "GetFontFamily": {
+      "memberof": "ApiRun",
+      "name": "GetFontFamily",
+      "description": "<p>Gets the font family from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetFontFamily}"
+    },
+    "GetFontSize": {
+      "memberof": "ApiRun",
+      "name": "GetFontSize",
+      "description": "<p>Gets the font size from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "hps"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetFontSize}"
+    },
+    "GetColor": {
+      "memberof": "ApiRun",
+      "name": "GetColor",
+      "description": "<p>Gets the RGB color from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiRGBColor"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetColor}"
+    },
+    "GetVertAlign": {
+      "memberof": "ApiRun",
+      "name": "GetVertAlign",
+      "description": "<p>Gets the vertical alignment type from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetVertAlign}"
+    },
+    "GetHighlight": {
+      "memberof": "ApiRun",
+      "name": "GetHighlight",
+      "description": "<p>Gets the highlight property from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetHighlight}"
+    },
+    "GetSpacing": {
+      "memberof": "ApiRun",
+      "name": "GetSpacing",
+      "description": "<p>Gets the text spacing from the current text properties measured in twentieths of a point.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "twips"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetSpacing}"
+    },
+    "GetDoubleStrikeout": {
+      "memberof": "ApiRun",
+      "name": "GetDoubleStrikeout",
+      "description": "<p>Gets the double strikeout property from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetDoubleStrikeout}"
+    },
+    "GetCaps": {
+      "memberof": "ApiRun",
+      "name": "GetCaps",
+      "description": "<p>Specifies whether the text with the current text properties are capitalized.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetCaps}"
+    },
+    "GetSmallCaps": {
+      "memberof": "ApiRun",
+      "name": "GetSmallCaps",
+      "description": "<p>Specifies whether the text with the current text properties are displayed capitalized two points smaller than the actual font size.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE",
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetSmallCaps}"
+    },
+    "GetPosition": {
+      "memberof": "ApiRun",
+      "name": "GetPosition",
+      "description": "<p>Gets the text position from the current text properties measured in half-points (1/144 of an inch).</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "hps"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetPosition}"
+    },
+    "GetLanguage": {
+      "memberof": "ApiRun",
+      "name": "GetLanguage",
+      "description": "<p>Gets the language from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "string"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetLanguage}"
+    },
+    "GetShd": {
+      "memberof": "ApiRun",
+      "name": "GetShd",
+      "description": "<p>Gets the text shading from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiRGBColor"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetShd}"
+    },
+    "GetFill": {
+      "memberof": "ApiRun",
+      "name": "GetFill",
+      "description": "<p>Gets the text color from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiFill"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetFill}"
+    },
     "SetTextFill": {
       "memberof": "ApiRun",
       "name": "SetTextFill",
@@ -1050,6 +1378,24 @@
         }
       ]
     },
+    "GetTextFill": {
+      "memberof": "ApiRun",
+      "name": "GetTextFill",
+      "description": "<p>Gets the text fill from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiFill"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetTextFill}"
+    },
     "SetOutLine": {
       "memberof": "ApiRun",
       "name": "SetOutLine",
@@ -1076,6 +1422,24 @@
           "optional": false
         }
       ]
+    },
+    "GetOutLine": {
+      "memberof": "ApiRun",
+      "name": "GetOutLine",
+      "description": "<p>Gets the text outline from the current text properties.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE",
+          "CPE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiStroke"
+        ]
+      ],
+      "see": null,
+      "inherits": "Inherited From: {@link ApiTextPr#GetOutLine}"
     }
   },
   "events": {},

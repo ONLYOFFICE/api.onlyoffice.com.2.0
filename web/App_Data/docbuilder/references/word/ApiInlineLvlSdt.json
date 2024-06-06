@@ -626,6 +626,27 @@
         }
       ]
     },
+    "MoveCursorOutside": {
+      "memberof": "ApiInlineLvlSdt",
+      "name": "MoveCursorOutside",
+      "description": "<p>Place cursor before/after the current content control</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAfter",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
+    },
     "GetDropdownList": {
       "memberof": "ApiInlineLvlSdt",
       "name": "GetDropdownList",

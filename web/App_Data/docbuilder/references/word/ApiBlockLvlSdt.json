@@ -733,6 +733,27 @@
       "see": null,
       "inherits": null
     },
+    "MoveCursorOutside": {
+      "memberof": "ApiBlockLvlSdt",
+      "name": "MoveCursorOutside",
+      "description": "<p>Place cursor before/after the current content control</p>",
+      "tags": {
+        "typeofeditors": [
+          "CDE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "boolean",
+          "name": "isAfter",
+          "optional": true,
+          "defaultValue": true
+        }
+      ]
+    },
     "ToJSON": {
       "memberof": "ApiBlockLvlSdt",
       "name": "ToJSON",

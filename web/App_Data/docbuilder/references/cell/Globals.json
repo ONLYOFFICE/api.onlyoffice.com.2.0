@@ -314,6 +314,40 @@
       "\"@\""
     ]
   },
+  "ReferenceStyle": {
+    "name": "ReferenceStyle",
+    "description": "<p>The cell references type.</p>",
+    "type": [
+      "'xlA1'",
+      "'xlR1C1'"
+    ]
+  },
+  "PasteType": {
+    "name": "PasteType",
+    "description": "<p>Specifies the part of the range to be pasted.</p>",
+    "type": [
+      "\"xlPasteAll\"",
+      "\"xlPasteAllExceptBorders\"",
+      "\"xlPasteColumnWidths\"",
+      "\"xlPasteComments\"",
+      "\"xlPasteFormats\"",
+      "\"xlPasteFormulas\"",
+      "\"xlPasteFormulasAndNumberFormats\"",
+      "\"xlPasteValues\"",
+      "\"xlPasteValuesAndNumberFormats\""
+    ]
+  },
+  "PasteSpecialOperation": {
+    "name": "PasteSpecialOperation",
+    "description": "<p>Specifies how numeric data will be calculated with the destinations cells on the worksheet.</p>",
+    "type": [
+      "\"xlPasteSpecialOperationAdd\"",
+      "\"xlPasteSpecialOperationDivide\"",
+      "\"xlPasteSpecialOperationMultiply\"",
+      "\"xlPasteSpecialOperationNone\"",
+      "\"xlPasteSpecialOperationSubtract\""
+    ]
+  },
   "FreezePaneType": {
     "name": "FreezePaneType",
     "description": "<p>Specifies a type of freeze panes.</p>",
@@ -531,6 +565,15 @@
       "\"xlUnderlineStyleNone\"",
       "\"xlUnderlineStyleSingle\"",
       "\"xlUnderlineStyleSingleAccounting\""
+    ]
+  },
+  "ProtectedRangeUserType": {
+    "name": "ProtectedRangeUserType",
+    "description": "<p>Specifies the user type of the protected range.</p>",
+    "type": [
+      "\"CanEdit\"",
+      "\"CanView\"",
+      "\"NotView\""
     ]
   }
 }

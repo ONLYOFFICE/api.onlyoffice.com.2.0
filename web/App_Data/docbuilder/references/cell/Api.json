@@ -27,6 +27,52 @@
         }
       ]
     },
+    "AddCustomFunction": {
+      "memberof": "Api",
+      "name": "AddCustomFunction",
+      "description": "<p>Creates a new custom function.\nThe description of the function parameters and result is specified using JSDoc. The <em>@customfunction</em> tag is required in JSDoc.\nParameters and results can be specified as the <em>number / string / bool / any / number[][] / string[][] / bool[][] / any[][]</em> types.\nParameters can be required or optional. A user can also set a default value.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "function",
+          "name": "fCustom",
+          "description": "<p>A new function for calculating.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "RemoveCustomFunction": {
+      "memberof": "Api",
+      "name": "RemoveCustomFunction",
+      "description": "<p>Remove a custom function.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "boolean"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sName",
+          "description": "<p>The name of a custom function.</p>",
+          "optional": false
+        }
+      ]
+    },
     "AddSheet": {
       "memberof": "Api",
       "name": "AddSheet",
@@ -412,6 +458,23 @@
         }
       ]
     },
+    "GetWorksheetFunction": {
+      "memberof": "Api",
+      "name": "GetWorksheetFunction",
+      "description": "<p>Returns the ApiWorksheetFunction object.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiWorksheetFunction"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
     "GetMailMergeData": {
       "memberof": "Api",
       "name": "GetMailMergeData",
@@ -645,6 +708,44 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "GetReferenceStyle": {
+      "memberof": "Api",
+      "name": "GetReferenceStyle",
+      "description": "<p>Returns the cell references style.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ReferenceStyle"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "SetReferenceStyle": {
+      "memberof": "Api",
+      "name": "SetReferenceStyle",
+      "description": "<p>Sets the cell references style.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "ReferenceStyle",
+          "name": "sReferenceStyle",
+          "description": "<p>Type of reference style</p>",
+          "optional": false
+        }
+      ]
     }
   },
   "events": {
@@ -664,7 +765,7 @@
       ]
     }
   },
-  "comment": "/**\n\t * Base class.\n\t * @global\n\t * @class\n\t * @name Api\n\t * @property {Array} Sheets - Returns the Sheets collection that represents all the sheets in the active workbook.\n\t * @property {ApiWorksheet} ActiveSheet - Returns an object that represents the active sheet.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t * @property {ApiComment[]} Comments - Returns all comments related to the whole workbook.\n\t * @property {FreezePaneType} FreezePanes - Returns or sets the type of freeze panes.\n\t * @property {ApiComment[]} AllComments - Returns all comments from the current workbook including comments from all worksheets.\n\t */",
+  "comment": "/**\n\t * Base class.\n\t * @global\n\t * @class\n\t * @name Api\n\t * @property {Array} Sheets - Returns the Sheets collection that represents all the sheets in the active workbook.\n\t * @property {ApiWorksheet} ActiveSheet - Returns an object that represents the active sheet.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t * @property {ApiComment[]} Comments - Returns all comments related to the whole workbook.\n\t * @property {FreezePaneType} FreezePanes - Returns or sets the type of freeze panes.\n\t * @property {ApiComment[]} AllComments - Returns all comments from the current workbook including comments from all worksheets.\n\t * @property {ReferenceStyle} ReferenceStyle - Returns or sets the reference style.\n\t * @property {ApiWorksheetFunction} WorksheetFunction - Returns an object that represents the function list.\n\t */",
   "description": "<p>Base class.</p>",
   "scope": "global",
   "properties": [
@@ -697,6 +798,16 @@
       "type": "Array.<ApiComment>",
       "name": "AllComments",
       "description": "<p>Returns all comments from the current workbook including comments from all worksheets.</p>"
+    },
+    {
+      "type": "ReferenceStyle",
+      "name": "ReferenceStyle",
+      "description": "<p>Returns or sets the reference style.</p>"
+    },
+    {
+      "type": "ApiWorksheetFunction",
+      "name": "WorksheetFunction",
+      "description": "<p>Returns an object that represents the function list.</p>"
     }
   ]
 }

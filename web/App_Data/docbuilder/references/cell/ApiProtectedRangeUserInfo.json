@@ -1,0 +1,62 @@
+{
+  "methods": {
+    "GetName": {
+      "memberof": "ApiProtectedRangeUserInfo",
+      "name": "GetName",
+      "description": "<p>Returns the name property of the current user's information.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "string",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetType": {
+      "memberof": "ApiProtectedRangeUserInfo",
+      "name": "GetType",
+      "description": "<p>Returns the type property of the current user's information.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ProtectedRangeUserType"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    },
+    "GetId": {
+      "memberof": "ApiProtectedRangeUserInfo",
+      "name": "GetId",
+      "description": "<p>Returns the ID property of the current user's information.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "string",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
+    }
+  },
+  "events": {},
+  "comment": "/**\n\t * Class representing a user from the current protected range.\n\t * @constructor\n\t */",
+  "description": "<p>Class representing a user from the current protected range.</p>",
+  "scope": "global",
+  "params": []
+}

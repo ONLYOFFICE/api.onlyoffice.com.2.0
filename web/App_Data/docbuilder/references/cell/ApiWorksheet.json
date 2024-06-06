@@ -1399,10 +1399,86 @@
       ],
       "see": null,
       "inherits": null
+    },
+    "AddProtectedRange": {
+      "memberof": "ApiWorksheet",
+      "name": "AddProtectedRange",
+      "description": "<p>Creates a protected range of the specified type from the selected data range of the current sheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiProtectedRange",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sTitle",
+          "description": "<p>The title which will be displayed for the current protected range.</p>",
+          "optional": false
+        },
+        {
+          "type": "string",
+          "name": "sDataRange",
+          "description": "<p>The selected cell range which will be used to get the data for the protected range.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetProtectedRange": {
+      "memberof": "ApiWorksheet",
+      "name": "GetProtectedRange",
+      "description": "<p>Returns a protected range object by its title.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "ApiProtectedRange",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null,
+      "params": [
+        {
+          "type": "string",
+          "name": "sTitle",
+          "description": "<p>The title of the protected range that will be returned.</p>",
+          "optional": false
+        }
+      ]
+    },
+    "GetAllProtectedRanges": {
+      "memberof": "ApiWorksheet",
+      "name": "GetAllProtectedRanges",
+      "description": "<p>Returns all protected ranges from the current worksheet.</p>",
+      "tags": {
+        "typeofeditors": [
+          "CSE"
+        ]
+      },
+      "returns": [
+        [
+          "Array.<ApiProtectedRange>",
+          "null"
+        ]
+      ],
+      "see": null,
+      "inherits": null
     }
   },
   "events": {},
-  "comment": "/**\n\t * Class representing a sheet.\n\t * @constructor\n\t * @property {boolean} Visible - Returns or sets the state of sheet visibility.\n\t * @property {number} Active - Makes the current sheet active.\n\t * @property {ApiRange} ActiveCell - Returns an object that represents an active cell.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t * @property {ApiRange} Cells - Returns ApiRange that represents all the cells on the worksheet (not just the cells that are currently in use).\n\t * @property {ApiRange} Rows - Returns ApiRange that represents all the cells of the rows range.\n\t * @property {ApiRange} Cols - Returns ApiRange that represents all the cells of the columns range.\n\t * @property {ApiRange} UsedRange - Returns ApiRange that represents the used range on the specified worksheet.\n\t * @property {string} Name - Returns or sets a name of the active sheet.\n\t * @property {number} Index - Returns a sheet index.\n\t * @property {number} LeftMargin - Returns or sets the size of the sheet left margin measured in points.\n\t * @property {number} RightMargin - Returns or sets the size of the sheet right margin measured in points.\n\t * @property {number} TopMargin - Returns or sets the size of the sheet top margin measured in points.\n\t * @property {number} BottomMargin - Returns or sets the size of the sheet bottom margin measured in points.\n\t * @property {PageOrientation} PageOrientation - Returns or sets the page orientation.\n\t * @property {boolean} PrintHeadings - Returns or sets the page PrintHeadings property.\n\t * @property {boolean} PrintGridlines - Returns or sets the page PrintGridlines property.\n\t * @property {Array} Defnames - Returns an array of the ApiName objects.\n\t * @property {Array} Comments - Returns all comments from the current worksheet.\n\t * @property {ApiFreezePanes} FreezePanes - Returns the freeze panes for the current worksheet.\n\t */",
+  "comment": "/**\n\t * Class representing a sheet.\n\t * @constructor\n\t * @property {boolean} Visible - Returns or sets the state of sheet visibility.\n\t * @property {number} Active - Makes the current sheet active.\n\t * @property {ApiRange} ActiveCell - Returns an object that represents an active cell.\n\t * @property {ApiRange} Selection - Returns an object that represents the selected range.\n\t * @property {ApiRange} Cells - Returns ApiRange that represents all the cells on the worksheet (not just the cells that are currently in use).\n\t * @property {ApiRange} Rows - Returns ApiRange that represents all the cells of the rows range.\n\t * @property {ApiRange} Cols - Returns ApiRange that represents all the cells of the columns range.\n\t * @property {ApiRange} UsedRange - Returns ApiRange that represents the used range on the specified worksheet.\n\t * @property {string} Name - Returns or sets a name of the active sheet.\n\t * @property {number} Index - Returns a sheet index.\n\t * @property {number} LeftMargin - Returns or sets the size of the sheet left margin measured in points.\n\t * @property {number} RightMargin - Returns or sets the size of the sheet right margin measured in points.\n\t * @property {number} TopMargin - Returns or sets the size of the sheet top margin measured in points.\n\t * @property {number} BottomMargin - Returns or sets the size of the sheet bottom margin measured in points.\n\t * @property {PageOrientation} PageOrientation - Returns or sets the page orientation.\n\t * @property {boolean} PrintHeadings - Returns or sets the page PrintHeadings property.\n\t * @property {boolean} PrintGridlines - Returns or sets the page PrintGridlines property.\n\t * @property {Array} Defnames - Returns an array of the ApiName objects.\n\t * @property {Array} Comments - Returns all comments from the current worksheet.\n\t * @property {ApiFreezePanes} FreezePanes - Returns the freeze panes for the current worksheet.\n\t * @property {ApiProtectedRange[]} AllProtectedRanges - Returns all protected ranges from the current worksheet.\n\t */",
   "description": "<p>Class representing a sheet.</p>",
   "scope": "global",
   "params": [],
@@ -1506,6 +1582,11 @@
       "type": "ApiFreezePanes",
       "name": "FreezePanes",
       "description": "<p>Returns the freeze panes for the current worksheet.</p>"
+    },
+    {
+      "type": "Array.<ApiProtectedRange>",
+      "name": "AllProtectedRanges",
+      "description": "<p>Returns all protected ranges from the current worksheet.</p>"
     }
   ]
 }
