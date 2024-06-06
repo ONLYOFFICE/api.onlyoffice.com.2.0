@@ -577,9 +577,9 @@
 
     <p><b>Methods for moving a cursor</b></p>
     <ul>
-        <li>Added the <a href="<%= Url.Action("textdocumentapi/apiblocklvlsdt/movecursoroutside ") %>">ApiBlockLvlSdt/MoveCursorOutside </a> method to Text document API.</li>
-        <li>Added the <a href="<%= Url.Action("textdocumentapi/apiformbase/movecursoroutside ") %>">ApiFormBase/MoveCursorOutside </a> method to Text document API.</li>
-        <li>Added the <a href="<%= Url.Action("textdocumentapi/apiinlinelvlsdt/movecursoroutside ") %>">ApiInlineLvlSdt/MoveCursorOutside </a> method to Text document API.</li>
+        <li>Added the <a href="<%= Url.Action("textdocumentapi/apiblocklvlsdt/movecursoroutside") %>">ApiBlockLvlSdt/MoveCursorOutside</a> method to Text document API.</li>
+        <li>Added the <a href="<%= Url.Action("textdocumentapi/apiformbase/movecursoroutside") %>">ApiFormBase/MoveCursorOutside</a> method to Text document API.</li>
+        <li>Added the <a href="<%= Url.Action("textdocumentapi/apiinlinelvlsdt/movecursoroutside") %>">ApiInlineLvlSdt/MoveCursorOutside</a> method to Text document API.</li>
     </ul>
     <br />
 
@@ -591,6 +591,7 @@
 
     <p><b>Other methods</b></p>
     <ul>
+        <li>Added the <em>form</em> <a href="<%= Url.Action("integrationapi/default") %>#format-types">format type</a>.</li>
         <li>Added the <a href="<%= Url.Action("spreadsheetapi/api/addcustomfunction") %>">Api/AddCustomFunction</a> method to Spreadsheet API.</li>
         <li>Added the <em>nWidth</em> and <em>nHeight</em> parameters to the <a href="<%= Url.Action("textdocumentapi/apipictureform/setimage") %>">ApiPictureForm/SetImage</a> method of Text document API.</li>
     </ul>
