@@ -226,25 +226,28 @@ There are seven form types: <em>text field</em>, <em>combo box</em>, <em>dropdow
 <div class="global-type-definitions">
 <span class="anchor-position" id="CreateNewDoc">&nbsp;</span>
 <h2>Creating a new form document</h2>
+    <p>To create a form document, the <a href="<%= Url.Action("integrationapi/c/cdocbuilder/createfile") %>">CreateFile</a> method must be used with the <em>"docx"</em>, <em>"pdf"</em>, or <em>"form"</em> values for the  first parameter.
+    In this case, these values are equal, so you can use any of them.</p>
+    <p>To save the ready document as a form, you need to use the <a href="<%= Url.Action("integrationapi/c/cdocbuilder/savefile") %>">SaveFile</a> method with the <em>"form"</em> value as the first parameter.</p>
     <p>The simplest example form document with a single text form containing the "John Smith" text can be built with the help of <b>ONLYOFFICE Document Builder</b> using the following code:</p>
-    <pre>builder.CreateFile("docxf");                      // create a form document file in the .docxf format with ONLYOFFICE Document Builder
+    <pre>builder.CreateFile("docx");                      // create a form document file in the .docx format with ONLYOFFICE Document Builder
 var oDocument = Api.GetDocument();                // create a new 'oDocument' variable and get the created text document contents
 var oTextForm = Api.CreateTextForm();             // create an empty text form
 var oParagraph = oDocument.GetElement(0);         // get the first empty paragraph from the created document
 oParagraph.AddElement(oTextForm);                 // add the created text form to the first paragraph
 oTextForm.SetText("John Smith");                  // add the "John Smith" text to the text form
-builder.SaveFile("docxf", "example.docxf");       // save the resulting form document as a file in the .docxf format with the 'example.docxf' name
+builder.SaveFile("form", "example.pdf");        // save the resulting form document as a file in the form format with the 'example.pdf' name
 builder.CloseFile();                              // close the form document file and finish work with ONLYOFFICE Document Builder</pre>
     </div>
     <h2 id="OpenDoc">Opening an existing form document</h2>
     <p>If you want to edit an already existing form document, you can open it using <b>ONLYOFFICE Document Builder</b>, get its elements and change them however you need. The only difference from a document editor in this case will be that you will not need this document editor. The document is opened the following way:</p>
-    <pre>builder.OpenFile("https://example.com/myformdocument.docxf");        // use a path to an existing 'myformdocument.docxf' form document file to open it with ONLYOFFICE Document Builder
+    <pre>builder.OpenFile("https://example.com/myformdocument.docx");        // use a path to an existing 'myformdocument.docx' form document file to open it with ONLYOFFICE Document Builder
 var oDocument = Api.GetDocument();                // create a new 'oDocument' variable and get the created text document contents
 var oTextForm = Api.CreateTextForm();             // create an empty text form
 var oParagraph = oDocument.GetElement(0);         // get the first empty paragraph from the created document
 oParagraph.AddElement(oTextForm);                 // add the created text form to the first paragraph
 oTextForm.SetText("John Smith");                  // add the "John Smith" text to the text form
-builder.SaveFile("docxf", "example.docxf");       // save the resulting form document as a file in the .docxf format with the 'example.docxf' name
+builder.SaveFile("form", "example.pdf");       // save the resulting form document as a file in the form format with the 'example.pdf' name
 builder.CloseFile();                              // close the form document file and finish work with ONLYOFFICE Document Builder</pre>
-    <p>As you can see you just need to use the <em>builder.OpenFile();</em> method of the <a href="<%= Url.Action("integrationapi/cdocbuilder") %>">CDocBuilder</a> class with the path to the necessary form document as an argument to open it. In the above example we open <b>myformdocument.docxf</b> document, get its first paragraph and add the text form with the "John Smith" text to it. The same way any other form document element can be changed.</p>
+    <p>As you can see you just need to use the <em>builder.OpenFile();</em> method of the <a href="<%= Url.Action("integrationapi/cdocbuilder") %>">CDocBuilder</a> class with the path to the necessary form document as an argument to open it. In the above example we open <b>myformdocument.docx</b> document, get its first paragraph and add the text form with the "John Smith" text to it. The same way any other form document element can be changed.</p>
     <p>Use the appropriate API documentation sections to find out which methods allow you to change certain document and spreadsheet element formatting properties.</p>
