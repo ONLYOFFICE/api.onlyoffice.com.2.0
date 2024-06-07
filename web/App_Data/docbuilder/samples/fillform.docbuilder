@@ -22,5 +22,5 @@ aForms.forEach(form => {
 });
 
 Api.Save();
-builder.SaveFile("form", "Filled form.pdf");
+builder.SaveFile("pdf", "Filled form.pdf");
 builder.CloseFile();

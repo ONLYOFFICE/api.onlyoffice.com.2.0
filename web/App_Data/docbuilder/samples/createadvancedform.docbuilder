@@ -1,4 +1,4 @@
-builder.CreateFile("docx");
+builder.CreateFile("pdf");
 var oDocument = Api.GetDocument();
 
 function addTextFormToParagraph(oParagraph, fontSize, key, placeholder, maxCharacters, jc, comb, border) {
@@ -91,5 +91,5 @@ oDocument.RemoveElement(0);
 oDocument.RemoveElement(1);
 
 Api.Save();
-builder.SaveFile("form", "Purchase order.pdf");
+builder.SaveFile("pdf", "Purchase order.pdf");
 builder.CloseFile();

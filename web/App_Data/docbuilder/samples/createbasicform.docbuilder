@@ -1,4 +1,4 @@
-builder.CreateFile("docx");
+builder.CreateFile("pdf");
 var oDocument = Api.GetDocument();
 var oParagraph = oDocument.GetElement(0);
 var oHeadingStyle = oDocument.GetStyle("Heading 3");
@@ -17,5 +17,5 @@ oPictureForm.SetImage("https://api.onlyoffice.com/content/img/docbuilder/example
 oDocument.Push(oParagraph);
 
 Api.Save();
-builder.SaveFile("form", "PassCard.pdf");
+builder.SaveFile("pdf", "PassCard.pdf");
 builder.CloseFile();

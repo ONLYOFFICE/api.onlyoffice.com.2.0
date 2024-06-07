@@ -1,4 +1,4 @@
-builder.CreateFile("docxf");
+builder.CreateFile("pdf");
 var oDocument = Api.GetDocument();
 var oParagraph = oDocument.GetElement(0);
 var oInlineLvlSdt = Api.CreateInlineLvlSdt();
@@ -8,5 +8,5 @@ var bForm = oInlineLvlSdt.IsForm();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("The first content control from this document is a form: " + bForm);
 oDocument.Push(oParagraph);
-builder.SaveFile("form", "IsForm.pdf");
+builder.SaveFile("pdf", "IsForm.pdf");
 builder.CloseFile();

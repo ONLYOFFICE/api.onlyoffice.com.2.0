@@ -20,7 +20,7 @@
         <tr class="tablerow">
             <td><em>type</em></td>
             <td>int | str</td>
-            <td>The type of the file to be created set as a hexadecimal integer for the Python code or <b>docx</b>, <b>xlsx</b>, <b>pptx</b>, <b>pdf</b>, or <b>form</b> for the <em>.docbuilder</em> script file
+            <td>The type of the file to be created set as a hexadecimal integer for the Python code or <b>docx</b>, <b>xlsx</b>, <b>pptx</b>, or <b>pdf</b> for the <em>.docbuilder</em> script file
             (see <a href="<%= Url.Action("integrationapi/c/cdefault") %>#format-types">AVS_OFFICESTUDIO_FILE_XXX</a> values).</td>
         </tr>
     </tbody>

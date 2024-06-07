@@ -1,4 +1,4 @@
-builder.CreateFile("docx");
+builder.CreateFile("pdf");
 var oDocument = Api.GetDocument();
 var oDateForm = Api.CreateDateForm({"key": "Nowadays", "tip": "Enter current date", "required": true, "placeholder": "Date", "format": "mm.dd.yyyy", "lang": "en-US"});
 var oParagraph = oDocument.GetElement(0);
@@ -16,5 +16,5 @@ oParagraph.AddText("Date language: " + sLanguage);
 oParagraph.AddLineBreak();
 oParagraph.AddText("Date: " + new Date(nTime));
 oDocument.Push(oParagraph);
-builder.SaveFile("form", "ApiDateForm.pdf");
+builder.SaveFile("pdf", "ApiDateForm.pdf");
 builder.CloseFile();

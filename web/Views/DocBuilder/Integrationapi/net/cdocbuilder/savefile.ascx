@@ -21,7 +21,7 @@
             <td><em>nType</em></td>
             <td>int</td>
             <td>The type of the file to be saved set as a hexadecimal integer for the .Net code.
-            For the <em>.docbuilder</em> script file the following values are possible: <b>docx</b>, <b>odt</b>, <b>rtf</b>, <b>txt</b>, <b>pptx</b>, <b>xlsx</b>, <b>ods</b>, <b>csv</b>, <b>pdf</b>, <b>form</b>
+            For the <em>.docbuilder</em> script file the following values are possible: <b>docx</b>, <b>odt</b>, <b>rtf</b>, <b>txt</b>, <b>pptx</b>, <b>xlsx</b>, <b>ods</b>, <b>csv</b>, <b>pdf</b>
             (see <a href="<%= Url.Action("integrationapi/default") %>#format-types">AVS_OFFICESTUDIO_FILE_XXX</a> values).</td>
         </tr>
         <tr class="tablerow">
@@ -85,17 +85,4 @@ oBuilder.SaveFile(OFFICESTUDIO_FILE_IMAGE, L"thumbnail.png", "&lt;m_oThumbnail&g
 <h4 class="header-gray">.docbuilder</h4>
 <pre>
 builder.SaveFile("image", "./thumbnail.png", "&lt;m_oThumbnail&gt;&lt;format&gt;4&lt;/format&gt;&lt;aspect&gt;1&lt;/aspect&gt;&lt;first&gt;false&lt;/first&gt;&lt;width&gt;1000&lt;/width&gt;&lt;height&gt;1000&lt;/height&gt;&lt;/m_oThumbnail&gt;");
-</pre>
-
-<h2 id="SaveForm">Saving form documents</h2>
-<p><b>ONLYOFFICE Document Builder</b> allows you to save your documents as PDF forms. To do this, use the <b>form</b> value as the <em>nType</em> parameter.
-If you use the <b>pdf</b> type, the document will be saved as a regular <em>pdf</em> file.</p>
-<h2>Example</h2>
-<h4 class="header-gray">Saving PDF form</h4>
-<pre>
-builder.SaveFile("form", "myform.pdf")
-</pre>
-<h4 class="header-gray">Saving regular PDF</h4>
-<pre>
-builder.SaveFile("pdf", "myform.pdf")
 </pre>

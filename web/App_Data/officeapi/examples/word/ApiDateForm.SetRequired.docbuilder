@@ -1,4 +1,4 @@
-builder.CreateFile("docx");
+builder.CreateFile("pdf");
 var oDocument = Api.GetDocument();
 var oDateForm = Api.CreateDateForm({"key": "Nowadays", "tip": "Enter current date", "required": true, "placeholder": "Date", "format": "mm.dd.yyyy", "lang": "en-US"});
 var oParagraph = oDocument.GetElement(0);
@@ -8,5 +8,5 @@ var bRequired = oDateForm.IsRequired();
 oParagraph = Api.CreateParagraph();
 oParagraph.AddText("The first form from this document is required: " + bRequired);
 oDocument.Push(oParagraph);
-builder.SaveFile("form", "SetRequired.pdf");
+builder.SaveFile("pdf", "SetRequired.pdf");
 builder.CloseFile();

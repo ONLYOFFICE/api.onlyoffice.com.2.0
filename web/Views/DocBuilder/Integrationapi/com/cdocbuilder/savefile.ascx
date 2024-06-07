@@ -20,7 +20,7 @@
         <tr class="tablerow">
             <td><em>type</em></td>
             <td>BSTR</td>
-            <td>The file extension. The following values are possible: <b>docx</b>, <b>odt</b>, <b>rtf</b>, <b>txt</b>, <b>pptx</b>, <b>xlsx</b>, <b>ods</b>, <b>csv</b>, <b>pdf</b>, <b>form</b>
+            <td>The file extension. The following values are possible: <b>docx</b>, <b>odt</b>, <b>rtf</b>, <b>txt</b>, <b>pptx</b>, <b>xlsx</b>, <b>ods</b>, <b>csv</b>, <b>pdf</b>
             (see <a href="<%= Url.Action("integrationapi/default") %>#format-types">AVS_OFFICESTUDIO_FILE_XXX</a> values).</td>
         </tr>
         <tr class="tablerow">
@@ -50,17 +50,4 @@ oBuilder-&gt;Dispose();
 <h4 class="header-gray">.docbuilder</h4>
 <pre>
 builder.SaveFile("docx", "result.docx");
-</pre>
-
-<h2 id="SaveForm">Saving form documents</h2>
-<p><b>ONLYOFFICE Document Builder</b> allows you to save your documents as PDF forms. To do this, use the <b>form</b> value as the <em>type</em> parameter.
-If you use the <b>pdf</b> type, the document will be saved as a regular <em>pdf</em> file.</p>
-<h2>Example</h2>
-<h4 class="header-gray">Saving PDF form</h4>
-<pre>
-builder.SaveFile("form", "myform.pdf")
-</pre>
-<h4 class="header-gray">Saving regular PDF</h4>
-<pre>
-builder.SaveFile("pdf", "myform.pdf")
 </pre>

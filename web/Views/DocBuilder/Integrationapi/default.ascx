@@ -154,10 +154,6 @@ CDocBuilder.SaveFile(AVS_OFFICESTUDIO_FILE_DOCUMENT_DOCX, file_path);
                     <td>"html"</td>
                     <td>AVS_OFFICESTUDIO_FILE_DOCUMENT_HTML_IN_CONTAINER</td>
                 </tr>
-                <tr class="tablerow">
-                    <td>"form"</td>
-                    <td>AVS_OFFICESTUDIO_FILE_DOCUMENT_OFORM_PDF</td>
-                </tr>
             </tbody>
         </table>
         <div class="mobile-content"></div>

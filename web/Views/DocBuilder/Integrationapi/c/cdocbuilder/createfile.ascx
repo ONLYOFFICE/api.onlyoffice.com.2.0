@@ -21,7 +21,7 @@
             <td><em>sExtension</em></td>
             <td>const&nbsp;wchar_t*
             </td>
-            <td>The file extension. The following values are possible: <b>docx</b>, <b>xlsx</b>, <b>pptx</b>, <b>pdf</b>, or <b>form</b>
+            <td>The file extension. The following values are possible: <b>docx</b>, <b>xlsx</b>, <b>pptx</b>, or <b>pdf</b>
             (see <a href="<%= Url.Action("integrationapi/default") %>#format-types">AVS_OFFICESTUDIO_FILE_XXX</a> values).</td>
         </tr>
     </tbody>
