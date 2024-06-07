@@ -226,7 +226,7 @@ There are seven form types: <em>text field</em>, <em>combo box</em>, <em>dropdow
 <div class="global-type-definitions">
 <span class="anchor-position" id="CreateNewDoc">&nbsp;</span>
 <h2>Creating a new form document</h2>
-    <p>To create a form document, the <a href="<%= Url.Action("integrationapi/c/cdocbuilder/createfile", "docbuilder") %>">CreateFile</a> method must be used with the <em>"docx"</em>, <em>"pdf"</em>, or <em>"form"</em> values for the  first parameter.
+    <p>To create a form document, the <a href="<%= Url.Action("integrationapi/c/cdocbuilder/createfile", "docbuilder") %>">CreateFile</a> method must be used with the <em>"docx"</em>, <em>"pdf"</em>, or <em>"form"</em> values for the first parameter.
     In this case, these values are equal, so you can use any of them.</p>
     <p>To save the ready document as a form, you need to use the <a href="<%= Url.Action("integrationapi/c/cdocbuilder/savefile", "docbuilder") %>">SaveFile</a> method with the <em>"form"</em> value as the first parameter.</p>
     <p>The simplest example form document with a single text form containing the "John Smith" text can be built with the help of <b>ONLYOFFICE Document Builder</b> using the following code:</p>
