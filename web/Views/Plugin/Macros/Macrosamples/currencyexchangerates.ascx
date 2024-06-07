@@ -68,9 +68,9 @@ When you click on it, a macro is executed, the table is filled in with the relev
 </pre>
 
 <p>Methods used:
-<a href="<%= Url.Action("spreadsheetapi/api/getsheet", "docbuilder") %>">GetSheet</a>,
-<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrangebynumber", "docbuilder") %>">GetRangeByNumber</a>,
-<a href="<%= Url.Action("spreadsheetapi/apirange/setvalue", "docbuilder") %>">SetValue</a>
+<a href="<%= Url.Action("spreadsheetapi/api/getsheet", "officeapi") %>">GetSheet</a>,
+<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrangebynumber", "officeapi") %>">GetRangeByNumber</a>,
+<a href="<%= Url.Action("spreadsheetapi/apirange/setvalue", "officeapi") %>">SetValue</a>
 </p>
 
 <div class="header-gray">Result</div>

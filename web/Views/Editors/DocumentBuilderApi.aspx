@@ -96,7 +96,7 @@
 
     <p>
         You can find more information about the <em>.docbuilder</em> file syntax <a href="<%= Url.Action("integrationapi/usingdocbuilderfile", "DocBuilder") %>">here</a>.
-        Please read <b>ONLYOFFICE Document Builder</b> <a href="<%= Url.Action("gettingstarted", "DocBuilder") %>">API documentation</a> for the detailed information on what classes and methods are used to generate the documents with the help of <em>.docbuilder</em> files.
+        Please read <a href="<%= Url.Action("basic", "officeapi") %>">Office JavaScript API documentation</a> for the detailed information on what classes and methods are used to generate the documents with the help of <em>.docbuilder</em> files.
     </p>
 
     <div id="sample-sync-first" class="header-gray copy-link">Sample of JSON object sent to <b>document builder service</b> for the first asynchronous request</div>

@@ -15,8 +15,8 @@
 })();</pre>
 
 <p>Methods used: 
-<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "docbuilder") %>">GetActiveSheet</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apiworksheet/addchart", "docbuilder") %>">AddChart</a>
+<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "officeapi") %>">GetActiveSheet</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apiworksheet/addchart", "officeapi") %>">AddChart</a>
 </p>
 
 <div class="header-gray">Reference Microsoft VBA macro code</div>

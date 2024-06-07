@@ -11,7 +11,7 @@
       "title": "Docs",
       "description": "In this section, you will learn how to bring document editing and co-authoring to your web app users, set up, configure and integrate ONLYOFFICE Docs, extend its functionality using your own plugins/macros, and integrate document editors into the desktop applications. You will also find the information on how to use Document Builder to generate documents easily without running document editors.",
       "abstract": "ONLYOFFICE Docs is a collaborative office suite that includes editors for text documents, spreadsheets, presentations, fillable forms, and PDFs.",
-      "sections": [ "editors", "docbuilder", "plugin", "desktop" ]
+      "sections": [ "editors", "officeapi", "plugin", "docbuilder", "desktop" ]
    },
    {
       "id": "portals",
@@ -56,9 +56,9 @@
       "parent": "docs"
    },
    {
-      "id":"docbuilder",
-      "title":"Document Builder",
-      "description":"In this section, you will learn how to generate documents easily without running a document editor and integrate Document builder into your DMS, CRM system, etc.",
+      "id":"officeapi",
+      "title":"Office API",
+      "description":"In this section, you will learn how to use our JavaScript library to write code for your plugins, macros, builder scripts, etc. This library contains classes and methods for every document type: Text document API, Spreadsheet API, Presentation API, and Form API.",
       "version": "8.1",
       "parent": "docs"
    },
@@ -67,6 +67,13 @@
       "title":"Plugins and Macros",
       "description":"In this section, you will learn how to extend the ONLYOFFICE Docs functionality by creating your own plugins/macros. Here you will find the information about their structure, development lifecycle, and examples.",
       "version":"8.0",
+      "parent": "docs"
+   },
+   {
+      "id":"docbuilder",
+      "title":"Document Builder",
+      "description":"In this section, you will learn how to generate documents easily without running a document editor and integrate Document builder into your DMS, CRM system, etc.",
+      "version": "8.0",
       "parent": "docs"
    },
    {

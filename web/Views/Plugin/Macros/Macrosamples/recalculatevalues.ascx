@@ -20,9 +20,9 @@
 })();</pre>
 
 <p>Methods used:
-<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "docbuilder") %>">GetActiveSheet</a>,
-<a href="<%= Url.Action("spreadsheetapi/api/getrange", "docbuilder") %>">GetRange</a>,
-<a href="<%= Url.Action("spreadsheetapi/apirange/setvalue", "docbuilder") %>">SetValue</a>
+<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "officeapi") %>">GetActiveSheet</a>,
+<a href="<%= Url.Action("spreadsheetapi/api/getrange", "officeapi") %>">GetRange</a>,
+<a href="<%= Url.Action("spreadsheetapi/apirange/setvalue", "officeapi") %>">SetValue</a>
 </p>
 
 <div class="header-gray">Result</div>

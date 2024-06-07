@@ -30,10 +30,10 @@
 })();</pre>
 
 <p>Methods used:
-<a href="<%= Url.Action("textdocumentapi/api/getdocument", "docbuilder") %>">GetDocument</a>,
-<a href="<%= Url.Action("textdocumentapi/api/createparagraph", "docbuilder") %>">CreateParagraph</a>,
-<a href="<%= Url.Action("textdocumentapi/apiparagraph/addtext", "docbuilder") %>">AddText</a>,
-<a href="<%= Url.Action("textdocumentapi/apidocument/insertcontent", "docbuilder") %>">InsertContent</a>
+<a href="<%= Url.Action("textdocumentapi/api/getdocument", "officeapi") %>">GetDocument</a>,
+<a href="<%= Url.Action("textdocumentapi/api/createparagraph", "officeapi") %>">CreateParagraph</a>,
+<a href="<%= Url.Action("textdocumentapi/apiparagraph/addtext", "officeapi") %>">AddText</a>,
+<a href="<%= Url.Action("textdocumentapi/apidocument/insertcontent", "officeapi") %>">InsertContent</a>
 </p>
 
 <div class="header-gray">Result</div>

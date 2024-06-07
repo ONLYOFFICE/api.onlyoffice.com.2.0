@@ -15,10 +15,10 @@
 })();</pre>
 
 <p>Methods used: 
-<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "docbuilder") %>">GetActiveSheet</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange", "docbuilder") %>">GetRange</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apirange/setfillcolor", "docbuilder") %>">SetFillColor</a>, 
-<a href="<%= Url.Action("spreadsheetapi/api/createcolorfromrgb", "docbuilder") %>">CreateColorFromRGB</a>
+<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "officeapi") %>">GetActiveSheet</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange", "officeapi") %>">GetRange</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apirange/setfillcolor", "officeapi") %>">SetFillColor</a>, 
+<a href="<%= Url.Action("spreadsheetapi/api/createcolorfromrgb", "officeapi") %>">CreateColorFromRGB</a>
 </p>
 
 <div class="header-gray">Reference Microsoft VBA macro code</div>

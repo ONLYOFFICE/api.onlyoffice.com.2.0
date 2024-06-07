@@ -96,10 +96,10 @@
 })();</pre>
 
 <p>Methods used: 
-<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "docbuilder") %>">GetActiveSheet</a>,
-<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange", "docbuilder") %>">GetRange</a>,
-<a href="<%= Url.Action("spreadsheetapi/apirange/setvalue", "docbuilder") %>">SetValue</a>,
-<a href="<%= Url.Action("spreadsheetapi/apirange/gettext", "docbuilder") %>">GetText</a>
+<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "officeapi") %>">GetActiveSheet</a>,
+<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange", "officeapi") %>">GetRange</a>,
+<a href="<%= Url.Action("spreadsheetapi/apirange/setvalue", "officeapi") %>">SetValue</a>,
+<a href="<%= Url.Action("spreadsheetapi/apirange/gettext", "officeapi") %>">GetText</a>
 </p>
 <note>For the macros to function, replace <em>yourAPIkey</em> with the API key obtained from <a href="https://www.geoapify.com/" target="_blank">Geoapify</a>.</note>
 

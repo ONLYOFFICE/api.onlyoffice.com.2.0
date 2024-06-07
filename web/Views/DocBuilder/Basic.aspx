@@ -18,9 +18,12 @@
         <span class="pvl_product">ONLYOFFICE Document Builder</span><span class="pvl_version">v<%= Products.Get("docbuilder").Version %></span>
     </div>
 
-    <p><b>ONLYOFFICE Document Builder</b> is a C++ library used to create and edit Office Open XML format files (documents, spreadsheets and presentations) and save them to DOCX, XSLX, PPTX and PDF formats.</p>
+    <p><b>ONLYOFFICE Document Builder</b> is a C++ library used to create and edit Office Open XML format files (documents, spreadsheets and presentations)
+        and save them to DOCX, XSLX, PPTX and PDF formats.</p>
     <p>It allows you to build a document easily without the need to actually run a document processing editor.
-        It also allows the developers to automate document building using the templates you create or inserting the data from some database of yours into a document or a set of documents. It has all the features of a common document editor but is lightweight and can be easily integrated into your document management system, CRM system, etc. using its JavaScript API.
+        It also allows the developers to automate document building using the templates you create or inserting the data from some database of yours into a document
+        or a set of documents. It has all the features of a common document editor but is lightweight and can be easily integrated
+        into your document management system, CRM system, etc. using its <a href="<%= Url.Action("basic", "officeapi") %>">JavaScript API</a>.
     </p>
 
     <h2>How to use</h2>
@@ -44,11 +47,6 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="tablerow">
-                <td><a href="<%= Url.Action("gettingstarted") %>">Builder.API</a></td>
-                <td>The JavaScript API to work with the document editor. It contains classes and methods for every document type: <a href="<%= Url.Action("textdocumentapi") %>">Text document API</a>,
-                    <a href="<%= Url.Action("spreadsheetapi") %>">Spreadsheet API</a>, <a href="<%= Url.Action("presentationapi") %>">Presentation API</a>, and <a href="<%= Url.Action("formapi") %>">Form API</a>.</td>
-            </tr>
             <tr class="tablerow">
                 <td><a href="<%= Url.Action("framework") %>">Builder.Framework</a></td>
                 <td>A software tool that contains a collection of libraries, classes, and functions that are used to develop applications.

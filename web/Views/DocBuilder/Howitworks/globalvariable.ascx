@@ -15,7 +15,7 @@ GlobalVariable["CommentsReport"] = oDocument.GetCommentsReport();
 <pre>
 var oCommentsReport = GlobalVariable["CommentsReport"];
 </pre>
-<p>The example below shows how <em>GlobalVariable</em> is used. For more information visit the <a href="<%= Url.Action("textdocumentapi/apidocument/getcommentsreport") %>">ApiDocument.GetCommentsReport</a> and <a href="<%= Url.Action("textdocumentapi/apidocument/getreviewreport") %>">ApiDocument.GetReviewReport</a> sections.</p>
+<p>The example below shows how <em>GlobalVariable</em> is used. For more information visit the <a href="<%= Url.Action("textdocumentapi/apidocument/getcommentsreport", "officeapi") %>">ApiDocument.GetCommentsReport</a> and <a href="<%= Url.Action("textdocumentapi/apidocument/getreviewreport", "officeapi") %>">ApiDocument.GetReviewReport</a> sections.</p>
 <h2>Example</h2>
 <pre>builder.OpenFile("https://example.com/DocumentWithComments.docx");
 var oDocument = Api.GetDocument();

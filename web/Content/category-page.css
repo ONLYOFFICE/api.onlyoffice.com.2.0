@@ -143,6 +143,10 @@
     background-image: url("img/category-page/workspace-api.svg");
 }
 
+.category-item-title.workspaceapi:before {
+    background-image: url("img/category-page/workspace-api.svg");
+}
+
 .category-item-title.apisystem:before {
     background-image: url("img/category-page/self-hosted.svg");
 }

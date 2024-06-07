@@ -67,12 +67,12 @@
 })();</pre>
 
 <p>Methods used: 
-<a href="<%= Url.Action("spreadsheetapi/api/createcolorfromrgb", "docbuilder") %>">CreateColorFromRGB</a>
-<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "docbuilder") %>">GetActiveSheet</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getselection", "docbuilder") %>">GetSelection</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apirange/foreach", "docbuilder") %>">ForEach</a>,
-<a href="<%= Url.Action("spreadsheetapi/apirange/getvalue", "docbuilder") %>">GetValue</a>,
-<a href="<%= Url.Action("spreadsheetapi/apirange/setfillcolor", "docbuilder") %>">SetFillColor</a>
+<a href="<%= Url.Action("spreadsheetapi/api/createcolorfromrgb", "officeapi") %>">CreateColorFromRGB</a>
+<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "officeapi") %>">GetActiveSheet</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getselection", "officeapi") %>">GetSelection</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apirange/foreach", "officeapi") %>">ForEach</a>,
+<a href="<%= Url.Action("spreadsheetapi/apirange/getvalue", "officeapi") %>">GetValue</a>,
+<a href="<%= Url.Action("spreadsheetapi/apirange/setfillcolor", "officeapi") %>">SetFillColor</a>
 </p>
 
 <div class="header-gray">Reference Microsoft VBA macro code</div>

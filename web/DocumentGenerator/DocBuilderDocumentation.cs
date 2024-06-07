@@ -64,7 +64,7 @@ namespace ASC.Api.Web.Help.DocumentGenerator
 
             _logger = LogManager.GetLogger("ASC.DocumentBuilder");
             _logger.Debug("Generate docbuilder documentations");
-            Load("docbuilder");
+            Load("officeapi");
         }
 
         protected override void CheckSharedMethods()
@@ -170,11 +170,11 @@ namespace ASC.Api.Web.Help.DocumentGenerator
                 {
                     result.Add(new SearchResult
                     {
-                        Module = "docbuilder",
+                        Module = "officeapi",
                         Name = action,
                         Resource = Highliter.HighliteString(section.Name, query).ToHtmlString(),
                         Description = Highliter.HighliteString(section.Description, query).ToHtmlString(),
-                        Url = url.Action(action, "docbuilder")
+                        Url = url.Action(action, "officeapi")
                     });
                 }
 
@@ -185,11 +185,11 @@ namespace ASC.Api.Web.Help.DocumentGenerator
                         var methodAction = string.Format("{0}/{1}", action, method.Name);
                         result.Add(new SearchResult
                         {
-                            Module = "docbuilder",
+                            Module = "officeapi",
                             Name = methodAction,
                             Resource = Highliter.HighliteString(method.Name, query).ToHtmlString(),
                             Description = Highliter.HighliteString(method.Description, query).ToHtmlString(),
-                            Url = url.Action(methodAction, "docbuilder")
+                            Url = url.Action(methodAction, "officeapi")
                         });
                     }
                 }
@@ -199,10 +199,10 @@ namespace ASC.Api.Web.Help.DocumentGenerator
             {
                 if (type.Key.ToLowerInvariant().Contains(q) || (!string.IsNullOrEmpty(type.Value.Description) && type.Value.Description.ToLowerInvariant().Contains(q)))
                 {
-                    var action = string.Format("{0}#{1}", url.Action("global", "docbuilder"), type.Key);
+                    var action = string.Format("{0}#{1}", url.Action("global", "officeapi"), type.Key);
                     result.Add(new SearchResult
                     {
-                        Module = "docbuilder",
+                        Module = "officeapi",
                         Name = action,
                         Resource = Highliter.HighliteString(type.Key, query).ToHtmlString(),
                         Description = Highliter.HighliteString(type.Value.Description, query).ToHtmlString(),
@@ -216,7 +216,7 @@ namespace ASC.Api.Web.Help.DocumentGenerator
 
         protected override void FillPaths()
         {
-            var basePath = "/docbuilder";
+            var basePath = "/officeapi";
 
             foreach (var kv in _entries)
             {

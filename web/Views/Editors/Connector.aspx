@@ -103,7 +103,7 @@ connector.attachEvent("onChangeContentControl", function()
                         <td>command</td>
                         <td>Defines the command written in JavaScript which purpose is to form structured data which can be inserted into the resulting document file
                             (formatted paragraphs, tables, text parts, and separate words, etc.). Then the data is sent to the editors.
-                            The command must be compatible with <a href="<%= Url.Action("basic", "docbuilder") %>">ONLYOFFICE Document Builder</a> syntax.</td>
+                            The command must be compatible with <a href="<%= Url.Action("basic", "officeapi") %>">Office JavaScript API</a> syntax.</td>
                         <td>function</td>
                     </tr>
                     <tr class="tablerow">

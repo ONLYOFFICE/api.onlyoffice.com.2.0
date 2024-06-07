@@ -15,8 +15,8 @@
 })();</pre>
 
 <p>Methods used: 
-<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "docbuilder") %>">GetActiveSheet</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apiworksheet/setcolumnwidth", "docbuilder") %>">SetColumnWidth</a>
+<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "officeapi") %>">GetActiveSheet</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apiworksheet/setcolumnwidth", "officeapi") %>">SetColumnWidth</a>
 </p>
 
 <div class="header-gray">Reference Microsoft VBA macro code</div>

@@ -20,9 +20,9 @@
 })();</pre>
 
 <p>Methods used:
-<a href="<%= Url.Action("presentationapi/api/getpresentation", "docbuilder") %>">GetPresentation</a>,
-<a href="<%= Url.Action("presentationapi/apipresentation/getslidebyindex", "docbuilder") %>">GetSlideByIndex</a>,
-<a href="<%= Url.Action("presentationapi/apislide/getallshapes", "docbuilder") %>">GetAllShapes</a>
+<a href="<%= Url.Action("presentationapi/api/getpresentation", "officeapi") %>">GetPresentation</a>,
+<a href="<%= Url.Action("presentationapi/apipresentation/getslidebyindex", "officeapi") %>">GetSlideByIndex</a>,
+<a href="<%= Url.Action("presentationapi/apislide/getallshapes", "officeapi") %>">GetAllShapes</a>
 </p>
 
 <div class="header-gray">Result</div>

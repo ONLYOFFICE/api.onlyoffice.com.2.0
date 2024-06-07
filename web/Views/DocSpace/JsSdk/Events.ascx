@@ -30,7 +30,7 @@ var onAppError = function () {
 
 var docSpace = DocSpace.SDK.initManager({
     "events": {
-        "onAppError": null,
+        "onAppError": onAppError,
         ...
     },
     ...
@@ -49,7 +49,7 @@ var onAppReady = function () {
 
 var docSpace = DocSpace.SDK.initManager({
     "events": {
-        "onAppReady": null,
+        "onAppReady": onAppReady,
         ...
     },
     ...
@@ -68,7 +68,7 @@ var onAuthSuccess = function () {
 
 var docSpace = DocSpace.SDK.initManager({
     "events": {
-        "onAuthSuccess ": null,
+        "onAuthSuccess ": onAuthSuccess,
         ...
     },
     ...
@@ -88,7 +88,7 @@ var onCloseCallback = function () {
 
 var docSpace = DocSpace.SDK.initRoomSelector({
     "events": {
-        "onCloseCallback": null,
+        "onCloseCallback": onCloseCallback,
         ...
     },
     ...
@@ -108,7 +108,7 @@ var onDownload = function () {
 
 var docSpace = DocSpace.SDK.initManager({
     "events": {
-        "onDownload": null,
+        "onDownload": onDownload,
         ...
     },
     ...
@@ -127,7 +127,7 @@ var onEditorCloseCallback = function () {
 
 var docSpace = DocSpace.SDK.initEditor({
     "events": {
-        "onEditorCloseCallback": null,
+        "onEditorCloseCallback": onEditorCloseCallback,
         ...
     },
     ...
@@ -147,7 +147,7 @@ var onSelectCallback = function () {
 
 var docSpace = DocSpace.SDK.initRoomSelector({
     "events": {
-        "onSelectCallback": null,
+        "onSelectCallback": onSelectCallback,
         ...
     },
     ...
@@ -219,7 +219,7 @@ var onSignOut = function () {
 
 var docSpace = DocSpace.SDK.initManager({
     "events": {
-        "onSignOut ": null,
+        "onSignOut ": onSignOut,
         ...
     },
     ...

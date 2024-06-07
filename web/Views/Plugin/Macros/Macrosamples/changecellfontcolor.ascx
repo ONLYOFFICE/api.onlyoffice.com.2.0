@@ -15,9 +15,9 @@
 })();</pre>
 
 <p>Methods used: 
-<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "docbuilder") %>">GetActiveSheet</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange", "docbuilder") %>">GetRange</a>, 
-<a href="<%= Url.Action("spreadsheetapi/apirange/setfontcolor", "docbuilder") %>">SetFontColor</a> 
+<a href="<%= Url.Action("spreadsheetapi/api/getactivesheet", "officeapi") %>">GetActiveSheet</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apiworksheet/getrange", "officeapi") %>">GetRange</a>, 
+<a href="<%= Url.Action("spreadsheetapi/apirange/setfontcolor", "officeapi") %>">SetFontColor</a> 
 </p>
 
 <div class="header-gray">Reference Microsoft VBA macro code</div>

@@ -6,7 +6,23 @@
     <% if (string.Equals(ConfigurationManager.AppSettings["offline_cache"], bool.TrueString, StringComparison.OrdinalIgnoreCase)){ %>manifest="<%= Url.RouteUrl("Cache") %>" <% } %>>
 <head>
     <meta charset="UTF-8" />
+    <% if (Html.IfController("Home") && Html.IfAction("Index"))
+        { %>
+    <meta name="description" content="ONLYOFFICE API Documentation: read our detailed documentation for developers to learn the API fundamentals of ONLYOFFICE products and find out which API methods and events can be used in your applications. Open our How to ... tutorials which will help you understand how product features work and how to implement them step by step in your project. You can also download test samples and experiment with them following our instructions." />
+    <% } else if (Html.IfController("Docs") && Html.IfAction("Index"))
+        { %>
+        <meta name="description" content="ONLYOFFICE Docs API Documentation. In this section, you will learn how to bring document editing and co-authoring to your web app users, set up, configure and integrate ONLYOFFICE Docs, extend its functionality using your own plugins/macros, and integrate document editors into the desktop applications. You will also find the information on how to use Document Builder to generate documents easily without running document editors." />
+    <% } else if (Html.IfController("DocSpace") && Html.IfAction("Index"))
+        { %>
+        <meta name="description" content="ONLYOFFICE DocSpace API Documentation. In this section, you will learn how to integrate ONLYOFFICE DocSpace into your own application and interact with its backend using the DocSpace API Backend. You will also find the information on how to embed DocSpace using JavaScript SDK, create your own plugins with our Plugins SDK, and host a portal on your own servers using our methods for hosting providers." />
+    <% } else if (Html.IfController("Portals") && Html.IfAction("Index"))
+        { %>
+        <meta name="description" content="ONLYOFFICE Workspace API Documentation. In this section, you will learn how to integrate ONLYOFFICE Workspace into your own application and interact with its backend using the Workspace API Backend. This solution is provided without editors, you need to install ONLYOFFICE Docs separately. You can also host a portal and interact with it using our methods for hosting providers." />
+    <% }
+        else
+       { %>
     <meta name="description" content="ONLYOFFICE Developer API" />
+    <% } %>
     <meta name="author" content="Ascensio System SIA" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="https://download.onlyoffice.com/assets/fb/fb_icon_325x325.jpg" />

@@ -90,8 +90,8 @@
 <dl class="faq_block" id="macros_2">
     <dt>Where can I find methods for writing macros?</dt>
     <dd>
-        <p>Macros use JavaScript language syntax and <b>ONLYOFFICE Document Builder</b> <a href="<%= Url.Action("gettingstarted", "docbuilder") %>">API</a> scripting notation, 
-            thus the methods available in JavaScript and all the methods supported by <b>ONLYOFFICE Document Builder</b> are also supported by macros.</p>
+        <p>Macros use JavaScript language syntax and <a href="<%= Url.Action("basic", "officeapi") %>">Office JavaScript API</a> scripting notation, 
+            thus the methods available in JavaScript and all the methods supported by <b>Office API</b> are also supported by macros.</p>
     </dd>
 </dl>
 <dl class="faq_block" id="macros_3">

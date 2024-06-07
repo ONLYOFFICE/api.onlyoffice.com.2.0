@@ -379,12 +379,16 @@
     background-image: url("img/main-page/workspace-api.svg");
 }
 
+.main-item-links a.workspaceapi:before {
+    background-image: url("img/main-page/workspace-api.svg");
+}
+
 .main-item-links a.apisystem:before {
     background-image: url("img/main-page/self-hosted.svg");
 }
 
 .main-item-links a.officeapi:before {
-    background-image: url("img/main-page/api.svg");
+    background-image: url("img/main-page/office-api.svg");
 }
 
 .main-item-links a.editors:before {
