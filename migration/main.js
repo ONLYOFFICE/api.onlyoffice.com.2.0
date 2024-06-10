@@ -1,5 +1,7 @@
 // @ts-check
 
+// todo: update urls
+// https://github.com/ONLYOFFICE/api.onlyoffice.com/blob/develop/web/Web.config#L140-L172
 // todo: refactor it
 // how we can update reference links in comments?
 
