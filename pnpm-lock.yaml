@@ -111,6 +111,25 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/combobox-container-html-element:
+    dependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@web/dev-server':
+        specifier: ^0.4.4
+        version: 0.4.4
+      '@web/dev-server-esbuild':
+        specifier: ^1.0.2
+        version: 1.0.2
+      esbuild:
+        specifier: ^0.21.4
+        version: 0.21.4
+      preact:
+        specifier: ^10.22.0
+        version: 10.22.0
+
   packages/command:
     dependencies:
       '@types/node':
