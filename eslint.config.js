@@ -117,7 +117,6 @@ function config() {
         "no-useless-concat": e,
         "no-useless-constructor": e,
         "no-useless-rename": e,
-        "no-useless-return": e,
         "no-var": e,
         "object-shorthand": e,
         "one-var": [e, "never"],
