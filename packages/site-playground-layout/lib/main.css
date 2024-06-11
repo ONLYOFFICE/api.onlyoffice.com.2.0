@@ -1,0 +1,20 @@
+.playground-l {
+  --mw: 1176px;
+  --pd: calc((100% - var(--mw)) / 2);
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--mw);
+  padding-left: var(--pd);
+  padding-right: var(--pd);
+}
+
+.playground-l__before .content {
+  max-width: 832px;
+  margin: 0 auto;
+}
+
+.playground-l__playground {
+  margin-top: 20px;
+}
