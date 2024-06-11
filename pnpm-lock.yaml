@@ -10701,6 +10701,14 @@ snapshots:
       preact: 10.19.6
       ts-dedent: 2.2.0
 
+  '@storybook/preact@8.0.0(preact@10.22.0)':
+    dependencies:
+      '@storybook/global': 5.0.0
+      '@storybook/preview-api': 8.0.0
+      '@storybook/types': 8.0.0
+      preact: 10.22.0
+      ts-dedent: 2.2.0
+
   '@storybook/preview-api@8.0.0':
     dependencies:
       '@storybook/channels': 8.0.0

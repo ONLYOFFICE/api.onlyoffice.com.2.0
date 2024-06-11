@@ -13,9 +13,8 @@ function config(): StorybookConfig {
       "storybook-addon-paddings"
     ],
     stories: [
-      "../../ui/*/lib/*.stories.tsx",
-      "../../site/components/*/*.stories.tsx",
-      "./*.stories.tsx"
+      "../../packages/site-*/lib/*.story.tsx",
+      "../../packages/ui-*/lib/*.story.tsx"
     ],
     staticDirs: [
       "../../ui/font/static"
