@@ -1,5 +1,6 @@
 import "@onlyoffice/ui-select/client.ts"
 import "./client.ts"
+import {Client} from "@onlyoffice/server-client"
 import {
   BooleanType,
   EnumType,
@@ -21,6 +22,7 @@ import contentTabContainer from "@onlyoffice/ui-content-tab-container/main.css?i
 import formControl from "@onlyoffice/ui-form-control/main.css?inline"
 import select from "@onlyoffice/ui-select/main.css?inline"
 import type {Meta} from "@storybook/preact"
+import {useEffect} from "preact/hooks"
 import type {JSX} from "preact"
 import {h} from "preact"
 import siteDocumentEditorPlayground from "./main.css?inline"
@@ -44,9 +46,17 @@ const meta: Meta = {
 }
 
 export function Composition(): JSX.Element {
+  document.addEventListener("documentbuildererror", console.error)
+  document.addEventListener("documenteditorerror", console.error)
+  document.addEventListener("sitedocumenteditorplaygrounderror", console.error)
+
+  useEffect(() => {
+    setup()
+  }, [])
+
   const config = new Playground()
 
-  config.documentEditor.documentServerUrl = "http://localhost:3000/"
+  config.documentEditor.documentServerUrl = "http://0.0.0.0:3000/"
 
   let pr = new Property()
   pr.path = "documentType"
@@ -118,6 +128,17 @@ export function Composition(): JSX.Element {
   config.tabs.push(ta)
 
   return <SiteDocumentEditorPlayground config={config} />
+}
+
+async function setup(): Promise<void> {
+  const c = new Client()
+  c.baseURL = "http://0.0.0.0:4000/"
+
+  const sp = document.querySelector("site-document-editor-playground")
+  if (sp) {
+    sp.client = c
+    await sp.connectedCallback()
+  }
 }
 
 export default meta
