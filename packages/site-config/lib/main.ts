@@ -122,12 +122,12 @@ export interface InputPlayground {
 }
 
 export interface PlaygroundConfigurable {
-  documentEditor: DocumentEditor
+  documentEditor: DocumentEditorConfigurable
   tabs: TabConfigurable[]
 }
 
 export class PlaygroundConfig implements PlaygroundConfigurable {
-  documentEditor = new DocumentEditor()
+  documentEditor = new DocumentEditorConfig()
   tabs: TabConfig[] = []
 
   static fromJson(data: string): PlaygroundConfigurable {
@@ -147,7 +147,7 @@ export class PlaygroundConfig implements PlaygroundConfigurable {
     const pl = new PlaygroundConfig()
 
     if (ip.documentEditor) {
-      pl.documentEditor = DocumentEditor.fromInput(ip.documentEditor)
+      pl.documentEditor = DocumentEditorConfig.fromInput(ip.documentEditor)
     }
 
     if (ip.tabs) {
@@ -168,7 +168,10 @@ export class PlaygroundConfig implements PlaygroundConfigurable {
   ): PlaygroundConfigurable {
     const pl = new PlaygroundConfig()
 
-    pl.documentEditor = DocumentEditor.merge(a.documentEditor, b.documentEditor)
+    pl.documentEditor = DocumentEditorConfig.merge(
+      a.documentEditor,
+      b.documentEditor
+    )
 
     if (a.tabs.length !== 0 && b.tabs.length !== 0) {
       throw new Error("Merging of tabs is not supported")
@@ -192,7 +195,7 @@ export interface DocumentEditorConfigurable {
   config: PropertyConfigurable[]
 }
 
-export class DocumentEditor implements DocumentEditorConfigurable {
+export class DocumentEditorConfig implements DocumentEditorConfigurable {
   documentServerUrl = ""
   config: PropertyConfig[] = []
 
@@ -210,7 +213,7 @@ export class DocumentEditor implements DocumentEditorConfigurable {
   }
 
   static fromInput(ide: InputDocumentEditor): DocumentEditorConfigurable {
-    const de = new DocumentEditor()
+    const de = new DocumentEditorConfig()
 
     if (ide.documentServerUrl) {
       de.documentServerUrl = ide.documentServerUrl
@@ -230,7 +233,7 @@ export class DocumentEditor implements DocumentEditorConfigurable {
     a: DocumentEditorConfigurable,
     b: DocumentEditorConfigurable
   ): DocumentEditorConfigurable {
-    const de = new DocumentEditor()
+    const de = new DocumentEditorConfig()
 
     if (a.documentServerUrl && b.documentServerUrl) {
       de.documentServerUrl = b.documentServerUrl

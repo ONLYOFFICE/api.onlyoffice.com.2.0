@@ -3,7 +3,7 @@ import {test} from "uvu"
 import {
   BooleanType,
   Config,
-  DocumentEditor,
+  DocumentEditorConfig,
   EnumType,
   FunctionType,
   LiteralType,
@@ -292,123 +292,123 @@ test("PropertyConfig.fromYaml(): initializes a property from yaml", () => {
   is(p instanceof PropertyConfig, true)
 })
 
-test("DocumentEditor(): initializes a document editor", () => {
-  const d = new DocumentEditor()
-  is(d instanceof DocumentEditor, true)
+test("DocumentEditorConfig(): initializes a document editor", () => {
+  const d = new DocumentEditorConfig()
+  is(d instanceof DocumentEditorConfig, true)
 })
 
-test("DocumentEditor(): initializes a document editor with the correct order of keys", () => {
-  const d = new DocumentEditor()
+test("DocumentEditorConfig(): initializes a document editor with the correct order of keys", () => {
+  const d = new DocumentEditorConfig()
   const a = Object.keys(d)
   eq(a, ["documentServerUrl", "config"])
 })
 
-test("DocumentEditor(): initializes a document editor with an empty document server url", () => {
-  const d = new DocumentEditor()
+test("DocumentEditorConfig(): initializes a document editor with an empty document server url", () => {
+  const d = new DocumentEditorConfig()
   is(d.documentServerUrl, "")
 })
 
-test("DocumentEditor(): initializes a document editor with an empty config", () => {
-  const d = new DocumentEditor()
+test("DocumentEditorConfig(): initializes a document editor with an empty config", () => {
+  const d = new DocumentEditorConfig()
   eq(d.config, [])
 })
 
-test("DocumentEditor.fromJson(): initializes a document editor from json", () => {
+test("DocumentEditorConfig.fromJson(): initializes a document editor from json", () => {
   const j = "{}"
-  const d = DocumentEditor.fromJson(j)
-  is(d instanceof DocumentEditor, true)
+  const d = DocumentEditorConfig.fromJson(j)
+  is(d instanceof DocumentEditorConfig, true)
 })
 
-test("DocumentEditor.fromJson(): initializes a document editor from json with the document server url", () => {
+test("DocumentEditorConfig.fromJson(): initializes a document editor from json with the document server url", () => {
   const j = '{"documentServerUrl":"d"}'
-  const d = DocumentEditor.fromJson(j)
+  const d = DocumentEditorConfig.fromJson(j)
   is(d.documentServerUrl, "d")
 })
 
-test("DocumentEditor.fromJson(): initializes a document editor from json with the config", () => {
+test("DocumentEditorConfig.fromJson(): initializes a document editor from json with the config", () => {
   const j = '{"config":[{"path":"p"}]}'
-  const d = DocumentEditor.fromJson(j)
+  const d = DocumentEditorConfig.fromJson(j)
   const p = new PropertyConfig()
   p.path = "p"
   eq(d.config, [p])
 })
 
-test("DocumentEditor.fromYaml(): initializes a document editor from yaml", () => {
+test("DocumentEditorConfig.fromYaml(): initializes a document editor from yaml", () => {
   const y = ""
-  const d = DocumentEditor.fromYaml(y)
-  is(d instanceof DocumentEditor, true)
+  const d = DocumentEditorConfig.fromYaml(y)
+  is(d instanceof DocumentEditorConfig, true)
 })
 
-test("DocumentEditor.merge(): merges the document server url of two empty document editors", () => {
-  const a = new DocumentEditor()
-  const b = new DocumentEditor()
-  const c = DocumentEditor.merge(a, b)
+test("DocumentEditorConfig.merge(): merges the document server url of two empty document editors", () => {
+  const a = new DocumentEditorConfig()
+  const b = new DocumentEditorConfig()
+  const c = DocumentEditorConfig.merge(a, b)
   is(c.documentServerUrl, "")
 })
 
-test("DocumentEditor.merge(): uses the document server url of the first document editor when the second one is empty during a merge", () => {
-  const a = new DocumentEditor()
+test("DocumentEditorConfig.merge(): uses the document server url of the first document editor when the second one is empty during a merge", () => {
+  const a = new DocumentEditorConfig()
   a.documentServerUrl = "a"
-  const b = new DocumentEditor()
-  const c = DocumentEditor.merge(a, b)
+  const b = new DocumentEditorConfig()
+  const c = DocumentEditorConfig.merge(a, b)
   is(c.documentServerUrl, "a")
 })
 
-test("DocumentEditor.merge(): uses the document server url of the second document editor when the first one is empty during a merge", () => {
-  const a = new DocumentEditor()
-  const b = new DocumentEditor()
+test("DocumentEditorConfig.merge(): uses the document server url of the second document editor when the first one is empty during a merge", () => {
+  const a = new DocumentEditorConfig()
+  const b = new DocumentEditorConfig()
   b.documentServerUrl = "b"
-  const c = DocumentEditor.merge(a, b)
+  const c = DocumentEditorConfig.merge(a, b)
   is(c.documentServerUrl, "b")
 })
 
-test("DocumentEditor.merge(): uses the document server url of the second document editor when both are not empty during a merge", () => {
-  const a = new DocumentEditor()
+test("DocumentEditorConfig.merge(): uses the document server url of the second document editor when both are not empty during a merge", () => {
+  const a = new DocumentEditorConfig()
   a.documentServerUrl = "a"
-  const b = new DocumentEditor()
+  const b = new DocumentEditorConfig()
   b.documentServerUrl = "b"
-  const c = DocumentEditor.merge(a, b)
+  const c = DocumentEditorConfig.merge(a, b)
   is(c.documentServerUrl, "b")
 })
 
-test("DocumentEditor.merge(): merges the config of two empty document editors", () => {
-  const a = new DocumentEditor()
-  const b = new DocumentEditor()
-  const c = DocumentEditor.merge(a, b)
+test("DocumentEditorConfig.merge(): merges the config of two empty document editors", () => {
+  const a = new DocumentEditorConfig()
+  const b = new DocumentEditorConfig()
+  const c = DocumentEditorConfig.merge(a, b)
   eq(c.config, [])
 })
 
-test("DocumentEditor.merge(): uses the config of the first document editor when the second one is empty during a merge", () => {
-  const a = new DocumentEditor()
+test("DocumentEditorConfig.merge(): uses the config of the first document editor when the second one is empty during a merge", () => {
+  const a = new DocumentEditorConfig()
   const p = new PropertyConfig()
   p.path = "p"
   a.config = [p]
-  const b = new DocumentEditor()
-  const c = DocumentEditor.merge(a, b)
+  const b = new DocumentEditorConfig()
+  const c = DocumentEditorConfig.merge(a, b)
   eq(c.config, [p])
 })
 
-test("DocumentEditor.merge(): uses the config of the second document editor when the first one is empty during a merge", () => {
-  const a = new DocumentEditor()
-  const b = new DocumentEditor()
+test("DocumentEditorConfig.merge(): uses the config of the second document editor when the first one is empty during a merge", () => {
+  const a = new DocumentEditorConfig()
+  const b = new DocumentEditorConfig()
   const p = new PropertyConfig()
   p.path = "q"
   b.config = [p]
-  const c = DocumentEditor.merge(a, b)
+  const c = DocumentEditorConfig.merge(a, b)
   eq(c.config, [p])
 })
 
-test("DocumentEditor.merge(): throws an error when merging two document editor non-empty configs", () => {
-  const a = new DocumentEditor()
+test("DocumentEditorConfig.merge(): throws an error when merging two document editor non-empty configs", () => {
+  const a = new DocumentEditorConfig()
   const p = new PropertyConfig()
   p.path = "p"
   a.config = [p]
-  const b = new DocumentEditor()
+  const b = new DocumentEditorConfig()
   const q = new PropertyConfig()
   q.path = "q"
   b.config = [q]
   try {
-    const c = DocumentEditor.merge(a, b)
+    const c = DocumentEditorConfig.merge(a, b)
     un(`Expected an error, got ${c}`)
   } catch (e) {
     is(e instanceof Error && e.message, "Merging of config is not supported")
@@ -428,7 +428,7 @@ test("PlaygroundConfig(): initializes a playground with the correct order of key
 
 test("PlaygroundConfig(): initializes a playground with an empty document editor", () => {
   const p = new PlaygroundConfig()
-  eq(p.documentEditor, new DocumentEditor())
+  eq(p.documentEditor, new DocumentEditorConfig())
 })
 
 test("PlaygroundConfig(): initializes a playground with an empty tabs", () => {
@@ -445,7 +445,7 @@ test("PlaygroundConfig.fromJson(): initializes a playground from json", () => {
 test("PlaygroundConfig.fromJson(): initializes a playground from json with the document editor", () => {
   const j = '{"documentEditor":{"documentServerUrl":"d"}}'
   const p = PlaygroundConfig.fromJson(j)
-  const d = new DocumentEditor()
+  const d = new DocumentEditorConfig()
   d.documentServerUrl = "d"
   eq(p.documentEditor, d)
 })
@@ -469,12 +469,12 @@ test("PlaygroundConfig.merge(): merges the document editor of two empty playgrou
   const a = new PlaygroundConfig()
   const b = new PlaygroundConfig()
   const c = PlaygroundConfig.merge(a, b)
-  eq(c.documentEditor, new DocumentEditor())
+  eq(c.documentEditor, new DocumentEditorConfig())
 })
 
 test("PlaygroundConfig.merge(): merges the document editor of the first playground when the second one is empty", () => {
   const a = new PlaygroundConfig()
-  const d = new DocumentEditor()
+  const d = new DocumentEditorConfig()
   d.documentServerUrl = "a"
   a.documentEditor = d
   const b = new PlaygroundConfig()
@@ -485,7 +485,7 @@ test("PlaygroundConfig.merge(): merges the document editor of the first playgrou
 test("PlaygroundConfig.merge(): merges the document editor of the second playground when the first one is empty", () => {
   const a = new PlaygroundConfig()
   const b = new PlaygroundConfig()
-  const d = new DocumentEditor()
+  const d = new DocumentEditorConfig()
   d.documentServerUrl = "b"
   b.documentEditor = d
   const c = PlaygroundConfig.merge(a, b)
@@ -494,11 +494,11 @@ test("PlaygroundConfig.merge(): merges the document editor of the second playgro
 
 test("PlaygroundConfig.merge(): merges the document editor of the second playground when both are not empty", () => {
   const a = new PlaygroundConfig()
-  const d = new DocumentEditor()
+  const d = new DocumentEditorConfig()
   d.documentServerUrl = "a"
   a.documentEditor = d
   const b = new PlaygroundConfig()
-  const e = new DocumentEditor()
+  const e = new DocumentEditorConfig()
   e.documentServerUrl = "b"
   b.documentEditor = e
   const c = PlaygroundConfig.merge(a, b)
@@ -669,7 +669,7 @@ test("Config.fromJson(): initializes a config from json with the playground", ()
   const j = '{"playground":{"documentEditor":{"documentServerUrl":"d"}}}'
   const c = Config.fromJson(j)
   const p = new PlaygroundConfig()
-  const d = new DocumentEditor()
+  const d = new DocumentEditorConfig()
   d.documentServerUrl = "d"
   p.documentEditor = d
   eq(c.playground, p)
@@ -763,7 +763,7 @@ test("Config.merge(): merges the playground of two empty configs", () => {
 test("Config.merge(): uses the playground of the first config when the second one is empty", () => {
   const a = new Config()
   const p = new PlaygroundConfig()
-  const d = new DocumentEditor()
+  const d = new DocumentEditorConfig()
   d.documentServerUrl = "a"
   p.documentEditor = d
   a.playground = p
@@ -776,7 +776,7 @@ test("Config.merge(): uses the playground of the second config when the first on
   const a = new Config()
   const b = new Config()
   const p = new PlaygroundConfig()
-  const d = new DocumentEditor()
+  const d = new DocumentEditorConfig()
   d.documentServerUrl = "b"
   p.documentEditor = d
   b.playground = p
