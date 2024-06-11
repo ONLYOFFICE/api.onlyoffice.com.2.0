@@ -120,6 +120,44 @@ regular:
           foreground: scale.white
           border: scale.orange[0]
 
+    select-combobox:
+      neutral:
+        background: scale.gray[7]
+        foreground: hsl(0, 0%, 67%)
+        border: hsl(0, 0%, 67%)
+        outline: scale.orange[1]
+        hover:
+          background: scale.gray[6]
+          foreground: hsl(0, 0%, 67%)
+          border: scale.black
+        active:
+          background: scale.white
+          foreground: scale.black
+          border: scale.black
+        disabled:
+          background: red
+          foreground: red
+          border: red
+
+    select-option:
+      neutral:
+        background: scale.gray[7]
+        foreground: hsl(0, 0%, 67%)
+        border: hsl(0, 0%, 67%)
+        outline: scale.orange[1]
+        hover:
+          background: scale.gray[6]
+          foreground: hsl(0, 0%, 67%)
+          border: scale.black
+        active:
+          background: scale.white
+          foreground: scale.black
+          border: scale.black
+        disabled:
+          background: red
+          foreground: red
+          border: red
+
     content:
       background: scale.white
       foreground: scale.black

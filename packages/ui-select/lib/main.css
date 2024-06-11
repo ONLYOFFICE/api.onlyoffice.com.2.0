@@ -1,0 +1,73 @@
+.select {
+  display: inline-block;
+  font-size: 12px;
+  line-height: inherit;
+  min-width: 264px;
+  position: relative;
+}
+
+.select [role="combobox"] {
+  background-color: var(--color-select-combobox-neutral-background);
+  border-radius: 3px;
+  border: 1px solid var(--color-select-combobox-neutral-border);
+  box-sizing: border-box;
+  color: var(--color-select-combobox-neutral-foreground);
+  cursor: pointer;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.select [role="combobox"]:focus-visible {
+  outline: 2px solid var(--color-select-combobox-neutral-outline);
+}
+
+.select [role="combobox"]:hover {
+  border-color: var(--color-select-combobox-neutral-hover-border);
+}
+
+.select [role="combobox"][aria-expanded="true"] {
+  background-color: var(--color-select-combobox-neutral-active-background);
+  border-color: var(--color-select-combobox-neutral-active-border);
+  color: var(--color-select-combobox-neutral-active-foreground);
+}
+
+.select [role="listbox"] {
+  background-color: var(--color-select-combobox-neutral-background);
+  border-radius: 3px;
+  border: 1px solid var(--color-select-combobox-neutral-border);
+  box-sizing: border-box;
+  color: var(--color-select-combobox-neutral-foreground);
+  padding-bottom: 8px;
+  padding-top: 8px;
+  position: absolute;
+  top: calc(100% + 5px);
+  width: 100%;
+}
+
+.select [role="listbox"]:not([hidden]) {
+  background-color: var(--color-select-option-neutral-active-background);
+  border-color: var(--color-select-option-neutral-active-border);
+  color: var(--color-select-option-neutral-active-foreground);
+}
+
+.select__option-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.select__option-container:hover {
+  background-color: var(--color-select-option-neutral-hover-background);
+}
+
+.select [role="option"] {
+  border-radius: 3px;
+  cursor: pointer;
+  grid-column: 1 / 3;
+  padding: 8px calc(12px - 6px);
+}
+
+.select [role="option"][aria-current="true"] {
+  outline: 2px solid var(--color-select-option-neutral-outline);
+}
