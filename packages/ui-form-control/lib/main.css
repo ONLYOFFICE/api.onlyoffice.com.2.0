@@ -1,0 +1,14 @@
+.form-control {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control__label {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.form-control__control {
+  margin-top: 9px;
+}

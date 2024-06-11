@@ -1,0 +1,24 @@
+{
+  "name": "@onlyoffice/ui-form-control",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.tsx",
+  "exports": {
+    ".": "./lib/main.tsx",
+    "./main.css": "./lib/main.css"
+  },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "preact": "^10.19.3",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@onlyoffice/ui-colors": "workspace:^",
+    "@onlyoffice/ui-select": "workspace:^",
+    "@storybook/preact": "^8.0.0",
+    "vite": "^5.1.6"
+  }
+}
