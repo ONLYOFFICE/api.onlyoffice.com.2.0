@@ -1,6 +1,6 @@
 document.addEventListener("documentbuildererror", onError)
 document.addEventListener("documenteditorerror", onError)
-document.addEventListener("siteplaygrounderror", onError)
+document.addEventListener("sitedocumenteditorplaygrounderror", onError)
 document.addEventListener("DOMContentLoaded", main)
 
 import "@onlyoffice/combobox-container-html-element"
@@ -22,7 +22,7 @@ async function main(): Promise<void> {
   const c = new Client()
   c.baseURL = "http://0.0.0.0:4000/"
 
-  const sp = document.querySelector("site-playground")
+  const sp = document.querySelector("site-document-editor-playground")
   if (sp) {
     sp.client = c
     await sp.connectedCallback()
