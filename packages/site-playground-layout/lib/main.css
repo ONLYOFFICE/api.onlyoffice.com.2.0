@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   max-width: var(--mw);
+  padding-bottom: 140px;
   padding-left: var(--pd);
   padding-right: var(--pd);
 }

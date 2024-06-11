@@ -1899,6 +1899,9 @@ importers:
 
   packages/ui-form-control:
     dependencies:
+      clsx:
+        specifier: ^2.1.0
+        version: 2.1.0
       preact:
         specifier: ^10.22.0
         version: 10.22.0

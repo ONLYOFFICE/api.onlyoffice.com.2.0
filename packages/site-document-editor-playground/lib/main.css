@@ -12,6 +12,9 @@
 }
 
 .de-playground .tab-container div[role="tabpanel"] {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
   padding-bottom: 16px;
   padding-top: 16px;
 }
@@ -43,4 +46,8 @@
 
 .de-playground__control-list .button:first-of-type {
   margin-left: 0;
+}
+
+.de-playground__function-property {
+  grid-column: span 2;
 }

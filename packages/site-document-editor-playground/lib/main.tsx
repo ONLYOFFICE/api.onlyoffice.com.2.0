@@ -137,10 +137,18 @@ function Property({property}: PropertyParameters): JSX.Element {
 }
 
 function BooleanProperty({property}: PropertyParameters): JSX.Element {
-  return <label>
-    <code>{property.path}</code>
-    <input name={property.path} type="checkbox" checked={Boolean(property.default)} />
-  </label>
+  return <FormControl>
+    <FormControlLabel>
+      <span>{property.path}</span>
+    </FormControlLabel>
+    <FormControlControl>
+      <input
+        name={property.path}
+        type="checkbox"
+        checked={Boolean(property.default)}
+      />
+    </FormControlControl>
+  </FormControl>
 }
 
 interface EnumPropertyParameters {
@@ -185,29 +193,43 @@ function EnumProperty({property, type}: EnumPropertyParameters): JSX.Element {
 }
 
 function FunctionProperty({property}: PropertyParameters): JSX.Element {
-  return <label>
-    <span>{property.path}</span>
-    <CodeEditor id={property.path} name={property.path}></CodeEditor>
-    <output for={property.path}><pre><code data-output-for={property.path}></code></pre></output>
-  </label>
+  return <FormControl class="de-playground__function-property">
+    <FormControlLabel>
+      <span>{property.path}</span>
+    </FormControlLabel>
+    <FormControlControl>
+      <CodeEditor id={property.path} name={property.path}></CodeEditor>
+    </FormControlControl>
+    <output for={property.path}>
+      <pre><code data-output-for={property.path}></code></pre>
+    </output>
+  </FormControl>
 }
 
 function NumberProperty({property}: PropertyParameters): JSX.Element {
   // if (property.default !== undefined && typeof property.default !== "number") {
   //   throw new Error(`Default value for number property '${property.path}' must be a number, but got '${property.default}'`)
   // }
-  return <label>
-    <span>{property.path}</span>
-    <input name={property.path} type="number" value={property.default} />
-  </label>
+  return <FormControl>
+    <FormControlLabel>
+      <span>{property.path}</span>
+    </FormControlLabel>
+    <FormControlControl>
+      <input name={property.path} type="number" value={property.default} />
+    </FormControlControl>
+  </FormControl>
 }
 
 function StringProperty({property}: PropertyParameters): JSX.Element {
   if (property.default !== undefined && typeof property.default !== "string") {
     throw new Error(`Default value for string property '${property.path}' must be a string, but got '${property.default}'`)
   }
-  return <label>
-    <span>{property.path}</span>
-    <input name={property.path} type="text" value={property.default} />
-  </label>
+  return <FormControl>
+    <FormControlLabel>
+      <span>{property.path}</span>
+    </FormControlLabel>
+    <FormControlControl>
+      <input name={property.path} type="text" value={property.default} />
+    </FormControlControl>
+  </FormControl>
 }
