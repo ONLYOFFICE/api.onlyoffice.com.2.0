@@ -127,7 +127,7 @@ importers:
         specifier: ^0.21.4
         version: 0.21.4
       preact:
-        specifier: ^10.22.0
+        specifier: ^10.19.3
         version: 10.22.0
 
   packages/command:
