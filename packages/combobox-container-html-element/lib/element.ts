@@ -21,6 +21,7 @@ export type ComboboxContainerAttributeName =
 export interface ComboboxContainerAttributes {
   "default-index"?: string
   "disabled"?: string
+  "name"?: string
   "page-size"?: string
   "oncomboboxcontainerchange"?: string
 }
@@ -59,6 +60,7 @@ export class ComboboxContainer extends HTMLElement {
     return [
       "default-index",
       "disabled",
+      "name",
       "page-size",
       "oncomboboxcontainerchange"
     ]
@@ -74,6 +76,9 @@ export class ComboboxContainer extends HTMLElement {
       break
     case "disabled":
       this.#changeDisabled(v)
+      break
+    case "name":
+      this.#changeName(v)
       break
     case "oncomboboxcontainerchange":
       this.#changeOncomboboxcontainerchange(v)
@@ -125,6 +130,28 @@ export class ComboboxContainer extends HTMLElement {
       return nopNodeList()
     }
     return t.labels
+  }
+
+  #name: string | null = null
+
+  get name(): string | null {
+    return this.#name
+  }
+
+  set name(n: string | null) {
+    this.#name = n
+  }
+
+  #changeName(v: string | null): void {
+    this.name = v
+  }
+
+  get value(): string {
+    const v = this.selectedOption.dataset.value
+    if (v) {
+      return v
+    }
+    return ""
   }
 
   #disabled = false
