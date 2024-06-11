@@ -1390,6 +1390,15 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
+  packages/site-config-fixtures:
+    dependencies:
+      '@onlyoffice/site-config':
+        specifier: workspace:^
+        version: link:../site-config
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/site-document-editor-playground:
     dependencies:
       '@onlyoffice/combobox-container-html-element':
