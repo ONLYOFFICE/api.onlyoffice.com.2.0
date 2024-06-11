@@ -21,7 +21,7 @@ export function SitePlaygroundLayoutBefore(
   return <div class="playground-l__before">{children}</div>
 }
 
-export interface SitePlaygroundLayoutAfterParameters {
+export interface SitePlaygroundLayoutPlaygroundParameters {
   children?: any
 }
 
