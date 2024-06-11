@@ -34,6 +34,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "@onlyoffice/site-config-fixtures": "workspace:^",
     "@onlyoffice/ui-colors": "workspace:^",
     "@onlyoffice/ui-content-code-editor": "workspace:^",
     "@onlyoffice/ui-content-code-listing": "workspace:^",

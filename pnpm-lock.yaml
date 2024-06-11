@@ -1456,6 +1456,9 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
     devDependencies:
+      '@onlyoffice/site-config-fixtures':
+        specifier: workspace:^
+        version: link:../site-config-fixtures
       '@onlyoffice/ui-colors':
         specifier: workspace:^
         version: link:../ui-colors
