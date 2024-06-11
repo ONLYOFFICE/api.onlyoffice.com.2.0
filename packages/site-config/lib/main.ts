@@ -6,7 +6,13 @@ export interface InputConfig {
   playground?: InputPlayground
 }
 
-export class Config {
+export interface Configurable {
+  baseUrl: string
+  server: ServerConfigurable
+  playground: PlaygroundConfigurable
+}
+
+export class Config implements Configurable {
   baseUrl = ""
   server = new Server()
   playground = new Playground()
@@ -64,7 +70,11 @@ export interface InputServer {
   baseUrl?: string
 }
 
-export class Server {
+export interface ServerConfigurable {
+  baseUrl: string
+}
+
+export class Server implements ServerConfigurable {
   baseUrl = ""
 
   static fromJson(data: string): Server {
@@ -108,7 +118,12 @@ export interface InputPlayground {
   tabs?: Record<string, string>
 }
 
-export class Playground {
+export interface PlaygroundConfigurable {
+  documentEditor: DocumentEditor
+  tabs: TabConfigurable[]
+}
+
+export class Playground implements PlaygroundConfigurable {
   documentEditor = new DocumentEditor()
   tabs: Tab[] = []
 
@@ -166,7 +181,12 @@ export interface InputDocumentEditor {
   config?: InputProperty[]
 }
 
-export class DocumentEditor {
+export interface DocumentEditorConfigurable {
+  documentServerUrl: string
+  config: PropertyConfigurable[]
+}
+
+export class DocumentEditor implements DocumentEditorConfigurable {
   documentServerUrl = ""
   config: Property[] = []
 
@@ -233,7 +253,16 @@ export interface InputProperty {
   default?: boolean | number | string
 }
 
-export class Property {
+export interface PropertyConfigurable {
+  path: string
+  tab: string
+  href: string
+  type: Type
+  // format?: Format
+  default?: boolean | number | string
+}
+
+export class Property implements PropertyConfigurable {
   path = ""
   tab = ""
   href = ""
@@ -324,43 +353,74 @@ export class Property {
 export type Type = TypeMap[keyof TypeMap]
 
 export interface TypeMap {
-  boolean: BooleanType
-  enum: EnumType
-  function: FunctionType
-  literal: LiteralType
-  number: NumberType
-  string: StringType
-  undefined: UndefinedType
+  boolean: BooleanRepresentable
+  enum: EnumRepresentable
+  function: FunctionRepresentable
+  literal: LiteralRepresentable
+  number: NumberRepresentable
+  string: StringRepresentable
+  undefined: UndefinedRepresentable
 }
 
-export class BooleanType implements TypeNode {
+export interface BooleanRepresentable extends TypeNode {
+  type: "boolean"
+}
+
+export class BooleanType implements BooleanRepresentable {
   type = "boolean" as const
 }
 
-export class EnumType implements TypeNode {
+export interface EnumRepresentable extends TypeNode {
+  type: "enum"
+  cases: Type[]
+}
+
+export class EnumType implements EnumRepresentable {
   type = "enum" as const
   cases: Type[] = []
 }
 
-export class FunctionType implements TypeNode {
+export interface FunctionRepresentable extends TypeNode {
+  type: "function"
+}
+
+export class FunctionType implements FunctionRepresentable {
   type = "function" as const
 }
 
-export class LiteralType implements TypeNode {
+export interface LiteralRepresentable extends TypeNode {
+  type: "literal"
+  base: Type
+  const?: boolean | number | string
+}
+
+export class LiteralType implements LiteralRepresentable {
   type = "literal" as const
   base: Type = new UndefinedType()
   "const"?: boolean | number | string = undefined
 }
 
-export class NumberType implements TypeNode {
+export interface NumberRepresentable extends TypeNode {
+  type: "number"
+}
+
+export class NumberType implements NumberRepresentable {
   type = "number" as const
 }
 
-export class StringType implements TypeNode {
+export interface StringRepresentable extends TypeNode {
+  type: "string"
+}
+
+export class StringType implements StringRepresentable {
   type = "string" as const
 }
 
-export class UndefinedType implements TypeNode {
+export interface UndefinedRepresentable extends TypeNode {
+  type: "undefined"
+}
+
+export class UndefinedType implements UndefinedRepresentable {
   type = "undefined" as const
 }
 
@@ -368,7 +428,12 @@ export interface TypeNode {
   type: string
 }
 
-export class Tab {
+export interface TabConfigurable {
+  id: string
+  label: string
+}
+
+export class Tab implements TabConfigurable {
   id: string = ""
   label: string = ""
 }
