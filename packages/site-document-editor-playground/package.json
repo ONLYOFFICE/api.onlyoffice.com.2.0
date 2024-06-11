@@ -5,6 +5,7 @@
   "main": "lib/main.tsx",
   "exports": {
     ".": "./lib/main.tsx",
+    "./main.css": "./lib/main.css",
     "./client/define.ts": "./lib/client/define.ts",
     "./client/element.ts": "./lib/client/element.ts",
     "./client.ts": "./lib/client.ts"

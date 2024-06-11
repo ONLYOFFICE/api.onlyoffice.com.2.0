@@ -48,7 +48,6 @@ export function SiteDocumentEditorPlayground(
 ): JSX.Element {
   return <site-document-editor-playground class="de-playground">
     <Content>
-      <h1>Document Editor Playground</h1>
       <form>
         <Properties />
         <div class="de-playground__control-list">
