@@ -1,0 +1,33 @@
+.de-playground {
+  display: block;
+}
+
+.de-playground .tab-container div[role="tabpanel"] {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.de-playground document-editor-config {
+  display: block;
+}
+
+.de-playground document-editor-mirror {
+  display: block;
+}
+
+.de-playground document-editor {
+  display: block;
+}
+
+.de-playground__control-list {
+  display: flex;
+  justify-content: end;
+}
+
+.de-playground__control-list .button {
+  margin-left: 8px;
+}
+
+.de-playground__control-list .button:first-of-type {
+  margin-left: 0;
+}
