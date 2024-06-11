@@ -1,6 +1,6 @@
+import {useContext} from "preact/hooks"
 import type {JSX} from "preact"
 import {createContext, h} from "preact"
-import {useContext} from "preact/hooks"
 
 interface Contextual {
   for: string
