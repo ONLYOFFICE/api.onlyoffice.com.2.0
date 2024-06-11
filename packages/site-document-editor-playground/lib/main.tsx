@@ -45,15 +45,13 @@ export function SiteDocumentEditorPlayground(
   return <site-playground class="de-playground">
     <Content>
       <h1>Document Editor Playground</h1>
-      <document-editor-config>
-        <form>
-          <Properties />
-          <div class="de-playground__control-list">
-            <Button type="submit" value="reset">Reset</Button>
-            <Button type="submit" value="play" variant="accent">Play</Button>
-          </div>
-        </form>
-      </document-editor-config>
+      <form>
+        <Properties />
+        <div class="de-playground__control-list">
+          <Button type="submit" value="reset">Reset</Button>
+          <Button type="submit" value="play" variant="accent">Play</Button>
+        </div>
+      </form>
     </Content>
     <document-editor-mirror>
       <document-editor

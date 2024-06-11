@@ -1,10 +1,15 @@
+import type {ComboboxContainer} from "@onlyoffice/combobox-container-html-element"
 import * as configSample from "@onlyoffice/document-editor-code-sample"
 import type {DocumentEditorEventHandlerName} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditor} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditorMirror} from "@onlyoffice/document-editor-mirror-html-element"
+import type {DocEditorConfig} from "@onlyoffice/document-server-types"
 import {cloneConfig} from "@onlyoffice/document-server-utils"
 import type {Client} from "@onlyoffice/server-client"
+import {setProperty} from "dot-prop"
 import {SitePlaygroundErrorEvent} from "./events.ts"
+
+type Control = ComboboxContainer | HTMLInputElement | HTMLTextAreaElement
 
 export class SitePlayground extends HTMLElement {
   static get tagName(): string {
@@ -31,17 +36,9 @@ export class SitePlayground extends HTMLElement {
       return
     }
 
-    const ec = this.querySelector("document-editor-config")
-    if (!ec) {
-      const er = new Error("The 'document-editor-config' element not found")
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
-      this.dispatchEvent(ev)
-      return
-    }
-
-    const fr = ec.querySelector("form")
+    const fr = this.querySelector("form")
     if (!fr) {
-      const er = new Error("The form element for the 'document-editor-config' not found")
+      const er = new Error("The form element not found")
       const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
       this.dispatchEvent(ev)
       return
@@ -49,7 +46,7 @@ export class SitePlayground extends HTMLElement {
 
     const em = this.querySelector("document-editor-mirror")
     if (!em) {
-      const er = new Error("The 'document-editor-mirror' element not found")
+      const er = new Error("The document-editor-mirror element not found")
       const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
       this.dispatchEvent(ev)
       return
@@ -57,7 +54,7 @@ export class SitePlayground extends HTMLElement {
 
     const de = this.querySelector("document-editor")
     if (!de) {
-      const er = new Error("The 'document-editor' element not found")
+      const er = new Error("The document-editor element not found")
       const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
       this.dispatchEvent(ev)
       return
@@ -74,7 +71,8 @@ export class SitePlayground extends HTMLElement {
 
     de.ondocumenteditorappready = null
 
-    const cf = cloneConfig(ec.config)
+    let cf = this.#config(fr)
+    cf = cloneConfig(cf)
 
     const af = cf
     if (af.events) {
@@ -150,6 +148,20 @@ export class SitePlayground extends HTMLElement {
 
       e.textContent = s
     }
+  }
+
+  #config(el: HTMLElement): DocEditorConfig {
+    const cf: DocEditorConfig = {}
+    const cs: NodeListOf<Control> = el.querySelectorAll("combobox-container, input, textarea")
+    for (const c of cs) {
+      let v: unknown = c.value
+      if (c instanceof HTMLInputElement && c.type === "checkbox") {
+        v = c.checked
+      }
+      setProperty(cf, c.name, v)
+    }
+    console.log(cf)
+    return cf
   }
 
   #submit(se: SubmitEvent): void {

@@ -14,10 +14,11 @@
     "test": "pnpm test:types"
   },
   "dependencies": {
+    "@onlyoffice/combobox-container-html-element": "workspace:^",
     "@onlyoffice/document-editor-code-sample": "workspace:^",
-    "@onlyoffice/document-editor-config-html-element": "workspace:^",
     "@onlyoffice/document-editor-html-element": "workspace:^",
     "@onlyoffice/document-editor-mirror-html-element": "workspace:^",
+    "@onlyoffice/document-server-types": "workspace:^",
     "@onlyoffice/document-server-utils": "workspace:^",
     "@onlyoffice/server-client": "workspace:^",
     "@onlyoffice/site-config": "workspace:^",
@@ -28,6 +29,7 @@
     "@onlyoffice/ui-content-tab-container": "workspace:^",
     "@onlyoffice/ui-form-control": "workspace:^",
     "@onlyoffice/ui-select": "workspace:^",
+    "dot-prop": "^9.0.0",
     "preact": "^10.22.0",
     "typescript": "^5.4.5"
   },

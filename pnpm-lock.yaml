@@ -1392,18 +1392,21 @@ importers:
 
   packages/site-document-editor-playground:
     dependencies:
+      '@onlyoffice/combobox-container-html-element':
+        specifier: workspace:^
+        version: link:../combobox-container-html-element
       '@onlyoffice/document-editor-code-sample':
         specifier: workspace:^
         version: link:../document-editor-code-sample
-      '@onlyoffice/document-editor-config-html-element':
-        specifier: workspace:^
-        version: link:../document-editor-config-html-element
       '@onlyoffice/document-editor-html-element':
         specifier: workspace:^
         version: link:../document-editor-html-element
       '@onlyoffice/document-editor-mirror-html-element':
         specifier: workspace:^
         version: link:../document-editor-mirror-html-element
+      '@onlyoffice/document-server-types':
+        specifier: workspace:^
+        version: link:../document-server-types
       '@onlyoffice/document-server-utils':
         specifier: workspace:^
         version: link:../document-server-utils
@@ -1434,6 +1437,9 @@ importers:
       '@onlyoffice/ui-select':
         specifier: workspace:^
         version: link:../ui-select
+      dot-prop:
+        specifier: ^9.0.0
+        version: 9.0.0
       preact:
         specifier: ^10.22.0
         version: 10.22.0
