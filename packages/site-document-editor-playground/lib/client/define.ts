@@ -1,39 +1,42 @@
-import {SitePlayground} from "./element.ts"
-import type {GlobalSitePlaygroundErrorHandler, SitePlaygroundErrorListener} from "./events.ts"
-import {SitePlaygroundErrorEvent} from "./events.ts"
+import {SiteDocumentEditorPlayground} from "./element.ts"
+import type {
+  GlobalSiteDocumentEditorPlaygroundErrorHandler,
+  SiteDocumentEditorPlaygroundErrorListener
+} from "./events.ts"
+import {SiteDocumentEditorPlaygroundErrorEvent} from "./events.ts"
 
 declare global {
   interface Window {
-    SitePlayground: typeof SitePlayground
-    SitePlaygroundErrorEvent: typeof SitePlaygroundErrorEvent
+    SiteDocumentEditorPlayground: typeof SiteDocumentEditorPlayground
+    SiteDocumentEditorPlaygroundErrorEvent: typeof SiteDocumentEditorPlaygroundErrorEvent
   }
 
   interface HTMLElementTagNameMap {
-    "site-playground": SitePlayground
+    "site-document-editor-playground": SiteDocumentEditorPlayground
   }
 
   namespace preact {
     namespace JSX {
       interface IntrinsicElements {
-        "site-playground": HTMLAttributes<SitePlayground>
+        "site-document-editor-playground": HTMLAttributes<SiteDocumentEditorPlayground>
       }
     }
   }
 
   interface GlobalEventHandlersEventMap {
-    siteplaygrounderror: SitePlaygroundErrorListener
+    sitedocumenteditorplaygrounderror: SiteDocumentEditorPlaygroundErrorListener
   }
 
   interface GlobalEventHandlers {
-    onsiteplaygrounderror: GlobalSitePlaygroundErrorHandler | null
+    onsitedocumenteditorplaygrounderror: GlobalSiteDocumentEditorPlaygroundErrorHandler | null
   }
 }
 
 export function define(): void {
-  if (window.customElements.get(SitePlayground.tagName)) {
+  if (window.customElements.get(SiteDocumentEditorPlayground.tagName)) {
     return
   }
-  window.SitePlayground = SitePlayground
-  window.customElements.define(SitePlayground.tagName, SitePlayground)
-  window.SitePlaygroundErrorEvent = SitePlaygroundErrorEvent
+  window.SiteDocumentEditorPlayground = SiteDocumentEditorPlayground
+  window.customElements.define(SiteDocumentEditorPlayground.tagName, SiteDocumentEditorPlayground)
+  window.SiteDocumentEditorPlaygroundErrorEvent = SiteDocumentEditorPlaygroundErrorEvent
 }

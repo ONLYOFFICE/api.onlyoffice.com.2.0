@@ -7,13 +7,13 @@ import type {DocEditorConfig} from "@onlyoffice/document-server-types"
 import {cloneConfig} from "@onlyoffice/document-server-utils"
 import type {Client} from "@onlyoffice/server-client"
 import {setProperty} from "dot-prop"
-import {SitePlaygroundErrorEvent} from "./events.ts"
+import {SiteDocumentEditorPlaygroundErrorEvent} from "./events.ts"
 
 type Control = ComboboxContainer | HTMLInputElement | HTMLTextAreaElement
 
-export class SitePlayground extends HTMLElement {
+export class SiteDocumentEditorPlayground extends HTMLElement {
   static get tagName(): string {
-    return "site-playground"
+    return "site-document-editor-playground"
   }
 
   #client: Client | undefined
@@ -31,7 +31,11 @@ export class SitePlayground extends HTMLElement {
   async connectedCallback(): Promise<void> {
     if (!this.#client) {
       const er = new Error("Client instance is not registered")
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+        bubbles: true,
+        error: er,
+        message: er.message
+      })
       this.dispatchEvent(ev)
       return
     }
@@ -39,7 +43,11 @@ export class SitePlayground extends HTMLElement {
     const fr = this.querySelector("form")
     if (!fr) {
       const er = new Error("The form element not found")
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+        bubbles: true,
+        error: er,
+        message: er.message
+      })
       this.dispatchEvent(ev)
       return
     }
@@ -47,7 +55,11 @@ export class SitePlayground extends HTMLElement {
     const em = this.querySelector("document-editor-mirror")
     if (!em) {
       const er = new Error("The document-editor-mirror element not found")
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+        bubbles: true,
+        error: er,
+        message: er.message
+      })
       this.dispatchEvent(ev)
       return
     }
@@ -55,7 +67,11 @@ export class SitePlayground extends HTMLElement {
     const de = this.querySelector("document-editor")
     if (!de) {
       const er = new Error("The document-editor element not found")
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+        bubbles: true,
+        error: er,
+        message: er.message
+      })
       this.dispatchEvent(ev)
       return
     }
@@ -64,7 +80,7 @@ export class SitePlayground extends HTMLElement {
       de.ondocumenteditorappready = this.connectedCallback.bind(this)
       return
       // const er = new Error("DocEditor instance is not registered")
-      // const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      // const ev = new SiteDocumentEditorPlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
       // this.dispatchEvent(ev)
       // return
     }
@@ -86,7 +102,7 @@ export class SitePlayground extends HTMLElement {
       if (e instanceof Error) {
         m += `: ${e.message}`
       }
-      const ev = new SitePlaygroundErrorEvent({error: e, message: m})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({error: e, message: m})
       this.dispatchEvent(ev)
       return
     }
@@ -103,7 +119,11 @@ export class SitePlayground extends HTMLElement {
         const hn = this.#handlerName(n)
         if (!hn) {
           const er = new Error(`The '${hn}' (${n}) event does not exist in the DocumentEditor`)
-          const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+          const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+            bubbles: true,
+            error: er,
+            message: er.message
+          })
           this.dispatchEvent(ev)
           continue
         }
@@ -141,7 +161,11 @@ export class SitePlayground extends HTMLElement {
         break
       default:
         const er = new Error(`Unknown config sample type: ${v}`)
-        const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+        const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+          bubbles: true,
+          error: er,
+          message: er.message
+        })
         this.dispatchEvent(ev)
         continue
       }
@@ -169,7 +193,11 @@ export class SitePlayground extends HTMLElement {
 
     if (!(se.submitter instanceof HTMLButtonElement)) {
       const er = new Error("The submitter is not a button element")
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+        bubbles: true,
+        error: er,
+        message: er.message
+      })
       this.dispatchEvent(ev)
       return
     }
@@ -185,7 +213,11 @@ export class SitePlayground extends HTMLElement {
     }
 
     const er = new Error(`Unknown submitter value: ${se.submitter.value}`)
-    const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+    const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+      bubbles: true,
+      error: er,
+      message: er.message
+    })
     this.dispatchEvent(ev)
   }
 
@@ -210,7 +242,11 @@ export class SitePlayground extends HTMLElement {
     const en = this.#handlers.get(me.source)
     if (!en) {
       const er = new Error(`The '${me.source}' event does register in the DocumentEditorPlayground`)
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+        bubbles: true,
+        error: er,
+        message: er.message
+      })
       this.dispatchEvent(ev)
       return
     }
@@ -218,7 +254,11 @@ export class SitePlayground extends HTMLElement {
     const cd = this.querySelector(`[data-output-for="events.${en}"]`)
     if (!cd) {
       const er = new Error(`The output element for the '${en}' event not found`)
-      const ev = new SitePlaygroundErrorEvent({bubbles: true, error: er, message: er.message})
+      const ev = new SiteDocumentEditorPlaygroundErrorEvent({
+        bubbles: true,
+        error: er,
+        message: er.message
+      })
       this.dispatchEvent(ev)
       return
     }

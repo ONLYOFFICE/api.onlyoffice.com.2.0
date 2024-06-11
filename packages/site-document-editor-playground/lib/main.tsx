@@ -42,7 +42,7 @@ export interface SiteDocumentEditorPlaygroundParameters {
 export function SiteDocumentEditorPlayground(
   {config}: SiteDocumentEditorPlaygroundParameters
 ): JSX.Element {
-  return <site-playground class="de-playground">
+  return <site-document-editor-playground class="de-playground">
     <Content>
       <h1>Document Editor Playground</h1>
       <form>
@@ -63,7 +63,7 @@ export function SiteDocumentEditorPlayground(
     <Content>
       <Samples />
     </Content>
-  </site-playground>
+  </site-document-editor-playground>
 
   function Properties(): JSX.Element {
     const ts: JSX.Element[] = []
