@@ -1919,6 +1919,9 @@ importers:
       '@mdx-js/mdx':
         specifier: ^3.0.0
         version: 3.0.1
+      '@onlyoffice/combobox-container-html-element':
+        specifier: workspace:^
+        version: link:../packages/combobox-container-html-element
       '@onlyoffice/community-server-resource':
         specifier: workspace:^
         version: link:../packages/community-server-resource
@@ -2015,6 +2018,39 @@ importers:
       '@onlyoffice/template-hast-element':
         specifier: workspace:^
         version: link:../packages/template-hast-element
+      '@onlyoffice/ui-button':
+        specifier: workspace:^
+        version: link:../packages/ui-button
+      '@onlyoffice/ui-code-editor':
+        specifier: workspace:^
+        version: link:../packages/ui-code-editor
+      '@onlyoffice/ui-code-listing':
+        specifier: workspace:^
+        version: link:../packages/ui-code-listing
+      '@onlyoffice/ui-code-listing-code-editor':
+        specifier: workspace:^
+        version: link:../packages/ui-code-listing-code-editor
+      '@onlyoffice/ui-colors':
+        specifier: workspace:^
+        version: link:../packages/ui-colors
+      '@onlyoffice/ui-content':
+        specifier: workspace:^
+        version: link:../packages/ui-content
+      '@onlyoffice/ui-content-code-editor':
+        specifier: workspace:^
+        version: link:../packages/ui-content-code-editor
+      '@onlyoffice/ui-content-code-listing':
+        specifier: workspace:^
+        version: link:../packages/ui-content-code-listing
+      '@onlyoffice/ui-content-tab-container':
+        specifier: workspace:^
+        version: link:../packages/ui-content-tab-container
+      '@onlyoffice/ui-form-control':
+        specifier: workspace:^
+        version: link:../packages/ui-form-control
+      '@onlyoffice/ui-select':
+        specifier: workspace:^
+        version: link:../packages/ui-select
       '@onlyoffice/xml-types':
         specifier: workspace:^
         version: link:../packages/xml-types

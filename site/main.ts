@@ -3,10 +3,14 @@ document.addEventListener("documenteditorerror", onError)
 document.addEventListener("siteplaygrounderror", onError)
 document.addEventListener("DOMContentLoaded", main)
 
+import "@onlyoffice/combobox-container-html-element"
 import "@onlyoffice/document-builder-html-element"
 import "@onlyoffice/document-editor-config-html-element"
 import "@onlyoffice/document-editor-html-element"
 import "@onlyoffice/document-editor-mirror-html-element"
+import "@onlyoffice/ui-select/client.ts"
+import "@onlyoffice/ui-content-tab-container/client.ts"
+import "@onlyoffice/ui-code-listing/client.ts"
 import "@onlyoffice/documentation-ui-kit/kit.client.ts"
 import "@onlyoffice/site-playground/client.ts"
 import "./components/tree/tree.client.ts"
