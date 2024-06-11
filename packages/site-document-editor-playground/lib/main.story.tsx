@@ -23,7 +23,7 @@ import select from "@onlyoffice/ui-select/main.css?inline"
 import type {Meta} from "@storybook/preact"
 import type {JSX} from "preact"
 import {h} from "preact"
-import sitePlayground from "./main.css?inline"
+import siteDocumentEditorPlayground from "./main.css?inline"
 import {SiteDocumentEditorPlayground} from "./main.tsx"
 
 const meta: Meta = {
@@ -39,7 +39,7 @@ const meta: Meta = {
     contentCodeEditor,
     codeListing,
     contentCodeListing,
-    sitePlayground
+    siteDocumentEditorPlayground
   ]}
 }
 
