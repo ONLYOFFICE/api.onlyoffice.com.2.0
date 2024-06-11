@@ -28,7 +28,7 @@
     "@onlyoffice/ui-content-tab-container": "workspace:^",
     "@onlyoffice/ui-form-control": "workspace:^",
     "@onlyoffice/ui-select": "workspace:^",
-    "preact": "^10.19.3",
+    "preact": "^10.22.0",
     "typescript": "^5.4.5"
   },
   "devDependencies": {

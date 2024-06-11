@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.0",
-    "preact": "^10.19.3",
+    "preact": "^10.22.0",
     "typescript": "^5.4.5"
   },
   "devDependencies": {

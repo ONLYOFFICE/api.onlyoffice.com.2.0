@@ -127,7 +127,7 @@ importers:
         specifier: ^0.21.4
         version: 0.21.4
       preact:
-        specifier: ^10.19.3
+        specifier: ^10.22.0
         version: 10.22.0
 
   packages/command:
@@ -504,8 +504,8 @@ importers:
         version: 5.4.5
     devDependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
 
   packages/document-editor-hast-element:
     dependencies:
@@ -557,8 +557,8 @@ importers:
         specifier: ^0.20.2
         version: 0.20.2
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
 
   packages/document-editor-mirror-html-element:
     dependencies:
@@ -1143,11 +1143,11 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0
       preact:
-        specifier: ^10.19.6
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       tsx:
         specifier: ^4.10.5
         version: 4.11.0
@@ -1170,8 +1170,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1435,8 +1435,8 @@ importers:
         specifier: workspace:^
         version: link:../ui-select
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1452,7 +1452,7 @@ importers:
         version: link:../ui-content-code-listing
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1587,8 +1587,8 @@ importers:
         version: 5.4.5
     devDependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
 
   packages/template-hast-element:
     dependencies:
@@ -1615,8 +1615,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1626,7 +1626,7 @@ importers:
         version: link:../ui-colors
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1634,8 +1634,8 @@ importers:
   packages/ui-code-editor:
     dependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1645,7 +1645,7 @@ importers:
         version: link:../ui-colors
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1659,8 +1659,8 @@ importers:
         specifier: workspace:^
         version: link:../tab-container-element-types
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1670,7 +1670,7 @@ importers:
         version: link:../ui-colors
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1678,8 +1678,8 @@ importers:
   packages/ui-code-listing-code-editor:
     dependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1695,7 +1695,7 @@ importers:
         version: link:../ui-colors
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1730,8 +1730,8 @@ importers:
   packages/ui-content:
     dependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1741,7 +1741,7 @@ importers:
         version: link:../ui-colors
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1749,8 +1749,8 @@ importers:
   packages/ui-content-code-editor:
     dependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1766,7 +1766,7 @@ importers:
         version: link:../ui-content
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1774,8 +1774,8 @@ importers:
   packages/ui-content-code-listing:
     dependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1791,7 +1791,7 @@ importers:
         version: link:../ui-content
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1805,8 +1805,8 @@ importers:
         specifier: workspace:^
         version: link:../tab-container-element-types
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1819,7 +1819,7 @@ importers:
         version: link:../ui-content
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1827,7 +1827,7 @@ importers:
   packages/ui-form-control:
     dependencies:
       preact:
-        specifier: ^10.19.3
+        specifier: ^10.22.0
         version: 10.22.0
       typescript:
         specifier: ^5.4.5
@@ -1852,8 +1852,8 @@ importers:
         specifier: workspace:^
         version: link:../combobox-container-html-element
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1863,7 +1863,7 @@ importers:
         version: link:../ui-colors
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       vite:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
@@ -1871,8 +1871,8 @@ importers:
   packages/ui-slots:
     dependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2112,11 +2112,11 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       rehype-autolink-headings:
         specifier: ^7.1.0
         version: 7.1.0
@@ -2164,16 +2164,16 @@ importers:
         version: 8.0.0(@types/react@18.2.65)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@storybook/preact':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)
+        version: 8.0.0(preact@10.22.0)
       '@storybook/preact-vite':
         specifier: ^8.0.0
-        version: 8.0.0(preact@10.19.6)(typescript@5.4.5)(vite@5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0))
+        version: 8.0.0(preact@10.22.0)(typescript@5.4.5)(vite@5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0))
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -2212,11 +2212,11 @@ importers:
         specifier: workspace:^
         version: link:../storybook
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2238,11 +2238,11 @@ importers:
         specifier: workspace:^
         version: link:../storybook
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2264,11 +2264,11 @@ importers:
         specifier: workspace:^
         version: link:../storybook
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2286,11 +2286,11 @@ importers:
         specifier: workspace:^
         version: link:../storybook
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2301,11 +2301,11 @@ importers:
         specifier: workspace:^
         version: link:../storybook
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2327,11 +2327,11 @@ importers:
         specifier: workspace:^
         version: link:../storybook
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2339,11 +2339,11 @@ importers:
   ui/font:
     devDependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2351,11 +2351,11 @@ importers:
   ui/hooks:
     devDependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2372,11 +2372,11 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       sade:
         specifier: ^1.8.1
         version: 1.8.1
@@ -2427,11 +2427,11 @@ importers:
         version: link:../typography
     devDependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2448,11 +2448,11 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       sade:
         specifier: ^1.8.1
         version: 1.8.1
@@ -2466,11 +2466,11 @@ importers:
   ui/sr-only:
     devDependencies:
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2481,11 +2481,11 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2496,11 +2496,11 @@ importers:
         specifier: workspace:^
         version: link:../storybook
       preact:
-        specifier: ^10.19.3
-        version: 10.19.6
+        specifier: ^10.22.0
+        version: 10.22.0
       preact-render-to-string:
         specifier: ^6.4.1
-        version: 6.4.1(preact@10.19.6)
+        version: 6.4.1(preact@10.22.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -4106,8 +4106,8 @@ packages:
   '@storybook/csf@0.1.3':
     resolution: {integrity: sha512-IPZvXXo4b3G+gpmgBSBqVM81jbp2ePOKsvhgJdhyZJtkYQCII7rg9KKLQhvBQM5sLaF1eU6r0iuwmyynC9d9SA==}
 
-  '@storybook/csf@0.1.7':
-    resolution: {integrity: sha512-53JeLZBibjQxi0Ep+/AJTfxlofJlxy1jXcSKENlnKxHjWEYyHQCumMP5yTFjf7vhNnMjEpV3zx6t23ssFiGRyw==}
+  '@storybook/csf@0.1.8':
+    resolution: {integrity: sha512-Ntab9o7LjBCbFIao5l42itFiaSh/Qu+l16l/r/9qmV9LnYZkO+JQ7tzhdlwpgJfhs+B5xeejpdAtftDRyXNajw==}
 
   '@storybook/docs-mdx@3.0.0':
     resolution: {integrity: sha512-NmiGXl2HU33zpwTv1XORe9XG9H+dRUC1Jl11u92L4xr062pZtrShLmD4VKIsOQujxhhOrbxpwhNOt+6TdhyIdQ==}
@@ -7528,9 +7528,6 @@ packages:
     peerDependencies:
       preact: '>=10'
 
-  preact@10.19.6:
-    resolution: {integrity: sha512-gympg+T2Z1fG1unB8NH29yHJwnEaCH37Z32diPDku316OTnRPeMbiRV9kTrfZpocXjdfnWuFUl/Mj4BHaf6gnw==}
-
   preact@10.22.0:
     resolution: {integrity: sha512-RRurnSjJPj4rp5K6XoP45Ui33ncb7e4H7WiOHVpjbkvqvA3U+N8Z6Qbo0AE6leGYBV66n8EhEaFixvIu3SkxFw==}
 
@@ -10473,7 +10470,7 @@ snapshots:
     dependencies:
       '@radix-ui/react-slot': 1.0.2(@types/react@18.2.65)(react@18.2.0)
       '@storybook/client-logger': 8.0.10
-      '@storybook/csf': 0.1.7
+      '@storybook/csf': 0.1.8
       '@storybook/global': 5.0.0
       '@storybook/icons': 1.2.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@storybook/theming': 8.0.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -10609,7 +10606,7 @@ snapshots:
     dependencies:
       type-fest: 2.19.0
 
-  '@storybook/csf@0.1.7':
+  '@storybook/csf@0.1.8':
     dependencies:
       type-fest: 2.19.0
 
@@ -10660,7 +10657,7 @@ snapshots:
       '@storybook/channels': 8.0.10
       '@storybook/client-logger': 8.0.10
       '@storybook/core-events': 8.0.10
-      '@storybook/csf': 0.1.7
+      '@storybook/csf': 0.1.8
       '@storybook/global': 5.0.0
       '@storybook/icons': 1.2.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@storybook/router': 8.0.10
@@ -10680,11 +10677,11 @@ snapshots:
 
   '@storybook/node-logger@8.0.0': {}
 
-  '@storybook/preact-vite@8.0.0(preact@10.19.6)(typescript@5.4.5)(vite@5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0))':
+  '@storybook/preact-vite@8.0.0(preact@10.22.0)(typescript@5.4.5)(vite@5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0))':
     dependencies:
       '@storybook/builder-vite': 8.0.0(typescript@5.4.5)(vite@5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0))
-      '@storybook/preact': 8.0.0(preact@10.19.6)
-      preact: 10.19.6
+      '@storybook/preact': 8.0.0(preact@10.22.0)
+      preact: 10.22.0
       vite: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
     transitivePeerDependencies:
       - '@preact/preset-vite'
@@ -10692,14 +10689,6 @@ snapshots:
       - supports-color
       - typescript
       - vite-plugin-glimmerx
-
-  '@storybook/preact@8.0.0(preact@10.19.6)':
-    dependencies:
-      '@storybook/global': 5.0.0
-      '@storybook/preview-api': 8.0.0
-      '@storybook/types': 8.0.0
-      preact: 10.19.6
-      ts-dedent: 2.2.0
 
   '@storybook/preact@8.0.0(preact@10.22.0)':
     dependencies:
@@ -10731,7 +10720,7 @@ snapshots:
       '@storybook/channels': 8.0.10
       '@storybook/client-logger': 8.0.10
       '@storybook/core-events': 8.0.10
-      '@storybook/csf': 0.1.7
+      '@storybook/csf': 0.1.8
       '@storybook/global': 5.0.0
       '@storybook/types': 8.0.10
       '@types/qs': 6.9.15
@@ -14942,12 +14931,10 @@ snapshots:
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
 
-  preact-render-to-string@6.4.1(preact@10.19.6):
+  preact-render-to-string@6.4.1(preact@10.22.0):
     dependencies:
-      preact: 10.19.6
+      preact: 10.22.0
       pretty-format: 3.8.0
-
-  preact@10.19.6: {}
 
   preact@10.22.0: {}
 

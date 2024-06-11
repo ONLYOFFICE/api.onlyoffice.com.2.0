@@ -20,6 +20,6 @@
     "@web/dev-server": "^0.4.4",
     "@web/dev-server-esbuild": "^1.0.2",
     "esbuild": "^0.20.2",
-    "preact": "^10.19.3"
+    "preact": "^10.22.0"
   }
 }

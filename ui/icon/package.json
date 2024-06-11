@@ -12,7 +12,7 @@
     "@onlyoffice/documentation-utils": "workspace:^",
     "@types/node": "^20.12.12",
     "es-main": "^1.3.0",
-    "preact": "^10.19.3",
+    "preact": "^10.22.0",
     "preact-render-to-string": "^6.4.1",
     "sade": "^1.8.1",
     "tsx": "^4.10.5",
