@@ -3,12 +3,15 @@ import {h} from "preact"
 
 export interface SelectParameters {
   children?: any
+  name?: string
 }
 
 export function Select(
-  {children}: SelectParameters
+  {children, name}: SelectParameters
 ): JSX.Element {
-  return <combobox-container class="select">{children}</combobox-container>
+  return <combobox-container name={name} class="select">
+    {children}
+  </combobox-container>
 }
 
 export interface SelectComboboxParameters {

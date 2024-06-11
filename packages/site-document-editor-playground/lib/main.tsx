@@ -175,7 +175,7 @@ function EnumProperty({property, type}: EnumPropertyParameters): JSX.Element {
       <span>{property.path}</span>
     </FormControlLabel>
     <FormControlControl>
-      <Select>
+      <Select name={property.path}>
         {cb}
         <SelectListbox>{lo}</SelectListbox>
       </Select>
