@@ -8,32 +8,32 @@ import {
   FunctionType,
   LiteralType,
   NumberType,
-  Playground,
-  Property,
-  Server,
+  PlaygroundConfig,
+  PropertyConfig,
+  ServerConfig,
   StringType,
-  Tab,
+  TabConfig,
   UndefinedType
 } from "./main.ts"
 
-test("Tab(): initializes a tab", () => {
-  const t = new Tab()
-  is(t instanceof Tab, true)
+test("TabConfig(): initializes a tab", () => {
+  const t = new TabConfig()
+  is(t instanceof TabConfig, true)
 })
 
-test("Tab(): initializes a tab with the correct order of keys", () => {
-  const t = new Tab()
+test("TabConfig(): initializes a tab with the correct order of keys", () => {
+  const t = new TabConfig()
   const a = Object.keys(t)
   eq(a, ["id", "label"])
 })
 
-test("Tab(): initializes a tab with an empty id", () => {
-  const t = new Tab()
+test("TabConfig(): initializes a tab with an empty id", () => {
+  const t = new TabConfig()
   is(t.id, "")
 })
 
-test("Tab(): initializes a tab with an empty label", () => {
-  const t = new Tab()
+test("TabConfig(): initializes a tab with an empty label", () => {
+  const t = new TabConfig()
   is(t.label, "")
 })
 
@@ -164,111 +164,111 @@ test("BooleanType(): initializes a boolean type with the boolean type", () => {
   is(t.type, "boolean")
 })
 
-test("Property(): initializes a property", () => {
-  const p = new Property()
-  is(p instanceof Property, true)
+test("PropertyConfig(): initializes a property", () => {
+  const p = new PropertyConfig()
+  is(p instanceof PropertyConfig, true)
 })
 
-test("Property(): initializes a property with the correct order of keys", () => {
-  const p = new Property()
+test("PropertyConfig(): initializes a property with the correct order of keys", () => {
+  const p = new PropertyConfig()
   const a = Object.keys(p)
   // eq(a, ["path", "href", "type", "format", "default"])
   eq(a, ["path", "tab", "href", "type", "default"])
 })
 
-test("Property(): initializes a property with an empty path", () => {
-  const p = new Property()
+test("PropertyConfig(): initializes a property with an empty path", () => {
+  const p = new PropertyConfig()
   is(p.path, "")
 })
 
-test("Property(): initializes a property with an empty tab", () => {
-  const p = new Property()
+test("PropertyConfig(): initializes a property with an empty tab", () => {
+  const p = new PropertyConfig()
   is(p.tab, "")
 })
 
-test("Property(): initializes a property with an empty href", () => {
-  const p = new Property()
+test("PropertyConfig(): initializes a property with an empty href", () => {
+  const p = new PropertyConfig()
   is(p.href, "")
 })
 
-test("Property(): initializes a property with an undefined type", () => {
-  const p = new Property()
+test("PropertyConfig(): initializes a property with an undefined type", () => {
+  const p = new PropertyConfig()
   eq(p.type, new UndefinedType())
 })
 
-// test("Property(): initializes a property with an undefined format", () => {
-//   const p = new Property()
+// test("PropertyConfig(): initializes a property with an undefined format", () => {
+//   const p = new PropertyConfig()
 //   is(p.format, undefined)
 // })
 
-test("Property(): initializes a property with an undefined default", () => {
-  const p = new Property()
+test("PropertyConfig(): initializes a property with an undefined default", () => {
+  const p = new PropertyConfig()
   is(p.default, undefined)
 })
 
-test("Property.fromJson(): initializes a property from json", () => {
+test("PropertyConfig.fromJson(): initializes a property from json", () => {
   const j = "{}"
-  const p = Property.fromJson(j)
-  is(p instanceof Property, true)
+  const p = PropertyConfig.fromJson(j)
+  is(p instanceof PropertyConfig, true)
 })
 
-test("Property.fromJson(): initializes a property from json with the path", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the path", () => {
   const j = '{"path":"p"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   is(p.path, "p")
 })
 
-test("Property.fromJson(): initializes a property from json with the tab", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the tab", () => {
   const j = '{"tab":"t"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   is(p.tab, "t")
 })
 
-test("Property.fromJson(): initializes a property from json with the href", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the href", () => {
   const j = '{"href":"h"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   is(p.href, "h")
 })
 
-test("Property.fromJson(): initializes a property from json with the string type", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the string type", () => {
   const j = '{"type":"string"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   eq(p.type, new StringType())
 })
 
-test("Property.fromJson(): initializes a property from json with the number type", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the number type", () => {
   const j = '{"type":"number"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   eq(p.type, new NumberType())
 })
 
-test("Property.fromJson(): initializes a property from json with the function type", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the function type", () => {
   const j = '{"type":"function"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   eq(p.type, new FunctionType())
 })
 
-test("Property.fromJson(): initializes a property from json with the boolean type", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the boolean type", () => {
   const j = '{"type":"boolean"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   eq(p.type, new BooleanType())
 })
 
-test("Property.fromJson(): throws an error when initializing a property from json with an unknown type", () => {
+test("PropertyConfig.fromJson(): throws an error when initializing a property from json with an unknown type", () => {
   const j = '{"type":"unknown"}'
   try {
-    const p = Property.fromJson(j)
+    const p = PropertyConfig.fromJson(j)
     un(`Expected an error, got ${p}`)
   } catch (e) {
     is(e instanceof Error && e.message, "Unknown type: unknown")
   }
 })
 
-// test("Property.fromJson(): initializes a property from json with the format", () => {})
+// test("PropertyConfig.fromJson(): initializes a property from json with the format", () => {})
 
-test("Property.fromJson(): initializes a property from json with cases", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with cases", () => {
   const j = '{"type":"string","cases":["a","b"]}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   const e = new EnumType()
   const a = new LiteralType()
   a.base = new StringType()
@@ -280,16 +280,16 @@ test("Property.fromJson(): initializes a property from json with cases", () => {
   eq(p.type, e)
 })
 
-test("Property.fromJson(): initializes a property from json with the default", () => {
+test("PropertyConfig.fromJson(): initializes a property from json with the default", () => {
   const j = '{"default":"d"}'
-  const p = Property.fromJson(j)
+  const p = PropertyConfig.fromJson(j)
   is(p.default, "d")
 })
 
-test("Property.fromYaml(): initializes a property from yaml", () => {
+test("PropertyConfig.fromYaml(): initializes a property from yaml", () => {
   const y = ""
-  const p = Property.fromYaml(y)
-  is(p instanceof Property, true)
+  const p = PropertyConfig.fromYaml(y)
+  is(p instanceof PropertyConfig, true)
 })
 
 test("DocumentEditor(): initializes a document editor", () => {
@@ -328,7 +328,7 @@ test("DocumentEditor.fromJson(): initializes a document editor from json with th
 test("DocumentEditor.fromJson(): initializes a document editor from json with the config", () => {
   const j = '{"config":[{"path":"p"}]}'
   const d = DocumentEditor.fromJson(j)
-  const p = new Property()
+  const p = new PropertyConfig()
   p.path = "p"
   eq(d.config, [p])
 })
@@ -380,7 +380,7 @@ test("DocumentEditor.merge(): merges the config of two empty document editors", 
 
 test("DocumentEditor.merge(): uses the config of the first document editor when the second one is empty during a merge", () => {
   const a = new DocumentEditor()
-  const p = new Property()
+  const p = new PropertyConfig()
   p.path = "p"
   a.config = [p]
   const b = new DocumentEditor()
@@ -391,7 +391,7 @@ test("DocumentEditor.merge(): uses the config of the first document editor when 
 test("DocumentEditor.merge(): uses the config of the second document editor when the first one is empty during a merge", () => {
   const a = new DocumentEditor()
   const b = new DocumentEditor()
-  const p = new Property()
+  const p = new PropertyConfig()
   p.path = "q"
   b.config = [p]
   const c = DocumentEditor.merge(a, b)
@@ -400,11 +400,11 @@ test("DocumentEditor.merge(): uses the config of the second document editor when
 
 test("DocumentEditor.merge(): throws an error when merging two document editor non-empty configs", () => {
   const a = new DocumentEditor()
-  const p = new Property()
+  const p = new PropertyConfig()
   p.path = "p"
   a.config = [p]
   const b = new DocumentEditor()
-  const q = new Property()
+  const q = new PropertyConfig()
   q.path = "q"
   b.config = [q]
   try {
@@ -415,207 +415,207 @@ test("DocumentEditor.merge(): throws an error when merging two document editor n
   }
 })
 
-test("Playground(): initializes a playground", () => {
-  const p = new Playground()
-  is(p instanceof Playground, true)
+test("PlaygroundConfig(): initializes a playground", () => {
+  const p = new PlaygroundConfig()
+  is(p instanceof PlaygroundConfig, true)
 })
 
-test("Playground(): initializes a playground with the correct order of keys", () => {
-  const p = new Playground()
+test("PlaygroundConfig(): initializes a playground with the correct order of keys", () => {
+  const p = new PlaygroundConfig()
   const a = Object.keys(p)
   eq(a, ["documentEditor", "tabs"])
 })
 
-test("Playground(): initializes a playground with an empty document editor", () => {
-  const p = new Playground()
+test("PlaygroundConfig(): initializes a playground with an empty document editor", () => {
+  const p = new PlaygroundConfig()
   eq(p.documentEditor, new DocumentEditor())
 })
 
-test("Playground(): initializes a playground with an empty tabs", () => {
-  const p = new Playground()
+test("PlaygroundConfig(): initializes a playground with an empty tabs", () => {
+  const p = new PlaygroundConfig()
   eq(p.tabs, [])
 })
 
-test("Playground.fromJson(): initializes a playground from json", () => {
+test("PlaygroundConfig.fromJson(): initializes a playground from json", () => {
   const j = "{}"
-  const p = Playground.fromJson(j)
-  is(p instanceof Playground, true)
+  const p = PlaygroundConfig.fromJson(j)
+  is(p instanceof PlaygroundConfig, true)
 })
 
-test("Playground.fromJson(): initializes a playground from json with the document editor", () => {
+test("PlaygroundConfig.fromJson(): initializes a playground from json with the document editor", () => {
   const j = '{"documentEditor":{"documentServerUrl":"d"}}'
-  const p = Playground.fromJson(j)
+  const p = PlaygroundConfig.fromJson(j)
   const d = new DocumentEditor()
   d.documentServerUrl = "d"
   eq(p.documentEditor, d)
 })
 
-test("Playground.fromJson(): initializes a playground from json with the tabs", () => {
+test("PlaygroundConfig.fromJson(): initializes a playground from json with the tabs", () => {
   const j = '{"tabs":{"t":"l"}}'
-  const p = Playground.fromJson(j)
-  const t = new Tab()
+  const p = PlaygroundConfig.fromJson(j)
+  const t = new TabConfig()
   t.id = "t"
   t.label = "l"
   eq(p.tabs, [t])
 })
 
-test("Playground.fromYaml(): initializes a playground from yaml", () => {
+test("PlaygroundConfig.fromYaml(): initializes a playground from yaml", () => {
   const y = ""
-  const p = Playground.fromYaml(y)
-  is(p instanceof Playground, true)
+  const p = PlaygroundConfig.fromYaml(y)
+  is(p instanceof PlaygroundConfig, true)
 })
 
-test("Playground.merge(): merges the document editor of two empty playgrounds", () => {
-  const a = new Playground()
-  const b = new Playground()
-  const c = Playground.merge(a, b)
+test("PlaygroundConfig.merge(): merges the document editor of two empty playgrounds", () => {
+  const a = new PlaygroundConfig()
+  const b = new PlaygroundConfig()
+  const c = PlaygroundConfig.merge(a, b)
   eq(c.documentEditor, new DocumentEditor())
 })
 
-test("Playground.merge(): merges the document editor of the first playground when the second one is empty", () => {
-  const a = new Playground()
+test("PlaygroundConfig.merge(): merges the document editor of the first playground when the second one is empty", () => {
+  const a = new PlaygroundConfig()
   const d = new DocumentEditor()
   d.documentServerUrl = "a"
   a.documentEditor = d
-  const b = new Playground()
-  const c = Playground.merge(a, b)
+  const b = new PlaygroundConfig()
+  const c = PlaygroundConfig.merge(a, b)
   eq(c.documentEditor, d)
 })
 
-test("Playground.merge(): merges the document editor of the second playground when the first one is empty", () => {
-  const a = new Playground()
-  const b = new Playground()
+test("PlaygroundConfig.merge(): merges the document editor of the second playground when the first one is empty", () => {
+  const a = new PlaygroundConfig()
+  const b = new PlaygroundConfig()
   const d = new DocumentEditor()
   d.documentServerUrl = "b"
   b.documentEditor = d
-  const c = Playground.merge(a, b)
+  const c = PlaygroundConfig.merge(a, b)
   eq(c.documentEditor, d)
 })
 
-test("Playground.merge(): merges the document editor of the second playground when both are not empty", () => {
-  const a = new Playground()
+test("PlaygroundConfig.merge(): merges the document editor of the second playground when both are not empty", () => {
+  const a = new PlaygroundConfig()
   const d = new DocumentEditor()
   d.documentServerUrl = "a"
   a.documentEditor = d
-  const b = new Playground()
+  const b = new PlaygroundConfig()
   const e = new DocumentEditor()
   e.documentServerUrl = "b"
   b.documentEditor = e
-  const c = Playground.merge(a, b)
+  const c = PlaygroundConfig.merge(a, b)
   eq(c.documentEditor, e)
 })
 
-test("Playground.merge(): merges the tabs of two empty playgrounds", () => {
-  const a = new Playground()
-  const b = new Playground()
-  const c = Playground.merge(a, b)
+test("PlaygroundConfig.merge(): merges the tabs of two empty playgrounds", () => {
+  const a = new PlaygroundConfig()
+  const b = new PlaygroundConfig()
+  const c = PlaygroundConfig.merge(a, b)
   eq(c.tabs, [])
 })
 
-test("Playground.merge(): uses the tabs of the first playground when the second one is empty", () => {
-  const a = new Playground()
-  const t = new Tab()
+test("PlaygroundConfig.merge(): uses the tabs of the first playground when the second one is empty", () => {
+  const a = new PlaygroundConfig()
+  const t = new TabConfig()
   t.id = "t"
   t.label = "l"
   a.tabs = [t]
-  const b = new Playground()
-  const c = Playground.merge(a, b)
+  const b = new PlaygroundConfig()
+  const c = PlaygroundConfig.merge(a, b)
   eq(c.tabs, [t])
 })
 
-test("Playground.merge(): uses the tabs of the second playground when the first one is empty", () => {
-  const a = new Playground()
-  const b = new Playground()
-  const t = new Tab()
+test("PlaygroundConfig.merge(): uses the tabs of the second playground when the first one is empty", () => {
+  const a = new PlaygroundConfig()
+  const b = new PlaygroundConfig()
+  const t = new TabConfig()
   t.id = "t"
   t.label = "l"
   b.tabs = [t]
-  const c = Playground.merge(a, b)
+  const c = PlaygroundConfig.merge(a, b)
   eq(c.tabs, [t])
 })
 
-test("Playground.merge(): throws an error when merging two non-empty tabs", () => {
-  const a = new Playground()
-  const t = new Tab()
+test("PlaygroundConfig.merge(): throws an error when merging two non-empty tabs", () => {
+  const a = new PlaygroundConfig()
+  const t = new TabConfig()
   t.id = "t"
   t.label = "l"
   a.tabs = [t]
-  const b = new Playground()
-  const u = new Tab()
+  const b = new PlaygroundConfig()
+  const u = new TabConfig()
   u.id = "u"
   u.label = "m"
   b.tabs = [u]
   try {
-    const c = Playground.merge(a, b)
+    const c = PlaygroundConfig.merge(a, b)
     un(`Expected an error, got ${c}`)
   } catch (e) {
     is(e instanceof Error && e.message, "Merging of tabs is not supported")
   }
 })
 
-test("Server(): initializes a server", () => {
-  const s = new Server()
-  is(s instanceof Server, true)
+test("ServerConfig(): initializes a server", () => {
+  const s = new ServerConfig()
+  is(s instanceof ServerConfig, true)
 })
 
-test("Server(): initializes a server with the correct order of keys", () => {
-  const s = new Server()
+test("ServerConfig(): initializes a server with the correct order of keys", () => {
+  const s = new ServerConfig()
   const a = Object.keys(s)
   eq(a, ["baseUrl"])
 })
 
-test("Server(): initializes a server with an empty base url", () => {
-  const s = new Server()
+test("ServerConfig(): initializes a server with an empty base url", () => {
+  const s = new ServerConfig()
   is(s.baseUrl, "")
 })
 
-test("Server.fromJson(): initializes a server from json", () => {
+test("ServerConfig.fromJson(): initializes a server from json", () => {
   const j = "{}"
-  const s = Server.fromJson(j)
-  is(s instanceof Server, true)
+  const s = ServerConfig.fromJson(j)
+  is(s instanceof ServerConfig, true)
 })
 
-test("Server.fromJson(): initializes a server from json with the base url", () => {
+test("ServerConfig.fromJson(): initializes a server from json with the base url", () => {
   const j = '{"baseUrl":"b"}'
-  const s = Server.fromJson(j)
+  const s = ServerConfig.fromJson(j)
   is(s.baseUrl, "b")
 })
 
-test("Server.fromYaml(): initializes a server from yaml", () => {
+test("ServerConfig.fromYaml(): initializes a server from yaml", () => {
   const y = ""
-  const s = Server.fromYaml(y)
-  is(s instanceof Server, true)
+  const s = ServerConfig.fromYaml(y)
+  is(s instanceof ServerConfig, true)
 })
 
-test("Server.merge(): merges the base url of two empty servers", () => {
-  const a = new Server()
-  const b = new Server()
-  const c = Server.merge(a, b)
+test("ServerConfig.merge(): merges the base url of two empty servers", () => {
+  const a = new ServerConfig()
+  const b = new ServerConfig()
+  const c = ServerConfig.merge(a, b)
   is(c.baseUrl, "")
 })
 
-test("Server.merge(): uses the base url of the first server when the second one is empty", () => {
-  const a = new Server()
+test("ServerConfig.merge(): uses the base url of the first server when the second one is empty", () => {
+  const a = new ServerConfig()
   a.baseUrl = "a"
-  const b = new Server()
-  const c = Server.merge(a, b)
+  const b = new ServerConfig()
+  const c = ServerConfig.merge(a, b)
   is(c.baseUrl, "a")
 })
 
-test("Server.merge(): uses the base url of the second server when the first one is empty", () => {
-  const a = new Server()
-  const b = new Server()
+test("ServerConfig.merge(): uses the base url of the second server when the first one is empty", () => {
+  const a = new ServerConfig()
+  const b = new ServerConfig()
   b.baseUrl = "b"
-  const c = Server.merge(a, b)
+  const c = ServerConfig.merge(a, b)
   is(c.baseUrl, "b")
 })
 
-test("Server.merge(): uses the base url of the second server when both are not empty", () => {
-  const a = new Server()
+test("ServerConfig.merge(): uses the base url of the second server when both are not empty", () => {
+  const a = new ServerConfig()
   a.baseUrl = "a"
-  const b = new Server()
+  const b = new ServerConfig()
   b.baseUrl = "b"
-  const c = Server.merge(a, b)
+  const c = ServerConfig.merge(a, b)
   is(c.baseUrl, "b")
 })
 
@@ -637,12 +637,12 @@ test("Config(): initializes a config with an empty base url", () => {
 
 test("Config(): initializes a config with an empty server", () => {
   const c = new Config()
-  eq(c.server, new Server())
+  eq(c.server, new ServerConfig())
 })
 
 test("Config(): initializes a config with an empty playground", () => {
   const c = new Config()
-  eq(c.playground, new Playground())
+  eq(c.playground, new PlaygroundConfig())
 })
 
 test("Config.fromJson(): initializes a config from json", () => {
@@ -660,7 +660,7 @@ test("Config.fromJson(): initializes a config from json with the base url", () =
 test("Config.fromJson(): initializes a config from json with the server", () => {
   const j = '{"server":{"baseUrl":"b"}}'
   const c = Config.fromJson(j)
-  const s = new Server()
+  const s = new ServerConfig()
   s.baseUrl = "b"
   eq(c.server, s)
 })
@@ -668,7 +668,7 @@ test("Config.fromJson(): initializes a config from json with the server", () => 
 test("Config.fromJson(): initializes a config from json with the playground", () => {
   const j = '{"playground":{"documentEditor":{"documentServerUrl":"d"}}}'
   const c = Config.fromJson(j)
-  const p = new Playground()
+  const p = new PlaygroundConfig()
   const d = new DocumentEditor()
   d.documentServerUrl = "d"
   p.documentEditor = d
@@ -717,12 +717,12 @@ test("Config.merge(): merges the server of two empty configs", () => {
   const a = new Config()
   const b = new Config()
   const c = Config.merge(a, b)
-  eq(c.server, new Server())
+  eq(c.server, new ServerConfig())
 })
 
 test("Config.merge(): uses the server of the first config when the second one is empty", () => {
   const a = new Config()
-  const s = new Server()
+  const s = new ServerConfig()
   s.baseUrl = "a"
   a.server = s
   const b = new Config()
@@ -733,7 +733,7 @@ test("Config.merge(): uses the server of the first config when the second one is
 test("Config.merge(): uses the server of the second config when the first one is empty", () => {
   const a = new Config()
   const b = new Config()
-  const s = new Server()
+  const s = new ServerConfig()
   s.baseUrl = "b"
   b.server = s
   const c = Config.merge(a, b)
@@ -742,11 +742,11 @@ test("Config.merge(): uses the server of the second config when the first one is
 
 test("Config.merge(): uses the server of the second config when both are not empty", () => {
   const a = new Config()
-  const s = new Server()
+  const s = new ServerConfig()
   s.baseUrl = "a"
   a.server = s
   const b = new Config()
-  const t = new Server()
+  const t = new ServerConfig()
   t.baseUrl = "b"
   b.server = t
   const c = Config.merge(a, b)
@@ -757,12 +757,12 @@ test("Config.merge(): merges the playground of two empty configs", () => {
   const a = new Config()
   const b = new Config()
   const c = Config.merge(a, b)
-  eq(c.playground, new Playground())
+  eq(c.playground, new PlaygroundConfig())
 })
 
 test("Config.merge(): uses the playground of the first config when the second one is empty", () => {
   const a = new Config()
-  const p = new Playground()
+  const p = new PlaygroundConfig()
   const d = new DocumentEditor()
   d.documentServerUrl = "a"
   p.documentEditor = d
@@ -775,7 +775,7 @@ test("Config.merge(): uses the playground of the first config when the second on
 test("Config.merge(): uses the playground of the second config when the first one is empty", () => {
   const a = new Config()
   const b = new Config()
-  const p = new Playground()
+  const p = new PlaygroundConfig()
   const d = new DocumentEditor()
   d.documentServerUrl = "b"
   p.documentEditor = d

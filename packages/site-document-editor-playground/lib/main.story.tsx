@@ -6,10 +6,10 @@ import {
   EnumType,
   FunctionType,
   LiteralType,
-  Playground,
-  Property,
+  PlaygroundConfig,
+  PropertyConfig,
   StringType,
-  Tab
+  TabConfig
 } from "@onlyoffice/site-config"
 import button from "@onlyoffice/ui-button/main.css?inline"
 import codeEditor from "@onlyoffice/ui-code-editor/main.css?inline"
@@ -54,11 +54,11 @@ export function Composition(): JSX.Element {
     setup()
   }, [])
 
-  const config = new Playground()
+  const config = new PlaygroundConfig()
 
   config.documentEditor.documentServerUrl = "http://0.0.0.0:3000/"
 
-  let pr = new Property()
+  let pr = new PropertyConfig()
   pr.path = "documentType"
   pr.tab = "base"
   pr.href = "#documentType"
@@ -75,7 +75,7 @@ export function Composition(): JSX.Element {
   pr.default = "word"
   config.documentEditor.config.push(pr)
 
-  pr = new Property()
+  pr = new PropertyConfig()
   pr.path = "document.fileType"
   pr.tab = "document"
   pr.href = "#fileType"
@@ -92,7 +92,7 @@ export function Composition(): JSX.Element {
   pr.default = "docx"
   config.documentEditor.config.push(pr)
 
-  pr = new Property()
+  pr = new PropertyConfig()
   pr.path = "editorConfig.customization.compactHeader"
   pr.tab = "customization"
   pr.href = "#compactHeader"
@@ -100,29 +100,29 @@ export function Composition(): JSX.Element {
   pr.default = false
   config.documentEditor.config.push(pr)
 
-  pr = new Property()
+  pr = new PropertyConfig()
   pr.path = "events.onAppReady"
   pr.tab = "events"
   pr.href = "#onAppReady"
   pr.type = new FunctionType()
   config.documentEditor.config.push(pr)
 
-  let ta = new Tab()
+  let ta = new TabConfig()
   ta.id = "base"
   ta.label = "Base"
   config.tabs.push(ta)
 
-  ta = new Tab()
+  ta = new TabConfig()
   ta.id = "document"
   ta.label = "Document"
   config.tabs.push(ta)
 
-  ta = new Tab()
+  ta = new TabConfig()
   ta.id = "customization"
   ta.label = "Editor Config: Customization"
   config.tabs.push(ta)
 
-  ta = new Tab()
+  ta = new TabConfig()
   ta.id = "events"
   ta.label = "Events"
   config.tabs.push(ta)

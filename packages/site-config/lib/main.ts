@@ -14,15 +14,15 @@ export interface Configurable {
 
 export class Config implements Configurable {
   baseUrl = ""
-  server = new Server()
-  playground = new Playground()
+  server = new ServerConfig()
+  playground = new PlaygroundConfig()
 
-  static fromJson(data: string): Config {
+  static fromJson(data: string): Configurable {
     const o = JSON.parse(data)
     return this.fromInput(o)
   }
 
-  static fromYaml(data: string): Config {
+  static fromYaml(data: string): Configurable {
     let o = yaml.parse(data)
     if (!o) {
       o = {}
@@ -30,7 +30,7 @@ export class Config implements Configurable {
     return this.fromInput(o)
   }
 
-  static fromInput(ic: InputConfig): Config {
+  static fromInput(ic: InputConfig): Configurable {
     const co = new Config()
 
     if (ic.baseUrl) {
@@ -38,17 +38,17 @@ export class Config implements Configurable {
     }
 
     if (ic.server) {
-      co.server = Server.fromInput(ic.server)
+      co.server = ServerConfig.fromInput(ic.server)
     }
 
     if (ic.playground) {
-      co.playground = Playground.fromInput(ic.playground)
+      co.playground = PlaygroundConfig.fromInput(ic.playground)
     }
 
     return co
   }
 
-  static merge(a: Config, b: Config): Config {
+  static merge(a: Configurable, b: Configurable): Configurable {
     const co = new Config()
 
     if (a.baseUrl && b.baseUrl) {
@@ -59,8 +59,8 @@ export class Config implements Configurable {
       co.baseUrl = b.baseUrl
     }
 
-    co.server = Server.merge(a.server, b.server)
-    co.playground = Playground.merge(a.playground, b.playground)
+    co.server = ServerConfig.merge(a.server, b.server)
+    co.playground = PlaygroundConfig.merge(a.playground, b.playground)
 
     return co
   }
@@ -74,15 +74,15 @@ export interface ServerConfigurable {
   baseUrl: string
 }
 
-export class Server implements ServerConfigurable {
+export class ServerConfig implements ServerConfigurable {
   baseUrl = ""
 
-  static fromJson(data: string): Server {
+  static fromJson(data: string): ServerConfigurable {
     const o = JSON.parse(data)
     return this.fromInput(o)
   }
 
-  static fromYaml(data: string): Server {
+  static fromYaml(data: string): ServerConfigurable {
     let o = yaml.parse(data)
     if (!o) {
       o = {}
@@ -90,16 +90,19 @@ export class Server implements ServerConfigurable {
     return this.fromInput(o)
   }
 
-  static fromInput(is: InputServer): Server {
-    const s = new Server()
+  static fromInput(is: InputServer): ServerConfigurable {
+    const s = new ServerConfig()
     if (is.baseUrl) {
       s.baseUrl = is.baseUrl
     }
     return s
   }
 
-  static merge(a: Server, b: Server): Server {
-    const s = new Server()
+  static merge(
+    a: ServerConfigurable,
+    b: ServerConfigurable
+  ): ServerConfigurable {
+    const s = new ServerConfig()
 
     if (a.baseUrl && b.baseUrl) {
       s.baseUrl = b.baseUrl
@@ -123,16 +126,16 @@ export interface PlaygroundConfigurable {
   tabs: TabConfigurable[]
 }
 
-export class Playground implements PlaygroundConfigurable {
+export class PlaygroundConfig implements PlaygroundConfigurable {
   documentEditor = new DocumentEditor()
-  tabs: Tab[] = []
+  tabs: TabConfig[] = []
 
-  static fromJson(data: string): Playground {
+  static fromJson(data: string): PlaygroundConfigurable {
     const o = JSON.parse(data)
     return this.fromInput(o)
   }
 
-  static fromYaml(data: string): Playground {
+  static fromYaml(data: string): PlaygroundConfigurable {
     let o = yaml.parse(data)
     if (!o) {
       o = {}
@@ -140,8 +143,8 @@ export class Playground implements PlaygroundConfigurable {
     return this.fromInput(o)
   }
 
-  static fromInput(ip: InputPlayground): Playground {
-    const pl = new Playground()
+  static fromInput(ip: InputPlayground): PlaygroundConfigurable {
+    const pl = new PlaygroundConfig()
 
     if (ip.documentEditor) {
       pl.documentEditor = DocumentEditor.fromInput(ip.documentEditor)
@@ -149,7 +152,7 @@ export class Playground implements PlaygroundConfigurable {
 
     if (ip.tabs) {
       for (const [id, lb] of Object.entries(ip.tabs)) {
-        const t = new Tab()
+        const t = new TabConfig()
         t.id = id
         t.label = lb
         pl.tabs.push(t)
@@ -159,8 +162,11 @@ export class Playground implements PlaygroundConfigurable {
     return pl
   }
 
-  static merge(a: Playground, b: Playground): Playground {
-    const pl = new Playground()
+  static merge(
+    a: PlaygroundConfigurable,
+    b: PlaygroundConfigurable
+  ): PlaygroundConfigurable {
+    const pl = new PlaygroundConfig()
 
     pl.documentEditor = DocumentEditor.merge(a.documentEditor, b.documentEditor)
 
@@ -188,14 +194,14 @@ export interface DocumentEditorConfigurable {
 
 export class DocumentEditor implements DocumentEditorConfigurable {
   documentServerUrl = ""
-  config: Property[] = []
+  config: PropertyConfig[] = []
 
-  static fromJson(data: string): DocumentEditor {
+  static fromJson(data: string): DocumentEditorConfigurable {
     const o = JSON.parse(data)
     return this.fromInput(o)
   }
 
-  static fromYaml(data: string): DocumentEditor {
+  static fromYaml(data: string): DocumentEditorConfigurable {
     let o = yaml.parse(data)
     if (!o) {
       o = {}
@@ -203,7 +209,7 @@ export class DocumentEditor implements DocumentEditorConfigurable {
     return this.fromInput(o)
   }
 
-  static fromInput(ide: InputDocumentEditor): DocumentEditor {
+  static fromInput(ide: InputDocumentEditor): DocumentEditorConfigurable {
     const de = new DocumentEditor()
 
     if (ide.documentServerUrl) {
@@ -212,7 +218,7 @@ export class DocumentEditor implements DocumentEditorConfigurable {
 
     if (ide.config) {
       for (const ip of ide.config) {
-        const p = Property.fromInput(ip)
+        const p = PropertyConfig.fromInput(ip)
         de.config.push(p)
       }
     }
@@ -220,7 +226,10 @@ export class DocumentEditor implements DocumentEditorConfigurable {
     return de
   }
 
-  static merge(a: DocumentEditor, b: DocumentEditor): DocumentEditor {
+  static merge(
+    a: DocumentEditorConfigurable,
+    b: DocumentEditorConfigurable
+  ): DocumentEditorConfigurable {
     const de = new DocumentEditor()
 
     if (a.documentServerUrl && b.documentServerUrl) {
@@ -262,7 +271,7 @@ export interface PropertyConfigurable {
   default?: boolean | number | string
 }
 
-export class Property implements PropertyConfigurable {
+export class PropertyConfig implements PropertyConfigurable {
   path = ""
   tab = ""
   href = ""
@@ -270,12 +279,12 @@ export class Property implements PropertyConfigurable {
   // format?: Format = undefined
   default?: boolean | number | string = undefined
 
-  static fromJson(data: string): Property {
+  static fromJson(data: string): PropertyConfigurable {
     const o = JSON.parse(data)
     return this.fromInput(o)
   }
 
-  static fromYaml(data: string): Property {
+  static fromYaml(data: string): PropertyConfigurable {
     let o = yaml.parse(data)
     if (!o) {
       o = {}
@@ -283,8 +292,8 @@ export class Property implements PropertyConfigurable {
     return this.fromInput(o)
   }
 
-  static fromInput(ip: InputProperty): Property {
-    const p = new Property()
+  static fromInput(ip: InputProperty): PropertyConfigurable {
+    const p = new PropertyConfig()
 
     if (ip.path) {
       p.path = ip.path
@@ -433,7 +442,7 @@ export interface TabConfigurable {
   label: string
 }
 
-export class Tab implements TabConfigurable {
+export class TabConfig implements TabConfigurable {
   id: string = ""
   label: string = ""
 }
