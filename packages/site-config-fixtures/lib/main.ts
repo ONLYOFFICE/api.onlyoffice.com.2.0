@@ -74,6 +74,14 @@ export class DocumentEditorConfigFixture implements DocumentEditorConfigurable {
     this.config.push(pr)
 
     pr = new PropertyConfig()
+    pr.path = "height"
+    pr.tab = "base"
+    pr.href = "#height"
+    pr.type = new StringType()
+    pr.default = "100%"
+    this.config.push(pr)
+
+    pr = new PropertyConfig()
     pr.path = "document.fileType"
     pr.tab = "document"
     pr.href = "#fileType"
