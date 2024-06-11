@@ -2,16 +2,17 @@ import {readFile} from "node:fs/promises"
 import {join} from "node:path"
 import {cwd} from "node:process"
 import type {UserConfig} from "@onlyoffice/eleventy-types"
+import type {Configurable} from "@onlyoffice/site-config"
 import {Config} from "@onlyoffice/site-config"
 import {existsSync} from "node:fs"
 
 declare module "@onlyoffice/eleventy-types" {
   interface GlobalData {
-    config: Config
+    config: Configurable
   }
 
   interface Context {
-    config: Config
+    config: Configurable
   }
 }
 

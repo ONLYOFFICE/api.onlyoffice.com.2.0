@@ -1,4 +1,8 @@
-import type * as SiteConfig from "@onlyoffice/site-config"
+import type {
+  EnumRepresentable,
+  PlaygroundConfigurable,
+  PropertyConfigurable
+} from "@onlyoffice/site-config"
 import {Button} from "@onlyoffice/ui-button"
 import {CodeEditor} from "@onlyoffice/ui-code-editor"
 import {
@@ -36,7 +40,7 @@ const samples = [
 ]
 
 export interface SiteDocumentEditorPlaygroundParameters {
-  config: SiteConfig.Playground
+  config: PlaygroundConfigurable
 }
 
 export function SiteDocumentEditorPlayground(
@@ -111,7 +115,7 @@ export function SiteDocumentEditorPlayground(
 }
 
 interface PropertyParameters {
-  property: SiteConfig.Property
+  property: PropertyConfigurable
 }
 
 function Property({property}: PropertyParameters): JSX.Element {
@@ -141,8 +145,8 @@ function BooleanProperty({property}: PropertyParameters): JSX.Element {
 }
 
 interface EnumPropertyParameters {
-  property: SiteConfig.Property
-  type: SiteConfig.EnumType
+  property: PropertyConfigurable
+  type: EnumRepresentable
 }
 
 function EnumProperty({property, type}: EnumPropertyParameters): JSX.Element {
