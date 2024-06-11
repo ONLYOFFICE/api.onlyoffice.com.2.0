@@ -1,42 +1,113 @@
 import type * as SiteConfig from "@onlyoffice/site-config"
 import {Button} from "@onlyoffice/ui-button"
+import {CodeEditor} from "@onlyoffice/ui-code-editor"
+import {
+  CodeListing,
+  CodeListingTab,
+  CodeListingTabList,
+  CodeListingTabListWrapper,
+  CodeListingTabPanel
+} from "@onlyoffice/ui-code-listing"
 import {Content} from "@onlyoffice/ui-content"
-import {ContentTab, ContentTabContainer, ContentTabList, ContentTabPanel} from "@onlyoffice/ui-content-tab-container"
+import {
+  ContentTab,
+  ContentTabContainer,
+  ContentTabList,
+  ContentTabPanel
+} from "@onlyoffice/ui-content-tab-container"
+import {
+  FormControl,
+  FormControlLabel,
+  FormControlControl
+} from "@onlyoffice/ui-form-control"
+import {
+  Select,
+  SelectCombobox,
+  SelectListbox,
+  SelectOption
+} from "@onlyoffice/ui-select"
 import type {JSX} from "preact"
-import {h} from "preact"
+import {Fragment, h} from "preact"
+
+const samples = [
+  {id: "html", label: "HTML"},
+  {id: "js", label: "JavaScript"},
+  {id: "json", label: "JSON"}
+]
 
 export interface SitePlaygroundParameters {
   config: SiteConfig.Playground
 }
 
 export function SitePlayground({config}: SitePlaygroundParameters): JSX.Element {
-  return <site-playground>
+  return <site-playground class="de-playground">
     <Content>
       <h1>Document Editor Playground</h1>
       <document-editor-config>
         <form>
-          <ContentTabContainer>
-            <ContentTabList label="">
-              {config.tabs.map((t) => <ContentTab id={t.id}>{t.label}</ContentTab>)}
-              <Button type="submit" value="play" variant="accent">Play</Button>
-              <Button type="submit" value="reset">Reset</Button>
-            </ContentTabList>
-            {config.tabs.map((t) => <ContentTabPanel by={t.id}>
-              {config.documentEditor.config
-                .filter((p) => p.tab === t.id)
-                .map((p) => <Property property={p} />)}
-            </ContentTabPanel>)}
-          </ContentTabContainer>
+          <Properties />
+          <div class="de-playground__control-list">
+            <Button type="submit" value="reset">Reset</Button>
+            <Button type="submit" value="play" variant="accent">Play</Button>
+          </div>
         </form>
       </document-editor-config>
     </Content>
     <document-editor-mirror>
-      <document-editor document-server-url={config.documentEditor.documentServerUrl} config="{}"></document-editor>
+      <document-editor
+        document-server-url={config.documentEditor.documentServerUrl}
+        config="{}"
+      >
+      </document-editor>
     </document-editor-mirror>
     <Content>
-      <textarea data-config-sample="html"></textarea>
+      <Samples />
     </Content>
   </site-playground>
+
+  function Properties(): JSX.Element {
+    const ts: JSX.Element[] = []
+    const ps: JSX.Element[] = []
+
+    for (const tb of config.tabs) {
+      const t = <ContentTab id={tb.id}>{tb.label}</ContentTab>
+      ts.push(t)
+
+      const p = <ContentTabPanel by={tb.id}>
+        {config.documentEditor.config
+          .filter((p) => p.tab === tb.id)
+          .map((p) => <Property property={p} />)}
+      </ContentTabPanel>
+      ps.push(p)
+    }
+
+    return <ContentTabContainer>
+      <ContentTabList label="">{ts}</ContentTabList>
+      {ps}
+    </ContentTabContainer>
+  }
+
+  function Samples(): JSX.Element {
+    const ts: JSX.Element[] = []
+    const ps: JSX.Element[] = []
+
+    for (const s of samples) {
+      const t = <CodeListingTab id={s.id}>{s.label}</CodeListingTab>
+      ts.push(t)
+
+      const p = <CodeListingTabPanel by={s.id}>
+        <pre><code data-config-sample={s.id}></code></pre>
+      </CodeListingTabPanel>
+      ps.push(p)
+    }
+
+    return <CodeListing>
+      <CodeListingTabListWrapper>
+        <CodeListingTabList label="">{ts}</CodeListingTabList>
+      </CodeListingTabListWrapper>
+      {ps}
+    </CodeListing>
+  }
 }
 
 interface PropertyParameters {
@@ -75,26 +146,45 @@ interface EnumPropertyParameters {
 }
 
 function EnumProperty({property, type}: EnumPropertyParameters): JSX.Element {
-  return <label>
-    <code>{property.path}</code>
-    <select name={property.path}>
-      {type.cases.map((t) => {
-        if (t.type !== "literal") {
-          throw new Error(`Non-literal enum case unsupported: ${t.type}`)
-        }
-        if (typeof t.const !== "string" && typeof t.const !== "number") {
-          throw new Error(`Non-string/number enum case unsupported: ${t.const}`)
-        }
-        return <option value={t.const}>{t.const}</option>
-      })}
-    </select>
-  </label>
+  let cb = <></>
+  const lo: JSX.Element[] = []
+
+  for (const t of type.cases) {
+    if (t.type !== "literal") {
+      throw new Error(`Non-literal enum case unsupported: ${t.type}`)
+    }
+
+    if (typeof t.const !== "string" && typeof t.const !== "number") {
+      throw new Error(`Non-string/number enum case unsupported: ${t.const}`)
+    }
+
+    const s = t.const === property.default
+    if (s) {
+      cb = <SelectCombobox>{t.const}</SelectCombobox>
+    }
+
+    const v = String(t.const)
+    const o = <SelectOption selected={s} value={v}>{t.const}</SelectOption>
+    lo.push(o)
+  }
+
+  return <FormControl for="">
+    <FormControlLabel>
+      <span>{property.path}</span>
+    </FormControlLabel>
+    <FormControlControl>
+      <Select>
+        {cb}
+        <SelectListbox>{lo}</SelectListbox>
+      </Select>
+    </FormControlControl>
+  </FormControl>
 }
 
 function FunctionProperty({property}: PropertyParameters): JSX.Element {
   return <label>
-    <code>{property.path}</code>
-    <textarea id={property.path} name={property.path}></textarea>
+    <span>{property.path}</span>
+    <CodeEditor id={property.path} name={property.path}></CodeEditor>
     <output for={property.path}><pre><code data-output-for={property.path}></code></pre></output>
   </label>
 }
@@ -104,7 +194,7 @@ function NumberProperty({property}: PropertyParameters): JSX.Element {
   //   throw new Error(`Default value for number property '${property.path}' must be a number, but got '${property.default}'`)
   // }
   return <label>
-    <code>{property.path}</code>
+    <span>{property.path}</span>
     <input name={property.path} type="number" value={property.default} />
   </label>
 }
@@ -114,7 +204,7 @@ function StringProperty({property}: PropertyParameters): JSX.Element {
     throw new Error(`Default value for string property '${property.path}' must be a string, but got '${property.default}'`)
   }
   return <label>
-    <code>{property.path}</code>
+    <span>{property.path}</span>
     <input name={property.path} type="text" value={property.default} />
   </label>
 }

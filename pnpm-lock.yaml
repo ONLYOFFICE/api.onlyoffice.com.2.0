@@ -1416,18 +1416,46 @@ importers:
       '@onlyoffice/ui-button':
         specifier: workspace:^
         version: link:../ui-button
+      '@onlyoffice/ui-code-editor':
+        specifier: workspace:^
+        version: link:../ui-code-editor
+      '@onlyoffice/ui-code-listing':
+        specifier: workspace:^
+        version: link:../ui-code-listing
       '@onlyoffice/ui-content':
         specifier: workspace:^
         version: link:../ui-content
       '@onlyoffice/ui-content-tab-container':
         specifier: workspace:^
         version: link:../ui-content-tab-container
+      '@onlyoffice/ui-form-control':
+        specifier: workspace:^
+        version: link:../ui-form-control
+      '@onlyoffice/ui-select':
+        specifier: workspace:^
+        version: link:../ui-select
       preact:
         specifier: ^10.19.3
         version: 10.19.6
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+    devDependencies:
+      '@onlyoffice/ui-colors':
+        specifier: workspace:^
+        version: link:../ui-colors
+      '@onlyoffice/ui-content-code-editor':
+        specifier: workspace:^
+        version: link:../ui-content-code-editor
+      '@onlyoffice/ui-content-code-listing':
+        specifier: workspace:^
+        version: link:../ui-content-code-listing
+      '@storybook/preact':
+        specifier: ^8.0.0
+        version: 8.0.0(preact@10.19.6)
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
 
   packages/store-demo:
     dependencies:
