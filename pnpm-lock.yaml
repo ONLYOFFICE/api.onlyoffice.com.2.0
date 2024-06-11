@@ -1390,7 +1390,7 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6
 
-  packages/site-playground:
+  packages/site-document-editor-playground:
     dependencies:
       '@onlyoffice/document-editor-code-sample':
         specifier: workspace:^
@@ -2009,9 +2009,9 @@ importers:
       '@onlyoffice/service-resource':
         specifier: workspace:^
         version: link:../packages/service-resource
-      '@onlyoffice/site-playground':
+      '@onlyoffice/site-document-editor-playground':
         specifier: workspace:^
-        version: link:../packages/site-playground
+        version: link:../packages/site-document-editor-playground
       '@onlyoffice/store-demo':
         specifier: workspace:^
         version: link:../packages/store-demo

@@ -44,7 +44,7 @@
     "@onlyoffice/server-client": "workspace:^",
     "@onlyoffice/service-declaration": "workspace:^",
     "@onlyoffice/service-resource": "workspace:^",
-    "@onlyoffice/site-playground": "workspace:^",
+    "@onlyoffice/site-document-editor-playground": "workspace:^",
     "@onlyoffice/store-demo": "workspace:^",
     "@onlyoffice/template-hast-element": "workspace:^",
     "@onlyoffice/ui-button": "workspace:^",

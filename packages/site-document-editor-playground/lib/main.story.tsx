@@ -24,7 +24,7 @@ import type {Meta} from "@storybook/preact"
 import type {JSX} from "preact"
 import {h} from "preact"
 import sitePlayground from "./main.css?inline"
-import {SitePlayground} from "./main.tsx"
+import {SiteDocumentEditorPlayground} from "./main.tsx"
 
 const meta: Meta = {
   title: "Site/Document Editor Playground",
@@ -117,7 +117,7 @@ export function Composition(): JSX.Element {
   ta.label = "Events"
   config.tabs.push(ta)
 
-  return <SitePlayground config={config} />
+  return <SiteDocumentEditorPlayground config={config} />
 }
 
 export default meta

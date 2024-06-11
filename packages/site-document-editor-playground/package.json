@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/site-playground",
+  "name": "@onlyoffice/site-document-editor-playground",
   "private": true,
   "type": "module",
   "main": "lib/main.tsx",

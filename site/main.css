@@ -19,7 +19,7 @@
 @import "./components/syntax-highlight/syntax-highlight.css";
 @import "./components/tree/tree.css";
 
-@import "./node_modules/@onlyoffice/site-playground/lib/main.css";
+@import "./node_modules/@onlyoffice/site-document-editor-playground/lib/main.css";
 
 /* todo: temp */
 @import "./regular.css";
