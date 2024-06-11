@@ -2088,6 +2088,9 @@ importers:
       '@onlyoffice/site-document-editor-playground':
         specifier: workspace:^
         version: link:../packages/site-document-editor-playground
+      '@onlyoffice/site-playground-layout':
+        specifier: workspace:^
+        version: link:../packages/site-playground-layout
       '@onlyoffice/store-demo':
         specifier: workspace:^
         version: link:../packages/store-demo
