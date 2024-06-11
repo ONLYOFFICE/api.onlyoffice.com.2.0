@@ -68,6 +68,9 @@ function Styles({ctx}: {ctx: StoryContext}): JSX.Element {
     return <></>
   }
   return <>
-    {p.styles.map((s, i) => <style key={i} dangerouslySetInnerHTML={{__html: s}} />)}
+    {p.styles.map((s, i) => <style
+      key={i}
+      dangerouslySetInnerHTML={{__html: s}}
+    />)}
   </>
 }
