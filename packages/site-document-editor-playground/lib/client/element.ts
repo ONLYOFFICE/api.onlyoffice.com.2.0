@@ -184,7 +184,6 @@ export class SiteDocumentEditorPlayground extends HTMLElement {
       }
       setProperty(cf, c.name, v)
     }
-    console.log(cf)
     return cf
   }
 
