@@ -76,8 +76,14 @@ export function constructorDeclaration(d: Library.ConstructorDeclaration): Token
 
   let t: Tokenizer.Token
 
-  // For consistency
-  // eslint-disable-next-line prefer-const
+  t = decoratorToken()
+  t.text = "constructor"
+  a.push(t)
+
+  t = textToken()
+  t.text = " "
+  a.push(t)
+
   t = identifierToken()
   t.text = d.identifier
   a.push(t)
@@ -99,6 +105,14 @@ export function eventDeclaration(d: Library.EventDeclaration): Tokenizer.Token[]
 
   t = textToken()
   t.text = " "
+  a.push(t)
+
+  t = referenceToken()
+  t.id = d.parent?.id || ""
+  a.push(t)
+
+  t = textToken()
+  t.text = "."
   a.push(t)
 
   t = identifierToken()
@@ -124,6 +138,14 @@ export function methodDeclaration(d: Library.MethodDeclaration): Tokenizer.Token
   t.text = " "
   a.push(t)
 
+  t = referenceToken()
+  t.id = d.parent?.id || ""
+  a.push(t)
+
+  t = textToken()
+  t.text = "."
+  a.push(t)
+
   t = identifierToken()
   t.text = d.identifier
   a.push(t)
@@ -147,7 +169,20 @@ export function propertyDeclaration(d: Library.PropertyDeclaration): Tokenizer.T
   t.text = " "
   a.push(t)
 
+  t = referenceToken()
+  t.id = d.parent?.id || ""
+  a.push(t)
+
+  t = textToken()
+  t.text = "."
+  a.push(t)
+
+  t = identifierToken()
+  t.text = d.identifier
+  a.push(t)
+
   const b = value(d)
+  b.shift()
   a.push(...b)
 
   return a
@@ -200,6 +235,15 @@ export function value(v: Library.Value): Tokenizer.Token[] {
   a.push(u)
 
   const b = type(v.type)
+  if ("type" in v.type && v.type.type === "function" && v.type.returns) {
+    u = textToken()
+    u.text = "("
+    b.unshift(u)
+
+    u = textToken()
+    u.text = ")"
+    b.push(u)
+  }
   a.push(...b)
 
   if (v.default) {
@@ -256,9 +300,14 @@ export function arrayType(t: Library.ArrayType): Tokenizer.Token[] {
   let u: Tokenizer.Token
 
   if (t.items) {
+    let l = false
     for (const e of t.items) {
       const b = type(e)
       a.push(...b)
+
+      if (b.length > 1) {
+        l = true
+      }
 
       const u = textToken()
       u.text = ", "
@@ -267,7 +316,7 @@ export function arrayType(t: Library.ArrayType): Tokenizer.Token[] {
 
     a.pop()
 
-    if (t.items.length > 1) {
+    if (t.items.length > 1 || l) {
       u = textToken()
       u.text = "("
       a.unshift(u)
@@ -317,6 +366,15 @@ export function functionType(t: Library.FunctionType): Tokenizer.Token[] {
     a.push(u)
 
     const b = type(t.returns.type)
+    if ("type" in t.returns.type && t.returns.type.type === "function" && t.returns.type.returns) {
+      u = textToken()
+      u.text = "("
+      b.unshift(u)
+
+      u = textToken()
+      u.text = ")"
+      b.push(u)
+    }
     a.push(...b)
   }
 
@@ -346,18 +404,17 @@ export function unionType(t: Library.UnionType): Tokenizer.Token[] {
 
   let u: Tokenizer.Token
 
-  for (const e of t.types) {
+  for (const [i, e] of t.types.entries()) {
     const b = type(e)
-    if (b.length > 1) {
-      u = textToken()
-      u.text = "("
-      b.unshift(u)
-
+    if ("type" in e && e.type === "function" && e.returns && i+1 !== t.types.length) {
       u = textToken()
       u.text = ")"
       b.push(u)
-    }
 
+      u = textToken()
+      u.text = "("
+      b.unshift(u)
+    }
     a.push(...b)
 
     u = textToken()
