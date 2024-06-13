@@ -102,6 +102,19 @@ regular:
       red:
       - hsl(360, 54%, 47%)
 
+    background:
+      default: scale.white
+      muted: scale.gray[7]
+
+    foreground:
+      default: scale.black
+      muted: scale.gray[1]
+      anchor: scale.orange[1]
+
+    border:
+      default: scale.gray[4]
+      muted: scale.gray[6]
+
     button:
       neutral:
         background: scale.white
@@ -203,3 +216,16 @@ regular:
       action:
         background: scale.transparent
         foreground: scale.black
+
+    page-header:
+      background: scale.gray[0]
+      foreground: scale.gray[3]
+      border: scale.gray[0]
+
+    page-footer:
+      background: scale.gray[0]
+      foreground:
+        default: scale.white
+        muted: scale.gray[2]
+      border: scale.gray[0]
+      divider: hsl(0, 0%, 28%)

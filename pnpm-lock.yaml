@@ -1475,6 +1475,34 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
 
+  packages/site-page:
+    dependencies:
+      '@onlyoffice/ui-slots':
+        specifier: workspace:^
+        version: link:../ui-slots
+      preact:
+        specifier: ^10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@onlyoffice/ui-colors':
+        specifier: workspace:^
+        version: link:../ui-colors
+      '@onlyoffice/ui-sizes':
+        specifier: workspace:^
+        version: link:../ui-sizes
+      '@onlyoffice/ui-sr-only':
+        specifier: workspace:^
+        version: link:../ui-sr-only
+      '@storybook/preact':
+        specifier: ^8.0.0
+        version: 8.0.0(preact@10.22.0)
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
+
   packages/site-playground-layout:
     dependencies:
       preact:
