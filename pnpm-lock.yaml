@@ -1974,6 +1974,22 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  packages/ui-sr-only:
+    dependencies:
+      preact:
+        specifier: ^10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@storybook/preact':
+        specifier: ^8.0.0
+        version: 8.0.0(preact@10.22.0)
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
+
   packages/unique-string:
     dependencies:
       typescript:
