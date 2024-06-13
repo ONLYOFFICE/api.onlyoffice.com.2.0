@@ -1,0 +1,21 @@
+{
+  "name": "@onlyoffice/ui-sizes",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./main.css": "./dist/main.css"
+  },
+  "scripts": {
+    "build": "tsx lib/main.ts",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "dot-prop": "^9.0.0",
+    "sade": "^1.8.1",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5",
+    "yaml": "^2.4.1"
+  }
+}
