@@ -11,6 +11,7 @@
 // combobox-container element.
 
 // todo: Implement combobox container events.
+// todo: Implement type-searching in the combobox.
 
 import type {ComboboxContainerChangeEventListener} from "./events.ts"
 import {ComboboxContainerChangeEvent} from "./events.ts"
@@ -338,7 +339,7 @@ export class ComboboxContainer extends HTMLElement {
     if (!r) {
       return null
     }
-    return r.querySelector('slot[name="before-combobox"]')!
+    return r.querySelector('slot[name="before-combobox"]')
   }
 
   get #comboboxLabels(): NodeList {
@@ -398,7 +399,7 @@ export class ComboboxContainer extends HTMLElement {
     if (!r) {
       return null
     }
-    return r.querySelector('slot[name="after-combobox"]')!
+    return r.querySelector('slot[name="after-combobox"]')
   }
 
   get #listboxLabels(): NodeList {
