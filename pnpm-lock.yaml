@@ -2176,6 +2176,9 @@ importers:
       '@onlyoffice/openapi-resource-fixtures':
         specifier: workspace:^
         version: link:../packages/openapi-resource-fixtures
+      '@onlyoffice/radiogroup-container-html-element':
+        specifier: workspace:^
+        version: link:../packages/radiogroup-container-html-element
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
@@ -2197,9 +2200,15 @@ importers:
       '@onlyoffice/site-document-editor-playground':
         specifier: workspace:^
         version: link:../packages/site-document-editor-playground
+      '@onlyoffice/site-page':
+        specifier: workspace:^
+        version: link:../packages/site-page
       '@onlyoffice/site-playground-layout':
         specifier: workspace:^
         version: link:../packages/site-playground-layout
+      '@onlyoffice/site-theme-switcher':
+        specifier: workspace:^
+        version: link:../packages/site-theme-switcher
       '@onlyoffice/store-demo':
         specifier: workspace:^
         version: link:../packages/store-demo
@@ -2239,6 +2248,9 @@ importers:
       '@onlyoffice/ui-select':
         specifier: workspace:^
         version: link:../packages/ui-select
+      '@onlyoffice/ui-sr-only':
+        specifier: workspace:^
+        version: link:../packages/ui-sr-only
       '@onlyoffice/xml-types':
         specifier: workspace:^
         version: link:../packages/xml-types

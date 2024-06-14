@@ -1,3 +1,4 @@
+@import "./node_modules/@onlyoffice/ui-sr-only/lib/main.css";
 @import "./node_modules/@onlyoffice/ui-colors/dist/main.css";
 @import "./node_modules/@onlyoffice/ui-form-control/lib/main.css";
 @import "./node_modules/@onlyoffice/ui-select/lib/main.css";
@@ -12,15 +13,18 @@
 
 @import "./node_modules/@onlyoffice/documentation-ui-kit/lib/kit.css";
 @import "./node_modules/@onlyoffice/documentation-ui-kit/lib/kit.font.css";
+
+@import "./node_modules/@onlyoffice/site-page/lib/main.css";
+@import "./node_modules/@onlyoffice/site-theme-switcher/lib/main.css";
+@import "./node_modules/@onlyoffice/site-playground-layout/lib/main.css";
+@import "./node_modules/@onlyoffice/site-document-editor-playground/lib/main.css";
+
 @import "./components/breadcrumbs/breadcrumbs.css";
 @import "./components/chapter/chapter.css";
 @import "./components/code-declaration/code-declaration.css";
-@import "./components/page/page.css";
+/* @import "./components/page/page.css"; */
 @import "./components/syntax-highlight/syntax-highlight.css";
 @import "./components/tree/tree.css";
-
-@import "./node_modules/@onlyoffice/site-playground-layout/lib/main.css";
-@import "./node_modules/@onlyoffice/site-document-editor-playground/lib/main.css";
 
 /* todo: temp */
 @import "./regular.css";
