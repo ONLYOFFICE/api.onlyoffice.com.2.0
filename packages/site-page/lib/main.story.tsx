@@ -1,3 +1,6 @@
+import "@onlyoffice/site-theme-switcher/client.ts"
+import themeSwitcher from "@onlyoffice/site-theme-switcher/main.css?inline"
+import {ThemeSwitcher, ThemeSwitcherOption} from "@onlyoffice/site-theme-switcher"
 import colors from "@onlyoffice/ui-colors/main.css?inline"
 import sizes from "@onlyoffice/ui-sizes/main.css?inline"
 import srOnly from "@onlyoffice/ui-sr-only/main.css?inline"
@@ -11,6 +14,7 @@ import {
   SitePageFooter,
   SitePageFooterCopyright,
   SitePageFooterLinkContainer,
+  SitePageFooterThemeSwitcher,
   SitePageHeader,
   SitePageHeaderLogo,
   SitePageHeaderMenu
@@ -19,7 +23,7 @@ import {
 const meta: Meta = {
   title: "Site/Page",
   parameters: {
-    styles: [colors, sizes, srOnly, page]
+    styles: [colors, sizes, srOnly, page, themeSwitcher]
   }
 }
 
@@ -55,6 +59,13 @@ export function Composition(): JSX.Element {
         <h3>Try Now</h3>
         <a href="/">home</a>
       </SitePageFooterLinkContainer>
+      <SitePageFooterThemeSwitcher>
+        <ThemeSwitcher>
+          <ThemeSwitcherOption value="light">Light</ThemeSwitcherOption>
+          <ThemeSwitcherOption value="dark">Dark</ThemeSwitcherOption>
+          <ThemeSwitcherOption value="auto">Auto</ThemeSwitcherOption>
+        </ThemeSwitcher>
+      </SitePageFooterThemeSwitcher>
       <SitePageFooterCopyright>
         <a href="/">onlyoffice.com</a>
         <p>(c) Ascensio System SIA 2023. All right reserved</p>

@@ -1,0 +1,32 @@
+.theme-switcher {
+  display: inline-block;
+}
+
+.theme-switcher radiogroup-container {
+  display: inline-block;
+}
+
+.theme-switcher [role="radiogroup"] {
+  background-color: var(--color-theme-switcher-background-default);
+  border-radius: 20px;
+  border: 1px solid var(--color-theme-switcher-border);
+  color: var(--color-theme-switcher-foreground-default);
+  display: flex;
+  font-size: 13px;
+}
+
+.theme-switcher [role="radio"] {
+  border-radius: 20px;
+  cursor: default;
+  margin-left: 6px;
+  padding: 3px 16px;
+}
+
+.theme-switcher [role="radio"]:first-of-type {
+  margin-left: 0;
+}
+
+.theme-switcher [role="radio"][aria-checked="true"] {
+  background-color: var(--color-theme-switcher-background-active);
+  color: var(--color-theme-switcher-foreground-active);
+}

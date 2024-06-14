@@ -68,11 +68,13 @@ export function SitePageFooter(
 ): JSX.Element {
   const [slots, outer] = useSlots(children, {
     links: [SitePageFooterLinkContainer],
+    theme: SitePageFooterThemeSwitcher,
     copyright: SitePageFooterCopyright
   })
   return <footer class="page-footer">
     {outer}
     <div class="page-footer__link-list">{slots.links}</div>
+    <div class="page-footer__theme-switcher">{slots.theme}</div>
     <div class="page-footer__copyright">{slots.copyright}</div>
   </footer>
 }
@@ -93,6 +95,16 @@ export function SitePageFooterLinkContainer(
     <ul>{toChildArray(slots.links)
       .map((ln, i) => <li key={i}>{ln}</li>)}</ul>
   </nav>
+}
+
+export interface SitePageFooterThemeSwitcherParameters {
+  children?: any
+}
+
+export function SitePageFooterThemeSwitcher(
+  {children}: SitePageFooterThemeSwitcherParameters
+): JSX.Element {
+  return <>{children}</>
 }
 
 export interface SitePageFooterCopyrightParameters {

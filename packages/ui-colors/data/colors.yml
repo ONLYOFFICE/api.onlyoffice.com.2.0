@@ -229,3 +229,12 @@ regular:
         muted: scale.gray[2]
       border: scale.gray[0]
       divider: hsl(0, 0%, 28%)
+
+    theme-switcher:
+      background:
+        default: scale.gray[0]
+        active: hsl(0, 0%, 40%)
+      foreground:
+        default: scale.gray[2]
+        active: scale.white
+      border: hsl(0, 0%, 28%)

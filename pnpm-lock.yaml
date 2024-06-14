@@ -1506,6 +1506,9 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
     devDependencies:
+      '@onlyoffice/site-theme-switcher':
+        specifier: workspace:^
+        version: link:../site-theme-switcher
       '@onlyoffice/ui-colors':
         specifier: workspace:^
         version: link:../ui-colors
@@ -1570,6 +1573,28 @@ importers:
       '@onlyoffice/ui-select':
         specifier: workspace:^
         version: link:../ui-select
+      '@storybook/preact':
+        specifier: ^8.0.0
+        version: 8.0.0(preact@10.22.0)
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
+
+  packages/site-theme-switcher:
+    dependencies:
+      '@onlyoffice/radiogroup-container-html-element':
+        specifier: workspace:^
+        version: link:../radiogroup-container-html-element
+      preact:
+        specifier: ^10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@onlyoffice/ui-colors':
+        specifier: workspace:^
+        version: link:../ui-colors
       '@storybook/preact':
         specifier: ^8.0.0
         version: 8.0.0(preact@10.22.0)

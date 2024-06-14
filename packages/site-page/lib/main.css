@@ -115,10 +115,15 @@
   text-decoration: underline;
 }
 
+.page-footer__theme-switcher {
+  margin-top: -7px;
+  text-align: right;
+}
+
 .page-footer__copyright {
   border-top: 1px solid var(--color-page-footer-divider);
   font-size: 13px;
-  margin-top: 46px;
+  margin-top: 26px;
   padding-top: 24px;
   text-align: right;
 }
