@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ONLYOFFICE Radiogroup Container HTML Element</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    body {
+      margin: 2em;
+    }
+
+    body {
+      margin: 2em;
+    }
+
+    h2 {
+      margin-top: 2em;
+    }
+
+    [role="radio"] {
+      cursor: default;
+      display: inline-block;
+      border-radius: 3px;
+    }
+
+    [role="radio"]:focus {
+      outline: 2px solid rgb(52 120 247);
+    }
+
+    [role="radio"]::before {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='14' width='14' style='forced-color-adjust: auto;'%3E%3Ccircle cx='7' cy='7' r='6' stroke='rgb(143 143 156)' stroke-width='2' fill-opacity='0' /%3E%3C/svg%3E");
+      display: inline-block;
+      height: 14px;
+      margin-left: 5px;
+      margin-right: 7px;
+      position: relative;
+      top: 2px;
+      width: 14px;
+    }
+
+    [role="radio"][aria-checked="true"]::before {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='14' width='14' style='forced-color-adjust: auto;'%3E%3Ccircle cx='7' cy='7' r='6' stroke='rgb(52 199 89)' stroke-width='2' fill-opacity='0' /%3E%3Ccircle cx='7' cy='7' r='3' fill='rgb(52 199 89)' stroke-opacity='0' /%3E%3C/svg%3E");
+    }
+    </style>
+    <script type="module" src="../lib/main.ts"></script>
+  </head>
+  <body>
+    <h1>Radiogroup Container</h1>
+
+    <h2>Native radiogroup</h2>
+    <form>
+      <input type="radio" id="huey" name="person" value="huey" checked />
+      <label for="huey">Huey</label>
+      <input type="radio" id="dewey" name="person" value="dewey" />
+      <label for="dewey">Dewey</label>
+      <input type="radio" id="louie" name="person" value="louie" />
+      <label for="louie">Louie</label>
+    </form>
+
+    <h2>Custom radiogroup</h2>
+    <radiogroup-container>
+      <div role="radiogroup">
+        <div role="radio" aria-checked="true">Huey</div>
+        <div role="radio">Dewey</div>
+        <div role="radio">Louie</div>
+      </div>
+    </radiogroup-container>
+
+    <h2>Radiogroup with elements around the edges</h2>
+    <radiogroup-container>
+      <div slot="before-radiogroup">Element before radiogroup</div>
+      <div>Element before radiogroup (x2)</div>
+      <div role="radiogroup">
+        <div role="radio" aria-checked="true">Huey</div>
+        <div role="radio">Dewey</div>
+        <div role="radio">Louie</div>
+      </div>
+      <div slot="before-after">Element after radiogroup</div>
+      <div>Element after radiogroup (x2)</div>
+    </radiogroup-container>
+
+    <h2>Radiogroup without radiogroup role</h2>
+    <radiogroup-container>
+      <div role="radio" aria-checked="true">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container>
+
+    <h2>Radiogroup without aria-checked attribute</h2>
+    <radiogroup-container>
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container>
+
+    <!-- <h2>Radiogroup with aria-labelledby attribute</h2>
+    <div id="label1">External Label</div>
+    <radiogroup-container aria-labelledby="label1">
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container> -->
+
+    <h2>Radiogroup with aria-labelledby attribute on radiogroup role</h2>
+    <radiogroup-container>
+      <div id="label0">External Label</div>
+      <div role="radiogroup" aria-labelledby="label0">
+        <div role="radio">Huey</div>
+        <div role="radio">Dewey</div>
+        <div role="radio">Louie</div>
+      </div>
+    </radiogroup-container>
+
+    <!-- <h2>Radiogroup with aria-labelledby attribute on radio role</h2>
+    <radiogroup-container>
+      <div role="radiogroup">
+        <div role="radio" aria-labelledby="label1"></div><span id="label1">Huey</span>
+        <div role="radio" aria-labelledby="label2"></div><span id="label2">Dewey</span>
+        <div role="radio" aria-labelledby="label3"></div><span id="label3">Louie</span>
+      </div>
+    </radiogroup-container> -->
+
+    <!-- <h2>Radiogroup with aria-label attribute</h2>
+    <radiogroup-container aria-label="Inline Label">
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container> -->
+
+    <h2>Radiogroup with aria-label attribute on radiogroup role</h2>
+    <radiogroup-container>
+      <div role="radiogroup" aria-label="Inline Label">
+        <div role="radio">Huey</div>
+        <div role="radio">Dewey</div>
+        <div role="radio">Louie</div>
+      </div>
+    </radiogroup-container>
+
+    <!-- <h2>Radiogroup with aria-label attribute on radio role</h2>
+    <radiogroup-container>
+      <div role="radiogroup">
+        <div role="radio" aria-label="Huey"></div>
+        <div role="radio" aria-label="Dewey"></div>
+        <div role="radio" aria-label="Louie"></div>
+      </div>
+    </radiogroup-container> -->
+
+    <h2>Radiogroup with name attribute</h2>
+    <radiogroup-container name="person">
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container>
+
+    <h2>Radiogroup with default-index attribute</h2>
+    <radiogroup-container default-index="1">
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container>
+
+    <h2>Radiogroup with data-value attribute on radio role</h2>
+    <radiogroup-container>
+      <div role="radio" data-value="huey">Huey</div>
+      <div role="radio" data-value="dewey">Dewey</div>
+      <div role="radio" data-value="louie">Louie</div>
+    </radiogroup-container>
+
+    <h2>Radiogroup with default-value attribute</h2>
+    <radiogroup-container default-value="dewey">
+      <div role="radio" data-value="huey">Huey</div>
+      <div role="radio" data-value="dewey">Dewey</div>
+      <div role="radio" data-value="louie">Louie</div>
+    </radiogroup-container>
+
+    <!-- <h2>Radiogroup with disabled</h2>
+    <radiogroup-container disabled>
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container> -->
+
+    <h2>Radiogroup with onradiogroupcontainerchange</h2>
+    <radiogroup-container onradiogroupcontainerchange="console.log(event)">
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container>
+
+    <h2>Radiogroup with onradiogroupcontainerchanged</h2>
+    <radiogroup-container onradiogroupcontainerchanged="console.log(event)">
+      <div role="radio">Huey</div>
+      <div role="radio">Dewey</div>
+      <div role="radio">Louie</div>
+    </radiogroup-container>
+
+    <!-- <h2>Radiogroup inside form element</h2>
+    <form>
+      <radiogroup-container>
+        <div role="radio">Huey</div>
+        <div role="radio">Dewey</div>
+        <div role="radio">Louie</div>
+      </radiogroup-container>
+    </form> -->
+  </body>
+</html>
