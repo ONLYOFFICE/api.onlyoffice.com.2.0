@@ -139,7 +139,7 @@ function Property({property}: PropertyParameters): JSX.Element {
 function BooleanProperty({property}: PropertyParameters): JSX.Element {
   return <FormControl>
     <FormControlLabel>
-      <span>{property.path}</span>
+      <a href={property.href}>{property.path}</a>
     </FormControlLabel>
     <FormControlControl>
       <input
@@ -181,7 +181,7 @@ function EnumProperty({property, type}: EnumPropertyParameters): JSX.Element {
 
   return <FormControl for="">
     <FormControlLabel>
-      <span>{property.path}</span>
+      <a href={property.href}>{property.path}</a>
     </FormControlLabel>
     <FormControlControl>
       <Select name={property.path}>
@@ -195,7 +195,7 @@ function EnumProperty({property, type}: EnumPropertyParameters): JSX.Element {
 function FunctionProperty({property}: PropertyParameters): JSX.Element {
   return <FormControl class="de-playground__function-property">
     <FormControlLabel>
-      <span>{property.path}</span>
+      <a href={property.href}>{property.path}</a>
     </FormControlLabel>
     <FormControlControl>
       <CodeEditor id={property.path} name={property.path}></CodeEditor>
@@ -212,7 +212,7 @@ function NumberProperty({property}: PropertyParameters): JSX.Element {
   // }
   return <FormControl>
     <FormControlLabel>
-      <span>{property.path}</span>
+      <a href={property.href}>{property.path}</a>
     </FormControlLabel>
     <FormControlControl>
       <input name={property.path} type="number" value={property.default} />
@@ -226,7 +226,7 @@ function StringProperty({property}: PropertyParameters): JSX.Element {
   }
   return <FormControl>
     <FormControlLabel>
-      <span>{property.path}</span>
+      <a href={property.href}>{property.path}</a>
     </FormControlLabel>
     <FormControlControl>
       <input name={property.path} type="text" value={property.default} />
