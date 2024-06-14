@@ -2,11 +2,8 @@ import {RadiogroupContainer} from "./element.ts"
 import {
   type GlobalRadiogroupContainerChangedHandler,
   type GlobalRadiogroupContainerChangeHandler,
-  type RadiogroupContainerChangedEventListener,
-  type RadiogroupContainerChangeEventListener,
   RadiogroupContainerChangedEvent,
-  RadiogroupContainerChangeEvent,
-  RadiogroupContainerEvent
+  RadiogroupContainerChangeEvent
 } from "./events.ts"
 
 declare global {
@@ -14,7 +11,6 @@ declare global {
     RadiogroupContainer: typeof RadiogroupContainer
     RadiogroupContainerChangeEvent: typeof RadiogroupContainerChangeEvent
     RadiogroupContainerChangedEvent: typeof RadiogroupContainerChangedEvent
-    RadiogroupContainerEvent: typeof RadiogroupContainerEvent
   }
 
   interface HTMLElementTagNameMap {
@@ -30,8 +26,8 @@ declare global {
   }
 
   interface GlobalEventHandlersEventMap {
-    radiogroupcontainerchange: RadiogroupContainerChangeEventListener
-    radiogroupcontainerchanged: RadiogroupContainerChangedEventListener
+    radiogroupcontainerchange: RadiogroupContainerChangeEvent
+    radiogroupcontainerchanged: RadiogroupContainerChangedEvent
   }
 
   interface GlobalEventHandlers {
@@ -48,5 +44,4 @@ export function define(): void {
   window.customElements.define(RadiogroupContainer.tagName, RadiogroupContainer)
   window.RadiogroupContainerChangeEvent = RadiogroupContainerChangeEvent
   window.RadiogroupContainerChangedEvent = RadiogroupContainerChangedEvent
-  window.RadiogroupContainerEvent = RadiogroupContainerEvent
 }

@@ -1,6 +1,6 @@
 import type {RadiogroupContainer} from "./element.ts"
 
-export class RadiogroupContainerEvent extends Event {
+class RadiogroupContainerEvent extends Event {
   #radio?: HTMLElement
 
   get radio(): HTMLElement | undefined {
