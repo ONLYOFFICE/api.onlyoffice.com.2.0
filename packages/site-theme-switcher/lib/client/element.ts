@@ -39,12 +39,18 @@ export class ThemeSwitcher extends HTMLElement {
       return
     }
 
-    for (const r of rc.querySelectorAll('[role="radio"]')) {
-      if (!(r instanceof HTMLElement)) {
-        continue
+    if (rc.radios.length !== 0) {
+      for (const [i, r] of rc.radios.entries()) {
+        if (r.dataset.value === s.themePreference) {
+          rc.check(i)
+          break
+        }
       }
-      if (r.dataset.value === s.themePreference) {
-        r.ariaChecked = "true"
+    } else {
+      for (const r of rc.querySelectorAll<HTMLElement>('[role="radio"]')) {
+        if (r.dataset.value === s.themePreference) {
+          r.ariaChecked = "true"
+        }
       }
     }
 

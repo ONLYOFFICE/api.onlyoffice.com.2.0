@@ -291,7 +291,10 @@ export class RadiogroupContainer extends HTMLElement {
   }
 
   get #setupIndex(): number {
-    let i = this.defaultIndex
+    let i = this.checkedIndex
+    if (i !== -1) {
+      return Math.max(0, i)
+    }
 
     const v = this.#defaultValue
     if (v !== null) {
@@ -303,8 +306,8 @@ export class RadiogroupContainer extends HTMLElement {
       }
     }
 
-    if (i < 0) {
-      i = this.checkedIndex
+    if (i === -1) {
+      i = this.defaultIndex
     }
 
     return Math.max(0, i)
