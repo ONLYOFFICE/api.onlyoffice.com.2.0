@@ -23,7 +23,7 @@ import {type JSX, h} from "preact"
 export function data(): Data {
   return {
     layout: "html",
-    eleventyExcludeFromCollections: true
+    order: -7
   }
 }
 
