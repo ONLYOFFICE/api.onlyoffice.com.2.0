@@ -1,0 +1,22 @@
+{
+  "name": "@onlyoffice/ui-icons",
+  "private": true,
+  "type": "module",
+  "main": "./dist/main.tsx",
+  "scripts": {
+    "build": "tsx lib/main.ts",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "preact": "^10.22.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@storybook/preact": "^8.0.0",
+    "@types/node": "^20.12.12",
+    "sade": "^1.8.1",
+    "tsx": "^4.10.5",
+    "vite": "^5.1.6"
+  }
+}
