@@ -1,13 +1,14 @@
+import type {Data} from "@onlyoffice/eleventy-types"
 import {default as slugify} from "@sindresorhus/slugify"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
-    title?: "article" | "blank"
+    title?: string
     layout?: string
   }
 }
 
-export function data() {
+export function data(): Data {
   return {
     title: "",
     remote: "",
@@ -26,7 +27,7 @@ export function data() {
         .join("/")
 
       if (data.slug) {
-        s = s.replace(data.page.fileSlug, data.slug(data))
+        s = s.replace(slugify.default(data.page.fileSlug), data.slug(data))
       }
 
       return `/${s}.${data.page.outputFileExtension}`

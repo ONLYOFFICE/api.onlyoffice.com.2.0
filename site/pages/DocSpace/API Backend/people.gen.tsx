@@ -1,26 +1,7 @@
-import {people} from "@/resources/docspace.ts"
+import * as g from "@/generations/service.ts"
+import {people as r} from "@/resources/docspace.ts"
+import type {Data} from "@onlyoffice/eleventy-types"
 
-export function data() {
-  return {
-    layout: "rest-declaration",
-    pagination: {
-      data: "items",
-      size: 1,
-      addAllPagesToCollections: true
-    },
-    items: people.list(),
-    onRetrieve: people.resolve,
-    permalink(data) {
-      return permalink(data.pagination.items[0])
-    },
-    eleventyComputed: {
-      title(data) {
-        return data.pagination.items[0].title
-      },
-    }
-  }
-}
-
-function permalink(d) {
-  return `/docspace/api-backend/${d.slug}/index.html`
+export function data(): Data {
+  return g.data(r)
 }

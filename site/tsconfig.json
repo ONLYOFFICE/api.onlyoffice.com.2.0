@@ -16,6 +16,7 @@
     "./components",
     "./config",
     "./generated",
+    "./generations",
     "./layouts",
     "./pages",
     "./resources",
