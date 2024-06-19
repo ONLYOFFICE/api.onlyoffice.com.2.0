@@ -1,7 +1,7 @@
 export function data() {
   return {
     title: "Welcome to ONLYOFFICE API",
-    layout: "blank"
+    layout: "page"
   }
 }
 

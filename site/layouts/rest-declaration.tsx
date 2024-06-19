@@ -7,41 +7,38 @@ import { SyntaxHighlight } from "../components/syntax-highlight/syntax-highlight
 import { TableOfContents } from "../components/table-of-contents/table-of-contents.ts"
 import type { Eleventy } from "../config/eleventy.ts"
 import { retrieve } from "../config/sitemap.ts"
-import { render as ChapterLayout } from "./chapter.tsx"
 
 export function data() {
   return {
-    layout: "html"
+    layout: "chapter"
   }
 }
 
 export function render(ctx: Eleventy.Context): JSX.Element {
   return (
-    <ChapterLayout {...ctx}>
-      <Content>
-        {ctx.pagination.items.map((d) => {
-          switch (d.kind) {
-          case "group":
-            return (
-              <>
-                <h1>{d.title}</h1>
-                <TableOfContents url={ctx.page.url} onRetrieve={retrieve} />
-              </>
-            )
-          case "request":
-            return (
-              <RESTDeclaration
-                declaration={d}
-                onHighlightSyntax={SyntaxHighlight}
-                onRenderDescription={Markdown}
-                onRetrieve={ctx.onRetrieve}
-              />
-            )
-          default:
-            return ""
-          }
-        })}
-      </Content>
-    </ChapterLayout>
+    <Content>
+      {ctx.pagination.items.map((d) => {
+        switch (d.kind) {
+        case "group":
+          return (
+            <>
+              <h1>{d.title}</h1>
+              <TableOfContents url={ctx.page.url} onRetrieve={retrieve} />
+            </>
+          )
+        case "request":
+          return (
+            <RESTDeclaration
+              declaration={d}
+              onHighlightSyntax={SyntaxHighlight}
+              onRenderDescription={Markdown}
+              onRetrieve={ctx.onRetrieve}
+            />
+          )
+        default:
+          return ""
+        }
+      })}
+    </Content>
   )
 }

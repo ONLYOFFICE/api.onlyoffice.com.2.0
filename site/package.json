@@ -61,6 +61,7 @@
     "@onlyoffice/ui-content-code-listing": "workspace:^",
     "@onlyoffice/ui-content-tab-container": "workspace:^",
     "@onlyoffice/ui-form-control": "workspace:^",
+    "@onlyoffice/ui-icons": "workspace:^",
     "@onlyoffice/ui-select": "workspace:^",
     "@onlyoffice/ui-sr-only": "workspace:^",
     "@onlyoffice/xml-types": "workspace:^",

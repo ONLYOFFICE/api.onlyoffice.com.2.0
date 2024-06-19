@@ -8,11 +8,10 @@ import { Tree } from "../components/tree/tree.ts"
 import type { Eleventy } from "../config/eleventy.ts"
 import { useChildren } from "../config/eleventy.ts"
 import { retrieve } from "../config/sitemap.ts"
-import { PageLayout } from "./page.tsx"
 
 export function data() {
   return {
-    layout: "html"
+    layout: "page"
   }
 }
 
@@ -20,21 +19,19 @@ export function render(ctx: Eleventy.Context): JSX.Element {
   const children = useChildren(ctx)
   const breadcrumbs = <Breadcrumbs url={ctx.page.url} />
   return (
-    <PageLayout {...ctx}>
-      <Chapter>
-        <Chapter.Navigation>
-          <Navigation {...ctx} />
-        </Chapter.Navigation>
-        {breadcrumbs && (
-          <Chapter.Breadcrumbs>
-            {breadcrumbs}
-          </Chapter.Breadcrumbs>
-        )}
-        <main>
-          {children}
-        </main>
-      </Chapter>
-    </PageLayout>
+    <Chapter>
+      <Chapter.Navigation>
+        <Navigation {...ctx} />
+      </Chapter.Navigation>
+      {breadcrumbs && (
+        <Chapter.Breadcrumbs>
+          {breadcrumbs}
+        </Chapter.Breadcrumbs>
+      )}
+      <main>
+        {children}
+      </main>
+    </Chapter>
   )
 }
 

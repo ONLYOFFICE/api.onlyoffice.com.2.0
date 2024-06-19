@@ -2270,6 +2270,9 @@ importers:
       '@onlyoffice/ui-form-control':
         specifier: workspace:^
         version: link:../packages/ui-form-control
+      '@onlyoffice/ui-icons':
+        specifier: workspace:^
+        version: link:../packages/ui-icons
       '@onlyoffice/ui-select':
         specifier: workspace:^
         version: link:../packages/ui-select

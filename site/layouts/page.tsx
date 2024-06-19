@@ -1,54 +1,75 @@
-import { OnlyofficeLogo } from "@onlyoffice/documentation-ui-kit"
-import type { JSX } from "preact"
-import { h } from "preact"
-import { Page } from "../components/page/page.ts"
-import type { Eleventy } from "../config/eleventy.ts"
+import type {Data, Context} from "@onlyoffice/eleventy-types"
+import {
+  SitePage,
+  SitePageFooter,
+  SitePageFooterCopyright,
+  SitePageFooterLinkContainer,
+  SitePageFooterThemeSwitcher,
+  SitePageHeader,
+  SitePageHeaderLogo,
+  SitePageHeaderMenu
+} from "@onlyoffice/site-page"
+import {ThemeSwitcher, ThemeSwitcherOption} from "@onlyoffice/site-theme-switcher"
+import {OnlyofficeLogo} from "@onlyoffice/ui-icons"
+import {SrOnly} from "@onlyoffice/ui-sr-only"
+import {type JSX, h} from "preact"
 
-export function data() {
+export function data(): Data {
   return {
     layout: "html"
   }
 }
 
-export function render(ctx: Eleventy.Context): JSX.Element {
-  return (
-    <PageLayout {...ctx}>
-      {ctx.content}
-    </PageLayout>
-  )
-}
-
-export interface PageLayoutProperties extends Omit<Eleventy.Context, "content"> {
-  children: any
-}
-
-export function PageLayout(
-  {
-    children,
-    collections,
-    page
-  }: PageLayoutProperties
-): JSX.Element {
-  return (
-    <Page>
-      <Page.Header>
-        <Page.HeaderLogo>
-          <a href="/"><OnlyofficeLogo /></a>
-        </Page.HeaderLogo>
-        <Page.HeaderNavigation>
-          {collections.navigation.map((item) => (
-            <Page.HeaderNavigationLink
-              key={item.link}
-              href={item.link}
-              active={page.url.startsWith(item.link)}
-            >
-              {item.title}
-            </Page.HeaderNavigationLink>
-          ))}
-        </Page.HeaderNavigation>
-      </Page.Header>
-      {children}
-      <Page.Footer />
-    </Page>
-  )
+export function render({collections, content}: Context): JSX.Element {
+  return <SitePage>
+    <SitePageHeader>
+      <SrOnly>
+        <h2>Navigation Menu</h2>
+      </SrOnly>
+      <SitePageHeaderLogo>
+        <a href="/">
+          <OnlyofficeLogo />
+        </a>
+      </SitePageHeaderLogo>
+      <SitePageHeaderMenu label="Global Navigation">
+        {collections.navigation
+          .map((item) => <a href={item.link}>{item.title}</a>)}
+      </SitePageHeaderMenu>
+    </SitePageHeader>
+    <main>{content}</main>
+    <SitePageFooter>
+      <SrOnly>
+        <h2>Site-wide Links</h2>
+      </SrOnly>
+      <SitePageFooterLinkContainer label="Links related to">
+        <h3>Get Information</h3>
+        <a href="/">Get information</a>
+        <a href="/">Blog for developers</a>
+        <a href="/">For contributors</a>
+        <a href="/">Legal notice</a>
+      </SitePageFooterLinkContainer>
+      <SitePageFooterLinkContainer label="Links related to">
+        <h3>Get Help</h3>
+        <a href="/">Forum</a>
+        <a href="/">Code on GitHub</a>
+        <a href="/">Installation guides</a>
+        <a href="/">Support contact form</a>
+      </SitePageFooterLinkContainer>
+      <SitePageFooterLinkContainer label="Links related to">
+        <h3>Try Now</h3>
+        <a href="/">Developer Profile</a>
+      </SitePageFooterLinkContainer>
+      <SitePageFooterThemeSwitcher>
+        <ThemeSwitcher>
+          <ThemeSwitcherOption value="light">Light</ThemeSwitcherOption>
+          <ThemeSwitcherOption value="dark">Dark</ThemeSwitcherOption>
+          <ThemeSwitcherOption value="auto">Auto</ThemeSwitcherOption>
+        </ThemeSwitcher>
+      </SitePageFooterThemeSwitcher>
+      <SitePageFooterCopyright>
+        <a href="/">onlyoffice.com</a>
+        <p>(c) Ascensio System SIA 2023. All right reserved</p>
+      </SitePageFooterCopyright>
+    </SitePageFooter>
+  </SitePage>
 }

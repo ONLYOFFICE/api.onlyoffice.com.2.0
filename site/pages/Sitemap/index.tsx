@@ -6,7 +6,7 @@ import { h } from "preact"
 
 export function data() {
   return {
-    layout: "blank",
+    layout: "page",
     eleventyExcludeFromCollections: true
   }
 }
