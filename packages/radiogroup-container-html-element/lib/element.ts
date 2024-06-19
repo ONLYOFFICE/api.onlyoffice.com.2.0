@@ -575,8 +575,6 @@ export class RadiogroupContainer extends HTMLElement {
     case isRadio(ev.target):
       this.#handleRadioClick(ev)
       break
-    default:
-      break
     }
   }
 
@@ -588,8 +586,6 @@ export class RadiogroupContainer extends HTMLElement {
     switch (true) {
     case isRadio(ev.target):
       this.#handleRadioKeydown(ev)
-      break
-    default:
       break
     }
   }

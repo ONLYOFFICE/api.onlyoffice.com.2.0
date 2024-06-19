@@ -190,6 +190,7 @@ export class DocumentBuilder extends DocumentEditor {
       break
     default:
       super.attributeChangedCallback(n, _, v)
+      break
     }
   }
 

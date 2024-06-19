@@ -747,8 +747,6 @@ function type(ca: Catharsis): [Library.Type, ...Error[]] {
     case "String":
     case "string":
       return [library.passthroughType(t, ca.name)]
-    default:
-      // continue
     }
 
     if (isNumberLiteral(ca.name)) {
@@ -862,8 +860,6 @@ async function example(c: string): Promise<Library.Example> {
   case "json":
     await js(m.languageId)
     break
-  default:
-    // continue
   }
   return e
 

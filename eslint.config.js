@@ -77,7 +77,6 @@ function config() {
         "camelcase": e,
         "consistent-return": e,
         "curly": [e, "all"],
-        "default-case": e,
         "default-case-last": e,
         "default-param-last": e,
         "dot-notation": e,

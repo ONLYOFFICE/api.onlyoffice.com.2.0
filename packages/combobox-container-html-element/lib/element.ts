@@ -749,8 +749,6 @@ export class ComboboxContainer extends HTMLElement {
     case isOption(ev.target):
       this.#handleOptionClick(ev.target)
       break
-    default:
-      break
     }
   }
 
@@ -788,8 +786,6 @@ export class ComboboxContainer extends HTMLElement {
     switch (true) {
     case isCombobox(ev.target):
       this.#handleComboboxKeydown(ev)
-      break
-    default:
       break
     }
   }

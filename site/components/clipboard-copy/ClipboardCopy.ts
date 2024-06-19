@@ -75,6 +75,7 @@ async function copy(e: HTMLElement): Promise<void> {
   default:
     await copyNode(t)
     dispatch(e)
+    break
   }
 }
 
