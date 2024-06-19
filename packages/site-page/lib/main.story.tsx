@@ -2,6 +2,7 @@ import "@onlyoffice/site-theme-switcher/client.ts"
 import themeSwitcher from "@onlyoffice/site-theme-switcher/main.css?inline"
 import {ThemeSwitcher, ThemeSwitcherOption} from "@onlyoffice/site-theme-switcher"
 import colors from "@onlyoffice/ui-colors/main.css?inline"
+import {OnlyofficeLogo} from "@onlyoffice/ui-icons"
 import sizes from "@onlyoffice/ui-sizes/main.css?inline"
 import srOnly from "@onlyoffice/ui-sr-only/main.css?inline"
 import {SrOnly} from "@onlyoffice/ui-sr-only"
@@ -34,7 +35,9 @@ export function Composition(): JSX.Element {
         <h2>Navigation Menu</h2>
       </SrOnly>
       <SitePageHeaderLogo>
-        {/* <a href="/"><OnlyofficeLogo /></a> */}
+        <a href="/">
+          <OnlyofficeLogo style={{display: "block", height: "38px"}} />
+        </a>
       </SitePageHeaderLogo>
       <SitePageHeaderMenu label="Global">
         {/* <a href="/docspace/">DocSpace</a>

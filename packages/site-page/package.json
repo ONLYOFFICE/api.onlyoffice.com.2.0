@@ -19,6 +19,7 @@
   "devDependencies": {
     "@onlyoffice/site-theme-switcher": "workspace:^",
     "@onlyoffice/ui-colors": "workspace:^",
+    "@onlyoffice/ui-icons": "workspace:^",
     "@onlyoffice/ui-sizes": "workspace:^",
     "@onlyoffice/ui-sr-only": "workspace:^",
     "@storybook/preact": "^8.0.0",

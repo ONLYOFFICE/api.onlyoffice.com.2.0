@@ -1512,6 +1512,9 @@ importers:
       '@onlyoffice/ui-colors':
         specifier: workspace:^
         version: link:../ui-colors
+      '@onlyoffice/ui-icons':
+        specifier: workspace:^
+        version: link:../ui-icons
       '@onlyoffice/ui-sizes':
         specifier: workspace:^
         version: link:../ui-sizes
