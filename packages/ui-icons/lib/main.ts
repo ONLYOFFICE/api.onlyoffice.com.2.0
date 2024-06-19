@@ -26,7 +26,7 @@ async function build(): Promise<void> {
   await mkdir(dd)
 
   const of = outputFile(dd)
-  let oc = 'import {h} from "preact"\n\n'
+  let oc = 'import {type JSX, h} from "preact"\n\n'
 
   const sd = staticDir(rd)
   const ls = await readdir(sd)
@@ -50,7 +50,8 @@ function rename(s: string): string {
 }
 
 function wrap(n: string, c: string): string {
-  return `export function ${n}() {\n  return ${c}\n}\n`
+  c = c.replace(">", " {...a}>")
+  return `export function ${n}({...a}: JSX.SVGAttributes<SVGSVGElement>): JSX.Element {\n  return ${c}\n}\n`
 }
 
 function rootDir(): string {
