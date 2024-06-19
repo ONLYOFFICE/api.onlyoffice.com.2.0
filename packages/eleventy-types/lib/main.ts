@@ -81,9 +81,35 @@ export interface Data {
   eleventyExcludeFromCollections?: boolean
 
   /**
+   * {@link https://www.11ty.dev/docs/layouts/ Eleventy Reference}
+   */
+  layout?: string
+
+  /**
+   * {@link https://www.11ty.dev/docs/pagination/ Eleventy Reference}
+   */
+  pagination?: Pagination
+
+  /**
    * {@link https://www.11ty.dev/docs/data-computed/ Eleventy Reference}
    */
-  eleventyComputed?: Record<string, unknown>
+  eleventyComputed?: EleventyComputed
+}
+
+/**
+ * {@link https://www.11ty.dev/docs/pagination/ Eleventy Reference}
+ */
+export interface Pagination {
+  data?: string
+  size?: number
+  addAllPagesToCollections?: boolean
+}
+
+/**
+ * {@link https://www.11ty.dev/docs/data-computed/ Eleventy Reference}
+ */
+export interface EleventyComputed {
+  [k: string]: unknown
 }
 
 /**
@@ -94,4 +120,9 @@ export interface GlobalData {}
 /**
  * {@link https://www.11ty.dev/docs/data-eleventy-supplied/ Eleventy Reference}
  */
-export interface Context {}
+export interface Context {
+  collections: Collections
+  content: any
+}
+
+export interface Collections {}
