@@ -54,7 +54,7 @@ export class Sizes implements Tree {
         const p = `${h}-${k}`
         const v = b[k]
         if (typeof v === "number") {
-          s += `  --${p}: ${v}px;\n`
+          s += `  --${p}: ${v};\n`
           continue
         }
         if (typeof v === "string") {
