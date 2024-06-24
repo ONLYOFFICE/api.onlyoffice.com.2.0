@@ -86,6 +86,11 @@ export interface Data {
   layout?: string
 
   /**
+   * {@link https://www.11ty.dev/docs/permalinks/ Eleventy Reference}
+   */
+  permalink?: string | ((data: Data) => string | undefined)
+
+  /**
    * {@link https://www.11ty.dev/docs/pagination/ Eleventy Reference}
    */
   pagination?: Pagination
@@ -94,6 +99,11 @@ export interface Data {
    * {@link https://www.11ty.dev/docs/data-computed/ Eleventy Reference}
    */
   eleventyComputed?: EleventyComputed
+
+  /**
+   * {@link https://www.11ty.dev/docs/data-eleventy-supplied/ Eleventy Reference}
+   */
+  page?: Page
 }
 
 /**
@@ -120,8 +130,23 @@ export interface GlobalData {}
 /**
  * {@link https://www.11ty.dev/docs/data-eleventy-supplied/ Eleventy Reference}
  */
+export interface Page {
+  url: string
+  fileSlug: string
+  filePathStem: string
+  date: Date
+  inputPath: string
+  outputPath: string
+  outputFileExtension: string
+  templateSyntax: string
+}
+
+/**
+ * {@link https://www.11ty.dev/docs/data-eleventy-supplied/ Eleventy Reference}
+ */
 export interface Context {
   collections: Collections
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   content: any
 }
 
