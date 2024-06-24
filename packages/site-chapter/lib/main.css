@@ -1,0 +1,24 @@
+.chapter {
+  --lp: 24px;
+  --lw: 232px;
+  --lb: calc(var(--lp) * 2 + var(--lw));
+  --rp: 32px;
+  --rw: calc(1120px - (var(--rp) * 2 + var(--lb)));
+  --rb: calc(var(--rp) * 2 + var(--rw));
+  --m: calc((100% - (var(--lb) + var(--rb))) / 2);
+  display: flex;
+}
+
+.chapter__navigation {
+  background-color: var(--color-background-muted);
+  border-right: solid 1px var(--color-scale-gray-6);
+  max-width: calc(var(--lw) - 1px);
+  padding: 32px var(--lp) 32px calc(var(--m) + var(--lp));
+  width: 100%;
+}
+
+.chapter__content {
+  max-width: var(--rw);
+  padding: 32px calc(var(--m) + var(--rp)) 140px var(--rp);
+  width: 100%;
+}

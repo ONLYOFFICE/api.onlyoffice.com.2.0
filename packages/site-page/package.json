@@ -5,6 +5,7 @@
   "main": "lib/main.tsx",
   "exports": {
     ".": "./lib/main.tsx",
+    "./chapter.css": "./lib/chapter.css",
     "./main.css": "./lib/main.css"
   },
   "scripts": {
@@ -12,16 +13,13 @@
     "test": "pnpm test:types"
   },
   "dependencies": {
+    "@onlyoffice/preact-types": "workspace:^",
     "@onlyoffice/ui-slots": "workspace:^",
     "preact": "^10.22.0",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@onlyoffice/site-theme-switcher": "workspace:^",
-    "@onlyoffice/ui-colors": "workspace:^",
-    "@onlyoffice/ui-icons": "workspace:^",
-    "@onlyoffice/ui-sizes": "workspace:^",
-    "@onlyoffice/ui-sr-only": "workspace:^",
+    "@onlyoffice/ui-kit": "workspace:^",
     "@storybook/preact": "^8.0.0",
     "vite": "^5.1.6"
   }

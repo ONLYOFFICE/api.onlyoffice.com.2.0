@@ -1,8 +1,8 @@
-import type { Eleventy } from "@/config/eleventy.ts"
-import { h } from "preact"
-import { data as sitemapData } from "../Sitemap/xml.tsx"
+import type {Context, Data} from "@onlyoffice/eleventy-types"
+import {h} from "preact"
+import {data as sitemap} from "../Sitemap/xml.tsx"
 
-export function data() {
+export function data(): Data {
   return {
     layout: null,
     permalink: "/robots.txt",
@@ -10,10 +10,7 @@ export function data() {
   }
 }
 
-export function render({config}: Eleventy.Context): string {
-  const sitemap = sitemapData()
-  return (
-`Sitemap: ${config.baseUrl}${sitemap.permalink}
-User-agent: *`
-  )
+export function render({config}: Context): string {
+  const s = sitemap()
+  return `Sitemap: ${config.baseUrl}${s.permalink}\nUser-agent: *`
 }

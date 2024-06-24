@@ -1,0 +1,15 @@
+{
+  "name": "@onlyoffice/ui-callback",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.tsx",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/preact-types": "workspace:^",
+    "preact": "^10.22.0",
+    "typescript": "^5.4.5"
+  }
+}

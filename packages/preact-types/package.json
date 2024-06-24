@@ -1,0 +1,13 @@
+{
+  "name": "@onlyoffice/preact-types",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.tsx",
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
+}

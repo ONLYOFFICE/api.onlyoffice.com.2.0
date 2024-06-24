@@ -1,7 +1,12 @@
 @import "../../ui/font/lib/font.css";
 @import "../../ui/typography/lib/typography.css";
 
+@import "../node_modules/@onlyoffice/ui-kit/lib/main.css";
+@import "../node_modules/@onlyoffice/site-kit/lib/main.css";
+
 html {
+  color: hsla(0, 0%, 20%, 1);
   font-family: var(--typography-sans-serif-font);
+  font-size: 14px;
   line-height: var(--typography-line-height);
 }

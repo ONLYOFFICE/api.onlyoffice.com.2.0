@@ -53,6 +53,9 @@
 }
 
 .page-footer {
+  /* todo: hack */
+  font-size: 16px;
+
   box-sizing: border-box;
   max-width: 1120px;
   padding: 72px 24px 87px 24px;

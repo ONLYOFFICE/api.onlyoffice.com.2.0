@@ -1,0 +1,21 @@
+.playground {
+  --mw: 1176px;
+  --pd: calc((100% - var(--mw)) / 2);
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--mw);
+  padding-bottom: 140px;
+  padding-left: var(--pd);
+  padding-right: var(--pd);
+}
+
+.playground__before .content {
+  max-width: 832px;
+  margin: 0 auto;
+}
+
+.playground__content {
+  margin-top: 20px;
+}

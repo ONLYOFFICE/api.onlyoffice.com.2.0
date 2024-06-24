@@ -7,7 +7,7 @@ import { retrieve } from "../config/sitemap.ts"
 
 export function data() {
   return {
-    layout: "article"
+    layout: "chapter"
   }
 }
 

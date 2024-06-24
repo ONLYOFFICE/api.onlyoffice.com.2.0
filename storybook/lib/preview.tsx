@@ -1,13 +1,9 @@
+import "@onlyoffice/ui-kit/client.ts"
+import "@onlyoffice/site-kit/client.ts"
 import "./preview.css"
-import type {Preview, StoryContext} from "@storybook/preact"
+import type {Preview} from "@storybook/preact"
 import {useEffect} from "preact/hooks"
-import {Fragment, h} from "preact"
-
-declare module "@storybook/preact" {
-  interface Parameters {
-    styles?: string[]
-  }
-}
+import {h} from "preact"
 
 export default preview()
 
@@ -53,24 +49,8 @@ function preview(): Preview {
           document.documentElement.dataset.themePreference = t
         }, [theme])
 
-        return <>
-          <Styles ctx={ctx} />
-          <Story />
-        </>
+        return <Story />
       }
     ]
   }
-}
-
-function Styles({ctx}: {ctx: StoryContext}): JSX.Element {
-  const p = ctx.parameters
-  if (!(p && p.styles)) {
-    return <></>
-  }
-  return <>
-    {p.styles.map((s, i) => <style
-      key={i}
-      dangerouslySetInnerHTML={{__html: s}}
-    />)}
-  </>
 }

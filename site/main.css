@@ -1,36 +1,21 @@
-@import "./node_modules/@onlyoffice/ui-sr-only/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-colors/dist/main.css";
-@import "./node_modules/@onlyoffice/ui-form-control/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-select/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-button/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-content/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-content-tab-container/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-code-editor/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-content-code-editor/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-code-listing/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-code-listing-code-editor/lib/main.css";
-@import "./node_modules/@onlyoffice/ui-content-code-listing/lib/main.css";
-
-@import "./node_modules/@onlyoffice/documentation-ui-kit/lib/kit.css";
+@import "./node_modules/@onlyoffice/ui-kit/lib/main.css";
 @import "./node_modules/@onlyoffice/documentation-ui-kit/lib/kit.font.css";
+@import "./node_modules/@onlyoffice/site-kit/lib/main.css";
 
-@import "./node_modules/@onlyoffice/site-page/lib/main.css";
-@import "./node_modules/@onlyoffice/site-theme-switcher/lib/main.css";
-@import "./node_modules/@onlyoffice/site-playground-layout/lib/main.css";
-@import "./node_modules/@onlyoffice/site-document-editor-playground/lib/main.css";
-
-@import "./components/breadcrumbs/breadcrumbs.css";
-@import "./components/chapter/chapter.css";
-@import "./components/code-declaration/code-declaration.css";
 @import "./components/syntax-highlight/syntax-highlight.css";
 @import "./components/tree/tree.css";
 
 /* todo: temp */
-@import "./regular.css";
+
+:root {
+  --typography-monospace-font: monospace;
+  --typography-sans-serif-font: "Open Sans";
+  --typography-line-height: 1.5;
+}
 
 html {
-  background-color: var(--page-background-color);
-  color: var(--page-foreground-color);
+  background-color: var(--color-page-header-background);
+  color: var(--color-foreground-default);
   font-family: var(--typography-sans-serif-font);
   font-size: 14px;
   line-height: var(--typography-line-height);
@@ -38,6 +23,7 @@ html {
 
 body {
   margin: 0;
+  background-color: var(--color-background-default);
 }
 
 table {
@@ -106,4 +92,19 @@ table {
 document-builder {
   display: block;
   height: 550px;
+}
+
+.home .docs-preview {
+  height: 540px !important;
+  width: auto !important;
+}
+
+.home .docspace-preview {
+  height: 430px !important;
+  width: auto !important;
+}
+
+.home .workspace-preview {
+  height: 500px !important;
+  width: auto !important;
 }

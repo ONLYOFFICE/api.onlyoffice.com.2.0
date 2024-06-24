@@ -1,0 +1,10 @@
+.page .chapter {
+  height: 100%;
+}
+
+.page .chapter__navigation {
+  max-height: calc(100vh - 72px - 20px * 2);
+  overflow-y: scroll;
+  position: sticky;
+  top: 72px;
+}

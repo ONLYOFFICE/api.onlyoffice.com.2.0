@@ -5,7 +5,7 @@ declare global {
         lastmod: IntrinsicElements["span"]
         loc: IntrinsicElements["span"]
         url: IntrinsicElements["span"]
-        urlset: IntrinsicElements["span"]
+        urlset: IntrinsicElements["span"] & {xmlns?: string}
       }
     }
   }

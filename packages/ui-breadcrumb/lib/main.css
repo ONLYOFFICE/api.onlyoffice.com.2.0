@@ -1,0 +1,21 @@
+.breadcrumb {
+  align-items: center;
+  /* color: var(--breadcrumb-crumb-foreground-color); */
+  display: flex;
+  font-size: 13px;
+  column-gap: 10px;
+}
+
+.breadcrumb__crumb {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb__crumb[aria-current="page"] {
+  /* color: var(--breadcrumb-crumb-active-foreground-color); */
+}
+
+.breadcrumb__separator {
+  /* color: var(--breadcrumb-delimiter-foreground-color); */
+  width: 11px;
+}

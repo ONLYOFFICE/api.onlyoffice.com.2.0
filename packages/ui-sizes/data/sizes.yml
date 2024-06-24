@@ -1,0 +1,10 @@
+page-layout-footer:
+  column-gap: 64px
+  font-size: 16px
+  max-width: 1120px
+
+page-layout-footer-section:
+  max-width: 160px
+
+page-layout-footer-section-heading:
+  font-weight: 600

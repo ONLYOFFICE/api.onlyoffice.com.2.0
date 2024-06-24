@@ -1,0 +1,30 @@
+{
+  "name": "@onlyoffice/site-kit",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./main.css": "./lib/main.css",
+    "./client.ts": "./lib/client.ts",
+    "./reference": "./lib/reference.d.ts"
+  },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/site-chapter": "workspace:^",
+    "@onlyoffice/site-document-editor-playground": "workspace:^",
+    "@onlyoffice/site-help": "workspace:^",
+    "@onlyoffice/site-home": "workspace:^",
+    "@onlyoffice/site-library-declaration": "workspace:^",
+    "@onlyoffice/site-page": "workspace:^",
+    "@onlyoffice/site-part": "workspace:^",
+    "@onlyoffice/site-playground": "workspace:^",
+    "@onlyoffice/site-service-declaration": "workspace:^",
+    "@onlyoffice/site-theme-switcher": "workspace:^",
+    "preact": "^10.22.0",
+    "typescript": "^5.4.5"
+  }
+}

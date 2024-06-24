@@ -1,9 +1,10 @@
 import type {Data} from "@onlyoffice/eleventy-types"
+import type {Declaration} from "@onlyoffice/service-declaration"
 import type {Resource} from "@onlyoffice/service-resource"
 
 export function data({list, resolve}: Resource): Data {
   return {
-    layout: "rest-declaration",
+    layout: "service-declaration",
 
     items: list(),
     pagination: {
@@ -12,15 +13,23 @@ export function data({list, resolve}: Resource): Data {
       addAllPagesToCollections: true
     },
 
-    slug(data): string {
-      return `${data.pagination.items[0].slug}/index`
+    slug(data) {
+      if (!data.pagination || !data.pagination.items) {
+        throw new Error("No pagination")
+      }
+      const [d]: Declaration[] = data.pagination.items
+      return `${d.slug}/index`
     },
 
     onRetrieve: resolve,
 
     eleventyComputed: {
       title(data) {
-        return data.pagination.items[0].title
+        if (!data || !data.pagination || !data.pagination.items) {
+          throw new Error("No pagination")
+        }
+        const [d]: Declaration[] = data.pagination.items
+        return d.title
       }
     }
   }

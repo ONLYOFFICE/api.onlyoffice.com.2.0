@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "@11ty/eleventy-dev-server": "^1.0.4",
+    "@onlyoffice/site-kit": "workspace:^",
+    "@onlyoffice/ui-kit": "workspace:^",
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/blocks": "^8.0.0",
     "@storybook/preact": "^8.0.0",

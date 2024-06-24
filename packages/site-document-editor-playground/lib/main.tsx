@@ -39,12 +39,12 @@ const samples = [
   {id: "json", label: "JSON"}
 ]
 
-export interface SiteDocumentEditorPlaygroundParameters {
+export interface DocumentEditorPlaygroundParameters {
   config: PlaygroundConfigurable
 }
 
-export function SiteDocumentEditorPlayground(
-  {config}: SiteDocumentEditorPlaygroundParameters
+export function DocumentEditorPlayground(
+  {config}: DocumentEditorPlaygroundParameters
 ): JSX.Element {
   return <site-document-editor-playground class="de-playground">
     <Content>

@@ -1,0 +1,25 @@
+{
+  "name": "@onlyoffice/site-home",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.tsx",
+  "exports": {
+    ".": "./lib/main.tsx",
+    "./main.css": "./lib/main.css"
+  },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/preact-types": "workspace:^",
+    "preact": "^10.22.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@onlyoffice/ui-icons": "workspace:^",
+    "@onlyoffice/ui-kit": "workspace:^",
+    "@storybook/preact": "^8.0.0",
+    "vite": "^5.1.6"
+  }
+}

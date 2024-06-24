@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.5 2.29048C2.5 1.2797 3.27695 0.5 4.1875 0.5H27.8125C28.7231 0.5 29.5 1.2797 29.5 2.29048V7.70952C29.5 8.7203 28.7231 9.5 27.8125 9.5H4.1875C3.27695 9.5 2.5 8.7203 2.5 7.70952V2.29048Z" fill="#EFEFEF" stroke="#333333"/>
+<path d="M2.5 13.2905C2.5 12.2797 3.27695 11.5 4.1875 11.5H27.8125C28.7231 11.5 29.5 12.2797 29.5 13.2905V18.7095C29.5 19.7203 28.7231 20.5 27.8125 20.5H4.1875C3.27695 20.5 2.5 19.7203 2.5 18.7095V13.2905Z" fill="#EFEFEF" stroke="#333333"/>
+<path d="M8.5 5C8.5 5.82843 7.82843 6.5 7 6.5C6.17157 6.5 5.5 5.82843 5.5 5C5.5 4.17157 6.17157 3.5 7 3.5C7.82843 3.5 8.5 4.17157 8.5 5Z" fill="#D9F4FF" stroke="#333333"/>
+<path d="M8.5 16C8.5 16.8284 7.82843 17.5 7 17.5C6.17157 17.5 5.5 16.8284 5.5 16C5.5 15.1716 6.17157 14.5 7 14.5C7.82843 14.5 8.5 15.1716 8.5 16Z" fill="#D9F4FF" stroke="#333333"/>
+<circle cx="16.5" cy="28.5" r="2" fill="url(#paint0_linear_1717_6668)" stroke="#333333"/>
+<rect x="16" y="22" width="1" height="3" rx="0.5" fill="#333333"/>
+<rect x="7" y="29" width="1" height="6" rx="0.5" transform="rotate(-90 7 29)" fill="#333333"/>
+<rect x="20" y="29" width="1" height="6" rx="0.5" transform="rotate(-90 20 29)" fill="#333333"/>
+<defs>
+<linearGradient id="paint0_linear_1717_6668" x1="14" y1="25.8047" x2="19" y2="31" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF8E3D"/>
+<stop offset="1" stop-color="#FF6F3D"/>
+</linearGradient>
+</defs>
+</svg>

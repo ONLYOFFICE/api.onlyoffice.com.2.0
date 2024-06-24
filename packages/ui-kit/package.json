@@ -1,0 +1,37 @@
+{
+  "name": "@onlyoffice/ui-kit",
+  "private": true,
+  "type": "module",
+  "main": "lib/main.ts",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./main.css": "./lib/main.css",
+    "./client.ts": "./lib/client.ts"
+  },
+  "scripts": {
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/ui-badge": "workspace:^",
+    "@onlyoffice/ui-breadcrumb": "workspace:^",
+    "@onlyoffice/ui-button": "workspace:^",
+    "@onlyoffice/ui-callback": "workspace:^",
+    "@onlyoffice/ui-code-editor": "workspace:^",
+    "@onlyoffice/ui-code-listing": "workspace:^",
+    "@onlyoffice/ui-code-listing-code-editor": "workspace:^",
+    "@onlyoffice/ui-code-preview": "workspace:^",
+    "@onlyoffice/ui-colors": "workspace:^",
+    "@onlyoffice/ui-content": "workspace:^",
+    "@onlyoffice/ui-content-code-editor": "workspace:^",
+    "@onlyoffice/ui-content-code-listing": "workspace:^",
+    "@onlyoffice/ui-content-tab-container": "workspace:^",
+    "@onlyoffice/ui-form-control": "workspace:^",
+    "@onlyoffice/ui-logos": "workspace:^",
+    "@onlyoffice/ui-select": "workspace:^",
+    "@onlyoffice/ui-sizes": "workspace:^",
+    "@onlyoffice/ui-sr-only": "workspace:^",
+    "preact": "^10.22.0",
+    "typescript": "^5.4.5"
+  }
+}

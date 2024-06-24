@@ -1,0 +1,19 @@
+.badge {
+  /* background-color: var(--badge-neutral-background-color); */
+  border-radius: 3px;
+  /* color: var(--badge-neutral-foreground-color); */
+  font-family: var(--typography-monospace-font);
+  font-size: 90%;
+  padding: 4px 7px;
+}
+
+.badge_variant_danger {
+  /* background-color: var(--badge-danger-background-color); */
+  /* color: var(--badge-danger-foreground-color); */
+}
+
+.badge_variant_support {
+  /* background-color: var(--badge-support-background-color); */
+  /* color: var(--badge-support-foreground-color); */
+  text-decoration: underline;
+}

@@ -17,7 +17,8 @@ function config(): StorybookConfig {
       "../../packages/ui-*/lib/*.story.tsx"
     ],
     staticDirs: [
-      "../../ui/font/static"
+      "../../ui/font/static",
+      "../../site/pages/_static"
     ],
     previewHead(head) {
       return head + renderToString(<Font.Links />)

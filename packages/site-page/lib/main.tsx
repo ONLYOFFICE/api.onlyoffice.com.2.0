@@ -1,17 +1,12 @@
+import type {ChildrenIncludable} from "@onlyoffice/preact-types"
 import {useSlots} from "@onlyoffice/ui-slots"
 import type {JSX} from "preact"
 import {Fragment, h, toChildArray} from "preact"
 
-export interface SitePageParameters {
-  children?: any
-}
-
-export function SitePage(
-  {children}: SitePageParameters
-): JSX.Element {
+export function Page({children}: ChildrenIncludable): JSX.Element {
   const [slots, outer] = useSlots(children, {
-    header: SitePageHeader,
-    footer: SitePageFooter
+    header: PageHeader,
+    footer: PageFooter
   })
   return <div class="page">
     <div class="page__header">{slots.header}</div>
@@ -20,16 +15,10 @@ export function SitePage(
   </div>
 }
 
-export interface SitePageHeaderParameters {
-  children?: any
-}
-
-export function SitePageHeader(
-  {children}: SitePageHeaderParameters
-): JSX.Element {
+export function PageHeader({children}: ChildrenIncludable): JSX.Element {
   const [slots, outer] = useSlots(children, {
-    logo: SitePageHeaderLogo,
-    menu: SitePageHeaderMenu
+    logo: PageHeaderLogo,
+    menu: PageHeaderMenu
   })
   return <header role="banner" class="page-header">
     {outer}
@@ -38,38 +27,23 @@ export function SitePageHeader(
   </header>
 }
 
-export interface SitePageHeaderLogoParameters {
-  children?: any
-}
-
-export function SitePageHeaderLogo(
-  {children}: SitePageHeaderLogoParameters
-): JSX.Element {
+export function PageHeaderLogo({children}: ChildrenIncludable): JSX.Element {
   return <>{children}</>
 }
 
-export interface SitePageHeaderMenuParameters {
-  children?: any
+export interface PageHeaderMenuParameters extends ChildrenIncludable {
   label?: string
 }
 
-export function SitePageHeaderMenu(
-  {children, label}: SitePageHeaderMenuParameters
-): JSX.Element {
+export function PageHeaderMenu({children, label}: PageHeaderMenuParameters): JSX.Element {
   return <nav class="page-header-menu" aria-label={label}>{children}</nav>
 }
 
-export interface SitePageFooterParameters {
-  children?: any
-}
-
-export function SitePageFooter(
-  {children}: SitePageFooterParameters
-): JSX.Element {
+export function PageFooter({children}: ChildrenIncludable): JSX.Element {
   const [slots, outer] = useSlots(children, {
-    links: [SitePageFooterLinkContainer],
-    theme: SitePageFooterThemeSwitcher,
-    copyright: SitePageFooterCopyright
+    links: [PageFooterLinkContainer],
+    theme: PageFooterThemeSwitcher,
+    copyright: PageFooterCopyright
   })
   return <footer class="page-footer">
     {outer}
@@ -79,40 +53,26 @@ export function SitePageFooter(
   </footer>
 }
 
-export interface SitePageFooterLinkContainerParameters {
-  children?: any
+export interface PageFooterLinkContainerParameters extends ChildrenIncludable {
   label?: string
 }
 
-export function SitePageFooterLinkContainer(
-  {children, label}: SitePageFooterLinkContainerParameters
+export function PageFooterLinkContainer(
+  {children, label}: PageFooterLinkContainerParameters
 ): JSX.Element {
   const [slots, outer] = useSlots(children, {
     links: [<a />]
   })
   return <nav aria-label={label}>
     {outer}
-    <ul>{toChildArray(slots.links)
-      .map((ln, i) => <li key={i}>{ln}</li>)}</ul>
+    <ul>{toChildArray(slots.links).map((ln, i) => <li key={i}>{ln}</li>)}</ul>
   </nav>
 }
 
-export interface SitePageFooterThemeSwitcherParameters {
-  children?: any
-}
-
-export function SitePageFooterThemeSwitcher(
-  {children}: SitePageFooterThemeSwitcherParameters
-): JSX.Element {
+export function PageFooterThemeSwitcher({children}: ChildrenIncludable): JSX.Element {
   return <>{children}</>
 }
 
-export interface SitePageFooterCopyrightParameters {
-  children?: any
-}
-
-export function SitePageFooterCopyright(
-  {children}: SitePageFooterCopyrightParameters
-): JSX.Element {
+export function PageFooterCopyright({children}: ChildrenIncludable): JSX.Element {
   return <>{children}</>
 }

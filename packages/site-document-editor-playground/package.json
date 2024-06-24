@@ -36,9 +36,6 @@
   },
   "devDependencies": {
     "@onlyoffice/site-config-fixtures": "workspace:^",
-    "@onlyoffice/ui-colors": "workspace:^",
-    "@onlyoffice/ui-content-code-editor": "workspace:^",
-    "@onlyoffice/ui-content-code-listing": "workspace:^",
     "@storybook/preact": "^8.0.0",
     "vite": "^5.1.6"
   }

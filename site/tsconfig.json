@@ -24,7 +24,7 @@
     "./eleventy.config.ts",
     "./index.d.ts",
     "./main.ts"
-  ],
+, "../.local/callback"  ],
   "exclude": [
     "./dist",
     "./node_modules",

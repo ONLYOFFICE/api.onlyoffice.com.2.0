@@ -1,13 +1,11 @@
-// todo: Replace primitive component generation with babel.
-// https://github.com/tailwindlabs/heroicons/
-// todo: Separate logos from icons.
-
 import {mkdir, readFile, readdir, rm, writeFile} from "node:fs/promises"
 import {existsSync} from "node:fs"
-import {join, parse} from "node:path"
+import {basename, extname, join} from "node:path"
 import {argv} from "node:process"
 import {URL, fileURLToPath} from "node:url"
+import {default as babel} from "@babel/core"
 import sade from "sade"
+import {optimize as svgo} from "svgo"
 
 function main(): void {
   sade("ui-colors", true)
@@ -25,33 +23,108 @@ async function build(): Promise<void> {
 
   await mkdir(dd)
 
-  const of = outputFile(dd)
-  let oc = 'import {type JSX, h} from "preact"\n\n'
-
   const sd = staticDir(rd)
-  const ls = await readdir(sd)
-  for (let f of ls) {
-    f = join(sd, f)
-    const p = parse(f)
-    const n = rename(p.name)
-    let c = await readFile(f, "utf8")
-    c = c.trim()
-    c = wrap(n, c)
-    oc += `${c}\n`
+
+  for (const vn of ["poor", "rich"]) {
+    const dv = join(dd, vn)
+    if (!existsSync(dv)) {
+      await mkdir(dv)
+    }
+
+    const vd = join(sd, vn)
+    const ls = await readdir(vd)
+
+    for (const sn of ls) {
+      const ds = join(dv, sn)
+      if (!existsSync(ds)) {
+        await mkdir(ds)
+      }
+
+      const se: string[] = []
+
+      const sd = join(vd, sn)
+      const lh = await readdir(sd)
+
+      for (const hn of lh) {
+        const he = extname(hn)
+        let n = basename(hn, he)
+        n = rename(n)
+
+        let f = join(sd, hn)
+        let c = await readFile(f, "utf8")
+        c = await transform(n, c)
+
+        f = join(ds, `${n}.tsx`)
+        await writeFile(f, c)
+
+        se.push(n)
+      }
+
+      let c = ""
+      for (const n of se) {
+        c += `export {${n}} from "./${sn}/${n}.tsx";\n`
+      }
+
+      const f = join(dv, `${sn}.tsx`)
+      await writeFile(f, c)
+    }
+  }
+}
+
+function rename(n: string): string {
+  let s = ""
+  for (const w of n.split("-")) {
+    s += w.charAt(0).toUpperCase() + w.slice(1)
+  }
+  return `${s}Icon`
+}
+
+async function transform(n: string, c: string): Promise<string> {
+  // todo: Finalize the svgo configuration for each style separately.
+  const s = svgo(c, {
+    plugins: [
+      // "preset-default",
+      "removeDimensions",
+      "sortAttrs",
+      // {
+      //   name: "removeAttrs",
+      //   params: {
+      //     attrs: ["fill"]
+      //   }
+      // },
+      {
+        name: "addAttributesToSVGElement",
+        params: {
+          attributes: [{
+            // "fill": "currentColor",
+            "aria-hidden": "true"
+          }]
+        }
+      }
+    ]
+  })
+
+  c = `export function ${n}({title, titleId, desc, descId, ...props}) {
+return ${s.data.replace(">", "aria-labelledby={titleId} aria-describedby={descId} {...props}>{desc ? <desc id={descId}>{desc}</desc> : null}{title ? <title id={titleId}>{title}</title> : null}")}
+}`
+
+  const b = await babel.transformAsync(c, {
+    plugins: [["@babel/plugin-transform-react-jsx", {
+      pragma: "h",
+      pragmaFrag: "Fragment",
+      useBuiltIns: true
+    }]]
+  })
+  if (!b || !b.code) {
+    throw new Error("Failed to transform")
   }
 
-  oc = oc.slice(0, -1)
+  c = `import {type JSX, h} from "preact";\n${b.code
+    .replace("}) {", "}: JSX.SVGAttributes<SVGSVGElement> & {title?: string, titleId?: string, desc?: string, descId?: string}): JSX.Element {")
+    .replace(`const ${n}`, `export const ${n}`)
+    .replace(`export default ${n};`, "")}`
 
-  await writeFile(of, oc)
-}
-
-function rename(s: string): string {
-  return s.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join("")
-}
-
-function wrap(n: string, c: string): string {
-  c = c.replace(">", " {...a}>")
-  return `export function ${n}({...a}: JSX.SVGAttributes<SVGSVGElement>): JSX.Element {\n  return ${c}\n}\n`
+  return c
 }
 
 function rootDir(): string {
@@ -65,10 +138,6 @@ function distDir(d: string): string {
 
 function staticDir(d: string): string {
   return join(d, "static")
-}
-
-function outputFile(d: string): string {
-  return join(d, "main.tsx")
 }
 
 main()

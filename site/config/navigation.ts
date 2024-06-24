@@ -99,9 +99,19 @@ function collectNavigation(l: any[]): TemporalNavigationItem {
         case us.length - 1:
           r[s].title = item.data.title
           r[s].link = item.url
+          r[s].icon = item.data.icon
+          r[s].logo = item.data.logo
+          r[s].preview = item.data.preview
+          r[s].description = item.data.description
+          r[s].summary = item.data.summary
+          r[s].sample = item.data.sample
+          r[s].faq = item.data.faq
+          r[s].issues = item.data.issues
+          r[s].forume = item.data.forume
           if (item.data.order !== undefined) {
             r[s].order = item.data.order
           }
+          r[s].file = item.data.page.inputPath
           break
         default:
           r = r[s].children
@@ -116,7 +126,17 @@ function collectNavigation(l: any[]): TemporalNavigationItem {
 function processNavigation(ctx: Context, t: TemporalNavigationItem): NavigationItem {
   const item: NavigationItem = {
     title: t.title,
-    link: t.link
+    link: t.link,
+    icon: t.icon,
+    logo: t.logo,
+    preview: t.preview,
+    description: t.description,
+    summary: t.summary,
+    sample: t.sample,
+    faq: t.faq,
+    issues: t.issues,
+    forume: t.forume,
+    file: t.file
   }
 
   const en = Object.entries(t.children)

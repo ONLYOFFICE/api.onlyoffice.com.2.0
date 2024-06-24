@@ -1,84 +1,77 @@
 // todo: replace with `config/sitemap.ts`.
 
-import type { JSX } from "preact"
-import { Fragment, h } from "preact"
-import { Breadcrumbs as NativeBreadcrumbs } from "../components/breadcrumbs/breadcrumbs.ts"
-import { Chapter } from "../components/chapter/chapter.ts"
-import { Tree } from "../components/tree/tree.ts"
-import type { Eleventy } from "../config/eleventy.ts"
-import { useChildren } from "../config/eleventy.ts"
-import { retrieve } from "../config/sitemap.ts"
+import type {Data, Context} from "@onlyoffice/eleventy-types"
+import {Chapter, ChapterContent, ChapterNavigation, Help} from "@onlyoffice/site-kit"
+import {GithubIcon} from "@onlyoffice/ui-icons/rich/24.tsx"
+import {Breadcrumb, BreadcrumbCrumb, Content} from "@onlyoffice/ui-kit"
+import {type JSX, Fragment, h} from "preact"
+import {Tree} from "../components/tree/tree.ts"
+import {retrieve} from "../config/sitemap.ts"
 
-export function data() {
+export function data(): Data {
   return {
     layout: "page"
   }
 }
 
-export function render(ctx: Eleventy.Context): JSX.Element {
-  const children = useChildren(ctx)
-  const breadcrumbs = <Breadcrumbs url={ctx.page.url} />
-  return (
-    <Chapter>
-      <Chapter.Navigation>
-        <Navigation {...ctx} />
-      </Chapter.Navigation>
-      {breadcrumbs && (
-        <Chapter.Breadcrumbs>
-          {breadcrumbs}
-        </Chapter.Breadcrumbs>
-      )}
-      <main>
-        {children}
-      </main>
-    </Chapter>
-  )
+export function render({content, ...ctx}: Context): JSX.Element {
+  return <Chapter>
+    <ChapterNavigation>
+      <Navigation {...ctx} />
+    </ChapterNavigation>
+    <ChapterContent>
+      <B url={ctx.page.url} />
+      <Content>
+        {ctx.title && <h1>{ctx.title}</h1>}
+        {content}
+      </Content>
+      {/* todo */}
+      {/* <Help>
+        <GithubIcon width={24} height={24} />
+        <h2>Get Help</h2>
+        <ul>
+          <li>If you have any questions about ONLYOFFICE DocSpace, try the <a href="/">FAQ</a> section first.</li>
+          <li>You can request a feature or report a bug by posting an issue on <a href="/">GitHub</a>.</li>
+          <li>You can also ask our developers on <a href="/">ONLYOFFICE forum</a> (registration required).</li>
+        </ul>
+      </Help> */}
+    </ChapterContent>
+  </Chapter>
 }
 
-function Navigation(ctx: Omit<Eleventy.Context, "children">): JSX.Element | null {
+function Navigation(ctx): JSX.Element {
   const c = ctx.collections.navigation.find((c) => {
     return ctx.page.url.startsWith(c.link)
   })
   if (c === undefined) {
-    return null
+    return <></>
   }
   // todo: check if c is undefined, in ideal case it should never be undefined.
-  return (
-    <Tree>
-      {c.children && c.children.map((c) => (
-        <Tree.Group key={c.link}>
-          <Tree.Link href={c.link} active={ctx.page.url === c.link}>{c.title}</Tree.Link>
-          {c.children && <SubTree {...ctx} chapter={c} />}
-        </Tree.Group>
-      ))}
-    </Tree>
-  )
+  return <Tree>
+    {c.children && c.children.map((c) => (
+      <Tree.Group key={c.link}>
+        <Tree.Link href={c.link} active={ctx.page.url === c.link}>{c.title}</Tree.Link>
+        {c.children && <SubTree {...ctx} chapter={c} />}
+      </Tree.Group>
+    ))}
+  </Tree>
 }
 
-function SubTree(
-  {
-    chapter: c,
-    ...ctx
-  }
-): JSX.Element {
-  return (
-    <>
-      {c.children && c.children.map((c) => (
-        <Tree.Item expanded={ctx.page.url.startsWith(c.link)}>
-          <Tree.Link href={c.link} active={ctx.page.url === c.link}>{c.title}</Tree.Link>
-          {c.children && <SubTree {...ctx} chapter={c} />}
-        </Tree.Item>
-      ))}
-    </>
-  )
+function SubTree({chapter: c, ...ctx}): JSX.Element {
+  return <>{c.children && c.children.map((c) => (
+    <Tree.Item expanded={ctx.page.url.startsWith(c.link)}>
+      <Tree.Link href={c.link} active={ctx.page.url === c.link}>{c.title}</Tree.Link>
+      {c.children && <SubTree {...ctx} chapter={c} />}
+    </Tree.Item>
+  ))}</>
 }
 
-interface BreadcrumbsProperties {
+interface BProperties {
   url: string
 }
 
-function Breadcrumbs({ url }: BreadcrumbsProperties): JSX.Element | null {
-  const crumbs: JSX.Element[] = []
+function B({url}: BProperties): JSX.Element | null {
+  const a: JSX.Element[] = []
 
   let u = url
   while (true) {
@@ -86,27 +79,16 @@ function Breadcrumbs({ url }: BreadcrumbsProperties): JSX.Element | null {
     if (p === undefined) {
       break
     }
-    crumbs.unshift(
-      <NativeBreadcrumbs.Crumb
-        active={p.url === url}
-        href={p.url}
-      >
-        {p.title}
-      </NativeBreadcrumbs.Crumb>
-    )
+    a.unshift(<BreadcrumbCrumb href={p.url}>{p.title}</BreadcrumbCrumb>)
     if (p.parent === undefined) {
       break
     }
     u = p.parent
   }
 
-  if (crumbs.length === 0) {
+  if (a.length === 0) {
     return null
   }
 
-  return (
-    <NativeBreadcrumbs>
-      {crumbs}
-    </NativeBreadcrumbs>
-  )
+  return <Breadcrumb>{a}</Breadcrumb>
 }

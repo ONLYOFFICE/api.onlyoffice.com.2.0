@@ -1,6 +1,5 @@
-import type { JSX } from "preact"
-import { Fragment, h } from "preact"
-import { Callback } from "../callback/callback.ts"
+import {Callback} from "@onlyoffice/ui-kit"
+import {type JSX, Fragment, h} from "preact"
 
 export interface Page {
   title: string
@@ -40,7 +39,7 @@ export function Root(
         {p.children.map((u) => (
           <Item key={u} url={u} />
         ))}
-        <Callback cb={() => c -= 1 }/>
+        <Callback>{() => c -= 1}</Callback>
       </ul>
     )
   }

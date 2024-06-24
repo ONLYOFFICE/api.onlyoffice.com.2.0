@@ -1,0 +1,16 @@
+@import "../node_modules/@onlyoffice/ui-colors/dist/main.css";
+@import "../node_modules/@onlyoffice/ui-sizes/dist/main.css";
+@import "../node_modules/@onlyoffice/ui-sr-only/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-form-control/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-select/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-button/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-breadcrumb/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-badge/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-content/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-content-tab-container/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-code-editor/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-content-code-editor/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-code-listing/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-code-listing-code-editor/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-content-code-listing/lib/main.css";
+@import "../node_modules/@onlyoffice/ui-code-preview/lib/main.css";

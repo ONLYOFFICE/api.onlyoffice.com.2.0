@@ -1,0 +1,37 @@
+.dr {
+  text-decoration: none;
+}
+
+.dr code {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  color: var(--code-declaration-decoration-foreground-color);
+  font-family: var(--typography-monospace-font);
+  font-size: 90%;
+  padding: 0;
+}
+
+.dr:hover .dr-id {
+  color: var(--code-declaration-reference-foreground-color);
+}
+
+.dr-id {
+  color: var(--code-declaration-text-foreground-color);
+}
+
+.dt-de {
+  color: var(--code-declaration-decoration-foreground-color);
+}
+
+.dt-id {
+  color: var(--code-declaration-identifier-foreground-color);
+}
+
+.dt-ke {
+  color: var(--code-declaration-keyword-foreground-color);
+}
+
+.dt-re {
+  color: var(--code-declaration-reference-foreground-color);
+}
