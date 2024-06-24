@@ -1,6 +1,10 @@
 import type {Example} from "@onlyoffice/declaration-code-example"
 import type {Reference} from "@onlyoffice/declaration-reference"
 
+export type {Example} from "@onlyoffice/declaration-code-example"
+export type {Reference} from "@onlyoffice/declaration-reference"
+export {reference} from "@onlyoffice/declaration-reference"
+
 // todo?:
 // content-type, accept
 // Successful Response
@@ -257,5 +261,3 @@ export interface TypeNode {
 export function typeNode(): TypeNode {
   return {type: "", format: undefined, cases: undefined}
 }
-
-export {reference} from "@onlyoffice/declaration-reference"
