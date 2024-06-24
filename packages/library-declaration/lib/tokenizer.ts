@@ -224,7 +224,7 @@ export function type(t: Library.Type): Tokenizer.Token[] {
 
   switch (t.type) {
   case "any":
-    return literalType({type: "literal", value: t.type})
+    return anyType(t)
   case "array":
     return arrayType(t)
   case "function":
@@ -232,18 +232,22 @@ export function type(t: Library.Type): Tokenizer.Token[] {
   case "literal":
     return literalType(t)
   case "object":
-    return literalType({type: "literal", value: t.type})
+    return objectType(t)
   case "passthrough":
-    return literalType({type: "literal", value: t.value})
+    return passthroughType(t)
   case "union":
     return unionType(t)
   case "unknown":
-    return literalType({type: "literal", value: t.type})
+    return unknownType(t)
   case "void":
-    return literalType({type: "literal", value: t.type})
+    return voidType(t)
   default:
     return []
   }
+}
+
+export function anyType(t: Library.AnyType): Tokenizer.Token[] {
+  return literalType({type: "literal", value: t.type})
 }
 
 export function arrayType(t: Library.ArrayType): Tokenizer.Token[] {
@@ -329,6 +333,14 @@ export function literalType(t: Library.LiteralType): Tokenizer.Token[] {
   return a
 }
 
+export function objectType(t: Library.ObjectType): Tokenizer.Token[] {
+  return literalType({type: "literal", value: t.type})
+}
+
+export function passthroughType(t: Library.PassthroughType): Tokenizer.Token[] {
+  return literalType({type: "literal", value: t.value})
+}
+
 export function unionType(t: Library.UnionType): Tokenizer.Token[] {
   const a: Tokenizer.Token[] = []
 
@@ -356,6 +368,14 @@ export function unionType(t: Library.UnionType): Tokenizer.Token[] {
   a.pop()
 
   return a
+}
+
+export function unknownType(t: Library.UnknownType): Tokenizer.Token[] {
+  return literalType({type: "literal", value: t.type})
+}
+
+export function voidType(t: Library.VoidType): Tokenizer.Token[] {
+  return literalType({type: "literal", value: t.type})
 }
 
 function decoratorToken(): Tokenizer.DecoratorToken {
