@@ -28,7 +28,6 @@ There are two ways to launch the application on Windows: through the shortcut or
 
    *"%ProgramFiles%\ONLYOFFICE\DesktopEditors\DesktopEditors" --ascdesktop-support-debug-info*
 
-
 ## Working in debug mode
 
 To start working in debug mode, right-click any editable field on the top toolbar (for example, font list combo) and click **Inspect Element**, or click anywhere in the document and press **F1**.

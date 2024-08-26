@@ -1,4 +1,4 @@
-#### CDocBuilderValue CreateObject();
+`CDocBuilderValue CreateObject();`
 
 Creates an empty object, an analogue of *{}* in JS.
 
@@ -6,9 +6,9 @@ Creates an empty object, an analogue of *{}* in JS.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

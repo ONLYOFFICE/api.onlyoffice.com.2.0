@@ -13,14 +13,13 @@ When initializing the SDK frame, a number of events can be passed to the configu
 - [onSelectCallback](#onselectcallback)
 - [onSignOut](#onsignout)
 
-
 ## onAppError
 
 The function called when SDK is initialized with an error. This error is returned during the initialization.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onAppError() {
     console.log("ONLYOFFICE DocSpace reports an error")
   }
@@ -32,14 +31,13 @@ The function called when SDK is initialized with an error. This error is returne
   })
   ```
 
-
 ## onAppReady
 
 The function called when SDK is initialized successfully.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onAppReady() {
     console.log("ONLYOFFICE DocSpace is ready")
   }
@@ -51,14 +49,13 @@ The function called when SDK is initialized successfully.
   })
   ```
 
-
 ## onAuthSuccess
 
 The function called upon successful authorization.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onAuthSuccess() {
     console.log("The authorization is successful.")
   }
@@ -70,14 +67,13 @@ The function called upon successful authorization.
   })
   ```
 
-
 ## onCloseCallback
 
 The function called only in the [room-selector](../Initialization%20Modes/Room%20Selector/index.md) and [file-selector](../Initialization%20Modes/File%20Selector/index.md) modes when the room or file selector is closed or the selection is canceled.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onCloseCallback() {
     console.log("The room selector is closed.")
   }
@@ -89,14 +85,13 @@ The function called only in the [room-selector](../Initialization%20Modes/Room%2
   })
   ```
 
-
 ## onDownload
 
 The function called when firing events to download items from the manager. It returns a link to the download object. This event is called only when the [downloadToEvent](../Config/index.md#downloadtoevent) parameter is specified in the config.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onDownload() {
     console.log("The 'New document' file has been downloaded.")
   }
@@ -108,14 +103,13 @@ The function called when firing events to download items from the manager. It re
   })
   ```
 
-
 ## onEditorCloseCallback
 
 The function called when the document editor is closed.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onEditorCloseCallback() {
     console.log("The document editor is closed.")
   }
@@ -127,14 +121,13 @@ The function called when the document editor is closed.
   })
   ```
 
-
 ## onSelectCallback
 
 The function called only in the [room-selector](../Initialization%20Modes/Room%20Selector/index.md) and [file-selector](../Initialization%20Modes/File%20Selector/index.md) modes when a room or file is selected.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onSelectCallback() {
     console.log("The 'New room' room was selected.")
   }
@@ -146,7 +139,7 @@ The function called only in the [room-selector](../Initialization%20Modes/Room%2
   })
   ```
 
-  The information about the selected item is returned:
+The information about the selected item is returned:
 
   ``` json
   {
@@ -157,23 +150,22 @@ The function called only in the [room-selector](../Initialization%20Modes/Room%2
   }
   ```
 
-  where **example.com** is the name of the server with the ONLYOFFICE DocSpace installed.
+where **example.com** is the name of the server with the ONLYOFFICE DocSpace installed.
 
-  | Parameter  | Description                                          | Type    | Presence |
-  | ---------- | ---------------------------------------------------- | ------- | -------- |
-  | icon       | Defines the URL to the room/file icon.               | string  | required |
-  | id         | Defines the room/file ID.                            | integer | required |
-  | isSelected | Specifies whether the current room/file is selected. | boolean | required |
-  | label      | Defines the room/file label.                         | string  | required |
-
+| Parameter  | Description                                          | Type    | Presence |
+| ---------- | ---------------------------------------------------- | ------- | -------- |
+| icon       | Defines the URL to the room/file icon.               | string  | required |
+| id         | Defines the room/file ID.                            | integer | required |
+| isSelected | Specifies whether the current room/file is selected. | boolean | required |
+| label      | Defines the room/file label.                         | string  | required |
 
 ## onSignOut
 
 The function called when logging out of the user account.
 
-  **Example**
+Example:
 
-  ``` javascript
+  ``` ts
   function onSignOut() {
     console.log("The user is logging out of the DocSpace account.")
   }

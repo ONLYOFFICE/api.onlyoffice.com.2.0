@@ -1,10 +1,10 @@
-#### HRESULT WriteData(\[in] BSTR path, \[in] BSTR value, \[in] VARIANT\_BOOL append);
+`HRESULT WriteData([in] BSTR path, [in] BSTR value, [in] VARIANT_BOOL append);`
 
 Writes data to the log file. It is used for logs in JS code.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilder.WriteData* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type          | Description                                                                                                |
 | -------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -14,9 +14,9 @@ Writes data to the log file. It is used for logs in JS code.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 oBuilder->Initialize();

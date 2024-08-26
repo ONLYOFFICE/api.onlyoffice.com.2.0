@@ -1,4 +1,4 @@
-#### def GetContext(self);
+`def GetContext(self);`
 
 Returns the current JS [context](../../CDocBuilderContext/index.md).
 
@@ -6,9 +6,9 @@ Returns the current JS [context](../../CDocBuilderContext/index.md).
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 ```

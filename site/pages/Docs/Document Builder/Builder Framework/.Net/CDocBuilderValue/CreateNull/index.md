@@ -1,4 +1,4 @@
-#### static CDocBuilderValue^ CreateNull();
+`static CDocBuilderValue^ CreateNull();`
 
 Creates a null value. This method returns the current [context](../../CDocBuilderContext/index.md) and calls its [CreateNull](../../CDocBuilderContext/CreateNull/index.md) method.
 
@@ -6,9 +6,9 @@ Creates a null value. This method returns the current [context](../../CDocBuilde
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

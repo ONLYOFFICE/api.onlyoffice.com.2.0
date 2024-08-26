@@ -1,4 +1,4 @@
-#### def CreateUndefined();
+`def CreateUndefined();`
 
 Creates an undefined value. This method returns the current [context](../../CDocBuilderContext/index.md) and calls its [CreateUndefined](../../CDocBuilderContext/CreateUndefined/index.md) method.
 
@@ -6,9 +6,9 @@ Creates an undefined value. This method returns the current [context](../../CDoc
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

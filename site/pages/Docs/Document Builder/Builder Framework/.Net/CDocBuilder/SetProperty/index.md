@@ -1,17 +1,17 @@
-#### void SetProperty(sParam, sValue);
+`void SetProperty(sParam, sValue);`
 
 Sets an argument to the builder class which can be trasferred to the program outside the [CDocBuilder.ExecuteCommand](../ExecuteCommand/index.md) method, i.e. either as an additional property when running **ONLYOFFICE Document Builder** executable file or as a part of program code, but not included into the document file script.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilder.SetProperty* method is not used explicitly. The argument itself is used instead as an additional property for the executable. See the example below.
 
-## Parameters:
+## Parameters
 
 | Name     | Type    | Description                                             |
 | -------- | ------- | ------------------------------------------------------- |
 | *sParam* | String^ | The parameter name, the value is always *--argument*.   |
 | *sValue* | String^ | The parameter value which will be used in the document. |
 
-## Supported properties:
+## Supported properties
 
 | Name                        | Type    | Description                                                                                                                | Default |
 | --------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -27,15 +27,15 @@ Sets an argument to the builder class which can be trasferred to the program out
 
 Once added, the argument will be available as the **Argument** variable with its parameter values set:
 
-```c#
+```cs
 Argument.name === "ONLYOFFICE" // true
 ```
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();
@@ -43,9 +43,9 @@ oBuilder.SetProperty("--argument", L"{\"name\":\"ONLYOFFICE\"}");
 CDocBuilder.Destroy();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```shell
+```sh
 docbuilder.exe "--argument={\"name\":\"ONLYOFFICE\"}" test.docbuilder
 ```
 
@@ -55,9 +55,9 @@ It is also possible to update the font list when you either add new fonts or rem
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();
@@ -65,8 +65,8 @@ oBuilder.SetProperty("--check-fonts", L"true");
 CDocBuilder.Destroy();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```shell
+```sh
 docbuilder.exe "--check-fonts=true" test.docbuilder
 ```

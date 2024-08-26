@@ -6,8 +6,7 @@ Defines the array of the identifiers (as entered in [config.json](../../../../..
 
 Type: array of string
 
-Example: ["asc.{7327FC95-16DA-41D9-9AF2-0E7F449F6800}"]
-
+Example: \["asc.{7327FC95-16DA-41D9-9AF2-0E7F449F6800}"]
 
 ## pluginsData
 
@@ -16,7 +15,6 @@ Defines the array of absolute URLs to the plugin configuration files ([config.js
 Type: array of string
 
 Example: `["https://example.com/plugins/chess-plugin/config.json"]`
-
 
 ## url
 
@@ -28,10 +26,9 @@ Example: `https://example.com/plugins/`
 
 ![Plugins](/assets/images/editor/plugins.png)
 
+## Example
 
-### Example
-
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   editorConfig: {
     plugins: {

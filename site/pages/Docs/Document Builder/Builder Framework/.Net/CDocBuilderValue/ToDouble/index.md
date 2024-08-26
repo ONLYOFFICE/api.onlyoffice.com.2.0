@@ -1,4 +1,4 @@
-#### double ToDouble();
+`double ToDouble();`
 
 Converts the **CDocBuilderValue** object to a double value.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to a double value.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

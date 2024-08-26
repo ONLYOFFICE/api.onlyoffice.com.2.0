@@ -14,7 +14,6 @@ Use the terminal to run ONLYOFFICE Desktop Editors in debug mode on Mac OS:
 
    *"/Applications/ONLYOFFICE.app/Contents/MacOS/ONLYOFFICE" --ascdesktop-support-debug-info*
 
-
 ## Working in debug mode
 
 To start working in debug mode, right-click any editable field on the top toolbar (for example, font list combo) and click **Inspect Element**, or click anywhere in the document and press **F1**.

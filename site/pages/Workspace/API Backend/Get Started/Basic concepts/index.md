@@ -19,7 +19,7 @@ By default, the XML format is used for the response if no format is specified in
 
 **If a request fails, a non-200 status code will be returned**, possibly with error information in XML format as the response content. For instance, if a requested record could not be found, the HTTP response might look something like:
 
-```
+``` http
 HTTP/1.1 404 Not Found
 ```
 

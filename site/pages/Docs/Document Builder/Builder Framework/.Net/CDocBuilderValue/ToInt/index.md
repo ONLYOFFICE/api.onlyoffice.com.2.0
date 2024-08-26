@@ -1,4 +1,4 @@
-#### int ToInt();
+`int ToInt();`
 
 Converts the **CDocBuilderValue** object to an integer.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to an integer.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

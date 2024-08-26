@@ -1,10 +1,10 @@
-#### HRESULT CreateObject(\[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT CreateObject([out, retval] I_DOCBUILDER_VALUE** result);`
 
 Creates an empty object, an analogue of *{}* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateObject* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description                |
 | -------- | ------------------------ | -------------------------- |
@@ -12,9 +12,9 @@ Creates an empty object, an analogue of *{}* in JS.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

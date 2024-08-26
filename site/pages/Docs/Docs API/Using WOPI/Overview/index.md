@@ -6,21 +6,14 @@ Starting from version 6.4, ONLYOFFICE Docs offers support for the **Web Applicat
 
 This documentation describes:
 
-* file properties that can be specified via [WOPI discovery](../WOPI%20discovery/index.md);
-
-* a [host page](../Host%20page/index.md) that must be built to create an iframe element within the online office;
-
-* [proof keys](../Proof%20keys/index.md) which are used to check that the request is received from the online office;
-
-* supported [WOPI REST API](../WOPI%20REST%20API/index.md) functions;
-
-* available messages that can be posted via [PostMessage](../PostMessage/index.md);
-
-* request parameters for [converting](../Conversion%20API/index.md) different file formats in the online office;
-
-* a scheme for [editing binary document formats](../Editing%20binary%20documents/index.md);
-
-* [differences](../API%20vs%20WOPI/index.md) between ONLYOFFICE Docs API and WOPI.
+- file properties that can be specified via [WOPI discovery](../WOPI%20discovery/index.md);
+- a [host page](../Host%20page/index.md) that must be built to create an iframe element within the online office;
+- [proof keys](../Proof%20keys/index.md) which are used to check that the request is received from the online office;
+- supported [WOPI REST API](../WOPI%20REST%20API/index.md) functions;
+- available messages that can be posted via [PostMessage](../PostMessage/index.md);
+- request parameters for [converting](../Conversion%20API/index.md) different file formats in the online office;
+- a scheme for [editing binary document formats](../Editing%20binary%20documents/index.md);
+- [differences](../API%20vs%20WOPI/index.md) between ONLYOFFICE Docs API and WOPI.
 
 For further information on the WOPI protocol, please read the [WOPI documentation](https://docs.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/).
 
@@ -84,13 +77,10 @@ Follow the steps below to configure the ONLYOFFICE Docs [IP filter](https://help
 
 2. Change the following default settings. Enter your *"ip\_address"* that can contain:
 
-   * IP in the X.X.X.X format for ipv4,
-
-   * IP in the xxxx.xxxx.xxxx.xxxx.xxxx.xxxx.xxxx.xxxx format for ipv6,
-
-   * dns-name,
-   
-   * \* wildcard to replace any symbol/symbols.
+   - IP in the X.X.X.X format for ipv4,
+   - IP in the xxxx.xxxx.xxxx.xxxx.xxxx.xxxx.xxxx.xxxx format for ipv6,
+   - dns-name,
+   - \* wildcard to replace any symbol/symbols.
 
 3. Change the *"allowed"* rule that can be **true** or **false**.
 
@@ -98,13 +88,13 @@ Follow the steps below to configure the ONLYOFFICE Docs [IP filter](https://help
 
    **For RPM/DEB packages:**
 
-   ``` bash
+   ``` sh
    systemctl restart ds-*
    ```
 
    **For Docker:**
 
-   ``` bash
+   ``` sh
    supervisorctl restart all
    ```
 

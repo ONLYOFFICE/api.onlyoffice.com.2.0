@@ -16,7 +16,7 @@ In case the *edit* parameter is set to **true** and the *comment* parameter is a
 
 In case the *edit* parameter is set to **false** and the *comment* parameter is set to **true**, the document will be available for commenting only.
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {
@@ -33,7 +33,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 1. If you want to allow editing comments only by their authors, set the [editCommentAuthorOnly](../../../Usage%20API/Config/Document/Permissions/index.md#editcommentauthoronly) parameter in the permissions section of the editor initialization to **true**.
 
-   ``` javascript
+   ``` ts
    const docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        permissions: {
@@ -45,7 +45,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 2. If you want to allow deleting comments only by their authors, set the [deleteCommentAuthorOnly](../../../Usage%20API/Config/Document/Permissions/index.md#deletecommentauthoronly) parameter in the permissions section of the editor initialization to **true**.
 
-   ``` javascript
+   ``` ts
    const docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        permissions: {
@@ -59,7 +59,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 1. Specify the group (or several groups separated with commas) the user belongs to by adding the field *group* to the [user](../../../Usage%20API/Config/Editor/index.md#user) parameter in the editorConfig section.
 
-  ``` javascript
+  ``` ts
   const docEditor = new DocsAPI.DocEditor("placeholder", {
     editorConfig: {
       user: [{
@@ -80,7 +80,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
    > If the **commentGroups** parameter is specified in the editor config, the access rights to viewing, editing and/or removing all comments are disabled. Otherwise, if the current user does not belong to any of the groups, he or she can edit, remove and/or view comments of all groups.
 
-   ``` javascript
+   ``` ts
    const docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        permissions: {
@@ -94,9 +94,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
    })
    ```
 
-   * *"edit": \["Group2", ""]* means that the user can edit comments made by users from *Group2* and users who do not belong to any of the groups (for example, the document that is commented in third-party editors).
-   * *"remove": \[""]* means that the user can remove comments made by someone who belongs to none of these groups (for example, the document that is commented in third-party editors).
-   * *"view": ""* means that the user can view comments made by any user.
+   - *"edit": \["Group2", ""]* means that the user can edit comments made by users from *Group2* and users who do not belong to any of the groups (for example, the document that is commented in third-party editors).
+   - *"remove": \[""]* means that the user can remove comments made by someone who belongs to none of these groups (for example, the document that is commented in third-party editors).
+   - *"view": ""* means that the user can view comments made by any user.
 
 ## Threaded comments in spreadsheets
 
@@ -119,5 +119,5 @@ To display ONLYOFFICE spreadsheet comments in other editors correctly, all the c
 
 The file in the editors opens as follows:
 
-* If there are threaded comments in the file, they are used when opening.
-* If there are comments in the original ONLYOFFICE format only, they are converted into threaded comments.
+- If there are threaded comments in the file, they are used when opening.
+- If there are comments in the original ONLYOFFICE format only, they are converted into threaded comments.

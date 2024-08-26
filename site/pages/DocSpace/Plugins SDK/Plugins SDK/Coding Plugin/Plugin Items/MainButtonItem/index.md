@@ -14,7 +14,6 @@ Type: string
 
 Example: "draw-io-main-button-item"
 
-
 ## label
 
 Defines the item display name.
@@ -22,7 +21,6 @@ Defines the item display name.
 Type: string
 
 Example: "Draw.io"
-
 
 ## icon
 
@@ -32,7 +30,6 @@ Type: string
 
 Example: "drawio.png"
 
-
 ## onClick
 
 Defines a function that takes the file/folder/room id as an argument. This function can be asynchronous.
@@ -41,15 +38,13 @@ Type: func
 
 Example: `() => {}`
 
-
 ## usersType
 
 Defines the types of users who will see the current item in the context menu. Currently the following user types are available: **owner**, **docSpaceAdmin**, **roomAdmin**, **collaborator**, **user**. If this parameter is not specified, then the current context menu item will be displayed for all user types.
 
 Type: array of [UsersType](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/UsersType.ts)
 
-Example: [UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin]
-
+Example: \[UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin]
 
 ## devices
 
@@ -59,7 +54,6 @@ Type: array of [Devices](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/
 
 Example: \[Devices.desktop]
 
-
 ## items
 
 Defines the main button items that are added to the current item as a drop-down list. In this case, the [onClick](#onclick) event does not work.
@@ -68,10 +62,9 @@ Type: array of IMainButtonItem
 
 Example: \[createItem]
 
+## Example
 
-**Example**
-
-``` javascript
+``` ts
 import {type IMainButtonItem} from "@onlyoffice/docspace-plugin-sdk"
 
 const createItem: IMainButtonItem = {

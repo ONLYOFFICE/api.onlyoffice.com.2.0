@@ -1,4 +1,4 @@
-#### bool IsFunction();
+`bool IsFunction();`
 
 Returns true if the **CDocBuilderValue** object is a function.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a function.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

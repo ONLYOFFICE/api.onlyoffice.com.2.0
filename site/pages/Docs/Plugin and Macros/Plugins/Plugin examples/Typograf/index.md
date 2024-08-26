@@ -25,19 +25,19 @@ You can also download this plugin from the [ONLYOFFICE App Directory](https://ww
 
 ## Known issues
 
-* When using the plugin in a document abstract with graphic objects, these objects (images, shapes, Text Arts, Text Boxes, tables, charts) are lost along with the text they contained.
-* If you select the text inside a graphic object, the text will be removed from the object and inserted into the document in a corrected form.
-* Graphic formulas are converted to strings.
-* Drop caps, content controls, hyperlinks, underlays, footnotes, bookmarks, caption, tables of contents are removed.
-* If at least a part of the text is split into columns, then the columns will be applied to the entire document.
-* Breaks are not saved
-* Changes suggested using *Track Changes* are not saved.
-* If the plugin is used with the *Track Changes* mode on, the corrected text will be inserted as a suggested change.
-* Comments are not saved, except for the comments to the whole document.
-* Headers and footers remain unchanged if the entire document is selected.
-* If header/footer content is selected, the graphic objects it contained will be lost.
-* Line numbering is saved if it is applied to the entire document. If it is applied to a section, then it will be lost along with the section.
-* When two or more paragraphs have been selected, an empty paragraph will be added after the corrected text.
+- When using the plugin in a document abstract with graphic objects, these objects (images, shapes, Text Arts, Text Boxes, tables, charts) are lost along with the text they contained.
+- If you select the text inside a graphic object, the text will be removed from the object and inserted into the document in a corrected form.
+- Graphic formulas are converted to strings.
+- Drop caps, content controls, hyperlinks, underlays, footnotes, bookmarks, caption, tables of contents are removed.
+- If at least a part of the text is split into columns, then the columns will be applied to the entire document.
+- Breaks are not saved
+- Changes suggested using *Track Changes* are not saved.
+- If the plugin is used with the *Track Changes* mode on, the corrected text will be inserted as a suggested change.
+- Comments are not saved, except for the comments to the whole document.
+- Headers and footers remain unchanged if the entire document is selected.
+- If header/footer content is selected, the graphic objects it contained will be lost.
+- Line numbering is saved if it is applied to the entire document. If it is applied to a section, then it will be lost along with the section.
+- When two or more paragraphs have been selected, an empty paragraph will be added after the corrected text.
 
 ## Plugin structure
 
@@ -51,9 +51,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 4. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/jQuery.license).
-   * [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/Select2.license).
-   * [Typograf](https://github.com/typograf/typograf) - screen typography for typesetting text. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/Typograf.license).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/jQuery.license).
+   - [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/Select2.license).
+   - [Typograf](https://github.com/typograf/typograf) - screen typography for typesetting text. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/typograf/licenses/Typograf.license).
 
 ## Config
 
@@ -122,16 +122,16 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
-* onTranslate
-* executeMethod ("GetSelectedText")
-* executeMethod ("GetVersion")
-* executeMethod ("PasteText")
-* executeMethod ("ReplaceTextSmart")
-* Asc.scope object
-* info.editorType
+- button
+- init
+- onExternalMouseUp
+- onTranslate
+- executeMethod ("GetSelectedText")
+- executeMethod ("GetVersion")
+- executeMethod ("PasteText")
+- executeMethod ("ReplaceTextSmart")
+- Asc.scope object
+- info.editorType
 
 ## Support
 

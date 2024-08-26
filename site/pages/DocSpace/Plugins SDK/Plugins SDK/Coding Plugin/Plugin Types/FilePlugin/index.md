@@ -2,7 +2,6 @@
 order: -1
 ---
 
-
 The plugin that can interact with the file list.
 
 **Interface**: IFilePlugin.
@@ -15,39 +14,35 @@ Stores a collection of elements where the keys are the *key* parameters from the
 
 Type: collection of IFileItem
 
-
-## Methods and their description:
+## Methods and their description
 
 ### addFileItem
 
 Add a new item for interactions with files.
 
-  **Parameters**
+Parameters:
 
-  | Name      | Description                                  | Type      | Example |
-  | --------- | -------------------------------------------- | --------- | ------- |
-  | fileItems | Defines an item for interactions with files. | IFileItem |         |
-
+| Name      | Description                                  | Type      | Example |
+| --------- | -------------------------------------------- | --------- | ------- |
+| fileItems | Defines an item for interactions with files. | IFileItem |         |
 
 ### getFileItems
 
 Get all the items for interactions with files.
 
-
 ### updateFileItem
 
 Update the item for interactions with files.
 
-  **Parameters**
+Parameters:
 
-  | Name      | Description                                     | Type      | Example |
-  | --------- | ----------------------------------------------- | --------- | ------- |
-  | fileItems | Defines a new item for interactions with files. | IFileItem |         |
+| Name      | Description                                     | Type      | Example |
+| --------- | ----------------------------------------------- | --------- | ------- |
+| fileItems | Defines a new item for interactions with files. | IFileItem |         |
 
+## Example
 
-**Example**
-
-``` typescript
+``` ts
 import {type IFileItem, type IFilePlugin} from "@onlyoffice/docspace-plugin-sdk"
 
 class Plugin implements IFilePlugin {

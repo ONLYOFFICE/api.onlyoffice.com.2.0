@@ -35,8 +35,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 4. Third-party service:
 
-   * [CodeMirror](https://codemirror.net/)- versatile text editor implemented in JavaScript for the browser. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/html/licenses/codemirror.license).
-   * [prettier.js](https://github.com/prettier/prettier) - an opinionated code formatter. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/html/licenses/prettier.license).
+   - [CodeMirror](https://codemirror.net/)- versatile text editor implemented in JavaScript for the browser. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/html/licenses/codemirror.license).
+   - [prettier.js](https://github.com/prettier/prettier) - an opinionated code formatter. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/html/licenses/prettier.license).
 
 ## Config
 
@@ -133,10 +133,10 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onTranslate
-* executeMethod ("PasteHtml")
+- button
+- init
+- onTranslate
+- executeMethod ("PasteHtml")
 
 ## Support
 

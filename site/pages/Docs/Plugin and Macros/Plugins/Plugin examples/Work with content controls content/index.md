@@ -96,12 +96,12 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/e
 
 ## Methods and events
 
-* button
-* init
-* executeMethod ("GetAllContentControls")
-* executeMethod ("PasteText")
-* executeMethod ("SelectContentControl")
-* Asc.scope object
+- button
+- init
+- executeMethod ("GetAllContentControls")
+- executeMethod ("PasteText")
+- executeMethod ("SelectContentControl")
+- Asc.scope object
 
 ## Support
 

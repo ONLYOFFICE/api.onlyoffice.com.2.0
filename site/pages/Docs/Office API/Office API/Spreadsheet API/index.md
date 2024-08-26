@@ -12,12 +12,11 @@ Some drawn objects - *images*, *shapes*, *charts* - can be placed directly to th
 
 The text that does not pertain to the cell values, can be grouped to *paragraphs* and added to the *shapes*. For the sake of convenience (as it is always easier to work with smaller blocks than with larger ones) the text is usually divided into small text portions called *runs*. Each paragraph can consist either of only one text run or have dozens of them inside, depending on the paragraph complexity.
 
-
 ## Creating a new spreadsheet
 
 The simplest example spreadsheet with a sheet named 'sheet 1' and the first column 140 pixels wide and A1 cell set to 'New cell' value can be built with the help of **ONLYOFFICE Document Builder** using the following code:
 
-``` js
+``` ts
 // create a spreadsheet file in the .xlsx format with ONLYOFFICE Document Builder
 builder.CreateFile("xlsx")
 
@@ -40,12 +39,11 @@ builder.SaveFile("xlsx", "example.xlsx")
 builder.CloseFile()
 ```
 
-
 ## Opening an existing spreadsheet
 
 If you want to edit an already existing spreadsheet, you can open it using **ONLYOFFICE Document Builder**, get its elements and change them however you need. The only difference from a spreadsheet editor in this case will be that you will not need this spreadsheet editor. The spreadsheet is opened the following way:
 
-``` js
+``` ts
 // use a path to an existing 'myspreadsheet.xlsx' spreadsheet file to open it with ONLYOFFICE Document Builder
 builder.OpenFile("https://example.com/myspreadsheet.xlsx")
 

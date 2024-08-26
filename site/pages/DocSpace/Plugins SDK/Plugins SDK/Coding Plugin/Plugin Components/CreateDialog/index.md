@@ -2,9 +2,9 @@ Modal dialog for creating certain item (file, folder, etc.). The user gets the f
 
 **Interface**: [ICreateDialog](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/interfaces/components/ICreateDialog.ts).
 
-### Example
+## Example
 
-``` javascript
+``` ts
 const createDialogProps = {
   title: "Create diagram",
   startValue: "New diagram",

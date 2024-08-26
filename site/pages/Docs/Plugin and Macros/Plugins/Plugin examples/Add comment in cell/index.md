@@ -97,10 +97,10 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/e
 
 ## Methods and events
 
-* button
-* init
-* callCommand
-* Asc.scope object
+- button
+- init
+- callCommand
+- Asc.scope object
 
 ## Support
 

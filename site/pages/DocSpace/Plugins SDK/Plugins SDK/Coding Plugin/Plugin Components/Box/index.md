@@ -16,12 +16,11 @@ Type: array of [Components](../Component/index.md)
 
 Example: \[inputComponent]
 
-
 To set borders to the Box component, use a stroke or the [IBorderProp](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/interfaces/components/IBox.ts) interface.
 
-### Example
+## Example
 
-``` javascript
+``` ts
 import {Components, type IBox, type IInput, type InputGroup} from "@onlyoffice/docspace-plugin-sdk"
 
 const nameInputProps: IInput = {

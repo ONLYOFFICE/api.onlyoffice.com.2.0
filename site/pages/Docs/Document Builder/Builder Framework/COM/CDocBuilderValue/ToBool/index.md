@@ -1,10 +1,10 @@
-#### HRESULT ToBool(\[out, retval] VARIANT\_BOOL\* result);
+`HRESULT ToBool([out, retval] VARIANT_BOOL* result);`
 
 Converts the **CDocBuilderValue** object to a boolean value.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.ToBool* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type            | Description                 |
 | -------- | --------------- | --------------------------- |
@@ -12,9 +12,9 @@ Converts the **CDocBuilderValue** object to a boolean value.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

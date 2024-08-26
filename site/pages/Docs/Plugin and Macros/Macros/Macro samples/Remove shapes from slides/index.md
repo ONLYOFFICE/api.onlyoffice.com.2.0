@@ -7,8 +7,10 @@ order: -3
 Removes shapes from slides in a presentation.
 
 <!-- This code snippet is shown in the screenshot. -->
+
 <!-- eslint-skip -->
-``` javascript
+
+``` ts
 (function()
 {
   var oPresentation = Api.GetPresentation();

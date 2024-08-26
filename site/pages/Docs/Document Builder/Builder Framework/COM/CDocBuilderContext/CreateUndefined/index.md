@@ -1,10 +1,10 @@
-#### HRESULT CreateUndefined(\[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT CreateUndefined([out, retval] I_DOCBUILDER_VALUE** result);`
 
 Creates an undefined value, an analogue of *undefined* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateUndefined* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description                   |
 | -------- | ------------------------ | ----------------------------- |
@@ -12,9 +12,9 @@ Creates an undefined value, an analogue of *undefined* in JS.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

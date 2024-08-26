@@ -4,16 +4,16 @@ order: -2
 
 For the integration of **ONLYOFFICE Document Builder** into any application, the Python **doctrenderer** library is used. The current application version contains four main classes:
 
-* [CDocBuilder](CDocBuilder/index.md) class - used by **ONLYOFFICE Document Builder** for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
-* [CDocBuilderContext](CDocBuilderContext/index.md) class - used by **ONLYOFFICE Document Builder** for getting JS context for working.
-* [CDocBuilderContextScope](CDocBuilderContextScope/index.md) class - the stack-allocated class which sets the execution context for all operations executed within a local scope.
-* [CDocBuilderValue](CDocBuilderValue/index.md) class - used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
+- [CDocBuilder](CDocBuilder/index.md) class - used by **ONLYOFFICE Document Builder** for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
+- [CDocBuilderContext](CDocBuilderContext/index.md) class - used by **ONLYOFFICE Document Builder** for getting JS context for working.
+- [CDocBuilderContextScope](CDocBuilderContextScope/index.md) class - the stack-allocated class which sets the execution context for all operations executed within a local scope.
+- [CDocBuilderValue](CDocBuilderValue/index.md) class - used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 import os
 import sys
 sys.path.append("C:/Program Files/ONLYOFFICE/DocumentBuilder")
@@ -42,9 +42,9 @@ builder.SaveFile("docx", dstPath)
 builder.CloseFile()
 ```
 
-#### .docbuilder
+### .docbuilder
 
-``` js
+``` ts
 builder.SetTmpFolder("DocBuilderTemp")
 builder.CreateFile("docx")
 const oDocument = Api.GetDocument()

@@ -6,12 +6,12 @@ In order to create an online office session within your application, a host must
 
 The host page must contain the following elements:
 
-* A *form* element via which the host must *POST* the [access\_token](#parameters) and [access\_token\_ttl](#parameters) parameters to the online office iframe for security purposes. The [docs\_api\_config](#parameters) parameter is optional.
-* JavaScript code for interacting with the online office iframe using [PostMessage](../PostMessage/index.md).
-* Specific CSS styles for the body element and online office to avoid visual bags. In addition, the host page should set an appropriate favicon for the page using the favicon URL provided in [WOPI discovery](../WOPI%20discovery/index.md).
-* A *viewport* meta tag to avoid visual and functional problems in mobile browsers.
+- A *form* element via which the host must *POST* the [access\_token](#parameters) and [access\_token\_ttl](#parameters) parameters to the online office iframe for security purposes. The [docs\_api\_config](#parameters) parameter is optional.
+- JavaScript code for interacting with the online office iframe using [PostMessage](../PostMessage/index.md).
+- Specific CSS styles for the body element and online office to avoid visual bags. In addition, the host page should set an appropriate favicon for the page using the favicon URL provided in [WOPI discovery](../WOPI%20discovery/index.md).
+- A *viewport* meta tag to avoid visual and functional problems in mobile browsers.
 
-### Host page code
+## Host page code
 
 ``` html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -81,7 +81,7 @@ The host page must contain the following elements:
 
 > Please note that the *"<%= actionUrl %>"*, *"<%= token %>"*, *"<%= tokenTtl %>"*, *"<%= apiConfig %>"* strings will be rendered with the appropriate parameters.
 
-### Parameters
+## Parameters
 
 | Name               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Type    |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |

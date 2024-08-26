@@ -1,4 +1,4 @@
-#### new CDocBuilderValue
+`new CDocBuilderValue`
 
 Class used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
 

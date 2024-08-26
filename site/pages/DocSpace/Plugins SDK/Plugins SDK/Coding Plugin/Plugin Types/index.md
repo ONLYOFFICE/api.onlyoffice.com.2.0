@@ -2,7 +2,6 @@
 order: -5
 ---
 
-
 The following plugin types can be distinguished:
 
 | Type                                                | Interface            | Description                                                                                           |

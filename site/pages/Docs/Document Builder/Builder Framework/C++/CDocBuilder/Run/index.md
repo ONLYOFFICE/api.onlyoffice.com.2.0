@@ -1,8 +1,8 @@
-#### bool Run(sPath);
+`bool Run(sPath);`
 
-Runs the **ONLYOFFICE Document Builder** executable. If you do not want to write a C++ application, you can simply use the **docbuilder.exe** executable file and run it with the **.docbuilder** file as an argument, where all the code for the document file creation will be written. For C++, create the *CDocBuilder* object and call the *Run* method with the path to the executable file from the *sPath* parameter.
+Runs the **ONLYOFFICE Document Builder** executable. If you do not want to write a C++ application, you can simply use the **docbuilder.exe** executable file and run it with the ### .docbuilder file as an argument, where all the code for the document file creation will be written. For C++, create the *CDocBuilder* object and call the *Run* method with the path to the executable file from the *sPath* parameter.
 
-## Parameters:
+## Parameters
 
 | Name    | Type             | Description                                                 |
 | ------- | ---------------- | ----------------------------------------------------------- |
@@ -10,9 +10,9 @@ Runs the **ONLYOFFICE Document Builder** executable. If you do not want to write
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 int wmain(int argc, wchar_t *argv[])
 {
@@ -29,8 +29,8 @@ int wmain(int argc, wchar_t *argv[])
 }
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```shell
+```sh
 docbuilder.exe mydocument.docbuilder
 ```

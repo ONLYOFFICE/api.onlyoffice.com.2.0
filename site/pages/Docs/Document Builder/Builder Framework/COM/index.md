@@ -4,17 +4,17 @@ order: -4
 
 For the integration of **ONLYOFFICE Document Builder** into any application, the COM **doctrenderer** library is used. The current application version contains five main classes:
 
-* *CDoctrenderer* class - used by **ONLYOFFICE Document Builder** in the file conversion process.
-* [CDocBuilder](CDocBuilder/index.md) class - used by **ONLYOFFICE Document Builder** for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
-* [CDocBuilderContext](CDocBuilderContext/index.md) class - used by **ONLYOFFICE Document Builder** for getting JS context for working.
-* [CDocBuilderContextScope](CDocBuilderContextScope/index.md) class - the stack-allocated class which sets the execution context for all operations executed within a local scope.
-* [CDocBuilderValue](CDocBuilderValue/index.md) class - used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
+- *CDoctrenderer* class - used by **ONLYOFFICE Document Builder** in the file conversion process.
+- [CDocBuilder](CDocBuilder/index.md) class - used by **ONLYOFFICE Document Builder** for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
+- [CDocBuilderContext](CDocBuilderContext/index.md) class - used by **ONLYOFFICE Document Builder** for getting JS context for working.
+- [CDocBuilderContextScope](CDocBuilderContextScope/index.md) class - the stack-allocated class which sets the execution context for all operations executed within a local scope.
+- [CDocBuilderValue](CDocBuilderValue/index.md) class - used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 #include <iostream>
 #include <comutil.h>
 #include <atlcomcli.h>
@@ -39,78 +39,78 @@ For the integration of **ONLYOFFICE Document Builder** into any application, the
 
 int main(int argc, char *argv[])
 {
-	CoInitialize(NULL);
+    CoInitialize(NULL);
 
-	IONLYOFFICEDocBuilder* oBuilder = NULL;
-	IONLYOFFICEDocBuilderContext* oContext = NULL;
-	IONLYOFFICEDocBuilderContextScope* oScope = NULL;
+    IONLYOFFICEDocBuilder* oBuilder = NULL;
+    IONLYOFFICEDocBuilderContext* oContext = NULL;
+    IONLYOFFICEDocBuilderContextScope* oScope = NULL;
 
-	IONLYOFFICEDocBuilderValue* oGlobal = NULL;
-	IONLYOFFICEDocBuilderValue* oApi = NULL;
-	IONLYOFFICEDocBuilderValue* oDocument = NULL;
-	IONLYOFFICEDocBuilderValue* oParagraph = NULL;
-	IONLYOFFICEDocBuilderValue* oContent = NULL;
+    IONLYOFFICEDocBuilderValue* oGlobal = NULL;
+    IONLYOFFICEDocBuilderValue* oApi = NULL;
+    IONLYOFFICEDocBuilderValue* oDocument = NULL;
+    IONLYOFFICEDocBuilderValue* oParagraph = NULL;
+    IONLYOFFICEDocBuilderValue* oContent = NULL;
 
-	HRESULT hr = CoCreateInstance(__uuidof(CONLYOFFICEDocBuilder), NULL, CLSCTX_ALL, __uuidof(IONLYOFFICEDocBuilder), (void**)&oBuilder);
+    HRESULT hr = CoCreateInstance(__uuidof(CONLYOFFICEDocBuilder), NULL, CLSCTX_ALL, __uuidof(IONLYOFFICEDocBuilder), (void**)&oBuilder);
 
-	if (FAILED(hr))
-	{
-		CoUninitialize();
-		return 1;
-	}
+    if (FAILED(hr))
+    {
+        CoUninitialize();
+        return 1;
+    }
 
-	VARIANT_BOOL b;
+    VARIANT_BOOL b;
 
-	oBuilder->Initialize();
-	oBuilder->CreateFile(_bstr_t("docx"), &b);
-	oBuilder->GetContext(&oContext);
+    oBuilder->Initialize();
+    oBuilder->CreateFile(_bstr_t("docx"), &b);
+    oBuilder->GetContext(&oContext);
 
-	oContext->CreateScope(&oScope);
-	oContext->GetGlobal(&oGlobal);
+    oContext->CreateScope(&oScope);
+    oContext->GetGlobal(&oGlobal);
 
-	oGlobal->GetProperty(_bstr_t("Api"), &oApi);
-	oContext->CreateArray(1, &oContent);
+    oGlobal->GetProperty(_bstr_t("Api"), &oApi);
+    oContext->CreateArray(1, &oContent);
 
-	oApi->Call(_bstr_t("GetDocument"), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), &oDocument);
-	oApi->Call(_bstr_t("CreateParagraph"), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), &oParagraph);
-	oContext->CreateArray(1, &oContent);
-	
-	oParagraph->Call(_bstr_t("SetSpacingAfter"), ATL::CComVariant(1000), ATL::CComVariant(VARIANT_FALSE), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), NULL);
-	oParagraph->Call(_bstr_t("AddText"), ATL::CComVariant("Hello from COM!"), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), NULL);
-	oContent->Set(0, oParagraph);
+    oApi->Call(_bstr_t("GetDocument"), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), &oDocument);
+    oApi->Call(_bstr_t("CreateParagraph"), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), &oParagraph);
+    oContext->CreateArray(1, &oContent);
 
-	oDocument->Call(_bstr_t("InsertContent"), ATL::CComVariant(oContent), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), NULL);
+    oParagraph->Call(_bstr_t("SetSpacingAfter"), ATL::CComVariant(1000), ATL::CComVariant(VARIANT_FALSE), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), NULL);
+    oParagraph->Call(_bstr_t("AddText"), ATL::CComVariant("Hello from COM!"), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), NULL);
+    oContent->Set(0, oParagraph);
 
-	oBuilder->SaveFile(_bstr_t("docx"), _bstr_t("result.docx"), &b);
+    oDocument->Call(_bstr_t("InsertContent"), ATL::CComVariant(oContent), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), ATL::CComVariant(), NULL);
 
-	RELEASEINTERFACE(oContent);
+    oBuilder->SaveFile(_bstr_t("docx"), _bstr_t("result.docx"), &b);
 
-	IONLYOFFICEDocBuilderValue* oArr = NULL;
-	CComSafeArray<BYTE> arr;
-	arr.Add(1);
-	oContext->CreateTypedArray(ATL::CComVariant(arr), 1, &oArr);
+    RELEASEINTERFACE(oContent);
 
-	oBuilder->CloseFile();
-	oBuilder->Dispose();
+    IONLYOFFICEDocBuilderValue* oArr = NULL;
+    CComSafeArray<BYTE> arr;
+    arr.Add(1);
+    oContext->CreateTypedArray(ATL::CComVariant(arr), 1, &oArr);
 
-	RELEASEINTERFACE(oBuilder);
-	RELEASEINTERFACE(oContext);
-	RELEASEINTERFACE(oScope);
+    oBuilder->CloseFile();
+    oBuilder->Dispose();
 
-	RELEASEINTERFACE(oGlobal);
-	RELEASEINTERFACE(oApi);
-	RELEASEINTERFACE(oDocument);
-	RELEASEINTERFACE(oParagraph);
-	RELEASEINTERFACE(oContent);
+    RELEASEINTERFACE(oBuilder);
+    RELEASEINTERFACE(oContext);
+    RELEASEINTERFACE(oScope);
 
-	CoUninitialize();
-	return 0;
+    RELEASEINTERFACE(oGlobal);
+    RELEASEINTERFACE(oApi);
+    RELEASEINTERFACE(oDocument);
+    RELEASEINTERFACE(oParagraph);
+    RELEASEINTERFACE(oContent);
+
+    CoUninitialize();
+    return 0;
 }
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```js
+```ts
 builder.SetTmpFolder("DocBuilderTemp")
 builder.CreateFile("docx")
 const oDocument = Api.GetDocument()

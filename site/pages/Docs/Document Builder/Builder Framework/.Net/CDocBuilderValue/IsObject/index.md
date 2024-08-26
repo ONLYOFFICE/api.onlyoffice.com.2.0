@@ -1,4 +1,4 @@
-#### bool IsObject();
+`bool IsObject();`
 
 Returns true if the **CDocBuilderValue** object is an object.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is an object.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

@@ -19,7 +19,7 @@ Use the [execCommand](../execCommand/index.md) method to display a cloud in the 
 }
 ```
 
-## displayName
+### displayName
 
 Defines the user name displayed on the **Connected clouds** page.
 
@@ -29,8 +29,7 @@ Type: string
 
 Example: "John Smith"
 
-
-## email
+### email
 
 Defines the user email displayed on the **Connected clouds** page.
 
@@ -38,8 +37,7 @@ Type: string
 
 Example: `john@example.com`
 
-
-## domain
+### domain
 
 Defines the cloud name and the cloud entry point.
 
@@ -49,8 +47,7 @@ Type: string
 
 Example: `https://exampledomain.com`
 
-
-## provider
+### provider
 
 Defines the provider id used to refer to the desktop app in the JavaScript commands (the same as in the [config](../index.md)).
 
@@ -60,13 +57,12 @@ Type: string
 
 Example: "onlyoffice"
 
-
-## uiTheme
+### uiTheme
 
 Defines the editor theme settings. It can be set in two ways:
 
-* **theme id** - the user sets the theme parameter by its id (**theme-light**, **theme-classic-light**, **theme-dark**, **theme-contrast-dark**);
-* **default theme** - the default dark or light theme value will be set (**default-dark**, **default-light**).
+- **theme id** - the user sets the theme parameter by its id (**theme-light**, **theme-classic-light**, **theme-dark**, **theme-contrast-dark**);
+- **default theme** - the default dark or light theme value will be set (**default-dark**, **default-light**).
 
 The default light theme is **theme-classic-light**.The first option has higher priority.
 
@@ -76,8 +72,7 @@ Type: string
 
 Example: "theme-dark"
 
-
-## userId
+### userId
 
 Defines the user id.
 
@@ -87,10 +82,9 @@ Type: string
 
 Example: "78e1e841"
 
-
 ### Example
 
-``` javascript
+``` ts
 const params = {
   displayName: "John Smith",
   email: "john@example.com",
@@ -112,7 +106,7 @@ Use the [execCommand](../execCommand/index.md) method to remove a cloud from the
 }
 ```
 
-## domain
+### domain
 
 Defines the cloud name and the cloud entry point.
 
@@ -120,10 +114,9 @@ Type: string
 
 Example: `https://exampledomain.com`
 
-
 ### Example
 
-``` javascript
+``` ts
 window.AscDesktopEditor.execCommand("portal:logout", JSON.stringify({
   domain: "https://exampledomain.com",
 }))

@@ -1,10 +1,10 @@
-#### void Set(nIndex, sValue);
+`void Set(nIndex, sValue);`
 
 Sets an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Set* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type              | Description                   |
 | -------- | ----------------- | ----------------------------- |
@@ -13,9 +13,9 @@ Sets an array value by its index.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();
@@ -34,15 +34,15 @@ CDocBuilder.Destroy();
 
 The **default\[]** postfix expression can be also used to set an array value by its index:
 
-```c#
+```cs
 property CDocBuilderValue^ default[int]
 ```
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

@@ -16,10 +16,9 @@ Type: string
 
 Example: "Sample for text component"
 
+## Example
 
-### Example
-
-``` javascript
+``` ts
 import {type IText} from "@onlyoffice/docspace-plugin-sdk"
 
 const text: IText = {

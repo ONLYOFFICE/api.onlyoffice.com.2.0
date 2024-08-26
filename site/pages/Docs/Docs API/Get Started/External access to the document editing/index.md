@@ -2,7 +2,6 @@
 order: -1
 ---
 
-
 The following examples will show you how to edit text documents, spreadsheets, presentations, and fillable forms from an external source. To achieve this, use our [Automation API](../../Usage%20API/Automation%20API/index.md).
 
 ## Working with comments

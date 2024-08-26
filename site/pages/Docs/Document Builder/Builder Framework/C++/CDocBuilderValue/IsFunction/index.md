@@ -1,4 +1,4 @@
-#### bool IsFunction();
+`bool IsFunction();`
 
 Returns true if the **CDocBuilderValue** object is a function.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a function.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

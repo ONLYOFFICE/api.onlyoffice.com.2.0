@@ -1,4 +1,4 @@
-#### HRESULT Clear();
+`HRESULT Clear();`
 
 Clears the **CDocBuilderValue** object.
 
@@ -6,9 +6,9 @@ Clears the **CDocBuilderValue** object.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

@@ -2,7 +2,6 @@
 order: -2
 ---
 
-
 The ONLYOFFICE Hosted Solution is implemented as REST over HTTP using GET/POST. All the resources, like client creation, portal registration, etc, have their own URLs and are designed to be manipulated in isolation.
 
 ## Authentication
@@ -19,7 +18,7 @@ To identify the request and response format, please make sure that both the **Co
 
 **If a request fails, a non-200 status code will be returned** in JSON format, containing the error code and additional error information (if available) as the response content.
 
-### Possible error codes and their description
+## Possible error codes and their description
 
 | HTTP Status Code | Error code             | Description                                                                                                                                                                            |
 | ---------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

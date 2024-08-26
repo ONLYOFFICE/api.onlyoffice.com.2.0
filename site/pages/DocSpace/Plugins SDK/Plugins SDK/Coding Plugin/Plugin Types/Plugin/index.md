@@ -2,7 +2,6 @@
 order: -9
 ---
 
-
 The default plugin.
 
 **Interface**: IPlugin.
@@ -19,45 +18,41 @@ Type: [PluginStatus](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/mast
 
 Example: "active"
 
-
 ### onLoadCallback
 
 Stores callback which will be executed when uploading the plugin to the portal.
 
 Type: func
 
-
-## Methods and their description:
+## Methods and their description
 
 ### updateStatus
 
 Update the plugin status.
 
-  **Parameters**
+Parameters:
 
-  | Name   | Description                                           | Type                                                                                               | Example  |
-  | ------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------- |
-  | status | Defines a new plugin status (**active** or **hide**). | [PluginStatus](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/Plugins.ts) | "active" |
-
+| Name   | Description                                           | Type                                                                                               | Example  |
+| ------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------- |
+| status | Defines a new plugin status (**active** or **hide**). | [PluginStatus](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/Plugins.ts) | "active" |
 
 ### getStatus
 
 Get the plugin status.
 
-
 ### setOnLoadCallback
 
 Sets the [onLoadCallback](#onloadcallback) variable to the plugin.
 
-  **Parameters**
+Parameters:
 
-  | Name     | Description                                                                      | Type | Example  |
-  | -------- | -------------------------------------------------------------------------------- | ---- | -------- |
-  | callback | Defines callback which will be executed when uploading the plugin to the portal. | fucn | callback |
+| Name     | Description                                                                      | Type | Example  |
+| -------- | -------------------------------------------------------------------------------- | ---- | -------- |
+| callback | Defines callback which will be executed when uploading the plugin to the portal. | fucn | callback |
 
-**Example**
+## Example
 
-``` typescript
+``` ts
 import {type IPlugin, PluginStatus} from "@onlyoffice/docspace-plugin-sdk"
 
 class Plugin implements IPlugin {

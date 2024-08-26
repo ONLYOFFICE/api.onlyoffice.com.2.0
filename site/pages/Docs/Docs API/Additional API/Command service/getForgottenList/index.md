@@ -1,6 +1,6 @@
 Requests a list of the forgotten files.
 
-### Request example
+## Request example
 
 ``` json
 {
@@ -8,13 +8,13 @@ Requests a list of the forgotten files.
 }
 ```
 
-### Parameters
+## Parameters
 
 | Parameter | Description               | Type   | Presence |
 | --------- | ------------------------- | ------ | -------- |
 | c         | Defines the command type. | string | required |
 
-### Response example
+## Response example
 
 ``` json
 {
@@ -23,7 +23,7 @@ Requests a list of the forgotten files.
 }
 ```
 
-### Parameters
+## Parameters
 
 | Parameter | Description                                                                                   | Type    | Presence |
 | --------- | --------------------------------------------------------------------------------------------- | ------- | -------- |

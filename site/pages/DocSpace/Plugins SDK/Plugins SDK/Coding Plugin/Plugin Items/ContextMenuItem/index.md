@@ -14,7 +14,6 @@ Type: string
 
 Example: "convert-file-item"
 
-
 ## label
 
 Defines the item display name.
@@ -22,7 +21,6 @@ Defines the item display name.
 Type: string
 
 Example: "Convert to PDF"
-
 
 ## icon
 
@@ -32,7 +30,6 @@ Type: string
 
 Example: "convert-16.png"
 
-
 ## onClick
 
 Defines a function that takes the file/folder/room id as an argument. This function can be asynchronous.
@@ -41,15 +38,13 @@ Type: func
 
 Example: `(id: number) => {}`
 
-
 ## fileExt
 
 Defines the extensions of files where the current item will be displayed in the context menu. It only works if the *FilesType.Files* is specified in the *fileType* parameter. If this parameter is not specified, then the current context menu item will be displayed in any file extension.
 
 Type: array of [FilesExst](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/Files.ts) / string
 
-Example: [FilesExst.docx, FilesExst.xlsx]
-
+Example: \[FilesExst.docx, FilesExst.xlsx]
 
 ## fileType
 
@@ -59,15 +54,13 @@ Type: array of [FilesType](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blo
 
 Example: \[FilesType.file]
 
-
 ## usersType
 
 Defines the types of users who will see the current item in the context menu. Currently the following user types are available: **owner**, **docSpaceAdmin**, **roomAdmin**, **collaborator**, **user**. If this parameter is not specified, then the current context menu item will be displayed for all user types.
 
 Type: array of [UsersType](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/UsersType.ts)
 
-Example: [UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin]
-
+Example: \[UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin]
 
 ## devices
 
@@ -77,7 +70,6 @@ Type: array of [Devices](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/
 
 Example: \[Devices.desktop]
 
-
 ## security
 
 Defines the security parameters of the parent folder or room that will be checked. If all the parameters are **true**, the current item will be displayed in the context menu. If this parameter is undefined, it will be ignored.
@@ -85,7 +77,6 @@ Defines the security parameters of the parent folder or room that will be checke
 Type: array of [Security](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/develop/src/enums/Security.ts)
 
 Example: \[Security.Create]
-
 
 ## withActiveItem
 
@@ -95,10 +86,9 @@ Type: boolean
 
 Example: true
 
+## Example
 
-**Example**
-
-``` javascript
+``` ts
 import {FilesType, type IContextMenuItem, UsersType} from "@onlyoffice/docspace-plugin-sdk"
 
 export const convertFileItem: IContextMenuItem = {

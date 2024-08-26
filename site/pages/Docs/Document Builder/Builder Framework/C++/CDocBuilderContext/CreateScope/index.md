@@ -1,4 +1,4 @@
-#### CDocBuilderContextScope CreateScope();
+`CDocBuilderContextScope CreateScope();`
 
 Creates a [context scope](../../CDocBuilderContextScope/index.md) which sets the execution context for all operations executed within a local scope.
 
@@ -6,9 +6,9 @@ Creates a [context scope](../../CDocBuilderContextScope/index.md) which sets the
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

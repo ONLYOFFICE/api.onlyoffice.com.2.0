@@ -1,10 +1,10 @@
-#### def WriteData(self, path, value, append);
+`def WriteData(self, path, value, append);`
 
 Writes data to the log file. It is used for logs in JS code.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilder.WriteData* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type | Description                                                                                                |
 | -------- | ---- | ---------------------------------------------------------------------------------------------------------- |
@@ -14,9 +14,9 @@ Writes data to the log file. It is used for logs in JS code.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 builder.WriteData("result.log", "Alert!", false)
 ```

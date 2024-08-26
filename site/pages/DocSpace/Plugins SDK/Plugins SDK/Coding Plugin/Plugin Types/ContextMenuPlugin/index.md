@@ -2,7 +2,6 @@
 order: -6
 ---
 
-
 The plugin that is embedded in the context menu of files, folders, rooms, images, video (audio).
 
 **Interface**: IContextMenuPlugin.
@@ -15,43 +14,39 @@ Stores a collection of elements where the keys are the *key* parameters from the
 
 Type: collection of IContextMenuItem
 
-
-## Methods and their description:
+## Methods and their description
 
 ### addContextMenuItem
 
 Add a new context menu item.
 
-  **Parameters**
+Parameters:
 
-  | Name            | Description                  | Type             | Example |
-  | --------------- | ---------------------------- | ---------------- | ------- |
-  | contextMenuItem | Defines a context menu item. | IContextMenuItem |         |
-
+| Name            | Description                  | Type             | Example |
+| --------------- | ---------------------------- | ---------------- | ------- |
+| contextMenuItem | Defines a context menu item. | IContextMenuItem |         |
 
 ### getContextMenuItems
 
 Get all the context menu items.
 
-
 ### getContextMenuItemsKeys
 
 Get all the keys of the context menu items.
-
 
 ### updateContextMenuItem
 
 Update the context menu item.
 
-  **Parameters**
+Parameters:
 
-  | Name            | Description                      | Type             | Example |
-  | --------------- | -------------------------------- | ---------------- | ------- |
-  | contextMenuItem | Defines a new context menu item. | IContextMenuItem |         |
+| Name            | Description                      | Type             | Example |
+| --------------- | -------------------------------- | ---------------- | ------- |
+| contextMenuItem | Defines a new context menu item. | IContextMenuItem |         |
 
-**Example**
+## Example
 
-``` typescript
+``` ts
 import {type IContextMenuItem, type IContextMenuPlugin} from "@onlyoffice/docspace-plugin-sdk"
 
 class Plugin implements IContextMenuPlugin {

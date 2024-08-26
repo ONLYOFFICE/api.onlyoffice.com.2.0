@@ -22,7 +22,7 @@ You can add a plugin to the **Cloud service** as an **extension**. It can be don
 
 6. Open the *onlyoffice.github.io/store/plugin-dev/extension/inject.js* file and assign the path to your plugin on GitHub Pages site to the **URL\_TO\_PLUGIN** variable:
 
-   ``` javascript
+   ``` ts
    const URL_TO_PLUGIN = "https://YOUR-USERNAME.github.io/onlyoffice.github.io/sdkjs-plugins/content/helloworld/"
    ```
 
@@ -33,7 +33,6 @@ The *onlyoffice.github.io/store/plugin-dev/extension* folder is a new extension.
 ## Step 2. Uploading extensions to the browser
 
 After your extension is ready, upload it to the browser. Follow the instructions below for the browser you use.
-
 
 ### Installing extensions to Google Chrome
 
@@ -55,15 +54,13 @@ After your extension is ready, upload it to the browser. Follow the instructions
 
    ![Hello world icon](/assets/images/plugins/helloworld_icon.png)
 
-
-**Removing extensions from Google Chrome**
+#### Removing extensions from Google Chrome
 
 Click the **Remove** button on the extension tab and, in the opened window, confirm your action:
 
 ![Chrome removing extension](/assets/images/plugins/chrome-removing-extension.png)
 
 The plugin will be removed from ONLYOFFICE Cloud after page reload.
-
 
 ### Installing extensions to Opera
 
@@ -89,8 +86,7 @@ The plugin will be removed from ONLYOFFICE Cloud after page reload.
 
    ![Hello world icon](/assets/images/plugins/helloworld_icon.png)
 
-
-**Removing plugins from Opera**
+#### Removing plugins from Opera
 
 To remove the plugin from the **Plugins** tab in ONLYOFFICE editors, click the **Disable** button on the extension tab or turn off the switcher. You can enable the extension again at any time.
 
@@ -105,7 +101,6 @@ To remove the extension completely from the Opera browser:
    ![Opera removing extension](/assets/images/plugins/opera-removing-extension.png)
 
 The plugin will be removed from ONLYOFFICE Cloud after page reload.
-
 
 ### Installing extensions to Microsoft Edge
 
@@ -127,8 +122,7 @@ The plugin will be removed from ONLYOFFICE Cloud after page reload.
 
    ![Hello world icon](/assets/images/plugins/helloworld_icon.png)
 
-
-**Removing plugins from Microsoft Edge**
+#### Removing plugins from Microsoft Edge
 
 To remove the plugin from the **Plugins** tab in ONLYOFFICE editors, disable it by turning off the switcher. You can enable the extension again at any time.
 

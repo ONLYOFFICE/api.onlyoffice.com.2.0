@@ -8,7 +8,6 @@ Type: string
 
 Example: "John Smith"
 
-
 ## created
 
 Defines the document creation date. Deprecated since version 5.4, please use [uploaded](#uploaded) instead.
@@ -16,7 +15,6 @@ Defines the document creation date. Deprecated since version 5.4, please use [up
 Type: string
 
 Example: "2010-07-07 3:46 PM"
-
 
 ## favorite
 
@@ -28,7 +26,6 @@ Example: true
 
 ![Favorite](/assets/images/editor/favorite.png)
 
-
 ## folder
 
 Defines the folder where the document is stored (can be empty in case the document is stored in the root folder).
@@ -36,7 +33,6 @@ Defines the folder where the document is stored (can be empty in case the docume
 Type: string
 
 Example: "Example Files"
-
 
 ## owner
 
@@ -46,16 +42,15 @@ Type: string
 
 Example: "John Smith"
 
-
 ## sharingSettings
 
 Displays the information about the settings which allow to share the document with other users.
 
 Type: array of object
 
-**Example**:
+Example:
 
-``` javascript
+``` ts
 [
   {
     permissions: "Full Access",
@@ -63,7 +58,6 @@ Type: array of object
   },
 ]
 ```
-
 
 ### sharingSettings.isLink
 
@@ -73,7 +67,6 @@ Type: boolean
 
 Example: false
 
-
 ### sharingSettings.permissions
 
 The access rights for the user with the name above. Can be **Full Access**, **Read Only** or **Deny Access**.
@@ -81,7 +74,6 @@ The access rights for the user with the name above. Can be **Full Access**, **Re
 Type: string
 
 Example: "Full Access"
-
 
 ### sharingSettings.user
 
@@ -93,7 +85,6 @@ Example: "John Smith"
 
 ![Sharing settings](/assets/images/editor/sharing_settings.png) 
 
-
 ## uploaded
 
 Defines the document uploading date.
@@ -104,9 +95,9 @@ Example: "2010-07-07 3:46 PM"
 
 ![Document information](/assets/images/editor/info.png)
 
-### Example
+## Example
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     info: {

@@ -1,4 +1,4 @@
-#### HRESULT Dispose();
+`HRESULT Dispose();`
 
 Unloads the **ONLYOFFICE Document Builder** from the application memory when it is no longer needed. Generally, there is no need to dispose JS before exiting the process, it should happen automatically. It should only be used if the process needs the resources taken up by JS.
 
@@ -6,9 +6,9 @@ Unloads the **ONLYOFFICE Document Builder** from the application memory when it 
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 oBuilder->Initialize();

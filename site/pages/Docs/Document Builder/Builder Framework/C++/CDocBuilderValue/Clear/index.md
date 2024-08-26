@@ -1,4 +1,4 @@
-#### void Clear();
+`void Clear();`
 
 Clears the **CDocBuilderValue** object.
 
@@ -6,9 +6,9 @@ Clears the **CDocBuilderValue** object.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

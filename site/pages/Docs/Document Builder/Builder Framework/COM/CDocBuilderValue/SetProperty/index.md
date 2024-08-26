@@ -1,10 +1,10 @@
-#### HRESULT SetProperty(\[in] BSTR name, \[in] I\_DOCBUILDER\_VALUE\* value);
+`HRESULT SetProperty([in] BSTR name, [in] I_DOCBUILDER_VALUE* value);`
 
 Sets a property to the **CDocBuilderValue** object.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.SetProperty* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name    | Type                   | Description                                            |
 | ------- | ---------------------- | ------------------------------------------------------ |
@@ -13,9 +13,9 @@ Sets a property to the **CDocBuilderValue** object.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

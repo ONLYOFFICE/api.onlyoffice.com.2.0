@@ -1,10 +1,10 @@
-#### def CreateArray(length);
+`def CreateArray(length);`
 
 Creates an array value. This method returns the current [context](../../CDocBuilderContext/index.md) and calls its [CreateArray](../../CDocBuilderContext/CreateArray/index.md) method.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.CreateArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type | Description       |
 | -------- | ---- | ----------------- |
@@ -12,9 +12,9 @@ Creates an array value. This method returns the current [context](../../CDocBuil
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

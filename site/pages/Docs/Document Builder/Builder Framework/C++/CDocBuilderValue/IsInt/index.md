@@ -1,4 +1,4 @@
-#### bool IsInt();
+`bool IsInt();`
 
 Returns true if the **CDocBuilderValue** object is an integer.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is an integer.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

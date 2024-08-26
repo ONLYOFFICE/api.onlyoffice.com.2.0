@@ -1,10 +1,10 @@
-#### HRESULT IsBool(\[out, retval] VARIANT\_BOOL\* result);
+`HRESULT IsBool([out, retval] VARIANT_BOOL* result);`
 
 Returns true if the **CDocBuilderValue** object is a boolean value.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsBool* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type            | Description                                                           |
 | -------- | --------------- | --------------------------------------------------------------------- |
@@ -12,9 +12,9 @@ Returns true if the **CDocBuilderValue** object is a boolean value.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

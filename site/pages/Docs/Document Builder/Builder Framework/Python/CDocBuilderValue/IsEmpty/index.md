@@ -1,4 +1,4 @@
-#### def IsEmpty(self);
+`def IsEmpty(self);`
 
 Returns true if the **CDocBuilderValue** object is empty.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is empty.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

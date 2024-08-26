@@ -14,9 +14,11 @@ In order to convert different file formats in the online office, the POST reques
 | file             | A file to convert in the payload.                                                                                                       | object  | required |
 | lang             | The default format language. It is used for the date type cells. If the language is specified, it determines the display/output format. | string  | optional |
 
+## Examples of requests
+
 ### Sample of conversion request
 
-``` bash
+``` sh
 curl -F "data=sample.txt" https://documentserver/cool/convert-to/docx > result.docx
 ```
 
@@ -35,7 +37,7 @@ where the **documentserver** is the name of the server with the ONLYOFFICE Docs 
 
 ### Sample of conversion request with the *format* parameter
 
-``` bash
+``` sh
 curl -F "data=sample.odt" -F "format=pdf" "PDFVer=PDF/A-2b" https://documentserver/cool/convert-to > result.pdf
 ```
 

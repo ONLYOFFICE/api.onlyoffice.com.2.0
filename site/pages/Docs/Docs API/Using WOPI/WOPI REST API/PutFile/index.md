@@ -1,4 +1,4 @@
-**POST /wopi/files/*(file\_id)*/contents**
+`POST /wopi/files/(file_id)/contents`
 
 Requests a message to update a file for the `HTTP://server/<...>/wopi*/files/<id>/contents` operation.
 
@@ -11,34 +11,34 @@ This operation works as follows:
 3. If the file is **unlocked**, the host must check the current size of the file. If it is 0 bytes, the **PutFile** request should be considered valid and should proceed. If it is any value other than 0 bytes, or is missing altogether, the host should respond with **409 Conflict**.
 4. In the case where the file is locked by a third-party client, hosts should still always include the current lock ID in the **X-WOPI-Lock** response header.
 
-### Parameters
+## Parameters
 
 | Name     | Description                        | Type   |
 | -------- | ---------------------------------- | ------ |
 | file\_id | The file ID that must be URL safe. | string |
 
-### Query parameters
+## Query parameters
 
 | Name          | Description                                                                            | Type   |
 | ------------- | -------------------------------------------------------------------------------------- | ------ |
 | access\_token | An access token that the host will use to determine whether the request is authorized. | string |
 
-### Request headers
+## Request headers
 
 | Name                         | Description                                                                                                                                                             | Type   | Presence |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
 | X-WOPI-Override              | The requested operation from the WOPI server (*PUT*).                                                                                                                   | string | required |
 | X-WOPI-Lock                  | The lock ID that the host must use to identify the lock on the file.                                                                                                    | string | optional |
-| X-WOPI-Editors               | All the users who contributed changes to the document in this **PutFile** request ([UserId](../CheckFileInfo/index.md#userid) values delimited by commas).    | string | optional |
+| X-WOPI-Editors               | All the users who contributed changes to the document in this **PutFile** request ([UserId](../CheckFileInfo/index.md#userid) values delimited by commas).              | string | optional |
 | X-LOOL-WOPI-IsModifiedByUser | Indicates whether the user has modified the document before the save (**"true"**), or if they just pressed the **Save** button without any modification (**"false"**).  | string | optional |
 | X-LOOL-WOPI-IsAutosave       | Indicates whether the **PutFile** is triggered by autosave (**"true"**) or by explicit user operation (**Save** button or menu entry) (**"false"**).                    | string | optional |
 | X-LOOL-WOPI-IsExitSave       | Indicates whether an automatic save will be triggered when the document gets cleaned up from memory (e.g. when all users disconnect) (**"true"**) or not (**"false"**). | string | optional |
 
-### Request body
+## Request body
 
 The request body must be the full binary contents of the file.
 
-### Response headers
+## Response headers**
 
 | Name                     | Description                                                                                                                                                                                                               | Type   | Presence |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |

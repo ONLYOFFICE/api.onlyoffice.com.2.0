@@ -1,4 +1,4 @@
-#### def IsDouble(self);
+`def IsDouble(self);`
 
 Returns true if the **CDocBuilderValue** object is a double value.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a double value.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

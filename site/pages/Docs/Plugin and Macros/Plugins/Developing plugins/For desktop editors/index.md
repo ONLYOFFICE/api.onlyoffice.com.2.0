@@ -12,9 +12,9 @@ To develop a plugin for ONLYOFFICE desktop editors, follow the instructions belo
 
    The plugin will appear in the *sdkjs-plugins* directory. The path to the folder depends on the operating system you use:
 
-   * For Linux - *home/\<username>/.local/share/onlyoffice/desktopeditors/sdkjs-plugins/*
-   * For Windows - *C:\Users\\\<username>\AppData\Local\ONLYOFFICE\DesktopEditors\data\sdkjs-plugins\\*
-   * For Mac OS - *Users/\<username>/Library/Application Support/asc.onlyoffice.ONLYOFFICE/sdkjs-plugins/*
+   - For Linux - *home/\<username>/.local/share/onlyoffice/desktopeditors/sdkjs-plugins/*
+   - For Windows - *C:\Users\\\<username>\AppData\Local\ONLYOFFICE\DesktopEditors\data\sdkjs-plugins\\*
+   - For Mac OS - *Users/\<username>/Library/Application Support/asc.onlyoffice.ONLYOFFICE/sdkjs-plugins/*
 
    A plugin **GUID** will be used as the folder name. For example, *{07FD8DFA-DFE0-4089-AL24-0730933CC80A}*.
 

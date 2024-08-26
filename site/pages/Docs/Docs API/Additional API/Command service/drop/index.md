@@ -1,6 +1,6 @@
 Disconnects the users with the identifiers specified in the *users* parameter from the **document editing service**. These users will be able to view the document, but will not be allowed to make changes to it.
 
-### Request example
+## Request example
 
 ``` json
 {
@@ -10,7 +10,7 @@ Disconnects the users with the identifiers specified in the *users* parameter fr
 }
 ```
 
-### Parameters
+## Parameters
 
 | Parameter | Description                                                                       | Type             | Presence |
 | --------- | --------------------------------------------------------------------------------- | ---------------- | -------- |
@@ -18,7 +18,7 @@ Disconnects the users with the identifiers specified in the *users* parameter fr
 | key       | Defines the document identifier used to unambiguously identify the document file. | string           | required |
 | users     | Defines the list of the user identifiers.                                         | array of strings | required |
 
-### Response example
+## Response example
 
 ``` json
 {
@@ -27,7 +27,7 @@ Disconnects the users with the identifiers specified in the *users* parameter fr
 }
 ```
 
-### Parameters
+## Parameters
 
 | Parameter | Description                                                                       | Type    | Presence |
 | --------- | --------------------------------------------------------------------------------- | ------- | -------- |

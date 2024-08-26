@@ -7,8 +7,10 @@ order: -18
 Sets the background color of the cell **B3** to blue.
 
 <!-- This code snippet is shown in the screenshot. -->
+
 <!-- eslint-skip -->
-``` javascript
+
+``` ts
 (function()
 {
     Api.GetActiveSheet().GetRange("B3").SetFillColor(Api.CreateColorFromRGB(0, 0, 250));

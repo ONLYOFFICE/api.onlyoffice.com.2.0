@@ -1,4 +1,4 @@
-#### bool IsSaveWithDoctrendererMode();
+`bool IsSaveWithDoctrendererMode();`
 
 Specifies if the doctrenderer mode is used when building a document or getting content from the editor when saving a file.
 
@@ -6,9 +6,9 @@ Specifies if the doctrenderer mode is used when building a document or getting c
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

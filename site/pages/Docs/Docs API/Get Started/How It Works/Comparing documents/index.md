@@ -21,7 +21,7 @@ The reference figure and the steps below explain the process of comparing docume
 
    ![onRequestCompareFile](/assets/images/editor/onRequestCompareFile.png)
 
-   ``` javascript
+   ``` ts
    function onRequestCompareFile() {
      docEditor.setRevisedFile({
        fileType: "docx",
@@ -39,7 +39,7 @@ The reference figure and the steps below explain the process of comparing docume
 
 3. In order to select a document for comparing, the [setRevisedFile](../../../Usage%20API/Methods/index.md#setrevisedfile) method must be called. When calling this method, the token must be added to validate the parameters.
 
-   ``` javascript
+   ``` ts
    docEditor.setRevisedFile({
      fileType: "docx",
      token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6ImRvY3giLCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLWRvY3VtZW50LmRvY3gifQ.t8660n_GmxJIppxcwkr_mUxmXYtE8cg-jF2cTLMtuk8",

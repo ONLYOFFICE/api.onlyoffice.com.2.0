@@ -1,10 +1,10 @@
-#### HRESULT GetProperty(\[in] BSTR name, \[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT GetProperty([in] BSTR name, [out, retval] I_DOCBUILDER_VALUE** result);`
 
 Returns a property of the **CDocBuilderValue** object.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetProperty* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description                                           |
 | -------- | ------------------------ | ----------------------------------------------------- |
@@ -13,9 +13,9 @@ Returns a property of the **CDocBuilderValue** object.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

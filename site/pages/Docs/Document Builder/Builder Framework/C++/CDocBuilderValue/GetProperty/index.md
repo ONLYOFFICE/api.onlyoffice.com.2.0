@@ -1,10 +1,10 @@
-#### CDocBuilderValue GetProperty(sName);
+`CDocBuilderValue GetProperty(sName);`
 
 Returns a property of the **CDocBuilderValue** object.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetProperty* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name    | Type             | Description                                           |
 | ------- | ---------------- | ----------------------------------------------------- |
@@ -12,9 +12,9 @@ Returns a property of the **CDocBuilderValue** object.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;
@@ -30,16 +30,16 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
 
 1. use the **Get** method that takes the arguments both in the UTF8 or Unicode formats:
 
-   ```c++
+   ```cpp
    CDocBuilderValue Get(const char* name);
    CDocBuilderValue Get(const wchar_t* name);
    ```
 
    ## Example
 
-   #### C++
+   ### C++
 
-   ```c++
+   ```cpp
    std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
    CDocBuilder::Initialize(sWorkDirectory.c_str());
    CDocBuilder oBuilder;
@@ -53,16 +53,16 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
 
 2. use the **operator\[]** postfix expression that takes the arguments both in the UTF8 or Unicode formats:
 
-   ```c++
+   ```cpp
    CDocBuilderValue operator[](const char* name);
    CDocBuilderValue operator[](const wchar_t*  name);
    ```
 
    ## Example
 
-   #### C++
+   ### C++
 
-   ```c++
+   ```cpp
    std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
    CDocBuilder::Initialize(sWorkDirectory.c_str());
    CDocBuilder oBuilder;

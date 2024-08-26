@@ -4,7 +4,7 @@ order: -2
 
 Starting from version 8.1, you can get the viewport settings of the desktop editors. This method is used to set the space between the top panel and the Desktop Editors widget.
 
-``` javascript
+``` ts
 window.AscDesktopEditor.getViewportSettings()
 ```
 
@@ -25,7 +25,6 @@ Type: string
 
 Example: "window"
 
-
 ## captionHeight
 
 The caption height.
@@ -36,7 +35,7 @@ Example: 100
 
 You can also subscribe to the *onViewportSettingsChanged* event which is called every time the viewport settings are changed:
 
-``` javascript
+``` ts
 window.AscDesktopEditor.attachEvent("onViewportSettingsChanged", () => {
   console.log("The viewport settings have been changed.")
 })

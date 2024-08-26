@@ -100,11 +100,11 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/e
 
 ## Methods and events
 
-* button
-* init
-* onMethodReturn
-* executeMethod ("GetAllContentControls")
-* executeMethod ("InsertAndReplaceContentControls")
+- button
+- init
+- onMethodReturn
+- executeMethod ("GetAllContentControls")
+- executeMethod ("InsertAndReplaceContentControls")
 
 ## Support
 

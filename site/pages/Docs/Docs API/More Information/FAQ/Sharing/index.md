@@ -10,55 +10,54 @@ There are three main variants how the document can be opened with the *track cha
 
 1. Both reviewing and editing enabled: if both the *document.permission.edit* and *document.permission.review* parameters are set to **true**, the user will be able to edit the document, accept/reject the changes made and switch to the review mode him-/herself. The configuration in this case will look like this:
 
-    ``` javascript
-    const docEditor = new DocsAPI.DocEditor("placeholder", {
-      document: {
-        permissions: {
-          edit: true,
-          review: true,
-        },
+  ``` ts
+  const docEditor = new DocsAPI.DocEditor("placeholder", {
+    document: {
+      permissions: {
+        edit: true,
+        review: true,
       },
-      editorConfig: {
-        mode: "edit",
-      },
-    })
-    ```
+    },
+    editorConfig: {
+      mode: "edit",
+    },
+  })
+  ```
 
 2. Reviewing only enabled: if the *document.permission.edit* parameter is set to **false** and *document.permission.review* is set to **true**, the user will be able to open the document in review mode only. The configuration in this case will look like this:
 
-    ``` javascript
-    const docEditor = new DocsAPI.DocEditor("placeholder", {
-      document: {
-        permissions: {
-          edit: false,
-          review: true,
-        },
+  ``` ts
+  const docEditor = new DocsAPI.DocEditor("placeholder", {
+    document: {
+      permissions: {
+        edit: false,
+        review: true,
       },
-      editorConfig: {
-        mode: "edit",
-      },
-    })
-    ```
+    },
+    editorConfig: {
+      mode: "edit",
+    },
+  })
+  ```
 
 3. Reviewing and commenting enabled: if the *document.permission.edit* parameter is set to **false**, *document.permission.review* and *document.permission.comment* are both set to **true**, the user will be able to open the document in review mode with possibility to comment it, but will not be able to edit it. The configuration in this case will look like this:
 
-    ``` javascript
-    const docEditor = new DocsAPI.DocEditor("placeholder", {
-      document: {
-        permissions: {
-          edit: false,
-          comment: true,
-          review: true,
-        },
+  ``` ts
+  const docEditor = new DocsAPI.DocEditor("placeholder", {
+    document: {
+      permissions: {
+        edit: false,
+        comment: true,
+        review: true,
       },
-      editorConfig: {
-        mode: "edit",
-      },
-    })
-    ```
+    },
+    editorConfig: {
+      mode: "edit",
+    },
+  })
+  ```
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
-
 
 ## How to open a document with "commenting" mode enabled?
 
@@ -68,71 +67,70 @@ There are the following main variants how the document can be opened with the co
 
 1. Both commenting and editing enabled: if both the *document.permission.edit* and *document.permission.comment* parameters are set to **true**, the user will be able to edit the document and comment. The configuration in this case will look like this:
 
-    ``` javascript
-    const docEditor = new DocsAPI.DocEditor("placeholder", {
-      document: {
-        permissions: {
-          edit: true,
-          comment: true,
-        },
+  ``` ts
+  const docEditor = new DocsAPI.DocEditor("placeholder", {
+    document: {
+      permissions: {
+        edit: true,
+        comment: true,
       },
-      editorConfig: {
-        mode: "edit",
-      },
-    })
-    ```
+    },
+    editorConfig: {
+      mode: "edit",
+    },
+  })
+  ```
 
 2. Commenting only enabled: if the *document.permission.edit* parameter is set to **false** and *document.permission.comment* is set to **true**, the document will be available for commenting only. The configuration in this case will look like this:
 
-    ``` javascript
-    const docEditor = new DocsAPI.DocEditor("placeholder", {
-      document: {
-        permissions: {
-          edit: false,
-          comment: true,
-        },
+  ``` ts
+  const docEditor = new DocsAPI.DocEditor("placeholder", {
+    document: {
+      permissions: {
+        edit: false,
+        comment: true,
       },
-      editorConfig: {
-        mode: "edit",
-      },
-    })
-    ```
+    },
+    editorConfig: {
+      mode: "edit",
+    },
+  })
+  ```
 
 3. Reviewing and commenting enabled: if the *document.permission.edit* parameter is set to **false**, *document.permission.review* and *document.permission.comment* are both set to **true**, the user will be able to open the document in review mode with possibility to comment it, but will not be able to edit it. The configuration in this case will look like this:
 
-    ``` javascript
-    const docEditor = new DocsAPI.DocEditor("placeholder", {
-      document: {
-        permissions: {
-          edit: false,
-          comment: true,
-          review: true,
-        },
+  ``` ts
+  const docEditor = new DocsAPI.DocEditor("placeholder", {
+    document: {
+      permissions: {
+        edit: false,
+        comment: true,
+        review: true,
       },
-      editorConfig: {
-        mode: "edit",
-      },
-    })
-    ```
+    },
+    editorConfig: {
+      mode: "edit",
+    },
+  })
+  ```
 
 4. Comments are available for viewing only: if the *document.permission.edit* parameter is set to **true** and *document.permission.comment* is set to **false**, the user will be able to edit only, the corresponding commenting functionality will be available for viewing only, the adding and editing of comments will be unavailable. The configuration in this case will look like this:
 
-    ``` javascript
-    const docEditor = new DocsAPI.DocEditor("placeholder", {
-      document: {
-        permissions: {
-          edit: true,
-          comment: false,
-        },
+  ``` ts
+  const docEditor = new DocsAPI.DocEditor("placeholder", {
+    document: {
+      permissions: {
+        edit: true,
+        comment: false,
       },
-      editorConfig: {
-        mode: "edit",
-      },
-    })
-    ```
+    },
+    editorConfig: {
+      mode: "edit",
+    },
+  })
+  ```
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
-
 
 ## How can the 'fillForms' parameter be used?
 
@@ -140,7 +138,7 @@ Starting from version 5.2, ONLYOFFICE Docs provides functionality for filling sp
 
 To enable this mode the *document.permissions.fillForms* parameter is used:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {
@@ -168,14 +166,13 @@ The second scenario is more commonly used, when you have a document template wit
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
 
-
 ## How to enable both the editing and commenting mode for a document?
 
 To open the document with both the *editing* and the *commenting* modes enabled, the *document.permissions* parameter is used (see the complete structure of ONLYOFFICE Docs configuration object [here](../../../Usage%20API/Advanced%20parameters/index.md)).
 
 You will need to set both the *document.permission.edit* and *document.permission.comment* parameters to **true**, so that the user will be able to edit the document and comment. The configuration in this case will look like this:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {
@@ -191,21 +188,19 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
 
-
 ## Do the permission parameters influence each other?
 
 Most permission parameters are independent and are only enabled when their value is set to **true** and disabled when the value is set to **false**. There are, though, several combinations, when the permission will be either enabled or disabled notwithstanding the corresponding parameter value:
 
-* Form filling permission is enabled (even if the *fillForm* parameter is set to **false**) when either the *edit* or *review* parameter is set to **true**.
-* Form filling permission is disabled (even if the *fillForm* parameter is set to **true**) when both the *edit* and *review* parameters are set to **false** and the *comment* is set to **true**.
-* Commenting permission is disabled (even if the *comment* parameter is set to **true**) when both the *edit* and *review* parameters are set to **false** and the *fillForms* is set to **true**.
+- Form filling permission is enabled (even if the *fillForm* parameter is set to **false**) when either the *edit* or *review* parameter is set to **true**.
+- Form filling permission is disabled (even if the *fillForm* parameter is set to **true**) when both the *edit* and *review* parameters are set to **false** and the *comment* is set to **true**.
+- Commenting permission is disabled (even if the *comment* parameter is set to **true**) when both the *edit* and *review* parameters are set to **false** and the *fillForms* is set to **true**.
 
 You should bear this in mind when you set the necessary permissions and combine different permissions for the same document.
 
 See the interactive table below to find out how different parameters and parameter combinations influence each other and the resulting document permissions.
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
-
 
 ## How to open the document in a viewer without the option to edit it?
 
@@ -217,7 +212,7 @@ You will need to set the *document.permission.edit*, *document.permission.review
 
 The configuration in this case will look like this:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {
@@ -233,14 +228,13 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
 
-
 ## How to disable/enable the possibility to download the file?
 
 To open the document with the *downloading* option disabled, the *document.permissions* parameter is used (see the complete structure of ONLYOFFICE Docs configuration object [here](../../../Usage%20API/Advanced%20parameters/index.md)).
 
 You will need to set the *document.permission.download* to **false**, so that the **Download as...** option were removed from the document **File** menu (in case the *document.permission.edit* parameter is set to **true**) or from the top toolbar (in case the *document.permission.edit* is set to **false** and the file is available for viewing only) and the user could not download the document from the editor. The *permission* configuration in this case will look like this:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {
@@ -252,14 +246,13 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
 
-
 ## How to prevent a document from being printed?
 
 To open the document with the *printing* option disabled, the *document.permissions* parameter is used (see the complete structure of ONLYOFFICE Docs configuration object [here](../../../Usage%20API/Advanced%20parameters/index.md)).
 
 You will need to set the *document.permission.print* to **false**, so that the **Print** option were removed from the document **File** menu (in case the *document.permission.edit* parameter is set to **true**) or from the top toolbar (in case the *document.permission.edit* is set to **false** and the file is available for viewing only) and the user could not print out the document from the editor. The *permission* configuration in this case will look like this:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {
@@ -270,7 +263,6 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 ```
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Permissions/index.md).
-
 
 ## How to view and change sharing settings for a certain document?
 
@@ -286,7 +278,7 @@ The *document.info.sharingSettings.permissions* is also a string parameter, whic
 
 The *sharingSettings* configuration might look the following way:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     info: {
@@ -308,12 +300,11 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 Further information about the permissions can be found [at this page](../../../Usage%20API/Config/Document/Info/index.md).
 
-
 ## How to restrict commenting?
 
 The comments are enabled by default. If you want to restrict commenting and allow the authors to edit and/or delete only their comments, you will need to change the *document.permissions.editCommentsAuthorOnly* and/or *document.permissions.deleteCommentsAuthorOnly* parameters:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {

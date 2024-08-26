@@ -1,4 +1,4 @@
-#### def IsSaveWithDoctrendererMode(self);
+`def IsSaveWithDoctrendererMode(self);`
 
 Specifies if the doctrenderer mode is used when building a document or getting content from the editor when saving a file.
 
@@ -6,9 +6,9 @@ Specifies if the doctrenderer mode is used when building a document or getting c
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 doctrendererMode = builder.IsSaveWithDoctrendererMode()
 ```

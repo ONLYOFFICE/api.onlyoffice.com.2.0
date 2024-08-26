@@ -1,4 +1,4 @@
-#### int ToInt();
+`int ToInt();`
 
 Converts the **CDocBuilderValue** object to an integer.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to an integer.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

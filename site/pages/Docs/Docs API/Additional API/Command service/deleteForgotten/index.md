@@ -1,6 +1,6 @@
 Deletes a forgotten file.
 
-### Request example
+## Request example
 
 ``` json
 {
@@ -9,14 +9,14 @@ Deletes a forgotten file.
 }
 ```
 
-### Parameters
+## Parameters
 
 | Parameter | Description                                                                       | Type   | Presence |
 | --------- | --------------------------------------------------------------------------------- | ------ | -------- |
 | c         | Defines the command type.                                                         | string | required |
 | key       | Defines the document identifier used to unambiguously identify the document file. | string | required |
 
-### Response example
+## Response example
 
 ``` json
 {
@@ -25,7 +25,7 @@ Deletes a forgotten file.
 }
 ```
 
-### Parameters
+## Parameters
 
 | Parameter | Description                                                                       | Type    | Presence |
 | --------- | --------------------------------------------------------------------------------- | ------- | -------- |

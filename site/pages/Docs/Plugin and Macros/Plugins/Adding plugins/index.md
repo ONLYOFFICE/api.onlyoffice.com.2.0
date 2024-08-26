@@ -8,6 +8,6 @@ All the plugins that you've already installed appear in the **Plugins** tab on t
 
 Learn how to add and remove plugins for:
 
-* [ONLYOFFICE Desktop Editors](ONLYOFFICE%20Desktop%20Editors/index.md)
-* [ONLYOFFICE Docs on-premises](ONLYOFFICE%20Docs%20on-premises/index.md)
-* [ONLYOFFICE Cloud](ONLYOFFICE%20Cloud/index.md)
+- [ONLYOFFICE Desktop Editors](ONLYOFFICE%20Desktop%20Editors/index.md)
+- [ONLYOFFICE Docs on-premises](ONLYOFFICE%20Docs%20on-premises/index.md)
+- [ONLYOFFICE Cloud](ONLYOFFICE%20Cloud/index.md)

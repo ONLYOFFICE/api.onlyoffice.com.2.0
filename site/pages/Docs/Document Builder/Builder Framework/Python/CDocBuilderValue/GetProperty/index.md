@@ -1,10 +1,10 @@
-#### def GetProperty(self, name);
+`def GetProperty(self, name);`
 
 Returns a property of the **CDocBuilderValue** object.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetProperty* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name   | Type | Description                                           |
 | ------ | ---- | ----------------------------------------------------- |
@@ -12,9 +12,9 @@ Returns a property of the **CDocBuilderValue** object.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()
@@ -27,15 +27,15 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
 
 1. use the **Get** method that takes an argument in the string format:
 
-   ``` python
+   ``` py
    def Get(self, name);
    ```
 
    ## Example
 
-   #### Python
+   ### Python
 
-   ``` python
+   ``` py
    builder = docbuilder.CDocBuilder()
    context = builder.GetContext()
    globalObj = context.GetGlobal()
@@ -46,15 +46,15 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
 
 2. use the **default\[]** postfix expression that takes an argument in the string format:
 
-   ``` python
+   ``` py
    property CDocBuilderValue default[str]
    ```
 
    ## Example
 
-   #### Python
+   ### Python
 
-   ``` python
+   ``` py
    builder = docbuilder.CDocBuilder()
    context = builder.GetContext()
    globalObj = context.GetGlobal()
