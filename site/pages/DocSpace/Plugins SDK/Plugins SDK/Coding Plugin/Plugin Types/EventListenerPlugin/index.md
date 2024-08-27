@@ -22,9 +22,9 @@ Add a new event listener item.
 
 Parameters:
 
-| Name               | Description                     | Type               | Example |
-| ------------------ | ------------------------------- | ------------------ | ------- |
-| eventListenerItems | Defines an event listener item. | IEventListenerItem |         |
+| Name               | Type               | Example | Description                     |
+| ------------------ | ------------------ | ------- | ------------------------------- |
+| eventListenerItems | IEventListenerItem |         | Defines an event listener item. |
 
 ## getEventListenerItems
 

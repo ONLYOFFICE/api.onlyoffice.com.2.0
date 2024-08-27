@@ -47,10 +47,10 @@ Adds the specified tags to the room with the specified ID.
   docSpace.addTagsToRoom(roomId, tags)
   ```
 
-| Parameter | Description                                            | Type             | Presence |
-| --------- | ------------------------------------------------------ | ---------------- | -------- |
-| roomId    | Defines the ID of a room where the tags will be added. | string           | required |
-| tags      | Defines a list of tags to be added.                    | array of strings | required |
+| Parameter | Type             | Presence | Description                                            |
+| --------- | ---------------- | -------- | ------------------------------------------------------ |
+| roomId    | string           | required | Defines the ID of a room where the tags will be added. |
+| tags      | array of strings | required | Defines a list of tags to be added.                    |
 
 ## createFile
 
@@ -60,12 +60,12 @@ Creates a file with the specified parameters.
   docSpace.createFile(folderId, title, templateId, formId)
   ```
 
-| Parameter  | Description                                                       | Type   | Presence |
-| ---------- | ----------------------------------------------------------------- | ------ | -------- |
-| folderId   | Defines the ID of a folder where a file will be created.          | string | required |
-| title      | Defines the file title.                                           | string | required |
-| templateId | Defines the ID of a template which will be used to create a file. | string | optional |
-| formId     | Defines the ID of a form which will be used to create a file.     | string | optional |
+| Parameter  | Type   | Presence | Description                                                       |
+| ---------- | ------ | -------- | ----------------------------------------------------------------- |
+| folderId   | string | required | Defines the ID of a folder where a file will be created.          |
+| title      | string | required | Defines the file title.                                           |
+| templateId | string | optional | Defines the ID of a template which will be used to create a file. |
+| formId     | string | optional | Defines the ID of a form which will be used to create a file.     |
 
 ## createFolder
 
@@ -75,10 +75,10 @@ Creates a folder with the specified parameters.
   docSpace.createFolder(parentFolderId, title)
   ```
 
-| Parameter      | Description                                                       | Type   | Presence |
-| -------------- | ----------------------------------------------------------------- | ------ | -------- |
-| parentFolderId | Defines the ID of a parent folder where a folder will be created. | string | required |
-| title          | Defines the folder title.                                         | string | required |
+| Parameter      | Type   | Presence | Description                                                       |
+| -------------- | ------ | -------- | ----------------------------------------------------------------- |
+| parentFolderId | string | required | Defines the ID of a parent folder where a folder will be created. |
+| title          | string | required | Defines the folder title.                                         |
 
 ## createHash
 
@@ -88,13 +88,13 @@ Generates the hash string based on the specified hash settings.
   docSpace.createHash(password, hashSettings)
   ```
 
-| Parameter               | Description                                                                                                   | Type    | Presence |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------- | ------- | -------- |
-| password                | Defines a password to the DocSpace account.                                                                   | string  | required |
-| hashSettings            | Defines the hash settings for generating the hash string.                                                     | object  | required |
-| hashSettings.size       | Defines the hash size.                                                                                        | integer | required |
-| hashSettings.salt       | Defines the hash salt - a randomly generated set of characters that is added to a password before hashing it. | string  | required |
-| hashSettings.iterations | Defines a number of hash iterations.                                                                          | integer | required |
+| Parameter               | Type    | Presence | Description                                                                                                   |
+| ----------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------- |
+| password                | string  | required | Defines a password to the DocSpace account.                                                                   |
+| hashSettings            | object  | required | Defines the hash settings for generating the hash string.                                                     |
+| hashSettings.size       | integer | required | Defines the hash size.                                                                                        |
+| hashSettings.salt       | string  | required | Defines the hash salt - a randomly generated set of characters that is added to a password before hashing it. |
+| hashSettings.iterations | integer | required | Defines a number of hash iterations.                                                                          |
 
 ## createRoom
 
@@ -104,10 +104,10 @@ Creates a room with the specified parameters.
   docSpace.createRoom(title, type)
   ```
 
-| Parameter | Description                                          | Type   | Presence |
-| --------- | ---------------------------------------------------- | ------ | -------- |
-| title     | Defines the room title.                              | string | required |
-| type      | Defines the room type ("CustomRoom", "EditingRoom"). | string | required |
+| Parameter | Type   | Presence | Description                                          |
+| --------- | ------ | -------- | ---------------------------------------------------- |
+| title     | string | required | Defines the room title.                              |
+| type      | string | required | Defines the room type ("CustomRoom", "EditingRoom"). |
 
 ## createTag
 
@@ -117,9 +117,9 @@ Creates a tag with the specified name.
   docSpace.createTag(name)
   ```
 
-| Parameter | Description           | Type   | Presence |
-| --------- | --------------------- | ------ | -------- |
-| name      | Defines the tag name. | string | required |
+| Parameter | Type   | Presence | Description           |
+| --------- | ------ | -------- | --------------------- |
+| name      | string | required | Defines the tag name. |
 
 ## destroyFrame
 
@@ -185,9 +185,9 @@ Returns the information about rooms according to the specified filter parameters
   docSpace.getRooms(filter)
   ```
 
-| Parameter | Description                                                                                                                       | Type   | Presence |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| filter    | The room [filter parameters](https://github.com/ONLYOFFICE/DocSpace-client/blob/master/packages/shared/api/rooms/filter.js#L183). | object | required |
+| Parameter | Type   | Presence | Description                                                                                                                       |
+| --------- | ------ | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| filter    | object | required | The room [filter parameters](https://github.com/ONLYOFFICE/DocSpace-client/blob/master/packages/shared/api/rooms/filter.js#L183). |
 
 ## getSelection
 
@@ -213,9 +213,9 @@ Initializes the SDK frame in the "editor" mode.
   docSpace.initEditor(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## initFileSelector
 
@@ -225,9 +225,9 @@ Initializes the SDK frame in the "file-selector" mode.
   docSpace.initFileSelector(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## initFrame
 
@@ -237,9 +237,9 @@ Initializes the SDK frame dispaying the DocSpace page.
   docSpace.initFrame(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## initManager
 
@@ -249,9 +249,9 @@ Initializes the SDK frame in the "manager" mode.
   docSpace.initManager(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## initRoomSelector
 
@@ -261,9 +261,9 @@ Initializes the SDK frame in the "room-selector" mode.
   docSpace.initRoomSelector(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## initSystem
 
@@ -273,9 +273,9 @@ Initializes the SDK frame in the "system" mode to call system methods. This ligh
   docSpace.initSystem(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## initViewer
 
@@ -285,9 +285,9 @@ Initializes the SDK frame in the "viewer" mode.
   docSpace.initViewer(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## login
 
@@ -297,10 +297,10 @@ Logs in to the DocSpace account using the specified email and password hash.
   docSpace.login(email, passwordHash)
   ```
 
-| Parameter    | Description                     | Type   | Presence |
-| ------------ | ------------------------------- | ------ | -------- |
-| email        | Defines the user email address. | string | required |
-| passwordHash | Defines a password hash.        | string | required |
+| Parameter    | Type   | Presence | Description                     |
+| ------------ | ------ | -------- | ------------------------------- |
+| email        | string | required | Defines the user email address. |
+| passwordHash | string | required | Defines a password hash.        |
 
 ## logout
 
@@ -318,9 +318,9 @@ Opens the DocSpace modal window of the specified type.
   docSpace.openModal(type)
   ```
 
-| Parameter | Description                                                                          | Type   | Presence |
-| --------- | ------------------------------------------------------------------------------------ | ------ | -------- |
-| type      | Defines the DocSpace modal window type ("CreateFile", "CreateFolder", "CreateRoom"). | string | required |
+| Parameter | Type   | Presence | Description                                                                          |
+| --------- | ------ | -------- | ------------------------------------------------------------------------------------ |
+| type      | string | required | Defines the DocSpace modal window type ("CreateFile", "CreateFolder", "CreateRoom"). |
 
 ## removeTagsFromRoom
 
@@ -330,10 +330,10 @@ Removes the specified tags from the room with the specified ID.
   docSpace.removeTagsFromRoom(roomId, tags)
   ```
 
-| Parameter | Description                                              | Type             | Presence |
-| --------- | -------------------------------------------------------- | ---------------- | -------- |
-| roomId    | Defines the ID of a room where the tags will be removed. | string           | required |
-| tags      | Defines a list of tags to be removed.                    | array of strings | required |
+| Parameter | Type             | Presence | Description                                              |
+| --------- | ---------------- | -------- | -------------------------------------------------------- |
+| roomId    | string           | required | Defines the ID of a room where the tags will be removed. |
+| tags      | array of strings | required | Defines a list of tags to be removed.                    |
 
 ## setConfig
 
@@ -343,9 +343,9 @@ Sets the specified config for the current SDK entity.
   docSpace.setConfig(config)
   ```
 
-| Parameter | Description                                                                                                    | Type   | Presence |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| config    | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. | object | required |
+| Parameter | Type   | Presence | Description                                                                                                    |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------- |
+| config    | object | required | Defines the configuration parameters which describe the behavior and display options of the DocSpace elements. |
 
 ## setIsLoaded
 
@@ -363,6 +363,6 @@ Sets the display of entity lists according to the specified type.
   docSpace.setListView(type)
   ```
 
-| Parameter | Description                                                                             | Type   | Presence |
-| --------- | --------------------------------------------------------------------------------------- | ------ | -------- |
-| type      | Defines the way elements are arranged in the DocSpace manager ("row", "table", "tile"). | string | required |
+| Parameter | Type   | Presence | Description                                                                             |
+| --------- | ------ | -------- | --------------------------------------------------------------------------------------- |
+| type      | string | required | Defines the way elements are arranged in the DocSpace manager ("row", "table", "tile"). |

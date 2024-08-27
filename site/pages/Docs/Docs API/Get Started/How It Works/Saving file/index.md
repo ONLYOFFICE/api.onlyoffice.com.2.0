@@ -65,9 +65,9 @@ If you want to change it, you can use the *local.json* file, where all the edite
 
 ### Parameters
 
-| Parameter                                    | Description                                                                                         | Type    | Example |
-| -------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------- | ------- |
-| services.CoAuthoring.server.savetimeoutdelay | Defines the conversion start delay time (measured in milliseconds) after the edited file is closed. | integer | 5000    |
+| Parameter                                    | Type    | Example | Description                                                                                         |
+| -------------------------------------------- | ------- | ------- | --------------------------------------------------------------------------------------------------- |
+| services.CoAuthoring.server.savetimeoutdelay | integer | 5000    | Defines the conversion start delay time (measured in milliseconds) after the edited file is closed. |
 
 ### Sample local.json configuration
 
@@ -99,10 +99,10 @@ If you want to change it, you can use the *local.json* file, where all the edite
 
   ### Parameters
 
-  | Parameter                                  | Description                                                                             | Type    | Example |
-  | ------------------------------------------ | --------------------------------------------------------------------------------------- | ------- | ------- |
-  | services.CoAuthoring.autoAssembly.enable   | Defines if the automatic forcesaving is enabled or not. The default value is **false**. | boolean | false   |
-  | services.CoAuthoring.autoAssembly.interval | Defines the interval time in minutes for initiating the automatic forcesaving.          | string  | 5m      |
+  | Parameter                                  | Type    | Example | Description                                                                             |
+  | ------------------------------------------ | ------- | ------- | --------------------------------------------------------------------------------------- |
+  | services.CoAuthoring.autoAssembly.enable   | boolean | false   | Defines if the automatic forcesaving is enabled or not. The default value is **false**. |
+  | services.CoAuthoring.autoAssembly.interval | string  | 5m      | Defines the interval time in minutes for initiating the automatic forcesaving.          |
 
   ### Sample local.json configuration
 
@@ -129,9 +129,9 @@ Starting from version 7.0, the [assemblyFormatAsOrigin](https://helpcenter.onlyo
 
 ### Parameters
 
-| Parameter                                          | Description                                                                                          | Type    | Example |
-| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------- | ------- |
-| services.CoAuthoring.server.assemblyFormatAsOrigin | Defines if the assembled file is saved in its original format or not. The default value is **true**. | boolean | true    |
+| Parameter                                          | Type    | Example | Description                                                                                          |
+| -------------------------------------------------- | ------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| services.CoAuthoring.server.assemblyFormatAsOrigin | boolean | true    | Defines if the assembled file is saved in its original format or not. The default value is **true**. |
 
 ### Sample local.json configuration
 

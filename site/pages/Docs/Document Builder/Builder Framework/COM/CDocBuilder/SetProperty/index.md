@@ -13,17 +13,17 @@ Sets an argument to the builder class which can be trasferred to the program out
 
 ## Supported properties
 
-| Name                        | Type          | Description                                                                                                                | Default |
-| --------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------- | ------- |
-| *--use-doctrenderer-scheme* | VARIANT\_BOOL | Specifies if the doctrenderer mode is used when building a document or getting content from the editor when saving a file. | false   |
-| *--check-fonts*             | VARIANT\_BOOL | Specifies if the system fonts are cached for faster work.                                                                  | true    |
-| *--work-directory*          | BSTR          | The path to the temporary directory.                                                                                       | ""      |
-| *--cache-scripts*           | VARIANT\_BOOL | Specifies if the sdkjs scripts are cached.                                                                                 | true    |
-| *--save-use-only-names*     | VARIANT\_BOOL | Specifies if the destination paths are used (for server work). For example: /home/user/1.txt => /tmp/1.txt                 | false   |
-| *--all-fonts-path*          | BSTR          | The path to the *AllFonts.js* script.                                                                                      | ""      |
-| *--argument*                | BSTR          | The JSON argument which is sent to the global parameters of all the opened JS context.                                     | ""      |
-| *--fonts-system*            | VARIANT\_BOOL | Specifies if the system fonts are used.                                                                                    | true    |
-| *--fonts-dir*               | BSTR          | The path to the additional fonts directory (may be many records).                                                          | ""      |
+| Name                        | Type          | Default | Description                                                                                                                |
+| --------------------------- | ------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
+| *--use-doctrenderer-scheme* | VARIANT\_BOOL | false   | Specifies if the doctrenderer mode is used when building a document or getting content from the editor when saving a file. |
+| *--check-fonts*             | VARIANT\_BOOL | true    | Specifies if the system fonts are cached for faster work.                                                                  |
+| *--work-directory*          | BSTR          | ""      | The path to the temporary directory.                                                                                       |
+| *--cache-scripts*           | VARIANT\_BOOL | true    | Specifies if the sdkjs scripts are cached.                                                                                 |
+| *--save-use-only-names*     | VARIANT\_BOOL | false   | Specifies if the destination paths are used (for server work). For example: /home/user/1.txt => /tmp/1.txt                 |
+| *--all-fonts-path*          | BSTR          | ""      | The path to the *AllFonts.js* script.                                                                                      |
+| *--argument*                | BSTR          | ""      | The JSON argument which is sent to the global parameters of all the opened JS context.                                     |
+| *--fonts-system*            | VARIANT\_BOOL | true    | Specifies if the system fonts are used.                                                                                    |
+| *--fonts-dir*               | BSTR          | ""      | The path to the additional fonts directory (may be many records).                                                          |
 
 Once added, the argument will be available as the **Argument** variable with its parameter values set:
 
