@@ -24,9 +24,9 @@ export function Default(): JSX.Element {
     <PartChapters>
       <SrOnly><h2>Chapters</h2></SrOnly>
       {Array.from({length: 3}, (_, i) => <PartChapter key={i}>
-        <Icon64 height={64} width={64} />
-        <Icon48 height={48} width={48} />
         <Icon32 height={32} width={32} />
+        <Icon48 height={48} width={84} />
+        <Icon64 height={64} width={64} />
         <h3><a href="/">JavaScript SDK</a></h3>
         <p>
           In this section, you will learn how to connect DocSpace as a{" "}

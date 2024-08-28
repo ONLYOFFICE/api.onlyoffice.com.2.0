@@ -159,11 +159,7 @@
 }
 
 .part__chapter svg[height="32"][width="32"] {
-  display: none;
-
-  @media (--size-viewport-width-xsmall) {
-    display: block;
-  }
+  display: block;
 
   @media (--size-viewport-width-medium) {
     display: none;
@@ -173,12 +169,8 @@
 .part__chapter svg[height="48"][width="48"] {
   display: none;
 
-  @media (--size-viewport-width-medium) {
+  @media (--size-viewport-width-medium) and (not (--size-viewport-width-xlarge)) {
     display: block;
-  }
-
-  @media (--size-viewport-width-xlarge) {
-    display: none;
   }
 }
 
