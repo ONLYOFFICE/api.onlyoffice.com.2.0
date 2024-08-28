@@ -157,3 +157,37 @@
     padding-inline: var(--base-size-40);
   }
 }
+
+.part__chapter svg[height="32"][width="32"] {
+  display: none;
+  
+  @media (--size-viewport-width-xsmall) {
+    display: block;
+  }
+  
+  @media (--size-viewport-width-medium) {
+    display: none;
+  }
+}
+
+.part__chapter svg[height="48"][width="48"] {
+  display: none;
+
+  @media (--size-viewport-width-medium) {
+    display: block;
+  }
+
+  @media (--size-viewport-width-xlarge) {
+    display: none;
+  }
+}
+
+.part__chapter svg[height="64"][width="64"] {
+  display: none;
+
+  @media (--size-viewport-width-xlarge) {
+    display: block;
+  }
+}
+
+
