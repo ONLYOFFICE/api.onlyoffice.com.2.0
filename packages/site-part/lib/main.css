@@ -160,11 +160,11 @@
 
 .part__chapter svg[height="32"][width="32"] {
   display: none;
-  
+
   @media (--size-viewport-width-xsmall) {
     display: block;
   }
-  
+
   @media (--size-viewport-width-medium) {
     display: none;
   }
@@ -189,5 +189,3 @@
     display: block;
   }
 }
-
-
