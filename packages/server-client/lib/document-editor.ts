@@ -1,7 +1,9 @@
 import {type DocEditorConfigurableOptions} from "@onlyoffice/document-server-types"
 import {type Client} from "./client.ts"
 
-export type AssignResponse = DocEditorConfigurableOptions
+export interface SignSearchOptions {
+  empty: boolean
+}
 
 export class DocumentEditorService {
   #c: Client
@@ -10,7 +12,10 @@ export class DocumentEditorService {
     this.#c = c
   }
 
-  async sign(config: DocEditorConfigurableOptions): Promise<[AssignResponse, Request, Response]> {
+  async sign(
+    options: SignSearchOptions,
+    config: DocEditorConfigurableOptions,
+  ): Promise<[DocEditorConfigurableOptions, Request, Response]> {
     // If we send a payload to the server without including the required keys,
     // the server will respond without headers and body. While this is a
     // server-side issue, it is easier to "fix" it on our end for now.
@@ -71,7 +76,7 @@ export class DocumentEditorService {
       c.editorConfig.plugins.pluginsData = []
     }
 
-    const u = this.#c.url("editors/configcreate")
+    const u = this.#c.url("editors/configcreate", options)
     const req = this.#c.request("POST", u, c)
     const [r, res] = await this.#c.fetch<DocEditorConfigurableOptions>(req)
     return [r, req, res]

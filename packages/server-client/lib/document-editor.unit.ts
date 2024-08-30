@@ -41,7 +41,10 @@ test("signs a document editor config", async (ctx) => {
       .catch(un)
   })
 
-  const [r, req, res] = await c.documentEditor.sign({documentType: "word"})
+  const [r, req, res] = await c.documentEditor.sign(
+    {empty: false},
+    {documentType: "word"},
+  )
 
   is(res.status, 200)
   is(req.method, "POST")
@@ -58,7 +61,10 @@ test("throws an error if the response is not ok", async (ctx) => {
   })
 
   try {
-    const [_, __, res] = await c.documentEditor.sign({documentType: "word"})
+    const [_, __, res] = await c.documentEditor.sign(
+      {empty: false},
+      {documentType: "word"},
+    )
     un(`Expected an error, but got '${res.status}'`)
   } catch (e) {
     is(e instanceof ResponseError, true)

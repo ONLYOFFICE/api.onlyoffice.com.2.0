@@ -54,7 +54,7 @@ export class DocumentBuilderContainer extends HTMLElement {
       return
     }
 
-    [db.config] = await cl.documentEditor.sign(db.config)
+    [db.config] = await cl.documentEditor.sign({empty: true}, db.config)
     this.insertBefore(db, this.firstChild)
   }
 }
