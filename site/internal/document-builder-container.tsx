@@ -1,6 +1,6 @@
 import {documentBuilder} from "@onlyoffice/document-builder-hast-element"
 import {type DocumentEditorConfig} from "@onlyoffice/document-editor-html-element"
-import {mergeConfig} from "@onlyoffice/document-server-utils"
+import {mergeConfig, normalizeConfig} from "@onlyoffice/document-server-utils"
 import {fromKeys} from "@onlyoffice/keyed-json"
 import {Config} from "@onlyoffice/site-config"
 import {template} from "@onlyoffice/template-hast-element"
@@ -42,7 +42,9 @@ export function rehypeDocumentBuilderContainer(): RehypeDocumentBuilderContainer
 
       const db = documentBuilder()
       db.data.documentServerUrl = c.playground.documentEditor.documentServerUrl
-      db.data.config = mergeConfig(config(), b)
+      db.data.config = config()
+      db.data.config = mergeConfig(db.data.config, b)
+      db.data.config = normalizeConfig(db.data.config)
       db.data.command = toText(e, {whitespace: "pre-wrap"}).trim()
 
       te.children = [db]
