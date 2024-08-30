@@ -9,7 +9,7 @@ export class Client {
     this.documentEditor = new DocumentEditorService(this)
   }
 
-  url(p: string): string {
+  url(p: string, s: object = {}): string {
     if (this.baseURL === "") {
       throw new Error("baseURL is not set")
     }
@@ -19,6 +19,15 @@ export class Client {
     if (p.startsWith("/")) {
       throw new Error(`path must not start with a slash, but '${p}' does`)
     }
+
+    const q = new URLSearchParams()
+    for (const [k, v] of Object.entries(s)) {
+      q.set(k, String(v))
+    }
+    if (q.size !== 0) {
+      p += `?${q}`
+    }
+
     const u = new URL(p, this.baseURL)
     return u.toString()
   }

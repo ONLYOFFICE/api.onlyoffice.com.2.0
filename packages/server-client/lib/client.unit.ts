@@ -69,6 +69,13 @@ test("creates a url with a path", () => {
   is(u, "http://localhost/hi")
 })
 
+test("creates a url with search parameters", () => {
+  const c = new Client()
+  c.baseURL = "http://localhost/"
+  const u = c.url("", {a: "1", b: "2"})
+  is(u, "http://localhost/?a=1&b=2")
+})
+
 test("throws an error when the base url is not set", () => {
   const c = new Client()
   try {
