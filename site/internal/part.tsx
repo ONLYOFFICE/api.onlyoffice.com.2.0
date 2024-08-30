@@ -92,6 +92,8 @@ export function Part(p: PartParameters): JSX.Element {
         }
 
         return <PartChapter>
+          <Icon src="rich32" name={n.icon} height={32} width={32} />
+          <Icon src="rich48" name={n.icon} height={48} width={48} />
           <Icon src="rich64" name={n.icon} height={64} width={64} />
           <h3><Link href={n.path}>{n.title}</Link></h3>
           <p>{e.data.summary}</p>

@@ -1,4 +1,6 @@
-import {JavascriptSdkIcon} from "@onlyoffice/ui-icons/rich/64.tsx"
+import {JavascriptSdkIcon as Icon32} from "@onlyoffice/ui-icons/rich/32.tsx"
+import {JavascriptSdkIcon as Icon48} from "@onlyoffice/ui-icons/rich/48.tsx"
+import {JavascriptSdkIcon as Icon64} from "@onlyoffice/ui-icons/rich/64.tsx"
 import {SrOnly} from "@onlyoffice/ui-kit"
 import {type Meta} from "@storybook/preact"
 import {type JSX, h} from "preact"
@@ -22,7 +24,9 @@ export function Default(): JSX.Element {
     <PartChapters>
       <SrOnly><h2>Chapters</h2></SrOnly>
       {Array.from({length: 3}, (_, i) => <PartChapter key={i}>
-        <JavascriptSdkIcon height={64} width={64} />
+        <Icon32 height={32} width={32} />
+        <Icon48 height={48} width={48} />
+        <Icon64 height={64} width={64} />
         <h3><a href="/">JavaScript SDK</a></h3>
         <p>
           In this section, you will learn how to connect DocSpace as a{" "}

@@ -157,3 +157,27 @@
     padding-inline: var(--base-size-40);
   }
 }
+
+.part__chapter svg[height="32"][width="32"] {
+  display: block;
+
+  @media (--size-viewport-width-medium) {
+    display: none;
+  }
+}
+
+.part__chapter svg[height="48"][width="48"] {
+  display: none;
+
+  @media (--size-viewport-width-medium) and (not (--size-viewport-width-xlarge)) {
+    display: block;
+  }
+}
+
+.part__chapter svg[height="64"][width="64"] {
+  display: none;
+
+  @media (--size-viewport-width-xlarge) {
+    display: block;
+  }
+}
