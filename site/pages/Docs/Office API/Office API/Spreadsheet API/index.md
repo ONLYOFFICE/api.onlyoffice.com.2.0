@@ -1,5 +1,5 @@
 ---
-order: -2
+order: -3
 ---
 
 A spreadsheet document has a more simple structure than that of a text document, most of the spreadsheet elements are nested within the *worksheet* element with all the other elements placed on it.
