@@ -81,6 +81,14 @@
 }
 
 .page-header__logo {
+  /*
+  For some unclear reason, the logo may sometimes get stuck at the header's top
+  on certain Safari versions. Interestingly, using a display grid seems to solve
+  this issue.
+  */
+  display: grid;
+
+  /* stylelint-disable-next-line order/properties-alphabetical-order */
   align-content: center;
   block-size: inherit;
   border-inline-end-color: var(--color-border-transparent);
