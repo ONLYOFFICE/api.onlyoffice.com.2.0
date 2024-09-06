@@ -1,5 +1,5 @@
 ---
-order: -3
+order: -4
 ---
 
 The configuration parameters describe the behavior and display options of the DocSpace elements.
