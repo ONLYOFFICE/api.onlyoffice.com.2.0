@@ -9,8 +9,9 @@ Create a presentation on a specific topic:
 This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
-```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
-builder.CreateFile("pptx")
+```js document-builder={"documentType": "slide", "editorConfig": {"customization": {"zoom": 60}}}
+// builder.CreateFile("pptx")
+
 const oPresentation = Api.GetPresentation()
 oPresentation.SetSizes(9_144_000, 6_858_000)
 
@@ -107,6 +108,6 @@ addText(oShape, oContent, "ONLYOFFICE", 176, false, "center")
 addText(oShape, oContent, "stands for Peace", 132, false, "center")
 oSlide.AddObject(oShape)
 
-builder.SaveFile("pptx", "Presentation.pptx")
-builder.CloseFile()
+// builder.SaveFile("pptx", "Presentation.pptx")
+// builder.CloseFile()
 ```

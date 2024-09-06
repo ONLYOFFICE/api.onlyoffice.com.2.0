@@ -4,8 +4,9 @@ Creates a custom chart filled with array-based values in the spreadsheet:
 * create a chart using the data (ApiWorksheet/AddChart);
 * customize the chart (ApiChart/SetTitle,ApiChart/SetLegendPos);
 
-```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
-builder.CreateFile("xlsx")
+```js document-builder={"documentType": "cell", "editorConfig": {"customization": {"zoom": 60}}}
+// builder.CreateFile("xlsx")
+
 const oWorksheet = Api.GetActiveSheet()
 const sHeaders = ["Year", "Revenue South dept", "Revenue West dept"]
 const sData = [

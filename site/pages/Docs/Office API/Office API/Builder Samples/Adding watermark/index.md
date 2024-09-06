@@ -4,7 +4,8 @@ Create a document with a watermark with custom settings:
 * edit watermark settings, set an image, specify size, direction and opacity (ApiWatermarkSettings);
 
 ```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
-builder.CreateFile("docx")
+// builder.CreateFile("docx")
+
 const oDocument = Api.GetDocument()
 oDocument.InsertWatermark("Watermark", true)
 const oSettings = oDocument.GetWatermarkSettings()
@@ -14,6 +15,7 @@ oSettings.SetImageSize(40 * 36_000, 40 * 36_000)
 oSettings.SetDirection("horizontal")
 oSettings.SetOpacity(100)
 oDocument.SetWatermarkSettings(oSettings)
-builder.SaveFile("docx", "Watermark.docx")
-builder.CloseFile()
+
+// builder.SaveFile("docx", "Watermark.docx")
+// builder.CloseFile()
 ```

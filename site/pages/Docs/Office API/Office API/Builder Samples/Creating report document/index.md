@@ -6,7 +6,7 @@ Create reports on all the comments added to the document and on every change whi
 * edit text style in the table (ApiDocument/GetStyle, ApiRun/SetColor, ApiRun/SetStrikeout).
 
 ```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
-builder.OpenFile("https://api.onlyoffice.com/app_data/officeapi/sample-files/document_review_mode.docx")
+// builder.OpenFile("https://api.onlyoffice.com/app_data/officeapi/sample-files/document_review_mode.docx")
 
 let oDocument = Api.GetDocument()
 GlobalVariable["CommentsReport"] = oDocument.GetCommentsReport()
@@ -160,6 +160,6 @@ for (sUserName in oReviewReport) {
 }
 oTable.SetStyle(oDocument.GetStyle("Bordered"))
 
-builder.SaveFile("docx", "Report.docx")
-builder.CloseFile()
+// builder.SaveFile("docx", "Report.docx")
+// builder.CloseFile()
 ```

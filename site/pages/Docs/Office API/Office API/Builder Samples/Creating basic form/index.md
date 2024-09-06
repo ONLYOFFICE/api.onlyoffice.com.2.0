@@ -6,8 +6,9 @@ Create a basic form with the image and text inputs:
 This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
-```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
-builder.CreateFile("pdf")
+```js document-builder={"documentType": "pdf", "editorConfig": {"customization": {"zoom": 60}}}
+// builder.CreateFile("pdf")
+
 const oDocument = Api.GetDocument()
 let oParagraph = oDocument.GetElement(0)
 const oHeadingStyle = oDocument.GetStyle("Heading 3")
@@ -46,6 +47,7 @@ oPictureForm.SetImage("https://api.onlyoffice.com/content/img/docbuilder/example
 oDocument.Push(oParagraph)
 
 Api.Save()
-builder.SaveFile("pdf", "PassCard.pdf")
-builder.CloseFile()
+
+// builder.SaveFile("pdf", "PassCard.pdf")
+// builder.CloseFile()
 ```
