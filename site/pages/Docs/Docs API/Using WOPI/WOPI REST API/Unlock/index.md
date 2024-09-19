@@ -1,6 +1,6 @@
 **POST /wopi/files/*(file\_id)***
 
-Allows for file editing.
+Releases the lock on a file. The WOPI client passes the lock ID established by that previous [Lock](../Lock/index.md) operation in the **X-WOPI-Lock** request header.
 
 This operation works as follows:
 

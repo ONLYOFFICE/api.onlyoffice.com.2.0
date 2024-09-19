@@ -1,6 +1,6 @@
 **POST /wopi/files/*(file\_id)***
 
-Locks file editing by an online office that requested the lock.
+Locks a file for editing by the WOPI client application instance that requested the lock.
 
 This operation works as follows:
 
