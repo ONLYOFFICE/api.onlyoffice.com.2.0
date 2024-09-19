@@ -40,13 +40,13 @@ When the API JavaScript is connected to the page, get the base class that provid
 
 *api.js* uses the active DocSpace application sessions to authenticate users. If the user is logged in to the DocSpace portal that the SDK will connect to, then *api.js* recognizes and uses that active session.
 
-If the users are not authenticated, they will see a page asking them to sign in to DocSpace the first time they use it. Authentication is also possible through the SDK [methods](../../JavaScript%20SDK/Methods/index.md#login).
+If the users are not authenticated, they will see a page asking them to sign in to DocSpace the first time they use it. Authentication is also possible through the SDK [methods](../../Usage%20SDK/Methods/index.md#login).
 
 ## Step 4. Initializing
 
 > Please note that when working via HTTPS, it is necessary to set the **"SameSite": "none"** parameter in *appsettings.json* to avoid blocking the work with cookies during cross-domain requests.
 
-Initialize DocSpace frame using the [initFrame](../../JavaScript%20SDK/Methods/index.md#initframe) method with the SDK config passed to it:
+Initialize DocSpace frame using the [initFrame](../../Usage%20SDK/Methods/index.md#initframe) method with the SDK config passed to it:
 
 ``` ts
 const docSpace = DocSpace.SDK.initFrame({
@@ -55,13 +55,13 @@ const docSpace = DocSpace.SDK.initFrame({
 })
 ```
 
-You can use other available [methods](../../JavaScript%20SDK/Methods/index.md) to initialize DocSpace.
+You can use other available [methods](../../Usage%20SDK/Methods/index.md) to initialize DocSpace.
 
-The full list of [config parameters](../../JavaScript%20SDK/Config/index.md) can be found here.
+The full list of [config parameters](../../Usage%20SDK/Config/index.md) can be found here.
 
 ## Step 5. Using
 
-After initialization, the current SDK instance can be accessed by using its [frameId](../../JavaScript%20SDK/Config/index.md#frameid). The list of current SDK instances is available in the *DocSpace.SDK.frames* array. To get the specific SDK instance, use the following string:
+After initialization, the current SDK instance can be accessed by using its [frameId](../../Usage%20SDK/Config/index.md#frameid). The list of current SDK instances is available in the *DocSpace.SDK.frames* array. To get the specific SDK instance, use the following string:
 
 ``` ts
 DocSpace.SDK.frames[frameId]
