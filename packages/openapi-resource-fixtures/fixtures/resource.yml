@@ -35,14 +35,6 @@ paths:
           - application/xml
         example: application/json
 
-      - name: Authorization
-        in: header
-        description: The authentication token required for the request.
-        required: true
-        schema:
-          type: string
-        example: Bearer <token>
-
       responses:
         200:
           description: Success.
@@ -91,14 +83,6 @@ paths:
           - application/json
           - application/xml
         example: application/json
-
-      - name: Authorization
-        in: header
-        description: The authentication token required for the request.
-        required: true
-        schema:
-          type: string
-        example: Bearer <token>
 
       - name: id
         in: path
@@ -164,14 +148,6 @@ paths:
           - application/json
           - application/xml
         example: application/json
-
-      - name: Authorization
-        in: header
-        description: The authentication token required for the request.
-        required: true
-        schema:
-          type: string
-        example: Bearer <token>
 
       - name: id
         in: path
