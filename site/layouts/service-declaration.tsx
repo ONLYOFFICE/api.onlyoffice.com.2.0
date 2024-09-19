@@ -1,6 +1,11 @@
 import {type Context, type Data} from "@onlyoffice/eleventy-types"
-import {ServiceDeclaration} from "@onlyoffice/site-kit"
-import {Fragment, type JSX, h} from "preact"
+import {type Declaration} from "@onlyoffice/service-declaration"
+import {
+  ServiceDeclaration,
+  ServiceDeclarationDescription,
+  ServiceDeclarationSyntaxHighlight,
+} from "@onlyoffice/site-kit"
+import {type JSX, h} from "preact"
 import {Markdown} from "@/internal/markdown.tsx"
 import {SyntaxHighlight} from "@/internal/syntax-highlight.tsx"
 import {TableOfContents} from "@/internal/table-of-contents.tsx"
@@ -11,21 +16,27 @@ export function data(): Data {
   }
 }
 
-export function render(ctx: Context): JSX.Element {
-  const [d] = ctx.pagination.items
-
-  switch (d.kind) {
-  case "group":
-    // todo: move to the ServiceDeclaration
-    return <TableOfContents url={ctx.page.url} depth={1} />
-  case "request":
-    return <ServiceDeclaration
-      declaration={d}
-      onHighlightSyntax={SyntaxHighlight}
-      onRenderDescription={Markdown}
-      onRetrieve={ctx.onRetrieve}
-    />
+export function render(c: Context): JSX.Element {
+  if (!c.pagination || !c.pagination.items) {
+    throw new Error("No pagination")
   }
 
-  return <></>
+  const [d]: Declaration[] = c.pagination.items
+
+  switch (d.type) {
+  case "group":
+    return <TableOfContents url={c.page.url} depth={1} />
+  case "operation":
+    return <ServiceDeclaration declaration={d}>
+      <ServiceDeclarationDescription>
+        {Markdown}
+      </ServiceDeclarationDescription>
+      <ServiceDeclarationSyntaxHighlight>
+        {SyntaxHighlight}
+      </ServiceDeclarationSyntaxHighlight>
+    </ServiceDeclaration>
+  }
+
+  // @ts-expect-error
+  throw new Error(`Unknown declaration type: ${d.type}`)
 }
