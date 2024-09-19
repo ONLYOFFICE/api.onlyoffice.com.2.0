@@ -1770,9 +1770,6 @@ importers:
       '@onlyoffice/declaration-code-example':
         specifier: workspace:^
         version: link:../declaration-code-example
-      '@onlyoffice/declaration-reference':
-        specifier: workspace:^
-        version: link:../declaration-reference
       typescript:
         specifier: 5.4.5
         version: 5.4.5

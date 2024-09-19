@@ -1,263 +1,192 @@
-import {type Example} from "@onlyoffice/declaration-code-example"
-import {type Reference} from "@onlyoffice/declaration-reference"
-
-export {type Example} from "@onlyoffice/declaration-code-example"
-export {type Reference, reference} from "@onlyoffice/declaration-reference"
-
-// todo?:
-// content-type, accept
-// Successful Response
-// Successful Examples
-// Unauthorized Response
-
-// todo: use enum interface instead of cases modifier
-// export interface EnumType extends TypeNode {
-//   type: "enum"
-//   cases?: Literal[]
-// }
-
-// export interface LiteralType extends TypeNode {
-//   type: "literal"
-//   type: Type
-//   value: unknown
-// }
-
-// todo: simplify value, see library-dec
-
 export type Declaration = DeclarationMap[keyof DeclarationMap]
 
 export interface DeclarationMap {
   group: GroupDeclaration
-  request: RequestDeclaration
+  operation: OperationDeclaration
 }
 
-export interface GroupDeclaration extends DeclarationNode {
-  kind: "group"
-  // requests: string[]
+export class GroupDeclaration implements DeclarationNode {
+  id = ""
+  type = "group" as const
+  name = ""
+  parent = ""
+  children: string[] = []
 }
 
-export interface RequestDeclaration extends DeclarationNode {
-  id: string
-  kind: "request"
-  endpoint: string
-  headerParameters?: Property[]
-  cookieParameters?: Property[]
-  pathParameters?: Property[]
-  queryParameters?: Property[]
-  bodyParameters?: Value
-  examples?: Example[]
-  responses?: Response[]
-}
-
-export function requestDeclaration(d: DeclarationNode): RequestDeclaration {
-  return {
-    ...d,
-    id: "",
-    kind: "request",
-    endpoint: "",
-    headerParameters: undefined,
-    cookieParameters: undefined,
-    pathParameters: undefined,
-    queryParameters: undefined,
-    bodyParameters: undefined,
-    examples: undefined,
-    responses: undefined,
-  }
+export class OperationDeclaration implements DeclarationNode {
+  id = ""
+  type = "operation" as const
+  name = ""
+  parent = ""
+  deprecated = false
+  request = new Request()
+  responses: Response[] = []
 }
 
 export interface DeclarationNode {
-  kind: string
-  slug: string
-  title: string
-  description?: string
+  id: string
+  type: string
+  name: string
+  parent: string
 }
 
-export function declarationNode(): DeclarationNode {
-  return {
-    kind: "",
-    slug: "",
-    title: "",
-    description: undefined,
-  }
+export class Request {
+  method = ""
+  path = ""
+  description = ""
+  authorizations: Authorization[] = []
+  headerParameters = new Entity()
+  cookieParameters = new Entity()
+  pathParameters = new Entity()
+  queryParameters = new Entity()
+  bodyParameters = new Entity()
 }
 
-export type Component = Response | Type
+export type Authorization = AuthorizationMap[keyof AuthorizationMap]
 
-export type Response = InlineResponse | ResponseReference
-
-export interface InlineResponse extends ResponseNode {
-  description?: string
-  // headers?: Property[]
-  body?: Value
-  examples?: Example[]
+export interface AuthorizationMap {
+  apiKey: ApiKeyAuthorization
 }
 
-export interface ResponseReference extends ResponseNode, Reference {}
-
-export interface ResponseNode {
-  status: number
+export class ApiKeyAuthorization implements AuthorizationNode {
+  type = "apiKey" as const
+  identifier = ""
+  description = ""
+  "in": "cookie" | "header" | "query" | "" = ""
+  scopes: string[] = []
 }
 
-// export interface Response {
-//   status: number
-//   description?: string
-//   // headers?: Property[]
-//   body?: Value
-//   examples?: Example[]
-// }
-
-export type Property = PropertyMap[keyof PropertyMap] | PropertyReference
-
-export interface PropertyMap {
-  array: ArrayProperty
-  boolean: BooleanProperty
-  integer: IntegerProperty
-  number: NumberProperty
-  object: ObjectProperty
-  // reference: ReferenceProperty
-  string: StringProperty
-  unknown: UnknownProperty
+export interface AuthorizationNode {
+  type: string
+  description: string
 }
 
-export interface ArrayProperty extends PropertyNode, ArrayValue {}
-
-export interface BooleanProperty extends PropertyNode, BooleanValue {}
-
-export interface IntegerProperty extends PropertyNode, IntegerValue {}
-
-export interface NumberProperty extends PropertyNode, NumberValue {}
-
-export interface ObjectProperty extends PropertyNode, ObjectValue {}
-
-export interface StringProperty extends PropertyNode, StringValue {}
-
-export interface UnknownProperty extends PropertyNode, UnknownValue {}
-
-export interface PropertyReference extends PropertyNode, ValueReference {}
-
-export interface PropertyNode {
-  identifier: string
-  example?: unknown
+export class Response {
+  status = -1
+  description = ""
+  body = new Entity()
 }
 
-export type Value = ValueMap[keyof ValueMap] | ValueReference
-
-export interface ValueMap {
-  array: ArrayValue
-  boolean: BooleanValue
-  integer: IntegerValue
-  number: NumberValue
-  object: ObjectValue
-  string: StringValue
-  unknown: UnknownValue
+export class Property {
+  identifier = ""
+  required = false
+  self: Entity | Reference = new Entity()
 }
 
-export interface ArrayValue extends ValueNode, ArrayType {}
-
-export interface BooleanValue extends ValueNode, BooleanType {
-  default?: boolean
+export class Entity {
+  description = ""
+  deprecated = false
+  type: Type = new NoopType()
+  format = ""
+  default: Const = new NoopConst()
+  example: unknown = ""
 }
 
-export interface IntegerValue extends ValueNode, IntegerType {
-  default?: number
+export type Const = ConstMap[keyof ConstMap]
+
+export interface ConstMap {
+  noop: NoopConst
+  passthrough: PassthroughConst
 }
 
-export interface NumberValue extends ValueNode, NumberType {
-  default?: number
+export class NoopConst implements ConstNode {
+  type = "noop" as const
 }
 
-export interface ObjectValue extends ValueNode, ObjectType {}
-
-export interface StringValue extends ValueNode, StringType {
-  default?: string
+export class PassthroughConst implements ConstNode {
+  type = "passthrough" as const
+  value: unknown = ""
 }
 
-export interface UnknownValue extends ValueNode, UnknownType {}
-
-export interface ValueReference extends ValueNode, Reference {}
-
-export interface ValueNode {
-  description?: string
-  default?: unknown
-  required?: true
+export interface ConstNode {
+  type: string
 }
 
-export type Type = TypeMap[keyof TypeMap] | Reference
+export type Type = TypeMap[keyof TypeMap]
 
 export interface TypeMap {
   array: ArrayType
   boolean: BooleanType
+  enum: EnumType
   integer: IntegerType
+  literal: LiteralType
+  noop: NoopType
+  null: NullType
   number: NumberType
   object: ObjectType
   string: StringType
+  union: UnionType
   unknown: UnknownType
 }
 
-export interface ArrayType extends TypeNode {
-  type: "array"
-  items?: Type
+export class ArrayType implements TypeNode {
+  type = "array" as const
+  items: Entity | Reference = new Entity()
 }
 
-export function arrayType(t: TypeNode): ArrayType {
-  return {...t, type: "array", items: undefined}
+export class BooleanType implements TypeNode {
+  type = "boolean" as const
 }
 
-export interface BooleanType extends TypeNode {
-  type: "boolean"
+export class EnumType implements TypeNode {
+  type = "enum" as const
+  cases: Entity[] = []
 }
 
-export function booleanType(t: TypeNode): BooleanType {
-  return {...t, type: "boolean"}
+export class IntegerType implements TypeNode {
+  type = "integer" as const
 }
 
-export interface IntegerType extends TypeNode {
-  type: "integer"
+export class LiteralType implements TypeNode {
+  type = "literal" as const
+  base: Type = new NoopType()
+  "const": Const = new NoopConst()
 }
 
-export function integerType(t: TypeNode): IntegerType {
-  return {...t, type: "integer"}
+export class NoopType implements TypeNode {
+  type = "noop" as const
 }
 
-export interface NumberType extends TypeNode {
-  type: "number"
+export class NullType implements TypeNode {
+  type = "null" as const
 }
 
-export function numberType(t: TypeNode): NumberType {
-  return {...t, type: "number"}
+export class NumberType implements TypeNode {
+  type = "number" as const
 }
 
-export interface ObjectType extends TypeNode {
-  type: "object"
-  properties?: Property[]
+export class ObjectType implements TypeNode {
+  type = "object" as const
+  properties: Property[] = []
 }
 
-export function objectType(t: TypeNode): ObjectType {
-  return {...t, type: "object", properties: undefined}
+export class StringType implements TypeNode {
+  type = "string" as const
 }
 
-export interface StringType extends TypeNode {
-  type: "string"
+export class UnionType implements TypeNode {
+  type = "union" as const
+  types: Type[] = []
 }
 
-export function stringType(t: TypeNode): StringType {
-  return {...t, type: "string"}
-}
-
-export interface UnknownType extends TypeNode {
-  type: "unknown"
-}
-
-export function unknownType(t: TypeNode): UnknownType {
-  return {...t, type: "unknown"}
+export class UnknownType implements TypeNode {
+  type = "unknown" as const
 }
 
 export interface TypeNode {
   type: string
-  format?: string
-  cases?: unknown[]
 }
 
-export function typeNode(): TypeNode {
-  return {type: "", format: undefined, cases: undefined}
+export type Reference = ReferenceMap[keyof ReferenceMap]
+
+export interface ReferenceMap {
+  circular: CircularReference
+}
+
+export class CircularReference implements ReferenceNode {
+  type = "circular" as const
+}
+
+export interface ReferenceNode {
+  type: string
 }

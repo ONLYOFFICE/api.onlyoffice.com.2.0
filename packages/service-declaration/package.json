@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@onlyoffice/declaration-code-example": "workspace:^",
-    "@onlyoffice/declaration-reference": "workspace:^",
     "typescript": "5.4.5"
   },
   "devDependencies": {
