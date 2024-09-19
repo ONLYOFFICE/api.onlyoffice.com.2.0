@@ -25,6 +25,10 @@ const config: Record<string, string[]> = {
     "ui-primitives",
     "ui-icons",
   ],
+  test: [
+    "service-declaration",
+    "openapi-declaration",
+  ],
 }
 
 function main(): void {
@@ -35,6 +39,13 @@ function main(): void {
         t = config.build
       }
       await run(t, "build")
+    })
+    .command("test")
+    .action(async ({_: t}: {_: string[]}) => {
+      if (t.length === 0) {
+        t = config.test
+      }
+      await run(t, "test")
     })
     .parse(argv)
 }
