@@ -148,18 +148,9 @@ importers:
       '@onlyoffice/console':
         specifier: workspace:^
         version: link:../console
-      '@onlyoffice/openapi-declaration':
-        specifier: workspace:^
-        version: link:../openapi-declaration
       '@onlyoffice/openapi-resource':
         specifier: workspace:^
         version: link:../openapi-resource
-      '@onlyoffice/resource':
-        specifier: workspace:^
-        version: link:../resource
-      '@onlyoffice/stream-string':
-        specifier: workspace:^
-        version: link:../stream-string
       tsx:
         specifier: 4.16.5
         version: 4.16.5
