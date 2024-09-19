@@ -1767,9 +1767,6 @@ importers:
 
   packages/service-declaration:
     dependencies:
-      '@onlyoffice/declaration-code-example':
-        specifier: workspace:^
-        version: link:../declaration-code-example
       typescript:
         specifier: 5.4.5
         version: 5.4.5

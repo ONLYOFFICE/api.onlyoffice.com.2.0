@@ -2,10 +2,6 @@
   "name": "@onlyoffice/service-declaration",
   "type": "module",
   "private": true,
-  "exports": {
-    ".": "./lib/main.ts",
-    "./example.ts": "./lib/example.ts"
-  },
   "main": "lib/main.ts",
   "scripts": {
     "test:types": "tsc",
@@ -13,7 +9,6 @@
     "test": "pnpm test:types && pnpm test:unit"
   },
   "dependencies": {
-    "@onlyoffice/declaration-code-example": "workspace:^",
     "typescript": "5.4.5"
   },
   "devDependencies": {
