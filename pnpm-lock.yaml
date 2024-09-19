@@ -850,6 +850,9 @@ importers:
       '@onlyoffice/command':
         specifier: workspace:^
         version: link:../command
+      '@onlyoffice/stream-string':
+        specifier: workspace:^
+        version: link:../stream-string
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
@@ -857,9 +860,6 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
     devDependencies:
-      '@onlyoffice/stream-string':
-        specifier: workspace:^
-        version: link:../stream-string
       c8:
         specifier: 9.1.0
         version: 9.1.0
