@@ -4,7 +4,7 @@ import {type Resource} from "@onlyoffice/service-resource"
 
 const require = createRequire(import.meta.url)
 
-export const {list, resolve} = resource("community-server")
+export const {list, retrieve} = resource("community-server")
 
 function resource(n: string): Resource {
   const f = file(n)

@@ -5,14 +5,20 @@
   "main": "lib/main.ts",
   "scripts": {
     "test:types": "tsc",
-    "test": "pnpm test:types"
+    "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
+    "test": "pnpm test:types && pnpm test:unit"
   },
   "dependencies": {
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/service-declaration": "workspace:^",
     "@types/node": "20.12.12",
-    "github-slugger": "2.0.0",
     "openapi-types": "12.1.3",
     "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "c8": "9.1.0",
+    "is-valid-uuid-v4": "1.2.3",
+    "tsx": "4.16.5",
+    "uvu": "0.5.6"
   }
 }

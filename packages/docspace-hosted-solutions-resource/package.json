@@ -17,10 +17,7 @@
   },
   "devDependencies": {
     "@onlyoffice/console": "workspace:^",
-    "@onlyoffice/openapi-declaration": "workspace:^",
     "@onlyoffice/openapi-resource": "workspace:^",
-    "@onlyoffice/resource": "workspace:^",
-    "@onlyoffice/stream-string": "workspace:^",
     "tsx": "4.16.5"
   }
 }

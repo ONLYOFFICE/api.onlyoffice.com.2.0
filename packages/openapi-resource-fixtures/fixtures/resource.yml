@@ -12,6 +12,8 @@ paths:
       - Wildlife
       summary: List Wildlife Animals
       description: List of wildlife animals.
+      security:
+      - apiKey: ["read:wildlife"]
       parameters:
       - name: Accept
         in: header
@@ -34,14 +36,6 @@ paths:
           - application/json
           - application/xml
         example: application/json
-
-      - name: Authorization
-        in: header
-        description: The authentication token required for the request.
-        required: true
-        schema:
-          type: string
-        example: Bearer <token>
 
       responses:
         200:
@@ -69,6 +63,8 @@ paths:
       - Wildlife
       summary: Get Wildlife Animal
       description: Get a wildlife animal by its ID.
+      security:
+      - apiKey: ["read:wildlife"]
       parameters:
       - name: Accept
         in: header
@@ -91,14 +87,6 @@ paths:
           - application/json
           - application/xml
         example: application/json
-
-      - name: Authorization
-        in: header
-        description: The authentication token required for the request.
-        required: true
-        schema:
-          type: string
-        example: Bearer <token>
 
       - name: id
         in: path
@@ -142,6 +130,8 @@ paths:
       - Wildlife
       summary: Update Wildlife Animal
       description: Update a wildlife animal by its ID.
+      security:
+      - apiKey: ["read:wildlife"]
       parameters:
       - name: Accept
         in: header
@@ -164,14 +154,6 @@ paths:
           - application/json
           - application/xml
         example: application/json
-
-      - name: Authorization
-        in: header
-        description: The authentication token required for the request.
-        required: true
-        schema:
-          type: string
-        example: Bearer <token>
 
       - name: id
         in: path
@@ -222,6 +204,13 @@ paths:
           $ref: "#/components/responses/500"
 
 components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: X-API-Key
+      description: The API key to access the API.
+      in: header
+
   schemas:
     animal:
       type: object
@@ -244,6 +233,7 @@ components:
 
     pack:
       type: object
+      description: A pack of animals.
       properties:
         id:
           type: string

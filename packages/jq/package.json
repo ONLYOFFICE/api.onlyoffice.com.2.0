@@ -2,6 +2,10 @@
   "name": "@onlyoffice/jq",
   "type": "module",
   "private": true,
+  "exports": {
+    ".": "./lib/main.ts",
+    "./next.ts": "./lib/next.ts"
+  },
   "main": "lib/main.ts",
   "scripts": {
     "test:types": "tsc",
@@ -10,11 +14,11 @@
   },
   "dependencies": {
     "@onlyoffice/command": "workspace:^",
+    "@onlyoffice/stream-string": "workspace:^",
     "@types/node": "20.12.12",
     "typescript": "5.4.5"
   },
   "devDependencies": {
-    "@onlyoffice/stream-string": "workspace:^",
     "c8": "9.1.0",
     "tsx": "4.16.5",
     "uvu": "0.5.6"

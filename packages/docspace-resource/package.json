@@ -19,8 +19,7 @@
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/openapi-declaration": "workspace:^",
     "@onlyoffice/openapi-resource": "workspace:^",
-    "@onlyoffice/resource": "workspace:^",
-    "@onlyoffice/stream-string": "workspace:^",
+    "openapi-types": "12.1.3",
     "tsx": "4.16.5"
   }
 }
