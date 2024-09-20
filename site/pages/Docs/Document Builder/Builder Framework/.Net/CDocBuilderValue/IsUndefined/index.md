@@ -1,4 +1,4 @@
-#### bool IsUndefined();
+`bool IsUndefined();`
 
 Returns true if the **CDocBuilderValue** object is undefined.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is undefined.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

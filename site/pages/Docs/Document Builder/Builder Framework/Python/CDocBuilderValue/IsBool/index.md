@@ -1,4 +1,4 @@
-#### def IsBool(self);
+`def IsBool(self);`
 
 Returns true if the **CDocBuilderValue** object is a boolean value.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a boolean value.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

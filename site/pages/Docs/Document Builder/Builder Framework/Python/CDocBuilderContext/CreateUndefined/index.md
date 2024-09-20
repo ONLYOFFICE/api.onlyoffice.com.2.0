@@ -1,4 +1,4 @@
-#### def CreateUndefined(self);
+`def CreateUndefined(self);`
 
 Creates an undefined value, an analogue of *undefined* in JS.
 
@@ -6,9 +6,9 @@ Creates an undefined value, an analogue of *undefined* in JS.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 content = context.CreateUndefined()

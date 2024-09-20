@@ -2,9 +2,9 @@ This [app](https://github.com/ONLYOFFICE/onlyoffice-odoo) enables users to edit 
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, DOCXF, XLSX, PPTX.
-* The following formats are available for viewing only: DJVU, DOC, DOCM, DOT, DOTM, DOTX, EPUB, FB2, FODT, HTML, MHT, ODT, OFORM, OTT, OXPS, PDF, RTF, TXT, XPS, XML, CSV, FODS, ODS, OTS, XLS, XLSB, XLSM, XLT, XLTM, XLTX, FODP, ODP, OTP, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM.
-* The app will create a new **Open in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Odoo.
+- Currently, the following document formats can be edited: DOCX, DOCXF, XLSX, PPTX.
+- The following formats are available for viewing only: DJVU, DOC, DOCM, DOT, DOTM, DOTX, EPUB, FB2, FODT, HTML, MHT, ODT, OFORM, OTT, OXPS, PDF, RTF, TXT, XPS, XML, CSV, FODS, ODS, OTS, XLS, XLSB, XLSM, XLT, XLTM, XLTX, FODP, ODP, OTP, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM.
+- The app will create a new **Open in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Odoo.
 
 ## Installing ONLYOFFICE Docs
 
@@ -40,7 +40,7 @@ To start using ONLYOFFICE Docs with Odoo, the following steps must be performed:
 
 4. Install the *pyjwt* package:
 
-   ``` bash
+   ``` sh
    pip install pyjwt
    ```
 
@@ -50,7 +50,7 @@ To start using ONLYOFFICE Docs with Odoo, the following steps must be performed:
 
 To configure the app, go to **Settings**. Find **ONLYOFFICE** on the left sidebar and press it. Specify the URL of the installed ONLYOFFICE Docs:
 
-```
+``` sh
 https://<documentserver>/
 ```
 

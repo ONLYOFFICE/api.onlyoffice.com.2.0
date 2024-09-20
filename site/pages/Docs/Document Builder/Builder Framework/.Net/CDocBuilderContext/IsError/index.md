@@ -1,4 +1,4 @@
-#### bool IsError();
+`bool IsError();`
 
 Checks for errors in JS.
 
@@ -6,9 +6,9 @@ Checks for errors in JS.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

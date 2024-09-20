@@ -1,4 +1,4 @@
-#### CDocBuilderContext^ GetContext();
+`CDocBuilderContext^ GetContext();`
 
 Returns the current JS [context](../../CDocBuilderContext/index.md).
 
@@ -6,9 +6,9 @@ Returns the current JS [context](../../CDocBuilderContext/index.md).
 
 ## Example
 
-#### .Net
+### .Net
 
-```csharp
+``` cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

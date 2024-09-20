@@ -12,8 +12,7 @@ All the available controls are displayed within the **Controls example** plugin:
 
 ![Controls example](/assets/images/plugins/controls.png)
 
-
-### Buttons
+## Buttons
 
 1. Use the *btn-text-default* class to add **Button 1** to your plugin:
 
@@ -92,8 +91,7 @@ All the available controls are displayed within the **Controls example** plugin:
    }                              
    ```
 
-
-### Input controls
+## Input controls
 
 1. Use the *textarea* form element to add a **text area** to your plugin:
 
@@ -154,8 +152,7 @@ All the available controls are displayed within the **Controls example** plugin:
    }                          
    ```
 
-
-### Label controls
+## Label controls
 
 1. Use the *label.header* class to add a **bold header** to your plugin:
 
@@ -186,8 +183,7 @@ All the available controls are displayed within the **Controls example** plugin:
    }                            
    ```
 
-
-### ComboBox
+## ComboBox
 
 Use the [select2](https://select2.org/) function to add a **combo box** to your plugin:
 
@@ -202,8 +198,7 @@ $('#select_example').select2({
 
 ![Combobox](/assets/images/plugins/combobox_example.png)
 
-
-### Loader
+## Loader
 
 Use the *asc-loader-container* class to add a **loader container** to your plugin:
 
@@ -220,7 +215,6 @@ This class has the following parameters:
 ```
 
 ![Loader](/assets/images/plugins/loader_example.png)
-
 
 ## Example
 

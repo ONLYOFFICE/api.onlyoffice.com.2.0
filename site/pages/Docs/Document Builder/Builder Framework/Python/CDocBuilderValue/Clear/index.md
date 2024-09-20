@@ -1,4 +1,4 @@
-#### def Clear(self);
+`def Clear(self);`
 
 Clears the **CDocBuilderValue** object.
 
@@ -6,9 +6,9 @@ Clears the **CDocBuilderValue** object.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

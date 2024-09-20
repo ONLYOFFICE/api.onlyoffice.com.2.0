@@ -2,7 +2,6 @@
 order: -3
 ---
 
-
 Each item which interacts with a user (onClick, onChange, onSelect, etc.) can return a message that is represented as the *IMessage* object with the following parameters:
 
 ## actions
@@ -13,7 +12,6 @@ Type: array of [Actions](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/
 
 Example: \[Actions.showToast, Actions.closeModal]
 
-
 ## newProps
 
 Defines the properties that update the state of the items which interact with the users. This parameter is used only with [Actions.updateProps](../Events/index.md#updateprops).
@@ -22,7 +20,6 @@ Type: [IInput](../Plugin%20Components/Input/index.md), [ICheckbox](../Plugin%20C
 
 Example: {IInput}
 
-
 ## toastProps
 
 Defines the properties that display a toast notification after the user actions. This parameter is used only with [Actions.showToast](../Events/index.md#showtoast).
@@ -30,7 +27,6 @@ Defines the properties that display a toast notification after the user actions.
 Type: array of [IToast](../Plugin%20Components/Toast/index.md)
 
 Example: \[IToast]
-
 
 ## contextProps
 
@@ -42,7 +38,7 @@ Type: array of objects
 
 Example:
 
-``` javascript
+``` ts
 [
   {
     name: "accept-button",
@@ -50,7 +46,6 @@ Example:
   },
 ]
 ```
-
 
 ### contextProps.name
 
@@ -60,7 +55,6 @@ Type: string
 
 Example: "accept-button"
 
-
 ### contextProps.props
 
 The new properties for the parent or child item.
@@ -68,7 +62,6 @@ The new properties for the parent or child item.
 Type: object
 
 Example: {...acceptButtonProps, "isDisabled": false}
-
 
 ## createDialogProps
 
@@ -78,7 +71,6 @@ Type: [ICreateDialog](../Plugin%20Components/CreateDialog/index.md)
 
 Example: {ICreateDialog}
 
-
 ## modalDialogProps
 
 Defines the properties that display the modal window. This parameter is used only with [Actions.showModal](../Events/index.md#showmodal).
@@ -86,7 +78,6 @@ Defines the properties that display the modal window. This parameter is used onl
 Type: [IModalDialog](../Plugin%20Components/ModalDialog/index.md)
 
 Example: {IModalDialog}
-
 
 ## postMessage
 
@@ -96,7 +87,6 @@ Type: [IPostMessage](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/mast
 
 Example: {IPostMessage}
 
-
 ## settings
 
 Defines a parameter that is used to save and transfer the administrator or owner plugin settings to all the portal users. This parameter is used only with [Actions.saveSettings](../Events/index.md#savesettings).
@@ -105,10 +95,9 @@ Type: string
 
 Example: "{settings}"
 
+## Example
 
-**Example**
-
-``` javascript
+``` ts
 import {Actions, type IMessage, ToastType} from "@onlyoffice/docspace-plugin-sdk"
 
 const message: IMessage = {

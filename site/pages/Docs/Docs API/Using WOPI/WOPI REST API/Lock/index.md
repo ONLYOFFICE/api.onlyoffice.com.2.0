@@ -1,4 +1,4 @@
-**POST /wopi/files/*(file\_id)***
+`POST /wopi/files/(file_id)`
 
 Locks file editing by an online office that requested the lock.
 
@@ -10,26 +10,26 @@ This operation works as follows:
 4. In all other cases, the host must return **409 Conflict** (*"lock mismatch"*) and include the **X-WOPI-Lock** response header containing the value of the current lock on the file.
 5. In the case where the file is locked by a third-party client, hosts should still always include the current lock ID in the **X-WOPI-Lock** response header.
 
-### Parameters
+## Parameters
 
 | Name     | Description                        | Type   |
 | -------- | ---------------------------------- | ------ |
 | file\_id | The file ID that must be URL safe. | string |
 
-### Query parameters
+## Query parameters
 
 | Name          | Description                                                                            | Type   |
 | ------------- | -------------------------------------------------------------------------------------- | ------ |
 | access\_token | An access token that the host will use to determine whether the request is authorized. | string |
 
-### Request headers
+## Request headers
 
 | Name            | Description                                                          | Type   | Presence |
 | --------------- | -------------------------------------------------------------------- | ------ | -------- |
 | X-WOPI-Override | The requested operation from the WOPI server (*LOCK*).               | string | required |
 | X-WOPI-Lock     | The lock ID that the host must use to identify the lock on the file. | string | required |
 
-### Response headers
+## Response headers
 
 | Name                     | Description                                                                                                                                                                                                               | Type   | Presence |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |

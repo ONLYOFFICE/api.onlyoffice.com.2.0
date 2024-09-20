@@ -8,7 +8,7 @@ To debug ONLYOFFICE macros, follow the instructions below.
 
 2. Use the **debugger** command in your script:
 
-   ``` javascript
+   ``` ts
    debugger
    const oDocument = Api.GetDocument()
    const oParagraph = oDocument.GetElement(0)
@@ -17,13 +17,8 @@ To debug ONLYOFFICE macros, follow the instructions below.
 
 3. To run your script in debug mode:
 
-   **For ONLYOFFICE Docs**
-
-   Open the developer console by pressing the **F12** button.
-
-   **For Desktop Editors**
-
-   Use the [instruction](../../../Desktop%20Editors/Usage%20API/Debugging/index.md) for debugging in ONLYOFFICE Desktop Editors.
+   - **For ONLYOFFICE Docs**: open the developer console by pressing the **F12** button.
+   - **For Desktop Editors**: use the [instruction](../../../Desktop%20Editors/Usage%20API/Debugging/index.md) for debugging in ONLYOFFICE Desktop Editors.
 
 4. Press the **Run** button to run your script.
 
@@ -35,7 +30,7 @@ The **debugger** command works as a breakpoint and pauses the execution at the s
 
 If you just need to display the specific values in the browser developer console, you can use the **console.log()** method. Pass a value you want to check or just a message string as an argument of this method and open the developer console by pressing the **F12** button to see the result:
 
-``` javascript
+``` ts
 console.log(123)
 const oDocument = Api.GetDocument()
 const oParagraph = oDocument.GetElement(0)

@@ -1,10 +1,10 @@
-#### HRESULT Get(\[in] long index, \[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT Get([in] long index, [out, retval] I_DOCBUILDER_VALUE** result);`
 
 Returns an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Get* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description                   |
 | -------- | ------------------------ | ----------------------------- |
@@ -13,9 +13,9 @@ Returns an array value by its index.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;
@@ -34,9 +34,9 @@ aCharts->Get(1, &oChart);
 oBuilder->Dispose();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```js
+```ts
 const oDocument = Api.GetDocument()
 const aCharts = oDocument.GetAllCharts()
 const oChart = aCharts[1]

@@ -6,5 +6,5 @@ This page describes how to make different operations with documents using **ONLY
 
 Learn how to:
 
-* [Exchange data among files](../How%20It%20Works/Exchanging%20data%20among%20files/index.md)
-* [Compare documents](../How%20It%20Works/Comparing%20documents/index.md)
+- [Exchange data among files](../How%20It%20Works/Exchanging%20data%20among%20files/index.md)
+- [Compare documents](../How%20It%20Works/Comparing%20documents/index.md)

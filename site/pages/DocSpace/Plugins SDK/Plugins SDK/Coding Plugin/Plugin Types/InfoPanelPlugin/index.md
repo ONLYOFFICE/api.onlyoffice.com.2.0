@@ -2,7 +2,6 @@
 order: -5
 ---
 
-
 The plugin that is embedded as a separate tab in the file info panel.
 
 **Interface**: IInfoPanelPlugin.
@@ -15,39 +14,35 @@ Stores a collection of elements where the keys are the key parameters from the [
 
 Type: collection of IInfoPanelItem
 
-
-## Methods and their description:
+## Methods and their description
 
 ### addInfoPanelItem
 
 Add a new info panel item.
 
-  **Parameters**
+Parameters:
 
-  | Name          | Description                 | Type           | Example |
-  | ------------- | --------------------------- | -------------- | ------- |
-  | infoPanelItem | Defines an info panel item. | IInfoPanelItem |         |
-
+| Name          | Description                 | Type           | Example |
+| ------------- | --------------------------- | -------------- | ------- |
+| infoPanelItem | Defines an info panel item. | IInfoPanelItem |         |
 
 ### getInfoPanelItems
 
 Get all the info panel items.
 
-
 ### updateInfoPanelItem
 
 Update the info panel item.
 
-  **Parameters**
+Parameters:
 
-  | Name          | Description                    | Type           | Example |
-  | ------------- | ------------------------------ | -------------- | ------- |
-  | infoPanelItem | Defines a new info panel item. | IInfoPanelItem |         |
+| Name          | Description                    | Type           | Example |
+| ------------- | ------------------------------ | -------------- | ------- |
+| infoPanelItem | Defines a new info panel item. | IInfoPanelItem |         |
 
+## Example
 
-**Example**
-
-``` typescript
+``` ts
 import {type IInfoPanelItem, type IInfoPanelPlugin} from "@onlyoffice/docspace-plugin-sdk"
 
 class Plugin implements IInfoPanelPlugin {

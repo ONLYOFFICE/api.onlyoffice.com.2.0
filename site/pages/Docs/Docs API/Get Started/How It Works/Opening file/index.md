@@ -25,21 +25,24 @@ After the editing is finished, the [document saving](../Saving%20file/index.md) 
 ## How this can be done in practice
 
 1. Create an empty *html* file.
+
 2. Add the *div* element as shown below.
 
    ``` html
    <div id="placeholder"></div>
    ```
+
 3. Specify your ONLYOFFICE Docs link with the JavaScript API that will be used for your website.
 
    ``` html
    <script type="text/javascript" src="https://documentserver/web-apps/apps/api/documents/api.js"></script>
    ```
+
    Where the **documentserver** is the name of the server with the ONLYOFFICE Docs installed.
 
 4. Add the script initializing the **Document Editor** for the *div* element with the configuration for the document you want to open. Be sure to add a [token](../Security/index.md) when using local links. Otherwise, an error will occur.
 
-   ``` javascript
+   ``` ts
    const docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        fileType: "docx",
@@ -52,4 +55,5 @@ After the editing is finished, the [document saving](../Saving%20file/index.md) 
    })
    ```
    Where the **example.com** is the name of the server where **document manager** and **document storage service** are installed.
+
 5. Open your *html* file in the browser.

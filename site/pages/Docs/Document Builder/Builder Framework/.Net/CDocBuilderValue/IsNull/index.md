@@ -1,4 +1,4 @@
-#### bool IsNull();
+`bool IsNull();`
 
 Returns true if the **CDocBuilderValue** object is null.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is null.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

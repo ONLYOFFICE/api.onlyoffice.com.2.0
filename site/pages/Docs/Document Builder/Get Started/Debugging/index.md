@@ -10,7 +10,7 @@ You can debug any Document Builder [component](../../Get%20Started/Overview/inde
 
 2. Use the **debugger** command in your script:
 
-   ```js
+   ```ts
    debugger
    const oDocument = Api.GetDocument()
    const oParagraph = oDocument.GetElement(0)
@@ -21,7 +21,7 @@ You can debug any Document Builder [component](../../Get%20Started/Overview/inde
 
 4. Press the **Run** button to run your script.
 
- >Please note that the **debugger** command will only work if the development tools are open. Otherwise, the browser will ignore it.  
+ > Please note that the **debugger** command will only work if the development tools are open. Otherwise, the browser will ignore it.  
 
 ![Builder debugger](/assets/images/docbuilder/builder-debugger.png)
 
@@ -37,19 +37,19 @@ The **debugger** command works as a breakpoint and pauses the execution at the s
 
    **Windows**
 
-   ```bash
+   ```sh
    SET V8_USE_INSPECTOR=1
    ```
 
    **Linux**
 
-   ```bash
+   ```sh
    export  V8_USE_INSPECTOR=1
    ```
 
 3. Run the Builder script with the **docbuilder** command:
 
-   ```bash
+   ```sh
    docbuilder script.docbuilder
    ```
 

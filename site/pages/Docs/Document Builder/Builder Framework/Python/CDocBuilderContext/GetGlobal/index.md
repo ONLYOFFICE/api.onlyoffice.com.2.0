@@ -1,4 +1,4 @@
-#### def GetGlobal(self);
+`def GetGlobal(self);`
 
 Returns the global object for the current context.
 
@@ -6,9 +6,9 @@ Returns the global object for the current context.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

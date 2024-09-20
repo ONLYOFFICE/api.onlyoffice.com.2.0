@@ -1,6 +1,6 @@
 Requests the current version number of ONLYOFFICE Docs.
 
-### Request example
+## Request example
 
 ``` json
 {
@@ -8,13 +8,13 @@ Requests the current version number of ONLYOFFICE Docs.
 }
 ```
 
-### Parameters
+## Parameters
 
 | Name | Description               | Type   | Presence |
 | ---- | ------------------------- | ------ | -------- |
 | c    | Defines the command type. | string | required |
 
-### Response example
+## Response example
 
 ``` json
 {
@@ -23,7 +23,7 @@ Requests the current version number of ONLYOFFICE Docs.
 }
 ```
 
-### Parameters
+## Parameters
 
 | Parameter | Description                          | Type    | Presence |
 | --------- | ------------------------------------ | ------- | -------- |

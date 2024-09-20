@@ -39,9 +39,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 6. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/languagetool/licenses/jQuery.license).
-   * [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/languagetool/licenses/Select2.license).
-   * [Languagetool](https://languagetool.org/) is a multilingual grammar and style checker. License: [GNU LESSER GENERAL PUBLIC LICENSE](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/languagetool/licenses/Languagetool's.license).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/languagetool/licenses/jQuery.license).
+   - [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/languagetool/licenses/Select2.license).
+   - [Languagetool](https://languagetool.org/) is a multilingual grammar and style checker. License: [GNU LESSER GENERAL PUBLIC LICENSE](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/languagetool/licenses/Languagetool's.license).
 
 ## Config
 
@@ -175,18 +175,18 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
-* onTranslate
-* callCommand
-* executeMethod ("GetSelectedText")
-* executeMethod ("GetSelectionType")
-* executeMethod ("GetVersion")
-* executeMethod ("PasteText")
-* Asc.scope object
-* info.editorType
-* info.recalculate
+- button
+- init
+- onExternalMouseUp
+- onTranslate
+- callCommand
+- executeMethod ("GetSelectedText")
+- executeMethod ("GetSelectionType")
+- executeMethod ("GetVersion")
+- executeMethod ("PasteText")
+- Asc.scope object
+- info.editorType
+- info.recalculate
 
 ## Support
 

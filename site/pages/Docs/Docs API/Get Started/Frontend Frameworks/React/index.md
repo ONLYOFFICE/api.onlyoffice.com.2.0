@@ -10,31 +10,31 @@ This procedure creates a [basic React application](https://github.com/facebook/c
 
 1. Create a new React project named *onlyoffice-react-demo* using the *Create React App* package:
 
-   ``` bash
+   ``` sh
    npx create-react-app onlyoffice-react-demo
    ```
 
 2. Go to the newly created directory:
 
-   ``` bash
+   ``` sh
    cd onlyoffice-react-demo
    ```
 
 3. Install ONLYOFFICE Docs React component from **npm** and save it to the *package.json* file with *--save*:
 
-   ``` bash
+   ``` sh
    npm install --save @onlyoffice/document-editor-react
    ```
 
    You can also use the following **yarn** command:
 
-   ``` bash
+   ``` sh
    yarn add @onlyoffice/document-editor-react
    ```
 
 4. Open the *./src/App.js* file in the *onlyoffice-react-demo* project and replace its contents with the following code:
 
-   ```jsx
+   ``` tsx
    import {DocumentEditor} from "@onlyoffice/document-editor-react"
    import React, {useRef} from "react"
    
@@ -84,21 +84,21 @@ This procedure creates a [basic React application](https://github.com/facebook/c
 
    Replace the following lines with your own data:
 
-   * `http://documentserver/` - replace with the URL of your server;
-   * `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
-   * `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
+   - `http://documentserver/` - replace with the URL of your server;
+   - `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
+   - `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
 
    This JavaScript file will create the *App* component containing the ONLYOFFICE Docs editor configured with basic features.
 
 5. Test the application using the Node.js development server:
 
-   * To start the development server, navigate to the *onlyoffice-react-demo* directory and run:
+   - To start the development server, navigate to the *onlyoffice-react-demo* directory and run:
 
-     ``` bash
+     ``` sh
      npm run start
      ```
 
-   * To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
+   - To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
 
 ## Deploying the demo React application
 
@@ -106,25 +106,25 @@ The easiest way to deploy the application to a production environment is to inst
 
 1. Install the *serve* package globally:
 
-   ``` bash
+   ``` sh
    npm install -g serve
    ```
 
 2. Serve your static site on the 3000 port:
 
-   ``` bash
+   ``` sh
    serve -s build
    ```
 
    Another port can be adjusted using the *-l* or *--listen* flags:
 
-   ``` bash
+   ``` sh
    serve -s build -l 4000
    ```
 
 3. To serve the project folder, go to it and run the *serve* command:
 
-   ``` bash
+   ``` sh
    cd onlyoffice-react-demo
    serve
    ```
@@ -133,7 +133,7 @@ Now you can deploy the application to the created server:
 
 1. Navigate to the *onlyoffice-react-demo* directory and run:
 
-   ``` bash
+   ``` sh
    npm run build
    ```
 
@@ -197,13 +197,13 @@ Install [Storybook](https://storybook.js.org/) to develop UI components in isola
 
 2. Build Storybook with the following command:
 
-   ``` bash
+   ``` sh
    yarn build-storybook
    ```
 
 3. Start Storybook:
 
-   ``` bash
+   ``` sh
    yarn storybook
    ```
 
@@ -211,31 +211,31 @@ Install [Storybook](https://storybook.js.org/) to develop UI components in isola
 
 1. Clone project from the GitHub repository:
 
-   ``` bash
+   ``` sh
    git clone https://github.com/ONLYOFFICE/document-editor-react
    ```
 
 2. Install the project dependencies:
 
-   ``` bash
+   ``` sh
    yarn install
    ```
 
 3. Test the component:
 
-   ``` bash
+   ``` sh
    yarn test
    ```
 
 4. Build the project:
 
-   ``` bash
+   ``` sh
    yarn rollup
    ```
 
 5. Create the package:
 
-   ``` bash
+   ``` sh
    npm pack
    ```
 

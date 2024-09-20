@@ -1,4 +1,4 @@
-#### def CreateNull();
+`def CreateNull();`
 
 Creates a null value. This method returns the current [context](../../CDocBuilderContext/index.md) and calls its [CreateNull](../../CDocBuilderContext/CreateNull/index.md) method.
 
@@ -6,9 +6,9 @@ Creates a null value. This method returns the current [context](../../CDocBuilde
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

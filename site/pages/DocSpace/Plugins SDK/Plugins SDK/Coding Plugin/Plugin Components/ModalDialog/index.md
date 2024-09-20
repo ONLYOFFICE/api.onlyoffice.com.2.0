@@ -18,10 +18,9 @@ Type: boolean
 
 Example: true
 
+## Example
 
-### Example
-
-``` javascript
+``` ts
 import {Actions, Components, type IBox, type IFrame, type IMessage, type IModalDialog, type ISkeleton, ModalDisplayType} from "@onlyoffice/docspace-plugin-sdk"
 
 export const frameProps: IFrame = {

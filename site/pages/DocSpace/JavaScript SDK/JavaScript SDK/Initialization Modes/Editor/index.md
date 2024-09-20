@@ -6,12 +6,12 @@ Allows you to open the SDK as a document editor for editing by specifying the [i
 
 ![Editor mode](/assets/images/docspace/editor-mode.png)
 
-### Method
+## Method
 
 | Name                                            | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- |
 | [initEditor](../../Methods/index.md#initeditor) | Initializes the SDK frame in the "editor" mode. |
 
-``` javascript
+``` ts
 const docSpace = DocSpace.SDK.initEditor({config})
 ```

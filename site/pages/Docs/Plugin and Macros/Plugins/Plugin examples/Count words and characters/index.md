@@ -4,9 +4,9 @@ Counts paragraphs, words, and characters with or without spaces in the selected 
 
 > The following elements are not included in the word count:
 >
-> * footnotes/endnotes;
-> * numbers from numbered lists;
-> * page numbers.
+> - footnotes/endnotes;
+> - numbers from numbered lists;
+> - page numbers.
 
 **Plugin type:** visual, non-system.
 
@@ -127,10 +127,10 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onTargetPositionChanged
-* onTranslate
+- button
+- init
+- onTargetPositionChanged
+- onTranslate
 
 ## Support
 

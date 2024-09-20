@@ -1,10 +1,10 @@
-#### HRESULT ToDouble(\[out, retval] double\* result);
+`HRESULT ToDouble([out, retval] double* result);`
 
 Converts the **CDocBuilderValue** object to a double value.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.ToDouble* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type     | Description                |
 | -------- | -------- | -------------------------- |
@@ -12,9 +12,9 @@ Converts the **CDocBuilderValue** object to a double value.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

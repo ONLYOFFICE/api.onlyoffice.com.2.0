@@ -1,10 +1,10 @@
-#### void SetProperty(sName, sValue);
+`void SetProperty(sName, sValue);`
 
 Sets a property to the **CDocBuilderValue** object.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.SetProperty* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type             | Description                                            |
 | -------- | ---------------- | ------------------------------------------------------ |
@@ -13,9 +13,9 @@ Sets a property to the **CDocBuilderValue** object.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;
@@ -29,15 +29,15 @@ CDocBuilder::Dispose();
 
 The **Set** method can be also used to set a property to the **CDocBuilderValue** object. The object property can be specified with its name in the Unicode format:
 
-```c++
+```cpp
 void Set(const wchar_t* name, CDocBuilderValue value);
 ```
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

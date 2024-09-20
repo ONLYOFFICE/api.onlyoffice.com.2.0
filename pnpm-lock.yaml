@@ -1536,12 +1536,6 @@ importers:
       remark-lint-no-duplicate-definitions:
         specifier: 4.0.0
         version: 4.0.0
-      remark-lint-no-duplicate-headings:
-        specifier: 4.0.0
-        version: 4.0.0
-      remark-lint-no-duplicate-headings-in-section:
-        specifier: 4.0.0
-        version: 4.0.0
       remark-lint-no-emphasis-as-heading:
         specifier: 4.0.0
         version: 4.0.0
@@ -1558,9 +1552,6 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
       remark-lint-no-heading-like-paragraph:
-        specifier: 4.0.0
-        version: 4.0.0
-      remark-lint-no-heading-punctuation:
         specifier: 4.0.0
         version: 4.0.0
       remark-lint-no-literal-urls:
@@ -8880,12 +8871,6 @@ packages:
   remark-lint-no-duplicate-definitions@4.0.0:
     resolution: {integrity: sha512-21fcOACkCyhNsHkedKlpvqIywYx+5zGR507bW8e59gzdGhTbnBwQ9du4ACmN9jxPTfIBhUVMz0bWezkGrHE7Bg==}
 
-  remark-lint-no-duplicate-headings-in-section@4.0.0:
-    resolution: {integrity: sha512-O6TPMdSs8AFEQeTA1mPI9CgCtJJ9UkfnXz1IlqRdTrpsCJ2DlwaPPXjS2LafQCHoJyf45DgjSwekHeV4WxHYxw==}
-
-  remark-lint-no-duplicate-headings@4.0.0:
-    resolution: {integrity: sha512-FgBU/JCdR5MitHM+hnOcgBGO5ZCNV8epzuHIglFlJeb8ow23YhhNgmGvyk7RGrZrYuU5R9uQq23N4dF0g9atCA==}
-
   remark-lint-no-emphasis-as-heading@4.0.0:
     resolution: {integrity: sha512-JViGYbuO/xzZThK+qVTNjtLM0v1xMTWFTWt2OJzAkDaGS6T9ZB5ZtRVSBFEMG0SF3dvpJwxe+3ABTsuPBdlYsA==}
 
@@ -8903,9 +8888,6 @@ packages:
 
   remark-lint-no-heading-like-paragraph@4.0.0:
     resolution: {integrity: sha512-6P22xHF+2omrQUA9ujQ5yBUlZr3goaAxoa1t3wNSIydzqkbgwLS+RlpGsVvilW1Q8h4JgWpB42Zpflat6xr90g==}
-
-  remark-lint-no-heading-punctuation@4.0.0:
-    resolution: {integrity: sha512-7V23C3Q4yX9zEOLZdbv6o8wVxxeWB/F+h9by55zPyk2AwbqF2t2xevnAmN3XFmKZABDTqLwjQxtK6bCVv/S1PQ==}
 
   remark-lint-no-literal-urls@4.0.0:
     resolution: {integrity: sha512-rl/3Ai4Ax9IH/fRpOJZuXk1HgYX6oFTauhmBOilpqbq/YT2kN3FuXaneXdRfKv1bgMdHaLKxHWxGj/mDyA2n8w==}
@@ -17254,30 +17236,6 @@ snapshots:
       unist-util-visit-parents: 6.0.1
       vfile-message: 4.0.2
 
-  remark-lint-no-duplicate-headings-in-section@4.0.0:
-    dependencies:
-      '@types/mdast': 4.0.3
-      devlop: 1.1.0
-      mdast-util-mdx: 3.0.0
-      mdast-util-to-string: 4.0.0
-      unified-lint-rule: 3.0.0
-      unist-util-visit-parents: 6.0.1
-      vfile-message: 4.0.2
-    transitivePeerDependencies:
-      - supports-color
-
-  remark-lint-no-duplicate-headings@4.0.0:
-    dependencies:
-      '@types/mdast': 4.0.3
-      devlop: 1.1.0
-      mdast-util-mdx: 3.0.0
-      mdast-util-to-string: 4.0.0
-      unified-lint-rule: 3.0.0
-      unist-util-visit-parents: 6.0.1
-      vfile-message: 4.0.2
-    transitivePeerDependencies:
-      - supports-color
-
   remark-lint-no-emphasis-as-heading@4.0.0:
     dependencies:
       '@types/mdast': 4.0.3
@@ -17322,16 +17280,6 @@ snapshots:
       unified-lint-rule: 3.0.0
       unist-util-position: 5.0.0
       unist-util-visit-parents: 6.0.1
-
-  remark-lint-no-heading-punctuation@4.0.0:
-    dependencies:
-      '@types/mdast': 4.0.3
-      mdast-util-mdx: 3.0.0
-      mdast-util-to-string: 4.0.0
-      unified-lint-rule: 3.0.0
-      unist-util-visit-parents: 6.0.1
-    transitivePeerDependencies:
-      - supports-color
 
   remark-lint-no-literal-urls@4.0.0:
     dependencies:

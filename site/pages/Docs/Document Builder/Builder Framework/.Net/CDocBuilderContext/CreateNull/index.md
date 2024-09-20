@@ -1,4 +1,4 @@
-#### CDocBuilderValue^ CreateNull();
+`CDocBuilderValue^ CreateNull();`
 
 Creates a null value, an analogue of *null* in JS.
 
@@ -6,9 +6,9 @@ Creates a null value, an analogue of *null* in JS.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

@@ -46,14 +46,14 @@ The *location* parameter contain URL which will be used to upload the file chunk
 
 Split the file into chunks. Each chunk must be equal to or less than 10 MB (1010241024 bytes), and multiples of 512 bytes. Use the resulting URLs to upload the chunks.
 
-> **Known issues**
-> 
+### Known issues
+
 > Please pay attention to the following details:
 > 
-> * Each chunk must be submitted in the order they appear in the file.
-> * Each chunk must be multiple of **512** and equal to or less than **10 Mb**.
-> * After receiving each chunk, the server will respond with the current information about the upload session if no errors occurred.
-> * When the number of bytes uploaded is equal to the number of bytes you sent in the initial request, the server responds with the **201 Created** status and sends you information about the uploaded file.
+> - Each chunk must be submitted in the order they appear in the file.
+> - Each chunk must be multiple of **512** and equal to or less than **10 Mb**.
+> - After receiving each chunk, the server will respond with the current information about the upload session if no errors occurred.
+> - When the number of bytes uploaded is equal to the number of bytes you sent in the initial request, the server responds with the **201 Created** status and sends you information about the uploaded file.
 
 The request body must contain the **FormData** object.
 
@@ -74,7 +74,7 @@ After the last chunk is uploaded, the server returns an object in the following 
 
 Below you can see an example in Node.js:
 
-``` javascript
+``` ts
 const fileResponse = await fetch("url_to_file")
 const data = await fileResponse.arrayBuffer()
 const size = fileResponse.headers.get("content-length")

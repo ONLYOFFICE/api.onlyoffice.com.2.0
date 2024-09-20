@@ -1,4 +1,4 @@
-**POST /wopi/files/*(file\_id)***
+`POST /wopi/files/(file_id)`
 
 Renames a file.
 
@@ -10,19 +10,19 @@ This operation works as follows:
 4. If the host cannot rename the file because the name requested is invalid or conflicts with the existing file, the host should try to generate a different name based on the requested name that meets the file name requirements.
 5. If the host cannot generate a different name, it should return **400 Bad Request**. The response must include the **X-WOPI-InvalidFileNameError** header that describes why the file name was invalid.
 
-### Parameters
+## Parameters
 
 | Name     | Description                        | Type   |
 | -------- | ---------------------------------- | ------ |
 | file\_id | The file ID that must be URL safe. | string |
 
-### Query parameters
+## Query parameters
 
 | Name          | Description                                                                            | Type   |
 | ------------- | -------------------------------------------------------------------------------------- | ------ |
 | access\_token | An access token that the host will use to determine whether the request is authorized. | string |
 
-### Request headers
+## Request headers
 
 | Name                 | Description                                                          | Type   | Presence |
 | -------------------- | -------------------------------------------------------------------- | ------ | -------- |
@@ -30,7 +30,7 @@ This operation works as follows:
 | X-WOPI-Lock          | The lock ID that the host must use to identify the lock on the file. | string | optional |
 | X-WOPI-RequestedName | A file name, not including the file extension (in the UTF-7 format). | string | optional |
 
-### Response headers
+## Response headers
 
 | Name                        | Description                                                                                                                                                                                                               | Type   | Presence |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
@@ -38,7 +38,7 @@ This operation works as follows:
 | X-WOPI-Lock                 | The lock ID identifying the current lock on the file. This header must always be included when responding to the request with **409 Conflict**. It should not be included when responding to the request with **200 OK**. | string | optional |
 | X-WOPI-LockFailureReason    | The cause of the lock failure. This header may be included when responding to the request with **409 Conflict**. It must only be used for logging purposes.                                                               | string | optional |
 
-### Response body
+## Response body
 
 | Name | Description                                             | Type   | Presence |
 | ---- | ------------------------------------------------------- | ------ | -------- |

@@ -4,16 +4,16 @@ order: -4
 
 *api.js* allows you to initialize the SDK in the following modes:
 
-* [manager](Manager/index.md) - displays a list of entities depending on the specified *rootPath*;
-* [room-selector](Room%20Selector/index.md) - opens the room selector;
-* [file-selector](File%20Selector/index.md) - opens the file selector;
-* [editor](Editor/index.md) - allows you to open the SDK as a document editor for editing by specifying the *id* parameter for a file;
-* [viewer](Viewer/index.md) - allows you to open the SDK as a document editor for viewing by specifying the *id* parameter for a file;
-* [system](System/index.md) - calls the system methods.
+- [manager](Manager/index.md) - displays a list of entities depending on the specified *rootPath*;
+- [room-selector](Room%20Selector/index.md) - opens the room selector;
+- [file-selector](File%20Selector/index.md) - opens the file selector;
+- [editor](Editor/index.md) - allows you to open the SDK as a document editor for editing by specifying the *id* parameter for a file;
+- [viewer](Viewer/index.md) - allows you to open the SDK as a document editor for viewing by specifying the *id* parameter for a file;
+- [system](System/index.md) - calls the system methods.
 
 To simplify working with modes, the SDK has methods that do not require you to specify the appropriate mode:
 
-### DocSpace.SDK
+## DocSpace.SDK
 
 | Name                                                     | Description                                            |
 | -------------------------------------------------------- | ------------------------------------------------------ |

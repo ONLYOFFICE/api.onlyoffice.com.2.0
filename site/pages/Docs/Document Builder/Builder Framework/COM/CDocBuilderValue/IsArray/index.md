@@ -1,10 +1,10 @@
-#### HRESULT IsArray(\[out, retval] VARIANT\_BOOL\* result);
+`HRESULT IsArray([out, retval] VARIANT_BOOL* result);`
 
 Returns true if the **CDocBuilderValue** object is an array.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type            | Description                                                    |
 | -------- | --------------- | -------------------------------------------------------------- |
@@ -12,9 +12,9 @@ Returns true if the **CDocBuilderValue** object is an array.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

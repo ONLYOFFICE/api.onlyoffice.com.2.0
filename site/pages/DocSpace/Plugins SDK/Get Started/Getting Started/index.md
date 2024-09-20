@@ -14,7 +14,7 @@ Here are the fundamental steps for building plugins:
 
 Install the *@onlyoffice/docspace-plugin-sdk* npm package globally:
 
-``` bash
+``` sh
 npm i -g @onlyoffice/docspace-plugin-sdk
 ```
 
@@ -24,7 +24,7 @@ Now, the **npx** command is available, which will be used to create a plugin.
 
 1. To create a plugin template, run the following command:
 
-   ``` bash
+   ``` sh
    npx create-docspace-plugin
    ```
 
@@ -40,13 +40,13 @@ More information about plugin settings and scopes can be found [here](../../Plug
 
 Develop a plugin. Follow the plugin structure described [here](../../Plugins%20SDK/Plugin%20Structure/index.md).
 
-* Write code for each [plugin type](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Types/index.md) using the corresponding variables, methods and [items](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Items/index.md). Put the scripts into the *src* folder. Specify the required [Plugin](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Types/Plugin/index.md) interface for each plugin to be embedded in the portal.
+- Write code for each [plugin type](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Types/index.md) using the corresponding variables, methods and [items](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Items/index.md). Put the scripts into the *src* folder. Specify the required [Plugin](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Types/Plugin/index.md) interface for each plugin to be embedded in the portal.
 
   ![Plugin structure](/assets/images/docspace/plugin-structure.png)
 
-* Specify [plugin messages](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Message/index.md) that will be returned by the items. Use the appropriate [events](../../Plugins%20SDK/Coding%20Plugin/Events/index.md) that will be processed on the portal side.
+- Specify [plugin messages](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Message/index.md) that will be returned by the items. Use the appropriate [events](../../Plugins%20SDK/Coding%20Plugin/Events/index.md) that will be processed on the portal side.
 
-* Learn which [plugin components](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Components/index.md) can be used for the DocSpace plugin interface and add them to your scripts.
+- Learn which [plugin components](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Components/index.md) can be used for the DocSpace plugin interface and add them to your scripts.
 
 Code samples are available at <https://github.com/ONLYOFFICE/docspace-plugins>.
 

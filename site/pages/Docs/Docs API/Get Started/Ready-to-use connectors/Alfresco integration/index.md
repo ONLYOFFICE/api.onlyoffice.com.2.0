@@ -4,17 +4,17 @@ The plugin is available in the official [Alfresco Add-ons directory](https://com
 
 ## Features
 
-* Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.
+- Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.
 
-* The plugin will create a new **Edit in ONLYOFFICE** menu option within the document library for Office documents.
+- The plugin will create a new **Edit in ONLYOFFICE** menu option within the document library for Office documents.
 
   ![Edit in OnlyOffice](/assets/images/editor/alfresco.png)
 
   This allows multiple users to collaborate in real time and to save back those changes to Alfresco.
 
-* To convert ODT, ODP, ODS, DOC, XLS, PPT files into their OOXML counterparts, select the **Convert using ONLYOFFICE** option. Resulting files will be placed in the same folder. You can also configure rules for a folder, that will automatically convert files on upload or on change. Details you can find [here](https://docs.alfresco.com/content-services/latest/using/content/rules/).
+- To convert ODT, ODP, ODS, DOC, XLS, PPT files into their OOXML counterparts, select the **Convert using ONLYOFFICE** option. Resulting files will be placed in the same folder. You can also configure rules for a folder, that will automatically convert files on upload or on change. Details you can find [here](https://docs.alfresco.com/content-services/latest/using/content/rules/).
 
-* To create a new document, open the folder where you want to create a document and click the **Create...** button. ![Create new...](/assets/images/editor/alfresco-create.png)
+- To create a new document, open the folder where you want to create a document and click the **Create...** button. ![Create new...](/assets/images/editor/alfresco-create.png)
 
 ## Installing ONLYOFFICE Docs
 
@@ -28,22 +28,21 @@ To start using ONLYOFFICE Docs with Alfresco, the following steps must be perfor
 
 1. Upload the compiled **\*.amp** packages to directories accordingly for your Alfresco installation:
 
-   * from *onlyoffice-alfresco/repo/target/* to */usr/local/tomcat/amps/* for Alfresco repository,
-   * from *onlyoffice-alfresco/share/target/* to */usr/local/tomcat/amps\_share/* for Share.
-
+   - from *onlyoffice-alfresco/repo/target/* to */usr/local/tomcat/amps/* for Alfresco repository,
+   - from *onlyoffice-alfresco/share/target/* to */usr/local/tomcat/amps\_share/* for Share.
    > You can download the already compiled package files [here](https://github.com/onlyoffice/onlyoffice-alfresco/releases) and place them to the respective directories.
 
 2. Use the **Module Management Tool (MMT)** to install modules, run this commands:
 
    **Alfresco**
 
-   ``` bash
+   ``` sh
    java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt.jar install /usr/local/tomcat/amps/onlyoffice-integration-repo.amp /usr/local/tomcat/webapps/alfresco
    ```
 
    **Share**
 
-   ``` bash
+   ``` sh
    java -jar /usr/local/tomcat/alfresco-mmt/alfresco-mmt.jar install /usr/local/tomcat/amps_share/onlyoffice-integration-share.amp /usr/local/tomcat/webapps/share
    ```
 
@@ -67,7 +66,7 @@ To start using ONLYOFFICE Docs with Alfresco, the following steps must be perfor
 
 4. Restart Alfresco:
 
-   ``` bash
+   ``` sh
    sudo ./alfresco.sh stop
    sudo ./alfresco.sh start
    ```
@@ -88,27 +87,28 @@ If you plan to compile the ONLYOFFICE Alfresco module package yourself (e.g. edi
 
 1. The latest stable **Oracle Java** version is necessary for the successful build. If you do not have it installed, use the following commands to install Oracle Java 8:
 
-   ``` bash
+   ``` sh
    sudo apt-get update
    sudo apt-get install openjdk-8-jdk
    ```
 
 2. Install the latest **Maven**. Installation process is described [here](https://maven.apache.org/install.html).
+
 3. Download the ONLYOFFICE Alfresco module package source code:
 
-   ``` bash
+   ``` sh
    git clone https://github.com/ONLYOFFICE/onlyoffice-alfresco.git
    ```
 
 4. Get a submodule:
 
-   ``` bash
+   ``` sh
    git submodule update --init --recursive
    ```
 
 5. Compile packages in the *repo* and *share* directories:
 
-   ``` bash
+   ``` sh
    cd onlyoffice-alfresco/
    mvn clean install
    ```
@@ -117,7 +117,7 @@ Another way to build ONLYOFFICE Alfresco module package is using **docker-compos
 
 Use this command from project directory:
 
-``` bash
+``` sh
 docker-compose up
 ```
 
@@ -131,11 +131,11 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 3. Alfresco Repo end prepares a JSON object for the Share with the following properties:
 
-   * **url** - the URL that ONLYOFFICE Docs uses to download the document (includes the *alf\_ticket* of the current user);
-   * **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **onlyofficeUrl** - the URL that the client needs to respond to ONLYOFFICE Docs (provided by the *onlyoffice.url* property);
-   * **key** - the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not;
-   * **title** - the document title (name).
+   - **url** - the URL that ONLYOFFICE Docs uses to download the document (includes the *alf\_ticket* of the current user);
+   - **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **onlyofficeUrl** - the URL that the client needs to respond to ONLYOFFICE Docs (provided by the *onlyoffice.url* property);
+   - **key** - the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not;
+   - **title** - the document title (name).
 
 4. Alfresco Share takes this object and constructs a page from a freemarker template, filling in all of those values so that the client browser can load up the editor.
 

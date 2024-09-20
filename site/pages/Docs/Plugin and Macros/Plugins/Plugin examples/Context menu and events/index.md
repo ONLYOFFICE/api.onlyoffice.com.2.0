@@ -118,7 +118,7 @@ Copy the code below and save it in the *config.json*, *index.html*, and *code.js
 
 ## Plugin code
 
-``` javascript
+``` ts
 console.log("work")
 window.Asc.plugin.init = function init() {}
 window.Asc.plugin.button = function button(id) {
@@ -208,12 +208,12 @@ window.Asc.plugin.event_onTargetPositionChanged = function event_onTargetPositio
 
 ## Methods and events
 
-* button
-* init
-* onTargetPositionChanged
-* attachContextMenuClickEvent
-* executeMethod ("AddContextMenuItem")
-* executeMethod ("InputText")
+- button
+- init
+- onTargetPositionChanged
+- attachContextMenuClickEvent
+- executeMethod ("AddContextMenuItem")
+- executeMethod ("InputText")
 
 ## Support
 

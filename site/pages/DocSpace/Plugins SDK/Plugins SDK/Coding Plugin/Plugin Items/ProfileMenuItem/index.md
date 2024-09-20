@@ -4,7 +4,6 @@ order: -3
 
 Describes an item that will be embedded in the profile menu.
 
-
 ## key
 
 Defines the unique item identifier used by the service to recognize the item.
@@ -12,7 +11,6 @@ Defines the unique item identifier used by the service to recognize the item.
 Type: string
 
 Example: "profile-menu-plugin"
-
 
 ## label
 
@@ -22,7 +20,6 @@ Type: string
 
 Example: "Profile menu item"
 
-
 ## icon
 
 Defines the item display icon. The icon image must be uploaded to the *assets* folder. Only the image name with the extension must be specified in this field. The required icon size is 16x16 px. Otherwise, it will be compressed to this size.
@@ -30,7 +27,6 @@ Defines the item display icon. The icon image must be uploaded to the *assets* f
 Type: string
 
 Example: "logo.png"
-
 
 ## onClick
 
@@ -40,15 +36,13 @@ Type: func
 
 Example: `() => {}`
 
-
 ## usersType
 
 Defines the types of users who will see the current item in the context menu. Currently the following user types are available: **owner**, **docSpaceAdmin**, **roomAdmin**, **collaborator**, **user**. If this parameter is not specified, then the current context menu item will be displayed for all user types.
 
 Type: array of [UsersType](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/UsersType.ts)
 
-Example: [UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin]
-
+Example: \[UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin\]
 
 ## devices
 
@@ -58,10 +52,9 @@ Type: array of [Devices](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/
 
 Example: \[Devices.desktop]
 
+## Example
 
-**Example**
-
-``` javascript
+``` ts
 import {type IProfileMenuItem} from "@onlyoffice/docspace-plugin-sdk"
 
 export const ProfileMenuItem: IProfileMenuItem = {

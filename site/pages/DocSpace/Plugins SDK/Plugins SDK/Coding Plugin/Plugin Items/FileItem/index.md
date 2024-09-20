@@ -2,7 +2,6 @@
 order: -2
 ---
 
-
 Describes an item that allows the plugin to control clicking on the specified file type. It does not work with the files that already have some actions.
 
 ## extension
@@ -13,7 +12,6 @@ Type: string
 
 Example: ".drawio"
 
-
 ## onClick
 
 Defines a function that takes the *File* object with the file data as an argument. This function can be asynchronous. It will be executed when the user clicks on a file with the required extension.
@@ -22,15 +20,13 @@ Type: func
 
 Example: `async (item: File) => {}`
 
-
 ## usersType
 
 Defines the types of users who will see the current item in the context menu. Currently the following user types are available: **owner**, **docSpaceAdmin**, **roomAdmin**, **collaborator**, **user**. If this parameter is not specified, then the current context menu item will be displayed for all user types.
 
 Type: array of [UsersType](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/UsersType.ts)
 
-Example: [UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin]
-
+Example: \[UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin]
 
 ## devices
 
@@ -40,7 +36,6 @@ Type: array of [Devices](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/
 
 Example: \[Devices.desktop]
 
-
 ## fileTypeName
 
 Defines a file type which is displayed in the list (for example, Document/Folder).
@@ -48,7 +43,6 @@ Defines a file type which is displayed in the list (for example, Document/Folder
 Type: string
 
 Example: "Diagram"
-
 
 ## fileRowIcon
 
@@ -58,7 +52,6 @@ Type: string
 
 Example: "drawio-32.svg"
 
-
 ## fileTileIcon
 
 Defines a file icon which is displayed in the tile format. The preferred icon size is 96x96 px.
@@ -67,10 +60,9 @@ Type: string
 
 Example: "drawio-96.svg"
 
+## Example
 
-**Example**
-
-``` javascript
+``` ts
 import {type File, type IFileItem} from "@onlyoffice/docspace-plugin-sdk"
 
 export const drawIoItem: IFileItem = {

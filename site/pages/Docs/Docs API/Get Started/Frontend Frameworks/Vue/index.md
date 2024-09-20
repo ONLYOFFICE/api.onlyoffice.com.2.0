@@ -10,19 +10,19 @@ This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/
 
 1. Open a command line or command prompt and create a Vue.js 3.x project named *onlyoffice-vue-demo* using the [Create Vue Tool](https://github.com/vuejs/create-vue):
 
-   ``` bash
+   ``` sh
    npm create vue@3
    ```
 
 2. Go to the newly created directory:
 
-   ``` bash
+   ``` sh
    cd onlyoffice-vue-demo
    ```
 
 3. Install ONLYOFFICE Docs Vue.js component from **npm** and save it to the *package.json* file with *--save*:
 
-   ``` bash
+   ``` sh
    npm install --save @onlyoffice/document-editor-vue
    ```
 
@@ -90,19 +90,19 @@ This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/
 
    Replace the following lines with your own data:
 
-   * `http://documentserver/` - replace with the URL of your server;
-   * `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
-   * `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
+   - `http://documentserver/` - replace with the URL of your server;
+   - `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
+   - `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
 
 5. Test the application using the Vue development server:
 
-   * To start the development server, navigate to the *onlyoffice-vue-demo* directory and run:
+   - To start the development server, navigate to the *onlyoffice-vue-demo* directory and run:
 
-     ``` bash
+     ``` sh
      npm run dev
      ```
 
-   * To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
+   - To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
 
 ## Deploying the demo Vue.js application
 
@@ -110,25 +110,25 @@ The easiest way to deploy the application to a production environment is to inst
 
 1. Install the *serve* package globally:
 
-   ``` bash
+   ``` sh
    npm install -g serve
    ```
 
 2. Serve your static site on the 3000 port:
 
-   ``` bash
+   ``` sh
    serve -s build
    ```
 
    Another port can be adjusted using the *-l* or *--listen* flags:
 
-   ``` bash
+   ``` sh
    serve -s build -l 4000
    ```
 
 3. To serve the project folder, go to it and run the *serve* command:
 
-   ``` bash
+   ``` sh
    cd onlyoffice-vue-demo
    serve
    ```
@@ -137,7 +137,7 @@ Now you can deploy the application to the created server:
 
 1. Navigate to the *onlyoffice-vue-demo* directory and run:
 
-   ``` bash
+   ``` sh
    npm run build
    ```
 
@@ -200,13 +200,13 @@ Install [Storybook](https://storybook.js.org/) to develop UI components in isola
 
 2. Build Storybook with the following command:
 
-   ``` bash
+   ``` sh
    npm run build-storybook
    ```
 
 3. Start Storybook:
 
-   ``` bash
+   ``` sh
    npm run storybook
    ```
 
@@ -214,31 +214,31 @@ Install [Storybook](https://storybook.js.org/) to develop UI components in isola
 
 1. Clone project from the GitHub repository:
 
-   ``` bash
+   ``` sh
    git clone https://github.com/ONLYOFFICE/document-editor-vue
    ```
 
 2. Install the project dependencies:
 
-   ``` bash
+   ``` sh
    npm install
    ```
 
 3. Test the component:
 
-   ``` bash
+   ``` sh
    npm run test
    ```
 
 4. Build the project:
 
-   ``` bash
+   ``` sh
    npm run build
    ```
 
 5. Create the package:
 
-   ``` bash
+   ``` sh
    npm pack
    ```
 

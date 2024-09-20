@@ -1,10 +1,10 @@
-#### HRESULT CreateTypedArray(\[in] VARIANT buffer, \[in] long length, \[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT CreateTypedArray([in] VARIANT buffer, [in] long length, [out, retval] I_DOCBUILDER_VALUE** result);`
 
 Creates a Uint8Array value, an analogue of *Uint8Array* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateTypedArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description               |
 | -------- | ------------------------ | ------------------------- |
@@ -14,9 +14,9 @@ Creates a Uint8Array value, an analogue of *Uint8Array* in JS.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

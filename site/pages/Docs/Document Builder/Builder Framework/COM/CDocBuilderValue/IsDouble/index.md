@@ -1,10 +1,10 @@
-#### HRESULT IsDouble(\[out, retval] VARIANT\_BOOL\* result);
+`HRESULT IsDouble([out, retval] VARIANT_BOOL* result);`
 
 Returns true if the **CDocBuilderValue** object is a double value.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsDouble* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type            | Description                                                          |
 | -------- | --------------- | -------------------------------------------------------------------- |
@@ -12,9 +12,9 @@ Returns true if the **CDocBuilderValue** object is a double value.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

@@ -1,10 +1,10 @@
-#### def CreateArray(self, length);
+`def CreateArray(self, length);`
 
 Creates an array value, an analogue of *new Array (length)* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type | Description       |
 | -------- | ---- | ----------------- |
@@ -12,9 +12,9 @@ Creates an array value, an analogue of *new Array (length)* in JS.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 content = context.CreateArray(1)

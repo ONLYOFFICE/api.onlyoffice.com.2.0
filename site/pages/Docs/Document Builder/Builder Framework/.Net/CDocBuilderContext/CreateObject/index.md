@@ -1,4 +1,4 @@
-#### CDocBuilderValue^ CreateObject();
+`CDocBuilderValue^ CreateObject();`
 
 Creates an empty object, an analogue of *{}* in JS.
 
@@ -6,9 +6,9 @@ Creates an empty object, an analogue of *{}* in JS.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

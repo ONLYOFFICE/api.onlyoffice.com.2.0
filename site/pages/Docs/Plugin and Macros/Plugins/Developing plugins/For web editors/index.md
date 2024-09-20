@@ -8,7 +8,7 @@ To develop a plugin for ONLYOFFICE web editors, follow the instructions below.
 
 2. Start distributing a folder. To do this, open the created folder and run the following commands:
 
-   ``` bash
+   ``` sh
    npm install http-server -g
    http-server -p <port> --cors
    ```
@@ -19,7 +19,7 @@ To develop a plugin for ONLYOFFICE web editors, follow the instructions below.
 
 3. Open the developer console in any ONLYOFFICE web editor, go to the **Console** tab, choose the **frameEditor** from the drop-down list, and run the following command:
 
-   ``` bash
+   ``` sh
    Asc.editor.installDeveloperPlugin("https://<documentserver>:<port>/config.json");
    ```
 
@@ -34,9 +34,12 @@ To develop a plugin for ONLYOFFICE web editors, follow the instructions below.
 To debug ONLYOFFICE plugins in the web editors, follow the instructions below.
 
 1. Add the **debugger** command to your script:
+
 <!-- This code snippet is shown in the screenshot. -->
+
 <!-- eslint-skip -->
-   ``` javascript
+
+   ``` ts
    (function debugger(window, undefined){
 
     var text = "Hello world!";

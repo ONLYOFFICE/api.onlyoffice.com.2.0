@@ -1,4 +1,4 @@
-#### CDocBuilderValue^ GetGlobal();
+`CDocBuilderValue^ GetGlobal();`
 
 Returns the global object for the current context.
 
@@ -6,9 +6,9 @@ Returns the global object for the current context.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

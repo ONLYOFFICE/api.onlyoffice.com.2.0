@@ -1,4 +1,4 @@
-#### def CreateScope(self);
+`def CreateScope(self);`
 
 Creates a [context scope](../../CDocBuilderContextScope/index.md) which sets the execution context for all operations executed within a local scope.
 
@@ -6,9 +6,9 @@ Creates a [context scope](../../CDocBuilderContextScope/index.md) which sets the
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 scope = context.CreateScope()

@@ -33,8 +33,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/s
 
 5. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/symboltable/licenses/jQuery.license).
-   * [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/symboltable/licenses/Select2.license).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/symboltable/licenses/jQuery.license).
+   - [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/symboltable/licenses/Select2.license).
 
 ## Config
 
@@ -99,14 +99,14 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/s
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
-* onMethodReturn
-* onTranslate
-* executeMethod ("GetFontList")
-* executeMethod ("PasteHtml")
-* info.editorType
+- button
+- init
+- onExternalMouseUp
+- onMethodReturn
+- onTranslate
+- executeMethod ("GetFontList")
+- executeMethod ("PasteHtml")
+- info.editorType
 
 ## Support
 

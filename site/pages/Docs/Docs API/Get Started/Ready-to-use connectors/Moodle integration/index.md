@@ -2,10 +2,10 @@ This [plugin](https://github.com/ONLYOFFICE/moodle-mod_onlyofficeeditor) enables
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, XLSX, PPTX, TXT, CSV.
-* The following formats are available for viewing only: PDF.
-* Currently, the following document formats can be converted into OOXML: ODT, ODS, ODP, DOC, XLS, PPT, PPS, EPUB, RTF, HTML, HTM.
-* The plugin will create a new **ONLYOFFICE document** activity as one of the edit modes for the necessary course page. This allows multiple users to collaborate in real time and to save back those changes to Moodle.
+- Currently, the following document formats can be edited: DOCX, XLSX, PPTX, TXT, CSV.
+- The following formats are available for viewing only: PDF.
+- Currently, the following document formats can be converted into OOXML: ODT, ODS, ODP, DOC, XLS, PPT, PPS, EPUB, RTF, HTML, HTM.
+- The plugin will create a new **ONLYOFFICE document** activity as one of the edit modes for the necessary course page. This allows multiple users to collaborate in real time and to save back those changes to Moodle.
 
 ## Installing ONLYOFFICE Docs
 
@@ -25,15 +25,15 @@ The latest compiled package files are available [here](https://github.com/ONLYOF
 
 Once the plugin is installed, the plugin settings page will be opened. Alternatively, you can find the uploaded app on the **Plugins overview** page and click **Settings**.
 
-* Enter the name of the server with ONLYOFFICE Docs installed in the **Document Editing Service address** field:
+- Enter the name of the server with ONLYOFFICE Docs installed in the **Document Editing Service address** field:
 
-  ```
+  ``` sh
   http://documentserver/
   ```
 
   where **documentserver** is the name of the server with **ONLYOFFICE Docs** installed. The address must be accessible from the user browser and from the Moodle server. The Moodle server address must also be accessible from **ONLYOFFICE Docs** for correct work.
 
-* Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your own **Document Server Secret** on the Moodle **Settings** page. In the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), specify the same secret key and enable the validation.
+- Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your own **Document Server Secret** on the Moodle **Settings** page. In the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), specify the same secret key and enable the validation.
 
 ## Using Moodle ONLYOFFICE integration plugin
 

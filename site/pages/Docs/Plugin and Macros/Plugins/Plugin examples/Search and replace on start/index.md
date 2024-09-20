@@ -55,10 +55,10 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/s
 
 ## Methods and events
 
-* button
-* init
-* onDocumentContentReady
-* executeMethod ("SearchAndReplace")
+- button
+- init
+- onDocumentContentReady
+- executeMethod ("SearchAndReplace")
 
 ## Support
 

@@ -8,8 +8,8 @@ order: -8
 
 The **action** element of the discovery XML provides the important characteristics of the online office. This element represents:
 
-* available document operations in the online office,
-* supported file formats (extensions).
+- available document operations in the online office,
+- supported file formats (extensions).
 
 ### WOPI actions
 

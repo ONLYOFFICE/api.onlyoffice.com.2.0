@@ -1,4 +1,4 @@
-#### CDocBuilderValue GetGlobal();
+`CDocBuilderValue GetGlobal();`
 
 Returns the global object for the current context.
 
@@ -6,9 +6,9 @@ Returns the global object for the current context.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

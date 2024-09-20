@@ -10,13 +10,13 @@ To exchange the data between the files *GlobalVariable* is introduced.
 
 What you need, is to create a variable in the first opened or created file using the *GlobalVariable* method, e.g.:
 
-```js
+``` ts
 GlobalVariable["CommentsReport"] = oDocument.GetCommentsReport()
 ```
 
 Then close the document and open or create a new one where this variable can be used without any problems, e.g.:
 
-```js
+``` ts
 const oCommentsReport = GlobalVariable["CommentsReport"]
 ```
 
@@ -24,7 +24,7 @@ The example below shows how *GlobalVariable* is used. For more information visit
 
 ## Example
 
-```js
+``` ts
 builder.OpenFile("https://example.com/DocumentWithComments.docx")
 const oDocument = Api.GetDocument()
 GlobalVariable["CommentsReport"] = oDocument.GetCommentsReport()

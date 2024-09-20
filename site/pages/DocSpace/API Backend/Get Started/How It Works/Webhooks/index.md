@@ -16,7 +16,7 @@ The **Accept** and **Content-Type** webhook headers must be used. Custom headers
 
 The API request is signed with the secret key which is generated when creating the webhook:
 
-``` csharp
+``` cs
 private string GetSecretHash(string secretKey, string body)
 {
     var secretBytes = Encoding.UTF8.GetBytes(secretKey);
@@ -42,7 +42,7 @@ The webhook request body contains the original request body.
 
 The request timeout is 5 minutes:
 
-``` csharp
+``` cs
 var lifeTime = TimeSpan.FromMinutes(5);
 
 Func<IServiceProvider, HttpRequestMessage, IAsyncPolicy<HttpResponseMessage>> policyHandler = (s, _) =>

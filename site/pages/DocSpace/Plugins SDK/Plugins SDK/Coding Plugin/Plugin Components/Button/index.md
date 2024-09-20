@@ -18,7 +18,6 @@ Type: string
 
 Example: "Convert file"
 
-
 ### size
 
 The button size. The normal size is equal to 36x40 px on the Desktop and Touchcreen devices. Can be: *extraSmall, small, normal, medium*. The default value is *extraSmall*.
@@ -27,7 +26,6 @@ Type: ButtonSize
 
 Example: normal
 
-
 ### onClick
 
 Sets a function which specifies an action initiated upon clicking the button.
@@ -35,7 +33,6 @@ Sets a function which specifies an action initiated upon clicking the button.
 Type: func
 
 Example: `() => {}`
-
 
 ### primary
 
@@ -47,7 +44,6 @@ Type: boolean
 
 Example: true
 
-
 ### scale
 
 Specifies if the button width will be scaled to 100% or not.
@@ -55,7 +51,6 @@ Specifies if the button width will be scaled to 100% or not.
 Type: boolean
 
 Example: true
-
 
 ### isLoading
 
@@ -67,7 +62,6 @@ Type: boolean
 
 Example: true
 
-
 ### isDisabled
 
 Specifies if the button is disabled or not. The disabled button is blurred.
@@ -77,7 +71,6 @@ Specifies if the button is disabled or not. The disabled button is blurred.
 Type: boolean
 
 Example: false
-
 
 ## Extra parameters
 
@@ -89,7 +82,6 @@ Type: boolean
 
 Example: true
 
-
 ### disableWhileRequestRunning
 
 Specifies whether to set the [isDisabled](#isdisabled) state for the button when the *withLoadingAfterClick* parameter is set to **true**, and it is clicked either on the page or in the dialog box.
@@ -98,10 +90,9 @@ Type: boolean
 
 Example: true
 
+## Example
 
-### Example
-
-``` javascript
+``` ts
 import {ButtonSize, type IButton} from "@onlyoffice/docspace-plugin-sdk"
 
 const buttonProps: IButton = {

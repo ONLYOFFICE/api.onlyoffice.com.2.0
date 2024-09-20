@@ -6,9 +6,9 @@ An HTTP header is required to pass the authentication when performing the API re
 
 **Authentication Token** is a string sequence in the following format: "ASC *pkey*:*datetime*:*hash*", where
 
-* **pkey** - random string,
-* **datetime** - current UTC date and time in the "*yyyyMMddHHmmss*" format,
-* **hash** - hash value for the string in the "*datetime*\n*pkey*" format.
+- **pkey** - random string,
+- **datetime** - current UTC date and time in the "*yyyyMMddHHmmss*" format,
+- **hash** - hash value for the string in the "*datetime*\n*pkey*" format.
 
 The hash value is calculated using the HMAC-SHA1 function with the key from the *core.machinekey* value of the Hosted Solution site *appSettings* configuration.
 
@@ -16,9 +16,11 @@ The hash value is calculated using the HMAC-SHA1 function with the key from the 
 
 Authentication Token example will look like this: "*ASC abc:20100707140603:E7lwEXOplYS-0lbnV1XQnDSbi3w*"
 
+## Generating token examples
+
 ### .Net(C#) generating token example
 
-``` csharp
+``` cs
 public string CreateAuthToken(string pkey, string machinekey)
 {
     using (var hasher = new System.Security.Cryptography.HMACSHA1(System.Text.Encoding.UTF8.GetBytes(machinekey)))
@@ -33,7 +35,7 @@ public string CreateAuthToken(string pkey, string machinekey)
 
 ### Bash generating token example
 
-``` bash
+``` sh
 CreateAuthToken() {
     pkey="$1";
     machinekey=$(echo -n "$2");
@@ -48,7 +50,7 @@ CreateAuthToken() {
 
 ### Node.js generating token example
 
-``` javascript
+``` ts
 import crypto from "node:crypto"
 import moment from "moment"
 
@@ -83,7 +85,7 @@ function CreateAuthToken($pkey, $machinekey) {
 
 ### PowerShell generating token example
 
-``` powershell
+``` ps1
 function CreateAuthToken([string]$pkey, [string]$machinekey) {
     $hmacsha = New-Object System.Security.Cryptography.HMACSHA1
     $hmacsha.Key = [System.Text.Encoding]::UTF8.GetBytes($machinekey)
@@ -100,7 +102,7 @@ function CreateAuthToken([string]$pkey, [string]$machinekey) {
 
 ### Ruby generating token example
 
-``` ruby
+``` rb
 def create_auth_token(pkey, machine_key)
     now = Time.now.strftime('%Y%m%d%H%M%S')
     hash = Base64.strict_encode64(OpenSSL::HMAC.digest('sha1', machine_key, [now, pkey].join("\n")))
@@ -110,7 +112,7 @@ end
 
 ### Python generating token example
 
-``` python
+``` py
 import base64
 import hashlib
 import hmac

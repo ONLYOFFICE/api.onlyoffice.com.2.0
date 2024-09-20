@@ -9,8 +9,10 @@ Imports data from remote CSV/TXT files into the spreadsheet.
 > This macro is operational only with the desktop versions of the ONLYOFFICE editors.
 
 <!-- This code snippet is shown in the screenshot. -->
+
 <!-- eslint-skip -->
-``` javascript
+
+``` ts
 (function() 
 {
     function LoadFile() {
@@ -46,6 +48,6 @@ Imports data from remote CSV/TXT files into the spreadsheet.
 
 Methods used: GetActiveSheet, GetCells, SetValue
 
-##  Result
+## Result
 
 ![Import CSV/text data](/assets/images/plugins/import-csv-macro.png)

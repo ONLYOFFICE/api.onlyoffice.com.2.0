@@ -40,9 +40,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 5. Third-party services:
 
-   * [GuessLanguage](https://richtr.github.io/guessLanguage.js/) is a natural language detection library based on trigram statistical analysis. This library is written in JavaScript and works equally well when run in either browser or Node.js. License: [GNU LGPL](https://www.gnu.org/licenses/lgpl-3.0.html).
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/speech/licenses/jQuery.license).
-   * [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/speech/licenses/Select2.license).
+   - [GuessLanguage](https://richtr.github.io/guessLanguage.js/) is a natural language detection library based on trigram statistical analysis. This library is written in JavaScript and works equally well when run in either browser or Node.js. License: [GNU LGPL](https://www.gnu.org/licenses/lgpl-3.0.html).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/speech/licenses/jQuery.license).
+   - [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/speech/licenses/Select2.license).
 
 ## Config
 
@@ -181,8 +181,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* buttons
-* init
+- buttons
+- init
 
 ## Support
 

@@ -27,10 +27,14 @@ The plugin guid: {38E022EA-AD92-45FC-B22B-49DF39746DB4}.
 Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/youtube>.
 
 1. *config.json*, *index.html*, and *youtube.js*
+
 2. Icons
+
 3. The *translations* folder contains translations into Russian, German, Spanish, Czech, and French.
+
 4. Third-party service:
-   * [Youtube iframe\_api](https://developers.google.com/youtube/iframe_api_reference) lets the user embed a YouTube video player on the website and control the player using JavaScript. License: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+   - [Youtube iframe\_api](https://developers.google.com/youtube/iframe_api_reference) lets the user embed a YouTube video player on the website and control the player using JavaScript. License: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 ## Config
 
@@ -117,20 +121,20 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onTranslate
-* executeMethod ("AddOleObject")
-* executeMethod ("EditOleObject")
-* resizeWindow
-* info.data
-* info.guid
-* info.height
-* info.imgSrc
-* info.mmToPx
-* info.objectId
-* info.resize
-* info.width
+- button
+- init
+- onTranslate
+- executeMethod ("AddOleObject")
+- executeMethod ("EditOleObject")
+- resizeWindow
+- info.data
+- info.guid
+- info.height
+- info.imgSrc
+- info.mmToPx
+- info.objectId
+- info.resize
+- info.width
 
 ## Supports
 

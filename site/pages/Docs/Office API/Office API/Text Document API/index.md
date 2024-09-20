@@ -14,12 +14,11 @@ A table has a little bit more complex structure, as it comprises *table rows*, w
 
 A block content control can also contain the *paragraph*, *table* or another *block content control* inside it.
 
-
 ## Creating a new text document
 
 The simplest example text document with a single paragraph containing centered "Center" text can be built with the help of **ONLYOFFICE Document Builder** using the following code:
 
-``` js
+``` ts
 // create a text document file in the .docx format with ONLYOFFICE Document Builder
 builder.CreateFile("docx")
 
@@ -45,18 +44,19 @@ builder.SaveFile("docx", "example.docx")
 builder.CloseFile()
 ```
 
-> Actually in the above example the created text document will have two paragraphs, as the first paragraph is created by default for an empty text document, i.e. a new empty text document always contains at least one paragraph. You can address the first paragraph to change it using the *Api.GetElement(0)* method, so that line 4 of the above code looked like this:
-> ``` js
-> oParagraph = oDocument.GetElement(0)
-> ```
-> and line 7 (*oDocument.Push(oParagraph);*) is not needed.
+Actually in the above example the created text document will have two paragraphs, as the first paragraph is created by default for an empty text document, i.e. a new empty text document always contains at least one paragraph. You can address the first paragraph to change it using the *Api.GetElement(0)* method, so that line 4 of the above code looked like this:
 
+``` ts
+oParagraph = oDocument.GetElement(0)
+```
+
+and line 7 (*oDocument.Push(oParagraph);*) is not needed.
 
 ## Opening an existing text document
 
 If you want to edit an already existing text document, you can open it using **ONLYOFFICE Document Builder**, get its elements and change them however you need. The only difference from a document editor in this case will be that you will not need this text document editor. The document is opened the following way:
 
-``` js
+``` ts
 // use a path to an existing 'mydocument.docx' text document file to open it with ONLYOFFICE Document Builder
 builder.OpenFile("https://example.com/mydocument.docx")
 

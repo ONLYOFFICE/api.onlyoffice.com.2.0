@@ -8,7 +8,7 @@ Manages review process from an external source.
 
 1. When the user clicks the **Accept / Reject** buttons in the custom interface, the AcceptReviewChanges / RejectReviewChanges methods are executed to accept / reject the selected change in the editor:
 
-   ``` javascript
+   ``` ts
    $("#accept").on("click", () => {
      connector.executeMethod("AcceptReviewChanges")
    })
@@ -19,7 +19,7 @@ Manages review process from an external source.
 
 2. When the user clicks the arrow buttons in the custom interface, the MoveToNextReviewChange method is executed to move between the next and previous review changes:
 
-   ``` javascript
+   ``` ts
    $("#prev").on("click", () => {
      connector.executeMethod("MoveToNextReviewChange", [false])
    })

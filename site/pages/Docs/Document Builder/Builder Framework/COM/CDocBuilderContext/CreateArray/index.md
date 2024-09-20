@@ -1,10 +1,10 @@
-#### HRESULT CreateArray(\[in] long length, \[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT CreateArray([in] long length, [out, retval] I_DOCBUILDER_VALUE** result);`
 
 Creates an array value, an analogue of *new Array (length)* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description         |
 | -------- | ------------------------ | ------------------- |
@@ -13,9 +13,9 @@ Creates an array value, an analogue of *new Array (length)* in JS.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

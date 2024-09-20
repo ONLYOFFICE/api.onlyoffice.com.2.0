@@ -10,37 +10,37 @@ This procedure creates a [basic Angular application](https://angular.io/guide/se
 
 1. Open a command line or command prompt and install the [Angular CLI Tool](https://angular.io/cli) package:
 
-   ``` bash
+   ``` sh
    npm install -g @angular/cli
    ```
 
 2. Create a new Angular project named *onlyoffice-angular-demo*:
 
-   ``` bash
+   ``` sh
    ng new --defaults --skip-git onlyoffice-angular-demo
    ```
 
 3. Go to the newly created directory:
 
-   ``` bash
+   ``` sh
    cd onlyoffice-angular-demo
    ```
 
 4. Install ONLYOFFICE Docs Angular component from **npm** and save it to the *package.json* file with *--save*:
 
-   ``` bash
+   ``` sh
    npm install --save @onlyoffice/document-editor-angular
    ```
 
    You can also use the following **yarn** command:
 
-   ``` bash
+   ``` sh
    yarn add @onlyoffice/document-editor-angular
    ```
 
 The following steps depend on the Angular version you use. To check the installed version, run the following command:
 
-``` bash
+``` sh
 ng version
 ```
 
@@ -48,7 +48,7 @@ ng version
 
 1. Open the *./src/app/app.module.ts* file in the *onlyoffice-angular-demo* project and import the **DocumentEditorModule**:
 
-   ``` typescript
+   ``` ts
    import {NgModule} from "@angular/core"
    import {BrowserModule} from "@angular/platform-browser"
    import {DocumentEditorModule} from "@onlyoffice/document-editor-angular"
@@ -71,7 +71,7 @@ ng version
 
 2. Open the *./src/app/app.component.ts* file in the *onlyoffice-angular-demo* project and define options in your consuming component:
 
-   ``` typescript
+   ``` ts
    import {Component} from "@angular/core"
    import {type IConfig} from "@onlyoffice/document-editor-angular"
    
@@ -115,8 +115,8 @@ ng version
 
    Replace the following lines with your own data:
 
-   * `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
-   * `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
+   - `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
+   - `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
 
    This TypeScript file will create the *AppComponent* component containing the ONLYOFFICE Docs editor configured with basic features.
 
@@ -134,85 +134,84 @@ ng version
 
    Replace the `http://documentserver/` line with the URL of your server.
 
-
 ### Versions 17.0.0 and above
 
 1. Open the *./src/app/app.component.ts* file in the *onlyoffice-angular-demo* project and define options in your consuming component:
 
    > Please note that starting from Angular v17.0.0, the *app.module.ts* file is not added to the new projects by default. You must specify *DocumentEditorModule* in the *imports* property of the *Component* decorator and set *standalone* to *true*.
 
-  ``` typescript
-  import {Component} from "@angular/core"
-  import {DocumentEditorModule, type IConfig} from "@onlyoffice/document-editor-angular"
+   ``` ts
+   import {Component} from "@angular/core"
+   import {DocumentEditorModule, type IConfig} from "@onlyoffice/document-editor-angular"
 
-  @Component({
-    selector: "app-root",
-    standalone: true,
-    imports: [DocumentEditorModule],
-    templateUrl: "./app.component.html",
-  })
-  export class AppComponent {
-    config: IConfig = {
-      document: {
-        fileType: "docx",
-        key: "Khirz6zTPdfd7",
-        title: "Example Document Title.docx",
-        url: "https://example.com/url-to-example-document.docx",
-      },
-      documentType: "word",
-      editorConfig: {
-        callbackUrl: "https://example.com/url-to-callback.ashx",
-      },
-    }
-    onDocumentReady = () => {
-      console.log("Document is loaded")
-    }
-    onLoadComponentError = (errorCode, errorDescription) => {
-      switch (errorCode) {
-      case -1: // Unknown error loading component
-        console.log(errorDescription)
-        break
-      case -2: // Error load DocsAPI from http://documentserver/
-        console.log(errorDescription)
-        break
-      case -3: // DocsAPI is not defined
-        console.log(errorDescription)
-        break
-      }
-    }
-  }
-  ```
+   @Component({
+     selector: "app-root",
+     standalone: true,
+     imports: [DocumentEditorModule],
+     templateUrl: "./app.component.html",
+   })
+   export class AppComponent {
+     config: IConfig = {
+       document: {
+         fileType: "docx",
+         key: "Khirz6zTPdfd7",
+         title: "Example Document Title.docx",
+         url: "https://example.com/url-to-example-document.docx",
+       },
+       documentType: "word",
+       editorConfig: {
+         callbackUrl: "https://example.com/url-to-callback.ashx",
+       },
+     }
+     onDocumentReady = () => {
+       console.log("Document is loaded")
+     }
+     onLoadComponentError = (errorCode, errorDescription) => {
+       switch (errorCode) {
+       case -1: // Unknown error loading component
+         console.log(errorDescription)
+         break
+       case -2: // Error load DocsAPI from http://documentserver/
+         console.log(errorDescription)
+         break
+       case -3: // DocsAPI is not defined
+         console.log(errorDescription)
+         break
+       }
+     }
+   }
+   ```
 
    Replace the following lines with your own data:
 
-   * `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
-   * `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
+   - `https://example.com/url-to-example-document.docx` - replace with the URL to your file;
+   - `https://example.com/url-to-callback.ashx` - replace with your callback URL (this is required for the saving functionality to work).
 
    This TypeScript file will create the *AppComponent* component containing the ONLYOFFICE Docs editor configured with basic features.
 
 2. In template, use the *document-editor* component with your options:
 
-  ``` xml
-  <document-editor
-      id="docxEditor"
-      documentServerUrl="http://documentserver/"
-      [config]="config"
-      [events_onDocumentReady]="onDocumentReady"
-      [onLoadComponentError]="onLoadComponentError"
-  ></document-editor>
-  ```
+   ``` xml
+   <document-editor
+       id="docxEditor"
+       documentServerUrl="http://documentserver/"
+       [config]="config"
+       [events_onDocumentReady]="onDocumentReady"
+       [onLoadComponentError]="onLoadComponentError"
+   ></document-editor>
+   ```
 
    Replace the `http://documentserver/` line with the URL of your server.
 
 Test the application using the Node.js development server:
 
-* To start the development server, navigate to the *onlyoffice-angular-demo* directory and run:
+- To start the development server, navigate to the *onlyoffice-angular-demo* directory and run:
 
-  ``` bash
+  ``` sh
   npm run start
   ```
 
-* To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
+- To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
 
 ## Deploying the demo Angular application
 
@@ -220,7 +219,7 @@ To deploy the application to a production environment, create the build-specific
 
 1. Create the *src/environments/* directory and configure the project to use these files by running the following command:
 
-   ``` bash
+   ``` sh
    ng generate environments
    ```
 
@@ -228,7 +227,7 @@ To deploy the application to a production environment, create the build-specific
 
    The base *environment.ts* file contains the default environment settings:
 
-   ``` typescript
+   ``` ts
    export const environment = {
      production: false,
    }
@@ -238,7 +237,7 @@ To deploy the application to a production environment, create the build-specific
 
    You can add additional properties to the *environment* object, or as separate objects. For example, the default *apiUrl* variable is added to the default environment:
 
-   ``` typescript
+   ``` ts
    export const environment = {
      production: true,
      apiUrl: "http://my-prod-url",
@@ -247,7 +246,7 @@ To deploy the application to a production environment, create the build-specific
 
    The target-specific configuration files, such as *environment.development.ts*, set default values for the *development* build target:
 
-   ``` typescript
+   ``` ts
    export const environment = {
      production: true,
    }
@@ -255,7 +254,7 @@ To deploy the application to a production environment, create the build-specific
 
 2. Import the original environment file in the *app.component.ts* component file to use the environment configurations you have defined:
 
-   ``` typescript
+   ``` ts
    import {environment} from "./../environments/environment"
    ```
 
@@ -265,20 +264,20 @@ To deploy the application to a production environment, create the build-specific
 
    By default no files are replaced. But you can add file replacements for the specific build targets:
 
-  ```json
-  {
-    "configurations": {
-      "development": {
-        "fileReplacements": [
-          {
-            "replace": "src/environments/environment.ts",
-            "with": "src/environments/environment.development.ts"
-          }
-        ]
-      }
-    }
-  }
-  ```
+   ```json
+   {
+     "configurations": {
+       "development": {
+         "fileReplacements": [
+           {
+             "replace": "src/environments/environment.ts",
+             "with": "src/environments/environment.development.ts"
+           }
+         ]
+       }
+     }
+   }
+   ```
 
    This means that when you build your development configuration with *ng build --configuration development*, the *src/environments/environment.ts* file is replaced with the *src/environments/environment.development.ts* target-specific version of the file.
 
@@ -323,7 +322,7 @@ Now you can deploy the application to the created server:
 
 1. Navigate to the *onlyoffice-angular-demo* directory and run:
 
-   ``` bash
+   ``` sh
    ng build
    ```
 
@@ -374,19 +373,19 @@ The application will be deployed on the web server (`http://localhost:3000` by d
 
 1. Clone project from the GitHub repository:
 
-   ``` bash
+   ``` sh
    git clone https://github.com/ONLYOFFICE/document-editor-angular-workspace.git
    ```
 
 2. Install the project dependencies:
 
-   ``` bash
+   ``` sh
    npm install
    ```
 
 3. Build the project:
 
-   ``` bash
+   ``` sh
    cd ./projects
 
    ng build @onlyoffice/document-editor-angular
@@ -394,7 +393,7 @@ The application will be deployed on the web server (`http://localhost:3000` by d
 
 4. Create the package:
 
-   ``` bash
+   ``` sh
    cd ./dist/onlyoffice/document-editor-angular
 
    npm pack
@@ -402,7 +401,7 @@ The application will be deployed on the web server (`http://localhost:3000` by d
 
 5. Test the component:
 
-   ``` bash
+   ``` sh
    cd ./projects
 
    ng test @onlyoffice/document-editor-angular

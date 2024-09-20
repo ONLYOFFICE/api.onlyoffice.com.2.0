@@ -1,8 +1,8 @@
-#### def Run(self, path);
+`def Run(self, path);`
 
-Runs the **ONLYOFFICE Document Builder** executable. If you do not want to write a Python application, you can simply use the **docbuilder.exe** executable file and run it with the **.docbuilder** file as an argument, where all the code for the document file creation will be written. For Python, create the *CDocBuilder* object and call the *Run* method with the path to the executable file from the *path* parameter.
+Runs the **ONLYOFFICE Document Builder** executable. If you do not want to write a Python application, you can simply use the **docbuilder.exe** executable file and run it with the ### .docbuilder file as an argument, where all the code for the document file creation will be written. For Python, create the *CDocBuilder* object and call the *Run* method with the path to the executable file from the *path* parameter.
 
-## Parameters:
+## Parameters
 
 | Name   | Type | Description                                                 |
 | ------ | ---- | ----------------------------------------------------------- |
@@ -10,15 +10,15 @@ Runs the **ONLYOFFICE Document Builder** executable. If you do not want to write
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 builder.Run("path-to-script.docbuilder")
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```shell
+```sh
 docbuilder.exe mydocument.docbuilder
 ```

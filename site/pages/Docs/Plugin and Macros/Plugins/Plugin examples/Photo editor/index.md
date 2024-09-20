@@ -39,8 +39,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 6. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/photoeditor/licenses/jQuery.license).
-   * [Toast UI Image Editor](https://ui.toast.com/tui-image-editor) is a full featured image editor that uses HTML5 Canvas. It's easy to use and provides powerful filters. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/photoeditor/licenses/Tui.license).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/photoeditor/licenses/jQuery.license).
+   - [Toast UI Image Editor](https://ui.toast.com/tui-image-editor) is a full featured image editor that uses HTML5 Canvas. It's easy to use and provides powerful filters. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/photoeditor/licenses/Tui.license).
 
 ## Config
 
@@ -181,16 +181,16 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onTranslate
-* callCommand
-* executeMethod ("GetImageDataFromSelection")
-* executeMethod ("GerVersion")
-* executeMethod ("PutImageDataToSelection")
-* resizeWindow
-* Asc.scope object
-* info.editorType
+- button
+- init
+- onTranslate
+- callCommand
+- executeMethod ("GetImageDataFromSelection")
+- executeMethod ("GerVersion")
+- executeMethod ("PutImageDataToSelection")
+- resizeWindow
+- Asc.scope object
+- info.editorType
 
 ## Support
 

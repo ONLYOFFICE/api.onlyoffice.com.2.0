@@ -1,10 +1,10 @@
-#### CDocBuilderValue CreateArray(nLength);
+`CDocBuilderValue CreateArray(nLength);`
 
 Creates an array value, an analogue of *new Array (length)* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name      | Type       | Description       |
 | --------- | ---------- | ----------------- |
@@ -12,9 +12,9 @@ Creates an array value, an analogue of *new Array (length)* in JS.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

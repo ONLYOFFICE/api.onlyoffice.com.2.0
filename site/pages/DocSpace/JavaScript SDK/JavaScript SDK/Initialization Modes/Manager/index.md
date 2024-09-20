@@ -6,12 +6,12 @@ Displays a list of entities depending on the specified [rootPath](../../Config/i
 
 ![Manager](/assets/images/docspace/manager-mode.png)
 
-### Method
+## Method
 
 | Name                                              | Description                                      |
 | ------------------------------------------------- | ------------------------------------------------ |
 | [initManager](../../Methods/index.md#initmanager) | Initializes the SDK frame in the "manager" mode. |
 
-``` javascript
+``` ts
 const docSpace = DocSpace.SDK.initManager({config})
 ```

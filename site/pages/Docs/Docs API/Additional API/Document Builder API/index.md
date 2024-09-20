@@ -2,63 +2,62 @@ For the interaction with the **web document builder service** the POST requests 
 
 Starting from version 8.1, it is recommended to add the [shardkey](../../Get%20Started/How%20It%20Works/index.md#shard-key) parameter to the URL *QueryString* with the *key* value in it. For example, *?shardkey=Khirz6zTPdfd7*. This allows you to load balance requests.
 
-## argument
+## Request parameters and their description
+
+### argument
 
 Defines the arguments to pass to the created document.
 
 Type: object
 
-**Presence**: optional
+Presence: optional
 
-
-## async
+### async
 
 Defines the type of the request to the **document builder service**: asynchronous or not.
 
 Supported values:
 
-* **true**;
-* **false**.
+- **true**;
+- **false**.
 
 When the asynchronous request type is used, the response is formed instantly. In this case to get the result it is necessary to send requests without parameter change until the document generation is finished. The default value is **false**.
 
 Type: boolean
 
-**Presence**: optional
+Presence: optional
 
-
-## key
+### key
 
 Defines the request identifier used to unambiguously identify the request. The key is formed on the **document builder service** side and is returned as the response to the first request. When the asynchronous request is used (the *async* parameter is set to **true**) the key is not present in the first request, but must be present in all the following requests which will be send before the generation is complete. When the synchronous request is used (the *async* parameter is set to **false**), this parameter is not required.
 
 Type: string
 
-**Presence**: required
+Presence: required
 
-
-## token
+### token
 
 Defines the encrypted signature added to the **ONLYOFFICE Docs** config in the form of a [token](../Signature/Request/Token%20in%20body/index.md#builder).
 
 Type: string
 
-**Presence**: required by configuration
+Presence: required by configuration
 
-
-## url
+### url
 
 Defines the absolute URL to the .docbuilder file.
 
 Type: string
 
-**Presence**: required
-
+Presence: required
 
 The *.docbuilder* file contains the script used to generate the output document file (text document, spreadsheet or presentation), specifies the output file format and name. Once the document generation is ready, the response with the absolute URL to the resulting file will be returned (see below).
 
 > Please note, that *.docbuilder* script file can contain several output files as a result. The URL to them all will be returned in the response to the request once the file generation is finished.
 
 You can find more information about the *.docbuilder* file syntax [here](../../../Document%20Builder/Builder%20App/Using%20.docbuilder%20file/index.md). Please read [Office JavaScript API documentation](../../../Office%20API/Get%20Started/Overview/index.md) for the detailed information on what classes and methods are used to generate the documents with the help of *.docbuilder* files.
+
+## Examples
 
 ### Sample of JSON object sent to **document builder service** for the first asynchronous request
 
@@ -71,7 +70,7 @@ You can find more information about the *.docbuilder* file syntax [here](../../.
 
 Where **example.com** is the name of the server where **document storage service** are installed. See the [How it works](../../Get%20Started/How%20It%20Works/index.md) section to find out more on ONLYOFFICE Docs service client-server interactions.
 
-### Response format
+Response format:
 
 ``` json
 {
@@ -89,7 +88,7 @@ Where **example.com** is the name of the server where **document storage service
 }
 ```
 
-### Response format
+Response format:
 
 ``` json
 {
@@ -113,7 +112,7 @@ Where **example.com** is the name of the server where **document storage service
 
 Where **example.com** is the name of the server where **document storage service** are installed. See the [How it works](../../Get%20Started/How%20It%20Works/index.md) section to find out more on ONLYOFFICE Docs service client-server interactions.
 
-### Response example
+Response example:
 
 ``` json
 {
@@ -134,7 +133,7 @@ Where **example.com** is the name of the server where **document storage service
 }
 ```
 
-### Example of the response when an error occurred
+Response format:
 
 ``` json
 {
@@ -155,7 +154,7 @@ Where **example.com** is the name of the server where **document storage service
 
 Where **example.com** is the name of the server where **document storage service** are installed. See the [How it works](../../Get%20Started/How%20It%20Works/index.md) section to find out more on ONLYOFFICE Docs service client-server interactions.
 
-### Response format
+Response format:
 
 ``` json
 {
@@ -168,7 +167,7 @@ Where **example.com** is the name of the server where **document storage service
 }
 ```
 
-### Possible error codes and their description
+## Possible error codes and their description
 
 | Error code | Description                                                    |
 | ---------- | -------------------------------------------------------------- |

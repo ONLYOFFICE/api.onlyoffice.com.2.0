@@ -1,4 +1,4 @@
-**POST /wopi/files/*(file\_id)***
+`POST /wopi/files/(file_id)`
 
 Creates a new file on the host based on the current file.
 
@@ -10,51 +10,51 @@ This operation works as follows:
 
 3. If the file is **unlocked**, the host takes the file name from the **X-WOPI-SuggestedTarget** header and modifies it in order to make the request succeed:
 
-   * If the header contains only a file extension (starts with a period), then the resulting file name will consist of this extension and the initial file name without extension.
-   * If the header contains a full file name, then it will be a name for the resulting file.
+   - If the header contains only a file extension (starts with a period), then the resulting file name will consist of this extension and the initial file name without extension.
+   - If the header contains a full file name, then it will be a name for the resulting file.
 
 4. Finally, the host creates a new file that has a legal name and does not overwrite any existing files, while preserving the file extension.
 
-### Parameters
+## Parameters
 
 | Name     | Description                        | Type   |
 | -------- | ---------------------------------- | ------ |
 | file\_id | The file ID that must be URL safe. | string |
 
-### Query parameters
+## Query parameters
 
 | Name          | Description                                                                            | Type   |
 | ------------- | -------------------------------------------------------------------------------------- | ------ |
 | access\_token | An access token that the host will use to determine whether the request is authorized. | string |
 
-### Request headers
+## Request headers
 
-| Name                   | Description                                                                                                           | Type    | Presence |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- | -------- |
-| X-WOPI-Override        | The requested operation from the WOPI server (*PUT\_RELATIVE*).                                                       | string  | required |
-| X-WOPI-SuggestedTarget | A file extension or a full file name, including the file extension in the format of the UTF-7 encoded string.         | string  | required |
-| X-WOPI-Size            | The size of the file in bytes.                                                                                        | integer | optional |
+| Name                   | Description                                                                                                                           | Type    | Presence |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- |
+| X-WOPI-Override        | The requested operation from the WOPI server (*PUT\_RELATIVE*).                                                                       | string  | required |
+| X-WOPI-SuggestedTarget | A file extension or a full file name, including the file extension in the format of the UTF-7 encoded string.                         | string  | required |
+| X-WOPI-Size            | The size of the file in bytes.                                                                                                        | integer | optional |
 | X-WOPI-FileConversion  | Indicates that the request is being made in the context of [binary document conversion](../../Editing%20binary%20documents/index.md). | boolean | optional |
 
-### Request body
+## Request body
 
 The request body must contain the full file contents in the binary format.
 
-### Response headers
+## Response headers
 
 | Name                     | Description                                                                                                                                                                                                               | Type   | Presence |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
 | X-WOPI-Lock              | The lock ID identifying the current lock on the file. This header must always be included when responding to the request with **409 Conflict**. It should not be included when responding to the request with **200 OK**. | string | optional |
 | X-WOPI-LockFailureReason | The cause of the lock failure. This header may be included when responding to the request with **409 Conflict**. It must only be used for logging purposes.                                                               | string | optional |
 
-### Response body
+## Response body
 
 | Name        | Description                                                                                                                       | Type   | Presence |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
 | Name        | The file name, including extension, without a path.                                                                               | string | required |
 | Url         | URI of the form *http\://server/<...>/wopi/files/(file\_id)?access\_token=(access token)*, of the newly created file on the host. | string | required |
-| HostViewUrl | URI to a host page that loads the [view](../../WOPI%20discovery/index.md#wopi-actions) WOPI action for the newly created file.                    | string | optional |
-| HostEditUrl | URI to a host page that loads [edit](../../WOPI%20discovery/index.md#wopi-actions) action for the newly created file.                             | string | optional |
+| HostViewUrl | URI to a host page that loads the [view](../../WOPI%20discovery/index.md#wopi-actions) WOPI action for the newly created file.    | string | optional |
+| HostEditUrl | URI to a host page that loads [edit](../../WOPI%20discovery/index.md#wopi-actions) action for the newly created file.             | string | optional |
 
 ## Save Copy As
 

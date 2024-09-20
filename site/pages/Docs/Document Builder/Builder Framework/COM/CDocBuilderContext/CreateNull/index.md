@@ -1,10 +1,10 @@
-#### HRESULT CreateNull(\[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT CreateNull([out, retval] I_DOCBUILDER_VALUE** result);`
 
 Creates a null value, an analogue of *null* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateNull* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description              |
 | -------- | ------------------------ | ------------------------ |
@@ -12,9 +12,9 @@ Creates a null value, an analogue of *null* in JS.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

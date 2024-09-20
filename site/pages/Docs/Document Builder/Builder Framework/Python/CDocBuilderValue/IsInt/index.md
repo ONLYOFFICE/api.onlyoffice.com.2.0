@@ -1,4 +1,4 @@
-#### def IsInt(self);
+`def IsInt(self);`
 
 Returns true if the **CDocBuilderValue** object is an integer.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is an integer.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

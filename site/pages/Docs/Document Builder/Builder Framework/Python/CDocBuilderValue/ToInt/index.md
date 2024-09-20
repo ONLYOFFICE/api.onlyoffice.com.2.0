@@ -1,4 +1,4 @@
-#### def ToInt(self);
+`def ToInt(self);`
 
 Converts the **CDocBuilderValue** object to an integer.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to an integer.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

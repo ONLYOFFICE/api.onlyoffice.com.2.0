@@ -2,24 +2,23 @@
 order: -4
 ---
 
-
 To build a plugin, you need the *yarn* package manager to be installed. After that, follow the instructions below:
 
 1. Open the terminal and go to the plugin root folder:
 
-   ``` bash
+   ``` sh
    cd PDF-Converter
    ```
 
 2. Install all the necessary dependencies (if this was not done previously when creating the plugin template):
 
-   ``` bash
+   ``` sh
    yarn install
    ```
 
 3. Collect an archive for uploading to the portal:
 
-   ``` bash
+   ``` sh
    yarn build
    ```
 

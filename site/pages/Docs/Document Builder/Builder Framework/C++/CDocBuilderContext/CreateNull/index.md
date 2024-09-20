@@ -1,4 +1,4 @@
-#### CDocBuilderValue CreateNull();
+`CDocBuilderValue CreateNull();`
 
 Creates a null value, an analogue of *null* in JS.
 
@@ -6,9 +6,9 @@ Creates a null value, an analogue of *null* in JS.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

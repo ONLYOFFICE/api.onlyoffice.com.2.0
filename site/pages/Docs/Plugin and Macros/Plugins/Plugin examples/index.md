@@ -2,7 +2,6 @@
 order: -1
 ---
 
-
 ## Add comment in cell
 
 Adds comments to spreadsheets.

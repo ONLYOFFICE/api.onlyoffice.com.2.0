@@ -1,4 +1,4 @@
-#### bool IsError();
+`bool IsError();`
 
 Checks for errors in JS. The error message and call stack will be written to *std::cerr*.
 
@@ -6,9 +6,9 @@ Checks for errors in JS. The error message and call stack will be written to *st
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

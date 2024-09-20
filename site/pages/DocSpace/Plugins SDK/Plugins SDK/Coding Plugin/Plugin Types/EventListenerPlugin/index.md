@@ -2,7 +2,6 @@
 order: -2
 ---
 
-
 The plugin that is given the access to the portal events.
 
 **Interface**: IEventListenerPlugin.
@@ -15,28 +14,25 @@ Stores a collection of elements where the keys are the *key* parameters from the
 
 Type: collection of IEventListenerItem
 
-
-## Methods and their description:
+## Methods and their description
 
 ### addEventListenerItem
 
 Add a new event listener item.
 
-  **Parameters**
+Parameters:
 
-  | Name               | Description                     | Type               | Example |
-  | ------------------ | ------------------------------- | ------------------ | ------- |
-  | eventListenerItems | Defines an event listener item. | IEventListenerItem |         |
-
+| Name               | Description                     | Type               | Example |
+| ------------------ | ------------------------------- | ------------------ | ------- |
+| eventListenerItems | Defines an event listener item. | IEventListenerItem |         |
 
 ## getEventListenerItems
 
 Get all the event listener items.
 
+## Example
 
-**Example**
-
-``` typescript
+``` ts
 import {type IEventListenerItem, type IEventListenerPlugin} from "@onlyoffice/docspace-plugin-sdk"
 
 class Plugin implements IEventListenerPlugin {

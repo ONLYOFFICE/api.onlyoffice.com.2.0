@@ -2,7 +2,6 @@
 order: -3
 ---
 
-
 The plugin that is embedded in the profile menu.
 
 **Interface**: IProfileMenuPlugin.
@@ -15,39 +14,35 @@ Stores a collection of elements where the keys are the *key* parameters from the
 
 Type: collection of IProfileMenuItem
 
-
-## Methods and their description:
+## Methods and their description
 
 ### addProfileMenuItem
 
 Add a new profile menu item.
 
-  **Parameters**
+Parameters:
 
-  | Name             | Description                  | Type             | Example |
-  | ---------------- | ---------------------------- | ---------------- | ------- |
-  | profileMenuItems | Defines a profile menu item. | IProfileMenuItem |         |
-
+| Name             | Description                  | Type             | Example |
+| ---------------- | ---------------------------- | ---------------- | ------- |
+| profileMenuItems | Defines a profile menu item. | IProfileMenuItem |         |
 
 ### getProfileMenuItems
 
 Get all the profile menu items.
 
-
 ### updateProfileMenuItem
 
 Update the profile menu item.
 
-  **Parameters**
+Parameters:
 
-  | Name             | Description                      | Type             | Example |
-  | ---------------- | -------------------------------- | ---------------- | ------- |
-  | profileMenuItems | Defines a new profile menu item. | IProfileMenuItem |         |
+| Name             | Description                      | Type             | Example |
+| ---------------- | -------------------------------- | ---------------- | ------- |
+| profileMenuItems | Defines a new profile menu item. | IProfileMenuItem |         |
 
+## Example
 
-**Example**
-
-``` typescript
+``` ts
 import {type IProfileMenuItemIProfileMenuPlugin, type IProfileMenuPlugin} from "@onlyoffice/docspace-plugin-sdk"
 
 class Plugin implements IProfileMenuPlugin {

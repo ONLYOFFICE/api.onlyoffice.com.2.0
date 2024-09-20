@@ -1,10 +1,10 @@
-#### CDocBuilderValue CreateTypedArray(sBuffer, nLength, bExternalize);
+`CDocBuilderValue CreateTypedArray(sBuffer, nLength, bExternalize);`
 
 Creates a Uint8Array value, an analogue of *Uint8Array* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateTypedArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name           | Type            | Description                                                                                                                                                                                                                                                                                |
 | -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -14,9 +14,9 @@ Creates a Uint8Array value, an analogue of *Uint8Array* in JS.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

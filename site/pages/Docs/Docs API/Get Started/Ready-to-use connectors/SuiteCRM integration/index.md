@@ -2,10 +2,10 @@ This [plugin](https://github.com/ONLYOFFICE/onlyoffice-suitecrm) enables users t
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, XLSX, PPTX, DOCXF, OFORM.
-* The following formats are available for viewing only: PDF, ODT, ODS, ODP, DOC, XLS, PPT, PPS, EPUB, RTF, HTML, HTM, TXT, CSV.
-* The plugin allows users to edit text documents, spreadsheets, presentations, and create and fill out digital forms.
-* The plugin will create a new **Open in ONLYOFFICE** menu option within the document library for office documents. This allows multiple users to collaborate in real time and save back those changes to SuiteCRM.
+- Currently, the following document formats can be edited: DOCX, XLSX, PPTX, DOCXF, OFORM.
+- The following formats are available for viewing only: PDF, ODT, ODS, ODP, DOC, XLS, PPT, PPS, EPUB, RTF, HTML, HTM, TXT, CSV.
+- The plugin allows users to edit text documents, spreadsheets, presentations, and create and fill out digital forms.
+- The plugin will create a new **Open in ONLYOFFICE** menu option within the document library for office documents. This allows multiple users to collaborate in real time and save back those changes to SuiteCRM.
 
 ## Installing ONLYOFFICE Docs
 
@@ -27,15 +27,15 @@ To start using ONLYOFFICE Docs with SuiteCRM, follow these steps:
 
 The plugin settings page is available after installation: **Admin -> ONLYOFFICE -> ONLYOFFICE Settings**.
 
-* **Document Server address**. Enter the name of the server with ONLYOFFICE Docs installed:
+- **Document Server address**. Enter the name of the server with ONLYOFFICE Docs installed:
 
-  ```
+  ``` sh
   http://documentserver/
   ```
 
   where **documentserver** is the name of the server with **ONLYOFFICE Docs** installed. The address must be accessible from the user browser and from the SuiteCRM server. The SuiteCRM server address must also be accessible from **ONLYOFFICE Docs** for correct work.
 
-* **Document Server Secret**. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your own secret key on the SuiteCRM **ONLYOFFICE Settings** page. In the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), specify the same secret key and enable the validation.
+- **Document Server Secret**. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your own secret key on the SuiteCRM **ONLYOFFICE Settings** page. In the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), specify the same secret key and enable the validation.
 
 ## Using SuiteCRM ONLYOFFICE integration plugin
 

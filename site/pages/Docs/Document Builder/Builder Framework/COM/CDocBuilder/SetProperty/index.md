@@ -1,17 +1,17 @@
-#### HRESULT SetProperty(\[in] BSTR key, \[in] BSTR value);
+`HRESULT SetProperty([in] BSTR key, [in] BSTR value);`
 
 Sets an argument to the builder class which can be trasferred to the program outside the [CDocBuilder.ExecuteCommand](../ExecuteCommand/index.md) method, i.e. either as an additional property when running **ONLYOFFICE Document Builder** executable file or as a part of program code, but not included into the document file script.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilder.SetProperty* method is not used explicitly. The argument itself is used instead as an additional property for the executable. See the example below.
 
-## Parameters:
+## Parameters
 
 | Name    | Type | Description                                             |
 | ------- | ---- | ------------------------------------------------------- |
 | *key*   | BSTR | The parameter name, the value is always *--argument*.   |
 | *value* | BSTR | The parameter value which will be used in the document. |
 
-## Supported properties:
+## Supported properties
 
 | Name                        | Type          | Description                                                                                                                | Default |
 | --------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -27,15 +27,15 @@ Sets an argument to the builder class which can be trasferred to the program out
 
 Once added, the argument will be available as the **Argument** variable with its parameter values set:
 
-```
+``` cpp
 Argument.name === "ONLYOFFICE" // true
 ```
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 oBuilder->Initialize();
@@ -43,9 +43,9 @@ oBuilder->SetProperty("--argument", L"{\"name\":\"ONLYOFFICE\"}");
 oBuilder->Dispose();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```shell
+```sh
 docbuilder.exe "--argument={\"name\":\"ONLYOFFICE\"}" test.docbuilder;
 ```
 
@@ -55,9 +55,9 @@ It is also possible to update the font list when you either add new fonts or rem
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 oBuilder->Initialize();
@@ -65,8 +65,8 @@ oBuilder->SetProperty("--check-fonts", L"true");
 oBuilder->Dispose();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```shell
+```sh
 docbuilder.exe "--check-fonts=true" test.docbuilder
 ```

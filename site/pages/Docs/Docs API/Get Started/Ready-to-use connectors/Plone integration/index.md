@@ -2,9 +2,9 @@ This [plugin](https://github.com/ONLYOFFICE/onlyoffice-plone) allows users to ed
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, XLSX, PPTX, DOCXF, OFORM.
-* The following formats are available for viewing only: PDF, ODT, ODS, ODP, DOC, XLS, PPT.
-* The plugin will create a new **ONLYOFFICE Edit** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Plone.
+- Currently, the following document formats can be edited: DOCX, XLSX, PPTX, DOCXF, OFORM.
+- The following formats are available for viewing only: PDF, ODT, ODS, ODP, DOC, XLS, PPT.
+- The plugin will create a new **ONLYOFFICE Edit** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Plone.
 
 ## Installing ONLYOFFICE Docs
 
@@ -24,11 +24,12 @@ To start using ONLYOFFICE Docs with Plone, the following steps must be performed
    ```
 
 2. Run *bin/buildout*.
+
 3. Go to **Site Setup -> Add-ons** and press the **Install** button to enable plugin.
 
 You could also install plugin via Docker:
 
-``` bash
+``` sh
 docker run --rm -p 8080:8080 -e ADDONS="onlyoffice.plone" plone
 ```
 
@@ -46,16 +47,18 @@ Starting from version 7.2, JWT is enabled by default and the secret key is gener
 
 1. Clone repository and change directory:
 
-   ``` bash
+   ``` sh
    git clone --branch deploy git@github.com:ONLYOFFICE/onlyoffice-plone.git
    cd onlyoffice-plone
    ```
 
 2. Create a *virtualenv* in the package.
+
 3. Install requirements with pip.
+
 4. Run *buildout*:
 
-   ``` bash
+   ``` sh
    virtualenv .
    ./bin/pip install -r requirements.txt
    ./bin/buildout
@@ -63,14 +66,16 @@ Starting from version 7.2, JWT is enabled by default and the secret key is gener
 
 5. Start Plone in foreground:
 
-   ``` bash
+   ``` sh
    ./bin/instance fg
    ```
 
 If you have a working Plone instance, you can install plugin by adding the project files to the *scr* directory:
 
 1. In the *scr* directory create the *onlyoffice.plone* directory.
+
 2. Put your project files received by Git into the *onlyoffice.plone* directory.
+
 3. Edit the *buildout.cfg* file:
 
    ``` ini
@@ -81,7 +86,7 @@ If you have a working Plone instance, you can install plugin by adding the proje
 
 4. Rerun buildout for the changes to take effect:
 
-   ``` bash
+   ``` sh
    .bin/buildout
    ```
 
@@ -99,7 +104,9 @@ If you have a working Plone instance, you can install plugin by adding the proje
    ```
 
 2. Run *bin/buildout*. Wait until a new version is downloaded and installed.
+
 3. Restart Plone. Your site may look weird, or even be inaccessible until you have performed the next step.
+
 4. Navigate to the **Add-on** screen (add */prefs\_install\_products\_form* to your site URL) and in the **Upgrades** list select **onlyoffice.plone** and click **Upgrade onlyoffice.plone**.
 
 ## How it works
@@ -110,10 +117,10 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 2. Plone prepares a JSON object for the ONLYOFFICE Docs with the following properties:
 
-   * **url**: the URL that ONLYOFFICE Docs uses to download the document;
-   * **callbackUrl**: the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **key**: the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not;
-   * **title**: the document title (name).
+   - **url**: the URL that ONLYOFFICE Docs uses to download the document;
+   - **callbackUrl**: the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **key**: the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not;
+   - **title**: the document title (name).
 
 3. Plone constructs a page from the *.pt* template, filling in all of those values so that the client browser can load up the editor.
 

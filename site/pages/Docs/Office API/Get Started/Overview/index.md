@@ -6,6 +6,6 @@ Office API is the JavaScript library which is used to work with the document edi
 
 Here are some examples of where you can use Office API:
 
-* build [plugins](../../../Plugin%20and%20Macros/Get%20Started/Plugin%20structure/index.md) using Office API in the plugin code *.js* file to interact with the editor content and web services;
-* write [macros](../../../Plugin%20and%20Macros/Macros/Getting%20started%20with%20macros/index.md) using the JavaScript syntax and Office API scripting notation;
-* generate documents using Office API in the [Document Builder scripts](../../../Document%20Builder/Get%20Started/Overview/index.md).
+- build [plugins](../../../Plugin%20and%20Macros/Get%20Started/Plugin%20structure/index.md) using Office API in the plugin code *.js* file to interact with the editor content and web services;
+- write [macros](../../../Plugin%20and%20Macros/Macros/Getting%20started%20with%20macros/index.md) using the JavaScript syntax and Office API scripting notation;
+- generate documents using Office API in the [Document Builder scripts](../../../Document%20Builder/Get%20Started/Overview/index.md).
