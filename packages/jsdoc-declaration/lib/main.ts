@@ -503,37 +503,49 @@ async function classDeclaration(dc: Doclet): Promise<[[Library.ClassDeclaration,
     }
   }
 
-  const [cd, ...errs1] = await constructorDeclaration(cl, dc)
-  pa.push(cd)
+  // We must extract the constructor data from the class declaration because
+  // JSDoc does not separate them. However, the architecture of some libraries
+  // does not involve constructors as such; for example, the Office API (also
+  // known as Document Builder API). The Office API is the only source that uses
+  // our internal JSDoc parser, so instead of adding a new option to disable
+  // extracting constructors, which may involve many changes to the parser and
+  // its structures, it is easier to temporarily disable this functionality
+  // completely. In the future, when new providers arrive that have to use this
+  // parser, we must return this functionality with a new option.
 
-  let cs = cl.constructors
-  if (!cs) {
-    cs = []
-    cl.constructors = cs
-  }
+  // const [cd, ...errs1] = await constructorDeclaration(cl, dc)
+  // pa.push(cd)
 
-  const r = library.reference(cd.id)
-  cs.push(r)
+  // let cs = cl.constructors
+  // if (!cs) {
+  //   cs = []
+  //   cl.constructors = cs
+  // }
 
-  return [[cl, ...pa], ...errs0, ...errs1]
+  // const r = library.reference(cd.id)
+  // cs.push(r)
+
+  // return [[cl, ...pa], ...errs0, ...errs1]
+
+  return [[cl, ...pa], ...errs0]
 }
 
-async function constructorDeclaration(dn: Library.DeclarationNode, dc: Doclet): Promise<[Library.ConstructorDeclaration, ...Error[]]> {
-  dc = {...dc, memberof: dn.id, name: "constructor"}
-  const [[f], ...errs0] = await functionDeclarationUnits(dc)
-  const [d, ...errs1] = await declarationNode(dc)
-  const c = library.constructDeclaration(f, d)
+// async function constructorDeclaration(dn: Library.DeclarationNode, dc: Doclet): Promise<[Library.ConstructorDeclaration, ...Error[]]> {
+//   dc = {...dc, memberof: dn.id, name: "constructor"}
+//   const [[f], ...errs0] = await functionDeclarationUnits(dc)
+//   const [d, ...errs1] = await declarationNode(dc)
+//   const c = library.constructDeclaration(f, d)
 
-  if (dc.params && dc.params.length !== 0) {
-    c.type.parameters = dc.params.map((p) => {
-      const [v, ...e] = value(p)
-      errs1.push(...e)
-      return v
-    })
-  }
+//   if (dc.params && dc.params.length !== 0) {
+//     c.type.parameters = dc.params.map((p) => {
+//       const [v, ...e] = value(p)
+//       errs1.push(...e)
+//       return v
+//     })
+//   }
 
-  return [c, ...errs0, ...errs1]
-}
+//   return [c, ...errs0, ...errs1]
+// }
 
 async function propertyDeclaration(dn: Library.DeclarationNode, dp: DocletParam): Promise<[Library.PropertyDeclaration, ...Error[]]> {
   const [v, ...errs0] = value(dp)
