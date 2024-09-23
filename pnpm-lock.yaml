@@ -2663,6 +2663,9 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
     devDependencies:
+      '@onlyoffice/svg-library':
+        specifier: workspace:^
+        version: link:../svg-library
       '@storybook/preact':
         specifier: 8.0.0
         version: 8.0.0(preact@10.22.0)
