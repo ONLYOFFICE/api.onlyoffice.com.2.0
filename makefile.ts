@@ -28,6 +28,8 @@ const config: Record<string, string[]> = {
   test: [
     "service-declaration",
     "openapi-declaration",
+
+    "svg-preact",
   ],
 }
 
