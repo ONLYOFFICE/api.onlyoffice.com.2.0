@@ -48,7 +48,7 @@ The API JavaScript file can normally be found in the following DocSpace folder: 
 
 Add a script to initialize the [Manager](../../Initialization%20Modes/Manager/index.md) mode.
 
-* Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
+1. Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
 
 ``` ts
 function onAppReady() {
@@ -56,7 +56,7 @@ function onAppReady() {
 }
 ```
 
-* Create a configuration for the **Manager** mode. In the [rootPath](../../Config/index.md#rootpath) field, specify the section whose directories you want to display:
+2. Create a configuration for the **Manager** mode. In the [rootPath](../../Config/index.md#rootpath) field, specify the section whose directories you want to display:
 
 ``` ts
 const config = {
@@ -68,7 +68,7 @@ const config = {
 }
 ```
 
-* Initialize the **Manager** mode with the [initManager](../../Methods/index.md#initmanager) method:
+3. Initialize the **Manager** mode with the [initManager](../../Methods/index.md#initmanager) method:
 
 ``` ts
 const docSpace = DocSpace.SDK.initManager(config)

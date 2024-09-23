@@ -11,9 +11,7 @@ For the JavaScript SDK to work correctly, it must be launched on the server. Not
 You need to add the URL of your server's root directory to the **Developer Tools** section of DocSpace:
 
 1. Go to the DocSpace settings.
-
 2. Navigate to the **Developer Tools** section.
-
 3. On the **JavaScript SDK** tab, in the **Enter the address of DocSpace to embed** field, add the URL of your server's root directory.
 
 ![Opening File](/assets/images/docspace/add-in-js-sdk-root-url.png)

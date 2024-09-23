@@ -35,7 +35,7 @@ The API JavaScript file can normally be found in the following DocSpace folder: 
 
 Add a script to initialize the [file selector](../../Initialization%20Modes/File%20Selector/index.md).
 
-* Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
+1. Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
 
 ``` ts
 function onAppReady() {
@@ -43,7 +43,7 @@ function onAppReady() {
 }
 ```
 
-* Add an event handler for [onSelectCallback](../../Events/index.md#onselectcallback). When the user selects a file, **ONLYOFFICE editors** are initialized by passing the ID of the file selected in the **file selector** to the [initEditor](../../Methods/index.md#initeditor) method:
+2. Add an event handler for [onSelectCallback](../../Events/index.md#onselectcallback). When the user selects a file, **ONLYOFFICE editors** are initialized by passing the ID of the file selected in the **file selector** to the [initEditor](../../Methods/index.md#initeditor) method:
 
 ``` ts
 function onSelectCallback() {
@@ -54,7 +54,7 @@ function onSelectCallback() {
 }
 ```
 
-* Create a configuration for the **file selector**:
+3. Create a configuration for the **file selector**:
 
 ``` ts
 const config = {
@@ -67,7 +67,7 @@ const config = {
 }
 ```
 
-* Initialize the **file selector** with the [initFileSelector](../../Methods/index.md#initfileselector) method:
+- Initialize the **file selector** with the [initFileSelector](../../Methods/index.md#initfileselector) method:
 
 ``` ts
 const docSpace = DocSpace.SDK.initFileSelector(config)
@@ -115,3 +115,4 @@ Run our HTML file and make sure everything works.
   </script>
 </html>
 ```
+

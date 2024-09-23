@@ -11,7 +11,7 @@ You need to [add the URL](../../../Get%20Started/Basic%20concepts/index.md#step-
 
 ## Step 1. Set HTML structure
 
-* Create an HTML file. It must include a *div* tag where we specify the DocSpace connection parameters:
+1. Create an HTML file. It must include a *div* tag where we specify the DocSpace connection parameters:
 
 ``` html
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ You need to [add the URL](../../../Get%20Started/Basic%20concepts/index.md#step-
 
 The API JavaScript file can normally be found in the following DocSpace folder: **{PORTAL_SRC}/static/scripts/sdk/1.0.0/api.js** where **{PORTAL_SRC}** is the name of the server with the ONLYOFFICE DocSpace installed.
 
-* Add the *style* section to the page:
+2. Add the *style* section to the page:
 
 ``` css
 body {
@@ -118,7 +118,7 @@ a:hover {
 }
 ```
 
-* Add a table with tasks to the page:
+3. Add a table with tasks to the page:
 
 ``` html
 <div id="taskContainer">
@@ -146,7 +146,7 @@ a:hover {
 </div>
 ```
 
-* Add a sidebar where the attachments of the selected task will be displayed, as well as the **Attach file** button:
+4. Add a sidebar where the attachments of the selected task will be displayed, as well as the **Attach file** button:
 
 ``` html
 <div id="attachmentsPanel">
@@ -158,7 +158,7 @@ a:hover {
 </div>
 ```
 
-* Add a dialog to the page, which will display the **file selector**
+5. Add a dialog to the page, which will display the **file selector**
 
 ``` html
 <dialog id="modal" style="width: 600px; height: 700px;">
@@ -168,7 +168,7 @@ a:hover {
 
 ## Step 2. Add functionality for selecting tasks
 
-* Add two variables to get a list of tasks and store the selected task, as well as the function to upload attachments for the selected task:
+1. Add two variables to get a list of tasks and store the selected task, as well as the function to upload attachments for the selected task:
 
 ``` ts
 const taskRows = document.querySelectorAll(".task-row")
@@ -184,7 +184,7 @@ const loadAttachments = (taskRow) => {
 }
 ```
 
-* Add the **click** event handler for each task:
+2. Add the **click** event handler for each task:
 
 ``` ts
 for (const row of taskRows) {
@@ -203,7 +203,7 @@ for (const row of taskRows) {
 
 ## Step 3. Implement functionality for adding attachments
 
-Add variables to get a modal window and the **Attach file** button, as well as the *click* handler that opens the modal window when the task is selected:
+1. Add variables to get a modal window and the **Attach file** button, as well as the *click* handler that opens the modal window when the task is selected:
 
 ``` ts
 const modalElement = document.querySelector("#modal")
@@ -216,7 +216,7 @@ attachButton.addEventListener("click", () => {
 })
 ```
 
-* Add the [onSelectCallback](../../Events/index.md#onselectcallback) event handler that closes the modal window and sends the ID and name of the selected file in JSON format:
+2. Add the [onSelectCallback](../../Events/index.md#onselectcallback) event handler that closes the modal window and sends the ID and name of the selected file in JSON format:
 
 ``` ts
 function onSelectCallback() {
@@ -227,7 +227,7 @@ function onSelectCallback() {
 }
 ```
 
-* Add a variable for the base URL and an event handler for closing the modal window. When the task is selected and the modal window is closed, this function creates a list item with an attachment that includes a link and the **Delete** button, and then adds this item to the list of task attachments:
+3. Add a variable for the base URL and an event handler for closing the modal window. When the task is selected and the modal window is closed, this function creates a list item with an attachment that includes a link and the **Delete** button, and then adds this item to the list of task attachments:
 
 ``` ts
 const dsURL = "{PORTAL_SRC}/doceditor?fileId="
@@ -273,7 +273,7 @@ modalElement.addEventListener("close", () => {
 
 Add a script to initialize the **file selector**
 
-* Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
+1. Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
 
 ``` ts
 function onAppReady() {
@@ -281,8 +281,7 @@ function onAppReady() {
 }
 ```
 
-* Create a configuration for the **file selector**:
-
+2. Create a configuration for the **file selector**:
 
 ``` ts
 const config = {
@@ -295,7 +294,7 @@ const config = {
 }
 ```
 
-* Initialize the **file selector** with the [initFileSelector](../../Methods/index.md#initfileselector) method:
+3. Initialize the **file selector** with the [initFileSelector](../../Methods/index.md#initfileselector) method:
 
 ``` ts
 const docSpace = DocSpace.SDK.initFileSelector(config)

@@ -33,7 +33,7 @@ The API JavaScript file can normally be found in the following DocSpace folder: 
 
 Add a script to initialize the [editors](../../Initialization%20Modes/Editor/index.md).
 
-* Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
+1. Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
 
 ``` ts
 function onAppReady() {
@@ -41,7 +41,7 @@ function onAppReady() {
 }
 ```
 
-* Create a configuration for the **Editor** mode. Go to the [customization](../../Config/index.md#editorcustomization) section and configure the editors as needed.
+2. Create a configuration for the **Editor** mode. Go to the [customization](../../Config/index.md#editorcustomization) section and configure the editors as needed.
 After that, copy the resulting config and paste it into the [customization](../../../../../Docs/Docs%20API/Usage%20API/Config/Editor/Customization/index.md) section, as shown below. In the config, pass the id of the file that will be opened in the editors:
 
 ``` ts
@@ -76,7 +76,7 @@ const config = {
 }
 ```
 
-* Initialize the <b>Editors</b> mode with the [initEditor](../../Methods/index.md#initeditor) method:
+3. Initialize the <b>Editors</b> mode with the [initEditor](../../Methods/index.md#initeditor) method:
 
 ```ts
 const docSpace = DocSpace.SDK.initEditor(config)

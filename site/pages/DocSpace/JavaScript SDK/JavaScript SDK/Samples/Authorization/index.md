@@ -38,7 +38,7 @@ The API JavaScript file can normally be found in the following DocSpace folder: 
 
 Add a script to initialize the [System](../../Initialization%20Modes/System/index.md) mode.
 
-* Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
+1. Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
 
 ``` ts
 function onAppReady() {
@@ -46,7 +46,7 @@ function onAppReady() {
 }
 ```
 
-* Create a configuration for the **System** mode:
+2. Create a configuration for the **System** mode:
 
 ``` ts
 const config = {
@@ -56,7 +56,7 @@ const config = {
 }
 ```
 
-* Initialize the **System** mode with the [initSystem](../../Methods/index.md#initsystem) method:
+3. Initialize the **System** mode with the [initSystem](../../Methods/index.md#initsystem) method:
 
 ``` ts
 const docSpace = DocSpace.SDK.initSystem(config)
