@@ -2306,6 +2306,30 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/svg-library:
+    dependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/strings':
+        specifier: workspace:^
+        version: link:../strings
+      '@onlyoffice/svg-preact':
+        specifier: workspace:^
+        version: link:../svg-preact
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+      sade:
+        specifier: 1.8.1
+        version: 1.8.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+
   packages/svg-preact:
     dependencies:
       '@babel/core':
