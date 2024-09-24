@@ -10,7 +10,7 @@ Example: \["asc.{7327FC95-16DA-41D9-9AF2-0E7F449F6800}"]
 
 ## options
 
-Defines an object which allow configuring plugins from an external source. The settings can be set for all plugins or for a specific plugin. For example, this object can be used to pass an authorization token to the plugin. You can also use the **SetPluginsOptions** method of the [Automation API](../../../Automation%20API/index.md) to pass the *options* object to the plugin.
+Defines an object which allows configuring plugins from an external source. The settings can be set for all plugins or for a specific plugin. For example, this object can be used to pass an authorization token to the plugin. You can also use the **SetPluginsOptions** method of the [Automation API](../../../Automation%20API/index.md) to pass the *options* object to the plugin.
 
 Type: object
 
