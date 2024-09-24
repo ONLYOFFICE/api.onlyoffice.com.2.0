@@ -654,7 +654,7 @@ test("ArrayType: initializes from an OpenApi.ArraySchemaObject with an error if 
   eq(a, e)
 })
 
-test("ArrayType: resolves with an circular reference", () => {
+test("ArrayType: resolves with a circular reference", () => {
   const c = new ComponentsCache()
 
   const s = new State()
