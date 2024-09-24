@@ -5,6 +5,10 @@ info:
   description: The Wildlife API allows you to manage wildlife animals.
   version: 1.0.0
 
+tags:
+- name: Wildlife
+  description: Operations related to wildlife animals.
+
 paths:
   /wildlife/animals:
     get:
