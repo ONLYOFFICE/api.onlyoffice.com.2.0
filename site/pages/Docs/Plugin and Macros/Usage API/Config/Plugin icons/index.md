@@ -27,9 +27,9 @@ The document editor chooses the necessary icons in the following way:
 
 The *style* parameter is also used to specify the icon appearance:
 
-| Name  | Description                                                                   | Type   | Default |
-| ----- | ----------------------------------------------------------------------------- | ------ | ------- |
-| style | The theme type of the plugin icons. It can have the *light* or *dark* values. | string | "dark"  |
+| Name  | Type   | Default | Description                                                                   |
+| ----- | ------ | ------- | ----------------------------------------------------------------------------- |
+| style | string | "dark"  | The theme type of the plugin icons. It can have the *light* or *dark* values. |
 
 ``` json
 {

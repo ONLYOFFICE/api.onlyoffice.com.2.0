@@ -12,11 +12,11 @@ Disconnects the users with the identifiers specified in the *users* parameter fr
 
 ## Parameters
 
-| Parameter | Description                                                                       | Type             | Presence |
-| --------- | --------------------------------------------------------------------------------- | ---------------- | -------- |
-| c         | Defines the command type.                                                         | string           | required |
-| key       | Defines the document identifier used to unambiguously identify the document file. | string           | required |
-| users     | Defines the list of the user identifiers.                                         | array of strings | required |
+| Parameter | Type             | Presence | Description                                                                       |
+| --------- | ---------------- | -------- | --------------------------------------------------------------------------------- |
+| c         | string           | required | Defines the command type.                                                         |
+| key       | string           | required | Defines the document identifier used to unambiguously identify the document file. |
+| users     | array of strings | required | Defines the list of the user identifiers.                                         |
 
 ## Response example
 
@@ -29,7 +29,7 @@ Disconnects the users with the identifiers specified in the *users* parameter fr
 
 ## Parameters
 
-| Parameter | Description                                                                       | Type    | Presence |
-| --------- | --------------------------------------------------------------------------------- | ------- | -------- |
-| error     | Defines an error code.                                                            | integer | required |
-| key       | Defines the document identifier used to unambiguously identify the document file. | string  | required |
+| Parameter | Type    | Presence | Description                                                                       |
+| --------- | ------- | -------- | --------------------------------------------------------------------------------- |
+| error     | integer | required | Defines an error code.                                                            |
+| key       | string  | required | Defines the document identifier used to unambiguously identify the document file. |

@@ -32,9 +32,9 @@ Update the plugin status.
 
 Parameters:
 
-| Name   | Description                                           | Type                                                                                               | Example  |
-| ------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------- |
-| status | Defines a new plugin status (**active** or **hide**). | [PluginStatus](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/Plugins.ts) | "active" |
+| Name   | Type                                                                                               | Example  | Description                                           |
+| ------ | -------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------- |
+| status | [PluginStatus](https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/master/src/enums/Plugins.ts) | "active" | Defines a new plugin status (**active** or **hide**). |
 
 ### getStatus
 
@@ -46,9 +46,9 @@ Sets the [onLoadCallback](#onloadcallback) variable to the plugin.
 
 Parameters:
 
-| Name     | Description                                                                      | Type | Example  |
-| -------- | -------------------------------------------------------------------------------- | ---- | -------- |
-| callback | Defines callback which will be executed when uploading the plugin to the portal. | fucn | callback |
+| Name     | Type | Example  | Description                                                                      |
+| -------- | ---- | -------- | -------------------------------------------------------------------------------- |
+| callback | fucn | callback | Defines callback which will be executed when uploading the plugin to the portal. |
 
 ## Example
 

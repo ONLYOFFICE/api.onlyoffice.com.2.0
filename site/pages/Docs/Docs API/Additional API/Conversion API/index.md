@@ -826,13 +826,13 @@ Where **example.com** is the name of the server where **document manager** and *
 
 The request result is returned in XML format. To receive a response in JSON format you need to specify the *Accept* header with the **application/json** value in the HTTP request (available from version 4.3). When forming the link to the resulting file, the same server name is used which was made the conversion request to.
 
-| Parameter  | Description                                                                                                                             | Type    | Example                                                |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------ |
-| endConvert | Defines if the conversion is completed or not.                                                                                          | boolean | true                                                   |
-| error      | Defines an error occurred during the conversion. Possible error codes can be found [here](#possible-error-codes-and-their-description). | integer | -3                                                     |
-| fileType   | Defines an extension of the converted file.                                                                                             | string  | "docm"                                                 |
-| fileUrl    | Defines the link to the converted document. This parameter will be received only when the *endConvert* parameter is set to **true**.    | string  | `https://documentserver/url-to-converted-document.pdf` |
-| percent    | Defines the percentage of the file conversion. If the *endConvert* parameter is set to **true**, the *percent* is equal to **100**.     | integer | 100                                                    |
+| Parameter  | Type    | Example                                                | Description                                                                                                                             |
+| ---------- | ------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| endConvert | boolean | true                                                   | Defines if the conversion is completed or not.                                                                                          |
+| error      | integer | -3                                                     | Defines an error occurred during the conversion. Possible error codes can be found [here](#possible-error-codes-and-their-description). |
+| fileType   | string  | "docm"                                                 | Defines an extension of the converted file.                                                                                             |
+| fileUrl    | string  | `https://documentserver/url-to-converted-document.pdf` | Defines the link to the converted document. This parameter will be received only when the *endConvert* parameter is set to **true**.    |
+| percent    | integer | 100                                                    | Defines the percentage of the file conversion. If the *endConvert* parameter is set to **true**, the *percent* is equal to **100**.     |
 
 ## Examples of responses
 

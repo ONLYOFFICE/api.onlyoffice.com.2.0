@@ -152,12 +152,12 @@ The information about the selected item is returned:
 
 where **example.com** is the name of the server with the ONLYOFFICE DocSpace installed.
 
-| Parameter  | Description                                          | Type    | Presence |
-| ---------- | ---------------------------------------------------- | ------- | -------- |
-| icon       | Defines the URL to the room/file icon.               | string  | required |
-| id         | Defines the room/file ID.                            | integer | required |
-| isSelected | Specifies whether the current room/file is selected. | boolean | required |
-| label      | Defines the room/file label.                         | string  | required |
+| Parameter  | Type    | Presence | Description                                          |
+| ---------- | ------- | -------- | ---------------------------------------------------- |
+| icon       | string  | required | Defines the URL to the room/file icon.               |
+| id         | integer | required | Defines the room/file ID.                            |
+| isSelected | boolean | required | Specifies whether the current room/file is selected. |
+| label      | string  | required | Defines the room/file label.                         |
 
 ## onSignOut
 
