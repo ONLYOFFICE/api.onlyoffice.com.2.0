@@ -1,5 +1,7 @@
 The list of changes of ONLYOFFICE Docs API.
 
+## Version 8.2
+
 ## Version 8.1
 
 - Added the [startFilling](../../Usage%20API/Methods/index.md#startfilling) method.
