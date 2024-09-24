@@ -230,6 +230,18 @@ components:
         image:
           type: string
           format: uri
+        color:
+          oneOf:
+            - type: string
+              enum:
+              - brown
+              - black
+              - white
+            - type: string
+              enum:
+              - red
+              - green
+              - blue
 
     pack:
       type: object
