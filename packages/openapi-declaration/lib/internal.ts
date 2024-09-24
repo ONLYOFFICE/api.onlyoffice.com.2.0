@@ -1241,6 +1241,7 @@ export type Type = TypeMap[keyof TypeMap]
 export interface TypeMap {
   array: ArrayType
   boolean: BooleanType
+  complex: ComplexType
   enum: EnumType
   integer: IntegerType
   literal: LiteralType
@@ -1254,6 +1255,10 @@ export interface TypeMap {
 }
 
 export function type(s: OpenApi.SchemaObject): [Type, ...Error[]] {
+  if (s.allOf || s.anyOf || s.oneOf) {
+    return ComplexType.fromOpenApi(s)
+  }
+
   if (s.enum) {
     return EnumType.fromOpenApi(s)
   }
@@ -1473,6 +1478,78 @@ export class EnumType implements TypeNode {
     for (const c of this.cases) {
       const s = c.toService()
       t.cases.push(s)
+    }
+
+    return t
+  }
+}
+
+export class ComplexType implements TypeNode {
+  by: "allOf" | "anyOf" | "oneOf" | "" = ""
+  entities: Entity[] = []
+
+  static fromOpenApi(s: OpenApi.SchemaObject): [ComplexType, ...Error[]] {
+    const es: Error[] = []
+    const t = new ComplexType()
+
+    let k: "allOf" | "anyOf" | "oneOf" | "" = ""
+    let a: (OpenApi.SchemaObject | OpenApi.ReferenceObject)[] = []
+
+    if (!s.allOf && !s.anyOf && !s.oneOf) {
+      const e = new Error("The allOf, anyOf, or oneOf of the SchemaObject is missing")
+      es.push(e)
+    } else if (s.allOf) {
+      k = "allOf"
+      a = s.allOf
+    } else if (s.anyOf) {
+      k = "anyOf"
+      a = s.anyOf
+    } else if (s.oneOf) {
+      k = "oneOf"
+      a = s.oneOf
+    }
+
+    t.by = k
+
+    for (const x of a) {
+      const [e, ...ne] = Entity.fromOpenApi(x)
+      if (ne.length !== 0) {
+        es.push(...ne)
+      }
+      t.entities.push(e)
+    }
+
+    return [t, ...es]
+  }
+
+  merge(_: TypeNode): ComplexType {
+    throw new Error("The ComplexType cannot be merged")
+  }
+
+  copy(): ComplexType {
+    const t = new ComplexType()
+    t.by = this.by
+    t.entities = this.entities
+    return t
+  }
+
+  resolve(c: Cache<Component>, s: State): ComplexType {
+    const t = this.copy()
+
+    for (const [i, y] of t.entities.entries()) {
+      t.entities[i] = y.resolve(c, s)
+    }
+
+    return t
+  }
+
+  toService(): Service.ComplexType {
+    const t = new Service.ComplexType()
+    t.by = this.by
+
+    for (const y of this.entities) {
+      const s = y.toService()
+      t.entities.push(s)
     }
 
     return t

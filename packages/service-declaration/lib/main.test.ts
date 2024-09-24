@@ -5,6 +5,7 @@ import {
   ArrayType,
   BooleanType,
   CircularReference,
+  ComplexType,
   Entity,
   EnumType,
   GroupDeclaration,
@@ -112,6 +113,15 @@ test("BooleanType: initializes an empty instance", () => {
   const k = Object.keys(t)
   eq(k, ["type"])
   is(t.type, "boolean")
+})
+
+test("ComplexType: initializes an empty instance", () => {
+  const t = new ComplexType()
+  const k = Object.keys(t)
+  eq(k, ["type", "by", "entities"])
+  is(t.type, "complex")
+  is(t.by, "")
+  eq(t.entities, [])
 })
 
 test("ArrayType: initializes an empty instance", () => {
