@@ -228,6 +228,8 @@ function Type(p: TypeProperties): JSX.Element {
     return <ArrayType type={t} />
   case "boolean":
     return <></>
+  case "complex":
+    return <ComplexType type={t} />
   case "enum":
     return <EnumType type={t} />
   case "integer":
@@ -266,6 +268,28 @@ function ArrayType(p: ArrayTypeProperties): JSX.Element {
   }
 
   return <Entity entity={t.items} />
+}
+
+interface ComplexTypeProperties {
+  type: Service.ComplexType
+}
+
+function ComplexType(p: ComplexTypeProperties): JSX.Element {
+  const {type: t} = p
+
+  return <>
+    {t.entities.length !== 0 && <dl>
+      {t.entities.map((e) => <>
+        <dt>
+          <TypeBadge type={e.type} />{" "}
+          {e.format && <Badge>{e.format}</Badge>}
+        </dt>
+        <dd>
+          <Entity entity={e} />
+        </dd>
+      </>)}
+    </dl>}
+  </>
 }
 
 interface EnumTypeProperties {
@@ -355,47 +379,10 @@ function PropertyBadges(p: PropertyProperties): JSX.Element {
   }
 
   return <>
-    <Badge>{s(r.self.type)}</Badge>{" "}
+    <TypeBadge type={r.self.type} />{" "}
     {r.self.format && <Badge>{r.self.format}</Badge>}{" "}
     {r.required && <Badge variant="danger">required</Badge>}
   </>
-
-  function s(t: Service.Type): string {
-    if (t.type === "array") {
-      let l = t.type
-
-      if (t.items.type !== "circular") {
-        l += ` of ${s(t.items.type)}`
-      }
-
-      return l
-    }
-
-    if (t.type === "enum") {
-      let l = t.type
-
-      if (t.cases.length !== 0) {
-        const [c] = t.cases
-
-        if (c.type.type !== "literal") {
-          throw new Error(`Expected literal type, got: ${c.type.type}`)
-        }
-
-        l += ` of ${s(c.type.base)}`
-      }
-
-      return l
-    }
-
-    if (t.type === "literal") {
-      if (t.const.type === "noop") {
-        return ""
-      }
-      return String(t.const.value)
-    }
-
-    return t.type
-  }
 }
 
 function PropertyDescription(p: PropertyProperties): JSX.Element {
@@ -450,4 +437,63 @@ function PropertyDescription(p: PropertyProperties): JSX.Element {
   }
 
   return <dd>{d}</dd>
+}
+
+interface TypeBadgeProperties {
+  type: Service.Type
+}
+
+function TypeBadge(p: TypeBadgeProperties): JSX.Element {
+  const {type: t} = p
+
+  return <Badge>{w(t)}</Badge>
+
+  function w(t: Service.Type): string {
+    if (t.type === "array") {
+      let l = t.type
+
+      if (t.items.type !== "circular") {
+        l += ` of ${w(t.items.type)}`
+      }
+
+      return l
+    }
+
+    if (t.type === "complex") {
+      switch (t.by) {
+      case "allOf":
+        return "all of"
+      case "anyOf":
+        return "any of"
+      case "oneOf":
+        return "one of"
+      }
+      throw new Error(`Unknown complex type: ${t.by}`)
+    }
+
+    if (t.type === "enum") {
+      let l = t.type
+
+      if (t.cases.length !== 0) {
+        const [c] = t.cases
+
+        if (c.type.type !== "literal") {
+          throw new Error(`Expected literal type, got: ${c.type.type}`)
+        }
+
+        l += ` of ${w(c.type.base)}`
+      }
+
+      return l
+    }
+
+    if (t.type === "literal") {
+      if (t.const.type === "noop") {
+        return ""
+      }
+      return String(t.const.value)
+    }
+
+    return t.type
+  }
 }
