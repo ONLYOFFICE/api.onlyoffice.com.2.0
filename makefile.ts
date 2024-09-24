@@ -24,6 +24,7 @@ const config: Record<string, string[]> = {
 
     "ui-primitives",
     "ui-icons",
+    "ui-logos",
   ],
   test: [
     "service-declaration",
