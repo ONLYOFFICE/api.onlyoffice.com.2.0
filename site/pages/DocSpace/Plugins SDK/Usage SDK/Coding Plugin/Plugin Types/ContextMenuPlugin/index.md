@@ -22,9 +22,9 @@ Add a new context menu item.
 
 Parameters:
 
-| Name            | Description                  | Type             | Example |
-| --------------- | ---------------------------- | ---------------- | ------- |
-| contextMenuItem | Defines a context menu item. | IContextMenuItem |         |
+| Name            | Type             | Example | Description                  |
+| --------------- | ---------------- | ------- | ---------------------------- |
+| contextMenuItem | IContextMenuItem |         | Defines a context menu item. |
 
 ### getContextMenuItems
 
@@ -40,9 +40,9 @@ Update the context menu item.
 
 Parameters:
 
-| Name            | Description                      | Type             | Example |
-| --------------- | -------------------------------- | ---------------- | ------- |
-| contextMenuItem | Defines a new context menu item. | IContextMenuItem |         |
+| Name            | Type             | Example | Description                      |
+| --------------- | ---------------- | ------- | -------------------------------- |
+| contextMenuItem | IContextMenuItem |         | Defines a new context menu item. |
 
 ## Example
 

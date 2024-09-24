@@ -30,9 +30,9 @@ The JSON Web Token should be sent in the JSON object format to **document comman
 
 ## Parameters
 
-| Name  | Description                                                                                                                                                                    | Type   | Presence                  |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ | ------------------------- |
-| token | Defines the encrypted signature added to the **ONLYOFFICE Docs** config in the form of a [token](../../Additional%20API/Signature/Request/Token%20in%20body/index.md#command). | string | required by configuration |
+| Name  | Type   | Presence                  | Description                                                                                                                                                                    |
+| ----- | ------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| token | string | required by configuration | Defines the encrypted signature added to the **ONLYOFFICE Docs** config in the form of a [token](../../Additional%20API/Signature/Request/Token%20in%20body/index.md#command). |
 
 The **document editing service** informs the **document storage service** about the result caused by command and sends the response with all the necessary data via the [callback handler](../../Usage%20API/Callback%20handler/index.md).
 

@@ -22,9 +22,9 @@ Add a new info panel item.
 
 Parameters:
 
-| Name          | Description                 | Type           | Example |
-| ------------- | --------------------------- | -------------- | ------- |
-| infoPanelItem | Defines an info panel item. | IInfoPanelItem |         |
+| Name          | Type           | Example | Description                 |
+| ------------- | -------------- | ------- | --------------------------- |
+| infoPanelItem | IInfoPanelItem |         | Defines an info panel item. |
 
 ### getInfoPanelItems
 
@@ -36,9 +36,9 @@ Update the info panel item.
 
 Parameters:
 
-| Name          | Description                    | Type           | Example |
-| ------------- | ------------------------------ | -------------- | ------- |
-| infoPanelItem | Defines a new info panel item. | IInfoPanelItem |         |
+| Name          | Type           | Example | Description                    |
+| ------------- | -------------- | ------- | ------------------------------ |
+| infoPanelItem | IInfoPanelItem |         | Defines a new info panel item. |
 
 ## Example
 

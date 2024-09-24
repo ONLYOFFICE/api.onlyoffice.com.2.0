@@ -1,0 +1,21 @@
+{
+  "name": "@onlyoffice/svg-library",
+  "type": "module",
+  "private": true,
+  "main": "lib/main.ts",
+  "bin": "bin/svg-library.sh",
+  "scripts": {
+    "bin": "tsx lib/main.ts",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/console": "workspace:^",
+    "@onlyoffice/strings": "workspace:^",
+    "@onlyoffice/svg-preact": "workspace:^",
+    "@types/node": "20.12.12",
+    "sade": "1.8.1",
+    "tsx": "4.16.5",
+    "typescript": "5.4.5"
+  }
+}

@@ -2306,6 +2306,58 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/svg-library:
+    dependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/strings':
+        specifier: workspace:^
+        version: link:../strings
+      '@onlyoffice/svg-preact':
+        specifier: workspace:^
+        version: link:../svg-preact
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+      sade:
+        specifier: 1.8.1
+        version: 1.8.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+
+  packages/svg-preact:
+    dependencies:
+      '@babel/core':
+        specifier: 7.24.7
+        version: 7.24.7
+      '@babel/plugin-transform-react-jsx':
+        specifier: 7.24.7
+        version: 7.24.7(@babel/core@7.24.7)
+      '@types/babel__core':
+        specifier: 7.20.5
+        version: 7.20.5
+      svgo:
+        specifier: 3.3.2
+        version: 3.3.2
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/tab-container-element-types:
     dependencies:
       '@github/tab-container-element':
@@ -2535,33 +2587,15 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
     devDependencies:
-      '@babel/core':
-        specifier: 7.24.7
-        version: 7.24.7
-      '@babel/plugin-transform-react-jsx':
-        specifier: 7.24.7
-        version: 7.24.7(@babel/core@7.24.7)
+      '@onlyoffice/svg-library':
+        specifier: workspace:^
+        version: link:../svg-library
       '@storybook/preact':
         specifier: 8.0.0
         version: 8.0.0(preact@10.22.0)
-      '@types/babel__core':
-        specifier: 7.20.5
-        version: 7.20.5
-      '@types/node':
-        specifier: 20.12.12
-        version: 20.12.12
-      sade:
-        specifier: 1.8.1
-        version: 1.8.1
-      svgo:
-        specifier: 3.3.2
-        version: 3.3.2
-      tsx:
-        specifier: 4.16.5
-        version: 4.16.5
       vite:
         specifier: 5.1.6
-        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
 
   packages/ui-kit:
     dependencies:
@@ -2629,6 +2663,9 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
     devDependencies:
+      '@onlyoffice/svg-library':
+        specifier: workspace:^
+        version: link:../svg-library
       '@storybook/preact':
         specifier: 8.0.0
         version: 8.0.0(preact@10.22.0)
@@ -18536,18 +18573,6 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
-
-  vite@5.1.6(@types/node@20.12.12)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6):
-    dependencies:
-      esbuild: 0.19.12
-      postcss: 8.4.41
-      rollup: 4.13.0
-    optionalDependencies:
-      '@types/node': 20.12.12
-      fsevents: 2.3.3
-      lightningcss: 1.26.0
-      sugarss: 4.0.1(postcss@8.4.41)
-      terser: 5.31.6
 
   vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6):
     dependencies:

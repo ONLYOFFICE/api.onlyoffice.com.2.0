@@ -4,21 +4,21 @@ Returns information about the file properties, access rights and editor settings
 
 ## Parameters
 
-| Name     | Description                        | Type   |
-| -------- | ---------------------------------- | ------ |
-| file\_id | The file ID that must be URL safe. | string |
+| Name     | Type   | Description                        |
+| -------- | ------ | ---------------------------------- |
+| file\_id | string | The file ID that must be URL safe. |
 
 ## Query parameters
 
-| Name          | Description                                                                            | Type   |
-| ------------- | -------------------------------------------------------------------------------------- | ------ |
-| access\_token | An access token that the host will use to determine whether the request is authorized. | string |
+| Name          | Type   | Description                                                                            |
+| ------------- | ------ | -------------------------------------------------------------------------------------- |
+| access\_token | string | An access token that the host will use to determine whether the request is authorized. |
 
 ## Request headers
 
-| Name                  | Description                                                       | Type   | Presence |
-| --------------------- | ----------------------------------------------------------------- | ------ | -------- |
-| X-WOPI-SessionContext | Session context if it is provided on the initial WOPI action URL. | string | optional |
+| Name                  | Type   | Presence | Description                                                       |
+| --------------------- | ------ | -------- | ----------------------------------------------------------------- |
+| X-WOPI-SessionContext | string | optional | Session context if it is provided on the initial WOPI action URL. |
 
 ## Required response properties
 

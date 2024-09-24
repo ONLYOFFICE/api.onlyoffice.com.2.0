@@ -24,9 +24,9 @@ Update the administrator or owner plugin settings.
 
 Parameters:
 
-| Name                | Description                                                                                                         | Type      | Example |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
-| adminPluginSettings | Defines the administrator or owner settings block that is embedded in the modal window with the plugin description. | ISettings |         |
+| Name                | Type      | Example | Description                                                                                                         |
+| ------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
+| adminPluginSettings | ISettings |         | Defines the administrator or owner settings block that is embedded in the modal window with the plugin description. |
 
 ### setAdminPluginSettingsValue
 
@@ -34,9 +34,9 @@ Transfer the administrator or owner plugin settings to all the portal users. It 
 
 Parameters:
 
-| Name     | Description                                                                                                               | Type   | Example |
-| -------- | ------------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
-| settings | Defines a parameter that is used to save and transfer the administrator or owner plugin settings to all the portal users. | string |         |
+| Name     | Type   | Example | Description                                                                                                               |
+| -------- | ------ | ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| settings | string |         | Defines a parameter that is used to save and transfer the administrator or owner plugin settings to all the portal users. |
 
 ### getAdminPluginSettings
 

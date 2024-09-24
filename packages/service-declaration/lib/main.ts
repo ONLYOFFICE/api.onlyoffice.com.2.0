@@ -9,6 +9,7 @@ export class GroupDeclaration implements DeclarationNode {
   id = ""
   type = "group" as const
   name = ""
+  description = ""
   parent = ""
   children: string[] = []
 }
@@ -107,6 +108,7 @@ export type Type = TypeMap[keyof TypeMap]
 export interface TypeMap {
   array: ArrayType
   boolean: BooleanType
+  complex: ComplexType
   enum: EnumType
   integer: IntegerType
   literal: LiteralType
@@ -126,6 +128,12 @@ export class ArrayType implements TypeNode {
 
 export class BooleanType implements TypeNode {
   type = "boolean" as const
+}
+
+export class ComplexType implements TypeNode {
+  type = "complex" as const
+  by: "allOf" | "anyOf" | "oneOf" | "" = ""
+  entities: Entity[] = []
 }
 
 export class EnumType implements TypeNode {

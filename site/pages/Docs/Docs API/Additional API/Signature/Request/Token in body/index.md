@@ -10,10 +10,10 @@ The outgoing requests use both the token in body and token in header. They can b
 
 ## Parameters
 
-| Parameter                                | Description                                                                                                                                                            | Type    | Example |
-| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| services.CoAuthoring.token.inbox.inBody  | Specifies the enabling the token validation in the request body to the **document command service**, **document conversion service** and **document builder service**. | boolean | false   |
-| services.CoAuthoring.token.outbox.inBody | Specifies the enabling the token generation for the request body by **document editing service** to **document storage service**.                                      | boolean | false   |
+| Parameter                                | Type    | Example | Description                                                                                                                                                            |
+| ---------------------------------------- | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| services.CoAuthoring.token.inbox.inBody  | boolean | false   | Specifies the enabling the token validation in the request body to the **document command service**, **document conversion service** and **document builder service**. |
+| services.CoAuthoring.token.outbox.inBody | boolean | false   | Specifies the enabling the token generation for the request body by **document editing service** to **document storage service**.                                      |
 
 The *payload* for the JSON Web Token contains the request body parameters.
 

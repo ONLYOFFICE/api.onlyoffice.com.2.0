@@ -8,9 +8,9 @@ To enable WOPI, set the [wopi.enable](https://helpcenter.onlyoffice.com/installa
 
 Parameters:
 
-| Name        | Description                                                        | Type    | Example |
-| ----------- | ------------------------------------------------------------------ | ------- | ------- |
-| wopi.enable | Defines if WOPI is enabled or not. The default value is **false**. | boolean | true    |
+| Name        | Type    | Example | Description                                                        |
+| ----------- | ------- | ------- | ------------------------------------------------------------------ |
+| wopi.enable | boolean | true    | Defines if WOPI is enabled or not. The default value is **false**. |
 
 Example:
 

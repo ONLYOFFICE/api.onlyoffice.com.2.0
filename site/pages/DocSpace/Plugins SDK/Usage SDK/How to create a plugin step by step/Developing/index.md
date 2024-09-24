@@ -32,7 +32,7 @@ Create a plugin template and configure its settings which will be displayed in t
    | Plugin logo                                                   | logo.png                                                                                                                       |
    | Plugin description                                            | Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text. |
    | Plugin license                                                | Apache-2.0                                                                                                                     |
-   | Plugin homepage                                               | <https://github.com/ONLYOFFICE/docspace-plugin>                                                                                |
+   | Plugin homepage                                               | `https://github.com/ONLYOFFICE/docspace-plugin`                                                                                |
    | Select scopes (Press \<space> to select, Enter when finished) | API, Settings, Context menu                                                                                                    |
 
    ![Speech template](/assets/images/docspace/speech-template.png)
@@ -137,15 +137,15 @@ For example, the **draw\.io** plugin contains two main UI elements - the modal w
 
 - In the [Editor.ts](https://github.com/ONLYOFFICE/docspace-plugins/blob/master/draw-io/src/DrawIO/Editor.ts) file, configure the diagram editor. Create the *DiagramEditor* function with the following parameters:
 
-  | Parameter      | Description                                                       | Type    | Example                      |
-  | -------------- | ----------------------------------------------------------------- | ------- | ---------------------------- |
-  | ui             | Defines the editor's ui theme.                                    | string  | "default"                    |
-  | dark           | Defines the editor's dark theme.                                  | string  | "auto"                       |
-  | off            | Specifies if the offline mode is active or not.                   | boolean | false                        |
-  | lib            | Specifies if the libraries are enabled or not.                    | boolean | false                        |
-  | lang           | Defines the editor's language.                                    | string  | "auto"                       |
-  | url            | Defines the URL to the editor.                                    | string  | `https://embed.diagrams.net` |
-  | showSaveButton | Specifies if the **Save** button will be displayed in the editor. | boolean | true                         |
+  | Parameter      | Type    | Example                      | Description                                                       |
+  | -------------- | ------- | ---------------------------- | ----------------------------------------------------------------- |
+  | ui             | string  | "default"                    | Defines the editor's ui theme.                                    |
+  | dark           | string  | "auto"                       | Defines the editor's dark theme.                                  |
+  | off            | boolean | false                        | Specifies if the offline mode is active or not.                   |
+  | lib            | boolean | false                        | Specifies if the libraries are enabled or not.                    |
+  | lang           | string  | "auto"                       | Defines the editor's language.                                    |
+  | url            | string  | `https://embed.diagrams.net` | Defines the URL to the editor.                                    |
+  | showSaveButton | boolean | true                         | Specifies if the **Save** button will be displayed in the editor. |
 
   Then specify methods to work with diagrams:
 
