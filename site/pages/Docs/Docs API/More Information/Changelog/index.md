@@ -2,6 +2,8 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 8.2
 
+- Added the *insert-text* type of document selection to the *c* parameter of the [setRequestedDocument](../../Usage%20API/Methods/index.md#setrequesteddocument) method.
+
 ## Version 8.1
 
 - Added the [editorConfig.plugins.options](../../Usage%20API/Config/Editor/Plugins/index.md#options) parameter.
