@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "tsx makefile.ts build",
+    "clean": "tsx makefile.ts clean",
     "lint:code": "eslint .",
     "lint:pages": "remark --frail --quiet site/pages",
     "lint:styles": "stylelint --ignore-path .gitignore \"+(packages|site|storybook)/**/*.css\"",

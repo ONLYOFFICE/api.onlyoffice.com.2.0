@@ -11,6 +11,7 @@ import {
   AuthorizationRequirement,
   BooleanType,
   CircularReference,
+  ComplexType,
   ComponentsCache,
   DeclarationsCache,
   DirectReference,
@@ -583,6 +584,147 @@ test("EnumType: converts to the Service.EnumType", () => {
   }
 })
 
+test("ComplexType: initializes an empty instance", () => {
+  const t = new ComplexType()
+  const k = Object.keys(t)
+  eq(k, ["by", "entities"])
+  is(t.by, "")
+  eq(t.entities, [])
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with the allOf property", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({
+    allOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "allOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with the anyOf property", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({
+    anyOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "anyOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with the oneOf property", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({
+    oneOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "oneOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with an error if the allOf, anyOf, or oneOf property is missing", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({})
+  is(es.length, 1)
+
+  const [er] = es
+  is(er.message, "The allOf, anyOf, or oneOf of the SchemaObject is missing")
+
+  const e = new ComplexType()
+  eq(a, e)
+})
+
+test("ComplexType: merges with an error if the second type is a ComplexType", () => {
+  const a = new ComplexType()
+  const b = new ComplexType()
+
+  try {
+    a.merge(b)
+    un("Expected an error")
+  } catch (e) {
+    is(e instanceof Error && e.message, "The ComplexType cannot be merged")
+  }
+})
+
+test("ComplexType: converts to the Service.ComplexType", () => {
+  const t = new ComplexType()
+  t.by = "allOf"
+  t.entities = [s(), n()]
+
+  const a = t.toService()
+
+  const e = new Service.ComplexType()
+  e.by = "allOf"
+  e.entities = [s().toService(), n().toService()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
 test("BooleanType: initializes an empty instance", () => {
   const t = new BooleanType()
   const k = Object.keys(t)
@@ -654,7 +796,7 @@ test("ArrayType: initializes from an OpenApi.ArraySchemaObject with an error if 
   eq(a, e)
 })
 
-test("ArrayType: resolves with an circular reference", () => {
+test("ArrayType: resolves with a circular reference", () => {
   const c = new ComponentsCache()
 
   const s = new State()
@@ -791,6 +933,90 @@ test("ArrayType: converts to the Service.ArrayType", () => {
   e.items = t.items.toService()
 
   eq(a, e)
+})
+
+test("type: creates a ComplexType with the allOf property", () => {
+  const [a, ...es] = type({
+    allOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "allOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("type: creates a ComplexType with the anyOf property", () => {
+  const [a, ...es] = type({
+    anyOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "anyOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("type: creates a ComplexType with the oneOf property", () => {
+  const [a, ...es] = type({
+    oneOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "oneOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
 })
 
 test("type: creates an EnumType", () => {
@@ -2339,9 +2565,10 @@ test("OperationDeclaration: converts to the Service.OperationDeclaration", () =>
 test("GroupDeclaration: initializes an empty instance", () => {
   const d = new GroupDeclaration()
   const k = Object.keys(d)
-  eq(k, ["id", "name", "parent", "children"])
+  eq(k, ["id", "name", "description", "parent", "children"])
   is(isValidUUIDV4(d.id), true)
   is(d.name, "")
+  is(d.description, "")
   is(d.parent, "")
   eq(d.children, [])
 })
@@ -2349,6 +2576,7 @@ test("GroupDeclaration: initializes an empty instance", () => {
 test("GroupDeclaration: converts to the Service.GroupDeclaration", () => {
   const d = new GroupDeclaration()
   d.name = "n"
+  d.description = "d"
   d.children = ["a", "b"]
 
   const a = d.toService()
@@ -2356,6 +2584,7 @@ test("GroupDeclaration: converts to the Service.GroupDeclaration", () => {
   const e = new Service.GroupDeclaration()
   e.id = a.id
   e.name = "n"
+  e.description = "d"
   e.children = ["a", "b"]
 
   eq(a, e)

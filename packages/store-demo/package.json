@@ -5,6 +5,7 @@
   "main": "lib/main.ts",
   "bin": "bin/store-demo.sh",
   "scripts": {
+    "clean": "rimraf node_modules",
     "bin": "tsx lib/main.ts",
     "test:types": "tsc",
     "test": "pnpm test:types"
@@ -20,5 +21,8 @@
     "sade": "1.8.1",
     "tsx": "4.16.5",
     "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
   }
 }
