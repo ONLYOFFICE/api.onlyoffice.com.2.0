@@ -3,10 +3,9 @@
   "type": "module",
   "private": true,
   "main": "lib/main.ts",
-  "bin": "bin/svg-library.sh",
+  "bin": "bin/svg-library.ts",
   "scripts": {
     "clean": "rimraf node_modules",
-    "bin": "tsx lib/main.ts",
     "test:types": "tsc",
     "test": "pnpm test:types"
   },
