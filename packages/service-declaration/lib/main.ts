@@ -41,6 +41,7 @@ export class Request {
   pathParameters = new Entity()
   queryParameters = new Entity()
   bodyParameters = new Entity()
+  examples: Example[] = []
 }
 
 export type Authorization = AuthorizationMap[keyof AuthorizationMap]
@@ -197,4 +198,9 @@ export class CircularReference implements ReferenceNode {
 
 export interface ReferenceNode {
   type: string
+}
+
+export class Example {
+  syntax = ""
+  code = ""
 }

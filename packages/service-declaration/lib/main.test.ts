@@ -8,6 +8,7 @@ import {
   ComplexType,
   Entity,
   EnumType,
+  Example,
   GroupDeclaration,
   IntegerType,
   LiteralType,
@@ -25,6 +26,14 @@ import {
   UnionType,
   UnknownType,
 } from "./main.ts"
+
+test("Example: initializes an empty instance", () => {
+  const e = new Example()
+  const k = Object.keys(e)
+  eq(k, ["syntax", "code"])
+  is(e.syntax, "")
+  is(e.code, "")
+})
 
 test("CircularReference: initializes an empty instance", () => {
   const r = new CircularReference()
@@ -201,6 +210,7 @@ test("Request: initializes an empty instance", () => {
     "pathParameters",
     "queryParameters",
     "bodyParameters",
+    "examples",
   ])
   is(r.method, "")
   is(r.path, "")
@@ -211,6 +221,7 @@ test("Request: initializes an empty instance", () => {
   eq(r.pathParameters, new Entity())
   eq(r.queryParameters, new Entity())
   eq(r.bodyParameters, new Entity())
+  eq(r.examples, [])
 })
 
 test("OperationDeclaration: initializes an empty instance", () => {
