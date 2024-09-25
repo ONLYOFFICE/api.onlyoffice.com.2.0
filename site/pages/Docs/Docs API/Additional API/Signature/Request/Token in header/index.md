@@ -24,7 +24,7 @@ Sample payload of request to receive the status of the edited document:
 Sample of request to receive the status of the edited document:
 
 ``` http
-POST /coauthoring/CommandService.ashx HTTP/1.1
+POST /coauthoring/command HTTP/1.1
 Host: documentserver
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImMiOiJpbmZvIiwia2V5IjoiS2hpcno2elRQZGZkNyJ9fQ.hGQ8kquQWpg4MQYiSYaIzik0wotP1coAop6QfLruenA

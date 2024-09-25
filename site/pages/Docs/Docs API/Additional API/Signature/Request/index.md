@@ -37,7 +37,7 @@ These parameters must be encoded into the token so that the request looked like 
 Sample of request to receive the status of the edited document:
 
   ``` http
-  POST /coauthoring/CommandService.ashx HTTP/1.1
+  POST /coauthoring/command HTTP/1.1
   Host: documentserver
   Content-Type: application/json
 
