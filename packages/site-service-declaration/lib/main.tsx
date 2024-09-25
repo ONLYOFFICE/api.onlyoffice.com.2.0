@@ -1,6 +1,13 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import type * as Service from "@onlyoffice/service-declaration"
-import {Badge} from "@onlyoffice/ui-kit"
+import {
+  Badge,
+  CodeListing,
+  CodeListingTab,
+  CodeListingTabList,
+  CodeListingTabListWrapper,
+  CodeListingTabPanel,
+} from "@onlyoffice/ui-kit"
 import {Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
 
@@ -145,6 +152,10 @@ function Request(p: RequestProperties): JSX.Element {
     {r.bodyParameters.type.type !== "noop" && <>
       <h3>Body</h3>
       <Entity entity={r.bodyParameters} />
+    </>}
+    {r.examples.length !== 0 && <>
+      <h3>Examples</h3>
+      <Examples examples={r.examples} />
     </>}
   </>
 }
@@ -461,5 +472,43 @@ function TypeBadge(p: TypeBadgeProperties): JSX.Element {
     }
 
     return t.type
+  }
+}
+
+interface ExamplesProperties {
+  examples: Service.Example[]
+}
+
+function Examples(p: ExamplesProperties): JSX.Element {
+  const {examples} = p
+  const {SyntaxHighlight} = useContext(Context)
+
+  return <CodeListing>
+    <CodeListingTabListWrapper>
+      <CodeListingTabList label="List of Request Examples">
+        {examples.map((e) => <CodeListingTab id={e.syntax}>
+          {title(e.syntax)}
+        </CodeListingTab>)}
+      </CodeListingTabList>
+    </CodeListingTabListWrapper>
+    {examples.map((e) => <CodeListingTabPanel by={e.syntax}>
+      <pre>
+        <code>
+          <SyntaxHighlight syntax={e.syntax}>
+            {e.code}
+          </SyntaxHighlight>
+        </code>
+      </pre>
+    </CodeListingTabPanel>)}
+  </CodeListing>
+
+  function title(s: string): string {
+    switch (s) {
+    case "http":
+      return "HTTP"
+    case "shell":
+      return "cURL"
+    }
+    throw new Error(`Unknown syntax: ${s}`)
   }
 }
