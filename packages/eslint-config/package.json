@@ -4,6 +4,7 @@
   "private": true,
   "main": "dist/main.js",
   "scripts": {
+    "clean": "rimraf coverage dist node_modules",
     "build:code": "esbuild lib/* --outdir=dist",
     "build:types": "tsc --project tsconfig.emit.json",
     "build": "pnpm build:types && pnpm build:code",
@@ -35,6 +36,7 @@
     "@types/eslint__js": "8.42.3",
     "c8": "9.1.0",
     "esbuild": "0.23.0",
+    "rimraf": "6.0.1",
     "tsx": "4.16.5",
     "uvu": "0.5.6"
   }
