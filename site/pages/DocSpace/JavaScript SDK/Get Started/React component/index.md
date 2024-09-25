@@ -138,7 +138,7 @@ The application will be deployed on the web server (`http://localhost:3000` by d
 | Name                  | Type                                                  | Default | Description                                                                                                 |
 | --------------------- | ----------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------- |
 | url\*                 | string                                                | null    | Address of ONLYOFFICE DocSpace.                                                                             |
-| config\*              | object                                                | null    | Generic [configuration object](../../JavaScript%20SDK/Config/index.md) for opening a file with a token.     |
+| config\*              | object                                                | null    | Generic [configuration object](../../Usage%20SDK/Config/index.md) for opening a file with a token.          |
 | email                 | string                                                | null    | The user email to login in DocSpace.                                                                        |
 | onRequestPasswordHash | (email: string) => string                             | null    | The function called when the email parameter is passed, returning the *passwordHash* for login in DocSpace. |
 | onUnsuccessLogin      | () => void                                            | null    | The function called when DocSpace account login failed.                                                     |
