@@ -2,7 +2,6 @@
 order: -1
 ---
 
-
 Fills in the empty cells in the form.
 
 The user can choose a username from the list and all the fields in the form editor will be filled with the user contact information. At the same time, this data is displayed in the inputs of the custom interface.
@@ -15,7 +14,7 @@ When the document is ready, the form data can be submitted by clicking the **Com
 
 1. When the user opens a form document, the GetAllContentControls method is executed to collect all the content controls from the document. After that, the GetFormValue method is executed to get the content controls values and display them in the custom interface:
 
-  ``` javascript
+  ``` ts
   let contentControls = []
 
   function onDocumentReady() {
@@ -49,7 +48,7 @@ When the document is ready, the form data can be submitted by clicking the **Com
 
 2. When the user chooses a username from the list, the GetFormsByTag method is executed to collect all the forms by their tags and sets the corresponding values to them with the SetFormValue method:
 
-``` javascript
+``` ts
 $("#persons").change(function personChange(e) {
   const postalCode = $(this).val()
   $.getJSON("/app_data/editor/wildcarddata/persons.json", (persons) => {
@@ -81,7 +80,7 @@ $("#persons").change(function personChange(e) {
 
 3. When the user edits a form value, the onChangeContentControl event is fired and after that, the GetFormValue method is executed to get an updated form value and display it in the custom interface:
 
-``` javascript
+``` ts
 function onDocumentReady() {
   connector.attachEvent("onChangeContentControl", onChangeContentControl)
 }

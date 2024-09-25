@@ -1,10 +1,10 @@
-#### HRESULT RunText(\[in] BSTR commands, \[out, retval] VARIANT\_BOOL\* result);
+`HRESULT RunText([in] BSTR commands, [out, retval] VARIANT_BOOL* result);`
 
 Runs all the commands for the document creation using a single command. Compared to [CDocBuilder.ExecuteCommand](../ExecuteCommand/index.md) where only one command at a time is allowed, *CDocBuilder.RunText* makes it possible to enter all the commands for the document creation at once.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilder.RunText* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name       | Type            | Description                                                                                                                                                                                                                                                                                            |
 | ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -13,9 +13,9 @@ Runs all the commands for the document creation using a single command. Compared
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 VARIANT_BOOL b;

@@ -1,4 +1,4 @@
-#### HRESULT CreateInstance();
+`HRESULT CreateInstance();`
 
 Creates an instance of the *CDocBuilder* class.
 
@@ -6,9 +6,9 @@ Creates an instance of the *CDocBuilder* class.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 oBuilder->Initialize();

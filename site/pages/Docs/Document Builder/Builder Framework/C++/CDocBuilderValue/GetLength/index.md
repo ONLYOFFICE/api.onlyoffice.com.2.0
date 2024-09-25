@@ -1,4 +1,4 @@
-#### unsigned int GetLength();
+`unsigned int GetLength();`
 
 Returns the length if the **CDocBuilderValue** object is an array/typed array. Otherwise, returns 0.
 
@@ -6,9 +6,9 @@ Returns the length if the **CDocBuilderValue** object is an array/typed array. O
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

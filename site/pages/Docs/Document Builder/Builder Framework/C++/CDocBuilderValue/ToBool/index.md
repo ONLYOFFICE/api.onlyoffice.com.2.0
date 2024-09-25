@@ -1,4 +1,4 @@
-#### bool ToBool();
+`bool ToBool();`
 
 Converts the **CDocBuilderValue** object to a boolean value.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to a boolean value.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

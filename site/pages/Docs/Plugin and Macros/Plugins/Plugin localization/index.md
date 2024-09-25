@@ -120,7 +120,7 @@ Add the *id* attribute to it, so that it looked like this:
 
 After that add the window.Asc.plugin.onTranslate function to the [pluginCode.js](../../Usage%20API/Plugin%20object/index.md) file:
 
-``` javascript
+``` ts
 window.Asc.plugin.onTranslate = function onTranslate() {
   const label = document.querySelector("#button_new")
   if (label) {
@@ -133,7 +133,7 @@ The *window\.Asc.plugin.onTranslate* function will be called right after the plu
 
 If you need to localize more than one word/phrase, the *window\.Asc.plugin.onTranslate* function can have the following appearance:
 
-``` javascript
+``` ts
 window.Asc.plugin.onTranslate = function onTranslate() {
   document.querySelector("#button_delete").innerHTML = window.Asc.plugin.tr("Delete")
   document.querySelector("#button_new").innerHTML = window.Asc.plugin.tr("New")

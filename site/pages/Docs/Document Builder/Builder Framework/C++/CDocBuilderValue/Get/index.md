@@ -1,10 +1,10 @@
-#### CDocBuilderValue Get(nIndex);
+`CDocBuilderValue Get(nIndex);`
 
 Returns an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Get* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type       | Description                   |
 | -------- | ---------- | ----------------------------- |
@@ -12,9 +12,9 @@ Returns an array value by its index.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;
@@ -29,15 +29,15 @@ CDocBuilder::Dispose();
 
 The **operator\[]** postfix expression can be also used to get an array value by its index:
 
-```c++
+```cpp
 CDocBuilderValue operator[](const int& name);
 ```
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

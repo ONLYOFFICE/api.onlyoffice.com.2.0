@@ -8,7 +8,7 @@ If you are going to use **ONLYOFFICE Document Builder** with an application writ
 
 To launch **ONLYOFFICE Document Builder** executable file run the following command:
 
-```bash
+```sh
 docbuilder.exe mydocument.docbuilder
 ```
 
@@ -18,7 +18,7 @@ Visit the [.docbuilder](../Using%20.docbuilder%20file/index.md) file section for
 
 See the examples in some of the most popular programming languages at [this page](../../Builder%20Server/Overview/index.md).
 
-# Known issues
+## Known issues
 
 If you use **ONLYOFFICE Document Builder** as both an application and a script, then you need to know some rules and limitations:
 
@@ -33,28 +33,28 @@ If you use **ONLYOFFICE Document Builder** as both an application and a script, 
 
    Another way to do this is to use the **docbuilder.exe** executable file and run it with the **.docbuilder** file as an argument, where all the code for the document file creation will be written:
 
-   ```bash
+   ```sh
    docbuilder.exe "path-to-script.docbuilder"
    ```
 
 2. To set an argument to the builder class which can be trasferred to the program outside the [CDocBuilder.ExecuteCommand](../../Builder%20Framework/C++/CDocBuilder/ExecuteCommand/index.md) method, add it as an additional property when running **ONLYOFFICE Document Builder** executable file or as a part of program JavaScript code, but not included into the document file script:
 
-   #### Sets the --argument property to CDocBuilder.Run
+   ### Sets the --argument property to CDocBuilder.Run
 
-   ```bash
+   ```sh
    docbuilder.exe "--argument={\"company\":\"ONLYOFFICE\",\"product\":\"ONLYOFFICE Document Builder\"}" "path-to-script.docbuilder"
    ```
 
-   #### Sets the --argument property using JavaScript code
+   ### Sets the --argument property using JavaScript code
 
-   ```js
+   ``` ts
    const sCompany = Argument["company"]
    const sProduct = Argument["product"]
    ```
 
 3. The **builder** object methods cannot be called with the JS variables. Wrap them with the *jsValue* instruction if necessary:
 
-   ```js
+   ``` ts
    const jsVar = "123.docx"
    builder.SaveFile("docx", jsVar) // Incorrect
    builder.SaveFile("docx", jsValue(jsVar)) // Correct
@@ -64,25 +64,25 @@ If you use **ONLYOFFICE Document Builder** as both an application and a script, 
 
    For example,
 
-   ```js
+   ``` ts
    builder.CreateFile("docx")
    ```
 
    is the same as
 
-   ```js
+   ``` ts
    CDocBuilder.CreateFile(OFFICESTUDIO_FILE_DOCUMENT_DOCX)
    ```
 
    And
 
-   ```js
+   ``` ts
    builder.SaveFile("docx", file_path)
    ```
 
    is the same as
 
-   ```js
+   ``` ts
    CDocBuilder.SaveFile(OFFICESTUDIO_FILE_DOCUMENT_DOCX, file_path)
    ```
 
@@ -121,7 +121,7 @@ If you use **ONLYOFFICE Document Builder** as both an application and a script, 
 
 5. The entire JavaScript context is a wrapper for its native CDocBuilder **builderJS** object. You need to work with it as with an ordinary JavaScript object. In this case, the *jsValue* instruction is not needed for the JS variables:
 
-   ```js
+   ``` ts
    builderJS.OpenFile("path_or_url", "x2t_additons_as_xml")
    builderJS.CreateFile(OFFICESTUDIO_FILE_DOCUMENT_DOCX)
    // or builderJS.CreateFile("docx")
@@ -133,11 +133,11 @@ If you use **ONLYOFFICE Document Builder** as both an application and a script, 
 
 6. The Document Builder always works with one file. But there are cases when you need to be able to open another file not for adding its data to the content, but for some kind of manipulation (document comparison, mailmerge, etc). For such cases, the Document Builder provides the **OpenTmpFile** method:
 
-   ```js
+   ``` ts
    const tmpFile = builderJS.OpenTmpFile("path_or_url")
    ```
 
-   ## Methods:
+   ## Methods
 
    | Name        | Description                                                                                                    |
    | ----------- | -------------------------------------------------------------------------------------------------------------- |

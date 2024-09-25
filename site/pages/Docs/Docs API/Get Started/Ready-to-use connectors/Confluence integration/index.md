@@ -4,9 +4,9 @@ The connector is available in the official [Atlassian Marketplace](https://marke
 
 ## Features
 
-* Currently, the following document formats can be edited or viewed: DOCX, XLSX, PPTX, DOCXF, OFORM.
-* The plugin will create a new **Edit in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Confluence.
-* Currently, the following document formats can be converted into OOXML: ODT, DOC, ODP, PPT, ODS, XLS.
+- Currently, the following document formats can be edited or viewed: DOCX, XLSX, PPTX, DOCXF, OFORM.
+- The plugin will create a new **Edit in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Confluence.
+- Currently, the following document formats can be converted into OOXML: ODT, DOC, ODP, PPT, ODS, XLS.
 
 ## Installing ONLYOFFICE Docs
 
@@ -33,7 +33,7 @@ You could also install the app from Confluence administration panel:
 
 Find the uploaded **ONLYOFFICE Confluence connector** on the **Manage add-ons** page. Click **Configure** and enter the name of the server with ONLYOFFICE Docs installed:
 
-```
+``` sh
 https://documentserver/
 ```
 
@@ -47,7 +47,7 @@ If you plan to compile the Confluence ONLYOFFICE integration app yourself (e.g. 
 
 1. The stable Java version is necessary for the successful build. If you do not have it installed, use the following commands to install **Open JDK 8**:
 
-   ``` bash
+   ``` sh
    sudo apt-get update
    sudo apt-get install openjdk-8-jdk
    ```
@@ -56,13 +56,13 @@ If you plan to compile the Confluence ONLYOFFICE integration app yourself (e.g. 
 
 3. Get a submodule:
 
-   ``` bash
+   ``` sh
    git submodule update --init --recursive
    ```
 
 4. Compile package:
 
-   ``` bash
+   ``` sh
    atlas-package
    ```
 
@@ -78,11 +78,11 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 4. Confluence prepares a JSON object with the following properties:
 
-   * **url** - the temporary link that ONLYOFFICE Docs uses to download the document;
-   * **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **docserviceApiUrl** - the URL that the client needs to reply to ONLYOFFICE Docs (provided by the *files.docservice.url.api* property);
-   * **key** - the UUID to instruct ONLYOFFICE Docs whether to download the document again or not;
-   * **title** - the document title (name).
+   - **url** - the temporary link that ONLYOFFICE Docs uses to download the document;
+   - **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **docserviceApiUrl** - the URL that the client needs to reply to ONLYOFFICE Docs (provided by the *files.docservice.url.api* property);
+   - **key** - the UUID to instruct ONLYOFFICE Docs whether to download the document again or not;
+   - **title** - the document title (name).
 
 5. Confluence takes this object and constructs a page from a freemarker template, filling in all of those values so that the client browser can load up the editor.
 

@@ -20,7 +20,7 @@ The reference figure and the steps below explain the process of mentioning users
 
    <img alt="onRequestUsers" src="/assets/images/editor/onRequestUsers.png" width="309px">
 
-   ``` javascript
+   ``` ts
    function onRequestUsers(event) {
      docEditor.setUsers({
        c: event.data.c,
@@ -46,7 +46,7 @@ The reference figure and the steps below explain the process of mentioning users
 
 3. In order to set the users list under the comment field, the [setUsers](../../../Usage%20API/Methods/index.md#setusers) method must be called:
 
-   ``` javascript
+   ``` ts
    docEditor.setUsers({
      c: "mention",
      users: [
@@ -76,7 +76,7 @@ Specify the event handler for the comment message and the list of emails to be s
 
 > In version 5.4, **onRequestSendNotify** event can only be used if [onRequestUsers](../../../Usage%20API/Config/Events/index.md#onrequestusers) event is set. Starting from version 5.5, there is no such dependency between **onRequestSendNotify** and **onRequestUsers** - both can be set independently.
 
-``` javascript
+``` ts
 function onRequestSendNotify(event) {
   const ACTION_DATA = event.data.actionLink
   const comment = event.data.message
@@ -98,7 +98,7 @@ In the case when the [document.info.sharingSettings](../../../Usage%20API/Config
 
 ![Sharing settings](/assets/images/editor/sharing_settings.png)
 
-``` javascript
+``` ts
 docEditor.setSharingSettings({
   sharingSettings: [
     {

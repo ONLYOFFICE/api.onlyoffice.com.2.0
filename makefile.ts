@@ -1,9 +1,8 @@
 import {spawn} from "node:child_process"
 import {existsSync} from "node:fs"
-import {readFile} from "node:fs/promises"
+import {readFile, readdir} from "node:fs/promises"
 import path from "node:path"
 import {argv} from "node:process"
-import {URL, fileURLToPath} from "node:url"
 import sade from "sade"
 
 const config: Record<string, string[]> = {
@@ -24,60 +23,76 @@ const config: Record<string, string[]> = {
 
     "ui-primitives",
     "ui-icons",
+    "ui-logos",
+  ],
+  test: [
+    "service-declaration",
+    "openapi-declaration",
+
+    "svg-preact",
   ],
 }
 
 function main(): void {
   sade("makefile.ts")
+    .command("clean")
+    .describe("Recursively run 'pnpm clean' on all packages")
+    .action(async () => {
+      const a = await readdir("packages")
+      await recursive(a, "clean")
+    })
     .command("build")
-    .action(async ({_: t}: {_: string[]}) => {
-      if (t.length === 0) {
-        t = config.build
-      }
-      await run(t, "build")
+    .describe("Recursively run 'pnpm build' on all packages")
+    .action(async (p) => {
+      const a = resolve(p, config.build)
+      await recursive(a, "build")
+    })
+    .command("test")
+    .describe("Recursively run 'pnpm test' on all packages")
+    .action(async (p) => {
+      const a = resolve(p, config.test)
+      await recursive(a, "test")
     })
     .parse(argv)
 }
 
-async function run(t: string[], cmd: string): Promise<void> {
-  for (const [i, n] of t.entries()) {
-    const d = packageDir(n)
-    const f = packageJson(d)
-    if (!existsSync(f)) {
-      continue
-    }
+function resolve(a: {_: string[]}, b: string[]): string[] {
+  if (a._.length === 0) {
+    return b
+  }
+  return a._
+}
 
-    const c = await readFile(f, "utf8")
-    const o = JSON.parse(c)
-    if (!o.scripts || !o.scripts[cmd]) {
-      continue
-    }
-
-    console.log(`Executing '${cmd}' of '${o.name}'`)
-    await new Promise((res, rej) => {
-      const s = spawn("pnpm", [cmd], {cwd: d, shell: true, stdio: "inherit"})
-      s.on("close", res)
-      s.on("error", rej)
-    })
-
-    if (i < t.length - 1) {
-      console.log("\n\n\n")
-    }
+async function recursive(a: string[], cmd: string): Promise<void> {
+  for (const n of a) {
+    const p = path.join("packages", n)
+    await run(p, cmd)
   }
 }
 
-function packageDir(n: string): string {
-  const d = currentDir()
-  return path.join(d, "packages", n)
-}
+async function run(d: string, cmd: string): Promise<void> {
+  const f = path.join(d, "package.json")
+  if (!existsSync(f)) {
+    return
+  }
 
-function currentDir(): string {
-  const u = new URL(".", import.meta.url)
-  return fileURLToPath(u)
-}
+  const c = await readFile(f, "utf8")
+  const o = JSON.parse(c)
+  if (!o.scripts || !o.scripts[cmd]) {
+    return
+  }
 
-function packageJson(d: string): string {
-  return path.join(d, "package.json")
+  await new Promise((res, rej) => {
+    const s = spawn("pnpm", [cmd], {cwd: d, shell: true, stdio: "inherit"})
+    s.on("error", rej)
+    s.on("close", (c) => {
+      if (c !== 0) {
+        rej(new Error(`Failed to execute '${cmd}' of '${o.name}'`))
+        return
+      }
+      res(c)
+    })
+  })
 }
 
 main()

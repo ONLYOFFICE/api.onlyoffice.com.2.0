@@ -8,19 +8,19 @@ Plugin is an HTML page that is embedded in the editor and uses API to work with 
 
 This documentation describes:
 
-* How to [build](../Plugin%20structure/index.md), [localize](../../Plugins/Plugin%20localization/index.md), run, [test](../../Plugins/Developing%20plugins/index.md) and [publish](../../Plugins/Publishing%20plugins/index.md) a plugin
-* How to [write](../../Macros/Writing%20macros/index.md), [debug](../../Macros/Debugging/index.md) and run a macro or [convert](../../Macros/Converting%20VBA%20macros/index.md) VBA macros to use in ONLYOFFICE
-* How to use ONLYOFFICE methods and events
-* Where to find guides and [plugin](../../Plugins/Plugin%20examples/index.md)/[macro](../../Macros/Macro%20samples/index.md) code samples to get started
+- How to [build](../Plugin%20structure/index.md), [localize](../../Plugins/Plugin%20localization/index.md), run, [test](../../Plugins/Developing%20plugins/index.md) and [publish](../../Plugins/Publishing%20plugins/index.md) a plugin
+- How to [write](../../Macros/Writing%20macros/index.md), [debug](../../Macros/Debugging/index.md) and run a macro or [convert](../../Macros/Converting%20VBA%20macros/index.md) VBA macros to use in ONLYOFFICE
+- How to use ONLYOFFICE methods and events
+- Where to find guides and [plugin](../../Plugins/Plugin%20examples/index.md)/[macro](../../Macros/Macro%20samples/index.md) code samples to get started
 
 ## What plugins can do
 
 Here are some examples of what you can do with ONLYOFFICE plugins:
 
-* connect third-party services, like [Telegram](../../Plugins/Plugin%20examples/Telegram/index.md), [YouTube](../../Plugins/Plugin%20examples/YouTube/index.md), [Thesaurus](../../Plugins/Plugin%20examples/Thesaurus/index.md), [Translator](../../Plugins/Plugin%20examples/Translator/index.md), [Zotero](../../Plugins/Plugin%20examples/Zotero/index.md), [OCR](../../Plugins/Plugin%20examples/OCR/index.md), etc.;
-* add custom components & controls in the UI, like **Trackchanges**, **Trackchanges\_off**;
-* enhance the existing user experience and the editors’ functionality: [Autocomplete](../../Plugins/Plugin%20examples/Autocomplete/index.md), [Search & Replace](../../Plugins/Plugin%20examples/Search%20and%20replace/index.md), [Move cursor](../../Plugins/Plugin%20examples/Move%20cursor/index.md), [Extended comments](../../Plugins/Plugin%20examples/Extended%20comments/index.md);
-* automate tasks in documents with [Macros](../../Macros/Getting%20started%20with%20macros/index.md).
+- connect third-party services, like [Telegram](../../Plugins/Plugin%20examples/Telegram/index.md), [YouTube](../../Plugins/Plugin%20examples/YouTube/index.md), [Thesaurus](../../Plugins/Plugin%20examples/Thesaurus/index.md), [Translator](../../Plugins/Plugin%20examples/Translator/index.md), [Zotero](../../Plugins/Plugin%20examples/Zotero/index.md), [OCR](../../Plugins/Plugin%20examples/OCR/index.md), etc.;
+- add custom components & controls in the UI, like **Trackchanges**, **Trackchanges\_off**;
+- enhance the existing user experience and the editors’ functionality: [Autocomplete](../../Plugins/Plugin%20examples/Autocomplete/index.md), [Search & Replace](../../Plugins/Plugin%20examples/Search%20and%20replace/index.md), [Move cursor](../../Plugins/Plugin%20examples/Move%20cursor/index.md), [Extended comments](../../Plugins/Plugin%20examples/Extended%20comments/index.md);
+- automate tasks in documents with [Macros](../../Macros/Getting%20started%20with%20macros/index.md).
 
 Code samples are available at <https://github.com/ONLYOFFICE/sdkjs-plugins>.
 

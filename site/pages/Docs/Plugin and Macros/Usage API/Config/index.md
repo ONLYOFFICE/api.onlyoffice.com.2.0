@@ -2,7 +2,6 @@
 order: -8
 ---
 
-
 The *config.json* file is plugin configuration file containing the information about the main plugin data needed to register the plugin in the editors.
 
 - [baseUrl](#baseurl)
@@ -53,7 +52,7 @@ The *config.json* file is plugin configuration file containing the information a
   - [variations.type](#variationstype)
   - [variations.url](#variationsurl)
 - [version](#version)
-
+- [Example](#example)
 
 ## baseUrl
 
@@ -62,7 +61,6 @@ Path to the plugin. All the other paths are calculated relative to this path. In
 Type: string
 
 Example: ""
-
 
 ## group
 
@@ -79,7 +77,6 @@ Example:
 } 
 ```
 
-
 ### group.name
 
 The group name.
@@ -87,7 +84,6 @@ The group name.
 Type: string
 
 Example: "Macros"
-
 
 ### group.rank
 
@@ -97,7 +93,6 @@ Type: number
 
 Example: 2
 
-
 ## guid
 
 Plugin identifier. It **must** be of the *asc.{UUID}* type.
@@ -105,7 +100,6 @@ Plugin identifier. It **must** be of the *asc.{UUID}* type.
 Type: string
 
 Example: "asc.{FFE1F462-1EA2-4391-990D-4CC84940B754}"
-
 
 ## help
 
@@ -115,7 +109,6 @@ Type: string
 
 Example: ""
 
-
 ## minVersion
 
 The minimum supported editors version.
@@ -123,7 +116,6 @@ The minimum supported editors version.
 Type: string
 
 Example: "6.3.0"
-
 
 ## name
 
@@ -133,7 +125,6 @@ Type: string
 
 Example: "plugin name"
 
-
 ## nameLocale
 
 Translations for the name field. The object keys are the two letter language codes (ru, de, it, etc.) and the values are the plugin name translation for each language.
@@ -142,7 +133,6 @@ Type: localeTranslate
 
 Example: { "fr": "french plugin name" }
 
-
 ## offered
 
 Plugin author who proposed the plugin for publication.
@@ -150,7 +140,6 @@ Plugin author who proposed the plugin for publication.
 Type: string
 
 Example: "John Smith"
-
 
 ## variations
 
@@ -230,7 +219,6 @@ Example:
 ]
 ```
 
-
 ### variations.buttons
 
 The list of skinnable plugin buttons used in the plugin interface (used for visual plugins with their own window only, i.e. *isVisual == true && isInsideMode == false*).
@@ -253,7 +241,6 @@ Example:
 ]
 ```
 
-
 ### variations.cryptoDisabledForExternalCloud
 
 Specifies if the encryption for the third-party clouds is disabled or not.
@@ -261,7 +248,6 @@ Specifies if the encryption for the third-party clouds is disabled or not.
 Type: string
 
 Example: "true"
-
 
 ### variations.cryptoDisabledForInternalCloud
 
@@ -271,7 +257,6 @@ Type: string
 
 Example: "true"
 
-
 ### variations.cryptoDisabledOnStart
 
 Specifies if the mode is reset on restart or not.
@@ -279,7 +264,6 @@ Specifies if the mode is reset on restart or not.
 Type: string
 
 Example: "true"
-
 
 ### variations.cryptoMode
 
@@ -289,7 +273,6 @@ Type: string
 
 Example: "1" 
 
-
 ### variations.description
 
 The description, i.e. what describes your plugin the best way.
@@ -297,7 +280,6 @@ The description, i.e. what describes your plugin the best way.
 Type: string
 
 Example: "plugin description"
-
 
 ### variations.descriptionLocale
 
@@ -307,7 +289,6 @@ Type: localeTranslate
 
 Example:  { "fr": "french plugin description" }
 
-
 ### variations.EditorsSupport
 
 The editors which the plugin is available for (**word**, **cell**, **slide**, or **pdf**).
@@ -315,7 +296,6 @@ The editors which the plugin is available for (**word**, **cell**, **slide**, or
 Type: array of editorType
 
 Example:  \["word"]
-
 
 ### variations.events
 
@@ -325,7 +305,6 @@ Type: array of EventType
 
 Example:  \["onClick"] 
 
-
 ### variations.icons
 
 Plugin icon image files used in the editors.
@@ -333,7 +312,6 @@ Plugin icon image files used in the editors.
 Type: array of strings
 
 Example:  \["icon.png"]
-
 
 ### variations.icons2
 
@@ -343,7 +321,6 @@ Type: array of objects
 
 Example:  \[ { "100%": { "normal": "icon.png" } } ]
 
-
 ### variations.initData
 
 Is usually equal to *""* - this is the data which is sent from the editor to the plugin at the plugin start (e.g. if *initDataType == "text"*, the plugin will receive the selected text when run). It may also be equal to *encryption* in the encryption plugins.
@@ -351,7 +328,6 @@ Is usually equal to *""* - this is the data which is sent from the editor to the
 Type: string
 
 Example:  ""
-
 
 ### variations.initDataType
 
@@ -361,7 +337,6 @@ Type: initDataType
 
 Example:  "ole"
 
-
 ### variations.initOnSelectionChanged
 
 Specifies if the plugin watches the text selection events in the editor window.
@@ -369,7 +344,6 @@ Specifies if the plugin watches the text selection events in the editor window.
 Type: boolean
 
 Example:  true
-
 
 ### variations.isCustomWindow
 
@@ -379,7 +353,6 @@ Type: boolean
 
 Example:  true
 
-
 ### variations.isDisplayedInViewer
 
 Specifies if the plugin will be displayed in the viewer mode as well as in the editor mode (*isDisplayedInViewer == true*) or in the editor mode only (*isDisplayedInViewer == false*).
@@ -387,7 +360,6 @@ Specifies if the plugin will be displayed in the viewer mode as well as in the e
 Type: boolean
 
 Example:  true
-
 
 ### variations.isInsideMode
 
@@ -397,7 +369,6 @@ Type: boolean
 
 Example:  true
 
-
 ### variations.isModal
 
 Specifies if the opened plugin window is modal (used for visual plugins only, and if *isInsideMode* is not true).
@@ -405,7 +376,6 @@ Specifies if the opened plugin window is modal (used for visual plugins only, an
 Type: boolean
 
 Example:  true
-
 
 ### variations.isSystem
 
@@ -415,7 +385,6 @@ Type: boolean
 
 Example:  false
 
-
 ### variations.isUpdateOleOnResize
 
 Specifies if an OLE object must be redrawn when resized in the editor using the vector object draw type or not (used for OLE objects only, i.e. *initDataType == "ole"*).
@@ -423,7 +392,6 @@ Specifies if an OLE object must be redrawn when resized in the editor using the 
 Type: boolean
 
 Example:  true
-
 
 ### variations.isViewer
 
@@ -433,7 +401,6 @@ Type: boolean
 
 Example:  false
 
-
 ### variations.isVisual
 
 Specifies if the plugin is visual (will open a window for some action, or introduce some additions to the editor panel interface) or non-visual (will provide a button (or buttons) which is going to apply some transformations or manipulations to the document).
@@ -441,7 +408,6 @@ Specifies if the plugin is visual (will open a window for some action, or introd
 Type: boolean
 
 Example:  true
-
 
 ### variations.menu
 
@@ -451,7 +417,6 @@ Type: string
 
 Example:  "right"
 
-
 ### variations.screens
 
 Plugin screenshot image files used in the editors.
@@ -460,7 +425,6 @@ Type: array of strings
 
 Example:  \["resources/store/screenshots/screen\_1.png"]
 
-
 ### variations.size
 
 Plugin window size
@@ -468,7 +432,6 @@ Plugin window size
 Type: array of numbers
 
 Example:  \[600]
-
 
 ### variations.store
 
@@ -493,7 +456,6 @@ Example:
 }
 ```
 
-
 ### variations.store.background
 
 Background colors used for plugin icons in **ONLYOFFICE Plugin Marketplace**.
@@ -509,7 +471,6 @@ Example:
 }
 ```
 
-
 ### variations.store.background.light
 
 The background color used for the light theme plugin icon.
@@ -517,7 +478,6 @@ The background color used for the light theme plugin icon.
 Type: string
 
 Example: "#F5F5F5"
-
 
 ### variations.store.background.dark
 
@@ -527,23 +487,21 @@ Type: string
 
 Example: "#444444"
 
-
 ### variations.store.categories
 
 Plugin categories in **ONLYOFFICE Plugin Marketplace**:
 
-* "all" - All,
-* "recommended" - Recommended,
-* "devTools" - Developer tools,
-* "work" - Work,
-* "entertainment" - Entertainment,
-* "communication" - Communication,
-* "specAbilities" - Special abilities.
+- "all" - All,
+- "recommended" - Recommended,
+- "devTools" - Developer tools,
+- "work" - Work,
+- "entertainment" - Entertainment,
+- "communication" - Communication,
+- "specAbilities" - Special abilities.
 
 Type: array of strings
 
 Example: \["specAbilities", "work"]
-
 
 ### variations.store.icons
 
@@ -560,7 +518,6 @@ Example:
 }
 ```
 
-
 ### variations.store.icons.light
 
 The path to the scalable plugin icons for the light theme.
@@ -568,7 +525,6 @@ The path to the scalable plugin icons for the light theme.
 Type: string
 
 Example: "resources/store/icons"
-
 
 ### variations.store.icons.dark
 
@@ -578,7 +534,6 @@ Type: string
 
 Example: "resources/store/icons"
 
-
 ### variations.store.screenshots
 
 Images that are used for the plugin description in **ONLYOFFICE Plugin Marketplace**.
@@ -586,7 +541,6 @@ Images that are used for the plugin description in **ONLYOFFICE Plugin Marketpla
 Type: array of strings
 
 Example: \["resources/store/screenshots/screen\_1.png"]
-
 
 ### variations.type
 
@@ -596,7 +550,6 @@ Type: string
 
 Example: "background"
 
-
 ### variations.url
 
 Plugin entry point, i.e. an HTML file which connects the *plugin.js* file (the base file needed for work with plugins) and launches the plugin code. See the [index.html](../../Usage%20API/index.html/index.md) section for the detailed information.
@@ -604,7 +557,6 @@ Plugin entry point, i.e. an HTML file which connects the *plugin.js* file (the b
 Type: string
 
 Example: "index.html"
-
 
 ## version
 
@@ -614,8 +566,7 @@ Type: string
 
 Example: "1.0"
 
-
-**Example**
+## Example
 
 ``` json
 {

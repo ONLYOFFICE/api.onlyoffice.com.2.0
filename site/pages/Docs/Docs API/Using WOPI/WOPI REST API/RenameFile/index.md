@@ -1,4 +1,4 @@
-**POST /wopi/files/*(file\_id)***
+`POST /wopi/files/(file_id)`
 
 Renames a file.
 
@@ -10,36 +10,36 @@ This operation works as follows:
 4. If the host cannot rename the file because the name requested is invalid or conflicts with the existing file, the host should try to generate a different name based on the requested name that meets the file name requirements.
 5. If the host cannot generate a different name, it should return **400 Bad Request**. The response must include the **X-WOPI-InvalidFileNameError** header that describes why the file name was invalid.
 
-### Parameters
+## Parameters
 
-| Name     | Description                        | Type   |
-| -------- | ---------------------------------- | ------ |
-| file\_id | The file ID that must be URL safe. | string |
+| Name     | Type   | Description                        |
+| -------- | ------ | ---------------------------------- |
+| file\_id | string | The file ID that must be URL safe. |
 
-### Query parameters
+## Query parameters
 
-| Name          | Description                                                                            | Type   |
-| ------------- | -------------------------------------------------------------------------------------- | ------ |
-| access\_token | An access token that the host will use to determine whether the request is authorized. | string |
+| Name          | Type   | Description                                                                            |
+| ------------- | ------ | -------------------------------------------------------------------------------------- |
+| access\_token | string | An access token that the host will use to determine whether the request is authorized. |
 
-### Request headers
+## Request headers
 
-| Name                 | Description                                                          | Type   | Presence |
-| -------------------- | -------------------------------------------------------------------- | ------ | -------- |
-| X-WOPI-Override      | The requested operation from the WOPI server (*RENAME\_FILE*).       | string | required |
-| X-WOPI-Lock          | The lock ID that the host must use to identify the lock on the file. | string | optional |
-| X-WOPI-RequestedName | A file name, not including the file extension (in the UTF-7 format). | string | optional |
+| Name                 | Type   | Presence | Description                                                          |
+| -------------------- | ------ | -------- | -------------------------------------------------------------------- |
+| X-WOPI-Override      | string | required | The requested operation from the WOPI server (*RENAME\_FILE*).       |
+| X-WOPI-Lock          | string | optional | The lock ID that the host must use to identify the lock on the file. |
+| X-WOPI-RequestedName | string | optional | A file name, not including the file extension (in the UTF-7 format). |
 
-### Response headers
+## Response headers
 
-| Name                        | Description                                                                                                                                                                                                               | Type   | Presence |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| X-WOPI-InvalidFileNameError | The reason the rename operation could not be completed. This header should only be included when the response code is **400 Bad Request**. This value must only be used for logging purposes.                             | string | optional |
-| X-WOPI-Lock                 | The lock ID identifying the current lock on the file. This header must always be included when responding to the request with **409 Conflict**. It should not be included when responding to the request with **200 OK**. | string | optional |
-| X-WOPI-LockFailureReason    | The cause of the lock failure. This header may be included when responding to the request with **409 Conflict**. It must only be used for logging purposes.                                                               | string | optional |
+| Name                        | Type   | Presence | Description                                                                                                                                                                                                               |
+| --------------------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| X-WOPI-InvalidFileNameError | string | optional | The reason the rename operation could not be completed. This header should only be included when the response code is **400 Bad Request**. This value must only be used for logging purposes.                             |
+| X-WOPI-Lock                 | string | optional | The lock ID identifying the current lock on the file. This header must always be included when responding to the request with **409 Conflict**. It should not be included when responding to the request with **200 OK**. |
+| X-WOPI-LockFailureReason    | string | optional | The cause of the lock failure. This header may be included when responding to the request with **409 Conflict**. It must only be used for logging purposes.                                                               |
 
-### Response body
+## Response body
 
-| Name | Description                                             | Type   | Presence |
-| ---- | ------------------------------------------------------- | ------ | -------- |
-| Name | The renamed file name without a path or file extension. | string | required |
+| Name | Type   | Presence | Description                                             |
+| ---- | ------ | -------- | ------------------------------------------------------- |
+| Name | string | required | The renamed file name without a path or file extension. |

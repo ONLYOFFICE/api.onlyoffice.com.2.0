@@ -37,8 +37,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 5. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/thesaurus/licenses/jQuery.license).
-   * [Big Huge Thesaurus](https://words.bighugelabs.com/) - the developer-friendly API for getting synonyms and antonyms for your apps and websites. License: [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/thesaurus/licenses/jQuery.license).
+   - [Big Huge Thesaurus](https://words.bighugelabs.com/) - the developer-friendly API for getting synonyms and antonyms for your apps and websites. License: [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
 
 ## Config
 
@@ -133,12 +133,12 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
-* onTranslate
-* executeMethod ("GetSelectedText")
-* executeMethod ("PasteText")
+- button
+- init
+- onExternalMouseUp
+- onTranslate
+- executeMethod ("GetSelectedText")
+- executeMethod ("PasteText")
 
 ## Support
 

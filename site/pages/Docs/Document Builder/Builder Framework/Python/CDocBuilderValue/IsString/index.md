@@ -1,4 +1,4 @@
-#### def IsString(self);
+`def IsString(self);`
 
 Returns true if the **CDocBuilderValue** object is a string.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a string.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

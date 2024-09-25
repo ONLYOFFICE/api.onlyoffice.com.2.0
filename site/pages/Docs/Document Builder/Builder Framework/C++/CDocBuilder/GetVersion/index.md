@@ -1,4 +1,4 @@
-#### char\* GetVersion();
+`char* GetVersion();`
 
 Returns the **ONLYOFFICE Document Builder** engine version.
 
@@ -6,9 +6,9 @@ Returns the **ONLYOFFICE Document Builder** engine version.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

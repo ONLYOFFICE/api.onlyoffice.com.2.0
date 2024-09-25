@@ -96,10 +96,10 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/e
 
 ## Methods and events
 
-* button
-* init
-* onMethodReturn
-* executeMethod ("SearchAndReplace")
+- button
+- init
+- onMethodReturn
+- executeMethod ("SearchAndReplace")
 
 ## Support
 

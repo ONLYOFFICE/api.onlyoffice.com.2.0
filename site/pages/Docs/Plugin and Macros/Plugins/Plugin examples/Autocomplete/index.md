@@ -81,20 +81,20 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* inputHelper\_onSelectItem
-* onInputHelperClear
-* onInputHelperInput
-* createInputHelper
-* executeMethod ("InputText")
-* getInputHelper
-* InputHelper.createWindow
-* InputHelper.getItems
-* InputHelper.getScrollSizes
-* InputHelper.setItems
-* InputHelper.show
-* InputHelper.unShow
+- button
+- init
+- inputHelper\_onSelectItem
+- onInputHelperClear
+- onInputHelperInput
+- createInputHelper
+- executeMethod ("InputText")
+- getInputHelper
+- InputHelper.createWindow
+- InputHelper.getItems
+- InputHelper.getScrollSizes
+- InputHelper.setItems
+- InputHelper.show
+- InputHelper.unShow
 
 ## Support
 

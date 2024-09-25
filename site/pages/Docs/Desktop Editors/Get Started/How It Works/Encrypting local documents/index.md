@@ -8,9 +8,9 @@ To protect your local documents, spreadsheets and presentations, encrypt them wi
 
 To build the **Encryption** plugin, you need to create three files:
 
-* HTML file with the interface,
-* JS file with code,
-* JSON file with config.
+- HTML file with the interface,
+- JS file with code,
+- JSON file with config.
 
 More information about the plugin structure can be found [here](../../../../Plugin%20and%20Macros/Get%20Started/Plugin%20structure/index.md).
 
@@ -49,7 +49,7 @@ All the config parameters are described in the [documentation](../../../../Plugi
 
 After the config file is ready, create the plugin code file with the following contents:
 
-``` javascript
+``` ts
 const globalPassword = "{my-super-long-password}"
 window.Asc.plugin.init = function init(obj) {
   if (!obj) {
@@ -136,7 +136,7 @@ With it, we will get a new tab called **Encryption** on the main app page:
 
 Enable encryption by ticking the checkbox:
 
-``` javascript
+``` ts
 window.addEventListener("load", () => {
   const ASC_DESKTOP_EDITOR_DEFAULT_MODE = 0
   const ASC_DESKTOP_EDITOR_CRYPTO_MODE = 2
@@ -168,8 +168,8 @@ window.addEventListener("load", () => {
 
 Copy the folders with plugins to the *sdkjs-plugins* directory. The path to the folder depends on the operating system you use:
 
-* For Linux - */opt/onlyoffice/desktopeditors/editors/sdkjs-plugins/*
-* For Windows - *%ProgramFiles%\ONLYOFFICE\DesktopEditors\sdkjs-plugins\\*
+- For Linux - */opt/onlyoffice/desktopeditors/editors/sdkjs-plugins/*
+- For Windows - *%ProgramFiles%\ONLYOFFICE\DesktopEditors\sdkjs-plugins\\*
 
 It is important that you use plugins GUID as a folder name.
 
@@ -179,5 +179,5 @@ Detailed instructions can be found [here](../../../../Plugin%20and%20Macros/Plug
 
 After adding both plugins to the app, a new **Encryption** tab will be displayed. If you tick the checkbox there, all files you create and edit will be encrypted with the password:
 
-* If the encryption remains enabled, a password will not be required while opening the protected files (*getPasswordByFile* will be called).
-* If the encryption is disabled or files are opened in another app, a password will be asked.
+- If the encryption remains enabled, a password will not be required while opening the protected files (*getPasswordByFile* will be called).
+- If the encryption is disabled or files are opened in another app, a password will be asked.

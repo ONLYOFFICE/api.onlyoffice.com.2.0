@@ -10,7 +10,7 @@ There are two ways to add plugins: through the plugin manager and through the pl
 
 Starting from version 7.4, you can download ready-to-use plugins from **ONLYOFFICE Plugin Marketplace**.
 
-**Option 1. Using the **Install** button (an internet connection is required)**
+### Option 1. Using the Install button (an internet connection is required)
 
 Follow the steps below to add the plugins to the editor using plugin manager:
 
@@ -20,7 +20,7 @@ Follow the steps below to add the plugins to the editor using plugin manager:
 
 ![Plugins manager](/assets/images/plugins/desktop-plugin-manager.png)
 
-**Option 2. Uploading the plugin archive (an internet connection is not required)**
+### Option 2. Uploading the plugin archive (an internet connection is not required)
 
 If you want to add your own plugin, you can do it manually, even if you are offline:
 
@@ -42,9 +42,9 @@ The plugin will be added to the opened editors and all the editors you will open
 
 **Step 1.** Create a new folder in the *sdkjs-plugins* directory. The path to the folder depends on the operating system you use:
 
-* For Linux - */opt/onlyoffice/desktopeditors/editors/sdkjs-plugins/*
-* For Windows - *%ProgramFiles%\ONLYOFFICE\DesktopEditors\editors\sdkjs-plugins\\*
-* For Mac OS - *~/Library/Application Support/asc.onlyoffice.ONLYOFFICE/data/sdkjs-plugins/*
+- For Linux - */opt/onlyoffice/desktopeditors/editors/sdkjs-plugins/*
+- For Windows - *%ProgramFiles%\ONLYOFFICE\DesktopEditors\editors\sdkjs-plugins\\*
+- For Mac OS - *~/Library/Application Support/asc.onlyoffice.ONLYOFFICE/data/sdkjs-plugins/*
 
 **Step 2.** Use a plugin **GUID** as the folder name. You can find the plugin GUID in the *config.json* file.
 

@@ -37,13 +37,13 @@ You can also download this plugin from the [ONLYOFFICE App Directory](https://ww
 
 For CentOS users with SELinx enabled, after copying the src folder to sdkjs-plugins, plugins may not work due to the variable file security context. To restore the rights, use the following command:
 
-``` bash
+``` sh
 sudo restorecon -Rv /var/www/onlyoffice/documentserver/sdkjs-plugins/
 ```
 
 After that restart the services:
 
-``` bash
+``` sh
 sudo supervisorctl restart ds:docservice
 ```
 
@@ -63,9 +63,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 6. Third-party services:
 
-   * [fetch-polyfill](https://github.com/github/fetch) - a project that implements a subset of the standard Fetch specification, enough to make fetch a viable replacement for most uses of XMLHttpRequest in traditional web applications. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/zotero/licenses/fetch-polyfill.license)
-   * [promise-polyfill](https://github.com/taylorhakes/promise-polyfill) - lightweight ES6 Promise polyfill for the browser and node. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/zotero/licenses/promise-polyfill.license).
-   * [url-polyfill](https://github.com/lifaon74/url-polyfill) - Polyfill URL and URLSearchParams to match last WHATWG specifications. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/zotero/licenses/url-polyfill.license).
+   - [fetch-polyfill](https://github.com/github/fetch) - a project that implements a subset of the standard Fetch specification, enough to make fetch a viable replacement for most uses of XMLHttpRequest in traditional web applications. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/zotero/licenses/fetch-polyfill.license)
+   - [promise-polyfill](https://github.com/taylorhakes/promise-polyfill) - lightweight ES6 Promise polyfill for the browser and node. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/zotero/licenses/promise-polyfill.license).
+   - [url-polyfill](https://github.com/lifaon74/url-polyfill) - Polyfill URL and URLSearchParams to match last WHATWG specifications. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/zotero/licenses/url-polyfill.license).
 
 ## Config
 
@@ -163,10 +163,10 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onTranslate
-* executeMethod ("PasteHtml")
+- button
+- init
+- onTranslate
+- executeMethod ("PasteHtml")
 
 ## Support
 

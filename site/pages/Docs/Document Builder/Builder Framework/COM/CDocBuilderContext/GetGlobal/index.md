@@ -1,10 +1,10 @@
-#### HRESULT GetGlobal(\[out, retval] I\_DOCBUILDER\_VALUE\*\* result);
+`HRESULT GetGlobal([out, retval] I_DOCBUILDER_VALUE** result);`
 
 Returns the global object for the current context.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.GetGlobal* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type                     | Description                 |
 | -------- | ------------------------ | --------------------------- |
@@ -12,9 +12,9 @@ Returns the global object for the current context.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

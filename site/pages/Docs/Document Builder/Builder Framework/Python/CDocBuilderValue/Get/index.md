@@ -1,10 +1,10 @@
-#### def Get(self, key);
+`def Get(self, key);`
 
 Returns an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Get* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name  | Type | Description                   |
 | ----- | ---- | ----------------------------- |
@@ -12,9 +12,9 @@ Returns an array value by its index.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()
@@ -26,15 +26,15 @@ chart = charts.Get(1);
 
 The **default\[]** postfix expression can be also used to get an array value by its index:
 
-``` python
+``` py
 property CDocBuilderValue default[int]
 ```
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

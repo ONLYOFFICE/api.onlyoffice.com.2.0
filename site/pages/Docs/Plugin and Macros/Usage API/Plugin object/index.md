@@ -2,9 +2,7 @@
 order: -6
 ---
 
-
 The main plugin code is placed to a *.js* file which describes what and how must be done by the plugin. This file is placed to the plugin root folder together with the [config.json](../Config/index.md) and [index.html](../index.html/index.md) files.
-
 
 ## How it works
 
@@ -18,7 +16,7 @@ If the plugin operates with an OLE object, window.Asc.plugin.callCommand method 
 
 Let's see how this is done in the *helloworld.js* plugin:
 
-``` javascript
+``` ts
 window.Asc.plugin.init = function init() {
   this.callCommand(() => {
     const oDocument = Api.GetDocument()

@@ -1,4 +1,4 @@
-#### def GetLength(self);
+`def GetLength(self);`
 
 Returns the length if the **CDocBuilderValue** object is an array. Otherwise, returns 0.
 
@@ -6,9 +6,9 @@ Returns the length if the **CDocBuilderValue** object is an array. Otherwise, re
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

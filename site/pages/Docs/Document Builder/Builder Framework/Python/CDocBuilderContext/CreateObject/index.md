@@ -1,4 +1,4 @@
-#### def CreateObject(self);
+`def CreateObject(self);`
 
 Creates an empty object, an analogue of *{}* in JS.
 
@@ -6,9 +6,9 @@ Creates an empty object, an analogue of *{}* in JS.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 content = context.CreateObject()

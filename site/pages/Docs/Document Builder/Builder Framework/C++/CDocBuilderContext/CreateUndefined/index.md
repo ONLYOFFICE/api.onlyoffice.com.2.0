@@ -1,4 +1,4 @@
-#### CDocBuilderValue CreateUndefined();
+`CDocBuilderValue CreateUndefined();`
 
 Creates an undefined value, an analogue of *undefined* in JS.
 
@@ -6,9 +6,9 @@ Creates an undefined value, an analogue of *undefined* in JS.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

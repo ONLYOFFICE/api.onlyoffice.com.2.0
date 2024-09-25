@@ -1,4 +1,4 @@
-#### bool IsObject();
+`bool IsObject();`
 
 Returns true if the **CDocBuilderValue** object is an object.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is an object.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

@@ -1,4 +1,4 @@
-#### def IsArray(self);
+`def IsArray(self);`
 
 Returns true if the **CDocBuilderValue** object is an array.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is an array.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

@@ -2,10 +2,10 @@ The ONLYOFFICE [module](https://github.com/ONLYOFFICE/onlyoffice-drupal) enables
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, XLSX, PPTX.
-* The following formats are available for viewing: DJVU, DOC, DOCM, DOCX, DOT, DOTM, DOTX, EPUB, FB2, FODT, HTML, MHT, ODT, OTT, OXPS, PDF, PPTX, RTF, TXT, XPS, XML, CSV, FODS, ODS, OTS, XLS, XLSM, XLSX, XLT, XLTM, XLTX, FODP, ODP, OTP, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM.
-* The module also allows to preview files on public pages.
-* The module will create a new **Edit in ONLYOFFICE** menu option within the document library for office documents. This allows multiple users to collaborate in real time and save back those changes to Drupal.
+- Currently, the following document formats can be edited: DOCX, XLSX, PPTX.
+- The following formats are available for viewing: DJVU, DOC, DOCM, DOCX, DOT, DOTM, DOTX, EPUB, FB2, FODT, HTML, MHT, ODT, OTT, OXPS, PDF, PPTX, RTF, TXT, XPS, XML, CSV, FODS, ODS, OTS, XLS, XLSM, XLSX, XLT, XLTM, XLTX, FODP, ODP, OTP, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM.
+- The module also allows to preview files on public pages.
+- The module will create a new **Edit in ONLYOFFICE** menu option within the document library for office documents. This allows multiple users to collaborate in real time and save back those changes to Drupal.
 
 ## Installing ONLYOFFICE Docs
 
@@ -17,7 +17,7 @@ The easiest way to install an instance of ONLYOFFICE Docs is to use [Docker](htt
 
 To start using ONLYOFFICE Docs with Drupal, follow these steps:
 
-**Step 1: Add the module**
+### Step 1: Add the module
 
 There are two options to add the Drupal module.
 
@@ -34,11 +34,11 @@ There are two options to add the Drupal module.
 
 Enter the following command at the root of your site:
 
-``` bash
+``` sh
 composer require onlyoffice/onlyoffice-drupal
 ```
 
-**Step 2: Enable the module**
+### Step 2: Enable the module
 
 There are two options to enable the Drupal module.
 
@@ -52,7 +52,7 @@ There are two options to enable the Drupal module.
 
 1. Run the following **Drush** command, giving the project name as a parameter:
 
-   ``` bash
+   ``` sh
    drush pm:enable onlyoffice
    ```
 
@@ -62,7 +62,7 @@ There are two options to enable the Drupal module.
 
 In Drupal, open *\~/config/system/onlyoffice-settings* page with administrative settings for **ONLYOFFICE** section. Enter the address to connect ONLYOFFICE Docs:
 
-```
+``` sh
 https://<documentserver>/
 ```
 
@@ -72,11 +72,11 @@ Starting from version 7.2, JWT is enabled by default and the secret key is gener
 
 ## Using Drupal ONLYOFFICE connector module
 
-**Edit files already uploaded to Drupal**
+### Edit files already uploaded to Drupal
 
 All office files added to Media can be opened for editing. In the last table column, call the drop-down list and select the **Edit in ONLYOFFICE** action. The editor opens in the same tab. Users with Administrator rights are able to co-edit files using ONLYOFFICE Docs. All changes are saved in the same file.
 
-**Create new posts**
+### Create new posts
 
 When creating a post, you can add the new ONLYOFFICE element:
 

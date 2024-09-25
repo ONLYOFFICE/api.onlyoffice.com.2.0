@@ -3,6 +3,8 @@ import {red, yellow} from "kleur/colors"
 
 export class Console extends NodeConsole {
   #name: string
+  #stdout: NodeJS.WritableStream
+  #stderr: NodeJS.WritableStream
 
   constructor(
     name: string,
@@ -11,6 +13,28 @@ export class Console extends NodeConsole {
   ) {
     super(stdout, stderr)
     this.#name = name
+    this.#stdout = stdout
+    this.#stderr = stderr
+  }
+
+  copy(): Console {
+    const c = new Console(this.#name, this.#stdout, this.#stderr)
+    c.log = this.log.bind(c)
+    c.warn = this.warn.bind(c)
+    c.error = this.error.bind(c)
+    return c
+  }
+
+  mute(): void {
+    this.log = () => {}
+    this.warn = () => {}
+    this.error = () => {}
+  }
+
+  restore(c: Console): void {
+    this.log = c.log.bind(c)
+    this.warn = c.warn.bind(c)
+    this.error = c.error.bind(c)
   }
 
   log(...data: Parameters<typeof NodeConsole["prototype"]["log"]>): void {

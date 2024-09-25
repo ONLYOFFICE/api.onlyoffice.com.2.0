@@ -1,4 +1,4 @@
-#### new CDocBuilderContext
+`new CDocBuilderContext`
 
 Class used by **ONLYOFFICE Document Builder** for getting JS context for working.
 

@@ -1,10 +1,10 @@
-#### static void FreeMemoryTypedArray(sData, nSize);
+`static void FreeMemoryTypedArray(sData, nSize);`
 
 Frees the memory for a typed array.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.FreeMemoryTypedArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name    | Type            | Description                          |
 | ------- | --------------- | ------------------------------------ |
@@ -13,9 +13,9 @@ Frees the memory for a typed array.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

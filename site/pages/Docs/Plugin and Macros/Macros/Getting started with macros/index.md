@@ -6,9 +6,9 @@ Macros are small scripts used to facilitate your day-to-day routine work with di
 
 There are several reasons why ONLYOFFICE uses JavaScript for macros:
 
-* cross-platform,
-* easy to use,
-* security, as macros do not have any access to the system. They are just JS code that runs in the same window with the editors.
+- cross-platform,
+- easy to use,
+- security, as macros do not have any access to the system. They are just JS code that runs in the same window with the editors.
 
 > Please note that starting from version 7.1, the access to the *window* and *document* objects and the *alert* function is restricted from the macros because the *"use strict"* mode was applied to the macro scripts. Don't forget to declare variables before using them so that the macros work correctly.
 

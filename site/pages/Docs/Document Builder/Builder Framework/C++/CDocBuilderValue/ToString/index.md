@@ -1,4 +1,4 @@
-#### CString ToString();
+`CString ToString();`
 
 Converts the **CDocBuilderValue** object to a string.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to a string.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

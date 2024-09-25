@@ -2,9 +2,9 @@ This [plugin](https://github.com/ONLYOFFICE/onlyoffice-liferay) enables users to
 
 ## Features
 
-* Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.
-* The following formats are available for viewing only: ODT, ODS, ODP, DOC, XLS, PPT, PDF.
-* The plugin will create a new **ONLYOFFICE Edit/View** menu option within the **Documents and Media** section for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Liferay.
+- Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.
+- The following formats are available for viewing only: ODT, ODS, ODP, DOC, XLS, PPT, PDF.
+- The plugin will create a new **ONLYOFFICE Edit/View** menu option within the **Documents and Media** section for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Liferay.
 
 ## Installing ONLYOFFICE Docs
 
@@ -34,10 +34,10 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 2. Liferay prepares a JSON object for the ONLYOFFICE Docs with the following properties:
 
-   * **url**: the URL that ONLYOFFICE Docs uses to download the document,
-   * **callbackUrl**: the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **key**: the *fileVersionId* to instruct ONLYOFFICE Docs whether to download the document again or not;
-   * **title**: the document title (name).
+   - **url**: the URL that ONLYOFFICE Docs uses to download the document,
+   - **callbackUrl**: the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **key**: the *fileVersionId* to instruct ONLYOFFICE Docs whether to download the document again or not;
+   - **title**: the document title (name).
 
 3. The client browser makes a request to the JavaScript library from ONLYOFFICE Docs and sends ONLYOFFICE Docs the DocEditor configuration with the above properties.
 

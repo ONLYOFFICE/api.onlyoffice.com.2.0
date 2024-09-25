@@ -1,10 +1,10 @@
-#### HRESULT ToString(\[out, retval] BSTR\* result);
+`HRESULT ToString([out, retval] BSTR* result);`
 
 Converts the **CDocBuilderValue** object to a string.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.ToString* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type   | Description                |
 | -------- | ------ | -------------------------- |
@@ -12,9 +12,9 @@ Converts the **CDocBuilderValue** object to a string.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

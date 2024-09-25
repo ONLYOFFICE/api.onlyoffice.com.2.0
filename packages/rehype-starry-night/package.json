@@ -4,6 +4,7 @@
   "private": true,
   "main": "lib/main.ts",
   "scripts": {
+    "clean": "rimraf coverage dist node_modules",
     "test:types": "tsc",
     "test:unit": "tsc --noEmit false --rootDir lib --outDir dist && c8 --all --src ./dist --reporter html --reporter text --check-coverage --branches 80 --functions 80 --lines 80 --statements 80 --per-file uvu dist ^.*\\.test\\.js$",
     "test": "pnpm test:types && pnpm test:unit"
@@ -22,6 +23,7 @@
     "rehype-stringify": "10.0.0",
     "remark-parse": "11.0.0",
     "remark-rehype": "11.1.0",
+    "rimraf": "6.0.1",
     "unified": "11.0.5",
     "uvu": "0.5.6"
   }

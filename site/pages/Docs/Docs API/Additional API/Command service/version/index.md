@@ -1,6 +1,6 @@
 Requests the current version number of ONLYOFFICE Docs.
 
-### Request example
+## Request example
 
 ``` json
 {
@@ -8,13 +8,13 @@ Requests the current version number of ONLYOFFICE Docs.
 }
 ```
 
-### Parameters
+## Parameters
 
-| Name | Description               | Type   | Presence |
-| ---- | ------------------------- | ------ | -------- |
-| c    | Defines the command type. | string | required |
+| Name | Type   | Presence | Description               |
+| ---- | ------ | -------- | ------------------------- |
+| c    | string | required | Defines the command type. |
 
-### Response example
+## Response example
 
 ``` json
 {
@@ -23,9 +23,9 @@ Requests the current version number of ONLYOFFICE Docs.
 }
 ```
 
-### Parameters
+## Parameters
 
-| Parameter | Description                          | Type    | Presence |
-| --------- | ------------------------------------ | ------- | -------- |
-| error     | Defines an error code.               | integer | required |
-| version   | Defines the document server version. | string  | required |
+| Parameter | Type    | Presence | Description                          |
+| --------- | ------- | -------- | ------------------------------------ |
+| error     | integer | required | Defines an error code.               |
+| version   | string  | required | Defines the document server version. |

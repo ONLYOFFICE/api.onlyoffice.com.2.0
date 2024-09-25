@@ -1,10 +1,10 @@
-#### void WriteData(sPath, sValue, bAppend);
+`void WriteData(sPath, sValue, bAppend);`
 
 Writes data to the log file. It is used for logs in JS code.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilder.WriteData* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name      | Type    | Description                                                                                                |
 | --------- | ------- | ---------------------------------------------------------------------------------------------------------- |
@@ -14,9 +14,9 @@ Writes data to the log file. It is used for logs in JS code.
 
 ## Example
 
-#### .Net
+### .Net
 
-```csharp
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

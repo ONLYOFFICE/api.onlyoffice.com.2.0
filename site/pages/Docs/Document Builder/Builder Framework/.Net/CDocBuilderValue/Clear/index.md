@@ -1,4 +1,4 @@
-#### void Clear();
+`void Clear();`
 
 Clears the **CDocBuilderValue** object.
 
@@ -6,9 +6,9 @@ Clears the **CDocBuilderValue** object.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

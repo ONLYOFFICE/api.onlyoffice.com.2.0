@@ -1,21 +1,21 @@
-#### def Set(self, key, value);
+`def Set(self, key, value);`
 
 Sets an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Set* method is not used.
 
-## Parameters:
+## Parameters
 
-| Name     | Type             | Description                   |
-| -------- | ---------------- | ----------------------------- |
-| *key* | int       | The index of the array value. |
+| Name    | Type             | Description                   |
+| ------- | ---------------- | ----------------------------- |
+| *key*   | int              | The index of the array value. |
 | *value* | CDocBuilderValue | The array value to be set.    |
 
 ## Example
 
-####  Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()
@@ -31,15 +31,15 @@ charts.Set(1, oChart)
 
 The **default[]** postfix expression can be also used to set an array value by its index:
 
-``` python
+``` py
 property CDocBuilderValue default[int]
 ```
 
 ## Example
 
-####  Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

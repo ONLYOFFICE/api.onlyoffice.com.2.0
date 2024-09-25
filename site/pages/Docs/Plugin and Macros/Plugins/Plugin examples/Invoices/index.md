@@ -55,9 +55,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/i
 
 ## Methods and events
 
-* button
-* init
-* info.recalculate
+- button
+- init
+- info.recalculate
 
 ## Support
 

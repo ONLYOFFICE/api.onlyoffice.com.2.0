@@ -2,9 +2,9 @@ This [solution](https://github.com/ONLYOFFICE/onlyoffice-sharepoint) enables use
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, XLSX, PPTX.
-* The following formats are available for viewing only: PDF, DJVU, TXT, CSV, ODT, ODS, ODP, DOC, XLS, PPT, PPS, EPUB, RTF, HTML, HTM, MHT, XPS.
-* The plugin will create a new **Edit in ONLYOFFICE** menu option within the context menu of the file and the ribbon for Office documents. This allows multiple users to collaborate in real time and to save back those changes to SharePoint.
+- Currently, the following document formats can be edited: DOCX, XLSX, PPTX.
+- The following formats are available for viewing only: PDF, DJVU, TXT, CSV, ODT, ODS, ODP, DOC, XLS, PPT, PPS, EPUB, RTF, HTML, HTM, MHT, XPS.
+- The plugin will create a new **Edit in ONLYOFFICE** menu option within the context menu of the file and the ribbon for Office documents. This allows multiple users to collaborate in real time and to save back those changes to SharePoint.
 
 ## Installing ONLYOFFICE Docs
 
@@ -22,23 +22,23 @@ To start using ONLYOFFICE Docs with SharePoint, the following steps must be perf
 
 3. Run the *Install.ps1* script:
 
-   ``` bash
+   ``` sh
    PS> .\Install.ps1
    ```
 
 4. Enter your SharePoint site address:
 
-   ```
+   ``` sh
    https://<yoursharepointsite>
    ```
 
    > Alternatively to steps **3** and **4** you can type the following command:
    >
-   >   ``` powershell
+   >   ``` ps1
    >   Add-SPSolution -LiteralPath<SolutionPath>/onlyoffice.wsp
    >   ```
    >   
-   >   On the **SharePoint Central Administration** home page, click **System Settings -> Farm Management -> Manage farm solutions**. On the **Solution Management** page, click **onlyoffice.wsp -> Deploy Solution**.
+   > On the **SharePoint Central Administration** home page, click **System Settings -> Farm Management -> Manage farm solutions**. On the **Solution Management** page, click **onlyoffice.wsp -> Deploy Solution**.
 
 5. On the **SharePoint Central Administration** home page, under **Application Management**, click **Manage web applications**.
 
@@ -56,7 +56,7 @@ To start using ONLYOFFICE Docs with SharePoint, the following steps must be perf
 
 In SharePoint, open the */\_layouts/15/Onlyoffice/Settings.aspx* page with administrative settings. Enter the following address to connect ONLYOFFICE Docs:
 
-```
+``` sh
 https://<documentserver>/
 ```
 
@@ -96,13 +96,13 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 3. SharePoint prepares a JSON object with the following properties:
 
-   * **url** - the URL that ONLYOFFICE Docs uses to download the document;
-   * **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **DocumentSeverHost** - the URL that the client needs to reply to ONLYOFFICE Docs (can be set at the settings page);
-   * **Key** - the file identifier from SharePoint;
-   * **FileName** - the document title (name);
-   * **CurrentUserId** - the user identifier;
-   * **CurrentUserName** - the user name.
+   - **url** - the URL that ONLYOFFICE Docs uses to download the document;
+   - **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **DocumentSeverHost** - the URL that the client needs to reply to ONLYOFFICE Docs (can be set at the settings page);
+   - **Key** - the file identifier from SharePoint;
+   - **FileName** - the document title (name);
+   - **CurrentUserId** - the user identifier;
+   - **CurrentUserName** - the user name.
 
 4. SharePoint constructs a page, filling in all of those values so that the client browser can load up the editor.
 

@@ -1,10 +1,10 @@
-#### CDocBuilderValue^ GetProperty(sName);
+`CDocBuilderValue^ GetProperty(sName);`
 
 Returns a property of the **CDocBuilderValue** object.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetProperty* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name    | Type    | Description                                           |
 | ------- | ------- | ----------------------------------------------------- |
@@ -12,9 +12,9 @@ Returns a property of the **CDocBuilderValue** object.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();
@@ -30,15 +30,15 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
 
 1. use the **Get** method that takes an argument in the string format:
 
-   ```c#
+   ```cs
    CDocBuilderValue^ Get(String^ name);
    ```
 
    ## Example
 
-   #### .Net
+   ### .Net
 
-   ```c#
+   ```cs
    string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
    CDocBuilder.Initialize(workDirectory);
    CDocBuilder oBuilder = new CDocBuilder();
@@ -52,15 +52,15 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
 
 2. use the **default\[]** postfix expression that takes an argument in the string format:
 
-   ```c#
+   ```cs
    property CDocBuilderValue^ default[String^]
    ```
 
    ## Example
 
-   #### .Net
+   ### .Net
 
-   ```c#
+   ```cs
    string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
    CDocBuilder.Initialize(workDirectory);
    CDocBuilder oBuilder = new CDocBuilder();

@@ -10,14 +10,14 @@ There are three ways to add plugins: through the *sdkjs-plugins* folder, through
 
 Put the folder with the plugin code to the **ONLYOFFICE Docs** folder. The path to the folder depends on the operating system you use:
 
-* For Linux - */var/www/onlyoffice/documentserver/sdkjs-plugins/*
-* For Windows - *%ProgramFiles%\ONLYOFFICE\DocumentServer\sdkjs-plugins\\*
+- For Linux - */var/www/onlyoffice/documentserver/sdkjs-plugins/*
+- For Windows - *%ProgramFiles%\ONLYOFFICE\DocumentServer\sdkjs-plugins\\*
 
 The plugins will be available to all the users of **ONLYOFFICE Docs on-premises**. [In some cases](https://nodejs.org/docs/latest/api/fs.html#fs_availability), service restart is required.
 
 For debugging, start ONLYOFFICE Docs together with the shared *sdkjs-plugins* folder:
 
-``` bash
+``` sh
 docker run -itd -p 80:80 -v /absolutly_path_to_work_dir:/var/www/onlyoffice/documentserver/sdkjs-plugins/plugin onlyoffice/documentserver-ee:latest
 ```
 
@@ -25,7 +25,7 @@ docker run -itd -p 80:80 -v /absolutly_path_to_work_dir:/var/www/onlyoffice/docu
 
 In [ONLYOFFICE Docs config](../../../../Docs%20API/Usage%20API/Config/Editor/Plugins/index.md), add the relative path to the *config.json* file of the created plugin to the *plugins.pluginsData* parameter:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   editorConfig: {
     plugins: {
@@ -50,16 +50,16 @@ If there is already a test example in the config, replace the following line */e
 
 See the [ONLYOFFICE Docs API](../../../../Docs%20API/Usage%20API/Config/Editor/Plugins/index.md) documentation for more information on where to find the config and what and how can be changed there.
 
-> * In the *index.html* file there is always a default link to the [plugins.js](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js) file. Don’t forget to add it to the plugin folder.
->
-> * If the plugins placed into the folder and the plugins specified in the config coincide, the latter will be used.
->
-> * If you want to upload the plugin to the S3 or Nginx servers, you need to allow cross-domain requests from the address of your document server. Or you can just let everyone use your plugin:
->
->  ``` bash
->  add_header 'Access-Control-Allow-Origin' '*';  
->  add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
->  ```
+### Known issues
+
+- In the *index.html* file there is always a default link to the [plugins.js](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js) file. Don’t forget to add it to the plugin folder.
+- If the plugins placed into the folder and the plugins specified in the config coincide, the latter will be used.
+- If you want to upload the plugin to the S3 or Nginx servers, you need to allow cross-domain requests from the address of your document server. Or you can just let everyone use your plugin:
+
+``` sh
+add_header 'Access-Control-Allow-Origin' '*';
+add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+```
 
 ## Adding plugins through the plugin manager
 
@@ -77,16 +77,16 @@ The plugin will be added to the opened editors and all the editors you will open
 
 Starting from version 7.4, the **pluginsmanager** utility can be used to manage the plugins in ONLYOFFICE Docs on-premises. The commands for installing, removing, restoring, updating, etc. are available. For example:
 
-* For **Docker, DEB, and RPM**, the commands are as follows:
+- For **Docker, DEB, and RPM**, the commands are as follows:
 
-  ``` bash
+  ``` sh
   cd /var/www/onlyoffice/documentserver/server/tools/
   ./pluginsmanager --directory="/var/www/onlyoffice/documentserver/sdkjs-plugins" --install="zotero"
   ```
 
-* For **Windows**, the commands are as follows:
+- For **Windows**, the commands are as follows:
 
-  ``` bash
+  ``` sh
   cd C:\Program Files\ONLYOFFICE\DocumentServer\bin
   documentserver-pluginsmanager.bat --install="zotero"
   ```
@@ -101,16 +101,16 @@ You can uninstall plugins in four ways:
 
 **Option 1.** Starting from version 7.4, you can use the **pluginsmanager** utility:
 
-* For **Docker, DEB, and RPM**, the commands are as follows:
+- For **Docker, DEB, and RPM**, the commands are as follows:
 
-  ``` bash
+  ``` sh
   cd /var/www/onlyoffice/documentserver/server/tools/
   ./pluginsmanager --directory="/var/www/onlyoffice/documentserver/sdkjs-plugins" --remove="zotero"
   ```
 
-* For **Windows**, the commands are as follows:
+- For **Windows**, the commands are as follows:
 
-  ``` bash
+  ``` sh
   cd C:\Program Files\ONLYOFFICE\DocumentServer\bin
   documentserver-pluginsmanager.bat --remove="zotero"
   ```
@@ -121,12 +121,12 @@ The paths in the examples are default ones, please change them if necessary.
 
 The path to the folder depends on the operating system you use:
 
-* For Linux - */var/www/onlyoffice/documentserver/sdkjs-plugins/*
-* For Windows - *%ProgramFiles%\ONLYOFFICE\DocumentServer\sdkjs-plugins\\*
+- For Linux - */var/www/onlyoffice/documentserver/sdkjs-plugins/*
+- For Windows - *%ProgramFiles%\ONLYOFFICE\DocumentServer\sdkjs-plugins\\*
 
 **Option 3.** Edit the [ONLYOFFICE Docs config](../../../../Docs%20API/Usage%20API/Config/Editor/Plugins/index.md) by removing the corresponding plugin. The plugin will become unavailable for all portal users upon the editor next start:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   editorConfig: {
     plugins: {

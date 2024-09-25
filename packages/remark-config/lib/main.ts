@@ -31,15 +31,12 @@ import remarkLintNoBlockquoteWithoutMarker from "remark-lint-no-blockquote-witho
 import remarkLintNoConsecutiveBlankLines from "remark-lint-no-consecutive-blank-lines"
 import remarkLintNoDuplicateDefinedUrls from "remark-lint-no-duplicate-defined-urls"
 import remarkLintNoDuplicateDefinitions from "remark-lint-no-duplicate-definitions"
-import remarkLintNoDuplicateHeadings from "remark-lint-no-duplicate-headings"
-import remarkLintNoDuplicateHeadingsInSection from "remark-lint-no-duplicate-headings-in-section"
 import remarkLintNoEmphasisAsHeading from "remark-lint-no-emphasis-as-heading"
 import remarkLintNoEmptyUrl from "remark-lint-no-empty-url"
 import remarkLintNoFileNameIrregularCharacters from "remark-lint-no-file-name-irregular-characters"
 import remarkLintNoHeadingContentIndent from "remark-lint-no-heading-content-indent"
 import remarkLintNoHeadingIndent from "remark-lint-no-heading-indent"
 import remarkLintNoHeadingLikeParagraph from "remark-lint-no-heading-like-paragraph"
-import remarkLintNoHeadingPunctuation from "remark-lint-no-heading-punctuation"
 import remarkLintNoLiteralUrls from "remark-lint-no-literal-urls"
 import remarkLintNoMissingBlankLines from "remark-lint-no-missing-blank-lines"
 import remarkLintNoParagraphContentIndent from "remark-lint-no-paragraph-content-indent"
@@ -95,19 +92,21 @@ export function remarkConfig(): Preset {
           "http",
           "ini",
           "java",
-          "js",         // javascript,
           "json",
           "kt",         // kotlin,
           "php",
           "ps1",        // powershell,
           "py",         // python,
           "rb",         // ruby,
-          "sh",         // bash,
+          "sh",         // bash, shell,
           "swift",
-          "ts",         // typescript,
+          "ts",         // javascript, js, typescript,
+          "tsx",        // jsx,
+          "txt",
           "vb",
           "vue",
           "xml",
+          "yml",        // yaml,
         ],
       }],
       [remarkLintFencedCodeMarker, "`"],
@@ -123,20 +122,17 @@ export function remarkConfig(): Preset {
       remarkLintListItemBulletIndent,
       remarkLintListItemContentIndent,
       [remarkLintListItemIndent, "one"],
-      [remarkLintListItemSpacing, {checkBlanks: false}],
+      [remarkLintListItemSpacing, {checkBlanks: true}],
       remarkLintNoBlockquoteWithoutMarker,
       remarkLintNoConsecutiveBlankLines,
       remarkLintNoDuplicateDefinedUrls,
       remarkLintNoDuplicateDefinitions,
-      remarkLintNoDuplicateHeadings,
-      remarkLintNoDuplicateHeadingsInSection,
       remarkLintNoEmphasisAsHeading,
       remarkLintNoEmptyUrl,
       [remarkLintNoFileNameIrregularCharacters, /^(?!index).*/],
       remarkLintNoHeadingContentIndent,
       remarkLintNoHeadingIndent,
       remarkLintNoHeadingLikeParagraph,
-      remarkLintNoHeadingPunctuation,
       remarkLintNoLiteralUrls,
       [remarkLintNoMissingBlankLines, {exceptTightLists: true}],
       remarkLintNoParagraphContentIndent,

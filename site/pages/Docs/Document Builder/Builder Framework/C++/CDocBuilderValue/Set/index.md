@@ -1,10 +1,10 @@
-#### void Set(nIndex, sValue);
+`void Set(nIndex, sValue);`
 
 Sets an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Set* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type             | Description                   |
 | -------- | ---------------- | ----------------------------- |
@@ -13,9 +13,9 @@ Sets an array value by its index.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

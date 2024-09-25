@@ -4,10 +4,10 @@ The plugin is available in the official [HumHub Marketplace](https://marketplace
 
 ## Features
 
-* Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.
-* The following formats are available for viewing only: ODT, ODS, ODP, DOC, XLS, PPT, TXT, PDF.
-* The following formats can be converted into OOXML: ODT, ODS, ODP, DOC, XLS, PPT, TXT, CSV.
-* The plugin will create a new **Edit/View** menu option for Office documents. This allows multiple users to collaborate in real time and to save back those changes to HumHub.
+- Currently, the following document formats can be opened and edited with this plugin: DOCX, XLSX, PPTX, DOCXF, OFORM.
+- The following formats are available for viewing only: ODT, ODS, ODP, DOC, XLS, PPT, TXT, PDF.
+- The following formats can be converted into OOXML: ODT, ODS, ODP, DOC, XLS, PPT, TXT, CSV.
+- The plugin will create a new **Edit/View** menu option for Office documents. This allows multiple users to collaborate in real time and to save back those changes to HumHub.
 
 ## Installing ONLYOFFICE Docs
 
@@ -39,12 +39,12 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 5. The app prepares a JSON object with the following properties:
 
-   * **url** - the URL that ONLYOFFICE Docs uses to download the document;
-   * **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **key** - the random MD5 hash to instruct ONLYOFFICE Docs whether to download the document again or not;
-   * **title** - the document title (name);
-   * **id** - the user identification;
-   * **name** - the user name.
+   - **url** - the URL that ONLYOFFICE Docs uses to download the document;
+   - **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **key** - the random MD5 hash to instruct ONLYOFFICE Docs whether to download the document again or not;
+   - **title** - the document title (name);
+   - **id** - the user identification;
+   - **name** - the user name.
 
 6. HumHub takes this object and constructs a page from *views/open/index.php* template, filling in all of those values so that the client browser can load up the editor.
 
@@ -59,6 +59,5 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 11. After [10 seconds](../../How%20It%20Works/Saving%20file/index.md#savedelay) of inactivity, ONLYOFFICE Docs sends a POST to *callbackUrl* letting HumHub know that the clients have finished editing the document and closed it.
 
 12. HumHub downloads a new version of the document, replacing the old one.
-
 
 Download the HumHub ONLYOFFICE connector [here](https://github.com/ONLYOFFICE/onlyoffice-humhub).

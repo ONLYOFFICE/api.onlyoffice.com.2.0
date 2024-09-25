@@ -4,8 +4,8 @@ order: -8
 
 [ONLYOFFICE Docs](../Get%20ONLYOFFICE%20Docs/index.md) is an open-source office suite that includes editors for text documents, spreadsheets, presentations and fillable forms. It provides the following features:
 
-* creating, editing and viewing text documents, spreadsheets, presentations and fillable forms;
-* collaborating on files with other teammates in real time.
+- creating, editing and viewing text documents, spreadsheets, presentations and fillable forms;
+- collaborating on files with other teammates in real time.
 
 ONLYOFFICE Docs also supports the **WOPI protocol** that is used to integrate your application with an online office. Further information about WOPI can be found [here](../../Using%20WOPI/Overview/index.md).
 
@@ -13,7 +13,7 @@ ONLYOFFICE Docs also supports the **WOPI protocol** that is used to integrate yo
 
 The API JavaScript file can normally be found in the following editors folder:
 
-**https\://documentserver/web-apps/apps/api/documents/api.js**
+`https://documentserver/web-apps/apps/api/documents/api.js`
 
 Where **documentserver** is the name of the server with the ONLYOFFICE Docs installed.
 
@@ -26,13 +26,13 @@ The target HTML file where the editors are to be embedded need to have a placeho
 
 The page code containing the changeable parameters looks the following way:
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", config)
 ```
 
 Where *config* is an object:
 
-``` javascript
+``` ts
 const config = {
   document: {
     fileType: "docx",

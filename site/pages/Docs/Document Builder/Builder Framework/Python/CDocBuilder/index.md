@@ -1,4 +1,4 @@
-#### new CDocBuilder
+`new CDocBuilder`
 
 Base class used by **ONLYOFFICE Document Builder** for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
 

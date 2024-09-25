@@ -4,7 +4,7 @@ import {type Resource} from "@onlyoffice/service-resource"
 
 const require = createRequire(import.meta.url)
 
-export const {list, resolve} = resource("docspace-hosted-solutions")
+export const {list, retrieve} = resource("docspace-hosted-solutions")
 
 function resource(n: string): Resource {
   const f = file(n)

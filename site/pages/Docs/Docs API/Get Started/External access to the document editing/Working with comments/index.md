@@ -8,7 +8,7 @@ Collects all the comments from the document and displays them in the custom inte
 
 1. When the user opens a document, the GetAllComments method is executed to collect all the comments from the document and display them in the custom interface. The following comment data is displayed: the comment author, the time when the comment was posted, the comment text, and the comment replies:
 
-   ``` javascript
+   ``` ts
    let comments = []
    function onDocumentReady() {
      window.connector = docEditor.createConnector()
@@ -21,7 +21,7 @@ Collects all the comments from the document and displays them in the custom inte
 
 2. When the user clicks the **Add comment** button in the custom interface, the AddComment method is executed to add a new comment to the document. After this method is called, the onAddComment event is fired to add a new comment to an array with all the document comments:
 
-  ``` javascript
+  ``` ts
   function onDocumentReady() {
     connector.attachEvent("onAddComment", (val) => {
       const index = comments.findIndex((comment) => {
@@ -49,7 +49,7 @@ Collects all the comments from the document and displays them in the custom inte
 
 3. When the user clicks the **Remove comment** button in the custom interface, the RemoveComments method is executed to remove a comment from the document. After this method is called, the onRemoveComment event is fired to remove a comment from an array with all the document comments:
 
-  ``` javascript
+  ``` ts
   function onDocumentReady() {
     connector.attachEvent("onRemoveComment", (val) => {
       const index = comments.findIndex((comment) => {
@@ -67,13 +67,13 @@ Collects all the comments from the document and displays them in the custom inte
 
 4. When the user clicks the arrow buttons in the custom interface, the MoveToComment method is executed to move between the comments in the document:
 
-   ``` javascript
+   ``` ts
    connector.executeMethod("MoveToComment", [comments[indexComment]["Id"]])
    ```
 
 5. When the user clicks the **Add reply** button in the custom interface, the ChangeComment method is executed to add a reply to the existing comment by changing the *CommentData* object. After this method is called, the onChangeCommentData event is fired to add a new comment reply to an array with all the document comments:
 
-  ``` javascript
+  ``` ts
   function onDocumentReady() {
     connector.attachEvent("onChangeCommentData", (val) => {
       const index = comments.findIndex((comment) => {

@@ -1,15 +1,19 @@
 import {createRequire} from "node:module"
-import {type Component, type Declaration} from "@onlyoffice/service-declaration"
+import {type Declaration} from "@onlyoffice/service-declaration"
 
 const require = createRequire(import.meta.url)
 
 const d: Declaration[] = require("")
-const c: Record<string, Component> = require("")
+const m: Record<string, number> = require("")
 
 export function list(): Declaration[] {
   return d
 }
 
-export function resolve(id: string): Component | undefined {
-  return c[id]
+export function retrieve(id: string): Declaration | undefined {
+  const i = m[id]
+  if (i === undefined) {
+    return undefined
+  }
+  return d[i]
 }

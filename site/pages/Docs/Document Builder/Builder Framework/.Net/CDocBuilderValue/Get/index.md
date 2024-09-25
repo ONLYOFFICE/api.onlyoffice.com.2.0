@@ -1,10 +1,10 @@
-#### CDocBuilderValue^ Get(nIndex);
+`CDocBuilderValue^ Get(nIndex);`
 
 Returns an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Get* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type | Description                   |
 | -------- | ---- | ----------------------------- |
@@ -12,9 +12,9 @@ Returns an array value by its index.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();
@@ -29,15 +29,15 @@ CDocBuilder.Destroy();
 
 The **default\[]** postfix expression can be also used to get an array value by its index:
 
-```c#
+```cs
 property CDocBuilderValue^ default[int]
 ```
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

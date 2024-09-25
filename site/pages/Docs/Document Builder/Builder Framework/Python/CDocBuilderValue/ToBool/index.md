@@ -1,4 +1,4 @@
-#### def ToBool(self);
+ё
 
 Converts the **CDocBuilderValue** object to a boolean value.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to a boolean value.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

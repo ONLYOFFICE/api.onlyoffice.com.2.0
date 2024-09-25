@@ -2,11 +2,11 @@ import {readFile} from "node:fs/promises"
 import path from "node:path"
 import {URL, fileURLToPath} from "node:url"
 import {escape} from "@onlyoffice/node-path/win32.ts"
-import {type Component, type Declaration} from "@onlyoffice/service-declaration"
+import {type Declaration} from "@onlyoffice/service-declaration"
 
 export interface Resource {
   list(this: void): Declaration[]
-  resolve(this: void, id: string): Component | undefined
+  retrieve(this: void, id: string): Declaration | undefined
 }
 
 export function nop(): Resource {
@@ -14,13 +14,13 @@ export function nop(): Resource {
     list() {
       return []
     },
-    resolve(): undefined {
+    retrieve(): undefined {
       return undefined
     },
   }
 }
 
-export async function resource(df: string, cf: string): Promise<string> {
+export async function resource(df: string, mf: string): Promise<string> {
   const rd = rootDir()
   const fd = fixturesDir(rd)
   const rf = resourceFile(fd)
@@ -29,8 +29,8 @@ export async function resource(df: string, cf: string): Promise<string> {
   const d = "const d: Declaration[] = require"
   rc = rc.replace(`${d}("")`, `${d}("${escape(df)}")`)
 
-  const c = "const c: Record<string, Component> = require"
-  rc = rc.replace(`${c}("")`, `${c}("${escape(cf)}")`)
+  const m = "const m: Record<string, number> = require"
+  rc = rc.replace(`${m}("")`, `${m}("${escape(mf)}")`)
 
   return rc
 }

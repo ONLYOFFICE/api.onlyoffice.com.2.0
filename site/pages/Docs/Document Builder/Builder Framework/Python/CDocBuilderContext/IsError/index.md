@@ -1,4 +1,4 @@
-#### def IsError(self);
+`def IsError(self);`
 
 Checks for errors in JS. The error message and call stack will be written to *std::cerr*.
 
@@ -6,9 +6,9 @@ Checks for errors in JS. The error message and call stack will be written to *st
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 bError = context.IsError()

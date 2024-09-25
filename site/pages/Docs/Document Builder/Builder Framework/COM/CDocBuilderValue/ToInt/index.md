@@ -1,10 +1,10 @@
-#### HRESULT ToInt(\[out, retval] long\* result);
+`HRESULT ToInt([out, retval] long* result);`
 
 Converts the **CDocBuilderValue** object to an integer.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.ToInt* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type   | Description                 |
 | -------- | ------ | --------------------------- |
@@ -12,9 +12,9 @@ Converts the **CDocBuilderValue** object to an integer.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

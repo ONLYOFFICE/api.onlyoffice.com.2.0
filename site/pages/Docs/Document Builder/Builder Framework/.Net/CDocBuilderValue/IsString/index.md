@@ -1,4 +1,4 @@
-#### bool IsString();
+`bool IsString();`
 
 Returns true if the **CDocBuilderValue** object is a string.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a string.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

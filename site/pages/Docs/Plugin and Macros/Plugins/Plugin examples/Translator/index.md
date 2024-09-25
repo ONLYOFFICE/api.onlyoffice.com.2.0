@@ -38,9 +38,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 5. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/translator/licenses/jQuery.license).
-   * [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/translator/licenses/Select2.license).
-   * [Google Translate API](https://cloud.google.com/translate?hl=ru) enables translation between languages. License: [MIT License](https://github.com/matheuss/google-translate-api/blob/master/LICENSE).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/translator/licenses/jQuery.license).
+   - [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/translator/licenses/Select2.license).
+   - [Google Translate API](https://cloud.google.com/translate?hl=ru) enables translation between languages. License: [MIT License](https://github.com/matheuss/google-translate-api/blob/master/LICENSE).
 
 ## Config
 
@@ -107,17 +107,17 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
-* onTranslate
-* callCommand
-* executeMethod ("GetVersion")
-* executeMethod ("GetSelectedText")
-* executeMethod ("GetSelectionType")
-* executeMethod ("PasteText")
-* Asc.scope object
-* info.editorType
+- button
+- init
+- onExternalMouseUp
+- onTranslate
+- callCommand
+- executeMethod ("GetVersion")
+- executeMethod ("GetSelectedText")
+- executeMethod ("GetSelectionType")
+- executeMethod ("PasteText")
+- Asc.scope object
+- info.editorType
 
 ## Support
 

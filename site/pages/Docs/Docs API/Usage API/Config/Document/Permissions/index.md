@@ -8,7 +8,6 @@ Type: boolean
 
 Example: true
 
-
 ## chat
 
 Defines if the chat functionality is enabled in the document or not. In case the chat permission is set to **true**, the **Chat** menu button will be displayed. The default value is **true**.
@@ -16,7 +15,6 @@ Defines if the chat functionality is enabled in the document or not. In case the
 Type: boolean
 
 Example: true
-
 
 ## comment
 
@@ -30,7 +28,6 @@ Example: true
 
 ![Comments](/assets/images/editor/comment.png)
 
-
 ## commentGroups
 
 Defines the [groups](../../Editor/index.md#user) whose comments the user can edit, remove and/or view.
@@ -39,9 +36,9 @@ The *\[""]* value means that the user can edit/remove/view comments made by some
 
 Type: object
 
-**Example**:
+Example:
 
-``` javascript
+``` ts
 const config = {
   edit: ["Group2", ""],
   remove: [""],
@@ -55,8 +52,7 @@ The user can edit comments made by other users.
 
 Type: list
 
-Example: ["Group2", ""]
-
+Example: \["Group2", ""]
 
 ### commentGroups.remove
 
@@ -66,7 +62,6 @@ Type: list
 
 Example: []
 
-
 ### commentGroups.view
 
 The user can view comments made by other users.
@@ -74,7 +69,6 @@ The user can view comments made by other users.
 Type: list
 
 Example: ""
-
 
 ## copy
 
@@ -84,7 +78,6 @@ Type: boolean
 
 Example: true
 
-
 ## deleteCommentAuthorOnly
 
 Defines if the user can delete only his/her comments. The default value is **false**.
@@ -92,7 +85,6 @@ Defines if the user can delete only his/her comments. The default value is **fal
 Type: boolean
 
 Example: true
-
 
 ## download
 
@@ -104,7 +96,6 @@ Example: true
 
 ![Download document](/assets/images/editor/download.png)
 
-
 ## edit
 
 Defines if the document can be edited or only viewed. In case the editing permission is set to **"true"** the **File** menu will contain the **Edit Document** menu option; please note that if the editing permission is set to **"false"** the document will be opened in viewer and you will **not** be able to switch it to the editor even if the [mode](../../Editor/index.md#mode) parameter is set to **edit**. The default value is **true**.
@@ -115,7 +106,6 @@ Example: true
 
 ![Edit document](/assets/images/editor/edit.png)
 
-
 ## editCommentAuthorOnly
 
 Defines if the user can edit only his/her comments. The default value is **false**.
@@ -123,7 +113,6 @@ Defines if the user can edit only his/her comments. The default value is **false
 Type: boolean
 
 Example: true
-
 
 ## fillForms
 
@@ -137,7 +126,6 @@ Example: true
 
 ![Fill forms](/assets/images/editor/fill-forms.png)
 
-
 ## modifyContentControl
 
 Defines if the content control settings can be changed. Content control modification will only be available for the document editor if the [mode](../../Editor/index.md#mode) parameter is set to **edit**. The default value is **true**.
@@ -145,7 +133,6 @@ Defines if the content control settings can be changed. Content control modifica
 Type: boolean
 
 Example: true
-
 
 ## modifyFilter
 
@@ -157,7 +144,6 @@ Example: true
 
 > In case the document is edited by a user with the full access rights, the filters applied by such a user will be visible to all other users despite their local settings.
 
-
 ## print
 
 Defines if the document can be printed or not. In case the printing permission is set to **"false"** the **Print** menu option will be absent from the **File** menu. The default value is **true**.
@@ -167,7 +153,6 @@ Type: boolean
 Example: true
 
 ![Print document](/assets/images/editor/print.png)
-
 
 ## protect
 
@@ -179,7 +164,6 @@ Example: true
 
 ![Protect document](/assets/images/editor/protect.png)
 
-
 ## rename
 
 Allows to display the *Rename...* button when using the [onRequestRename](../../Events/index.md#onrequestrename) event. The default value is **false**. Deprecated since version 6.0, please add the [onRequestRename](../../Events/index.md#onrequestrename) field instead.
@@ -187,7 +171,6 @@ Allows to display the *Rename...* button when using the [onRequestRename](../../
 Type: boolean
 
 Example: true
-
 
 ## review
 
@@ -201,33 +184,31 @@ Example: true
 
 ![Review document](/assets/images/editor/review.png)
 
-
 ## reviewGroups
 
 Defines the [groups](../../Editor/index.md#user) whose changes the user can accept/reject. The *\[""]* value means that the user can review changes made by someone who belongs to none of these groups (for example, if the document is reviewed in third-party editors). If the value is *\[]*, the user cannot review changes made by any group. If the value is *""* or not specified, then the user can review changes made by any user.
 
 Type: array of string
 
-Example: ["Group1", "Group2", ""]
-
+Example: \["Group1", "Group2", ""]
 
 ## userInfoGroups
 
 Defines the groups of users whose information is displayed in the editors:
 
-* the usernames are displayed in the list of the editing users in the editor header;
-* when typing text, the user cursors and tooltips with their names are displayed;
-* when locking objects in the strict co-editing mode, the usernames are displayed.
+- the usernames are displayed in the list of the editing users in the editor header;
+- when typing text, the user cursors and tooltips with their names are displayed;
+- when locking objects in the strict co-editing mode, the usernames are displayed.
 
 The *\["Group1", ""]* means that the information about users from Group1 and users who don't belong to any group is displayed. The *\[]* means that no user information is displayed at all. The *undefined* or *""* values mean that the information about all users is displayed.
 
 Type: array of string
 
-Example: ["Group1", ""]
+Example: \["Group1", ""]
 
+## Example
 
-### Example
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {

@@ -6,7 +6,7 @@ This example demonstrates how to integrate ONLYOFFICE mobile web editors with th
 
 ![Android integration via test sample](/assets/images/editor/android-test-sample.png)
 
-**Opening ONLYOFFICE editors**
+### Opening ONLYOFFICE editors
 
 1. Download and install ONLYOFFICE Docs [Enterprise](https://www.onlyoffice.com/docs-enterprise.aspx) or [Developer](https://www.onlyoffice.com/developer-edition.aspx) edition.
 
@@ -24,7 +24,7 @@ This example demonstrates how to integrate ONLYOFFICE mobile web editors with th
 
    If **DOCUMENT\_SERVER\_URL** is specified, the DMS main page is loaded. Otherwise, an error occurs:
 
-   ``` kotlin
+   ``` kt
    private fun showDialog() {
        AlertDialog.Builder(requireContext())
        .setMessage("Document server url is empty.\nYou must specify the address in build.gradle")
@@ -43,7 +43,7 @@ This example demonstrates how to integrate ONLYOFFICE mobile web editors with th
 
 5. Use the **MainFragment.kt** controller to open the editors correctly on Android devices. In this controller, define a function to open a document via WebView component. Request a URL and check if it contains the *"editor"* string which specifies that the document will be opened:
 
-   ``` kotlin
+   ``` kt
    private class MainWebViewClient(private val navController: NavController) : WebViewClient() {
 
        override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
@@ -68,7 +68,7 @@ This example demonstrates how to integrate ONLYOFFICE mobile web editors with th
 
 6. To start working with documents, display the ONLYOFFICE editor on your mobile device via the WebView component. To do this, set up WebView and layout in the **EditorFragment.kt** controller as follows:
 
-   ``` kotlin
+   ``` kt
    @SuppressLint("SetJavaScriptEnabled")
    private fun setSettings() {
        webView?.settings?.apply {
@@ -86,11 +86,11 @@ This example demonstrates how to integrate ONLYOFFICE mobile web editors with th
 
 8. The application will be opened to demonstrate an example of integrating ONLYOFFICE mobile web editors with the ONLYOFFICE test or DMS sample.
 
-**Closing ONLYOFFICE editors**
+### Closing ONLYOFFICE editors
 
 Use the **EditorFragment.kt** controller to exit from the editor:
 
-``` kotlin
+``` kt
 private class EditorWebViewClient(private val navController: NavController) : WebViewClient() {
 
     override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {

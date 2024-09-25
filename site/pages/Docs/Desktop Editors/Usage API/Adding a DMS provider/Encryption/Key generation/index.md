@@ -1,6 +1,6 @@
 To check if the desktop app supports encryption, call the following command:
 
-``` javascript
+``` ts
 typeof window.AscDesktopEditor.cloudCryptoCommand === "function"
 ```
 
@@ -8,7 +8,7 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
 1. Log in to the cloud and pass the **Encryption** plugin ID:
 
-   ``` javascript
+   ``` ts
    window.AscDesktopEditor.execCommand("portal:login", JSON.stringify({
      encryptionKeys: {
        cryptoEngineId: "{FFF0E1EB-13DB-4678-B67D-FF0A41DBBCEF}",
@@ -34,7 +34,6 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
    Example: `https://exampledomain.com`
 
-
    ## emailInput
 
    Defines the user email entered on the login page.
@@ -42,7 +41,6 @@ The steps below explain the process of document encryption in ONLYOFFICE.
    Type: string
 
    Example: `john@example.com`
-
 
    ## pwdInput
 
@@ -52,10 +50,9 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
    Example: "123456"
 
+   ## Example
 
-   ### Example
-
-   ``` javascript
+   ``` ts
    window.AscDesktopEditor.execCommand("portal:checkpwd", JSON.stringify({
      domain: "https://exampledomain.com",
      emailInput: "john@example.com",
@@ -67,15 +64,15 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
 3. Pass the encrypted private and public keys with the login from the DMS provider to the desktop application with the following parameters:
 
-``` json
-{
-  "encryptionKeys": {
-    "cryptoEngineId": "guid",
-    "privateKeyEnc": "private key",
-    "publicKey": "public key"
-  }
-}
-```
+   ``` json
+   {
+     "encryptionKeys": {
+       "cryptoEngineId": "guid",
+       "privateKeyEnc": "private key",
+       "publicKey": "public key"
+     }
+   }
+   ```
 
    ## cryptoEngineId
 
@@ -85,7 +82,6 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
    Example: "{FFF0E1EB-13DB-4678-B67D-FF0A41DBBCEF}"
 
-
    ## privateKeyEnc
 
    Defines the encrypted private key.
@@ -94,7 +90,6 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
    Example: "xxx"
 
-    
    ## publicKey
 
    Defines the public key.
@@ -103,10 +98,9 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
    Example: "yyy"
 
+   ## Example
 
-   ### Example
-
-   ``` javascript
+   ``` ts
    window.AscDesktopEditor.execCommand("portal:login", JSON.stringify({
      encryptionKeys: {
        cryptoEngineId: "{FFF0E1EB-13DB-4678-B67D-FF0A41DBBCEF}",
@@ -118,8 +112,8 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
    You can also do it in the editor initialization config:
 
-   ``` javascript
-  const docEditor = new DocsAPI.DocEditor("placeholder", {
+   ``` ts
+   const docEditor = new DocsAPI.DocEditor("placeholder", {
      editorConfig: {
        encryptionKeys: {
          cryptoEngineId: "{FFF0E1EB-13DB-4678-B67D-FF0A41DBBCEF}",
@@ -132,7 +126,7 @@ The steps below explain the process of document encryption in ONLYOFFICE.
 
 4. Send the generated keys to the cloud through the *cloudCryptoCommand* method with the *encryptionKeys* type:
 
-   ``` javascript
+   ``` ts
    window.AscDesktopEditor.cloudCryptoCommand(
      "encryptionKeys",
      {

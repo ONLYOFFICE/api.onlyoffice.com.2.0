@@ -1,10 +1,10 @@
-#### HRESULT IsError(\[out, retval] VARIANT\_BOOL\* result);
+`HRESULT IsError([out, retval] VARIANT_BOOL* result);`
 
 Checks for errors in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.IsError* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type            | Description                        |
 | -------- | --------------- | ---------------------------------- |
@@ -12,9 +12,9 @@ Checks for errors in JS.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

@@ -1,4 +1,4 @@
-#### def ToDouble(self);
+`def ToDouble(self);`
 
 Converts the **CDocBuilderValue** object to a double value.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to a double value.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

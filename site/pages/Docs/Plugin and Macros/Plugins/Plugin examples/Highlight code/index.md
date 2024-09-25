@@ -25,8 +25,8 @@ The plugin guid: {BE5CBF95-C0AD-4842-B157-AC40FEDD9841}.
 
 ## Known issues
 
-* **Supported languages**: Apache, Access Log, Bash, Shell, MATLAB, Erlang, JavaScript, Ruby, Prolog, Swift, SQL, Java, HTTP, Fortran, Perl, XML, CPP, JSON, C Sharp, NGINX, BASIC, Markdown, CSS, Python, Objective-C, PHP, Delphi, Go, Kotlin, Rust, Shell, TypeScript.
-* **Supported styles**: Googlecode, GitHub, GitHub Gist, Android Studio, Visual Studio, Visual Studio 2015, Idea, Qtcreator Dark, Qtcreator Light, XCode, Fortran, Foundation, XML 1, XML 2.
+- **Supported languages**: Apache, Access Log, Bash, Shell, MATLAB, Erlang, JavaScript, Ruby, Prolog, Swift, SQL, Java, HTTP, Fortran, Perl, XML, CPP, JSON, C Sharp, NGINX, BASIC, Markdown, CSS, Python, Objective-C, PHP, Delphi, Go, Kotlin, Rust, Shell, TypeScript.
+- **Supported styles**: Googlecode, GitHub, GitHub Gist, Android Studio, Visual Studio, Visual Studio 2015, Idea, Qtcreator Dark, Qtcreator Light, XCode, Fortran, Foundation, XML 1, XML 2.
 
 ## Plugin structure
 
@@ -42,14 +42,14 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 5. Third-party service:
 
-   * [Highlight.js library](https://highlightjs.org/) - a syntax highlighter written in JavaScript. License: [BSD 3-Clause](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/Highlight.license).
-   * [Spectrum.js](http://bgrins.github.io/spectrum/) - a JavaScript colorpicker plugin that uses the jQuery framework. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/spectrum.license).
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/jQuery.license).
-   * [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/Select2.license).
-   * [js-beautify.js](https://github.com/beautify-web/js-beautify) - the code formatting library (CSS, HTML, JavaScript). License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/js-beautify.license).
-   * [prettier.js](https://github.com/prettier/prettier) - an opinionated code formatter. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/prettier.license).
-   * [prettier-plugin-php.js](https://github.com/prettier/plugin-php) - a plugin that adds the PHP language support to Prettier. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/prettier%40plugin-php.license).
-   * [xml-formatter.js](https://github.com/chrisbottin/xml-formatter) converts XML into a human readable format (pretty print) while respecting the *xml:space* attribute. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/xml-formatter.license).
+   - [Highlight.js library](https://highlightjs.org/) - a syntax highlighter written in JavaScript. License: [BSD 3-Clause](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/Highlight.license).
+   - [Spectrum.js](http://bgrins.github.io/spectrum/) - a JavaScript colorpicker plugin that uses the jQuery framework. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/spectrum.license).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/jQuery.license).
+   - [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/Select2.license).
+   - [js-beautify.js](https://github.com/beautify-web/js-beautify) - the code formatting library (CSS, HTML, JavaScript). License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/js-beautify.license).
+   - [prettier.js](https://github.com/prettier/prettier) - an opinionated code formatter. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/prettier.license).
+   - [prettier-plugin-php.js](https://github.com/prettier/plugin-php) - a plugin that adds the PHP language support to Prettier. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/prettier%40plugin-php.license).
+   - [xml-formatter.js](https://github.com/chrisbottin/xml-formatter) converts XML into a human readable format (pretty print) while respecting the *xml:space* attribute. License: [MIT](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/highlightcode/licenses/xml-formatter.license).
 
 ## Config
 
@@ -167,13 +167,13 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
-* onTranslate
-* executeMethod ("PasteHtml")
-* loadModule
-* resizeWindow
+- button
+- init
+- onExternalMouseUp
+- onTranslate
+- executeMethod ("PasteHtml")
+- loadModule
+- resizeWindow
 
 ## Support
 

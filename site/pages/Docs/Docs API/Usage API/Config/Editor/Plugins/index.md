@@ -6,8 +6,54 @@ Defines the array of the identifiers (as entered in [config.json](../../../../..
 
 Type: array of string
 
-Example: ["asc.{7327FC95-16DA-41D9-9AF2-0E7F449F6800}"]
+Example: \["asc.{7327FC95-16DA-41D9-9AF2-0E7F449F6800}"]
 
+## options
+
+Defines an object which allows configuring plugins from an external source. The settings can be set for all plugins or for a specific plugin. For example, this object can be used to pass an authorization token to the plugin. You can also use the **SetPluginsOptions** method of the [Automation API](../../../Automation%20API/index.md) to pass the *options* object to the plugin.
+
+Type: object
+
+Example:
+
+``` json
+{
+  "all": {},
+  "pluginGuid": {}
+}
+```
+
+### options.all
+
+Defines the parameters which will be set for all plugins.
+
+Type: object
+
+Example:
+
+``` json
+{
+  "all": {
+    "keyAll": "valueAll"
+  }
+}
+```
+
+### options.pluginGuid
+
+Defines the parameters which will be set for a specific plugin. The plugin must be specified with the plugin GUID of the *asc.{UUID}* type.
+
+Type: object
+
+Example:
+
+``` json
+{
+  "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}": {
+    "keyYoutube": "valueYoutube"
+  }
+}
+```
 
 ## pluginsData
 
@@ -16,7 +62,6 @@ Defines the array of absolute URLs to the plugin configuration files ([config.js
 Type: array of string
 
 Example: `["https://example.com/plugins/chess-plugin/config.json"]`
-
 
 ## url
 
@@ -28,16 +73,23 @@ Example: `https://example.com/plugins/`
 
 ![Plugins](/assets/images/editor/plugins.png)
 
+## Example
 
-### Example
-
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   editorConfig: {
     plugins: {
       autostart: [
         "asc.{7327FC95-16DA-41D9-9AF2-0E7F449F6800}",
       ],
+      options: {
+        "all": {
+          keyAll: "valueAll",
+        },
+        "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}": {
+          keyYoutube: "valueYoutube",
+        },
+      },
       pluginsData: [
         "https://example.com/plugins/chess-plugin/config.json",
       ],

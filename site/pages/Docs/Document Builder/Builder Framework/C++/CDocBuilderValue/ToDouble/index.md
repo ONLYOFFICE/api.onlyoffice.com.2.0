@@ -1,4 +1,4 @@
-#### double ToDouble();
+`double ToDouble();`
 
 Converts the **CDocBuilderValue** object to a double value.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to a double value.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

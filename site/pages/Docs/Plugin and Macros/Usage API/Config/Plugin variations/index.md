@@ -1,8 +1,8 @@
 Plugin variations - subplugins that are created inside the origin plugin for the following purposes:
 
-* to perform the main plugin actions;
-* to contain plugin settings;
-* to display an **About** window, etc.
+- to perform the main plugin actions;
+- to contain plugin settings;
+- to display an **About** window, etc.
 
 Starting from version 8.1, plugins can create not only multiple windows, but also multiple left panels.
 
