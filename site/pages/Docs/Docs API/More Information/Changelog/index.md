@@ -2,6 +2,8 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 8.2
 
+- Added the *users* parameter to the response of the [info](../../Additional%20API/Command%20service/info/index.md) command.
+
 ## Version 8.1
 
 - Added the [editorConfig.plugins.options](../../Usage%20API/Config/Editor/Plugins/index.md#options) parameter.
