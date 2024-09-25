@@ -1,4 +1,5 @@
 import {transformAsync} from "@babel/core"
+import transformJsx from "@babel/plugin-transform-react-jsx"
 import {optimize} from "svgo"
 
 /**
@@ -40,7 +41,7 @@ return ${s.data.replace(">", "aria-labelledby={titleId} aria-describedby={descId
 }`
 
   const b = await transformAsync(c, {
-    plugins: [["@babel/plugin-transform-react-jsx", {
+    plugins: [[transformJsx, {
       pragma: "h",
       pragmaFrag: "Fragment",
       useBuiltIns: true,

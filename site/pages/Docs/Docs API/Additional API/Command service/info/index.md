@@ -12,11 +12,11 @@ Requests a document status and the list of the identifiers of the users who open
 
 ## Parameters
 
-| Parameter | Description                                                                                                       | Type   | Presence |
-| --------- | ----------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| c         | Defines the command type.                                                                                         | string | required |
-| key       | Defines the document identifier used to unambiguously identify the document file.                                 | string | required |
-| userdata  | Defines some custom identifier which will help distinguish the specific request in case there were more than one. | string | optional |
+| Parameter | Type   | Presence | Description                                                                                                       |
+| --------- | ------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| c         | string | required | Defines the command type.                                                                                         |
+| key       | string | required | Defines the document identifier used to unambiguously identify the document file.                                 |
+| userdata  | string | optional | Defines some custom identifier which will help distinguish the specific request in case there were more than one. |
 
 ## Response example
 
@@ -29,7 +29,7 @@ Requests a document status and the list of the identifiers of the users who open
 
 ## Parameters
 
-| Parameter | Description                                                                       | Type    | Presence |
-| --------- | --------------------------------------------------------------------------------- | ------- | -------- |
-| error     | Defines an error code.                                                            | integer | required |
-| key       | Defines the document identifier used to unambiguously identify the document file. | string  | required |
+| Parameter | Type    | Presence | Description                                                                       |
+| --------- | ------- | -------- | --------------------------------------------------------------------------------- |
+| error     | integer | required | Defines an error code.                                                            |
+| key       | string  | required | Defines the document identifier used to unambiguously identify the document file. |

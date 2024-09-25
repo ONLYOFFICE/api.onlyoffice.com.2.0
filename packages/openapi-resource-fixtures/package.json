@@ -6,6 +6,7 @@
     "./*": "./dist/*"
   },
   "scripts": {
+    "clean": "rimraf dist node_modules",
     "build": "tsx lib/main.ts",
     "test:types": "tsc",
     "test": "pnpm test:types"
@@ -19,6 +20,7 @@
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/openapi-resource": "workspace:^",
     "@onlyoffice/stream-string": "workspace:^",
+    "rimraf": "6.0.1",
     "tsx": "4.16.5",
     "yaml": "2.4.1"
   }
