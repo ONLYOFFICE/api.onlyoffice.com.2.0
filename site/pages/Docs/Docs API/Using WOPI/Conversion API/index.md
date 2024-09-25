@@ -6,13 +6,13 @@ In order to convert different file formats in the online office, the POST reques
 
 ## Request parameters and their description
 
-| Parameter        | Description                                                                                                                             | Type    | Presence |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- |
-| format           | The output file format.                                                                                                                 | string  | required |
-| PDFVer           | The pdf version for the respective type of PDF to be used for the output file (PDF/A-1b, PDF/A-2b, etc.).                               | string  | optional |
-| FullSheetPreview | Specifies if the full sheet previews will be available or not.                                                                          | bollean | optional |
-| file             | A file to convert in the payload.                                                                                                       | object  | required |
-| lang             | The default format language. It is used for the date type cells. If the language is specified, it determines the display/output format. | string  | optional |
+| Parameter        | Type    | Presence | Description                                                                                                                             |
+| ---------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| format           | string  | required | The output file format.                                                                                                                 |
+| PDFVer           | string  | optional | The pdf version for the respective type of PDF to be used for the output file (PDF/A-1b, PDF/A-2b, etc.).                               |
+| FullSheetPreview | bollean | optional | Specifies if the full sheet previews will be available or not.                                                                          |
+| file             | object  | required | A file to convert in the payload.                                                                                                       |
+| lang             | string  | optional | The default format language. It is used for the date type cells. If the language is specified, it determines the display/output format. |
 
 ## Examples of requests
 

@@ -14,6 +14,8 @@ Example: "docx"
 
 Defines the unique document identifier used by the service to recognize the document. In case the known key is sent, the document will be taken from the cache. Every time the document is edited and saved, the key must be generated anew. The document url can be used as the **key** but without the special characters and the length is limited to 128 symbols.
 
+Please note that the key must be unique for all independent services connected to the same document server. Otherwise, the service may open someone else's file from the editor cache. If multiple third-party integrators are connected to the same document server, they must also provide a unique key.
+
 > The key characters can be used: **0-9**, **a-z**, **A-Z**, **-.\_=**. The maximal key length is **128** characters.
 
 > This parameter is required.

@@ -60,11 +60,11 @@ The steps below explain the process of inserting data into the spreadsheet by an
    ='[fileName]sheetName'!cell
    ```
 
-   | Parameter | Description                                    | Type   | Example   |
-   | --------- | ---------------------------------------------- | ------ | --------- |
-   | cell      | The cell from where the data was copied.       | string | E5        |
-   | fileName  | The file name from where the data was copied.  | string | new\.xlsx |
-   | sheetName | The sheet name from where the data was copied. | string | Sheet1    |
+   | Parameter | Type   | Example   | Description                                    |
+   | --------- | ------ | --------- | ---------------------------------------------- |
+   | cell      | string | E5        | The cell from where the data was copied.       |
+   | fileName  | string | new\.xlsx | The file name from where the data was copied.  |
+   | sheetName | string | Sheet1    | The sheet name from where the data was copied. |
 
    The data update request to the file will be sent to the file URL.
 

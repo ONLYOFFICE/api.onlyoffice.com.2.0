@@ -4,6 +4,7 @@
   "private": true,
   "main": "lib/main.ts",
   "scripts": {
+    "clean": "rimraf node_modules",
     "test:types": "tsc",
     "test": "pnpm test:types"
   },
@@ -13,6 +14,7 @@
     "typescript": "5.4.5"
   },
   "devDependencies": {
-    "preact": "10.22.0"
+    "preact": "10.22.0",
+    "rimraf": "6.0.1"
   }
 }

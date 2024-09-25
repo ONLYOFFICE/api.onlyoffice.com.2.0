@@ -9,6 +9,8 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 8.1
 
+- Added the [editorConfig.plugins.options](../../Usage%20API/Config/Editor/Plugins/index.md#options) parameter.
+- Added the possibility to [insert](../../Usage%20API/Methods/index.md#insertimage) the *tif* / *tiff* image type into the file.
 - Added the [startFilling](../../Usage%20API/Methods/index.md#startfilling) method.
 - Added the [events.onRequestStartFilling](../../Usage%20API/Config/Events/index.md#onrequeststartfilling) event.
 - Added the [docs\_api\_config](../../Using%20WOPI/Host%20page/index.md#parameters) parameter to the *form* element of the WOPI host page.

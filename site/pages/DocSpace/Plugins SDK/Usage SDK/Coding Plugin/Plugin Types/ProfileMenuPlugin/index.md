@@ -22,9 +22,9 @@ Add a new profile menu item.
 
 Parameters:
 
-| Name             | Description                  | Type             | Example |
-| ---------------- | ---------------------------- | ---------------- | ------- |
-| profileMenuItems | Defines a profile menu item. | IProfileMenuItem |         |
+| Name             | Type             | Example | Description                  |
+| ---------------- | ---------------- | ------- | ---------------------------- |
+| profileMenuItems | IProfileMenuItem |         | Defines a profile menu item. |
 
 ### getProfileMenuItems
 
@@ -36,9 +36,9 @@ Update the profile menu item.
 
 Parameters:
 
-| Name             | Description                      | Type             | Example |
-| ---------------- | -------------------------------- | ---------------- | ------- |
-| profileMenuItems | Defines a new profile menu item. | IProfileMenuItem |         |
+| Name             | Type             | Example | Description                      |
+| ---------------- | ---------------- | ------- | -------------------------------- |
+| profileMenuItems | IProfileMenuItem |         | Defines a new profile menu item. |
 
 ## Example
 
