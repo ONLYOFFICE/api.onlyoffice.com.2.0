@@ -36,6 +36,7 @@ export function s({
   descId,
   ...props
 }: JSX.SVGAttributes<SVGSVGElement> & {title?: string, titleId?: string, desc?: string, descId?: string}): JSX.Element {
+  // @ts-ignore i have no idea how to fix this properly
   return h("svg", Object.assign({
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
