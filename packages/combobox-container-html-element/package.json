@@ -4,6 +4,7 @@
   "private": true,
   "main": "lib/main.ts",
   "scripts": {
+    "clean": "rimraf node_modules",
     "demo": "wds . --watch",
     "test:types": "tsc",
     "test": "pnpm test:types"
@@ -15,6 +16,7 @@
     "@web/dev-server": "0.4.4",
     "@web/dev-server-esbuild": "1.0.2",
     "esbuild": "0.23.0",
-    "preact": "10.22.0"
+    "preact": "10.22.0",
+    "rimraf": "6.0.1"
   }
 }
