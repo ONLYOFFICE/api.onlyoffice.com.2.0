@@ -4,6 +4,7 @@
   "private": true,
   "main": "lib/main.tsx",
   "scripts": {
+    "clean": "rimraf node_modules",
     "test:types": "tsc",
     "test": "pnpm test:types"
   },
@@ -13,5 +14,8 @@
     "@types/11ty__eleventy-img": "4.0.0",
     "preact": "10.22.0",
     "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
   }
 }

@@ -2565,9 +2565,10 @@ test("OperationDeclaration: converts to the Service.OperationDeclaration", () =>
 test("GroupDeclaration: initializes an empty instance", () => {
   const d = new GroupDeclaration()
   const k = Object.keys(d)
-  eq(k, ["id", "name", "parent", "children"])
+  eq(k, ["id", "name", "description", "parent", "children"])
   is(isValidUUIDV4(d.id), true)
   is(d.name, "")
+  is(d.description, "")
   is(d.parent, "")
   eq(d.children, [])
 })
@@ -2575,6 +2576,7 @@ test("GroupDeclaration: initializes an empty instance", () => {
 test("GroupDeclaration: converts to the Service.GroupDeclaration", () => {
   const d = new GroupDeclaration()
   d.name = "n"
+  d.description = "d"
   d.children = ["a", "b"]
 
   const a = d.toService()
@@ -2582,6 +2584,7 @@ test("GroupDeclaration: converts to the Service.GroupDeclaration", () => {
   const e = new Service.GroupDeclaration()
   e.id = a.id
   e.name = "n"
+  e.description = "d"
   e.children = ["a", "b"]
 
   eq(a, e)

@@ -14,11 +14,11 @@ Updates the meta information of the document for all collaborative editors.
 
 ## Parameters
 
-| Parameter | Description                                                                                                                                   | Type   | Presence |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| c         | Defines the command type.                                                                                                                     | string | required |
-| key       | Defines the document identifier used to unambiguously identify the document file.                                                             | string | required |
-| meta      | Defines the new meta information of the document:<br/><br/>**title** - the new document name.</br>**type**: string</br>**presence**: required | object | required |
+| Parameter | Type   | Presence | Description                                                                                                                                   |
+| --------- | ------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| c         | string | required | Defines the command type.                                                                                                                     |
+| key       | string | required | Defines the document identifier used to unambiguously identify the document file.                                                             |
+| meta      | object | required | Defines the new meta information of the document:<br/><br/>**title** - the new document name.</br>**type**: string</br>**presence**: required |
 
 ## Response example
 
@@ -31,7 +31,7 @@ Updates the meta information of the document for all collaborative editors.
 
 ## Parameters
 
-| Parameter | Description                                                                       | Type    | Presence |
-| --------- | --------------------------------------------------------------------------------- | ------- | -------- |
-| error     | Defines an error code.                                                            | integer | required |
-| key       | Defines the document identifier used to unambiguously identify the document file. | string  | required |
+| Parameter | Type    | Presence | Description                                                                       |
+| --------- | ------- | -------- | --------------------------------------------------------------------------------- |
+| error     | integer | required | Defines an error code.                                                            |
+| key       | string  | required | Defines the document identifier used to unambiguously identify the document file. |

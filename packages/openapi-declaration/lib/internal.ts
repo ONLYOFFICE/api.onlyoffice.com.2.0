@@ -238,13 +238,40 @@ export interface DeclarationMap {
 export class GroupDeclaration implements DeclarationNode {
   id: string = randomUUID()
   name = ""
+  description = ""
   parent = ""
   children: string[] = []
+
+  copy(): GroupDeclaration {
+    const g = new GroupDeclaration()
+    g.name = this.name
+    g.description = this.description
+    g.parent = this.parent
+    g.children = this.children
+    return g
+  }
+
+  resolve(c: Cache<OpenApi.TagObject>): GroupDeclaration {
+    const g = this.copy()
+
+    try {
+      const t = c.retrieve(g.name)
+      if (t.description) {
+        g.description = t.description
+      }
+    } catch {
+      // The additional information on tags is optional, so we should not throw
+      // an error if it does not exist.
+    }
+
+    return g
+  }
 
   toService(): Service.GroupDeclaration {
     const d = new Service.GroupDeclaration()
     d.id = this.id
     d.name = this.name
+    d.description = this.description
     d.parent = this.parent
     d.children = this.children
     return d
@@ -1890,6 +1917,30 @@ export class DirectReference {
 
   toService(): Service.Reference {
     throw new TypeError("The DirectReference cannot be converted")
+  }
+}
+
+export class TagsCache implements Cache<OpenApi.TagObject> {
+  indexes: Record<string, number> = {}
+  list: OpenApi.TagObject[] = []
+
+  add(t: OpenApi.TagObject): void {
+    this.indexes[t.name] = this.list.length
+    this.list.push(t)
+  }
+
+  retrieve(id: string): OpenApi.TagObject {
+    const i = this.indexes[id]
+    if (i === undefined) {
+      throw new Error(`The tag '${id}' does not exist`)
+    }
+
+    const t = this.list[i]
+    if (!t) {
+      throw new Error(`The tag '${id}' is missing`)
+    }
+
+    return t
   }
 }
 

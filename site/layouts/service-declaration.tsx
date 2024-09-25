@@ -5,7 +5,7 @@ import {
   ServiceDeclarationDescription,
   ServiceDeclarationSyntaxHighlight,
 } from "@onlyoffice/site-kit"
-import {type JSX, h} from "preact"
+import {Fragment, type JSX, h} from "preact"
 import {Markdown} from "@/internal/markdown.tsx"
 import {SyntaxHighlight} from "@/internal/syntax-highlight.tsx"
 import {TableOfContents} from "@/internal/table-of-contents.tsx"
@@ -25,7 +25,10 @@ export function render(c: Context): JSX.Element {
 
   switch (d.type) {
   case "group":
-    return <TableOfContents url={c.page.url} depth={1} />
+    return <>
+      {d.description && <Markdown>{d.description}</Markdown>}
+      <TableOfContents url={c.page.url} depth={1} />
+    </>
   case "operation":
     return <ServiceDeclaration declaration={d}>
       <ServiceDeclarationDescription>

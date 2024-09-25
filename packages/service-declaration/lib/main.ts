@@ -9,6 +9,7 @@ export class GroupDeclaration implements DeclarationNode {
   id = ""
   type = "group" as const
   name = ""
+  description = ""
   parent = ""
   children: string[] = []
 }

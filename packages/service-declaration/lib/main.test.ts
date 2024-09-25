@@ -237,10 +237,11 @@ test("OperationDeclaration: initializes an empty instance", () => {
 test("GroupDeclaration: initializes an empty instance", () => {
   const g = new GroupDeclaration()
   const k = Object.keys(g)
-  eq(k, ["id", "type", "name", "parent", "children"])
+  eq(k, ["id", "type", "name", "description", "parent", "children"])
   is(g.id, "")
   is(g.type, "group")
   is(g.name, "")
+  is(g.description, "")
   is(g.parent, "")
   eq(g.children, [])
 })

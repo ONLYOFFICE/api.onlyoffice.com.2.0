@@ -4,6 +4,7 @@
   "private": true,
   "main": "lib/main.ts",
   "scripts": {
+    "clean": "rimraf node_modules",
     "test:types": "tsc",
     "test": "pnpm test:types"
   },
@@ -13,6 +14,7 @@
     "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
-    "@onlyoffice/rehype-metastring": "workspace:^"
+    "@onlyoffice/rehype-metastring": "workspace:^",
+    "rimraf": "6.0.1"
   }
 }

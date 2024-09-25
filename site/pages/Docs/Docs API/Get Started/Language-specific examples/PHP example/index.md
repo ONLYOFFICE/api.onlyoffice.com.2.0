@@ -82,13 +82,13 @@ Make sure that the ONLYOFFICE Docs in its turn has access to the server with the
 
 The example is configured by changing environment variables.
 
-| Parameter                      | Description                                                             | Example                 |
-| ------------------------------ | ----------------------------------------------------------------------- | ----------------------- |
-| ADDRESS                        | The address where the server should be started.                         | 0.0.0.0                 |
-| PORT                           | The port on which the server should be running.                         | 80                      |
-| DOCUMENT\_SERVER\_PRIVATE\_URL | The URL through which the server will communicate with ONLYOFFICE Docs. | `http://proxy:8080`     |
-| DOCUMENT\_SERVER\_PUBLIC\_URL  | The URL through which a user will communicate with ONLYOFFICE Docs.     | `http://localhost:8080` |
-| EXAMPLE\_URL                   | The URL through which ONLYOFFICE Docs will communicate with the server. | `http://proxy`          |
-| JWT\_SECRET                    | JWT authorization secret. Leave blank to disable authorization.         | your-256-bit-secret     |
+| Parameter                      | Example                 | Description                                                             |
+| ------------------------------ | ----------------------- | ----------------------------------------------------------------------- |
+| ADDRESS                        | 0.0.0.0                 | The address where the server should be started.                         |
+| PORT                           | 80                      | The port on which the server should be running.                         |
+| DOCUMENT\_SERVER\_PRIVATE\_URL | `http://proxy:8080`     | The URL through which the server will communicate with ONLYOFFICE Docs. |
+| DOCUMENT\_SERVER\_PUBLIC\_URL  | `http://localhost:8080` | The URL through which a user will communicate with ONLYOFFICE Docs.     |
+| EXAMPLE\_URL                   | `http://proxy`          | The URL through which ONLYOFFICE Docs will communicate with the server. |
+| JWT\_SECRET                    | your-256-bit-secret     | JWT authorization secret. Leave blank to disable authorization.         |
 
 If you integrated the editors successfully the result should look like the [demo preview](../index.md#demo-preview) on our site.

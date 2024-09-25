@@ -22,9 +22,9 @@ Add a new item for interactions with files.
 
 Parameters:
 
-| Name      | Description                                  | Type      | Example |
-| --------- | -------------------------------------------- | --------- | ------- |
-| fileItems | Defines an item for interactions with files. | IFileItem |         |
+| Name      | Type      | Example | Description                                  |
+| --------- | --------- | ------- | -------------------------------------------- |
+| fileItems | IFileItem |         | Defines an item for interactions with files. |
 
 ### getFileItems
 
@@ -36,9 +36,9 @@ Update the item for interactions with files.
 
 Parameters:
 
-| Name      | Description                                     | Type      | Example |
-| --------- | ----------------------------------------------- | --------- | ------- |
-| fileItems | Defines a new item for interactions with files. | IFileItem |         |
+| Name      | Type      | Example | Description                                     |
+| --------- | --------- | ------- | ----------------------------------------------- |
+| fileItems | IFileItem |         | Defines a new item for interactions with files. |
 
 ## Example
 
