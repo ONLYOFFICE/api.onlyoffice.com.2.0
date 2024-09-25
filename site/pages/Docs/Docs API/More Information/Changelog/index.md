@@ -2,6 +2,11 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 8.2
 
+- Added the [tabBackground](../../Usage%20API/Config/Editor/Customization/index.md#tabbackground) field to the *editorConfig.customization.features* parameter.
+- Added the [tabStyle](../../Usage%20API/Config/Editor/Customization/index.md#tabstyle) field to the *editorConfig.customization.features* parameter.
+- Added the [imageLight](../../Usage%20API/Config/Editor/Customization/index.md#imagelight) field to the *editorConfig.customization.logo* parameter.
+- The [editorConfig.customization.toolbarNoTabs](../../Usage%20API/Config/Editor/Customization/index.md#toolbarnotabs) field is deprecated, please use the [editorConfig.customization.features.tabStyle](../../Usage%20API/Config/Editor/Customization/index.md#tabstyle) and [editorConfig.customization.features.tabBackground](../../Usage%20API/Config/Editor/Customization/index.md#tabbackground) fields instead.
+
 ## Version 8.1
 
 - Added the [startFilling](../../Usage%20API/Methods/index.md#startfilling) method.
