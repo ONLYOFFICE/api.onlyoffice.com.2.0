@@ -299,8 +299,12 @@ const features = {
     mode: true,
     change: true,
   },
+  tabBackground: {
+    mode: "header",
+    change: true,
+  },
   tabStyle: {
-    mode: true,
+    mode: "fill",
     change: true,
   },
 }
@@ -346,7 +350,7 @@ Example: true
 
 ### features.tabBackground
 
-Defines the background of the top toolbar tabs. If this parameter is a string value (**"header"** or **"toolbar"**), then it is set as the initial tab background value and the tab background setting will not be hidden. The default value is **"header"**.
+Defines the background of the top toolbar tabs. If this parameter is a string value (**header** or **toolbar**), then it is set as the initial tab background value and the tab background setting will not be hidden. The default value is **header**.
 
 Type: object or string
 
@@ -354,7 +358,7 @@ Example: "header"
 
 ### features.tabBackground.mode
 
-Defines if the background of the top toolbar tabs matches the header background (**"header"**) or the toolbar background (**"toolbar"**). The default value is **"header"**. This value is used when the editor is first opened.
+Defines if the background of the top toolbar tabs matches the header background (**header**) or the toolbar background (**toolbar**). The default value is **header**. This value is used when the editor is first opened.
 
 Type: string
 
@@ -370,7 +374,7 @@ Example: true
 
 ### features.tabStyle
 
-Defines the style of the top toolbar tabs. If this parameter is a string value (**"fill"** or **"line"**), then it is set as the initial tab style value and the tab style setting will not be hidden. The default value is **"fill"**.
+Defines the style of the top toolbar tabs. If this parameter is a string value (**fill** or **line**), then it is set as the initial tab style value and the tab style setting will not be hidden. The default value is **fill**.
 
 Type: object or string
 
@@ -378,7 +382,7 @@ Example: "fill"
 
 ### features.tabStyle.mode
 
-Defines if the top toolbar tabs are distinctly displayed (**"fill"**) or only highlighted to see which one is selected (**"line"**). The default value is **"fill"**. This value is used when the editor is first opened.
+Defines if the top toolbar tabs are distinctly displayed (**fill**) or only highlighted to see which one is selected (**line**). The default value is **fill**. This value is used when the editor is first opened.
 
 Type: string
 
@@ -391,6 +395,8 @@ Defines if the tab style setting will be displayed in the **File -> Advanced set
 Type: boolean
 
 Example: true
+
+![Toolbar no tabs](/assets/images/editor/toolbarNoTabs.png)
 
 ## feedback
 
@@ -1284,13 +1290,11 @@ Example: false
 
 ## toolbarNoTabs
 
-Defines if the top toolbar tabs are distinctly displayed (**false**) or only highlighted to see which one is selected (**true**). The default value is **false**. Deprecated since version 8.2, please use the [editorConfig.customization.features.tabStyle](../../Usage%20API/Config/Editor/Customization/index.md#tabstyle) = "line" and [editorConfig.customization.features.tabBackground](../../Usage%20API/Config/Editor/Customization/index.md#tabbackground) = "toolbar" parameters instead.
+Defines if the top toolbar tabs are distinctly displayed (**false**) or only highlighted to see which one is selected (**true**). The default value is **false**. Deprecated since version 8.2, please use the [editorConfig.customization.features.tabStyle](#featurestabstyle) parameter which is set to **line** and the [editorConfig.customization.features.tabBackground](#featurestabbackground) parameter which is equal to **toolbar**.
 
 Type: boolean
 
 Example: false
-
-![Toolbar no tabs](/assets/images/editor/toolbarNoTabs.png)
 
 ## trackChanges
 
