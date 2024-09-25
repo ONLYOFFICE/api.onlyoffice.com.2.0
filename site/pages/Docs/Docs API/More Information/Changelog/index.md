@@ -2,7 +2,7 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 8.2
 
-- The  `https://documentserver/coauthoring/CommandService.ashx` address of the command service is replaced with `https://documentserver/coauthoring/command`.
+- The  `https://documentserver/coauthoring/CommandService.ashx` address of the [command service](../../Additional%20API/Command%20service/index.md) is replaced with `https://documentserver/coauthoring/command`.
 
 ## Version 8.1
 
