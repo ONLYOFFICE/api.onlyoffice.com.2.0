@@ -216,6 +216,14 @@ const config = {
         "asc.{0616AE85-5DBE-4B6B-A0A9-455C4F1503AD}",
         "asc.{FFE1F462-1EA2-4391-990D-4CC84940B754}",
       ],
+      options: {
+        "all": {
+          keyAll: "valueAll",
+        },
+        "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}": {
+          keyYoutube: "valueYoutube",
+        },
+      },
       pluginsData: [
         "https://example.com/plugin1/config.json",
         "https://example.com/plugin2/config.json",
