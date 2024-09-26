@@ -8,7 +8,7 @@ Please note, that for the *.docbuilder* file the *CDocBuilder.ExecuteCommand* me
 
 | Name        | Type               | Description                                                                                                                                         |
 | ----------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| *sCommand*  | const wchar\_t\*   | The command which will be used to create the document file (in C++, the escape character must be used when the command contains quotation symbols). |
+| *sCommand*  | const wchar\_t\*   | The command which will be used to create the document file (in C++, the escape character must be used when the command contains quotation symbols). |
 | *oRetValue* | CDocBuilderValue\* | The command return value.                                                                                                                           |
 
 ## Example

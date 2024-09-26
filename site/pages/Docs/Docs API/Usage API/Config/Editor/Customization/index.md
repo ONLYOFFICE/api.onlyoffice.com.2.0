@@ -1102,7 +1102,7 @@ Example: true
 
 ## mobileForceView
 
-Defines if the mobile document editor is opened in the view/edit mode on launch. The default value is **true**.
+Defines if the mobile document editor is opened in the view/edit mode on launch. The default value is **true**.
 
 Type: boolean
 

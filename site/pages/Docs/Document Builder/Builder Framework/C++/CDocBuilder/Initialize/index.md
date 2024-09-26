@@ -8,7 +8,7 @@ Initializes the **ONLYOFFICE Document Builder** as a library for the application
 
 | Name         | Type             | Description                                      |
 | ------------ | ---------------- | ------------------------------------------------ |
-| *sDirectory* | const wchar\_t\* | The path to the main Document Builder resources. |
+| *sDirectory* | const wchar\_t\* | The path to the main Document Builder resources. |
 
 ## Example
 
