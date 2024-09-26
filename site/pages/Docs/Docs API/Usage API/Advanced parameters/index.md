@@ -217,7 +217,6 @@ const config = {
       toolbarDocked: "top",
     },
     lang: "en",
-    location: "us",
     mode: "edit",
     plugins: {
       autostart: [
