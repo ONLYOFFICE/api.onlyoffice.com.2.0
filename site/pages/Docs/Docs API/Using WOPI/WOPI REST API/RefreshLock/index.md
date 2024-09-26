@@ -1,6 +1,6 @@
 `POST /wopi/files/(file_id)`
 
-Refreshes the lock on a file by resetting its automatic expiration timer to 30 minutes. This lock will expire automatically after 30 minutes unless it is changed by the [Unlock](../Unlock/index.md) or another *RefreshLock* operations.
+Refreshes the lock on a file by resetting its automatic expiration timer to 30 minutes. The refreshed lock must expire automatically after 30 minutes unless it's modified by a subsequent WOPI operation, such as [Unlock](../Unlock/index.md) and *RefreshLock* operations.
 
 This operation works as follows:
 

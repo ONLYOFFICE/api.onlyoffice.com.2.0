@@ -1,8 +1,6 @@
 `POST /wopi/files/(file_id)/contents`
 
-Requests a message to update a file for the `HTTP://server/<...>/wopi*/files/<id>/contents` operation.
-
-The request body must contain the full file contents in the binary format.
+Updates a file’s binary contents for the `HTTP://server/<...>/wopi*/files/<id>/contents` operation.
 
 This operation works as follows:
 
