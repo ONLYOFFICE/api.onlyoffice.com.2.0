@@ -2,7 +2,7 @@
 order: -1
 ---
 
-Use the terminal to run ONLYOFFICE Desktop Editors in debug mode on Mac OS:
+Use the terminal to run ONLYOFFICE Desktop Editors in debug mode on macOS:
 
 1. Press **Command+Space**.
 
