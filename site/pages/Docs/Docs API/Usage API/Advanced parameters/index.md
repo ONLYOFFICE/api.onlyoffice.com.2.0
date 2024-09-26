@@ -113,6 +113,14 @@ const config = {
           mode: true,
           change: true,
         },
+        tabBackground: {
+          mode: "header",
+          change: true,
+        },
+        tabStyle: {
+          mode: "fill",
+          change: true,
+        },
       },
       feedback: {
         url: "https://example.com",
@@ -179,6 +187,7 @@ const config = {
       logo: {
         image: "https://example.com/logo.png",
         imageDark: "https://example.com/dark-logo.png",
+        imageLight: "https://example.com/light-logo.png",
         url: "https://example.com",
         visible: true,
       },
@@ -196,7 +205,6 @@ const config = {
       },
       submitForm: true,
       toolbarHideFileName: false,
-      toolbarNoTabs: false,
       uiTheme: "theme-dark",
       unit: "cm",
       zoom: 100,
