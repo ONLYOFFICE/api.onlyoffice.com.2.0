@@ -5,7 +5,7 @@ Opens a file in [ONLYOFFICE editors](../../../JavaScript%20SDK/Initialization%20
 ## Before you start
 
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
-You need to [add the URL](../../../Get%20Started/Basic%20concepts/index.md#step-1-specifying-the-docspace-url) of your server's root directory to the <b>Developer Tools</b> section of DocSpace.
+You need to [add the URL](../../../Get%20Started/Basic%20concepts/index.md#step-1-specifying-the-docspace-url) of your server's root directory to the **Developer Tools** section of DocSpace.
 
 ## Building a sample
 
