@@ -1,0 +1,186 @@
+.status {
+  /* stylelint-disable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-disable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-disable @stylistic/declaration-colon-space-after */
+  --true: initial;
+  --false: ;
+  /* stylelint-enable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-enable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-enable @stylistic/declaration-colon-space-after */
+
+  --status-size-is-large: var(--false);
+  --status-description-font-size-large: var(--text-display-font-size-default);
+  --status-description-font-weight-large: var(--text-display-font-weight-default);
+  --status-description-line-height-large: var(--text-display-line-height-default);
+  --status-description-margin-block-start-large: var(--base-size-32);
+  --status-button-margin-block-start-large: var(--base-size-48);
+
+  --status-size-is-medium: var(--false);
+  --status-description-font-size-medium: var(--text-title-font-size-large);
+  --status-description-font-weight-medium: var(--text-title-font-weight-large);
+  --status-description-line-height-medium: var(--text-title-line-height-large);
+  --status-description-margin-block-start-medium: var(--base-size-24);
+  --status-button-margin-block-start-medium: var(--base-size-40);
+
+  --status-size-is-small: var(--false);
+  --status-description-font-size-small: var(--text-body-font-size-large);
+  --status-description-font-weight-small: var(--base-text-font-weight-bold);
+  --status-description-line-height-small: var(--text-body-line-height-large);
+  --status-description-margin-block-start-small: var(--base-size-16);
+  --status-button-margin-block-start-small: var(--base-size-32);
+
+  --status-size-is-default: var(--true);
+  --status-description-font-size-default: var(--status-description-font-size-medium);
+  --status-description-font-weight-default: var(--status-description-font-weight-medium);
+  --status-description-line-height-default: var(--status-description-line-height-medium);
+  --status-description-margin-block-start-default: var(--status-description-margin-block-start-medium);
+  --status-button-margin-block-start-default: var(--status-button-margin-block-start-medium);
+
+  --status-description-computed-font-size-large: var(--status-size-is-large, var(--status-description-font-size-large));
+  --status-description-computed-font-size-medium: var(--status-size-is-medium, var(--status-description-font-size-medium));
+  --status-description-computed-font-size-small: var(--status-size-is-small, var(--status-description-font-size-small));
+  --status-description-computed-font-size-default: var(--status-size-is-default, var(--status-description-font-size-default));
+  --status-description-computed-font-size-current: var(--status-description-computed-font-size-large) var(--status-description-computed-font-size-medium) var(--status-description-computed-font-size-small) var(--status-description-computed-font-size-default);
+
+  --status-description-computed-font-weight-large: var(--status-size-is-large, var(--status-description-font-weight-large));
+  --status-description-computed-font-weight-medium: var(--status-size-is-medium, var(--status-description-font-weight-medium));
+  --status-description-computed-font-weight-small: var(--status-size-is-small, var(--status-description-font-weight-small));
+  --status-description-computed-font-weight-default: var(--status-size-is-default, var(--status-description-font-weight-default));
+  --status-description-computed-font-weight-current: var(--status-description-computed-font-weight-large) var(--status-description-computed-font-weight-medium) var(--status-description-computed-font-weight-small) var(--status-description-computed-font-weight-default);
+
+  --status-description-computed-line-height-large: var(--status-size-is-large, var(--status-description-line-height-large));
+  --status-description-computed-line-height-medium: var(--status-size-is-medium, var(--status-description-line-height-medium));
+  --status-description-computed-line-height-small: var(--status-size-is-small, var(--status-description-line-height-small));
+  --status-description-computed-line-height-default: var(--status-size-is-default, var(--status-description-line-height-default));
+  --status-description-computed-line-height-current: var(--status-description-computed-line-height-large) var(--status-description-computed-line-height-medium) var(--status-description-computed-line-height-small) var(--status-description-computed-line-height-default);
+
+  --status-description-computed-margin-block-start-large: var(--status-size-is-large, var(--status-description-margin-block-start-large));
+  --status-description-computed-margin-block-start-medium: var(--status-size-is-medium, var(--status-description-margin-block-start-medium));
+  --status-description-computed-margin-block-start-small: var(--status-size-is-small, var(--status-description-margin-block-start-small));
+  --status-description-computed-margin-block-start-default: var(--status-size-is-default, var(--status-description-margin-block-start-default));
+  --status-description-computed-margin-block-start-current: var(--status-description-computed-margin-block-start-large) var(--status-description-computed-margin-block-start-medium) var(--status-description-computed-margin-block-start-small) var(--status-description-computed-margin-block-start-default);
+
+  --status-button-computed-margin-block-start-large: var(--status-size-is-large, var(--status-button-margin-block-start-large));
+  --status-button-computed-margin-block-start-medium: var(--status-size-is-medium, var(--status-button-margin-block-start-medium));
+  --status-button-computed-margin-block-start-small: var(--status-size-is-small, var(--status-button-margin-block-start-small));
+  --status-button-computed-margin-block-start-default: var(--status-size-is-default, var(--status-button-margin-block-start-default));
+  --status-button-computed-margin-block-start-current: var(--status-button-computed-margin-block-start-large) var(--status-button-computed-margin-block-start-medium) var(--status-button-computed-margin-block-start-small) var(--status-button-computed-margin-block-start-default);
+
+  inline-size: fit-content;
+  text-align: center;
+}
+
+.status__description {
+  font-size: var(--status-description-computed-font-size-current);
+  font-weight: var(--status-description-computed-font-weight-current);
+  line-height: var(--status-description-computed-line-height-current);
+  margin-block-end: 0;
+  margin-block-start: var(--status-description-computed-margin-block-start-current);
+}
+
+.status__button {
+  margin-block-start: var(--status-button-computed-margin-block-start-current);
+}
+
+.status_size_default {
+  --status-size-is-default: var(--true);
+  --status-size-is-small: var(--false);
+  --status-size-is-medium: var(--false);
+  --status-size-is-large: var(--false);
+}
+
+.status_size_small {
+  --status-size-is-default: var(--false);
+  --status-size-is-small: var(--true);
+  --status-size-is-medium: var(--false);
+  --status-size-is-large: var(--false);
+}
+
+.status_size_medium {
+  --status-size-is-default: var(--false);
+  --status-size-is-small: var(--false);
+  --status-size-is-medium: var(--true);
+  --status-size-is-large: var(--false);
+}
+
+.status_size_large {
+  --status-size-is-default: var(--false);
+  --status-size-is-small: var(--false);
+  --status-size-is-medium: var(--false);
+  --status-size-is-large: var(--true);
+}
+
+/* Integration with @onlyoffice/ui-picture */
+
+.status .picture-404 {
+  --picture-404-size-is-default: var(--status-size-is-default);
+  --picture-404-size-is-small: var(--status-size-is-small);
+  --picture-404-size-is-medium: var(--status-size-is-medium);
+  --picture-404-size-is-large: var(--status-size-is-large);
+}
+
+/* Integration with @onlyoffice/ui-button */
+
+.status__button.button {
+  --button-size-is-default: var(--status-size-is-default);
+  --button-size-is-small: var(--status-size-is-small);
+  --button-size-is-medium: var(--status-size-is-medium);
+  --button-size-is-large: var(--status-size-is-large);
+}
+
+/* Integration with @onlyoffice/site-page? */
+
+/*
+Initially, the status component was developed as an independent, isolated
+component. Unfortunately, despite the seemingly correct approach, this causes
+difficulties when integrating it with @onlyoffice/site-page. First, it is
+necessary to adapt @onlyoffice/site-page and all components that are integrated
+into it. After that, it will be possible to correctly organize the relationships
+between the status component and @onlyoffice/site-page.
+*/
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.status {
+  --temp-status-breakpoint-xlarge: calc(var(--size-breakpoint-xlarge) - 74px);
+
+  --status-size-is-default: var(--false);
+  --status-size-is-small: var(--true);
+  --status-size-is-medium: var(--false);
+  --status-size-is-large: var(--false);
+
+  background-color: var(--color-background-muted);
+  inline-size: 100%;
+  padding-block-end: var(--base-size-40);
+  padding-block-start: var(--base-size-64);
+
+  @media (--size-viewport-width-small) {
+    --status-size-is-default: var(--false);
+    --status-size-is-small: var(--false);
+    --status-size-is-medium: var(--true);
+    --status-size-is-large: var(--false);
+
+    padding-block-end: calc(var(--base-size-12) + var(--base-size-112));
+    padding-block-start: calc(var(--base-size-36) + var(--base-size-128));
+  }
+
+  @media (--size-viewport-width-medium) {
+    --status-size-is-default: var(--false);
+    --status-size-is-small: var(--false);
+    --status-size-is-medium: var(--false);
+    --status-size-is-large: var(--true);
+  }
+}
+
+.status__inner {
+  margin-inline: auto;
+  max-inline-size: var(--temp-status-breakpoint-xlarge);
+  padding-inline: var(--base-size-16);
+
+  @media (--size-viewport-width-small) {
+    padding-inline: var(--base-size-24);
+  }
+
+  @media (--size-viewport-width-medium) {
+    padding-inline: var(--base-size-32);
+  }
+}
