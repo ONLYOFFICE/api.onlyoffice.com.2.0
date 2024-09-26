@@ -40,7 +40,6 @@ The customization section allows to customize the editor interface so that it lo
 - [submitForm](#submitform)
 - [toolbar](#toolbar)
 - [toolbarHideFileName](#toolbarhidefilename)
-- [toolbarNoTabs](#toolbarnotabs)
 - [trackChanges](#trackchanges)
 - [uiTheme](#uitheme)
 - [unit](#unit)
@@ -300,6 +299,14 @@ const features = {
     mode: true,
     change: true,
   },
+  tabBackground: {
+    mode: "header",
+    change: true,
+  },
+  tabStyle: {
+    mode: "fill",
+    change: true,
+  },
 }
 ```
 
@@ -340,6 +347,56 @@ Type: boolean
 Example: true
 
 > Please note that in case *spellcheck* setting is changed in the editor interface, it will be stored in the browser local storage and will overwrite any values sent as the *editorConfig.customization.features.spellcheck* parameter.
+
+### features.tabBackground
+
+Defines the background of the top toolbar tabs. If this parameter is a string value (**header** or **toolbar**), then it is set as the initial tab background value and the tab background setting will not be hidden. The default value is **header**.
+
+Type: object or string
+
+Example: "header"
+
+### features.tabBackground.mode
+
+Defines if the background of the top toolbar tabs matches the header background (**header**) or the toolbar background (**toolbar**). The default value is **header**. This value is used when the editor is first opened.
+
+Type: string
+
+Example: "header"
+
+### features.tabBackground.change
+
+Defines if the tab background setting will be displayed in the **File -> Advanced settings** or not. This setting is available in all editor types.
+
+Type: boolean
+
+Example: true
+
+### features.tabStyle
+
+Defines the style of the top toolbar tabs. If this parameter is a string value (**fill** or **line**), then it is set as the initial tab style value and the tab style setting will not be hidden. The default value is **fill**.
+
+Type: object or string
+
+Example: "fill"
+
+### features.tabStyle.mode
+
+Defines if the top toolbar tabs are distinctly displayed (**fill**) or only highlighted to see which one is selected (**line**). The default value is **fill**. This value is used when the editor is first opened.
+
+Type: string
+
+Example: "fill"
+
+### features.tabStyle.change
+
+Defines if the tab style setting will be displayed in the **File -> Advanced settings** or not. This setting is available in all editor types.
+
+Type: boolean
+
+Example: true
+
+![Toolbar no tabs](/assets/images/editor/toolbarNoTabs.png)
 
 ## feedback
 
@@ -949,6 +1006,7 @@ Example:
 const logo = {
   image: "https://example.com/logo.png",
   imageDark: "https://example.com/dark-logo.png",
+  imageLight: "https://example.com/light-logo.png",
   url: "https://example.com",
   visible: true,
 }
@@ -966,11 +1024,19 @@ Example: `https://example.com/logo.png`
 
 ### logo.imageDark
 
-Path to the image file used for the dark theme. The image must have the following size: 172x40.
+Path to the image file used for the dark header (for example, in a dark theme or in a theme with a colored header). The image must have the following size: 172x40.
 
 Type: string
 
 Example: `https://example.com/dark-logo.png`
+
+### logo.imageLight
+
+Path to the image file used for the light header (for example, in the Gray theme). The image must have the following size: 172x40.
+
+Type: string
+
+Example: `https://example.com/light-logo.png`
 
 ### logo.imageEmbedded
 
@@ -1224,13 +1290,11 @@ Example: false
 
 ## toolbarNoTabs
 
-Defines if the top toolbar tabs are distinctly displayed (**false**) or only highlighted to see which one is selected (**true**). The default value is **false**. 
+Defines if the top toolbar tabs are distinctly displayed (**false**) or only highlighted to see which one is selected (**true**). The default value is **false**. Deprecated since version 8.2, please use the [editorConfig.customization.features.tabStyle](#featurestabstyle) parameter which is set to **line** and the [editorConfig.customization.features.tabBackground](#featurestabbackground) parameter which is equal to **toolbar**.
 
 Type: boolean
 
 Example: false
-
-![Toolbar no tabs](/assets/images/editor/toolbarNoTabs.png)
 
 ## trackChanges
 
@@ -1323,6 +1387,14 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
           mode: true,
           change: true,
         },
+        tabBackground: {
+          mode: "header",
+          change: true,
+        },
+        tabStyle: {
+          mode: "fill",
+          change: true,
+        },
       },
       feedback: {
         url: "https://example.com",
@@ -1389,6 +1461,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
       logo: {
         image: "https://example.com/logo.png",
         imageDark: "https://example.com/dark-logo.png",
+        imageLight: "https://example.com/light-logo.png",
         url: "https://example.com",
         visible: true,
       },
@@ -1406,7 +1479,6 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
       },
       submitForm: true,
       toolbarHideFileName: false,
-      toolbarNoTabs: false,
       uiTheme: "theme-dark",
       unit: "cm",
       zoom: 100,
