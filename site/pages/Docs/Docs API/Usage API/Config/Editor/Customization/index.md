@@ -372,6 +372,8 @@ Type: boolean
 
 Example: true
 
+![Tab background](/assets/images/editor/tabBackground.png)
+
 ### features.tabStyle
 
 Defines the style of the top toolbar tabs. If this parameter is a string value (**fill** or **line**), then it is set as the initial tab style value and the tab style setting will not be hidden. The default value is **fill**.
@@ -396,7 +398,7 @@ Type: boolean
 
 Example: true
 
-![Toolbar no tabs](/assets/images/editor/toolbarNoTabs.png)
+![Tab style](/assets/images/editor/tabStyle.png)
 
 ## feedback
 
@@ -1013,6 +1015,8 @@ const logo = {
 ```
 
 > Please note that this parameter is also available for the mobile editors.
+
+![Logo](/assets/images/editor/logo.png)
 
 ### logo.image
 
