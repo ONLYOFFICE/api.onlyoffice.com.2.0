@@ -1,4 +1,6 @@
-For the interaction with the **document command service** the POST requests are used. The request parameters are entered in JSON format in the request body. The requests are sent to the `https://documentserver/coauthoring/CommandService.ashx` address where the **documentserver** is the name of the server with the ONLYOFFICE Docs installed.
+For the interaction with the **document command service** the POST requests are used. The request parameters are entered in JSON format in the request body. The requests are sent to the `https://documentserver/coauthoring/command` address where the **documentserver** is the name of the server with the ONLYOFFICE Docs installed.
+
+> Please note that prior to version 8.2, the `https://documentserver/coauthoring/CommandService.ashx` address was used to send requests.
 
 Starting from version 8.1, it is recommended to add the [shardkey](../../Get%20Started/How%20It%20Works/index.md#shard-key) parameter to the URL *QueryString* with the *key* value in it. For example, *?shardkey=Khirz6zTPdfd7*. This allows you to load balance requests.
 
