@@ -1315,23 +1315,40 @@ export class Entity {
     y.type = y.type.normalize()
 
     if (
-      y.type instanceof EnumType &&
+      y.type instanceof ArrayType &&
+      y.type.items instanceof Entity &&
+      y.type.items.example &&
       !y.example
     ) {
-      const [c] = y.type.cases
-      if (
-        c &&
-        c.type instanceof LiteralType &&
-        c.type.const instanceof PassthroughConst
-      ) {
-        y.example = c.type.const.value
-      }
+      y.example = [y.type.items.example]
+    } else if (
+      y.type instanceof EnumType &&
+      y.type.cases.length !== 0 &&
+      y.type.cases[0].type instanceof LiteralType &&
+      y.type.cases[0].type.const instanceof PassthroughConst &&
+      !y.example
+    ) {
+      y.example = y.type.cases[0].type.const.value
     } else if (
       y.type instanceof LiteralType &&
       y.type.const instanceof PassthroughConst &&
       !y.example
     ) {
       y.example = y.type.const.value
+    } else if (
+      y.type instanceof ObjectType &&
+      y.type.properties.length !== 0 &&
+      !y.example
+    ) {
+      const e: Record<string, unknown> = {}
+      for (const p of y.type.properties) {
+        if (p.self instanceof Entity && p.self.example) {
+          e[p.identifier] = p.self.example
+        }
+      }
+      if (Object.keys(e).length !== 0) {
+        y.example = e
+      }
     }
 
     return y
