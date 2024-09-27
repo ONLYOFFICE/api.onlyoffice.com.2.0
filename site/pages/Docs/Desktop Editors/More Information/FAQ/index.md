@@ -4,7 +4,7 @@ order: -1
 
 ## How to install ONLYOFFICE Desktop Editors?
 
-ONLYOFFICE Desktop Editors is available for Windows, Linux and Mac OS. Starting from version 6.1, this application is also supported by ARM-based Apple Silicon Macs.
+ONLYOFFICE Desktop Editors is available for Windows, Linux and macOS. Starting from version 6.1, this application is also supported by ARM-based Apple Silicon Macs.
 
 The simplest way to install this application on your local computer is to download it from our official [website](https://www.onlyoffice.com/download-desktop.aspx).
 
