@@ -1002,6 +1002,7 @@ export class Parameter {
   required = false
   deprecated = false
   self: Entity | DirectReference = new Entity()
+  example: unknown = ""
 
   static fromOpenApi(s: OpenApi.ParameterObject): [Parameter, ...Error[]] {
     const es: Error[] = []
@@ -1040,6 +1041,10 @@ export class Parameter {
 
     p.self = n
 
+    if (s.example) {
+      p.example = s.example
+    }
+
     return [p, ...es]
   }
 
@@ -1060,6 +1065,7 @@ export class Parameter {
     c.required = b.required
     c.deprecated = b.deprecated
     c.self = this.self.merge(b.self)
+    c.example = b.example
 
     return c
   }
@@ -1071,6 +1077,7 @@ export class Parameter {
     p.required = this.required
     p.deprecated = this.deprecated
     p.self = this.self
+    p.example = this.example
     return p
   }
 
@@ -1101,6 +1108,14 @@ export class Parameter {
 
     if (p.self instanceof Entity) {
       p.self = p.self.normalize()
+
+      // A parameter is a structure of higher abstraction than an entity.
+      // Therefore, if a parameter has an example, we should use it regardless
+      // of whether the entity has an example.
+      if (p.example) {
+        p.self.example = p.example
+        p.example = ""
+      }
     }
 
     return p
@@ -1273,6 +1288,7 @@ export class Entity {
 
     c.format = this.format
     c.default = this.default
+    c.example = this.example
 
     return c
   }
