@@ -1002,7 +1002,7 @@ export class Parameter {
   required = false
   deprecated = false
   self: Entity | DirectReference = new Entity()
-  example: unknown = ""
+  example: Const = new NoopConst()
 
   static fromOpenApi(s: OpenApi.ParameterObject): [Parameter, ...Error[]] {
     const es: Error[] = []
@@ -1042,7 +1042,8 @@ export class Parameter {
     p.self = n
 
     if (s.example) {
-      p.example = s.example
+      p.example = new PassthroughConst()
+      p.example.value = s.example
     }
 
     return [p, ...es]
@@ -1114,7 +1115,7 @@ export class Parameter {
       // of whether the entity has an example.
       if (p.example) {
         p.self.example = p.example
-        p.example = ""
+        p.example = new NoopConst()
       }
     }
 
@@ -1236,7 +1237,7 @@ export class Entity {
   type: Type = new NoopType()
   format = ""
   default: Const = new NoopConst()
-  example: unknown = ""
+  example: Const = new NoopConst()
 
   static fromOpenApi(s: OpenApi.SchemaObject): [Entity, ...Error[]] {
     const es: Error[] = []
@@ -1267,7 +1268,8 @@ export class Entity {
     }
 
     if (s.example) {
-      y.example = s.example
+      y.example = new PassthroughConst()
+      y.example.value = s.example
     }
 
     return [y, ...es]
@@ -1318,36 +1320,43 @@ export class Entity {
       y.type instanceof ArrayType &&
       y.type.items instanceof Entity &&
       y.type.items.example &&
-      !y.example
+      y.example instanceof NoopConst
     ) {
-      y.example = [y.type.items.example]
+      y.example = new PassthroughConst()
+      y.example.value = [y.type.items.example]
     } else if (
       y.type instanceof EnumType &&
       y.type.cases.length !== 0 &&
       y.type.cases[0].type instanceof LiteralType &&
       y.type.cases[0].type.const instanceof PassthroughConst &&
-      !y.example
+      y.example instanceof NoopConst
     ) {
-      y.example = y.type.cases[0].type.const.value
+      y.example = new PassthroughConst()
+      y.example.value = y.type.cases[0].type.const.value
     } else if (
       y.type instanceof LiteralType &&
       y.type.const instanceof PassthroughConst &&
-      !y.example
+      y.example instanceof NoopConst
     ) {
-      y.example = y.type.const.value
+      y.example = new PassthroughConst()
+      y.example.value = y.type.const.value
     } else if (
       y.type instanceof ObjectType &&
       y.type.properties.length !== 0 &&
-      !y.example
+      y.example instanceof NoopConst
     ) {
       const e: Record<string, unknown> = {}
       for (const p of y.type.properties) {
-        if (p.self instanceof Entity && p.self.example) {
-          e[p.identifier] = p.self.example
+        if (
+          p.self instanceof Entity &&
+          p.self.example instanceof PassthroughConst
+        ) {
+          e[p.identifier] = p.self.example.value
         }
       }
       if (Object.keys(e).length !== 0) {
-        y.example = e
+        y.example = new PassthroughConst()
+        y.example.value = e
       }
     }
 
@@ -1361,7 +1370,7 @@ export class Entity {
     y.type = this.type.toService()
     y.format = this.format
     y.default = this.default.toService()
-    y.example = this.example
+    y.example = this.example.toService()
     return y
   }
 }

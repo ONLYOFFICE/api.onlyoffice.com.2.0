@@ -1287,7 +1287,7 @@ test("Entity: initializes an empty instance", () => {
   eq(y.type, new NoopType())
   is(y.format, "")
   eq(y.default, new NoopConst())
-  is(y.example, "")
+  eq(y.example, new NoopConst())
 })
 
 test("Entity: initializes from an OpenApi.SchemaObject", () => {
@@ -1308,7 +1308,8 @@ test("Entity: initializes from an OpenApi.SchemaObject", () => {
   e.format = "s"
   e.default = new PassthroughConst()
   e.default.value = "s"
-  e.example = "s"
+  e.example = new PassthroughConst()
+  e.example.value = "s"
 
   eq(a, e)
 })
@@ -1321,7 +1322,8 @@ test("Entity: converts to the Service.Entity", () => {
   y.format = "s"
   y.default = new PassthroughConst()
   y.default.value = "s"
-  y.example = "s"
+  y.example = new PassthroughConst()
+  y.example.value = "s"
 
   const a = y.toService()
 
@@ -1331,7 +1333,8 @@ test("Entity: converts to the Service.Entity", () => {
   e.type = y.type.toService()
   e.format = "s"
   e.default = y.default.toService()
-  e.example = "s"
+  e.example = new Service.PassthroughConst()
+  e.example.value = "s"
 
   eq(a, e)
 })
@@ -1412,7 +1415,7 @@ test("Parameter: initializes an empty instance", () => {
   is(p.required, false)
   is(p.deprecated, false)
   eq(p.self, new Entity())
-  is(p.example, "")
+  eq(p.example, new NoopConst())
 })
 
 test("Parameter: initializes from an OpenApi.ParameterObject with an error if the schema property is missing", () => {
@@ -1480,7 +1483,8 @@ test("Parameter: initializes from an OpenApi.ParameterObject with additional pro
   e.deprecated = true
   e.self = new Entity()
   e.self.type = new StringType()
-  e.example = "e"
+  e.example = new PassthroughConst()
+  e.example.value = "e"
 
   eq(a, e)
 })
@@ -1505,7 +1509,8 @@ test("Parameter: converts to the Service.Parameter", () => {
   p.deprecated = true
   p.self = new Entity()
   p.self.type = new StringType()
-  p.example = "e"
+  p.example = new PassthroughConst()
+  p.example.value = "s"
 
   const a = p.toService()
 

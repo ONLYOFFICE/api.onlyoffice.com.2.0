@@ -80,7 +80,7 @@ export class Entity {
   type: Type = new NoopType()
   format = ""
   default: Const = new NoopConst()
-  example: unknown = ""
+  example: Const = new NoopConst()
 }
 
 export type Const = ConstMap[keyof ConstMap]
