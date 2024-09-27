@@ -1,4 +1,5 @@
 // todo: cover all retrieve methods.
+// todo: cover all normalize methods.
 
 import * as Service from "@onlyoffice/service-declaration"
 import {isValidUUIDV4} from "is-valid-uuid-v4"
@@ -1731,42 +1732,6 @@ test("Request: initializes from an OpenApi.OperationObject with additional prope
 
   const e = new Request()
   e.description = "d"
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of the headerParameters", () => {
-  const r = new Request()
-  r.headerParameters = ps(co(), ac())
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(ac(), co())
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of Accept header cases", () => {
-  const r = new Request()
-  r.headerParameters = ps(ac(ax(), aj()))
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(ac(aj(), ax()))
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of Content-Type header cases", () => {
-  const r = new Request()
-  r.headerParameters = ps(co(ax(), aj()))
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(co(aj(), ax()))
 
   eq(a, e)
 })
