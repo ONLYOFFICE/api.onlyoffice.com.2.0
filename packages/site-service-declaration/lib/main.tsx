@@ -402,18 +402,18 @@ function PropertyDescription(p: PropertyProperties): JSX.Element {
     d.push(<Description>{e.description}</Description>)
   }
 
-  if (e.default.type !== "noop" && e.example) {
+  if (e.default.type !== "noop" && e.example.type !== "noop") {
     d.push(<p>
       Default: <code>{String(e.default.value)}</code><br />
-      Example: <code>{String(e.example)}</code>
+      Example: <code>{String(e.example.value)}</code>
     </p>)
   } else if (e.default.type !== "noop") {
     d.push(<p>
       Default: <code>{String(e.default.value)}</code>
     </p>)
-  } else if (e.example) {
+  } else if (e.example.type !== "noop") {
     d.push(<p>
-      Example: <code>{String(e.example)}</code>
+      Example: <code>{String(e.example.value)}</code>
     </p>)
   }
 

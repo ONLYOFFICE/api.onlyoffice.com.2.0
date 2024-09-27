@@ -156,7 +156,7 @@ test("Entity: initializes an empty instance", () => {
   eq(e.type, new NoopType())
   is(e.format, "")
   eq(e.default, new NoopConst())
-  is(e.example, "")
+  eq(e.example, new NoopConst())
 })
 
 test("Property: initializes an empty instance", () => {
