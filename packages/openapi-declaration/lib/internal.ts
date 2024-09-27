@@ -1113,8 +1113,8 @@ export class Parameter {
       // A parameter is a structure of higher abstraction than an entity.
       // Therefore, if a parameter has an example, we should use it regardless
       // of whether the entity has an example.
-      if (p.example) {
-        p.self.example = p.example
+      if (p.example instanceof PassthroughConst) {
+        p.self.example = p.example.copy()
         p.example = new NoopConst()
       }
     }
@@ -1319,7 +1319,7 @@ export class Entity {
     if (
       y.type instanceof ArrayType &&
       y.type.items instanceof Entity &&
-      y.type.items.example &&
+      y.type.items.example instanceof PassthroughConst &&
       y.example instanceof NoopConst
     ) {
       y.example = new PassthroughConst()
@@ -1390,6 +1390,12 @@ export class NoopConst {
 
 export class PassthroughConst {
   value: unknown = ""
+
+  copy(): PassthroughConst {
+    const c = new PassthroughConst()
+    c.value = this.value
+    return c
+  }
 
   toService(): Service.PassthroughConst {
     const s = new Service.PassthroughConst()
