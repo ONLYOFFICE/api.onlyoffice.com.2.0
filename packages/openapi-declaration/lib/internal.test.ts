@@ -1399,12 +1399,20 @@ test("Property: converts to the Service.Property", () => {
 test("Parameter: initializes an empty instance", () => {
   const p = new Parameter()
   const k = Object.keys(p)
-  eq(k, ["identifier", "description", "required", "deprecated", "self"])
+  eq(k, [
+    "identifier",
+    "description",
+    "required",
+    "deprecated",
+    "self",
+    "example",
+  ])
   is(p.identifier, "")
   is(p.description, "")
   is(p.required, false)
   is(p.deprecated, false)
   eq(p.self, new Entity())
+  is(p.example, "")
 })
 
 test("Parameter: initializes from an OpenApi.ParameterObject with an error if the schema property is missing", () => {
@@ -1461,6 +1469,7 @@ test("Parameter: initializes from an OpenApi.ParameterObject with additional pro
     required: true,
     deprecated: true,
     schema: {type: "string"},
+    example: "e",
   })
   is(es.length, 0)
 
@@ -1471,6 +1480,7 @@ test("Parameter: initializes from an OpenApi.ParameterObject with additional pro
   e.deprecated = true
   e.self = new Entity()
   e.self.type = new StringType()
+  e.example = "e"
 
   eq(a, e)
 })
@@ -1495,6 +1505,7 @@ test("Parameter: converts to the Service.Parameter", () => {
   p.deprecated = true
   p.self = new Entity()
   p.self.type = new StringType()
+  p.example = "e"
 
   const a = p.toService()
 
