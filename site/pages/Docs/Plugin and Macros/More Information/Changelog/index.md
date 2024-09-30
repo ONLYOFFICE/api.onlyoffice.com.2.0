@@ -1,5 +1,7 @@
 The list of changes for ONLYOFFICE Plugins and Macros API.
 
+## Version 8.2
+
 ## Version 8.1
 
 - Added the ability to add the plugin [toolbar menu items](../../Get%20Started/Plugin%20types/index.md).
