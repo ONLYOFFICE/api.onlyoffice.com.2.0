@@ -295,15 +295,9 @@ importers:
       '@onlyoffice/console':
         specifier: workspace:^
         version: link:../console
-      '@onlyoffice/openapi-declaration':
-        specifier: workspace:^
-        version: link:../openapi-declaration
       '@onlyoffice/openapi-resource':
         specifier: workspace:^
         version: link:../openapi-resource
-      openapi-types:
-        specifier: 12.1.3
-        version: 12.1.3
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
