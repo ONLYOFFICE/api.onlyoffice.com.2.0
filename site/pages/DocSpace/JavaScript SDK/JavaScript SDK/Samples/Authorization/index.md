@@ -7,8 +7,6 @@ Logs in to the DocSpace account using the specified email and password hash.
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
 You need to [add the URL](../../../Get%20Started/Basic%20concepts/index.md#step-1-specifying-the-docspace-url) of your server's root directory to the **Developer Tools** section of DocSpace.
 
-## Building a sample
-
 ## Step 1. Set HTML structure
 
 Create an HTML file. Add two text fields and a button. The HTML file must include a *div* tag where we specify the DocSpace connection parameters:
@@ -16,19 +14,19 @@ Create an HTML file. Add two text fields and a button. The HTML file must includ
 ``` html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>DocSpace JavaScript SDK</title>
-  <script src="{PORTAL_SRC}/static/scripts/sdk/1.0.0/api.js"></script>
-</head>
-<body>
-  <label for="login">Login</label><br>
-  <input type="text" id="login"><br>
-  <label for="password">Password</label><br>
-  <input type="password" id="password"><br>
-  <button id="startButton" onclick="onButtonClick()">Login</button>
-  <div id="ds-frame"></div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>DocSpace JavaScript SDK</title>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/1.0.0/api.js"></script>
+  </head>
+  <body>
+    <label for="login">Login</label><br>
+    <input type="text" id="login"><br>
+    <label for="password">Password</label><br>
+    <input type="password" id="password"><br>
+    <button id="startButton" onclick="onButtonClick()">Login</button>
+    <div id="ds-frame"></div>
+  </body>
 </html>
 ```
 

@@ -1,4 +1,4 @@
-Opens a file in [ONLYOFFICE editors](../../../JavaScript%20SDK/Initialization%20Modes/Editor/index.md) using [File Selector](../../../JavaScript%20SDK/Initialization%20Modes/File%20Selector/index.md).
+Opens a file in [ONLYOFFICE editors](../../../JavaScript%20SDK/Initialization%20Modes/Editor/index.md) using the [file selector](../../../JavaScript%20SDK/Initialization%20Modes/File%20Selector/index.md).
 
 <img alt="Authorization sample" src="/assets/images/docspace/gifs/open-editors.gif" width="720px">
 
@@ -6,8 +6,6 @@ Opens a file in [ONLYOFFICE editors](../../../JavaScript%20SDK/Initialization%20
 
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
 You need to [add the URL](../../../Get%20Started/Basic%20concepts/index.md#step-1-specifying-the-docspace-url) of your server's root directory to the **Developer Tools** section of DocSpace.
-
-## Building a sample
 
 ## Step 1. Set HTML structure
 
@@ -67,7 +65,7 @@ const config = {
 }
 ```
 
-- Initialize the **file selector** with the [initFileSelector](../../Methods/index.md#initfileselector) method:
+4. Initialize the **file selector** with the [initFileSelector](../../Methods/index.md#initfileselector) method:
 
 ``` ts
 const docSpace = DocSpace.SDK.initFileSelector(config)

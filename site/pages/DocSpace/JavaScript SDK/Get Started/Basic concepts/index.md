@@ -6,7 +6,7 @@ Follow the steps below to connect DocSpace as a frame to your website.
 
 ## Step 1. Specifying the DocSpace URL
 
-For the JavaScript SDK to work correctly, it must be launched on the server. Note that running the HTML file directly will not work.Please make sure you are using a server environment.
+For the JavaScript SDK to work correctly, it must be launched on the server. Note that running the HTML file directly will not work. Please make sure you are using a server environment.
 
 You need to add the URL of your server's root directory to the **Developer Tools** section of DocSpace:
 

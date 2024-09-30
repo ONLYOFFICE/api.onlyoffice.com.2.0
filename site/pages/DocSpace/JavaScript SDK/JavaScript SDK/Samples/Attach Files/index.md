@@ -7,8 +7,6 @@ Attaches files to a website using [File selector](../../Initialization%20Modes/F
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
 You need to [add the URL](../../../Get%20Started/Basic%20concepts/index.md#step-1-specifying-the-docspace-url) of your server's root directory to the **Developer Tools** section of DocSpace.
 
-## Building a sample
-
 ## Step 1. Set HTML structure
 
 1. Create an HTML file. It must include a *div* tag where we specify the DocSpace connection parameters:
@@ -158,7 +156,7 @@ a:hover {
 </div>
 ```
 
-5. Add a dialog to the page, which will display the **file selector**
+5. Add a dialog to the page, which will display the **file selector**:
 
 ``` html
 <dialog id="modal" style="width: 600px; height: 700px;">
@@ -271,7 +269,7 @@ modalElement.addEventListener("close", () => {
 
 ## Step 4. Add the file selector
 
-Add a script to initialize the **file selector**
+Add a script to initialize the **file selector**.
 
 1. Add an event handler for [onAppReady](../../Events/index.md#onappready), which fires when initialization is successful:
 
