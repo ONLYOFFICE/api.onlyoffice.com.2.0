@@ -70,7 +70,6 @@
     "@onlyoffice/template-hast-element": "workspace:^",
     "@onlyoffice/ui-icons": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",
-    "@onlyoffice/ui-logos": "workspace:^",
     "@types/11ty__eleventy-img": "4.0.0",
     "@types/hast": "3.0.4",
     "@types/js-cookie": "3.0.6",

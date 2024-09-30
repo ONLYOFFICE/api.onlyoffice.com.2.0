@@ -3304,9 +3304,6 @@ importers:
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../packages/ui-kit
-      '@onlyoffice/ui-logos':
-        specifier: workspace:^
-        version: link:../packages/ui-logos
       '@types/11ty__eleventy-img':
         specifier: 4.0.0
         version: 4.0.0
