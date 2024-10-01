@@ -16,6 +16,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 - Added the SetCustomFunctions method to *window\.Asc.plugin.executeMethod* for Spreadsheet Api.
 - Added the GetAllComments method to *window\.Asc.plugin.executeMethod* for Presentation Api.
 - Added the OLEProperties type to the simple type definitions.
+- Added the PluginOptions type to the simple type definitions.
 - Added the ToolbarMenuItem type to the simple type definitions.
 - Added the ToolbarMenuMainItem type to the simple type definitions.
 - Added the ToolbarMenuTab type to the simple type definitions.
