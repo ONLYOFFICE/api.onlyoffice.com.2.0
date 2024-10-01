@@ -1,5 +1,5 @@
 ---
-order: -5
+order: -6
 ---
 
 Macros are small scripts used to facilitate your day-to-day routine work with different types of documents. ONLYOFFICE macros use the JavaScript syntax and [Office JavaScript API](../../../Office%20API/Get%20Started/Overview/index.md) scripting notation.

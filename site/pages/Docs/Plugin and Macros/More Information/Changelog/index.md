@@ -2,6 +2,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 
 ## Version 8.1
 
+- Added the ability to [add custom functions](../../Macros/Adding%20custom%20functions/index.md) to the spreadsheets using the **Macros** plugin.
 - Added the ability to add the plugin [toolbar menu items](../../Get%20Started/Plugin%20types/index.md).
 - Added the ability to create [multiple left panels](../../Usage%20API/Config/Plugin%20variations/index.md) for plugins.
 - Added the information about the current position of the context menu plugin event.
