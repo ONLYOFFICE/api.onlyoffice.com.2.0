@@ -1,0 +1,41 @@
+/* .toc {} */
+
+.toc__heading {
+  color: var(--color-foreground-muted);
+  font-size: var(--text-body-font-size-small);
+  font-weight: var(--base-text-font-weight-semi-bold);
+  letter-spacing: var(--base-text-letter-spacing-0-04);
+  line-height: var(--text-body-line-height-small);
+  margin: 0;
+  padding-block-end: var(--base-size-4);
+  padding-block-start: var(--base-size-4);
+  text-transform: uppercase;
+}
+
+.toc__list {
+  list-style: none;
+  margin-block-end: 0;
+  margin-block-start: var(--base-size-6);
+  padding-inline-start: 0;
+}
+
+/* .toc__item {} */
+
+.toc__link {
+  border-inline-start: var(--base-size-2) solid var(--color-border-muted);
+  color: inherit;
+  display: inline-block;
+  font-size: var(--text-body-font-size-small);
+  font-weight: var(--base-text-font-weight-semi-bold);
+  letter-spacing: var(--base-text-letter-spacing-0-04);
+  line-height: var(--text-body-line-height-small);
+  padding-block-end: var(--base-size-4);
+  padding-block-start: var(--base-size-4);
+  padding-inline-start: calc(var(--base-size-12) - var(--base-size-2));
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.toc__link[aria-current] {
+  border-inline-start-color: var(--color-border-accent-emphasis);
+}
