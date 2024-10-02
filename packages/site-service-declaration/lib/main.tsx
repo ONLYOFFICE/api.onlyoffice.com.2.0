@@ -264,7 +264,7 @@ function ArrayType(p: ArrayTypeProperties): JSX.Element {
   const {type: t} = p
 
   if (t.items.type === "circular") {
-    return <code>[Circular]</code>
+    return <p>Circular reference</p>
   }
 
   return <Entity entity={t.items} />
@@ -375,7 +375,7 @@ function PropertyBadges(p: PropertyProperties): JSX.Element {
   const {property: r} = p
 
   if (r.self.type === "circular") {
-    return <></>
+    return <Badge>circular</Badge>
   }
 
   return <>
@@ -386,57 +386,23 @@ function PropertyBadges(p: PropertyProperties): JSX.Element {
 }
 
 function PropertyDescription(p: PropertyProperties): JSX.Element {
-  const {property: r} = p
+  const {self: e} = p.property
   const {Description} = useContext(Context)
 
-  if (r.self.type === "circular") {
-    return <dd><code>[Circular]</code></dd>
+  if (e.type === "circular") {
+    return <p>Circular reference</p>
   }
 
-  const d: JSX.Element[] = []
-
-  const {self: e} = r
-  const {type: t} = e
-
-  if (e.description) {
-    d.push(<Description>{e.description}</Description>)
-  }
-
-  if (e.default.type !== "noop" && e.example.type !== "noop") {
-    d.push(<p>
-      Default: <code>{String(e.default.value)}</code><br />
-      Example: <code>{String(e.example.value)}</code>
-    </p>)
-  } else if (e.default.type !== "noop") {
-    d.push(<p>
+  return <dd>
+    {e.description && <Description>{e.description}</Description>}
+    <Type type={e.type} />
+    {e.type.type !== "object" && e.default.type !== "noop" && <p>
       Default: <code>{String(e.default.value)}</code>
-    </p>)
-  } else if (e.example.type !== "noop") {
-    d.push(<p>
+    </p>}
+    {e.type.type !== "object" && e.example.type !== "noop" && <p>
       Example: <code>{String(e.example.value)}</code>
-    </p>)
-  }
-
-  // todo: There needs to be a more general solution to cover a wider range of
-  // use cases.
-
-  if (
-    t.type === "array" &&
-    t.items.type !== "circular" &&
-    t.items.type.type === "object" &&
-    t.items.type.properties.length !== 0 ||
-    t.type === "object" &&
-    t.properties.length !== 0
-  ) {
-    d.push(<details>
-      <summary>Properties of <code>{r.identifier}</code></summary>
-      <Type type={t} />
-    </details>)
-  } else {
-    d.push(<Type type={t} />)
-  }
-
-  return <dd>{d}</dd>
+    </p>}
+  </dd>
 }
 
 interface TypeBadgeProperties {
