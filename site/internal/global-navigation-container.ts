@@ -56,10 +56,7 @@ class GlobalNavigationContainer extends HTMLElement {
   handleEvent(e: Event): void {
     if (e.type === "click" && e.target === this.#button) {
       this.#expanded = !this.#expanded
-      return
     }
-
-    throw new Error(`Unhandled event type: ${e.type}`)
   }
 }
 
