@@ -29,4 +29,4 @@ End Sub
 
 ## Result
 
-![Merge cells](/assets/images/plugins/merge_cells.png)
+![Merge cells](/assets/images/plugins/merge-cells.png)

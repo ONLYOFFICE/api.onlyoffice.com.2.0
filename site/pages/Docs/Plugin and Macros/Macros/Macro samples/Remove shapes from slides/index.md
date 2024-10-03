@@ -15,10 +15,10 @@ Removes shapes from slides in a presentation.
 {
   var oPresentation = Api.GetPresentation();
   for (let i = 0; i < 10; i++) {
-      var oSlide = oPresentation.GetSlideByIndex(i);
-      var aShape  = oSlide.GetAllShapes();
-      aShape[0].Delete();
-}
+    var oSlide = oPresentation.GetSlideByIndex(i);
+    var aShape  = oSlide.GetAllShapes();
+    aShape[0].Delete();
+  }
 })();
 ```
 

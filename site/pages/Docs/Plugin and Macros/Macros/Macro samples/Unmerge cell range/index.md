@@ -29,4 +29,4 @@ End Sub
 
 ## Result
 
-![Unmerge-before](/assets/images/plugins/unmerge_cells_before.png) ![Unmerge-after](/assets/images/plugins/unmerge_cells_after.png)
+![Unmerge-before](/assets/images/plugins/unmerge-cells-before.png) ![Unmerge-after](/assets/images/plugins/unmerge-cells-after.png)
