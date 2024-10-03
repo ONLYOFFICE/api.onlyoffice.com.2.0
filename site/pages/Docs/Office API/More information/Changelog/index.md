@@ -1,5 +1,7 @@
 The list of changes for Office JavaScript API.
 
+## Version 8.2
+
 ## Version 8.1
 
 ### Date form methods
