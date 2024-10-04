@@ -4,7 +4,7 @@ import {isBuild, rootDir} from "@onlyoffice/eleventy-env"
 import {type UserConfig} from "@onlyoffice/eleventy-types"
 import {toHast} from "@onlyoffice/hast-util-eleventy-img"
 import * as pate from "@onlyoffice/node-path"
-import {toJsx} from "@onlyoffice/preact-eleventy-img"
+import {toJsxRuntime} from "@onlyoffice/preact-eleventy-img"
 import {useSuspense} from "@onlyoffice/preact-suspense"
 import {cutPrefix} from "@onlyoffice/strings"
 import {type Root} from "hast"
@@ -82,7 +82,7 @@ export function Image(p: HTMLAttributes<HTMLImageElement>): JSX.Element {
 
   const Suspense = useSuspense(async () => {
     const m = await d
-    r = toJsx(m, b)
+    r = toJsxRuntime(m, b)
   })
 
   return <Suspense>{() => r}</Suspense>

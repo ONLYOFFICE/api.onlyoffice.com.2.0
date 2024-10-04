@@ -14,8 +14,7 @@ import {
   ThemeSwitcher,
   ThemeSwitcherOption,
 } from "@onlyoffice/site-kit"
-import {SrOnly} from "@onlyoffice/ui-kit"
-import {OnlyofficeBetaLogo} from "@onlyoffice/ui-logos"
+import {OnlyofficeBetaLogo, SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {GlobalNavigation} from "./global-navigation.tsx"
 import {Legacy} from "./legacy.tsx"

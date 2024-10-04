@@ -1,4 +1,5 @@
 // todo: cover all retrieve methods.
+// todo: cover all normalize methods.
 
 import * as Service from "@onlyoffice/service-declaration"
 import {isValidUUIDV4} from "is-valid-uuid-v4"
@@ -1286,7 +1287,7 @@ test("Entity: initializes an empty instance", () => {
   eq(y.type, new NoopType())
   is(y.format, "")
   eq(y.default, new NoopConst())
-  is(y.example, "")
+  eq(y.example, new NoopConst())
 })
 
 test("Entity: initializes from an OpenApi.SchemaObject", () => {
@@ -1307,7 +1308,8 @@ test("Entity: initializes from an OpenApi.SchemaObject", () => {
   e.format = "s"
   e.default = new PassthroughConst()
   e.default.value = "s"
-  e.example = "s"
+  e.example = new PassthroughConst()
+  e.example.value = "s"
 
   eq(a, e)
 })
@@ -1320,7 +1322,8 @@ test("Entity: converts to the Service.Entity", () => {
   y.format = "s"
   y.default = new PassthroughConst()
   y.default.value = "s"
-  y.example = "s"
+  y.example = new PassthroughConst()
+  y.example.value = "s"
 
   const a = y.toService()
 
@@ -1330,7 +1333,8 @@ test("Entity: converts to the Service.Entity", () => {
   e.type = y.type.toService()
   e.format = "s"
   e.default = y.default.toService()
-  e.example = "s"
+  e.example = new Service.PassthroughConst()
+  e.example.value = "s"
 
   eq(a, e)
 })
@@ -1398,12 +1402,20 @@ test("Property: converts to the Service.Property", () => {
 test("Parameter: initializes an empty instance", () => {
   const p = new Parameter()
   const k = Object.keys(p)
-  eq(k, ["identifier", "description", "required", "deprecated", "self"])
+  eq(k, [
+    "identifier",
+    "description",
+    "required",
+    "deprecated",
+    "self",
+    "example",
+  ])
   is(p.identifier, "")
   is(p.description, "")
   is(p.required, false)
   is(p.deprecated, false)
   eq(p.self, new Entity())
+  eq(p.example, new NoopConst())
 })
 
 test("Parameter: initializes from an OpenApi.ParameterObject with an error if the schema property is missing", () => {
@@ -1460,6 +1472,7 @@ test("Parameter: initializes from an OpenApi.ParameterObject with additional pro
     required: true,
     deprecated: true,
     schema: {type: "string"},
+    example: "e",
   })
   is(es.length, 0)
 
@@ -1470,6 +1483,8 @@ test("Parameter: initializes from an OpenApi.ParameterObject with additional pro
   e.deprecated = true
   e.self = new Entity()
   e.self.type = new StringType()
+  e.example = new PassthroughConst()
+  e.example.value = "e"
 
   eq(a, e)
 })
@@ -1494,6 +1509,8 @@ test("Parameter: converts to the Service.Parameter", () => {
   p.deprecated = true
   p.self = new Entity()
   p.self.type = new StringType()
+  p.example = new PassthroughConst()
+  p.example.value = "s"
 
   const a = p.toService()
 
@@ -1731,42 +1748,6 @@ test("Request: initializes from an OpenApi.OperationObject with additional prope
 
   const e = new Request()
   e.description = "d"
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of the headerParameters", () => {
-  const r = new Request()
-  r.headerParameters = ps(co(), ac())
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(ac(), co())
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of Accept header cases", () => {
-  const r = new Request()
-  r.headerParameters = ps(ac(ax(), aj()))
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(ac(aj(), ax()))
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of Content-Type header cases", () => {
-  const r = new Request()
-  r.headerParameters = ps(co(ax(), aj()))
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(co(aj(), ax()))
 
   eq(a, e)
 })

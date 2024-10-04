@@ -353,6 +353,11 @@ export class OperationDeclaration implements DeclarationNode {
   normalize(): OperationDeclaration {
     const d = this.copy()
     d.request = d.request.normalize()
+
+    for (const [i, r] of d.responses.entries()) {
+      d.responses[i] = r.normalize()
+    }
+
     return d
   }
 
@@ -610,6 +615,18 @@ export class Request {
             if (!(typeof b.type.const.value === "string")) {
               throw new TypeError("The value of the PassthroughConst is not a string")
             }
+            if (a.type.const.value === "application/json") {
+              return -1
+            }
+            if (b.type.const.value === "application/json") {
+              return 1
+            }
+            if (a.type.const.value === "multipart/form-data") {
+              return -1
+            }
+            if (b.type.const.value === "multipart/form-data") {
+              return 1
+            }
             return a.type.const.value.localeCompare(b.type.const.value)
           })
         }
@@ -618,6 +635,15 @@ export class Request {
       t.properties = t.properties.sort((a, b) => {
         return a.identifier.localeCompare(b.identifier)
       })
+    }
+
+    r.headerParameters = r.headerParameters.normalize()
+    r.cookieParameters = r.cookieParameters.normalize()
+    r.pathParameters = r.pathParameters.normalize()
+    r.queryParameters = r.queryParameters.normalize()
+
+    if (r.bodyParameters instanceof Entity) {
+      r.bodyParameters = r.bodyParameters.normalize()
     }
 
     return r
@@ -835,6 +861,16 @@ export class ResponseRecord {
     return r
   }
 
+  normalize(): ResponseRecord {
+    const r = this.copy()
+
+    if (r.self instanceof Response) {
+      r.self = r.self.normalize()
+    }
+
+    return r
+  }
+
   toService(): Service.Response {
     if (this.self instanceof DirectReference) {
       throw new TypeError("The self is a DirectReference, which cannot be converted")
@@ -937,6 +973,16 @@ export class Response {
     return r
   }
 
+  normalize(): Response {
+    const r = this.copy()
+
+    if (r.body instanceof Entity) {
+      r.body = r.body.normalize()
+    }
+
+    return r
+  }
+
   toService(): Service.Response {
     if (this.body instanceof DirectReference) {
       throw new TypeError("The body is a DirectReference, which cannot be converted")
@@ -956,6 +1002,7 @@ export class Parameter {
   required = false
   deprecated = false
   self: Entity | DirectReference = new Entity()
+  example: Const = new NoopConst()
 
   static fromOpenApi(s: OpenApi.ParameterObject): [Parameter, ...Error[]] {
     const es: Error[] = []
@@ -994,6 +1041,11 @@ export class Parameter {
 
     p.self = n
 
+    if (s.example) {
+      p.example = new PassthroughConst()
+      p.example.value = s.example
+    }
+
     return [p, ...es]
   }
 
@@ -1014,6 +1066,7 @@ export class Parameter {
     c.required = b.required
     c.deprecated = b.deprecated
     c.self = this.self.merge(b.self)
+    c.example = b.example
 
     return c
   }
@@ -1025,6 +1078,7 @@ export class Parameter {
     p.required = this.required
     p.deprecated = this.deprecated
     p.self = this.self
+    p.example = this.example
     return p
   }
 
@@ -1045,6 +1099,24 @@ export class Parameter {
       s.pop()
     } else if (p.self instanceof Entity) {
       p.self = p.self.resolve(c, s)
+    }
+
+    return p
+  }
+
+  normalize(): Parameter {
+    const p = this.copy()
+
+    if (p.self instanceof Entity) {
+      p.self = p.self.normalize()
+
+      // A parameter is a structure of higher abstraction than an entity.
+      // Therefore, if a parameter has an example, we should use it regardless
+      // of whether the entity has an example.
+      if (p.example instanceof PassthroughConst) {
+        p.self.example = p.example.copy()
+        p.example = new NoopConst()
+      }
     }
 
     return p
@@ -1140,6 +1212,16 @@ export class Property {
     return p
   }
 
+  normalize(): Property {
+    const p = this.copy()
+
+    if (p.self instanceof Entity) {
+      p.self = p.self.normalize()
+    }
+
+    return p
+  }
+
   toService(): Service.Property {
     const p = new Service.Property()
     p.identifier = this.identifier
@@ -1155,7 +1237,7 @@ export class Entity {
   type: Type = new NoopType()
   format = ""
   default: Const = new NoopConst()
-  example: unknown = ""
+  example: Const = new NoopConst()
 
   static fromOpenApi(s: OpenApi.SchemaObject): [Entity, ...Error[]] {
     const es: Error[] = []
@@ -1186,7 +1268,8 @@ export class Entity {
     }
 
     if (s.example) {
-      y.example = s.example
+      y.example = new PassthroughConst()
+      y.example.value = s.example
     }
 
     return [y, ...es]
@@ -1207,6 +1290,7 @@ export class Entity {
 
     c.format = this.format
     c.default = this.default
+    c.example = this.example
 
     return c
   }
@@ -1228,6 +1312,57 @@ export class Entity {
     return y
   }
 
+  normalize(): Entity {
+    const y = this.copy()
+    y.type = y.type.normalize()
+
+    if (
+      y.type instanceof ArrayType &&
+      y.type.items instanceof Entity &&
+      y.type.items.example instanceof PassthroughConst &&
+      y.example instanceof NoopConst
+    ) {
+      y.example = new PassthroughConst()
+      y.example.value = [y.type.items.example]
+    } else if (
+      y.type instanceof EnumType &&
+      y.type.cases.length !== 0 &&
+      y.type.cases[0].type instanceof LiteralType &&
+      y.type.cases[0].type.const instanceof PassthroughConst &&
+      y.example instanceof NoopConst
+    ) {
+      y.example = new PassthroughConst()
+      y.example.value = y.type.cases[0].type.const.value
+    } else if (
+      y.type instanceof LiteralType &&
+      y.type.const instanceof PassthroughConst &&
+      y.example instanceof NoopConst
+    ) {
+      y.example = new PassthroughConst()
+      y.example.value = y.type.const.value
+    } else if (
+      y.type instanceof ObjectType &&
+      y.type.properties.length !== 0 &&
+      y.example instanceof NoopConst
+    ) {
+      const e: Record<string, unknown> = {}
+      for (const p of y.type.properties) {
+        if (
+          p.self instanceof Entity &&
+          p.self.example instanceof PassthroughConst
+        ) {
+          e[p.identifier] = p.self.example.value
+        }
+      }
+      if (Object.keys(e).length !== 0) {
+        y.example = new PassthroughConst()
+        y.example.value = e
+      }
+    }
+
+    return y
+  }
+
   toService(): Service.Entity {
     const y = new Service.Entity()
     y.description = this.description
@@ -1235,7 +1370,7 @@ export class Entity {
     y.type = this.type.toService()
     y.format = this.format
     y.default = this.default.toService()
-    y.example = this.example
+    y.example = this.example.toService()
     return y
   }
 }
@@ -1255,6 +1390,12 @@ export class NoopConst {
 
 export class PassthroughConst {
   value: unknown = ""
+
+  copy(): PassthroughConst {
+    const c = new PassthroughConst()
+    c.value = this.value
+    return c
+  }
 
   toService(): Service.PassthroughConst {
     const s = new Service.PassthroughConst()
@@ -1386,6 +1527,16 @@ export class ArrayType implements TypeNode {
     return t
   }
 
+  normalize(): ArrayType {
+    const t = this.copy()
+
+    if (t.items instanceof Entity) {
+      t.items = t.items.normalize()
+    }
+
+    return t
+  }
+
   toService(): Service.ArrayType {
     const t = new Service.ArrayType()
     t.items = this.items.toService()
@@ -1407,6 +1558,10 @@ export class BooleanType implements TypeNode {
   }
 
   resolve(_: Cache<Component>, __: State): BooleanType {
+    return this.copy()
+  }
+
+  normalize(): BooleanType {
     return this.copy()
   }
 
@@ -1499,6 +1654,16 @@ export class EnumType implements TypeNode {
     return t
   }
 
+  normalize(): EnumType {
+    const t = this.copy()
+
+    for (const [i, y] of t.cases.entries()) {
+      t.cases[i] = y.normalize()
+    }
+
+    return t
+  }
+
   toService(): Service.EnumType {
     const t = new Service.EnumType()
 
@@ -1570,6 +1735,16 @@ export class ComplexType implements TypeNode {
     return t
   }
 
+  normalize(): ComplexType {
+    const t = this.copy()
+
+    for (const [i, y] of t.entities.entries()) {
+      t.entities[i] = y.normalize()
+    }
+
+    return t
+  }
+
   toService(): Service.ComplexType {
     const t = new Service.ComplexType()
     t.by = this.by
@@ -1600,6 +1775,10 @@ export class IntegerType implements TypeNode {
     return this.copy()
   }
 
+  normalize(): IntegerType {
+    return this.copy()
+  }
+
   toService(): Service.IntegerType {
     return new Service.IntegerType()
   }
@@ -1624,6 +1803,10 @@ export class LiteralType implements TypeNode {
     return this.copy()
   }
 
+  normalize(): LiteralType {
+    return this.copy()
+  }
+
   toService(): Service.LiteralType {
     const t = new Service.LiteralType()
     t.base = this.base.toService()
@@ -1642,6 +1825,10 @@ export class NoopType implements TypeNode {
   }
 
   resolve(_: Cache<Component>, __: State): NoopType {
+    return this.copy()
+  }
+
+  normalize(): NoopType {
     return this.copy()
   }
 
@@ -1667,12 +1854,20 @@ export class NullType implements TypeNode {
     return this.copy()
   }
 
+  normalize(): NullType {
+    return this.copy()
+  }
+
   toService(): Service.NullType {
     return new Service.NullType()
   }
 }
 
 export class NumberType implements TypeNode {
+  static fromOpenApi(): [NumberType, ...Error[]] {
+    return [new NumberType()]
+  }
+
   merge(_: TypeNode): NumberType {
     throw new Error("The NumberType cannot be merged")
   }
@@ -1685,8 +1880,8 @@ export class NumberType implements TypeNode {
     return this.copy()
   }
 
-  static fromOpenApi(): [NumberType, ...Error[]] {
-    return [new NumberType()]
+  normalize(): NumberType {
+    return this.copy()
   }
 
   toService(): Service.NumberType {
@@ -1767,6 +1962,16 @@ export class ObjectType implements TypeNode {
     return t
   }
 
+  normalize(): ObjectType {
+    const t = this.copy()
+
+    for (const [i, p] of t.properties.entries()) {
+      t.properties[i] = p.normalize()
+    }
+
+    return t
+  }
+
   toService(): Service.ObjectType {
     const t = new Service.ObjectType()
 
@@ -1780,6 +1985,10 @@ export class ObjectType implements TypeNode {
 }
 
 export class StringType implements TypeNode {
+  static fromOpenApi(): [StringType, ...Error[]] {
+    return [new StringType()]
+  }
+
   merge(_: TypeNode): StringType {
     throw new Error("The StringType cannot be merged")
   }
@@ -1792,8 +2001,8 @@ export class StringType implements TypeNode {
     return this.copy()
   }
 
-  static fromOpenApi(): [StringType, ...Error[]] {
-    return [new StringType()]
+  normalize(): StringType {
+    return this.copy()
   }
 
   toService(): Service.StringType {
@@ -1856,6 +2065,16 @@ export class UnionType implements TypeNode {
     return t
   }
 
+  normalize(): UnionType {
+    const t = this.copy()
+
+    for (const [i, u] of t.types.entries()) {
+      t.types[i] = u.normalize()
+    }
+
+    return t
+  }
+
   toService(): Service.UnionType {
     const t = new Service.UnionType()
 
@@ -1881,6 +2100,10 @@ export class UnknownType implements TypeNode {
     return this.copy()
   }
 
+  normalize(): UnknownType {
+    return this.copy()
+  }
+
   toService(): Service.UnknownType {
     return new Service.UnknownType()
   }
@@ -1890,6 +2113,7 @@ export interface TypeNode {
   merge(b: TypeNode): TypeNode
   copy(): TypeNode
   resolve(c: Cache<Component>, s: State): TypeNode
+  normalize(): TypeNode
   toService(): Service.TypeNode
 }
 
