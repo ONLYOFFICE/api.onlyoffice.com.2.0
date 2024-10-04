@@ -1,5 +1,7 @@
 # Change Log
 
+- macros: adding custom functions
+
 ## 6.1.0
 - docspace js sdk: react component
 - docspace: support new rest api parser
