@@ -1,4 +1,4 @@
-ё
+`def ToBool(self);`
 
 Converts the **CDocBuilderValue** object to a boolean value.
 
