@@ -1,5 +1,10 @@
 # Change Log
 
+- docs api: configuring toolbar appearance
+- docs api: users in response after info command
+- docs api: change command address
+- docs api: insert-text in setRequestedDocument
+
 ## 6.1.0
 - docspace js sdk: react component
 - docspace: support new rest api parser
