@@ -1,0 +1,29 @@
+{
+  "name": "@onlyoffice/ui-pictures",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./main.css": "./lib/main.css",
+    ".": "./lib/main.tsx"
+  },
+  "main": "lib/main.tsx",
+  "scripts": {
+    "build": "svg-library static dist",
+    "clean": "rimraf dist node_modules",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/preact-elements": "workspace:^",
+    "@onlyoffice/ui-mascots": "workspace:^",
+    "clsx": "2.1.0",
+    "preact": "10.22.0",
+    "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "@onlyoffice/svg-library": "workspace:^",
+    "@storybook/preact": "8.0.0",
+    "rimraf": "6.0.1",
+    "vite": "5.1.6"
+  }
+}
