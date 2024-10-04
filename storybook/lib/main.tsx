@@ -8,6 +8,7 @@ export default {
   framework: "@storybook/preact-vite",
   addons: [
     "@storybook/addon-essentials",
+    "@storybook/addon-storysource",
   ],
   stories: [
     "../../packages/site-*/lib/*.story.tsx",
