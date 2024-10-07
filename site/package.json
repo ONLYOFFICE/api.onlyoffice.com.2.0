@@ -86,7 +86,6 @@
     "github-slugger": "2.0.0",
     "hast-util-to-jsx-runtime": "2.3.0",
     "hast-util-to-text": "4.0.0",
-    "js-cookie": "3.0.5",
     "lightningcss": "1.23.0",
     "mdast-util-from-markdown": "2.0.0",
     "mdast-util-gfm-table": "2.0.0",
