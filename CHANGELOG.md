@@ -1,6 +1,7 @@
 # Change Log
 
 - docbuilder: samples link
+- office api: added samples
 
 ## 6.1.0
 - docspace js sdk: react component
