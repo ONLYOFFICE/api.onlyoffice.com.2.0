@@ -1,6 +1,6 @@
 Requests a list of the forgotten files.
 
-### Request example
+## Request example
 
 ``` json
 {
@@ -8,13 +8,13 @@ Requests a list of the forgotten files.
 }
 ```
 
-### Parameters
+## Parameters
 
-| Parameter | Description               | Type   | Presence |
-| --------- | ------------------------- | ------ | -------- |
-| c         | Defines the command type. | string | required |
+| Parameter | Type   | Presence | Description               |
+| --------- | ------ | -------- | ------------------------- |
+| c         | string | required | Defines the command type. |
 
-### Response example
+## Response example
 
 ``` json
 {
@@ -23,9 +23,9 @@ Requests a list of the forgotten files.
 }
 ```
 
-### Parameters
+## Parameters
 
-| Parameter | Description                                                                                   | Type    | Presence |
-| --------- | --------------------------------------------------------------------------------------------- | ------- | -------- |
-| error     | Defines an error code.                                                                        | integer | required |
-| keys      | Defines a list of the document identifiers used to unambiguously identify the document files. | string  | required |
+| Parameter | Type    | Presence | Description                                                                                   |
+| --------- | ------- | -------- | --------------------------------------------------------------------------------------------- |
+| error     | integer | required | Defines an error code.                                                                        |
+| keys      | string  | required | Defines a list of the document identifiers used to unambiguously identify the document files. |

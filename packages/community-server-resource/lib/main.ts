@@ -1,26 +1,21 @@
-import {createWriteStream, existsSync} from "node:fs"
+import {existsSync} from "node:fs"
 import {mkdir, rm} from "node:fs/promises"
 import path from "node:path"
 import {URL, fileURLToPath} from "node:url"
 import {Console} from "@onlyoffice/console"
-import {Cache} from "@onlyoffice/openapi-declaration"
-import {writeComponent, writeDeclaration, writeEntrypoint} from "@onlyoffice/openapi-resource"
-import {componentBasename, declarationBasename, rawURL, readURL, resourceBasename} from "@onlyoffice/resource"
-import {StringWritable} from "@onlyoffice/stream-string"
+import {type Config, build, download} from "@onlyoffice/openapi-resource"
 import pack from "../package.json" with {type: "json"}
 
-const config = [
-  {
-    name: "community-server",
-    variant: "master",
-    source: {
-      owner: "onlyoffice",
-      repo: "community-server-declarations",
-      reference: "dist",
-      path: "community-server.json",
-    },
+const config: Config = {
+  name: "community-server",
+  variant: "master",
+  source: {
+    owner: "onlyoffice",
+    repo: "community-server-declarations",
+    reference: "dist",
+    path: "community-server.json",
   },
-]
+}
 
 const console = new Console(pack.name, process.stdout, process.stderr)
 
@@ -35,36 +30,8 @@ async function main(): Promise<void> {
 
   await mkdir(dd)
 
-  for (const cfg of config) {
-    const m = JSON.stringify({name: cfg.name, variant: cfg.variant})
-    console.log(`Start building '${m}'`)
-
-    const rw = new StringWritable()
-    const ru = rawURL(cfg.source.owner, cfg.source.repo, cfg.source.reference, cfg.source.path)
-    await readURL(rw, ru)
-
-    const ch = new Cache()
-
-    const dn = declarationBasename(cfg.name)
-    const df = path.join(dd, dn)
-    const dw = createWriteStream(df)
-    await writeDeclaration(ch, rw, dw)
-    dw.close()
-
-    const cn = componentBasename(cfg.name)
-    const cf = path.join(dd, cn)
-    const cw = createWriteStream(cf)
-    await writeComponent(ch, rw, cw)
-    cw.close()
-
-    const en = resourceBasename(cfg.name)
-    const ef = path.join(dd, en)
-    const ew = createWriteStream(ef)
-    await writeEntrypoint(ew, df, cf)
-    ew.close()
-
-    console.log(`Finish building '${m}'`)
-  }
+  const rw = await download(config)
+  await build(config, dd, rw)
 
   console.log("Finish building")
 }

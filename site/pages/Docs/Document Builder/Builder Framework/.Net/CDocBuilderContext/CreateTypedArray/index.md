@@ -1,10 +1,10 @@
-#### CDocBuilderValue^ CreateTypedArray(aBuffer);
+`CDocBuilderValue^ CreateTypedArray(aBuffer);`
 
 Creates a Uint8Array value, an analogue of *Uint8Array* in JS.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateTypedArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name      | Type          | Description       |
 | --------- | ------------- | ----------------- |
@@ -12,9 +12,9 @@ Creates a Uint8Array value, an analogue of *Uint8Array* in JS.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

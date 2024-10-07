@@ -1,8 +1,8 @@
-#### HRESULT OpenFile(\[in] BSTR path, \[in] BSTR params, \[out, retval] VARIANT\_BOOL\* result);
+`HRESULT OpenFile([in] BSTR path, [in] BSTR params, [out, retval] VARIANT_BOOL* result);`
 
 Opens the document file which will be edited and saved afterwards.
 
-## Parameters:
+## Parameters
 
 | Name     | Type            | Attributes  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | -------- | --------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -12,9 +12,9 @@ Opens the document file which will be edited and saved afterwards.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 VARIANT_BOOL b;
@@ -23,8 +23,8 @@ oBuilder->OpenFile("text-document.csv", "<m_nCsvTxtEncoding>46</m_nCsvTxtEncodin
 oBuilder->Dispose();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```js
+```ts
 builder.OpenFile("text-document.csv", "<m_nCsvTxtEncoding>46</m_nCsvTxtEncoding><m_nCsvDelimiter>4</m_nCsvDelimiter>")
 ```

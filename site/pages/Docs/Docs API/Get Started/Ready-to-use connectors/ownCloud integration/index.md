@@ -6,12 +6,12 @@ The latest connector signed versions are available in the official store for [ow
 
 ## Features
 
-* Currently, the following document formats can be opened and edited with this app: DOCX, XLSX, PPTX, CSV, TXT, DOCXF, OFORM.
-* The following formats are available for viewing only: PDF, DJVU, XPS.
-* The following formats can be converted into OOXML: DOC, DOCM, DOT, DOTX, EPUB, HTM, HTML, ODP, ODT, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM, RTF, XLS, XLSM, XLT, XLTM, XLTX. ODT, ODS, and ODP are also available for instant conversion. After you enable the corresponding option in the admin settings, ODF-formatted documents are immediately converted in the editor and opened after you click on it.
-* The app will create an item in the **new (+)** menu to create **Document**, **Spreadsheet**, **Presentation**. It will also create a new **Open in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to ownCloud. Co-editing is also available between several federated ownCloud instances connected to one Document Server.
-* Sharing files is possible with different permission types - viewing/editing, commenting, reviewing, filling forms. It's also possible to restrict downloading (in all editors) and modifying filters (in spreadsheets). Sharing via public link is also available.
-* It is possible to work with documents, spreadsheets, and presentations within **ownCloud Web**.
+- Currently, the following document formats can be opened and edited with this app: DOCX, XLSX, PPTX, CSV, TXT, DOCXF, OFORM.
+- The following formats are available for viewing only: PDF, DJVU, XPS.
+- The following formats can be converted into OOXML: DOC, DOCM, DOT, DOTX, EPUB, HTM, HTML, ODP, ODT, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM, RTF, XLS, XLSM, XLT, XLTM, XLTX. ODT, ODS, and ODP are also available for instant conversion. After you enable the corresponding option in the admin settings, ODF-formatted documents are immediately converted in the editor and opened after you click on it.
+- The app will create an item in the **new (+)** menu to create **Document**, **Spreadsheet**, **Presentation**. It will also create a new **Open in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to ownCloud. Co-editing is also available between several federated ownCloud instances connected to one Document Server.
+- Sharing files is possible with different permission types - viewing/editing, commenting, reviewing, filling forms. It's also possible to restrict downloading (in all editors) and modifying filters (in spreadsheets). Sharing via public link is also available.
+- It is possible to work with documents, spreadsheets, and presentations within **ownCloud Web**.
 
 ## Installing ONLYOFFICE Docs
 
@@ -29,7 +29,7 @@ If the server with the ownCloud installed does not have the Internet access, or 
 
 1. Go to the ownCloud server *apps/* directory (or some other directory [used](https://doc.owncloud.org/server/admin_manual/installation/apps_management_installation.html#using-custom-app-directories) to connect applications):
 
-  ``` bash
+  ``` sh
   cd apps/
   ```
 
@@ -39,17 +39,17 @@ If the server with the ownCloud installed does not have the Internet access, or 
    2. Download the latest signed version from the application [release page](https://github.com/ONLYOFFICE/onlyoffice-owncloud/releases) on GitHub.
    3. Clone the application source code and compile it yourself:
    
-    ``` bash
-    git clone https://github.com/ONLYOFFICE/onlyoffice-owncloud.git onlyoffice
-    cd onlyoffice
-    git submodule update --init --recursive
-    ```
+   ``` sh
+   git clone https://github.com/ONLYOFFICE/onlyoffice-owncloud.git onlyoffice
+   cd onlyoffice
+   git submodule update --init --recursive
+   ```
 
    > ownCloud does not work with unsigned applications giving an alert, so you will need to use either the option **a** or **b** to get the application.
 
 3. Change the owner to update the application right from ownCloud web interface:
 
-  ``` bash
+  ``` sh
   chown -R www-data:www-data onlyoffice
   ```
 
@@ -59,7 +59,7 @@ If the server with the ownCloud installed does not have the Internet access, or 
 
 In ownCloud, open the *\~/settings/admin?sectionid=additional#onlyoffice* page with administrative settings for **ONLYOFFICE** section. Enter the following address to connect ONLYOFFICE Docs:
 
-```
+``` sh
 https://<documentserver>/
 ```
 
@@ -81,7 +81,7 @@ The **Open in ONLYOFFICE** action will be added to the file context menu. You ca
 
 You can check the connection to ONLYOFFICE Docs by using the following occ command:
 
-``` bash
+``` sh
 occ onlyoffice:documentserver --check
 ```
 
@@ -91,8 +91,8 @@ You will see a text either with information about the successful connection or t
 
 To enable work within **ownCloud Web**, register the connector in the ownCloud Web *config.json*:
 
-* If you installed ownCloud Web from the [official marketplace](https://marketplace.owncloud.com/apps/onlyoffice), the path is *\<owncloud-root-catalog>/config/config.json*.
-* If you compiled it from source code yourself using [this instruction](#install), the path is *\<owncloud-web-root-catalog>/config/config.json*.
+- If you installed ownCloud Web from the [official marketplace](https://marketplace.owncloud.com/apps/onlyoffice), the path is *\<owncloud-root-catalog>/config/config.json*.
+- If you compiled it from source code yourself using [this instruction](#install), the path is *\<owncloud-web-root-catalog>/config/config.json*.
 
 To register the connector, use these lines:
 
@@ -124,10 +124,10 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 5. The app prepares a JSON object with the following properties:
 
-   * **url** - the URL that ONLYOFFICE Docs uses to download the document;
-   * **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **documentServerUrl** - the URL that the client needs to respond to ONLYOFFICE Docs (can be set at the administrative settings page);
-   * **key** - the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not.
+   - **url** - the URL that ONLYOFFICE Docs uses to download the document;
+   - **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **documentServerUrl** - the URL that the client needs to respond to ONLYOFFICE Docs (can be set at the administrative settings page);
+   - **key** - the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not.
 
 6. ownCloud takes this object and constructs a page from *templates/editor.php* template, filling in all of those values so that the client browser can load up the editor.
 
@@ -145,13 +145,13 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 ## Known issues
 
-* **Connecting external storages**. Adding the storage using the **External storages** app has issues with the co-editing in some cases. If the connection is made using the same authorization keys (the *Username and password* or *Global credentials* authentication type is selected), then the co-editing is available for the users. If different authorization keys are used (*Log-in credentials, save in database* or *User entered, store in database* authentication options), the co-editing is not available. When the *Log-in credentials, save in session* authentication type is used, the files cannot be opened in the editor.
+- **Connecting external storages**. Adding the storage using the **External storages** app has issues with the co-editing in some cases. If the connection is made using the same authorization keys (the *Username and password* or *Global credentials* authentication type is selected), then the co-editing is available for the users. If different authorization keys are used (*Log-in credentials, save in database* or *User entered, store in database* authentication options), the co-editing is not available. When the *Log-in credentials, save in session* authentication type is used, the files cannot be opened in the editor.
 
-* **Encrypting file storage**. ownCloud provides an option to encrypt the file storage. But if the encryption with the *per-user encryption keys* (used by default in ownCloud **Default encryption module** app) is enabled, ONLYOFFICE Docs cannot open the encrypted files for editing and save them after the editing. The ONLYOFFICE section of the administrative settings page will display a notification about it. However, if you set the encryption with the *master key*, ONLYOFFICE application will work as intended. The instruction on enabling *master key* based encryption is available in the official documentation on [ownCloud](https://doc.owncloud.org/server/admin_manual/configuration/files/encryption/encryption_configuration.html#enabling-master-key-based-encryption-from-the-command-line) websites.
+- **Encrypting file storage**. ownCloud provides an option to encrypt the file storage. But if the encryption with the *per-user encryption keys* (used by default in ownCloud **Default encryption module** app) is enabled, ONLYOFFICE Docs cannot open the encrypted files for editing and save them after the editing. The ONLYOFFICE section of the administrative settings page will display a notification about it. However, if you set the encryption with the *master key*, ONLYOFFICE application will work as intended. The instruction on enabling *master key* based encryption is available in the official documentation on [ownCloud](https://doc.owncloud.org/server/admin_manual/configuration/files/encryption/encryption_configuration.html#enabling-master-key-based-encryption-from-the-command-line) websites.
 
   > ownCloud recommends using *master encryption key* only on fresh installations with no existing data, or on systems where encryption has not already been enabled, as your files previously encrypted with the use of *per-user encryption keys* **might be lost forever** after you enable *master key* based encryption on them.
 
-* **Validating certificate**. If you are using a self-signed certificate for your Document Server, ownCloud will not validate such a certificate and will not allow connection to/from ONLYOFFICE Docs. This issue can be solved in two ways:
+- **Validating certificate**. If you are using a self-signed certificate for your Document Server, ownCloud will not validate such a certificate and will not allow connection to/from ONLYOFFICE Docs. This issue can be solved in two ways:
 
   1. Check the **Disable certificate verification (insecure)** box on the ONLYOFFICE administration page, Server settings section, within your ownCloud.
   2. Change the ownCloud config file manually. Locate the ownCloud config file (*/owncloud/config/config.php*) and open it. Insert the following section to it:
@@ -168,7 +168,7 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
   > Please remember that this is a temporary insecure solution and we strongly recommend that you replace the certificate with the one issued by some CA. Once you do that, do not forget to uncheck the corresponding setting box or remove the above section from the ownCloud config file.
 
-* **Background task**. If the editors don't open or save documents after a period of proper functioning, the reason can be a problem in changing network settings or disabling any relevant services, or issues with the SSL certificate.
+- **Background task**. If the editors don't open or save documents after a period of proper functioning, the reason can be a problem in changing network settings or disabling any relevant services, or issues with the SSL certificate.
 
   To solve this, we added an asynchronous background task which runs on the server to check availability of the editors. It allows testing the connection between your **ownCloud instance** and **ONLYOFFICE Docs**, namely availability of server addresses and the validity of the JWT secret are being checked.
 
@@ -188,12 +188,12 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
   To disable this check running, enter 0 value.
 
-* **Federated Cloud Sharing**. If the document is shared using the **Federated Cloud Sharing** app, the co-editing between the ownCloud instances connected to different ONLYOFFICE servers will not be available. The users from one and the same Document Server can edit the document in the co-editing mode, but the users from two (or more) different Document Servers will not be able to collaborate on the same document in real time.
+- **Federated Cloud Sharing**. If the document is shared using the **Federated Cloud Sharing** app, the co-editing between the ownCloud instances connected to different ONLYOFFICE servers will not be available. The users from one and the same Document Server can edit the document in the co-editing mode, but the users from two (or more) different Document Servers will not be able to collaborate on the same document in real time.
 
-* **Converting files**. ONLYOFFICE Docs uses Office Open XML format as a basis when opening and editing files. If the file format is different from OOXML, it will still be converted to the corresponding OOXML for the ONLYOFFICE Docs proper work and faster performance. After that you can edit the file, making any changes available for the base OOXML format and save the file to this base OOXML format.
+- **Converting files**. ONLYOFFICE Docs uses Office Open XML format as a basis when opening and editing files. If the file format is different from OOXML, it will still be converted to the corresponding OOXML for the ONLYOFFICE Docs proper work and faster performance. After that you can edit the file, making any changes available for the base OOXML format and save the file to this base OOXML format.
 
   In case the source ownCloud file format was different from the base one, and you still want to save it to the original format, the file will be converted to this format from OOXML. As the formats are fundamentally different, some data (such as charts, tables, autoshapes or images) and formatting can be lost due to the simple reason that some formats (*csv*, *txt*, etc.) do not support them or treat them differently than OOXML standard does. That is why all the non-OOXML files by default are opened for viewing only, although there is an option to convert the file in the context menu. If you realise the data/formatting loss risks after the conversion, but still want to open non-OOXML files for editing, you can check them in the list in the settings. Editing for *csv* and *txt* files is available by default.
 
-* When accessing a document without download permission, file printing and using the system clipboard are not available. Copying and pasting within the editor is available via buttons in the editor toolbar and in the context menu.
+- When accessing a document without download permission, file printing and using the system clipboard are not available. Copying and pasting within the editor is available via buttons in the editor toolbar and in the context menu.
 
 Download the ownCloud ONLYOFFICE integration app [here](https://github.com/ONLYOFFICE/onlyoffice-owncloud).

@@ -1,4 +1,4 @@
-#### bool IsTypedArray();
+`bool IsTypedArray();`
 
 Returns true if the **CDocBuilderValue** object is a typed array.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a typed array.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

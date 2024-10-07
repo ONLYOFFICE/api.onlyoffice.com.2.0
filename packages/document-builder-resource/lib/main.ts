@@ -25,8 +25,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder/v8.2.0/word.json",
+      branch: "release",
+      path: "office-js-api/word.json",
     },
   },
   {
@@ -35,8 +35,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder/v8.2.0/forms.json",
+      branch: "release",
+      path: "office-js-api/forms.json",
     },
   },
   {
@@ -45,8 +45,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder/v8.2.0/slide.json",
+      branch: "release",
+      path: "office-js-api/slide.json",
     },
   },
   {
@@ -55,8 +55,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder/v8.2.0/cell.json",
+      branch: "release",
+      path: "office-js-api/cell.json",
     },
   },
 
@@ -66,8 +66,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder-plugin/v8.2.0/common.json",
+      branch: "release",
+      path: "office-js-api-plugins/common.json",
     },
   },
   {
@@ -76,8 +76,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder-plugin/v8.2.0/word.json",
+      branch: "release",
+      path: "office-js-api-plugins/word.json",
     },
   },
   {
@@ -86,8 +86,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder-plugin/v8.2.0/forms.json",
+      branch: "release",
+      path: "office-js-api-plugins/forms.json",
     },
   },
   {
@@ -96,8 +96,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder-plugin/v8.2.0/slide.json",
+      branch: "release",
+      path: "office-js-api-plugins/slide.json",
     },
   },
   {
@@ -106,8 +106,8 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "dist",
-      path: "document-builder-plugin/v8.2.0/cell.json",
+      branch: "release",
+      path: "office-js-api-plugins/cell.json",
     },
   },
 ]

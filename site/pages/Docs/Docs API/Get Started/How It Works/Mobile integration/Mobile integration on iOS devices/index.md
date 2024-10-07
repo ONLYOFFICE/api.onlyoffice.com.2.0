@@ -6,7 +6,7 @@ This example demonstrates how to integrate ONLYOFFICE mobile web editors with th
 
 ![iOS integration via test sample](/assets/images/editor/ios-test-sample.png)
 
-**Opening ONLYOFFICE editors**
+### Opening ONLYOFFICE editors
 
 1. Download and install ONLYOFFICE Docs [Enterprise](https://www.onlyoffice.com/docs-enterprise.aspx) or [Developer](https://www.onlyoffice.com/developer-edition.aspx) edition.
 
@@ -122,8 +122,7 @@ This example demonstrates how to integrate ONLYOFFICE mobile web editors with th
 
 10. On the main screen of the application, select the **Using DocumentServer** option to demonstrate an example of integrating ONLYOFFICE mobile web editors with the ONLYOFFICE test or DMS sample.
 
-
-**Closing ONLYOFFICE editors**
+### Closing ONLYOFFICE editors
 
 Use the **DocumentServerEditorViewController** controller to exit from the editor. For example, in the current test samples the **Go back** button is created to navigate to the previous screen:
 
@@ -154,11 +153,11 @@ The full code for **DocumentServerEditorViewController** can be found [here](htt
 
 ## Integration based on the ONLYOFFICE Docs API
 
-This example demonstrates how to open the ONLYOFFICE editors via WKWebView using the editor configuration described in the [API documentation](../../../Basic%20concepts/index.md) and the [configuration examples](../../../Try%20Docs/index.tsx.
+This example demonstrates how to open the ONLYOFFICE editors via WKWebView using the editor configuration described in the [API documentation](../../../Basic%20concepts/index.md) and the [configuration examples](../../../Try%20Docs/index.tsx).
 
 ![iOS integration via api](/assets/images/editor/ios-api-config.png)
 
-**Opening ONLYOFFICE editors**
+### Opening ONLYOFFICE editors
 
 1. Download and install ONLYOFFICE Docs [Enterprise](https://www.onlyoffice.com/docs-enterprise.aspx) or [Developer](https://www.onlyoffice.com/developer-edition.aspx) edition.
 
@@ -185,7 +184,7 @@ This example demonstrates how to open the ONLYOFFICE editors via WKWebView using
 7. Add the script initializing the **Document Editor** for the *div* element with the configuration for the document you want to open:
 
    <!-- eslint-skip -->
-   ```js
+   ``` ts
    window.docEditor = new DocsAPI.DocEditor("placeholder", {
      {external_config},
      type: "mobile",
@@ -234,8 +233,7 @@ This example demonstrates how to open the ONLYOFFICE editors via WKWebView using
 
 11. On the next page, choose one of the configuration samples to open the resulting HTML in the WKWebView component.
 
-
-**Working with documents**
+### Working with documents
 
 To work with documents (open, download, insert images, mention other users, etc.), use the API documentation with its events and methods:
 

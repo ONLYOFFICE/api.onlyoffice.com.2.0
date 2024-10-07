@@ -6,7 +6,7 @@ If you need to compare two documents, you can use **Document Builder**. The step
 
 1. Create the *compare.docbuilder* script file with the following code:
 
-   ``` js
+   ``` ts
    builder.OpenFile("https://example.com/file1.docx")
    const file = builderJS.OpenTmpFile("https://example.com/file2.docx")
    AscCommonWord.CompareDocuments(Api, file, null)

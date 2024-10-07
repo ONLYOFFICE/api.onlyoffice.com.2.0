@@ -1,10 +1,10 @@
-#### new CDocBuilderValue
+`new CDocBuilderValue`
 
 Class used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
 
 The **CDocBuilderValue** class can be created from the primitive data types:
 
-``` c++
+``` cpp
 CDocBuilderValue(const bool& value);
 CDocBuilderValue(const int& value);
 CDocBuilderValue(const unsigned int& value);

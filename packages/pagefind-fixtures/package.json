@@ -3,12 +3,14 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "clean": "rimraf dist node_modules",
     "build": "eleventy --config eleventy.config.cjs && pagefind --site dist"
   },
   "devDependencies": {
     "@11ty/eleventy": "2.0.1",
     "@onlyoffice/eleventy-types": "workspace:^",
     "pagefind": "1.1.0",
+    "rimraf": "6.0.1",
     "typescript": "5.4.5"
   }
 }

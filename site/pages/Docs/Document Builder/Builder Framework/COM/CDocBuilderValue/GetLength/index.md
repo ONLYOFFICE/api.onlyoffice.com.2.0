@@ -1,10 +1,10 @@
-#### HRESULT GetLength(\[out, retval] long\* result);
+`HRESULT GetLength([out, retval] long* result);`
 
 Returns the length if the **CDocBuilderValue** object is an array/typed array. Otherwise, returns 0.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetLength* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type   | Description                 |
 | -------- | ------ | --------------------------- |
@@ -12,9 +12,9 @@ Returns the length if the **CDocBuilderValue** object is an array/typed array. O
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

@@ -42,7 +42,7 @@ To open an online form in the PDF format for editing from your website, follow t
 
 5. Add the script to close the editor in case it is open:
 
-   ``` javascript
+   ``` ts
    if (this.docEditor) {
      this.docEditor.destroyEditor()
    }
@@ -50,19 +50,19 @@ To open an online form in the PDF format for editing from your website, follow t
 
 6. Create the full URL address to the PDF form you need to open:
 
-   ``` javascript
+   ``` ts
    const url = "https://example.com/url-to-example-form.pdf"
    ```
 
 7. Create the key to identify the file for co-editing:
 
-   ``` javascript
+   ``` ts
    const key = `${filename}.pdf`
    ```
 
 8. Add the script initializing the Document Editor with the configuration for the document you want to open and open the editor in the placeholder element:
 
-   ``` javascript
+   ``` ts
    this.docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        fileType: "pdf",
@@ -111,7 +111,6 @@ Once done, the PDF form can be opened for editing. After editing this file, you 
 
 ![Embed pdf form for editing](/assets/images/editor/embed-pdf-for-editing.png)
 
-
 ## Filling forms
 
 ### How to open PDF form for filling from website
@@ -140,7 +139,7 @@ To make an online form in the PDF format available for filling in, follow the st
 
 5. Add the script to close the editor in case it is open:
 
-   ``` javascript
+   ``` ts
    if (this.docEditor) {
      this.docEditor.destroyEditor()
    }
@@ -148,13 +147,13 @@ To make an online form in the PDF format available for filling in, follow the st
 
 6. Create the full URL address to the PDF form you need to open:
 
-   ``` javascript
+   ``` ts
    const url = "https://example.com/url-to-example-form.pdf"
    ```
 
 7. Create the key to identify the file:
 
-   ``` javascript
+   ``` ts
    const key = `${filename}.pdf`
    ```
 
@@ -162,7 +161,7 @@ To make an online form in the PDF format available for filling in, follow the st
 
 8. Add the script initializing the Document Editor with the configuration for the document you want to open and open the editor in the placeholder element:
 
-   ``` javascript
+   ``` ts
    this.docEditor = new DocsAPI.DocEditor("placeholder",
      {
        document: {

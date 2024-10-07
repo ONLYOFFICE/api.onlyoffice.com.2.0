@@ -1,4 +1,4 @@
-#### CDocBuilderContext GetContext();
+`CDocBuilderContext GetContext();`
 
 Returns the current JS [context](../../CDocBuilderContext/index.md).
 
@@ -6,9 +6,9 @@ Returns the current JS [context](../../CDocBuilderContext/index.md).
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

@@ -1,4 +1,4 @@
-#### def IsUndefined(self);
+`def IsUndefined(self);`
 
 Returns true if the **CDocBuilderValue** object is undefined.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is undefined.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

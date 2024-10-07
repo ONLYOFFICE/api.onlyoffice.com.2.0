@@ -6,5 +6,5 @@ To access the editor features in your mobile application, integrate it with ONLY
 
 > Please note that ONLYOFFICE mobile web editors are available only for commercial builds of [Enterprise](https://www.onlyoffice.com/docs-enterprise.aspx) and [Developer](https://www.onlyoffice.com/developer-edition.aspx) editions.
 
-* [Mobile integration on Android](Mobile%20integration%20on%20Android%20devices/index.md)
-* [Mobile integration on iOS](Mobile%20integration%20on%20iOS%20devices/index.md)
+- [Mobile integration on Android](Mobile%20integration%20on%20Android%20devices/index.md)
+- [Mobile integration on iOS](Mobile%20integration%20on%20iOS%20devices/index.md)

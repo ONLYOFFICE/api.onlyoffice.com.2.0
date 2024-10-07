@@ -5,7 +5,7 @@ export interface ImageAttributes {
   alt: string
 }
 
-export function toJsx(m: Metadata, a: ImageAttributes): JSX.Element {
+export function toJsxRuntime(m: Metadata, a: ImageAttributes): JSX.Element {
   const o = generateObject(m, a)
 
   if ("picture" in o) {

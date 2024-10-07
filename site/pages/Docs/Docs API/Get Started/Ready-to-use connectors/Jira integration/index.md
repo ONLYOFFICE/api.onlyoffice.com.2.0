@@ -4,9 +4,9 @@ The connector is available in the official [Atlassian Marketplace](https://marke
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, XLSX, PPTX, DOCXF, OFORM.
-* The following formats are available for viewing only: DOC, DOCM, DOC, DOTX, DOTM, ODT, FODT, OTT, RTF, TXT, HTML, HTM, MHT, PDF, DJVU, FB2, EPUB, XPS, XLS, XLSM, XLTZ , XLTX, XLTM, ODS, FODS, OTS, CSV, PPS, PPSX, PPSM, PPT, PPTM, POT, POTX, POTM, ODP, FODP, OTP.
-* The plugin will create a new **Edit in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Jira.
+- Currently, the following document formats can be edited: DOCX, XLSX, PPTX, DOCXF, OFORM.
+- The following formats are available for viewing only: DOC, DOCM, DOC, DOTX, DOTM, ODT, FODT, OTT, RTF, TXT, HTML, HTM, MHT, PDF, DJVU, FB2, EPUB, XPS, XLS, XLSM, XLTZ , XLTX, XLTM, ODS, FODS, OTS, CSV, PPS, PPSX, PPSM, PPT, PPTM, POT, POTX, POTM, ODP, FODP, OTP.
+- The plugin will create a new **Edit in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Jira.
 
 ## Installing ONLYOFFICE Docs
 
@@ -31,7 +31,7 @@ You can also install the app from the Jira administration panel:
 
 Find the uploaded app on the **Manage apps** page. Click **Configure** and enter the name of the server with ONLYOFFICE Docs installed:
 
-```
+``` sh
 http://documentserver/
 ```
 
@@ -47,7 +47,7 @@ If you plan to compile the Jira ONLYOFFICE integration app yourself (e.g. edit t
 
 1. The stable Java version is necessary for the successful build. If you do not have it installed, use the following commands to install **Open JDK 8**:
 
-   ``` bash
+   ``` sh
    sudo apt-get update
    sudo apt-get install openjdk-8-jdk
    ```
@@ -56,7 +56,7 @@ If you plan to compile the Jira ONLYOFFICE integration app yourself (e.g. edit t
 
 3. Compile package:
 
-   ``` bash
+   ``` sh
    atlas-package
    ```
 
@@ -80,11 +80,11 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 4. Jira prepares a JSON object with the following properties:
 
-   * **url**: the temporary link that ONLYOFFICE Docs uses to download the document;
-   * **callbackUrl**: the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **docserviceApiUrl**: the URL that the client needs to reply to ONLYOFFICE Docs (provided by the *files.docservice.url.api* property);
-   * **key**: the UUID to instruct ONLYOFFICE Docs whether to download the document again or not;
-   * **title**: the document title (name).
+   - **url**: the temporary link that ONLYOFFICE Docs uses to download the document;
+   - **callbackUrl**: the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **docserviceApiUrl**: the URL that the client needs to reply to ONLYOFFICE Docs (provided by the *files.docservice.url.api* property);
+   - **key**: the UUID to instruct ONLYOFFICE Docs whether to download the document again or not;
+   - **title**: the document title (name).
 
 5. Jira takes this object and constructs a page from a freemarker template, filling in all of those values so that the client browser can load up the editor.
 

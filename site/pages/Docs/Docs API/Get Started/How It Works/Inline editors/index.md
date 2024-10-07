@@ -30,7 +30,7 @@ The steps below explain the process of connecting several editors to the same ht
 
    Each editor has its own initialization script:
 
-   ```javascript
+   ``` ts
    const documentEditor = new DocsAPI.DocEditor("placeholder1", {
      document: {
        fileType: "docx",
@@ -67,7 +67,7 @@ The steps below explain the process of connecting several editors to the same ht
 
 5. In order to finish editing, the [destroyEditor](../../../Usage%20API/Methods/index.md#destroyeditor) method must be called to close the required editor:
 
-   ``` javascript
+   ``` ts
    documentEditor.destroyEditor()
    spreadsheetEditor.destroyEditor()
    presentationEditor.destroyEditor()

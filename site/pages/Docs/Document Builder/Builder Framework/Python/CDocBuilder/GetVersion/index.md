@@ -1,4 +1,4 @@
-#### def GetVersion(self);
+`def GetVersion(self);`
 
 Returns the **ONLYOFFICE Document Builder** engine version.
 
@@ -6,9 +6,9 @@ Returns the **ONLYOFFICE Document Builder** engine version.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 version = builder.GetVersion()
 ```

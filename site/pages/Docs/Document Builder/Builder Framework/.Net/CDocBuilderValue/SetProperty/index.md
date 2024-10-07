@@ -1,10 +1,10 @@
-#### void SetProperty(sName, sValue);
+`void SetProperty(sName, sValue);`
 
 Sets a property to the **CDocBuilderValue** object.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.SetProperty* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type              | Description                                            |
 | -------- | ----------------- | ------------------------------------------------------ |
@@ -13,9 +13,9 @@ Sets a property to the **CDocBuilderValue** object.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();
@@ -31,15 +31,15 @@ There are two more ways to set a property to the **CDocBuilderValue** object:
 
 1. use the **Set** method that takes the object property name and value as arguments:
 
-   ```c#
+   ```cs
    void Set(String^ name, CDocBuilderValue^ value);
    ```
 
    ## Example
 
-   #### .Net
+   ### .Net
 
-   ```c#
+   ```cs
    string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
    CDocBuilder.Initialize(workDirectory);
    CDocBuilder oBuilder = new CDocBuilder();
@@ -53,15 +53,15 @@ There are two more ways to set a property to the **CDocBuilderValue** object:
 
 2. use the **default\[]** postfix expression:
 
-   ```c#
+   ```cs
    property CDocBuilderValue^ default[String^]
    ```
 
    ## Example
 
-   #### .Net
+   ### .Net
 
-   ```c#
+   ```cs
    string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
    CDocBuilder.Initialize(workDirectory);
    CDocBuilder oBuilder = new CDocBuilder();

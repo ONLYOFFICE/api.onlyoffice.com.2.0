@@ -28,9 +28,12 @@ Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/t
 Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_work_with_content_controls_navigation>.
 
 1. *config.json*, *index.html*, and *code.js*
+
 2. Icons
+
 3. Third-party service:
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_work_with_content_controls_navigation/licenses/jQuery.license).
+   
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_work_with_content_controls_navigation/licenses/jQuery.license).
 
 ## Config
 
@@ -107,15 +110,15 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/e
 
 ## Methods and events
 
-* button
-* init
-* onMethodReturn
-* onTargetPositionChanged
-* executeMethod ("GetAllContentControls")
-* executeMethod ("GetCurrentContentControl")
-* executeMethod ("MoveCursorToContentControl")
-* executeMethod ("PasteText")
-* executeMethod ("SelectContentControl")
+- button
+- init
+- onMethodReturn
+- onTargetPositionChanged
+- executeMethod ("GetAllContentControls")
+- executeMethod ("GetCurrentContentControl")
+- executeMethod ("MoveCursorToContentControl")
+- executeMethod ("PasteText")
+- executeMethod ("SelectContentControl")
 
 ## Support
 

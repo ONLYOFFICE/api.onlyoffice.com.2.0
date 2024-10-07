@@ -4,12 +4,12 @@ The plugin is available in the official [Redmine Plugins Directory](https://www.
 
 ## Features
 
-* Viewing and editing text documents, spreadsheets, presentations, and forms.
-* Co-editing documents in real time using two co-editing modes (Fast and Strict), Track Changes, comments, built-in chat.
-* Settings page to set up connection to the server and JWT authentication, customize the editor's appearance.
-* Mobile view for licensed editors.
-* Creating new attachments using templates that consider the user's language preference.
-* Converting attachments and saving or downloading them.
+- Viewing and editing text documents, spreadsheets, presentations, and forms.
+- Co-editing documents in real time using two co-editing modes (Fast and Strict), Track Changes, comments, built-in chat.
+- Settings page to set up connection to the server and JWT authentication, customize the editor's appearance.
+- Mobile view for licensed editors.
+- Creating new attachments using templates that consider the user's language preference.
+- Converting attachments and saving or downloading them.
 
 ## Supported formats
 
@@ -35,25 +35,25 @@ To install the plugin, you will need Redmine version 4.2 or higher, or version 5
 
 2. Download the [plugin](https://github.com/ONLYOFFICE/onlyoffice-redmine/releases):
 
-   ``` bash
+   ``` sh
    curl --location https://github.com/ONLYOFFICE/onlyoffice-redmine/releases/latest/download/onlyoffice_redmine.tar.zst --output onlyoffice_redmine.tar.zst
    ```
 
 3. Unzip it into the plugins directory:
 
-   ``` bash
+   ``` sh
    tar --extract --file onlyoffice_redmine.tar.zst --directory plugins
    ```
 
 4. Install the dependencies of the plugin if Redmine did not do it automatically:
 
-   ``` bash
+   ``` sh
    bundle install
    ```
 
 5. Perform the migration:
 
-   ``` bash
+   ``` sh
    RAILS_ENV=production bundle exec rake redmine:plugins:migrate NAME=onlyoffice_redmine
    ```
 
@@ -69,31 +69,31 @@ Configure the plugin via the Redmine interface. Go to **Administration -> Plugin
 
 ### General Settings
 
-* **Document Editing Service address**. The URL of the installed ONLYOFFICE Docs (Document Server). Leave blank to disable the plugin.
+- **Document Editing Service address**. The URL of the installed ONLYOFFICE Docs (Document Server). Leave blank to disable the plugin.
 
 ### Advanced Server Settings
 
-* ONLYOFFICE Docs address for internal requests from the server.
-* Server address for internal requests from ONLYOFFICE Docs.
-* Connect to the demo ONLYOFFICE Docs server.
+- ONLYOFFICE Docs address for internal requests from the server.
+- Server address for internal requests from ONLYOFFICE Docs.
+- Connect to the demo ONLYOFFICE Docs server.
 
 ### Security
 
-* **Secret key**. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your secret key in the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), then specify the same key in the settings page of the plugin. Leave blank to disable authentication.
-* Authorization header.
-* Disable certificate verification (insecure).
+- **Secret key**. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your secret key in the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), then specify the same key in the settings page of the plugin. Leave blank to disable authentication.
+- Authorization header.
+- Disable certificate verification (insecure).
 
 ### Editor customization settings
 
-* Display Chat menu button.
-* Display the header more compact.
-* Display Feedback & Support menu button.
-* Display Help menu button.
-* Display monochrome toolbar header.
+- Display Chat menu button.
+- Display the header more compact.
+- Display Feedback & Support menu button.
+- Display Help menu button.
+- Display monochrome toolbar header.
 
 ### Formats
 
-* Specify the list of formats allowed to be opened directly for editing.
+- Specify the list of formats allowed to be opened directly for editing.
 
 ## How it works
 
@@ -101,103 +101,103 @@ The plugin uses the [ONLYOFFICE Docs API](../../Basic%20concepts/index.md) and i
 
 ### Documents
 
-  ![Documents page](/assets/images/editor/documents-page.png)
+![Documents page](/assets/images/editor/documents-page.png)
 
-  On the **Documents** page, users can open the attachment to view, edit, create, or convert it. The options displayed in the interface may vary depending on the user permissions.
+On the **Documents** page, users can open the attachment to view, edit, create, or convert it. The options displayed in the interface may vary depending on the user permissions.
 
-  | Option            | Permissions                    |
-  | ----------------- | ------------------------------ |
-  | View              | View documents                 |
-  | Edit              | View documents, Edit documents |
-  | Create            | View documents, Edit documents |
-  | Convert: Save     | View documents, Edit documents |
-  | Convert: Download | View documents                 |
+| Option            | Permissions                    |
+| ----------------- | ------------------------------ |
+| View              | View documents                 |
+| Edit              | View documents, Edit documents |
+| Create            | View documents, Edit documents |
+| Convert: Save     | View documents, Edit documents |
+| Convert: Download | View documents                 |
 
 ### Attachment
 
-  ![Attachment page](/assets/images/editor/attachment-page.png)
+![Attachment page](/assets/images/editor/attachment-page.png)
 
-  On the **Attachment** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions for the module where the attachment is located.
+On the **Attachment** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions for the module where the attachment is located.
 
 ### Files
 
-  ![Files page](/assets/images/editor/files-page.png)
+![Files page](/assets/images/editor/files-page.png)
 
-  On the **Files** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
+On the **Files** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
 
-  | Option            | Permissions              |
-  | ----------------- | ------------------------ |
-  | View              | View files               |
-  | Edit              | View files, Manage files |
-  | Convert: Save     | View files, Manage files |
-  | Convert: Download | View files               |
+| Option            | Permissions              |
+| ----------------- | ------------------------ |
+| View              | View files               |
+| Edit              | View files, Manage files |
+| Convert: Save     | View files, Manage files |
+| Convert: Download | View files               |
 
 ### Issues
 
-  ![Issues page](/assets/images/editor/issues-page.png)
+![Issues page](/assets/images/editor/issues-page.png)
 
-  On the **Issues** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
+On the **Issues** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
 
-  | Option            | Permissions                  |
-  | ----------------- | ---------------------------- |
-  | View              | View issues                  |
-  | Edit              | View issues, Edit own issues |
-  | Convert: Save     | View issues, Edit own issues |
-  | Convert: Download | View issues                  |
+| Option            | Permissions                  |
+| ----------------- | ---------------------------- |
+| View              | View issues                  |
+| Edit              | View issues, Edit own issues |
+| Convert: Save     | View issues, Edit own issues |
+| Convert: Download | View issues                  |
 
 ### News
 
-  ![News page](/assets/images/editor/news-page.png)
+![News page](/assets/images/editor/news-page.png)
 
-  On the **News** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
+On the **News** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
 
-  | Option            | Permissions            |
-  | ----------------- | ---------------------- |
-  | View              | View news              |
-  | Edit              | View news, Manage news |
-  | Convert: Save     | View news, Manage news |
-  | Convert: Download | View news              |
+| Option            | Permissions            |
+| ----------------- | ---------------------- |
+| View              | View news              |
+| Edit              | View news, Manage news |
+| Convert: Save     | View news, Manage news |
+| Convert: Download | View news              |
 
 ### Wiki
 
-  ![Wiki page](/assets/images/editor/wiki-page.png)
+![Wiki page](/assets/images/editor/wiki-page.png)
 
-  On the **Wiki** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
+On the **Wiki** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
 
-  | Option            | Permissions                |
-  | ----------------- | -------------------------- |
-  | View              | View wiki                  |
-  | Edit              | View wiki, Edit wiki pages |
-  | Convert: Save     | View wiki, Edit wiki pages |
-  | Convert: Download | View wiki                  |
+| Option            | Permissions                |
+| ----------------- | -------------------------- |
+| View              | View wiki                  |
+| Edit              | View wiki, Edit wiki pages |
+| Convert: Save     | View wiki, Edit wiki pages |
+| Convert: Download | View wiki                  |
 
 ### Forums
 
-  ![Forums page](/assets/images/editor/forums-page.png)
+![Forums page](/assets/images/editor/forums-page.png)
 
-  On the **Forums** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
+On the **Forums** page, users can open the attachment to view, edit, or convert it. The options displayed in the interface may vary depending on the user's permissions.
 
-  | Option            | Permissions                  |
-  | ----------------- | ---------------------------- |
-  | View              | View messages                |
-  | Edit              | View messages, Edit messages |
-  | Convert: Save     | View messages, Edit messages |
-  | Convert: Download | View messages                |
+| Option            | Permissions                  |
+| ----------------- | ---------------------------- |
+| View              | View messages                |
+| Edit              | View messages, Edit messages |
+| Convert: Save     | View messages, Edit messages |
+| Convert: Download | View messages                |
 
 ### View Or Edit In ONLYOFFICE
 
-  ![View Or Edit In ONLYOFFICE](/assets/images/editor/view-or-edit.png)
+![View Or Edit In ONLYOFFICE](/assets/images/editor/view-or-edit.png)
 
-  On the **View Or Edit In ONLYOFFICE** page, users can view or edit the attachment. The visibility of this page depends on the user's permissions for the module where the attachment is located.
+On the **View Or Edit In ONLYOFFICE** page, users can view or edit the attachment. The visibility of this page depends on the user's permissions for the module where the attachment is located.
 
 ### Create in ONLYOFFICE
 
-  ![Create in ONLYOFFICE](/assets/images/editor/create-page.png)
+![Create in ONLYOFFICE](/assets/images/editor/create-page.png)
 
-  On the **Create in ONLYOFFICE** page, users can create the attachment using templates that consider the user's language preference. Take a look at [supported formats](#formats). The visibility of this page depends on the user's permissions for the module.
+On the **Create in ONLYOFFICE** page, users can create the attachment using templates that consider the user's language preference. Take a look at [supported formats](#formats). The visibility of this page depends on the user's permissions for the module.
 
 ### Convert with ONLYOFFICE
 
-  ![Convert with ONLYOFFICE](/assets/images/editor/convert-page.png)
+![Convert with ONLYOFFICE](/assets/images/editor/convert-page.png)
 
-  On the **Convert with ONLYOFFICE** page, the user can convert the attachment. The visibility of this page depends on the user's permissions for the module where the attachment is located.
+On the **Convert with ONLYOFFICE** page, the user can convert the attachment. The visibility of this page depends on the user's permissions for the module where the attachment is located.

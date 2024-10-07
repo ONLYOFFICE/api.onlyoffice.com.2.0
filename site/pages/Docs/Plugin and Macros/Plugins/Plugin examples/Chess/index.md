@@ -158,19 +158,19 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/c
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
-* executeMethod ("AddOleObject")
-* executeMethod ("EditOleObject")
-* info.data
-* info.guid
-* info.height
-* info.imgSrc
-* info.mmToPx
-* info.objectId
-* info.resize
-* info.width
+- button
+- init
+- onExternalMouseUp
+- executeMethod ("AddOleObject")
+- executeMethod ("EditOleObject")
+- info.data
+- info.guid
+- info.height
+- info.imgSrc
+- info.mmToPx
+- info.objectId
+- info.resize
+- info.width
 
 ## Support
 

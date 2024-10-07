@@ -1,4 +1,4 @@
-#### bool IsDouble();
+`bool IsDouble();`
 
 Returns true if the **CDocBuilderValue** object is a double value.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a double value.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

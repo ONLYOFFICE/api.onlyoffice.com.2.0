@@ -1,10 +1,10 @@
-#### static unsigned char\* AllocMemoryTypedArray(nSize);
+`static unsigned char* AllocMemoryTypedArray(nSize);`
 
 Allocates the memory for a typed array by creating a buffer array of the specified size.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderContext.AllocMemoryTypedArray* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name    | Type            | Description            |
 | ------- | --------------- | ---------------------- |
@@ -12,9 +12,9 @@ Allocates the memory for a typed array by creating a buffer array of the specifi
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

@@ -1,4 +1,4 @@
-#### def Close(self);
+`def Close(self);`
 
 Closes the current scope. This method will be called automatically when the descructor is executed.
 
@@ -6,9 +6,9 @@ Closes the current scope. This method will be called automatically when the desc
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 scope = context.CreateScope()

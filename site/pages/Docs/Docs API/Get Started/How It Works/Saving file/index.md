@@ -23,10 +23,12 @@ The reference figure and the steps below explain the process of saving a documen
 ## How this can be done in practice
 
 1. Create a [callback handler](../../../Usage%20API/Callback%20handler/index.md) to save the document from **document editing service**.
+
 2. Create an *html* file to [Open the document](../Opening%20file/index.md#how-this-can-be-done-in-practice).
+
 3. In the configuration script for Document Editor initialization specify the URL to the file with the *Callback handler* in the [parameter line](../../../Usage%20API/Config/Editor/index.md#callbackurl). Be sure to add a [token](../Security/index.md) when using local links. Otherwise, an error will occur.
 
-   ``` javascript
+   ``` ts
    const docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        fileType: "docx",
@@ -42,7 +44,9 @@ The reference figure and the steps below explain the process of saving a documen
    })
    ```
    Where **example.com** is the name of the server where **document manager** and **document storage service** are installed.
+
 4. Open your *html* file in the browser and edit your document.
+
 5. Close the **Document Editor**. Check out your document in about 10 seconds. All changes should be saved, meaning the configuration is correct.
 
 ## Save delay
@@ -61,9 +65,9 @@ If you want to change it, you can use the *local.json* file, where all the edite
 
 ### Parameters
 
-| Parameter                                    | Description                                                                                         | Type    | Example |
-| -------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------- | ------- |
-| services.CoAuthoring.server.savetimeoutdelay | Defines the conversion start delay time (measured in milliseconds) after the edited file is closed. | integer | 5000    |
+| Parameter                                    | Type    | Example | Description                                                                                         |
+| -------------------------------------------- | ------- | ------- | --------------------------------------------------------------------------------------------------- |
+| services.CoAuthoring.server.savetimeoutdelay | integer | 5000    | Defines the conversion start delay time (measured in milliseconds) after the edited file is closed. |
 
 ### Sample local.json configuration
 
@@ -83,11 +87,11 @@ If you want to change it, you can use the *local.json* file, where all the edite
 
 **Document editing service** allows to get the current document state before the editing is finished. The process is called *forcesave* in ONLYOFFICE Docs. When forcesave is initiated, **document editing service** performs request to the [callback handler](../../../Usage%20API/Callback%20handler/index.md) with the link to the document as the *url* parameter and with the **6** value for the *status* parameter. The forcesave process can be initiated the following ways:
 
-* By the request to the [document command service](../../../Additional%20API/Command%20service/index.md) with the [forcesave](../../../Additional%20API/Command%20service/forcesave/index.md) value in the *c* parameter. The *forcesavetype* parameter will have the **0** value when sending the request to the **callback handler**.
+- By the request to the [document command service](../../../Additional%20API/Command%20service/index.md) with the [forcesave](../../../Additional%20API/Command%20service/forcesave/index.md) value in the *c* parameter. The *forcesavetype* parameter will have the **0** value when sending the request to the **callback handler**.
 
-* Enable the [editorConfig.customization.forcesave](../../../Usage%20API/Config/Editor/Customization/index.md#forcesave) mode setting it to **true** in the editor initialization configuration. In this case each time the user clicks the **Save** button, the forcesave will be done, and the *forcesavetype* parameter will have the **1** value when sending the request to the **callback handler**.
+- Enable the [editorConfig.customization.forcesave](../../../Usage%20API/Config/Editor/Customization/index.md#forcesave) mode setting it to **true** in the editor initialization configuration. In this case each time the user clicks the **Save** button, the forcesave will be done, and the *forcesavetype* parameter will have the **1** value when sending the request to the **callback handler**.
 
-* You can enable [the repeating forcesave start](https://helpcenter.onlyoffice.com/installation/docs-developer-configuring.aspx#AutoAssembly) in the **ONLYOFFICE Docs** additional configuration file, which can be either found at (in case you have already created it) or placed to the following path:
+- You can enable [the repeating forcesave start](https://helpcenter.onlyoffice.com/installation/docs-developer-configuring.aspx#AutoAssembly) in the **ONLYOFFICE Docs** additional configuration file, which can be either found at (in case you have already created it) or placed to the following path:
 
   For Linux - */etc/onlyoffice/documentserver/**local.json***.
 
@@ -95,10 +99,10 @@ If you want to change it, you can use the *local.json* file, where all the edite
 
   ### Parameters
 
-  | Parameter                                  | Description                                                                             | Type    | Example |
-  | ------------------------------------------ | --------------------------------------------------------------------------------------- | ------- | ------- |
-  | services.CoAuthoring.autoAssembly.enable   | Defines if the automatic forcesaving is enabled or not. The default value is **false**. | boolean | false   |
-  | services.CoAuthoring.autoAssembly.interval | Defines the interval time in minutes for initiating the automatic forcesaving.          | string  | 5m      |
+  | Parameter                                  | Type    | Example | Description                                                                             |
+  | ------------------------------------------ | ------- | ------- | --------------------------------------------------------------------------------------- |
+  | services.CoAuthoring.autoAssembly.enable   | boolean | false   | Defines if the automatic forcesaving is enabled or not. The default value is **false**. |
+  | services.CoAuthoring.autoAssembly.interval | string  | 5m      | Defines the interval time in minutes for initiating the automatic forcesaving.          |
 
   ### Sample local.json configuration
 
@@ -125,9 +129,9 @@ Starting from version 7.0, the [assemblyFormatAsOrigin](https://helpcenter.onlyo
 
 ### Parameters
 
-| Parameter                                          | Description                                                                                          | Type    | Example |
-| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------- | ------- |
-| services.CoAuthoring.server.assemblyFormatAsOrigin | Defines if the assembled file is saved in its original format or not. The default value is **true**. | boolean | true    |
+| Parameter                                          | Type    | Example | Description                                                                                          |
+| -------------------------------------------------- | ------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| services.CoAuthoring.server.assemblyFormatAsOrigin | boolean | true    | Defines if the assembled file is saved in its original format or not. The default value is **true**. |
 
 ### Sample local.json configuration
 

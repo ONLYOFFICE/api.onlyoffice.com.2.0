@@ -4,6 +4,7 @@
   "private": true,
   "main": "dist/main.js",
   "scripts": {
+    "clean": "rimraf dist node_modules",
     "build:code": "esbuild lib/* --outdir=dist",
     "build:types": "tsc --project tsconfig.emit.json",
     "build": "pnpm build:types && pnpm build:code",
@@ -40,15 +41,12 @@
     "remark-lint-no-consecutive-blank-lines": "5.0.0",
     "remark-lint-no-duplicate-defined-urls": "3.0.0",
     "remark-lint-no-duplicate-definitions": "4.0.0",
-    "remark-lint-no-duplicate-headings": "4.0.0",
-    "remark-lint-no-duplicate-headings-in-section": "4.0.0",
     "remark-lint-no-emphasis-as-heading": "4.0.0",
     "remark-lint-no-empty-url": "4.0.0",
     "remark-lint-no-file-name-irregular-characters": "3.0.0",
     "remark-lint-no-heading-content-indent": "5.0.0",
     "remark-lint-no-heading-indent": "5.0.0",
     "remark-lint-no-heading-like-paragraph": "4.0.0",
-    "remark-lint-no-heading-punctuation": "4.0.0",
     "remark-lint-no-literal-urls": "4.0.0",
     "remark-lint-no-missing-blank-lines": "4.0.0",
     "remark-lint-no-paragraph-content-indent": "5.0.0",
@@ -73,6 +71,7 @@
   "devDependencies": {
     "c8": "9.1.0",
     "esbuild": "0.23.0",
+    "rimraf": "6.0.1",
     "tsx": "4.16.5",
     "typescript": "5.4.5",
     "uvu": "0.5.6"

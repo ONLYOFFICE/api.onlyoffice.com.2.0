@@ -1,6 +1,6 @@
 Requests a forgotten file.
 
-### Request example
+## Request example
 
 ``` json
 {
@@ -9,14 +9,14 @@ Requests a forgotten file.
 }
 ```
 
-### Parameters
+## Parameters
 
-| Parameter | Description                                                                       | Type   | Presence |
-| --------- | --------------------------------------------------------------------------------- | ------ | -------- |
-| c         | Defines the command type.                                                         | string | required |
-| key       | Defines the document identifier used to unambiguously identify the document file. | string | required |
+| Parameter | Type   | Presence | Description                                                                       |
+| --------- | ------ | -------- | --------------------------------------------------------------------------------- |
+| c         | string | required | Defines the command type.                                                         |
+| key       | string | required | Defines the document identifier used to unambiguously identify the document file. |
 
-### Response example
+## Response example
 
 ``` json
 {
@@ -26,10 +26,10 @@ Requests a forgotten file.
 }
 ```
 
-### Parameters
+## Parameters
 
-| Parameter | Description                                                                       | Type    | Presence |
-| --------- | --------------------------------------------------------------------------------- | ------- | -------- |
-| error     | Defines an error code.                                                            | integer | required |
-| key       | Defines the document identifier used to unambiguously identify the document file. | string  | required |
-| url       | Defines the URL to a forgotten file.                                              | string  | required |
+| Parameter | Type    | Presence | Description                                                                       |
+| --------- | ------- | -------- | --------------------------------------------------------------------------------- |
+| error     | integer | required | Defines an error code.                                                            |
+| key       | string  | required | Defines the document identifier used to unambiguously identify the document file. |
+| url       | string  | required | Defines the URL to a forgotten file.                                              |

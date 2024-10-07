@@ -28,7 +28,6 @@ There are two ways to launch the application on Windows: through the shortcut or
 
    *"%ProgramFiles%\ONLYOFFICE\DesktopEditors\DesktopEditors" --ascdesktop-support-debug-info*
 
-
 ## Working in debug mode
 
 To start working in debug mode, right-click any editable field on the top toolbar (for example, font list combo) and click **Inspect Element**, or click anywhere in the document and press **F1**.
@@ -43,10 +42,10 @@ Starting from version 7.1, you can run ONLYOFFICE Desktop Editors with the *--as
 
 ### Parameters
 
-| Value   | Description                                                | Usage                                        |
-| ------- | ---------------------------------------------------------- | -------------------------------------------- |
-| 1       | Runs the application.                                      | --ascdesktop-support-debug-info-keep=1       |
-| 0       | Stops the application.                                     | --ascdesktop-support-debug-info-keep=0       |
-| default | The default application condition - the app is turned off. | --ascdesktop-support-debug-info-keep=default |
+| Value   | Usage                                        | Description                                                |
+| ------- | -------------------------------------------- | ---------------------------------------------------------- |
+| 1       | --ascdesktop-support-debug-info-keep=1       | Runs the application.                                      |
+| 0       | --ascdesktop-support-debug-info-keep=0       | Stops the application.                                     |
+| default | --ascdesktop-support-debug-info-keep=default | The default application condition - the app is turned off. |
 
 To launch ONLYOFFICE Desktop Editors with this flag, use the same instructions as for the *--ascdesktop-support-debug-info* flag above. The only difference is that the *--ascdesktop-support-debug-info-keep* flag stores the value passed to it. You will not need to specify it every time you run the application.

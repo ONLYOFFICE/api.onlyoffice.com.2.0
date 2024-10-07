@@ -1,4 +1,4 @@
-#### HRESULT Initialize();
+`HRESULT Initialize();`
 
 Initializes the **ONLYOFFICE Document Builder** as a library for the application to be able to work with it. This method just sets the directory to the main Document Builder resources (icu files, etc). If this method is not called, the Document Builder will find resources from the current process directory.
 
@@ -6,9 +6,9 @@ Initializes the **ONLYOFFICE Document Builder** as a library for the application
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 oBuilder->Initialize();

@@ -1,4 +1,4 @@
-#### static CDocBuilderValue CreateUndefined();
+`static CDocBuilderValue CreateUndefined();`
 
 Creates an undefined value. This method returns the current [context](../../CDocBuilderContext/index.md) and calls its [CreateUndefined](../../CDocBuilderContext/CreateUndefined/index.md) method.
 
@@ -6,9 +6,9 @@ Creates an undefined value. This method returns the current [context](../../CDoc
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

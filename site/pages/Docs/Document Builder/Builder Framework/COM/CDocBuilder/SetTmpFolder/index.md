@@ -1,8 +1,8 @@
-#### HRESULT SetTmpFolder(\[in] BSTR folder);
+`HRESULT SetTmpFolder([in] BSTR folder);`
 
 Sets the path to the folder where the program will temporarily save files needed for the program correct work. After the successful document file creation, all the files will be deleted from the folder. If no temporary folder is set, the system one will be used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type | Description                                                     |
 | -------- | ---- | --------------------------------------------------------------- |
@@ -10,9 +10,9 @@ Sets the path to the folder where the program will temporarily save files needed
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 oBuilder->Initialize();
@@ -20,8 +20,8 @@ oBuilder->SetTmpFolder(L"DocBuilderTemp");
 oBuilder->Dispose();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```js
+```ts
 builder.SetTmpFolder("DocBuilderTemp")
 ```

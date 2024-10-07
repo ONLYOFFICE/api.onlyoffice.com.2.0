@@ -1,10 +1,10 @@
-#### HRESULT Set(\[in] long index, \[in] I\_DOCBUILDER\_VALUE\* value);
+`HRESULT Set([in] long index, [in] I_DOCBUILDER_VALUE* value);`
 
 Sets an array value by its index.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.Set* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name    | Type                   | Description                   |
 | ------- | ---------------------- | ----------------------------- |
@@ -13,9 +13,9 @@ Sets an array value by its index.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

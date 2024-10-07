@@ -10,9 +10,9 @@ There are two main situations when document conversion is necessary.
 
 For the **document editors** correct work with the document files it is recommended to convert them prior to editing into Office Open XML formats:
 
-* *docx* for text documents,
-* *xlsx* for spreadsheets,
-* *pptx* for presentations.
+- *docx* for text documents,
+- *xlsx* for spreadsheets,
+- *pptx* for presentations.
 
 The reference figure and the steps below explain the process of document conversion.
 

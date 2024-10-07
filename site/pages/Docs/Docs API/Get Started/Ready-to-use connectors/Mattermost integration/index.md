@@ -2,9 +2,9 @@ This [plugin](https://github.com/ONLYOFFICE/onlyoffice-mattermost) enables users
 
 ## Features
 
-* Currently, the following document formats can be edited: DOCX, XLSX, PPTX.
-* The following formats are available for viewing only: XLS, CSV, XLSM, XLT, XLTM, ODS, FODS, OTS, PPS, PPSX, PPSM, PPT, PPTM, POT, POTX, POTM, ODP, FODP, OTP, DOC, DOCM, DOT, DOTX, DOTM, ODT, FODT, OTT, RTF.
-* The plugin will create a new **Open in ONLYOFFICE** menu option within the document library for office documents. This allows multiple users to collaborate in real time and save back those changes to Mattermost.
+- Currently, the following document formats can be edited: DOCX, XLSX, PPTX.
+- The following formats are available for viewing only: XLS, CSV, XLSM, XLT, XLTM, ODS, FODS, OTS, PPS, PPSX, PPSM, PPT, PPTM, POT, POTX, POTM, ODP, FODP, OTP, DOC, DOCM, DOT, DOTX, DOTM, ODT, FODT, OTT, RTF.
+- The plugin will create a new **Open in ONLYOFFICE** menu option within the document library for office documents. This allows multiple users to collaborate in real time and save back those changes to Mattermost.
 
 ## Installing ONLYOFFICE Docs
 
@@ -24,14 +24,14 @@ To start using ONLYOFFICE Docs with Mattermost, follow these steps:
 
 3. Install the dependencies:
 
-   ``` bash
+   ``` sh
    npm install --legacy-peer-deps
    ```
    > Please note that you need to have Node.js v.15.14.0 installed on your machine to build the plugin.
 
 4. Run the following command:
 
-   ``` bash
+   ``` sh
    make dist
    ```
 
@@ -43,21 +43,21 @@ To start using ONLYOFFICE Docs with Mattermost, follow these steps:
 
 ![Mattermost settings](/assets/images/editor/mattermost-settings.png)
 
-* **Enable Plugin**. Enable the Mattermost ONLYOFFICE integration plugin by setting this parameter to **true**.
+- **Enable Plugin**. Enable the Mattermost ONLYOFFICE integration plugin by setting this parameter to **true**.
 
-* **Document Editing Service address**. To connect ONLYOFFICE Docs, enter the following address:
+- **Document Editing Service address**. To connect ONLYOFFICE Docs, enter the following address:
 
-  ```
+  ``` sh
   https://<documentserver>:<port>/
   ```
 
   where **documentserver** is the name of the server and **port** is the port number with **ONLYOFFICE Docs** installed. The address must be accessible from the user browser and from the Mattermost server. The Mattermost server address must also be accessible from **ONLYOFFICE Docs** for correct work.
 
-* **Secret key**. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your own secret key in the Mattermost plugin configuration. In the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), specify the same secret key and enable the validation.
+- **Secret key**. Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict the access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your own secret key in the Mattermost plugin configuration. In the ONLYOFFICE Docs [config file](../../../Additional%20API/Signature/index.md), specify the same secret key and enable the validation.
 
-* **JWT Header**. If JWT protection is enabled, it is necessary to specify a custom header name since the Mattermost security policy blocks external **Authorization** headers. This header should be specified in the ONLYOFFICE Docs signature settings as well. Further information about signature can be found [here](../../../Additional%20API/Signature/index.md).
+- **JWT Header**. If JWT protection is enabled, it is necessary to specify a custom header name since the Mattermost security policy blocks external **Authorization** headers. This header should be specified in the ONLYOFFICE Docs signature settings as well. Further information about signature can be found [here](../../../Additional%20API/Signature/index.md).
 
-* **JWT Prefix**. Specify the ONLYOFFICE Docs prefix.
+- **JWT Prefix**. Specify the ONLYOFFICE Docs prefix.
 
 ## Using Mattermost ONLYOFFICE integration plugin
 
@@ -65,8 +65,8 @@ Users are able to open files sent in personal and group Mattermost chats for vie
 
 When files are sent in the chat message, the following actions are available in the file context menu by clicking the ⋮ symbol:
 
-* **Open file in ONLYOFFICE** and **Change access rights** - for the author of the message.
-* **Open file in ONLYOFFICE** - for the recipient of the message.
+- **Open file in ONLYOFFICE** and **Change access rights** - for the author of the message.
+- **Open file in ONLYOFFICE** - for the recipient of the message.
 
 ![Mattermost actions](/assets/images/editor/mattermost-actions.png)
 

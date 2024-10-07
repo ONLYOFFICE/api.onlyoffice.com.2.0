@@ -1,4 +1,4 @@
-#### bool IsInt();
+`bool IsInt();`
 
 Returns true if the **CDocBuilderValue** object is an integer.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is an integer.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

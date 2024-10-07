@@ -30,8 +30,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/c
 
 4. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/jQuery.license).
-   * [clippy.js](https://www.smore.com/clippy-js) is a full Javascript implementation of Microsoft Agent (AKA Clippy and friends), ready to be embedded in any website. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/clippy.license).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/jQuery.license).
+   - [clippy.js](https://www.smore.com/clippy-js) is a full Javascript implementation of Microsoft Agent (AKA Clippy and friends), ready to be embedded in any website. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/clippy/licenses/clippy.license).
 
 ## Config
 
@@ -88,8 +88,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/c
 
 ## Methods and events
 
-* button
-* init
+- button
+- init
 
 ## Support
 

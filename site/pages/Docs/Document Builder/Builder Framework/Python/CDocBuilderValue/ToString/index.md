@@ -1,4 +1,4 @@
-#### def ToString(self);
+`def ToString(self);`
 
 Converts the **CDocBuilderValue** object to a string.
 
@@ -6,9 +6,9 @@ Converts the **CDocBuilderValue** object to a string.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

@@ -8,10 +8,10 @@ Connecting ONLYOFFICE Desktop Editors to your cloud allows you to edit text docu
 
 Besides, using ONLYOFFICE Desktop Editors you are no longer limited by your browser resources. It means you can:
 
-* copy and paste from/into another document using the editor toolbar buttons and context menu options;
-* print the document directly from the app using the **Print** option;
-* use all the fonts available on the local computer;
-* work with documents without prior manual language setting (it is set automatically).
+- copy and paste from/into another document using the editor toolbar buttons and context menu options;
+- print the document directly from the app using the **Print** option;
+- use all the fonts available on the local computer;
+- work with documents without prior manual language setting (it is set automatically).
 
 To open a document in a new window / tab correctly:
 
@@ -35,7 +35,6 @@ Type: string
 
 Example: `https://example.com/url-to-example-document.docx`
 
-
 ## type
 
 Defines the type of the opened document if it is possible to define: **word**, **cell** or **slide**.
@@ -43,7 +42,6 @@ Defines the type of the opened document if it is possible to define: **word**, *
 Type: string
 
 Example: "word"
-
 
 ## provider
 
@@ -53,10 +51,9 @@ Type: string
 
 Example: "onlyoffice"
 
+## Example
 
-### Example
-
-``` javascript
+``` ts
 const params = {
   url: "https://example.com/url-to-example-document.docx",
   type: "word",

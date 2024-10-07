@@ -6,14 +6,14 @@ Online editing and collaboration have the related gaps in file security - in rea
 
 Two-layer encryption model used in ONLYOFFICE involves:
 
-* symmetric encryption of documents using **AES-256 algorithm**;
-* **RSA asymmetric encryption** of document passwords necessary for authorized sharing and collaboration.
+- symmetric encryption of documents using **AES-256 algorithm**;
+- **RSA asymmetric encryption** of document passwords necessary for authorized sharing and collaboration.
 
 With current model of encryption, it is possible to achieve the following:
 
-* **Privacy of the encrypted data**. Unlike data encryption at rest, end-to-end document encryption in Private Rooms deals with active data of each user or group of users and is not subject to central administration.
-* **Attack-tolerance**. AES-256 algorithm ensures that brute force approach to password cracking will not be effective against the document security regardless of the applied computational power.
-* **Secure key sharing model**. Message-based principle of the RSA algorithm appears to be the most reliable model for managing authenticated access to the encrypted data as long the private keys are not mishandled by the users. It also allows carrying out operations with partitioned data to maintain the same level of protection while processing data in real time.
+- **Privacy of the encrypted data**. Unlike data encryption at rest, end-to-end document encryption in Private Rooms deals with active data of each user or group of users and is not subject to central administration.
+- **Attack-tolerance**. AES-256 algorithm ensures that brute force approach to password cracking will not be effective against the document security regardless of the applied computational power.
+- **Secure key sharing model**. Message-based principle of the RSA algorithm appears to be the most reliable model for managing authenticated access to the encrypted data as long the private keys are not mishandled by the users. It also allows carrying out operations with partitioned data to maintain the same level of protection while processing data in real time.
 
 ## Key generation and management
 
@@ -108,7 +108,7 @@ ONLYOFFICE leverages data storage for documents and the encrypted data between t
 
 The desktop application stores all the read keys. To reset them and add new ones, please do the following:
 
-* delete keys in the DMS database;
-* delete the *cloud\_crypto.xml* file from the *sdkjs-plugins* directory. The path to the folder depends on the operating system you use:
-  * For Linux - *home/\<username>/.local/share/onlyoffice/desktopeditors/sdkjs-plugins/*
-  * For Windows - *C:\Users\\\<username>\AppData\Local\ONLYOFFICE\DesktopEditors\data\sdkjs-plugins\\*
+- delete keys in the DMS database;
+- delete the *cloud\_crypto.xml* file from the *sdkjs-plugins* directory. The path to the folder depends on the operating system you use:
+  - For Linux - *home/\<username>/.local/share/onlyoffice/desktopeditors/sdkjs-plugins/*
+  - For Windows - *C:\Users\\\<username>\AppData\Local\ONLYOFFICE\DesktopEditors\data\sdkjs-plugins\\*

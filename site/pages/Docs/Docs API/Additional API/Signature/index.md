@@ -14,28 +14,28 @@ Restart the services for the config changes to take effect:
 
 **For RPM/DEB packages:**
 
-``` bash
+``` sh
 systemctl restart ds-*
 ```
 
 **For Docker:**
 
-``` bash
+``` sh
 supervisorctl restart all
 ```
 
-### Parameters
+## Parameters
 
-| Parameter                                        | Description                                                                                                                                                                                                                                                                                                                                                                             | Type    | Example |
-| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| services.CoAuthoring.secret.browser.string       | Defines the *secret key* to generate a token in the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs. Deprecated since version 7.2, please use [services.CoAuthoring.secret.inbox.string](#services.CoAuthoring.secret.inbox.string) instead.                                                                                                                        | string  | secret  |
-| services.CoAuthoring.secret.inbox.string         | Defines the *secret key* to generate a token in the [incoming HTTP requests](Request/index.md#incoming-request) with the commands from the **document storage service** to the **document command service**, **document conversion service** and **document builder service** and a token in the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs since version 7.2. | string  | secret  |
-| services.CoAuthoring.secret.outbox.string        | Defines the *secret key* to generate a token in the [outgoing HTTP requests](Request/index.md#outgoing-requests) to the *callbackUrl* address by **document editing service**.                                                                                                                                                                                                          | string  | secret  |
-| services.CoAuthoring.token.enable.browser        | Defines if a token in the client-side [browser requests](Browser/index.md) is enabled or not.                                                                                                                                                                                                                                                                                           | boolean | false   |
-| services.CoAuthoring.token.enable.request.inbox  | Defines if a token in the [incoming HTTP requests](Request/index.md#incoming-request) is enabled or not.                                                                                                                                                                                                                                                                                | boolean | false   |
-| services.CoAuthoring.token.enable.request.outbox | Defines if a token in the [outgoing HTTP requests](Request/index.md#outgoing-requests) is enabled or not.                                                                                                                                                                                                                                                                               | boolean | false   |
+| Parameter                                        | Type    | Example | Description                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------------------------------ | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| services.CoAuthoring.secret.browser.string       | string  | secret  | Defines the *secret key* to generate a token in the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs. Deprecated since version 7.2, please use [services.CoAuthoring.secret.inbox.string](#services.CoAuthoring.secret.inbox.string) instead.                                                                                                                        |
+| services.CoAuthoring.secret.inbox.string         | string  | secret  | Defines the *secret key* to generate a token in the [incoming HTTP requests](Request/index.md#incoming-request) with the commands from the **document storage service** to the **document command service**, **document conversion service** and **document builder service** and a token in the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs since version 7.2. |
+| services.CoAuthoring.secret.outbox.string        | string  | secret  | Defines the *secret key* to generate a token in the [outgoing HTTP requests](Request/index.md#outgoing-requests) to the *callbackUrl* address by **document editing service**.                                                                                                                                                                                                          |
+| services.CoAuthoring.token.enable.browser        | boolean | false   | Defines if a token in the client-side [browser requests](Browser/index.md) is enabled or not.                                                                                                                                                                                                                                                                                           |
+| services.CoAuthoring.token.enable.request.inbox  | boolean | false   | Defines if a token in the [incoming HTTP requests](Request/index.md#incoming-request) is enabled or not.                                                                                                                                                                                                                                                                                |
+| services.CoAuthoring.token.enable.request.outbox | boolean | false   | Defines if a token in the [outgoing HTTP requests](Request/index.md#outgoing-requests) is enabled or not.                                                                                                                                                                                                                                                                               |
 
-### Sample local.json configuration
+## Sample local.json configuration
 
 ``` json
 {
@@ -67,10 +67,9 @@ supervisorctl restart all
 
 Below you can find examples of signature generation for init config and requests. They are taken from [test samples](../../Get%20Started/Language-specific%20examples/index.md) in different programming languages. We advise you to use this code in your projects to generate signatures.
 
-
 ### C# example
 
-``` csharp
+``` cs
 public static class JwtManager
 {
     private static readonly string Secret;
@@ -117,7 +116,7 @@ public static String CreateToken(Map payloadClaims)
 
 ### Node.js example
 
-``` javascript
+``` ts
 import config from "config"
 
 const configServer = config.get("server")
@@ -143,14 +142,14 @@ function jwtEncode($payload) {
 
 ### Python example
 
-``` python
+``` py
 def encode(payload):
     return jwt.encode(payload, config.DOC_SERV_JWT_SECRET, algorithm='HS256')
 ```
 
 ### Ruby example
 
-``` ruby
+``` rb
 @jwt_secret = Rails.configuration.jwtSecret
 
 class << self

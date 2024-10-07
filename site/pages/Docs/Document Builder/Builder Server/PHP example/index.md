@@ -8,13 +8,13 @@ To integrate **ONLYOFFICE Document Builder** into your own website on **PHP** yo
 
 ## Running the example on Windows OS
 
-## Step 1. Download and install ONLYOFFICE Document Builder
+### Step 1. Download and install ONLYOFFICE Document Builder
 
 First, download **ONLYOFFICE Document Builder** and install it to your computer:
 
 [Get ONLYOFFICE Document Builder](https://www.onlyoffice.com/download-builder.aspx?from=api)
 
-## Step 2. Download the PHP example code for the builder integration
+### Step 2. Download the PHP example code for the builder integration
 
 Download the [PHP Example](../Overview/index.md) from our site and unpack it somewhere to your computer.
 
@@ -26,15 +26,15 @@ $GLOBALS['builder_path'] = "C:\\ONLYOFFICE\\DocumentBuilder\\docbuilder.exe";
 ?>
 ```
 
-## Step 3. Install the prerequisites
+### Step 3. Install the prerequisites
 
 You can use any web server capable of runnig PHP code to run the sample. We will demonstrate how to run the PHP sample using **Internet Information Services (IIS)** web server. To set up and configure PHP on IIS **PHP Manager for IIS** will be used.
 
-* **IIS: version 7** or later (refer to [Microsoft official website](https://www.iis.net/learn/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php) to learn how to install **IIS**);
-* **PHP** (download it from the [php.net](https://php.net/downloads.php) site);
-* **PHP Manager for IIS** (download it from the [Microsoft open source site](https://www.iis.net/downloads/community/2018/05/php-manager-150-for-iis-10)).
+- **IIS: version 7** or later (refer to [Microsoft official website](https://www.iis.net/learn/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php) to learn how to install **IIS**);
+- **PHP** (download it from the [php.net](https://php.net/downloads.php) site);
+- **PHP Manager for IIS** (download it from the [Microsoft open source site](https://www.iis.net/downloads/community/2018/05/php-manager-150-for-iis-10)).
 
-## Step 4. IIS configuration
+### Step 4. IIS configuration
 
 1. **PHP Manager for IIS** configuration:
 
@@ -66,13 +66,13 @@ You can use any web server capable of runnig PHP code to run the sample. We will
 
    In the **Action** panel, click **Add Module Mapping**. In the **Add Module Mapping** dialog box, specify the configuration settings as follows:
 
-   * Request path: **\*.php**,
+   - Request path: **\*.php**,
 
-   * Module: **FastCgiModule**,
+   - Module: **FastCgiModule**,
 
-   * Executable: **"C:\\\[Path to your PHP installation]\php-cgi.exe"**,
+   - Executable: **"C:\\\[Path to your PHP installation]\php-cgi.exe"**,
 
-   * Name: **PHP via FastCGI**,
+   - Name: **PHP via FastCGI**,
 
      click **OK**.
 
@@ -80,7 +80,7 @@ You can use any web server capable of runnig PHP code to run the sample. We will
 
 After IIS manager configuration is complete everything is ready for running the **PHP** example.
 
-## Step 5. Running your web site with the editors
+### Step 5. Running your web site with the editors
 
 1. Add your web site in the IIS Manager:
 

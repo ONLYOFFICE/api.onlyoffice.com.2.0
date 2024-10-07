@@ -30,9 +30,12 @@ By default, this plugin uses *https\://evgeny-nadymov.github.io/telegram-react/*
 Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/telegram>.
 
 1. *config.json*, *index.html*, and *code.js*
+
 2. Icons
+
 3. Third-party service:
-   * [Telegram-react application](https://github.com/evgeny-nadymov/telegram-react) - the application which uses the ReactJS JavaScript framework and TDLib (Telegram Database library) compiled to WebAssembly. License: [GNU General Public License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/telegram/licenses/telegram-react.license).
+
+   - [Telegram-react application](https://github.com/evgeny-nadymov/telegram-react) - the application which uses the ReactJS JavaScript framework and TDLib (Telegram Database library) compiled to WebAssembly. License: [GNU General Public License](https://github.com/ONLYOFFICE/onlyoffice.github.io/blob/master/sdkjs-plugins/content/telegram/licenses/telegram-react.license).
 
 ## Config
 
@@ -94,9 +97,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/m
 
 ## Methods and events
 
-* button
-* init
-* onExternalMouseUp
+- button
+- init
+- onExternalMouseUp
 
 ## Support
 

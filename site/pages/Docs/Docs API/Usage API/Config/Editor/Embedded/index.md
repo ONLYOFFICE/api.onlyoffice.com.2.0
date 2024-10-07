@@ -8,7 +8,6 @@ Type: string
 
 Example: `https://example.com/embedded?doc=exampledocument1.docx`
 
-
 ## fullscreenUrl
 
 Defines the absolute URL to the document which will open in full screen mode.
@@ -16,7 +15,6 @@ Defines the absolute URL to the document which will open in full screen mode.
 Type: string
 
 Example: `https://example.com/embedded?doc=exampledocument1.docx#fullscreen`
-
 
 ## saveUrl
 
@@ -26,7 +24,6 @@ Type: string
 
 Example: `https://example.com/download?doc=exampledocument1.docx`
 
-
 ## shareUrl
 
 Defines the absolute URL that will allow other users to share this document.
@@ -34,7 +31,6 @@ Defines the absolute URL that will allow other users to share this document.
 Type: string
 
 Example: `https://example.com/view?doc=exampledocument1.docx`
-
 
 ## toolbarDocked
 
@@ -46,10 +42,9 @@ Example: "top"
 
 ![Embedded](/assets/images/editor/embedded.png)
 
+## Example
 
-### Example
-
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   editorConfig: {
     embedded: {

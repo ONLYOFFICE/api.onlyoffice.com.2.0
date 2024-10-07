@@ -16,7 +16,7 @@ In case the *edit* parameter is set to **true** and the *review* parameter is al
 
 In case the *edit* parameter is set to **false** and the *review* parameter is set to **true**, the document will be available for reviewing only.
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   document: {
     permissions: {
@@ -33,7 +33,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 1. Specify the group (or several groups separated with commas) the user belongs to by adding the field *group* to the [user](../../../Usage%20API/Config/Editor/index.md#user) parameter in the editorConfig section.
 
-``` javascript
+``` ts
 const docEditor = new DocsAPI.DocEditor("placeholder", {
   editorConfig: {
     user: [{
@@ -54,7 +54,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
    > If the **reviewGroups** parameter is specified in the editor config, the access rights to reviewing all changes are disabled. Otherwise, if the current user does not belong to any of the groups, he or she can review documents of all groups.
 
-   ``` javascript
+   ``` ts
    const docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        permissions: {
@@ -68,7 +68,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
    The [reviewGroups](../../../Usage%20API/Config/Document/Permissions/index.md#reviewgroups) parameter can take the value of an empty group. This means that the user can review changes made by users who do not belong to any of the groups (for example, the document that is reviewed in third-party editors).
 
-   ``` javascript
+   ``` ts
    const docEditor = new DocsAPI.DocEditor("placeholder", {
      document: {
        permissions: {

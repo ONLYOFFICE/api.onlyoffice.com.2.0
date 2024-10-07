@@ -8,19 +8,21 @@ Starting from version 5.6, ONLYOFFICE Desktop Editors offers support for Private
 
 Declare the *cloudCryptoCommand* function to process messages from the desktop app:
 
-``` javascript
+``` ts
 window.cloudCryptoCommand = function cloudCryptoCommand(type, params, callback) {}
 ```
 
-## type
+### type
 
 Defines the command type:
 
-* *encryptionKeys* - to save private and public keys to the parameters;
-* *relogin* - to re-enter the portal after unsuccessful keys decryption;
-* *getsharingkeys* - to request for the public keys of all the users who have access to the file. The keys will be transferred via callback:
+- *encryptionKeys* - to save private and public keys to the parameters;
 
-  ``` javascript
+- *relogin* - to re-enter the portal after unsuccessful keys decryption;
+
+- *getsharingkeys* - to request for the public keys of all the users who have access to the file. The keys will be transferred via callback:
+
+  ``` ts
   callback({
     keys: [{
       userId: "78e1e841",
@@ -31,22 +33,19 @@ Defines the command type:
 
 Type: string
 
-
-## params
+### params
 
 Defines the parameters that are passed to the method.
 
 Type: string
 
-
-## callback
+### callback
 
 Defines the result that the method returns.
 
 Type: string
 
-
 Explore the following pages to find out which commands need to be used for:
 
-* [Key generation](Key%20generation/index.md)
-* [Operations with encrypted files](Operations%20with%20encrypted%20files/index.md)
+- [Key generation](Key%20generation/index.md)
+- [Operations with encrypted files](Operations%20with%20encrypted%20files/index.md)

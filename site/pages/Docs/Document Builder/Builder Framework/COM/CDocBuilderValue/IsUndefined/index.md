@@ -1,10 +1,10 @@
-#### HRESULT IsUndefined(\[out, retval] VARIANT\_BOOL\* result);
+`HRESULT IsUndefined([out, retval] VARIANT_BOOL* result);`
 
 Returns true if the **CDocBuilderValue** object is undefined.
 
 > Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsUndefined* method is not used.
 
-## Parameters:
+## Parameters
 
 | Name     | Type            | Description                                                     |
 | -------- | --------------- | --------------------------------------------------------------- |
@@ -12,9 +12,9 @@ Returns true if the **CDocBuilderValue** object is undefined.
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

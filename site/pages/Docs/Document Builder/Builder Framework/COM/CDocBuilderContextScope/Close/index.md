@@ -1,4 +1,4 @@
-#### HRESULT Close();
+`HRESULT Close();`
 
 Closes the current scope. This method will be called automatically when the descructor is executed.
 
@@ -6,9 +6,9 @@ Closes the current scope. This method will be called automatically when the desc
 
 ## Example
 
-#### COM
+### COM
 
-```c++
+```cpp
 CoInitialize(NULL);
 IONLYOFFICEDocBuilder* oBuilder = NULL;
 IONLYOFFICEDocBuilderContext* oContext = NULL;

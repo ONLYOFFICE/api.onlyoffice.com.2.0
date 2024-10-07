@@ -1,4 +1,4 @@
-#### bool IsUndefined();
+`bool IsUndefined();`
 
 Returns true if the **CDocBuilderValue** object is undefined.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is undefined.
 
 ## Example
 
-#### C++
+### C++
 
-```c++
+```cpp
 std::wstring sWorkDirectory = NSUtils::GetBuilderDirectory();
 CDocBuilder::Initialize(sWorkDirectory.c_str());
 CDocBuilder oBuilder;

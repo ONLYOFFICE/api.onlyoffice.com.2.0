@@ -7,8 +7,10 @@ order: -4
 Unhides all the rows and columns in the active spreadsheet.
 
 <!-- This code snippet is shown in the screenshot. -->
+
 <!-- eslint-skip -->
-``` javascript
+
+``` ts
 (function()
 {
     var activeSheet = Api.ActiveSheet;

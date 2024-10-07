@@ -1,109 +1,148 @@
-import {type Example, example} from "@onlyoffice/declaration-code-example"
-import {type RequestDeclaration} from "./main.ts"
+import {HTTPSnippet, type HarRequest} from "httpsnippet"
+import * as Service from "./main.ts"
 
-export function httpExample(req: RequestDeclaration): Example {
-  const e = example()
-  e.syntax = "http"
-  if (!req.endpoint) {
+export interface Parameter {
+  name: string
+  value: string
+}
+
+export class ExampleGenerator {
+  s: HTTPSnippet
+
+  constructor(r: Service.Request) {
+    const w = Request.fromService(r)
+    this.s = new HTTPSnippet(w)
+  }
+
+  all(): Service.Example[] {
+    return [
+      this.http(),
+      this.curl(),
+    ]
+  }
+
+  http(): Service.Example {
+    const e = new Service.Example()
+    e.syntax = "http"
+    e.code = this.s.convert("http", "http1.1").toString()
+
+    // HTTPSnippet does not remove a newline before an empty body.
+    e.code = e.code.trimEnd()
+
+    // HTTPSnippet adds additional headers in a non-alphabetical order.
+    const [m, b] = e.code.split("\r\n\r\n")
+    const [p, ...h] = m.split("\r\n")
+    const r = h.sort((a, b) => {
+      const [x] = a.split(":")
+      const [y] = b.split(":")
+      return x.localeCompare(y)
+    })
+    r.unshift(p)
+    if (b) {
+      r.push("", b)
+    }
+    e.code = r.join("\r\n")
+
     return e
   }
 
-  const q = query(req)
-  const [m, p] = req.endpoint.split(" ")
-  const h = headers(req)
-  e.code = code(m, p, q, h)
-  return e
-
-  function headers(req: RequestDeclaration): string {
-    if (!req.headerParameters) {
-      return ""
-    }
-    let s = ""
-    for (const h of req.headerParameters) {
-      if ("id" in h) {
-        throw new Error("header parameter references not supported")
-      }
-      s += `${h.identifier}: `
-      if (h.cases) {
-        s += h.cases.join(", ")
-      } else {
-        s += h.identifier
-      }
-      s += "\n"
-    }
-    return s.slice(0, -1)
-  }
-
-  function code(m: string, p: string, q: string, h: string): string {
-    let s = `${m} ${p}${q} HTTP/1.1`
-    if (h !== "") {
-      s += `\n${h}`
-    }
-    return s
-  }
-}
-
-export function curlExample(req: RequestDeclaration): Example {
-  const e = example()
-  e.syntax = "shell"
-  if (!req.endpoint) {
+  curl(): Service.Example {
+    const e = new Service.Example()
+    e.syntax = "shell"
+    e.code = this.s.convert("shell").toString()
     return e
   }
-
-  const q = query(req)
-  const [m, p] = req.endpoint.split(" ")
-  const x = method(m)
-  const h = headers(req)
-  e.code = code(x, p, q, h)
-  return e
-
-  function method(m: string): string {
-    if (m === "GET") {
-      return ""
-    }
-    return `-X "${m}"`
-  }
-
-  function headers(req: RequestDeclaration): string {
-    if (!req.headerParameters) {
-      return ""
-    }
-    let s = ""
-    for (const h of req.headerParameters) {
-      if ("id" in h) {
-        throw new Error("header parameter references not supported")
-      }
-      s += `\t-H "${h.identifier}: `
-      if (h.cases) {
-        s += h.cases.join(", ")
-      } else {
-        s += `{${h.identifier}}`
-      }
-      s += '" \\\n'
-    }
-    return s.slice(0, -1)
-  }
-
-  function code(m: string, p: string, q: string, h: string): string {
-    let s = "curl -L"
-    if (m !== "") {
-      s += ` ${m} \\`
-    } else {
-      s += " \\"
-    }
-    if (h !== "") {
-      s += `\n${h}`
-    }
-    return `${s}\n\t{host}${p}${q}`
-  }
 }
 
-function query(req: RequestDeclaration): string {
-  let qp = "?"
-  if (req.queryParameters) {
-    for (const q of req.queryParameters) {
-      qp += `${q.identifier}={${q.identifier}}&`
-    }
+export class Request implements HarRequest {
+  method = ""
+  url = ""
+  httpVersion = "HTTP/1.1"
+  cookies: Parameter[] = []
+  headers: Parameter[] = []
+  queryString: Parameter[] = []
+  postData: HarRequest["postData"] = {mimeType: ""}
+  headersSize = -1
+  bodySize = -1
+
+  static fromService(r: Service.Request): Request {
+    const h = this.parameters(r.headerParameters)
+    const c = this.parameters(r.cookieParameters)
+    const p = this.parameters(r.pathParameters)
+    const q = this.parameters(r.queryParameters)
+    const u = this.url(r.path, p)
+    const t = this.contentType(h)
+    const d = this.postData(r.bodyParameters, t)
+    const w = new Request()
+    w.method = r.method
+    w.url = u
+    w.cookies = c
+    w.headers = h
+    w.queryString = q
+    w.postData = d
+    return w
   }
-  return qp.slice(0, -1)
+
+  static url(p: string, a: Parameter[]): string {
+    for (const o of a) {
+      p = p.replace(`{${o.name}}`, o.value)
+    }
+    const u = new URL(p, "https://example.com/")
+    return u.toString()
+  }
+
+  static contentType(a: Parameter[]): string {
+    for (const h of a) {
+      if (h.name === "Content-Type") {
+        return h.value
+      }
+    }
+    return ""
+  }
+
+  static postData(e: Service.Entity, c: string): HarRequest["postData"] {
+    if (
+      e.example instanceof Service.PassthroughConst &&
+      c === "application/json"
+    ) {
+      return {mimeType: c, text: JSON.stringify(e.example.value, null, 2)}
+    }
+
+    if (
+      e.example instanceof Service.PassthroughConst &&
+      c === "multipart/form-data"
+    ) {
+      const p = this.parameters(e)
+      if (p.length !== 0) {
+        return {mimeType: c, params: p}
+      }
+    }
+
+    return {mimeType: ""}
+  }
+
+  static parameters(e: Service.Entity): Parameter[] {
+    const a: Parameter[] = []
+
+    if (
+      e.type instanceof Service.ObjectType &&
+      e.example instanceof Service.PassthroughConst &&
+      typeof e.example.value === "object" &&
+      e.example.value !== null
+    ) {
+      for (const [n, v] of Object.entries(e.example.value)) {
+        const p: Parameter = {name: n, value: ""}
+
+        if (Array.isArray(v) || typeof v === "object" && v !== null) {
+          p.value = JSON.stringify(v)
+        } else {
+          p.value = String(v)
+        }
+
+        a.push(p)
+      }
+    }
+
+    return a
+  }
 }

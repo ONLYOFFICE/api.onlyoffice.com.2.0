@@ -1,4 +1,4 @@
-#### def CreateNull(self);
+`def CreateNull(self);`
 
 Creates a null value, an analogue of *null* in JS.
 
@@ -6,9 +6,9 @@ Creates a null value, an analogue of *null* in JS.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 content = context.CreateNull()

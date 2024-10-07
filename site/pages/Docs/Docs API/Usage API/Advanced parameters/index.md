@@ -6,22 +6,22 @@ The parameters, which can be changed for ONLYOFFICE Docs, can be subdivided into
 
 [**config**](../Config/index.md) - allows to change the platform type used, document display size (width and height) and type of the document opened;
 
-* [**document**](../Config/Document/index.md) - contains all the parameters pertaining to the document (title, url, file type, etc.);
+- [**document**](../Config/Document/index.md) - contains all the parameters pertaining to the document (title, url, file type, etc.);
 
-  * [**info**](../Config/Document/Info/index.md) - contains additional parameters for the document (document owner, folder where the document is stored, uploading date, sharing settings);
-  * [**permissions**](../Config/Document/Permissions/index.md) - defines whether the document can be edited and downloaded or not;
+  - [**info**](../Config/Document/Info/index.md) - contains additional parameters for the document (document owner, folder where the document is stored, uploading date, sharing settings);
+  - [**permissions**](../Config/Document/Permissions/index.md) - defines whether the document can be edited and downloaded or not;
 
-* [**editorConfig**](../Config/Editor/index.md) - defines parameters pertaining to the editor interface: opening mode (viewer or editor), interface language, additional buttons, etc.;
+- [**editorConfig**](../Config/Editor/index.md) - defines parameters pertaining to the editor interface: opening mode (viewer or editor), interface language, additional buttons, etc.;
 
-  * [**customization**](../Config/Editor/Customization/index.md) - allows to customize the editor interface so that it looked like your other products (if there are any) and change the presence or absence of the additional buttons, links, change logos and editor owner details;
-  * [**embedded**](../Config/Editor/Embedded/index.md) - is used for the embedded document type only and allows to change the behavior of the buttons used to control the embedded mode;
-  * [**plugins**](../Config/Editor/Plugins/index.md) - is used to connect the necessary [plugins](../../../Plugin%20and%20Macros/Get%20Started/Overview/index.md) to your ONLYOFFICE Docs, so that they become visible to all document editor users;
+  - [**customization**](../Config/Editor/Customization/index.md) - allows to customize the editor interface so that it looked like your other products (if there are any) and change the presence or absence of the additional buttons, links, change logos and editor owner details;
+  - [**embedded**](../Config/Editor/Embedded/index.md) - is used for the embedded document type only and allows to change the behavior of the buttons used to control the embedded mode;
+  - [**plugins**](../Config/Editor/Plugins/index.md) - is used to connect the necessary [plugins](../../../Plugin%20and%20Macros/Get%20Started/Overview/index.md) to your ONLYOFFICE Docs, so that they become visible to all document editor users;
 
-* [**events**](../Config/Events/index.md) - is the list of special events called when some action is applied to the document (when it is loaded, modified, etc.).
+- [**events**](../Config/Events/index.md) - is the list of special events called when some action is applied to the document (when it is loaded, modified, etc.).
 
 The complete *config* with all the additional parameters looks the following way:
 
-``` javascript
+``` ts
 const config = {
   document: {
     fileType: "docx",
@@ -216,6 +216,14 @@ const config = {
         "asc.{0616AE85-5DBE-4B6B-A0A9-455C4F1503AD}",
         "asc.{FFE1F462-1EA2-4391-990D-4CC84940B754}",
       ],
+      options: {
+        "all": {
+          keyAll: "valueAll",
+        },
+        "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}": {
+          keyYoutube: "valueYoutube",
+        },
+      },
       pluginsData: [
         "https://example.com/plugin1/config.json",
         "https://example.com/plugin2/config.json",

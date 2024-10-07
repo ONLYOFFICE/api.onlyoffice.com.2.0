@@ -51,9 +51,9 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/s
 
 ## Methods and events
 
-* button
-* init
-* executeMethod ("SetProperties")
+- button
+- init
+- executeMethod ("SetProperties")
 
 ## Support
 

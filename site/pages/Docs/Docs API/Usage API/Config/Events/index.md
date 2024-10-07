@@ -1,49 +1,48 @@
 The events section allows to change all the functions pertaining to the events.
 
-* [onAppReady](#onappready) - the application is loaded into the browser.
-* [onCollaborativeChanges](#oncollaborativechanges) - the document is co-edited by the other user in the *strict* co-editing mode.
-* [onDocumentReady](#ondocumentready) - the document is loaded into the document editor.
-* [onDocumentStateChange](#ondocumentstatechange) - the document is modified.
-* [onDownloadAs](#ondownloadas) - the absolute URL to the edited file when the *downloadAs* method is being called.
-* [onError](#onerror) - an error or some other specific event occurs.
-* [onInfo](#oninfo) - the application opened the file.
-* [onMakeActionLink](#onmakeactionlink) - the user is trying to get link for opening the document which contains a bookmark, scrolling to the bookmark position.
-* [onMetaChange](#onmetachange) - the meta information of the document is changed via the *meta* command.
-* [onOutdatedVersion](#onoutdatedversion) - the document is opened for editing with the old *document.key* value, which was used to edit the previous document version and was successfully saved.
-* [onPluginsReady](#onpluginsready) - all plugins are loaded and can be used.
-* [onReady](#onready) - the application is loaded into the browser.
-* [onRequestClose](#onrequestclose) - the work with the editor must be ended and the editor must be closed.
-* [onRequestCompareFile](#onrequestcomparefile) - the user is trying to select document for comparing by clicking the *Document from Storage* button.
-* [onRequestCreateNew](#onrequestcreatenew) - the user is trying to create document by clicking the *Create New* button.
-* [onRequestEditRights](#onrequesteditrights) - the user is trying to switch the document from the viewing into the editing mode by clicking the *Edit current file* button.
-* [onRequestHistory](#onrequesthistory) - the user is trying to show the document version history by clicking the *Version History* button.
-* [onRequestHistoryClose](#onrequesthistoryclose) - the user is trying to go back to the document from viewing the document version history by clicking the *Close History* button.
-* [onRequestHistoryData](#onrequesthistorydata) - the user is trying to click the specific document version in the document version history.
-* [onRequestInsertImage](#onrequestinsertimage) - the user is trying to insert an image by clicking the *Image from Storage* button.
-* [onRequestMailMergeRecipients](#onrequestmailmergerecipients) - the user is trying to select recipients data by clicking the *Mail merge* button.
-* [onRequestOpen](#onrequestopen) - the user is trying to open an external link.
-* [onRequestReferenceData](#onrequestreferencedata) - the user is trying to refresh data inserted from the external file by clicking the *Update values* button in the *External* links dialog box of the *Data* tab.
-* [onRequestReferenceSource](#onrequestreferencesource) - the user is trying to change an external link by clicking the *Change source* button.
-* [onRequestRename](#onrequestrename) - the user is trying to rename the file by clicking the *Rename...* button.
-* [onRequestRestore](#onrequestrestore) - the user is trying to restore the file version by clicking the *Restore* button in the version history.
-* [onRequestSaveAs](#onrequestsaveas) - the user is trying to save file by clicking *Save Copy as...* button.
-* [onRequestSelectDocument](#onrequestselectdocument) - the user is trying to select a document for comparing or combining.
-* [onRequestSelectSpreadsheet](#onrequestselectspreadsheet) - the user is trying to select recipients data by clicking the *Mail merge* button.
-* [onRequestSendNotify](#onrequestsendnotify) - the user is mentioned in a comment.
-* [onRequestSharingSettings](#onrequestsharingsettings) - the user is trying to manage document access rights by clicking *Change access rights* button.
-* [onRequestStartFilling](#onrequeststartfilling) - the user is trying to start filling out the ready forms by clicking the *Start filling* button in the pdf editing mode.
-* [onRequestUsers](#onrequestusers) - the user can select other users to mention in the comments, grant the access rights to edit the specific sheet ranges, or set the user avatars.
-* [onSubmit](#onsubmit) - the force saving request of the *3* [forcesavetype](../../Callback%20handler/index.md#forcesavetype) is successfully performed.
-* [onWarning](#onwarning) - a warning occurs.
-
+- [onAppReady](#onappready) - the application is loaded into the browser.
+- [onCollaborativeChanges](#oncollaborativechanges) - the document is co-edited by the other user in the *strict* co-editing mode.
+- [onDocumentReady](#ondocumentready) - the document is loaded into the document editor.
+- [onDocumentStateChange](#ondocumentstatechange) - the document is modified.
+- [onDownloadAs](#ondownloadas) - the absolute URL to the edited file when the *downloadAs* method is being called.
+- [onError](#onerror) - an error or some other specific event occurs.
+- [onInfo](#oninfo) - the application opened the file.
+- [onMakeActionLink](#onmakeactionlink) - the user is trying to get link for opening the document which contains a bookmark, scrolling to the bookmark position.
+- [onMetaChange](#onmetachange) - the meta information of the document is changed via the *meta* command.
+- [onOutdatedVersion](#onoutdatedversion) - the document is opened for editing with the old *document.key* value, which was used to edit the previous document version and was successfully saved.
+- [onPluginsReady](#onpluginsready) - all plugins are loaded and can be used.
+- [onReady](#onready) - the application is loaded into the browser.
+- [onRequestClose](#onrequestclose) - the work with the editor must be ended and the editor must be closed.
+- [onRequestCompareFile](#onrequestcomparefile) - the user is trying to select document for comparing by clicking the *Document from Storage* button.
+- [onRequestCreateNew](#onrequestcreatenew) - the user is trying to create document by clicking the *Create New* button.
+- [onRequestEditRights](#onrequesteditrights) - the user is trying to switch the document from the viewing into the editing mode by clicking the *Edit current file* button.
+- [onRequestHistory](#onrequesthistory) - the user is trying to show the document version history by clicking the *Version History* button.
+- [onRequestHistoryClose](#onrequesthistoryclose) - the user is trying to go back to the document from viewing the document version history by clicking the *Close History* button.
+- [onRequestHistoryData](#onrequesthistorydata) - the user is trying to click the specific document version in the document version history.
+- [onRequestInsertImage](#onrequestinsertimage) - the user is trying to insert an image by clicking the *Image from Storage* button.
+- [onRequestMailMergeRecipients](#onrequestmailmergerecipients) - the user is trying to select recipients data by clicking the *Mail merge* button.
+- [onRequestOpen](#onrequestopen) - the user is trying to open an external link.
+- [onRequestReferenceData](#onrequestreferencedata) - the user is trying to refresh data inserted from the external file by clicking the *Update values* button in the *External* links dialog box of the *Data* tab.
+- [onRequestReferenceSource](#onrequestreferencesource) - the user is trying to change an external link by clicking the *Change source* button.
+- [onRequestRename](#onrequestrename) - the user is trying to rename the file by clicking the *Rename...* button.
+- [onRequestRestore](#onrequestrestore) - the user is trying to restore the file version by clicking the *Restore* button in the version history.
+- [onRequestSaveAs](#onrequestsaveas) - the user is trying to save file by clicking *Save Copy as...* button.
+- [onRequestSelectDocument](#onrequestselectdocument) - the user is trying to select a document for comparing or combining.
+- [onRequestSelectSpreadsheet](#onrequestselectspreadsheet) - the user is trying to select recipients data by clicking the *Mail merge* button.
+- [onRequestSendNotify](#onrequestsendnotify) - the user is mentioned in a comment.
+- [onRequestSharingSettings](#onrequestsharingsettings) - the user is trying to manage document access rights by clicking *Change access rights* button.
+- [onRequestStartFilling](#onrequeststartfilling) - the user is trying to start filling out the ready forms by clicking the *Start filling* button in the pdf editing mode.
+- [onRequestUsers](#onrequestusers) - the user can select other users to mention in the comments, grant the access rights to edit the specific sheet ranges, or set the user avatars.
+- [onSubmit](#onsubmit) - the force saving request of the *3* [forcesavetype](../../Callback%20handler/index.md#forcesavetype) is successfully performed.
+- [onWarning](#onwarning) - a warning occurs.
 
 ## onAppReady
 
 The function called when the application is loaded into the browser.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onAppReady() {
   console.log("ONLYOFFICE Document Editor is ready")
 }
@@ -59,9 +58,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called when the document is co-edited by the other user in the *strict* co-editing mode.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onCollaborativeChanges() {
   console.log("The document changed by collaborative user")
 }
@@ -77,9 +76,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called when the document is loaded into the document editor.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onDocumentReady() {
   console.log("Document is loaded")
 }
@@ -95,9 +94,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called when the document is modified. It is called with the parameter: *{"data": true}* when the current user is editing the document and with the parameter: *{"data" : false}* when the current user's changes are sent to the **document editing service**.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onDocumentStateChange(event) {
   if (event.data) {
     console.log("The document changed")
@@ -117,9 +116,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called with the absolute URL to the edited file when the [downloadAs](../../Methods/index.md#downloadas) method is being called. The absolute URL to the document to be downloaded and its type are sent in the *data* parameter.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onDownloadAs(event) {
   const fileType = event.data.fileType
   const url = event.data.url
@@ -137,9 +136,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called when an error or some other specific event occurs. The error message is sent in the *data* parameter. A list of error codes can be found [here](https://github.com/ONLYOFFICE/sdkjs/blob/master/common/errorCodes.js).
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onError(event) {
   console.log(`ONLYOFFICE Document Editor reports an error: code ${event.data.errorCode}, description ${event.data.errorDescription}`)
 }
@@ -155,9 +154,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called when the application opened the file. The mode is sent in the *data.mode* parameter. Can be **view** or **edit**.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onInfo(event) {
   console.log(`ONLYOFFICE Document Editor is opened in mode ${event.data.mode}`)
 }
@@ -177,9 +176,9 @@ To set the bookmark link, you must call the [setActionLink](../../Methods/index.
 
 ![onMakeActionLink](/assets/images/editor/onMakeActionLink.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onMakeActionLink(event) {
   const ACTION_DATA = event.data
   const link = GENERATE_LINK(ACTION_DATA)
@@ -201,9 +200,9 @@ The name of the document is sent in the *data.title* parameter. The *Favorite* i
 
 When the user clicks the *Favorite* icon, the [setFavorite](../../Methods/index.md#setfavorite) method is called to update the [information](../Document/Info/index.md#favorite) about the *Favorite* icon highlighting state. If the method is not declared, the *Favorite* icon will not be changed.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onMetaChange(event) {
   const title = event.data.title
   const favorite = event.data.favorite
@@ -220,9 +219,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called after the [error](../../../More%20Information/Troubleshooting/index.md#key) is shown, when the document is opened for editing with the old [document.key](../Document/index.md#key) value, which was used to edit the previous document version and was successfully saved. When this event is called the editor must be reinitialized with a new *document.key*.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onOutdatedVersion() {
   location.reload(true)
 }
@@ -238,9 +237,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 Tthe function called when all plugins are loaded and can be used.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onPluginsReady() {}
 
 const docEditor = new DocsAPI.DocEditor("placeholder", {
@@ -258,9 +257,9 @@ The function called when the application is loaded into the browser. Deprecated 
 
 The function called when the user is trying to end the work with the editor and close it by clicking the cross button. If the method is not declared, the [editorConfig.customization.close](../Editor/Customization/index.md#close) parameter will not be available, and the cross button will not be displayed.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestClose() {
   if (window.opener) {
     window.close()
@@ -286,9 +285,9 @@ The function called when the user is trying to select document for comparing by 
 
 The function called when the user is trying to create document by clicking the *Create New* button. This method is used instead of the [createUrl](../Editor/index.md#createurl) field. If the method is not declared and the *createUrl* is not specified the *Create New* button will not be displayed.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestCreateNew() {}
 
 const docEditor = new DocsAPI.DocEditor("placeholder", {
@@ -307,9 +306,9 @@ The function called when the user is trying to switch the document from the view
 ![onRequestEditRights](/assets/images/editor/onRequestEditRights.png)
 ![Edit PDF button](/assets/images/editor/edit-pdf.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestEditRights() {
   console.log("ONLYOFFICE Document Editor requests editing rights")
   document.location.reload()
@@ -330,9 +329,9 @@ To show the document version history you must call the [refreshHistory](../../Me
 
 <img alt="onRequestHistory" src="/assets/images/editor/onRequestHistory.png" width="282px">
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestHistory() {
   docEditor.refreshHistory({
     currentVersion: 2,
@@ -378,9 +377,9 @@ The function called when the user is trying to go back to the document from view
 
 ![onRequestHistoryClose](/assets/images/editor/onRequestHistoryClose.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestHistoryClose() {
   document.location.reload()
 }
@@ -402,9 +401,9 @@ To show the changes corresponding to the specific document version you must call
 
 ![onRequestHistoryData](/assets/images/editor/onRequestHistoryData.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestHistoryData(event) {
   const version = event.data
   docEditor.setHistoryData({
@@ -443,9 +442,9 @@ To insert an image into the file you must call the [insertImage](../../Methods/i
 
 ![onRequestInsertImage](/assets/images/editor/onRequestInsertImage.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestInsertImage(event) {
   docEditor.insertImage({
     c: event.data.c,
@@ -486,9 +485,9 @@ An object with the unique file data, the file path, and a new browser tab name a
 
 <img alt="Open source" src="/assets/images/editor/open-source.png" width="498px">
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestOpen(event) {
   const path = event.data.path
   const referenceData = event.data.referenceData
@@ -522,9 +521,9 @@ To refresh data by a link to a file which is specified with the event parameters
 
 <img alt="Update values" src="/assets/images/editor/update-values.png" width="400px">
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestReferenceData() {
   const link = event.data.link
   const referenceData = event.data.referenceData
@@ -562,9 +561,9 @@ When the button is clicked, you must call the [setReferenceSource](../../Methods
 
 <img alt="Change source" src="/assets/images/editor/change-source.png" width="498px">
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestReferenceSource() {
   const referenceData = event.data.referenceData
   const path = event.data.path
@@ -597,9 +596,9 @@ The function called when the user is trying to rename the file by clicking the *
 
 <img alt="onRequestRename" src="/assets/images/editor/onRequestRename.png" width="282px">
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestRename(event) {
   const title = event.data
 }
@@ -623,9 +622,9 @@ When the function is called, you must call the [refreshHistory](../../Methods/in
 
 ![onRequestRestore](/assets/images/editor/onRequestRestore.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestRestore(event) {
   const fileType = event.data.fileType
   const url = event.data.url
@@ -677,9 +676,9 @@ The function called when the user is trying to save file by clicking *Save Copy 
 
 ![onRequestSaveAs](/assets/images/editor/onRequestSaveAs.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestSaveAs(event) {
   const fileType = event.data.fileType
   const title = event.data.title
@@ -705,9 +704,9 @@ To select a document for comparing or combining, you must call the [setRequested
 
 ![onRequestSelectDocument](/assets/images/editor/onRequestSelectDocument.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestSelectDocument() {
   docEditor.setRequestedDocument({
     c: event.data.c,
@@ -736,9 +735,9 @@ To select recipient data, you must call the [setRequestedSpreadsheet](../../Meth
 
 ![onRequestSelectSpreadsheet](/assets/images/editor/onRequestMailMergeRecipients.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestSelectSpreadsheet() {
   docEditor.setRequestedSpreadsheet({
     c: event.data.c,
@@ -767,9 +766,9 @@ The list of users to be mentioned should be completed by [setUsers](../../Method
 
 > In version 5.4, **onRequestSendNotify** event can only be used if [onRequestUsers](#onrequestusers) event is set. Starting from version 5.5, there is no such dependency between **onRequestSendNotify** and **onRequestUsers** - both can be set independently.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestSendNotify(event) {
   const ACTION_DATA = event.data.actionLink
   const comment = event.data.message
@@ -791,9 +790,9 @@ When the access rights is changed, you must call the [setSharingSettings](../../
 
 ![onRequestSharingSettings](/assets/images/editor/onRequestSharingSettings.png)
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestSharingSettings() {
   docEditor.setSharingSettings({
     sharingSettings: [
@@ -823,9 +822,9 @@ The function called when the user is trying to start filling out the ready forms
 
 When the user clicks the *Start filling* button, the [startFilling](../../Methods/index.md#startfilling) method is called to lock the pdf editing (only pdf viewing becomes available).
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestStartFilling() {
   docEditor.startFilling()
 }
@@ -851,9 +850,9 @@ To set a list of users, you must call the [setUsers](../../Methods/index.md#setu
 
 <img alt="Protect range" src="/assets/images/editor/protect-range.png" width="292px">
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onRequestUsers(event) {
   const c = event.data.c
   const id = event.data.id
@@ -888,9 +887,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called when the force saving request of the *3* [forcesavetype](../../Callback%20handler/index.md#forcesavetype) is successfully performed, i.e. when the **Complete & Submit** button is clicked and the form is submitted.
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onSubmit(event) {
   console.log("The form was submitted.")
 }
@@ -906,9 +905,9 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 The function called when a warning occurs. The warning message is sent in the *data* parameter. A list of error codes can be found [here](https://github.com/ONLYOFFICE/sdkjs/blob/master/common/errorCodes.js).
 
-### Example
+Example:
 
-``` javascript
+``` ts
 function onWarning(event) {
   console.log(`ONLYOFFICE Document Editor reports a warning: code ${event.data.warningCode}, description ${event.data.warningDescription}`)
 }

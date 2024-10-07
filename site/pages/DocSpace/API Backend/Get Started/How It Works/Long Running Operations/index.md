@@ -4,7 +4,7 @@ order: -3
 
 The user initiates a long-running operation by sending a request to the appropriate API endpoint, which returns an object containing information about the initiated operation. An example of such a request and response:
 
-### Example Request
+Example Request:
 
 ``` http
 PUT /api/2.0/files/rooms/1234/archive
@@ -17,7 +17,7 @@ Accept: application/json
 }
 ```
 
-### Example Response
+Example Response:
 
 ``` json
 {
@@ -32,9 +32,9 @@ Accept: application/json
 
 The following endpoints return the operation status:
 
-* PUT api/2.0/files/rooms/{id}/archive
-* PUT api/2.0/files/fileops/delete
-* DELETE api/2.0/files/file/{fileid}
+- PUT api/2.0/files/rooms/{id}/archive
+- PUT api/2.0/files/fileops/delete
+- DELETE api/2.0/files/file/{fileid}
 
 ## Monitoring the operation status
 

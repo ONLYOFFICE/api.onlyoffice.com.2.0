@@ -53,3 +53,18 @@ export function uniqueString(): string {
   const r = Math.random().toString(36).slice(2, 8)
   return `${t}${r}`
 }
+
+/**
+ * Converts a string to pascal case.
+ * @param s The string to convert to pascal case.
+ * @returns The string in pascal case.
+ */
+export function pascalCase(s: string): string {
+  // todo: complete the implementation which should be inspired by
+  // https://github.com/gobeam/stringy/blob/v0.0.7/stringy.go#L143
+  let t = ""
+  for (const w of s.split("-")) {
+    t += w.charAt(0).toUpperCase() + w.slice(1)
+  }
+  return t
+}

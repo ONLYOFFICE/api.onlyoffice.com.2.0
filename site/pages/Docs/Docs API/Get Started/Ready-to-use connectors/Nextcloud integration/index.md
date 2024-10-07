@@ -6,10 +6,10 @@ The latest connector signed versions are available in the official store for [Ne
 
 ## Features
 
-* Currently, the following document formats can be opened and edited with this app: DOCX, XLSX, PPTX, CSV, TXT, DOCXF, OFORM.
-* The following format is available for viewing only: PDF.
-* The following formats can be converted into OOXML: DOC, DOCM, DOT, DOTX, EPUB, HTM, HTML, ODP, ODT, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM, RTF, XLS, XLSM, XLT, XLTM, XLTX.
-* The app will create an item in the **new (+)** menu to create **Document**, **Spreadsheet**, **Presentation**. It will also create a new **Open in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Nextcloud. Co-editing is also available between several federated Nextcloud instances connected to one Document Server.
+- Currently, the following document formats can be opened and edited with this app: DOCX, XLSX, PPTX, CSV, TXT, DOCXF, OFORM.
+- The following format is available for viewing only: PDF.
+- The following formats can be converted into OOXML: DOC, DOCM, DOT, DOTX, EPUB, HTM, HTML, ODP, ODT, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM, RTF, XLS, XLSM, XLT, XLTM, XLTX.
+- The app will create an item in the **new (+)** menu to create **Document**, **Spreadsheet**, **Presentation**. It will also create a new **Open in ONLYOFFICE** menu option within the document library for Office documents. This allows multiple users to collaborate in real time and to save back those changes to Nextcloud. Co-editing is also available between several federated Nextcloud instances connected to one Document Server.
 
 ## Installing ONLYOFFICE Docs
 
@@ -35,15 +35,15 @@ If the server with the Nextcloud installed does not have the Internet access, or
    2. Download the latest signed version from the application [release page](https://github.com/ONLYOFFICE/onlyoffice-nextcloud/releases) on GitHub.
    3. Clone the application source code and compile it yourself:
    
-    ``` bash
-    git clone https://github.com/ONLYOFFICE/onlyoffice-nextcloud.git onlyoffice
-    cd onlyoffice
-    git submodule update --init --recursive
-    ```
+   ``` sh
+   git clone https://github.com/ONLYOFFICE/onlyoffice-nextcloud.git onlyoffice
+   cd onlyoffice
+   git submodule update --init --recursive
+   ```
 
 3. Change the owner to update the application right from Nextcloud web interface:
 
-  ``` bash
+  ``` sh
   chown -R www-data:www-data onlyoffice
   ```
 
@@ -53,7 +53,7 @@ If the server with the Nextcloud installed does not have the Internet access, or
 
 In Nextcloud, open the *\~/settings/admin/onlyoffice* page with administrative settings for **ONLYOFFICE** section. Enter the following address to connect ONLYOFFICE Docs:
 
-```
+``` sh
 https://<documentserver>/
 ```
 
@@ -75,7 +75,7 @@ The **Open in ONLYOFFICE** action will be added to the file context menu. You ca
 
 You can check the connection to ONLYOFFICE Docs by using the following occ command:
 
-``` bash
+``` sh
 occ onlyoffice:documentserver --check
 ```
 
@@ -95,10 +95,10 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 5. The app prepares a JSON object with the following properties:
 
-   * **url** - the URL that ONLYOFFICE Docs uses to download the document;
-   * **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
-   * **documentServerUrl** - the URL that the client needs to respond to ONLYOFFICE Docs (can be set at the administrative settings page);
-   * **key** - the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not.
+   - **url** - the URL that ONLYOFFICE Docs uses to download the document;
+   - **callbackUrl** - the URL that ONLYOFFICE Docs informs about status of the document editing;
+   - **documentServerUrl** - the URL that the client needs to respond to ONLYOFFICE Docs (can be set at the administrative settings page);
+   - **key** - the *UUID+Modified Timestamp* to instruct ONLYOFFICE Docs whether to download the document again or not.
 
 6. Nextcloud takes this object and constructs a page from *templates/editor.php* template, filling in all of those values so that the client browser can load up the editor.
 
@@ -116,9 +116,9 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
 ## Known issues
 
-* **Connecting external storages**. Adding the storage using the **External storages** app has issues with the co-editing in some cases. If the connection is made using the same authorization keys (the *Username and password* or *Global credentials* authentication type is selected), then the co-editing is available for the users. If different authorization keys are used (*Log-in credentials, save in database* or *User entered, store in database* authentication options), the co-editing is not available. When the *Log-in credentials, save in session* authentication type is used, the files cannot be opened in the editor.
+- **Connecting external storages**. Adding the storage using the **External storages** app has issues with the co-editing in some cases. If the connection is made using the same authorization keys (the *Username and password* or *Global credentials* authentication type is selected), then the co-editing is available for the users. If different authorization keys are used (*Log-in credentials, save in database* or *User entered, store in database* authentication options), the co-editing is not available. When the *Log-in credentials, save in session* authentication type is used, the files cannot be opened in the editor.
 
-* **Validating certificate**. If you are using a self-signed certificate for your ONLYOFFICE Docs, Nextcloud will not validate such a certificate and will not allow connection to/from ONLYOFFICE Docs. This issue can be solved in two ways:
+- **Validating certificate**. If you are using a self-signed certificate for your ONLYOFFICE Docs, Nextcloud will not validate such a certificate and will not allow connection to/from ONLYOFFICE Docs. This issue can be solved in two ways:
 
   1. Check the **Disable certificate verification (insecure)** box on the ONLYOFFICE administration page, Server settings section, within your Nextcloud.
   2. Change the Nextcloud config file manually. Locate the Nextcloud config file (*/nextcloud/config/config.php*) and open it. Insert the following section to it:
@@ -135,7 +135,7 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
   > Please remember that this is a temporary insecure solution and we strongly recommend that you replace the certificate with the one issued by some CA. Once you do that, do not forget to uncheck the corresponding setting box or remove the above section from the Nextcloud config file.
 
-* **Background task**. If the editors don't open or save documents after a period of proper functioning, the reason can be a problem in changing network settings or disabling any relevant services, or issues with the SSL certificate.
+- **Background task**. If the editors don't open or save documents after a period of proper functioning, the reason can be a problem in changing network settings or disabling any relevant services, or issues with the SSL certificate.
 
   To solve this, we added an asynchronous background task which runs on the server to check availability of the editors. It allows testing the connection between your **Nextcloud instance** and **ONLYOFFICE Docs**, namely availability of server addresses and the validity of the JWT secret are being checked.
 
@@ -155,12 +155,12 @@ The ONLYOFFICE integration follows the API documented [here](../../Basic%20conce
 
   To disable this check running, enter 0 value.
 
-* **Federated Cloud Sharing**. If the document is shared using the **Federated Cloud Sharing** app, the co-editing between the Nextcloud instances connected to different ONLYOFFICE servers will not be available. The users from one and the same Document Server can edit the document in the co-editing mode, but the users from two (or more) different Document Servers will not be able to collaborate on the same document in real time.
+- **Federated Cloud Sharing**. If the document is shared using the **Federated Cloud Sharing** app, the co-editing between the Nextcloud instances connected to different ONLYOFFICE servers will not be available. The users from one and the same Document Server can edit the document in the co-editing mode, but the users from two (or more) different Document Servers will not be able to collaborate on the same document in real time.
 
-* **Converting files**. ONLYOFFICE Docs uses Office Open XML format as a basis when opening and editing files. If the file format is different from OOXML, it will still be converted to the corresponding OOXML for the ONLYOFFICE Docs proper work and faster performance. After that you can edit the file, making any changes available for the base OOXML format and save the file to this base OOXML format.
+- **Converting files**. ONLYOFFICE Docs uses Office Open XML format as a basis when opening and editing files. If the file format is different from OOXML, it will still be converted to the corresponding OOXML for the ONLYOFFICE Docs proper work and faster performance. After that you can edit the file, making any changes available for the base OOXML format and save the file to this base OOXML format.
 
   In case the source Nextcloud file format was different from the base one, and you still want to save it to the original format, the file will be converted to this format from OOXML. As the formats are fundamentally different, some data (such as charts, tables, autoshapes or images) and formatting can be lost due to the simple reason that some formats (*csv*, *txt*, etc.) do not support them or treat them differently than OOXML standard does. That is why all the non-OOXML files by default are opened for viewing only, although there is an option to convert the file in the context menu. If you realise the data/formatting loss risks after the conversion, but still want to open non-OOXML files for editing, you can check them in the list in the settings. Editing for *csv* and *txt* files is available by default.
 
-* When accessing a document without download permission, file printing and using the system clipboard are not available. Copying and pasting within the editor is available via buttons in the editor toolbar and in the context menu.
+- When accessing a document without download permission, file printing and using the system clipboard are not available. Copying and pasting within the editor is available via buttons in the editor toolbar and in the context menu.
 
 Download the Nextcloud ONLYOFFICE integration app [here](https://github.com/ONLYOFFICE/onlyoffice-nextcloud).

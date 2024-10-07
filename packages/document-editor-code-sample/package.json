@@ -4,6 +4,7 @@
   "private": true,
   "main": "lib/main.ts",
   "scripts": {
+    "clean": "rimraf coverage node_modules",
     "playwright": "cd node_modules/@web/test-runner-playwright/node_modules/.bin && ./playwright",
     "test:unit": "web-test-runner",
     "test:types": "tsc",
@@ -22,6 +23,7 @@
     "@web/dev-server-esbuild": "1.0.2",
     "@web/test-runner": "0.18.2",
     "@web/test-runner-playwright": "0.11.0",
-    "esbuild": "0.23.0"
+    "esbuild": "0.23.0",
+    "rimraf": "6.0.1"
   }
 }

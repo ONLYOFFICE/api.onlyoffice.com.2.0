@@ -14,8 +14,7 @@ import {
   ThemeSwitcher,
   ThemeSwitcherOption,
 } from "@onlyoffice/site-kit"
-import {SrOnly} from "@onlyoffice/ui-kit"
-import {OnlyofficeLogoBeta} from "@onlyoffice/ui-logos"
+import {OnlyofficeBetaLogo, SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {GlobalNavigation} from "./global-navigation.tsx"
 import {Legacy} from "./legacy.tsx"
@@ -76,7 +75,7 @@ export function Page(p: PageProperties): JSX.Element {
         <h2>Navigation Menu</h2>
       </SrOnly>
       <PageHeaderLogo>
-        <a href="/"><OnlyofficeLogoBeta /></a>
+        <a href="/"><OnlyofficeBetaLogo /></a>
       </PageHeaderLogo>
       <PageHeaderMenu>
         <GlobalNavigation current={p.url} />

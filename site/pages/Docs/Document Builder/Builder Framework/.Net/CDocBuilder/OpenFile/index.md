@@ -1,8 +1,8 @@
-#### int OpenFile(sPath, sParams);
+`int OpenFile(sPath, sParams);`
 
 Opens the document file which will be edited and saved afterwards.
 
-## Parameters:
+## Parameters
 
 | Name      | Type    | Attributes  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | --------- | ------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -11,9 +11,9 @@ Opens the document file which will be edited and saved afterwards.
 
 ## Example
 
-#### .Net
+### .Net
 
-```csharp
+``` cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();
@@ -21,8 +21,8 @@ oBuilder.OpenFile(L"text-document.csv", "<m_nCsvTxtEncoding>46</m_nCsvTxtEncodin
 CDocBuilder.Destroy();
 ```
 
-#### .docbuilder
+### .docbuilder
 
-```js
+``` ts
 builder.OpenFile("text-document.csv", "<m_nCsvTxtEncoding>46</m_nCsvTxtEncoding><m_nCsvDelimiter>4</m_nCsvDelimiter>")
 ```

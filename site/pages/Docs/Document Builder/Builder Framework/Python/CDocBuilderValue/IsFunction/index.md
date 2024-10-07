@@ -1,4 +1,4 @@
-#### def IsFunction(self);
+`def IsFunction(self);`
 
 Returns true if the **CDocBuilderValue** object is a function.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a function.
 
 ## Example
 
-#### Python
+### Python
 
-``` python
+``` py
 builder = docbuilder.CDocBuilder()
 context = builder.GetContext()
 globalObj = context.GetGlobal()

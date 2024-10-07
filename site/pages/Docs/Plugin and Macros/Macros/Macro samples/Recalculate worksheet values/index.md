@@ -7,8 +7,10 @@ order: -5
 Repeatedly recalculates worksheet cell values within one-second intervals.
 
 <!-- This code snippet is shown in the screenshot. -->
+
 <!-- eslint-skip -->
-``` javascript
+
+``` ts
 (function ()
 {
     let timerId = setInterval(function(){

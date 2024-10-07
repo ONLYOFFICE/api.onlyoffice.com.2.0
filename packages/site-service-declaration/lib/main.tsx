@@ -1,12 +1,8 @@
-import {Callback} from "@onlyoffice/preact-callback"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import type * as Service from "@onlyoffice/service-declaration"
-import {type Resource} from "@onlyoffice/service-resource"
 import {
   Badge,
   CodeListing,
-  // CodeListingAction,
-  // CodeListingActionList,
   CodeListingTab,
   CodeListingTabList,
   CodeListingTabListWrapper,
@@ -15,154 +11,496 @@ import {
 import {Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
 
-interface ContextProperties {
-  stack: string[]
-  onHighlightSyntax(this: void, p: ChildrenIncludable & {syntax: string}): JSX.Element
-  onRenderDescription(this: void, p: ChildrenIncludable): JSX.Element
-  onRetrieve: Resource["resolve"]
+interface Contextual {
+  SyntaxHighlight: SyntaxHighlight
+  Description: Description
 }
 
-const Context = createContext<ContextProperties>({
-  stack: [],
-  onHighlightSyntax() {
-    throw new Error("not implemented")
-  },
-  onRenderDescription() {
-    throw new Error("not implemented")
-  },
-  onRetrieve() {
-    throw new Error("not implemented")
-  },
-})
+export interface SyntaxHighlightProperties extends ChildrenIncludable {
+  syntax: string
+}
 
-export interface ServiceDeclarationProperties {
+export interface SyntaxHighlight {
+  (this: void, p: SyntaxHighlightProperties): JSX.Element
+}
+
+export interface DescriptionProperties extends ChildrenIncludable {}
+
+export interface Description {
+  (this: void, p: DescriptionProperties): JSX.Element
+}
+
+const Context = createContext<Contextual>(noopContext())
+
+function noopContext(): Contextual {
+  return {
+    SyntaxHighlight: () => {
+      throw new Error("not implemented")
+    },
+    Description: () => {
+      throw new Error("not implemented")
+    },
+  }
+}
+
+export interface ServiceDeclarationProperties extends ChildrenIncludable {
   declaration: Service.Declaration
-  onHighlightSyntax: ContextProperties["onHighlightSyntax"]
-  onRenderDescription: ContextProperties["onRenderDescription"]
-  onRetrieve: ContextProperties["onRetrieve"]
 }
 
 export function ServiceDeclaration(
-  {declaration, ...props}: ServiceDeclarationProperties,
+  p: ServiceDeclarationProperties,
 ): JSX.Element {
-  return <Context.Provider value={{stack: [], ...props}}>
-    <Declaration declaration={declaration} />
+  return <Context.Provider value={noopContext()}>
+    {p.children}
+    <Declaration declaration={p.declaration} />
   </Context.Provider>
+}
+
+export interface ServiceDeclarationSyntaxHighlightProperties {
+  children: SyntaxHighlight
+}
+
+export function ServiceDeclarationSyntaxHighlight(
+  p: ServiceDeclarationSyntaxHighlightProperties,
+): JSX.Element {
+  const c = useContext(Context)
+  c.SyntaxHighlight = p.children
+  return <></>
+}
+
+export interface ServiceDeclarationDescriptionProperties {
+  children: Description
+}
+
+export function ServiceDeclarationDescription(
+  p: ServiceDeclarationDescriptionProperties,
+): JSX.Element {
+  const c = useContext(Context)
+  c.Description = p.children
+  return <></>
 }
 
 interface DeclarationProperties {
   declaration: Service.Declaration
 }
 
-function Declaration({declaration: d}: DeclarationProperties): JSX.Element {
-  switch (d.kind) {
+function Declaration(p: DeclarationProperties): JSX.Element {
+  const {declaration: d} = p
+
+  switch (d.type) {
   case "group":
-    // todo
     return <></>
-  case "request":
-    return <RequestDeclaration declaration={d} />
+  case "operation":
+    return <OperationDeclaration declaration={d} />
   }
+
   // @ts-expect-error
-  throw new Error(`Unknown declaration kind: ${d.kind}`)
+  throw new Error(`Unknown declaration type: ${d.type}`)
 }
 
-interface RequestDeclarationProperties {
-  declaration: Service.RequestDeclaration
+interface OperationDeclarationProperties {
+  declaration: Service.OperationDeclaration
 }
 
-function RequestDeclaration({declaration: d}: RequestDeclarationProperties): JSX.Element {
+function OperationDeclaration(p: OperationDeclarationProperties): JSX.Element {
+  const {declaration: d} = p
+  const {request: r} = d
+
   return <>
-    {d.endpoint && <DeclarationSignature signature={d.endpoint} />}
-    {d.description && <DeclarationDescription description={d.description} />}
-    {d.headerParameters && <DeclarationHeaderParameters parameters={d.headerParameters} />}
-    {d.pathParameters && <DeclarationPathParameters parameters={d.pathParameters} />}
-    {d.queryParameters && <DeclarationQueryParameters parameters={d.queryParameters} />}
-    {d.bodyParameters && <DeclarationBodyParameters parameters={d.bodyParameters} />}
-    {d.examples && <DeclarationExamples examples={d.examples} />}
-    {d.responses && <DeclarationResponses responses={d.responses} />}
+    {r.method && r.path && <pre>
+      <code>{r.method} {r.path}</code>
+    </pre>}
+    <h2>Request</h2>
+    <Request request={r} />
+    {d.responses.length !== 0 && <>
+      <h2>Responses</h2>
+      {d.responses.map((r) => <Response response={r} />)}
+    </>}
   </>
 }
 
-interface DeclarationSignatureProperties {
-  signature: string
+interface RequestProperties {
+  request: Service.Request
 }
 
-function DeclarationSignature({signature}: DeclarationSignatureProperties): JSX.Element {
-  return <pre><code>{signature}</code></pre>
-}
+function Request(p: RequestProperties): JSX.Element {
+  const {request: r} = p
+  const {Description} = useContext(Context)
 
-interface DeclarationDescriptionProperties {
-  description: string
-}
-
-function DeclarationDescription({description}: DeclarationDescriptionProperties): JSX.Element {
-  const {onRenderDescription: Description} = useContext(Context)
   return <>
-    <h2>Description</h2>
-    <Description>{description}</Description>
+    {r.description && <Description>{r.description}</Description>}
+    {r.authorizations.length !== 0 && <>
+      <h3>Authorization</h3>
+      {r.authorizations.map((a) => <Authorization authorization={a} />)}
+    </>}
+    {r.cookieParameters.type.type !== "noop" && <>
+      <h3>Cookies</h3>
+      <Entity entity={r.cookieParameters} />
+    </>}
+    {r.headerParameters.type.type !== "noop" && <>
+      <h3>Headers</h3>
+      <Entity entity={r.headerParameters} />
+    </>}
+    {r.pathParameters.type.type !== "noop" && <>
+      <h3>Path</h3>
+      <Entity entity={r.pathParameters} />
+    </>}
+    {r.queryParameters.type.type !== "noop" && <>
+      <h3>Query</h3>
+      <Entity entity={r.queryParameters} />
+    </>}
+    {r.bodyParameters.type.type !== "noop" && <>
+      <h3>Body</h3>
+      <Entity entity={r.bodyParameters} />
+    </>}
+    {r.examples.length !== 0 && <>
+      <h3>Examples</h3>
+      <Examples examples={r.examples} />
+    </>}
   </>
 }
 
-function DeclarationHeaderParameters({parameters}: DeclarationParametersSectionProperties): JSX.Element {
+interface AuthorizationProperties {
+  authorization: Service.Authorization
+}
+
+function Authorization(p: AuthorizationProperties): JSX.Element {
+  const {authorization: a} = p
+  const {Description} = useContext(Context)
+
+  let d = <></>
+  let e = <></>
+
+  if (a.type === "apiKey" && a.in === "header") {
+    d = <p>
+      An API key is a token that you provide when making API calls.{" "}
+      Include the token in a header parameter called <code>{a.identifier}</code>.
+    </p>
+    e = <p>
+      Example: <code>{a.identifier}: 864FE52C-1C1C-469F-9308-51DAFEFE7436</code>.
+    </p>
+  } else if (a.type === "apiKey" && a.in === "cookie") {
+    d = <p>
+      An API key is a token that you provide when making API calls.{" "}
+      Include the token in a cookie parameter called <code>{a.identifier}</code>.
+    </p>
+    e = <p>
+      Example: <code>{a.identifier}=864FE52C-1C1C-469F-9308-51DAFEFE7436</code>.
+    </p>
+  }
+
   return <>
-    <h2>Headers</h2>
-    <Properties properties={parameters} />
+    {a.description && <Description>{a.description}</Description>}
+    {d}
+    {e}
   </>
 }
 
-function DeclarationPathParameters({parameters}: DeclarationParametersSectionProperties): JSX.Element {
+interface ResponseProperties {
+  response: Service.Response
+}
+
+function Response(p: ResponseProperties): JSX.Element {
+  const {response: r} = p
+  const {Description} = useContext(Context)
+
   return <>
-    <h2>Path Parameters</h2>
-    <Properties properties={parameters} />
+    <h3>{r.status}</h3>
+    {r.description && <Description>{r.description}</Description>}
+    {r.body.type.type !== "noop" && <>
+      <Entity entity={r.body} />
+    </>}
   </>
 }
 
-function DeclarationQueryParameters({parameters}: DeclarationParametersSectionProperties): JSX.Element {
+interface EntityProperties {
+  entity: Service.Entity
+}
+
+function Entity(p: EntityProperties): JSX.Element {
+  const {entity: e} = p
+  const {Description} = useContext(Context)
+
   return <>
-    <h2>Query Parameters</h2>
-    <Properties properties={parameters} />
+    {e.description && <Description>{e.description}</Description>}
+    <Type type={e.type} />
   </>
 }
 
-interface DeclarationParametersSectionProperties {
-  parameters: Service.Property[]
+interface TypeProperties {
+  type: Service.Type
 }
 
-interface DeclarationBodyParametersProperties {
-  parameters: Service.Value
+function Type(p: TypeProperties): JSX.Element {
+  const {type: t} = p
+
+  switch (t.type) {
+  case "array":
+    return <ArrayType type={t} />
+  case "boolean":
+    return <></>
+  case "complex":
+    return <ComplexType type={t} />
+  case "enum":
+    return <EnumType type={t} />
+  case "integer":
+    return <></>
+  case "literal":
+    return <LiteralType type={t} />
+  case "noop":
+    return <></>
+  case "null":
+    return <></>
+  case "number":
+    return <></>
+  case "object":
+    return <ObjectType type={t} />
+  case "string":
+    return <></>
+  case "union":
+    return <></>
+  case "unknown":
+    return <></>
+  }
+
+  // @ts-expect-error
+  throw new Error(`Unknown type: ${t.type}`)
 }
 
-function DeclarationBodyParameters({parameters}: DeclarationBodyParametersProperties): JSX.Element {
+interface ArrayTypeProperties {
+  type: Service.ArrayType
+}
+
+function ArrayType(p: ArrayTypeProperties): JSX.Element {
+  const {type: t} = p
+
+  if (t.items.type === "circular") {
+    return <p>Circular reference</p>
+  }
+
+  return <Entity entity={t.items} />
+}
+
+interface ComplexTypeProperties {
+  type: Service.ComplexType
+}
+
+function ComplexType(p: ComplexTypeProperties): JSX.Element {
+  const {type: t} = p
+
   return <>
-    <h2>Body Parameters</h2>
-    <Value value={parameters} />
+    {t.entities.length !== 0 && <dl>
+      {t.entities.map((e) => <>
+        <dt>
+          <TypeBadge type={e.type} />{" "}
+          {e.format && <Badge>{e.format}</Badge>}
+        </dt>
+        <dd>
+          <Entity entity={e} />
+        </dd>
+      </>)}
+    </dl>}
   </>
 }
 
-interface DeclarationExamplesProperties {
+interface EnumTypeProperties {
+  type: Service.EnumType
+}
+
+function EnumType(p: EnumTypeProperties): JSX.Element {
+  const {type: t} = p
+  const d: JSX.Element[] = []
+
+  for (const [i, c] of t.cases.entries()) {
+    if (c.type.type !== "literal") {
+      throw new Error(`Expected literal type, got: ${c.type.type}`)
+    }
+
+    const e = <Type type={c.type} />
+
+    if (t.cases && i !== t.cases.length - 1) {
+      d.push(<>{e}, </>)
+    } else {
+      d.push(<>{e}.</>)
+    }
+  }
+
+  if (d.length === 0) {
+    return <></>
+  }
+
+  return <p>Can be one of: {d}</p>
+}
+
+interface LiteralTypeProperties {
+  type: Service.LiteralType
+}
+
+function LiteralType(p: LiteralTypeProperties): JSX.Element {
+  const {type: t} = p
+
+  if (t.const.type === "noop") {
+    return <></>
+  }
+
+  return <code>{String(t.const.value)}</code>
+}
+
+interface ObjectTypeProperties {
+  type: Service.ObjectType
+}
+
+function ObjectType(p: ObjectTypeProperties): JSX.Element {
+  const {type: t} = p
+
+  return <>
+    {t.properties.length !== 0 && <dl>
+      {t.properties.map((p) => <Property property={p} />)}
+    </dl>}
+  </>
+}
+
+interface PropertyProperties {
+  property: Service.Property
+}
+
+function Property(p: PropertyProperties): JSX.Element {
+  const {property: r} = p
+
+  return <>
+    <PropertyTerm property={r} />
+    <PropertyDescription property={r} />
+  </>
+}
+
+function PropertyTerm(p: PropertyProperties): JSX.Element {
+  const {property: r} = p
+
+  return <dt>
+    <code>{r.identifier}</code>{" "}
+    <PropertyBadges property={r} />
+  </dt>
+}
+
+function PropertyBadges(p: PropertyProperties): JSX.Element {
+  const {property: r} = p
+
+  if (r.self.type === "circular") {
+    return <Badge>circular</Badge>
+  }
+
+  return <>
+    <TypeBadge type={r.self.type} />{" "}
+    {r.self.format && <Badge>{r.self.format}</Badge>}{" "}
+    {r.required && <Badge variant="danger">required</Badge>}
+  </>
+}
+
+function PropertyDescription(p: PropertyProperties): JSX.Element {
+  const {self: e} = p.property
+  const {Description} = useContext(Context)
+
+  if (e.type === "circular") {
+    return <p>Circular reference</p>
+  }
+
+  return <dd>
+    {e.description && <Description>{e.description}</Description>}
+    <Type type={e.type} />
+    {e.type.type !== "object" && e.default.type !== "noop" && <p>
+      Default: <code>{String(e.default.value)}</code>
+    </p>}
+    {e.type.type !== "object" && e.example.type !== "noop" && <p>
+      Example: <code>{String(e.example.value)}</code>
+    </p>}
+  </dd>
+}
+
+interface TypeBadgeProperties {
+  type: Service.Type
+}
+
+function TypeBadge(p: TypeBadgeProperties): JSX.Element {
+  const {type: t} = p
+
+  return <Badge>{w(t)}</Badge>
+
+  function w(t: Service.Type): string {
+    if (t.type === "array") {
+      let l = t.type
+
+      if (t.items.type !== "circular") {
+        l += ` of ${w(t.items.type)}`
+      }
+
+      return l
+    }
+
+    if (t.type === "complex") {
+      switch (t.by) {
+      case "allOf":
+        return "all of"
+      case "anyOf":
+        return "any of"
+      case "oneOf":
+        return "one of"
+      }
+      throw new Error(`Unknown complex type: ${t.by}`)
+    }
+
+    if (t.type === "enum") {
+      let l = t.type
+
+      if (t.cases.length !== 0) {
+        const [c] = t.cases
+
+        if (c.type.type !== "literal") {
+          throw new Error(`Expected literal type, got: ${c.type.type}`)
+        }
+
+        l += ` of ${w(c.type.base)}`
+      }
+
+      return l
+    }
+
+    if (t.type === "literal") {
+      if (t.const.type === "noop") {
+        return ""
+      }
+      return String(t.const.value)
+    }
+
+    return t.type
+  }
+}
+
+interface ExamplesProperties {
   examples: Service.Example[]
 }
 
-function DeclarationExamples({examples}: DeclarationExamplesProperties): JSX.Element {
-  const {onHighlightSyntax: SyntaxHighlight} = useContext(Context)
+function Examples(p: ExamplesProperties): JSX.Element {
+  const {examples} = p
+  const {SyntaxHighlight} = useContext(Context)
 
-  return <>
-    <h2>Request Examples</h2>
-    <CodeListing>
-      <CodeListingTabListWrapper>
-        <CodeListingTabList label="List of Request Examples">
-          {examples.map((e, i) => <CodeListingTab key={i} id={e.syntax}>
-            {title(e.syntax)}
-          </CodeListingTab>)}
-        </CodeListingTabList>
-      </CodeListingTabListWrapper>
-      {examples.map((e, i) => <CodeListingTabPanel key={i} by={e.syntax}>
-        <pre><code><SyntaxHighlight syntax={e.syntax}>
-          {e.code}
-        </SyntaxHighlight></code></pre>
-      </CodeListingTabPanel>)}
-    </CodeListing>
-  </>
+  return <CodeListing>
+    <CodeListingTabListWrapper>
+      <CodeListingTabList label="List of Request Examples">
+        {examples.map((e) => <CodeListingTab id={e.syntax}>
+          {title(e.syntax)}
+        </CodeListingTab>)}
+      </CodeListingTabList>
+    </CodeListingTabListWrapper>
+    {examples.map((e) => <CodeListingTabPanel by={e.syntax}>
+      <pre>
+        <code>
+          <SyntaxHighlight syntax={e.syntax}>
+            {e.code}
+          </SyntaxHighlight>
+        </code>
+      </pre>
+    </CodeListingTabPanel>)}
+  </CodeListing>
 
   function title(s: string): string {
     switch (s) {
@@ -173,348 +511,4 @@ function DeclarationExamples({examples}: DeclarationExamplesProperties): JSX.Ele
     }
     throw new Error(`Unknown syntax: ${s}`)
   }
-}
-
-interface DeclarationResponsesProperties {
-  responses: Service.Response[]
-}
-
-function DeclarationResponses({responses}: DeclarationResponsesProperties): JSX.Element {
-  return <>
-    <h2>Responses</h2>
-    {responses.map((r, i) => <Response key={i} response={r} />)}
-  </>
-}
-
-interface ResponseProperties {
-  response: Service.Response
-}
-
-function Response({response: r}: ResponseProperties): JSX.Element {
-  const ctx = useContext(Context)
-  const {onRenderDescription: Description} = ctx
-
-  if ("id" in r) {
-    if (ctx.stack.includes(r.id)) {
-      return <></>
-    }
-
-    ctx.stack.push(r.id)
-
-    const d = ctx.onRetrieve(r.id)
-    if (!d) {
-      throw new Error(`Unable to retrieve reference: ${r.id}`)
-    }
-
-    switch (true) {
-    case "status" in d:
-      // see @onlyoffice/openapi-declaration#createResponseComponent
-      const t = {...d}
-      if (t.status === 0) {
-        t.status = r.status
-      }
-      return <>
-        <Response response={t} />
-        <Callback>{() => ctx.stack.pop()}</Callback>
-      </>
-    }
-
-    throw new Error("Unknown reference type")
-  }
-
-  return <>
-    <h3>{r.status}</h3>
-    {r.description && <Description>{r.description}</Description>}
-    {r.body && <Value value={r.body} />}
-  </>
-}
-
-interface ValueParameters {
-  value: Service.Value
-}
-
-function Value({value: v}: ValueParameters): JSX.Element {
-  if ("id" in v) {
-    const ctx = useContext(Context)
-    if (ctx.stack.includes(v.id)) {
-      return <></>
-    }
-
-    ctx.stack.push(v.id)
-
-    const d = ctx.onRetrieve(v.id)
-    if (!d) {
-      throw new Error(`Unable to retrieve reference: ${v.id}`)
-    }
-
-    switch (true) {
-    case "id" in d:
-    case "type" in d:
-      return <>
-        <Value value={d} />
-        <Callback>{() => ctx.stack.pop()}</Callback>
-      </>
-    }
-
-    throw new Error("Unknown reference type")
-  }
-
-  switch (v.type) {
-  case "array":
-    return <>
-      <ValueDescription value={v} />
-      {v.items && <Value value={v.items} />}
-    </>
-
-  case "object":
-    return <>
-      <ValueDescription value={v} />
-      {v.properties && <Properties properties={v.properties} />}
-    </>
-
-  case "boolean":
-  case "integer":
-  case "number":
-  case "string":
-  case "unknown":
-    return <ValueDescription value={v} />
-  }
-}
-
-interface PropertiesProperties {
-  properties: Service.Property[]
-}
-
-function Properties({properties}: PropertiesProperties): JSX.Element {
-  return <dl>{properties.map((p) => <Property key={p} property={p} />)}</dl>
-}
-
-interface PropertyProperties {
-  property: Service.Property
-}
-
-function Property({property: p}: PropertyProperties): JSX.Element {
-  if ("id" in p) {
-    const ctx = useContext(Context)
-    if (ctx.stack.includes(p.id)) {
-      return <></>
-    }
-
-    ctx.stack.push(p.id)
-
-    const d = ctx.onRetrieve(p.id)
-    if (!d) {
-      throw new Error(`Unable to retrieve reference: ${p.id}`)
-    }
-
-    switch (true) {
-    case "id" in d:
-    case "type" in d:
-      p = {identifier: p.identifier, ...d}
-      return <>
-        <Property property={p} />
-        <Callback>{() => ctx.stack.pop()}</Callback>
-      </>
-    }
-
-    throw new Error("Unknown reference type")
-  }
-
-  return <>
-    <PropertyTerm property={p} />
-    <PropertyDescription property={p} />
-  </>
-}
-
-interface PropertyTermProperties {
-  property: Service.Property
-}
-
-function PropertyTerm({property: p}: PropertyTermProperties): JSX.Element {
-  return <dt>
-    <code>{p.identifier}</code> <TypeBadge type={p} /> <ValueBadge value={p} />
-  </dt>
-}
-
-interface PropertyDescriptionProperties {
-  property: Service.Property
-}
-
-function PropertyDescription({property: p}: PropertyDescriptionProperties): JSX.Element {
-  if ("id" in p) {
-    const ctx = useContext(Context)
-    if (ctx.stack.includes(p.id)) {
-      return <></>
-    }
-
-    ctx.stack.push(p.id)
-
-    const d = ctx.onRetrieve(p.id)
-    if (!d) {
-      throw new Error(`Unable to retrieve reference: ${p.id}`)
-    }
-
-    switch (true) {
-    case "id" in d:
-    case "type" in d:
-      p = {identifier: p.identifier, ...d}
-      return <>
-        <PropertyDescription property={p} />
-        <Callback>{() => ctx.stack.pop()}</Callback>
-      </>
-    }
-
-    throw new Error("Unknown reference type")
-  }
-
-  switch (p.type) {
-  case "array":
-    if (!p.items) {
-      return <></>
-    }
-    p = {identifier: p.identifier, ...p.items}
-    return <PropertyDescription property={p} />
-
-  case "object":
-    return <dd>
-      <ValueDescription value={p} />
-      <TypeDescription type={p} />
-      {p.example && <ExampleDescription example={p.example} />}
-      {p.properties && <details>
-        <summary>Properties of <code>{p.identifier}</code></summary>
-        <Properties properties={p.properties} />
-      </details>}
-    </dd>
-
-  case "boolean":
-  case "integer":
-  case "number":
-  case "string":
-  case "unknown":
-    return <dd>
-      <ValueDescription value={p} />
-      <TypeDescription type={p} />
-      {p.example && <ExampleDescription example={p.example} />}
-    </dd>
-  }
-
-  // @ts-expect-error
-  throw new Error(`Unknown reference type: ${p.type}`)
-}
-
-interface ValueBadgeProperties {
-  value: Service.ValueNode
-}
-
-function ValueBadge({value}: ValueBadgeProperties): JSX.Element {
-  if (value.required !== true) {
-    return <></>
-  }
-  return <Badge variant="danger">required</Badge>
-}
-
-interface ValueDescriptionProperties {
-  value: Service.Value
-}
-
-function ValueDescription({value: v}: ValueDescriptionProperties): JSX.Element {
-  const {onRenderDescription: Description} = useContext(Context)
-  if (!v.description) {
-    return <></>
-  }
-  return <Description>{v.description}</Description>
-}
-
-interface TypeBadgeProperties {
-  type: Service.Type
-}
-
-function TypeBadge({type: t}: TypeBadgeProperties): JSX.Element {
-  const ctx = useContext(Context)
-  return <Badge>{resolve(t)}</Badge>
-
-  function resolve(t: Service.Type): string {
-    if ("id" in t) {
-      const d = ctx.onRetrieve(t.id)
-      if (!d) {
-        throw new Error(`Unable to retrieve reference: ${t.id}`)
-      }
-      if (!("type" in d)) {
-        throw new Error(`Reference does not have a type: ${t.id}`)
-      }
-      return resolve(d)
-    }
-
-    let s = t.type
-
-    switch (t.type) {
-    case "array":
-      if (t.items === undefined) {
-        break
-      }
-      // todo: array of strings not array of string.
-      s += ` of ${resolve(t.items)}`
-      break
-    case "boolean":
-    case "integer":
-    case "number":
-    case "object":
-    case "string":
-    case "unknown":
-      break
-    default:
-      // @ts-expect-error
-      throw new Error(`Unknown type: ${t.type}`)
-    }
-
-    return s
-  }
-}
-
-interface TypeDescriptionProperties {
-  type: Service.Type
-}
-
-function TypeDescription({type: t}: TypeDescriptionProperties): JSX.Element {
-  if ("id" in t) {
-    const ctx = useContext(Context)
-    const d = ctx.onRetrieve(t.id)
-    if (!d) {
-      throw new Error(`Unable to retrieve reference: ${t.id}`)
-    }
-    if (!("type" in d)) {
-      throw new Error(`Reference does not have a type: ${t.id}`)
-    }
-    return <TypeDescription type={d} />
-  }
-
-  const d = []
-
-  // if (t.format !== undefined) {
-  //   d.push(`Format: ${t.format}.`)
-  // }
-
-  if (t.cases) {
-    d.push(<>Can be one of: {t.cases.map((c, i) => {
-      const e = <code>{String(c)}</code>
-      if (t.cases && i !== t.cases.length - 1) {
-        return <>{e}, </>
-      }
-      return <>{e}.</>
-    })}</>)
-  }
-
-  if (d.length === 0) {
-    return <></>
-  }
-
-  return <p>{d}</p>
-}
-
-interface ExampleDescriptionProperties {
-  example: unknown
-}
-
-function ExampleDescription({example: e}: ExampleDescriptionProperties): JSX.Element {
-  return <p>Example: {String(e)}</p>
 }

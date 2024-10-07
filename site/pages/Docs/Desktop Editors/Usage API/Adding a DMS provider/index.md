@@ -10,15 +10,15 @@ Follow the steps below to add your own document management system (DMS) to the c
 
 Create a folder using the DMS provider as a name (e.g. *onlyoffice*) in the *providers* directory. The path to the folder depends on the operating system you use:
 
-* For Linux - */opt/onlyoffice/desktopeditors/providers/*
-* For Windows - *%ProgramFiles%\ONLYOFFICE\DesktopEditors\providers\\*
-* For Mac OS - */Applications/ONLYOFFICE.app/Contents/Resources/providers/*
+- For Linux - */opt/onlyoffice/desktopeditors/providers/*
+- For Windows - *%ProgramFiles%\ONLYOFFICE\DesktopEditors\providers\\*
+- For macOS - */Applications/ONLYOFFICE.app/Contents/Resources/providers/*
 
 ## Step 2
 
 Create a *config.json* file to specify the integration parameters.
 
-## provider
+### provider
 
 Defines the provider id used to refer to the desktop app in the JavaScript commands.
 
@@ -26,8 +26,7 @@ Type: string
 
 Example: "onlyoffice"
 
-
-## name
+### name
 
 Defines the name displayed in the provider choice section when adding a cloud.
 
@@ -35,8 +34,7 @@ Type: string
 
 Example: "ONLYOFFICE"
 
-
-## check
+### check
 
 Defines parameters for checking portal availability.
 
@@ -55,8 +53,7 @@ Example:
 }
 ```
 
-
-### check.url
+#### check.url
 
 The URL used in the request.
 
@@ -64,8 +61,7 @@ Type: string
 
 Example: "status"
 
-
-### check.headers
+#### check.headers
 
 The headers added to the *ajax* request.
 
@@ -73,8 +69,7 @@ Type: object
 
 Example: {"OCS-APIREQUEST": true}
 
-
-## entryPage
+### entryPage
 
 Defines the URL to connect the provider. It is used instead of the provider address and allows the desktop app not to send the [check](#check) request.
 
@@ -82,8 +77,7 @@ Type: string
 
 Example: `https://url-to-connect-provider.com`
 
-
-## extraLogout
+### extraLogout
 
 Defines the URL to log out from the cloud. It is used instead of the provider address.
 
@@ -91,17 +85,7 @@ Type: string or array of strings
 
 Example: `https://url-for-logout.com`
 
-
-## editorPage
-
-Defines the relative URL that indicates that the type of the opening file is a document.
-
-Type: string
-
-Example: "/apps/onlyoffice/"
-
-
-## editorPage
+### editorPage
 
 Defines the relative URL that indicates that the type of the opening file is a document.
 
@@ -111,8 +95,7 @@ Type: string
 
 Example: "/apps/onlyoffice/"
 
-
-## startPage
+### startPage
 
 Defines the relative URL added to the entered IP or domain when creating a new connection.
 
@@ -120,8 +103,7 @@ Type: string
 
 Example: "/"
 
-
-## icons
+### icons
 
 Defines the icons for portals.
 
@@ -140,8 +122,7 @@ Example:
 }
 ```
 
-
-### icons.connectionsList
+#### icons.connectionsList
 
 The path to the icon for the connection list.
 
@@ -149,15 +130,13 @@ Type: string
 
 Example: "./assets/listicon.svg"
 
-
-### icons.buttonLogo
+#### icons.buttonLogo
 
 The path to the icon for the provider button on the connection page when the portal list is empty.
 
 Type: string
 
 Example: "./assets/buttonlogo.svg"
-
 
 ### Example
 

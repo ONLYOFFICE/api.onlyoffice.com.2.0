@@ -1,4 +1,4 @@
-#### bool IsBool();
+`bool IsBool();`
 
 Returns true if the **CDocBuilderValue** object is a boolean value.
 
@@ -6,9 +6,9 @@ Returns true if the **CDocBuilderValue** object is a boolean value.
 
 ## Example
 
-#### .Net
+### .Net
 
-```c#
+```cs
 string workDirectory = "C:/Program Files/ONLYOFFICE/DocumentBuilder";
 CDocBuilder.Initialize(workDirectory);
 CDocBuilder oBuilder = new CDocBuilder();

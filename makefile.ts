@@ -1,83 +1,157 @@
 import {spawn} from "node:child_process"
 import {existsSync} from "node:fs"
-import {readFile} from "node:fs/promises"
+import {readFile, readdir} from "node:fs/promises"
 import path from "node:path"
 import {argv} from "node:process"
-import {URL, fileURLToPath} from "node:url"
 import sade from "sade"
 
-const config: Record<string, string[]> = {
-  build: [
-    "eslint-config",
-    "stylelint-config",
-    "remark-lint-eslint",
-    "remark-config",
-
-    "jsdoc-resource-fixtures",
-    "openapi-resource-fixtures",
-    "pagefind-fixtures",
-
-    "community-server-resource",
-    "docspace-hosted-solutions-resource",
-    "docspace-resource",
-    "document-builder-resource",
-
-    "ui-primitives",
-    "ui-icons",
-  ],
+interface PackageJson {
+  dependencies?: Record<string, string>
+  devDependencies?: Record<string, string>
 }
 
 function main(): void {
   sade("makefile.ts")
-    .command("build")
-    .action(async ({_: t}: {_: string[]}) => {
-      if (t.length === 0) {
-        t = config.build
+    .command("clean")
+    .describe("Recursively run 'pnpm clean' on all packages")
+    .action(async (p: {_: string[]}) => {
+      if (p._.length === 0) {
+        p._ = await readdir("packages")
       }
-      await run(t, "build")
+      for (const n of p._) {
+        await run(n, "clean")
+      }
+    })
+    .command("build")
+    .describe("Recursively run 'pnpm build' on all packages")
+    .action(async (p: {_: string[]}) => {
+      if (p._.length === 0) {
+        const t = await tree()
+        p._ = list(t)
+      }
+      for (const n of p._) {
+        await run(n, "build")
+      }
+    })
+    .command("test")
+    .describe("Recursively run 'pnpm test' on all packages")
+    .action(async (p: {_: string[]}) => {
+      if (p._.length === 0) {
+        const t = await tree()
+        p._ = list(t)
+      }
+      for (const n of p._) {
+        // todo: this is a temporary solution to run only verified tests.
+        if (
+          n !== "service-declaration" &&
+          n !== "openapi-declaration" &&
+          n !== "svg-preact"
+        ) {
+          continue
+        }
+        await run(n, "test")
+      }
     })
     .parse(argv)
 }
 
-async function run(t: string[], cmd: string): Promise<void> {
-  for (const [i, n] of t.entries()) {
-    const d = packageDir(n)
-    const f = packageJson(d)
+async function tree(): Promise<Record<string, string[]>> {
+  const t: Record<string, string[]> = {}
+  const a = await readdir("packages")
+
+  for (const n of a) {
+    const f = path.join("packages", n, "package.json")
     if (!existsSync(f)) {
       continue
     }
 
-    const c = await readFile(f, "utf8")
-    const o = JSON.parse(c)
-    if (!o.scripts || !o.scripts[cmd]) {
-      continue
+    const s = await readFile(f, "utf8")
+    const j = JSON.parse(s) as PackageJson
+
+    const d = []
+    if (j.dependencies) {
+      d.push(j.dependencies)
+    }
+    if (j.devDependencies) {
+      d.push(j.devDependencies)
     }
 
-    console.log(`Executing '${cmd}' of '${o.name}'`)
-    await new Promise((res, rej) => {
-      const s = spawn("pnpm", [cmd], {cwd: d, shell: true, stdio: "inherit"})
-      s.on("close", res)
-      s.on("error", rej)
-    })
+    const a = []
+    for (const o of d) {
+      for (const [n, v] of Object.entries(o)) {
+        if (n.startsWith("@onlyoffice/") && v.startsWith("workspace:")) {
+          const s = n.replace("@onlyoffice/", "")
+          a.push(s)
+        }
+      }
+    }
 
-    if (i < t.length - 1) {
-      console.log("\n\n\n")
+    t[n] = a
+  }
+
+  return t
+}
+
+function list(t: Record<string, string[]>): string[] {
+  const s: string[] = []
+  const c = new Set<string>()
+  const v = new Set<string>()
+
+  let a = Object.keys(t)
+  a = a.sort()
+
+  for (const n of a) {
+    visit(n)
+  }
+
+  return s
+
+  function visit(n: string): void {
+    if (c.has(n)) {
+      throw new Error(`Circular dependency detected: ${n}`)
+    }
+
+    if (!v.has(n)) {
+      c.add(n)
+
+      const a = t[n]
+      if (a) {
+        for (const n of a) {
+          visit(n)
+        }
+      }
+
+      c.delete(n)
+      v.add(n)
+      s.push(n)
     }
   }
 }
 
-function packageDir(n: string): string {
-  const d = currentDir()
-  return path.join(d, "packages", n)
-}
+async function run(n: string, cmd: string): Promise<void> {
+  const d = path.join("packages", n)
+  const f = path.join(d, "package.json")
+  if (!existsSync(f)) {
+    return
+  }
 
-function currentDir(): string {
-  const u = new URL(".", import.meta.url)
-  return fileURLToPath(u)
-}
+  const c = await readFile(f, "utf8")
+  const o = JSON.parse(c)
+  if (!o.scripts || !o.scripts[cmd]) {
+    return
+  }
 
-function packageJson(d: string): string {
-  return path.join(d, "package.json")
+  await new Promise((res, rej) => {
+    const s = spawn("pnpm", [cmd], {cwd: d, shell: true, stdio: "inherit"})
+    s.on("error", rej)
+    s.on("close", (c) => {
+      if (c !== 0) {
+        rej(new Error(`Failed to execute '${cmd}' of '${o.name}'`))
+        return
+      }
+      res(c)
+    })
+  })
 }
 
 main()

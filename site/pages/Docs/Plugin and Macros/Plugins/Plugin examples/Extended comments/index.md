@@ -31,8 +31,8 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/e
 
 3. Third-party services:
 
-   * [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_extended_comments/licenses/jQuery.license).
-   * [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_extended_comments/licenses/Select2.license).
+   - [jQuery](https://jquery.com) - a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. License: [MIT License](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_extended_comments/licenses/jQuery.license).
+   - [Select2](https://select2.org/) gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options. License: [MIT](https://github.com/ONLYOFFICE/sdkjs-plugins/blob/master/example_extended_comments/licenses/Select2.license).
 
 ## Config
 
@@ -107,16 +107,16 @@ Repository on GitHub: <https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/e
 
 ## Methods and events
 
-* button
-* init
-* onAddComment
-* onChangeCommentData
-* onRemoveComment
-* executeMethod ("AddComment")
-* executeMethod ("ChangeComment")
-* executeMethod ("GetAllComments")
-* executeMethod ("MoveToComment")
-* executeMethod ("RemoveComments")
+- button
+- init
+- onAddComment
+- onChangeCommentData
+- onRemoveComment
+- executeMethod ("AddComment")
+- executeMethod ("ChangeComment")
+- executeMethod ("GetAllComments")
+- executeMethod ("MoveToComment")
+- executeMethod ("RemoveComments")
 
 ## Support
 
