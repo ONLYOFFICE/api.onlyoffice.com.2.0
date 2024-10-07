@@ -1,9 +1,9 @@
 import {type Meta, type StoryObj} from "@storybook/preact"
 import {h} from "preact"
-import {Button, type ButtonProperties} from "./main.tsx"
+import {Picture404, type Picture404Properties} from "./main.tsx"
 
 export default {
-  title: "UI / Button",
+  title: "UI Assets / Pictures / 404",
 } satisfies Meta
 
 export const Default: StoryObj = {
@@ -16,11 +16,11 @@ export const Default: StoryObj = {
     },
   },
   render() {
-    return <Button>Button</Button>
+    return <Picture404 />
   },
 }
 
-export const Playground: StoryObj<ButtonProperties> = {
+export const Playground: StoryObj<Picture404Properties> = {
   parameters: {
     actions: {
       disable: true,
@@ -31,22 +31,12 @@ export const Playground: StoryObj<ButtonProperties> = {
       control: "select",
       options: ["default", "small", "medium", "large"],
     },
-    variant: {
-      control: "select",
-      options: ["default", "accent", "neutral"],
-    },
   },
   args: {
+    label: "Picture of a 404 error",
     size: "default",
-    variant: "default",
-    children: "Button",
   },
   render(p) {
-    return <Button
-      size={p.size}
-      variant={p.variant}
-    >
-      {p.children}
-    </Button>
+    return <Picture404 label={p.label} size={p.size} />
   },
 }

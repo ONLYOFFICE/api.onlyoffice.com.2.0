@@ -1,4 +1,4 @@
-Opens a file in [ONLYOFFICE editors](../../../JavaScript%20SDK/Initialization%20Modes/Editor/index.md) using the [file selector](../../../JavaScript%20SDK/Initialization%20Modes/File%20Selector/index.md).
+Opens a file in [ONLYOFFICE editors](../../../Usage%20SDK/Initialization%20Modes/Editor/index.md) using the [file selector](../../../Usage%20SDK/Initialization%20Modes/File%20Selector/index.md).
 
 <img alt="Authorization sample" src="/assets/images/docspace/gifs/open-editors.gif" width="720px">
 
@@ -113,4 +113,3 @@ Run our HTML file and make sure everything works.
   </script>
 </html>
 ```
-

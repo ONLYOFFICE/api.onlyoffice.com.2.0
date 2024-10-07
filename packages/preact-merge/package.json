@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/preact-slots",
+  "name": "@onlyoffice/preact-merge",
   "type": "module",
   "private": true,
   "main": "lib/main.ts",
@@ -9,7 +9,6 @@
     "test": "pnpm test:types"
   },
   "dependencies": {
-    "@onlyoffice/preact-merge": "workspace:^",
     "preact": "10.22.0",
     "typescript": "5.4.5"
   },

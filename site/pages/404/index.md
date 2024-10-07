@@ -1,4 +1,4 @@
 ---
-layout: page
+layout: status
 eleventyExcludeFromCollections: true
 ---

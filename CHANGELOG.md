@@ -1,5 +1,7 @@
 # Change Log
 
+- docbuilder: samples link
+
 ## 6.1.0
 - docspace js sdk: react component
 - docspace: support new rest api parser

@@ -1,10 +1,10 @@
 {
-  "name": "@onlyoffice/ui-button",
+  "name": "@onlyoffice/site-status",
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./lib/main.tsx",
-    "./main.css": "./lib/main.css"
+    "./main.css": "./lib/main.css",
+    ".": "./lib/main.tsx"
   },
   "main": "lib/main.tsx",
   "scripts": {
@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@onlyoffice/preact-elements": "workspace:^",
+    "@onlyoffice/preact-types": "workspace:^",
+    "@onlyoffice/ui-kit": "workspace:^",
     "clsx": "2.1.0",
     "preact": "10.22.0",
     "typescript": "5.4.5"
