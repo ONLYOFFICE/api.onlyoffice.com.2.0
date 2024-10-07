@@ -7,8 +7,6 @@ Create a document following the structure of a formal paper:
 - add images and charts to represent document text (Api, ApiChart).
 
 ```ts document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
-// builder.CreateFile("docx")
-
 let oParagraph
 let oRun
 let oDrawing
@@ -688,7 +686,4 @@ oParagraph.SetStyle(oFooterStyle)
 
 const oElement = oDocument.Last()
 oElement.Delete()
-
-// builder.SaveFile("docx", "Formal document.docx")
-// builder.CloseFile()
 ```

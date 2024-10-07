@@ -5,8 +5,6 @@ Creates a custom chart filled with array-based values in the spreadsheet:
 - customize the chart (ApiChart/SetTitle,ApiChart/SetLegendPos);
 
 ```ts document-builder={"documentType": "cell", "editorConfig": {"customization": {"zoom": 60}}}
-// builder.CreateFile("xlsx")
-
 const oWorksheet = Api.GetActiveSheet()
 const sHeaders = ["Year", "Revenue South dept", "Revenue West dept"]
 const sData = [

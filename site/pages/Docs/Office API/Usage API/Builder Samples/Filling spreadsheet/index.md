@@ -8,8 +8,6 @@ This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
 ```ts document-builder={"documentType": "cell", "editorConfig": {"customization": {"zoom": 60}}}
-// builder.CreateFile("xlsx")
-
 const oWorksheet = Api.GetActiveSheet()
 const sHeaders = ["ID", "Product", "Price", "Available"]
 const sData = [
@@ -29,7 +27,4 @@ for (const header of sHeaders) {
   }
   i += 1
 }
-
-// builder.SaveFile("xlsx", "Spreadsheet with data.xlsx")
-// builder.CloseFile()
 ```

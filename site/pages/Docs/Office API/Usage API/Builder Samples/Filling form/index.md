@@ -6,9 +6,7 @@ Fill a form with the data stored in the object:
 This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
-```ts document-builder={"documentType": "pdf", "editorConfig": {"customization": {"zoom": 60}}}
-// builder.OpenFile("https://api.onlyoffice.com/app_data/officeapi/sample-files/empty_form.pdf")
-
+```ts document-builder={"document": {"url": "https://api.onlyoffice.com/app_data/officeapi/sample-files/empty_form.pdf"}, "documentType": "pdf", "editorConfig": {"customization": {"zoom": 60}}}
 const oDocument = Api.GetDocument()
 
 const data = {
@@ -36,7 +34,4 @@ for (const form of aForms) {
 }
 
 Api.Save()
-
-// builder.SaveFile("pdf", "Filled form.pdf")
-// builder.CloseFile()
 ```

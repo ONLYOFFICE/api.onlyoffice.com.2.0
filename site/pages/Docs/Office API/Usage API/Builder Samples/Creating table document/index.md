@@ -5,8 +5,6 @@ Create a document with a styled table filled with array-based values:
 - populate the table with the array-based data cell by cell (ApiTableCell).
 
 ```ts document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
-// builder.CreateFile("docx")
-
 const oDocument = Api.GetDocument()
 const headers = ["ID", "Year", "Region", "2023 Revenue", "2024 Revenue", "% Change"]
 const data = [
@@ -70,7 +68,4 @@ function setTextColor(oParagraph, value) {
   }
 }
 oDocument.Push(oTable)
-
-// builder.SaveFile("docx", "SetBackgroundColor.docx")
-// builder.CloseFile()
 ```
