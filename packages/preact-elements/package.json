@@ -1,15 +1,15 @@
 {
-  "name": "@onlyoffice/preact-slots",
+  "name": "@onlyoffice/preact-elements",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "lib/main.tsx",
   "scripts": {
     "clean": "rimraf node_modules",
     "test:types": "tsc",
     "test": "pnpm test:types"
   },
   "dependencies": {
-    "@onlyoffice/preact-merge": "workspace:^",
+    "@onlyoffice/preact-slots": "workspace:^",
     "preact": "10.22.0",
     "typescript": "5.4.5"
   },

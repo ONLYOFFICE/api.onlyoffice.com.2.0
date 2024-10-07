@@ -1435,6 +1435,22 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/preact-elements:
+    dependencies:
+      '@onlyoffice/preact-slots':
+        specifier: workspace:^
+        version: link:../preact-slots
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/preact-eleventy-img:
     dependencies:
       '@11ty/eleventy-img':
@@ -1457,8 +1473,24 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/preact-merge:
+    dependencies:
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/preact-slots:
     dependencies:
+      '@onlyoffice/preact-merge':
+        specifier: workspace:^
+        version: link:../preact-merge
       preact:
         specifier: 10.22.0
         version: 10.22.0
