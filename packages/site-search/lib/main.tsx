@@ -35,7 +35,7 @@ export function SearchContainer(p: SearchContainerProperties): JSX.Element {
       <input name="sites" aria-hidden="true" hidden />
       <TextInput>
         <TextInputLeading>
-          <MagnifyingGlassIcon class="search__glass" />
+          <MagnifyingGlassIcon width={16} height={16} />
         </TextInputLeading>
         <TextInputPlaceholder>
           {slots.placeholder}

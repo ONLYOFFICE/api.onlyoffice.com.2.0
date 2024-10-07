@@ -75,7 +75,7 @@ export function Page(p: PageProperties): JSX.Element {
         <h2>Navigation Menu</h2>
       </SrOnly>
       <PageHeaderLogo>
-        <a href="/"><OnlyofficeBetaLogo /></a>
+        <a href="/"><OnlyofficeBetaLogo height={38} /></a>
       </PageHeaderLogo>
       <PageHeaderMenu>
         <GlobalNavigation current={p.url} />
