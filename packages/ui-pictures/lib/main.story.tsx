@@ -3,7 +3,7 @@ import {h} from "preact"
 import {Picture404, type Picture404Properties} from "./main.tsx"
 
 export default {
-  title: "UI Assets / Pictures / 404",
+  title: "UI Assets / Pictures",
 } satisfies Meta
 
 export const Default: StoryObj = {
