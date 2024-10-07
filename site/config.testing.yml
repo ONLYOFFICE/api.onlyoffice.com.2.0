@@ -1,4 +1,6 @@
 baseUrl: https://api2.teamlab.info/
+legacyBaseUrl: https://legacy-api2.teamlab.info/
+
 analytics: false
 
 server:

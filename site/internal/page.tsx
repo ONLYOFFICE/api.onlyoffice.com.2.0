@@ -1,5 +1,6 @@
 import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
+import {Config} from "@onlyoffice/site-config"
 import {
   PageFooter,
   PageFooterCopyright,
@@ -54,6 +55,7 @@ export interface PageProperties extends ChildrenIncludable {
 }
 
 export function Page(p: PageProperties): JSX.Element {
+  const c = Config.shared
   // const s = Sitemap.shared
 
   // const e = s.find(p.url, "url")
@@ -128,6 +130,7 @@ export function Page(p: PageProperties): JSX.Element {
         <a href="https://www.onlyoffice.com/blog/category/for-developers?from=api" target="_blank">Blog for developers</a>
         <a href="https://www.onlyoffice.com/contribute.aspx?from=api" target="_blank">For contributors</a>
         <a href="https://www.onlyoffice.com/legalterms.aspx?from=api" target="_blank">Legal notice</a>
+        <a href={c.legacyBaseUrl} target="_blank">Legacy version</a>
       </PageFooterLinkContainer>
       <PageFooterLinkContainer label="Links related to">
         <h3>Get Help</h3>
