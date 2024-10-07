@@ -1472,6 +1472,9 @@ importers:
 
   packages/preact-slots:
     dependencies:
+      '@onlyoffice/preact-merge':
+        specifier: workspace:^
+        version: link:../preact-merge
       preact:
         specifier: 10.22.0
         version: 10.22.0
