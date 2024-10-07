@@ -2,6 +2,48 @@ The list of changes for Office JavaScript API.
 
 ## Version 8.2
 
+### Range methods
+
+- Added the ApiRange/GetEndPage method to Text document API.
+- Added the ApiRange/GetStartPage method to Text document API.
+- Added the ApiRange/GetEndPos method to Text document API.
+- Added the ApiRange/GetStartPos method to Text document API.
+- Added the ApiRange/GetTextPr method to Text document API.
+- Added the ApiRange/SetEndPos method to Text document API.
+- Added the ApiRange/SetStartPos method to Text document API.
+
+### Document methods
+
+- Added the ApiDocument/AddComment method to Text document API.
+- Added the ApiDocument/AddMathEquation method to Text document API.
+- Added the ApiDocument/GetCurrentSentence method to Text document API.
+- Added the ApiDocument/GetCurrentWord method to Text document API.
+- Added the ApiDocument/ReplaceCurrentSentence method to Text document API.
+- Added the ApiDocument/ReplaceCurrentWord method to Text document API.
+- Added the ApiDocument/SelectCurrentWord method to Text document API.
+- Added the ApiDocument/UpdateAllFields method to Text document API.
+
+### Pivot tables methods
+
+- Added the ApiPivotField class to Spreadsheet API.
+- Added the ApiPivotTable class to Spreadsheet API.
+- Added the ApiParaPr/SetOutlineLvl method to Spreadsheet API.
+- Added the *PivotTable* property to the ApiRange object of Spreadsheet API.
+- Added the *PivotTables* property to the Api object of Spreadsheet API.
+- Added the *PivotTables* property to the ApiWorksheet object of Spreadsheet API.
+
+### Other methods
+
+- Added the ApiParaPr/GetOutlineLvl method to Text document API.
+- Added the ApiParaPr/SetOutlineLvl method to Text document API.
+- Added the ApiRun/MoveCursorToPos method to Text document API.
+- Added the ApiSection/GetType method to Text document API.
+- Added the ApiParaPr/GetOutlineLvl method to Spreadsheet API.
+- Added the ApiParaPr/SetOutlineLvl method to Spreadsheet API.
+- Added the ApiParaPr/GetOutlineLvl method to Presentation API.
+- Added the ApiParaPr/SetOutlineLvl method to Presentation API.
+- Added the ReviewedElement property to the ReviewReportRecord object.
+
 ## Version 8.1
 
 ### Date form methods
@@ -501,7 +543,7 @@ The list of changes for Office JavaScript API.
 - Added the ApiWorksheetFunction/YIELDMAT method to Spreadsheet API.
 - Added the ApiWorksheetFunction/Z\_TEST method to Spreadsheet API.
 - Added the ApiWorksheetFunction/ZTEST method to Spreadsheet API.
-- Added the *WorksheetFunction- property to the Api object of Spreadsheet API.
+- Added the *WorksheetFunction* property to the Api object of Spreadsheet API.
 
 ### Protected range methods
 
@@ -520,14 +562,14 @@ The list of changes for Office JavaScript API.
 - Added the ApiWorksheet/AddProtectedRange method to Spreadsheet API.
 - Added the ApiWorksheet/GetAllProtectedRanges method to Spreadsheet API.
 - Added the ApiWorksheet/GetProtectedRange method to Spreadsheet API.
-- Added the *AllProtectedRanges- property to the ApiWorksheet object of Spreadsheet API.
+- Added the *AllProtectedRanges* property to the ApiWorksheet object of Spreadsheet API.
 - Added the ProtectedRangeUserType type to the simple type definitions.
 
 ### Reference style methods
 
 - Added the Api/GetReferenceStyle method to Spreadsheet API.
 - Added the Api/SetReferenceStyle method to Spreadsheet API.
-- Added the *ReferenceStyle- property to the Api object of Spreadsheet API.
+- Added the *ReferenceStyle* property to the Api object of Spreadsheet API.
 - Added the ReferenceStyle type to the simple type definitions.
 
 ### Methods for pasting / cutting ranges
@@ -576,8 +618,8 @@ The list of changes for Office JavaScript API.
 - Added the ApiFreezePanes/FreezeRows method to Spreadsheet API.
 - Added the ApiFreezePanes/GetLocation method to Spreadsheet API.
 - Added the ApiWorksheet/GetFreezePanes method to Spreadsheet API.
-- Added the *FreezePanes- property to the Api object of Spreadsheet API.
-- Added the *FreezePanes- property to the ApiWorksheet object of Spreadsheet API.
+- Added the *FreezePanes* property to the Api object of Spreadsheet API.
+- Added the *FreezePanes* property to the ApiWorksheet object of Spreadsheet API.
 
 ### Comment methods
 
@@ -1248,7 +1290,7 @@ The list of changes for Office JavaScript API.
 ### Areas methods
 
 - Added the ApiAreas class to Spreadsheet API.
-- Added the *Areas- property to the ApiRange object of Spreadsheet API.
+- Added the *Areas* property to the ApiRange object of Spreadsheet API.
 - Added the ApiAreas/GetCount method to Spreadsheet API.
 - Added the ApiAreas/GetItem method to Spreadsheet API.
 - Added the ApiAreas/GetParent method to Spreadsheet API.
