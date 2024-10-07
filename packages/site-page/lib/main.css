@@ -149,18 +149,6 @@
   pointer-events: none;
 }
 
-.page-header__legacy {
-  align-items: center;
-  display: flex;
-  grid-column: 3;
-  grid-row: 1;
-  padding-inline: var(--base-size-32);
-
-  @media not (--size-viewport-width-medium) {
-    display: none;
-  }
-}
-
 .page-footer {
   font-size: var(--text-body-font-size-small);
   line-height: var(--text-body-line-height-small);

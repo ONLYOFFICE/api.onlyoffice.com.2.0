@@ -7,7 +7,6 @@ import {
   PageFooterLinkContainer,
   PageFooterThemeSwitcher,
   PageHeader,
-  PageHeaderLegacy,
   PageHeaderLogo,
   PageHeaderMenu,
   PageHeaderNavToggler,
@@ -18,7 +17,6 @@ import {
 import {OnlyofficeBetaLogo, SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {GlobalNavigation} from "./global-navigation.tsx"
-import {Legacy} from "./legacy.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -114,9 +112,6 @@ export function Page(p: PageProperties): JSX.Element {
         }
       })()}
       {/* {d.chapterToggler && <PageHeaderNavToggler label="Chapter Navigation Toggler" />} */}
-      <PageHeaderLegacy>
-        <Legacy />
-      </PageHeaderLegacy>
     </PageHeader>
     <main>
       {p.children}
