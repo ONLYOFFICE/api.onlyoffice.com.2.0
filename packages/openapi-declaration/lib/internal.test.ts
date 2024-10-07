@@ -1,4 +1,5 @@
 // todo: cover all retrieve methods.
+// todo: cover all normalize methods.
 
 import * as Service from "@onlyoffice/service-declaration"
 import {isValidUUIDV4} from "is-valid-uuid-v4"
@@ -11,6 +12,7 @@ import {
   AuthorizationRequirement,
   BooleanType,
   CircularReference,
+  ComplexType,
   ComponentsCache,
   DeclarationsCache,
   DirectReference,
@@ -583,6 +585,147 @@ test("EnumType: converts to the Service.EnumType", () => {
   }
 })
 
+test("ComplexType: initializes an empty instance", () => {
+  const t = new ComplexType()
+  const k = Object.keys(t)
+  eq(k, ["by", "entities"])
+  is(t.by, "")
+  eq(t.entities, [])
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with the allOf property", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({
+    allOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "allOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with the anyOf property", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({
+    anyOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "anyOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with the oneOf property", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({
+    oneOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "oneOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("ComplexType: initializes from an OpenApi.SchemaObject with an error if the allOf, anyOf, or oneOf property is missing", () => {
+  const [a, ...es] = ComplexType.fromOpenApi({})
+  is(es.length, 1)
+
+  const [er] = es
+  is(er.message, "The allOf, anyOf, or oneOf of the SchemaObject is missing")
+
+  const e = new ComplexType()
+  eq(a, e)
+})
+
+test("ComplexType: merges with an error if the second type is a ComplexType", () => {
+  const a = new ComplexType()
+  const b = new ComplexType()
+
+  try {
+    a.merge(b)
+    un("Expected an error")
+  } catch (e) {
+    is(e instanceof Error && e.message, "The ComplexType cannot be merged")
+  }
+})
+
+test("ComplexType: converts to the Service.ComplexType", () => {
+  const t = new ComplexType()
+  t.by = "allOf"
+  t.entities = [s(), n()]
+
+  const a = t.toService()
+
+  const e = new Service.ComplexType()
+  e.by = "allOf"
+  e.entities = [s().toService(), n().toService()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
 test("BooleanType: initializes an empty instance", () => {
   const t = new BooleanType()
   const k = Object.keys(t)
@@ -654,7 +797,7 @@ test("ArrayType: initializes from an OpenApi.ArraySchemaObject with an error if 
   eq(a, e)
 })
 
-test("ArrayType: resolves with an circular reference", () => {
+test("ArrayType: resolves with a circular reference", () => {
   const c = new ComponentsCache()
 
   const s = new State()
@@ -791,6 +934,90 @@ test("ArrayType: converts to the Service.ArrayType", () => {
   e.items = t.items.toService()
 
   eq(a, e)
+})
+
+test("type: creates a ComplexType with the allOf property", () => {
+  const [a, ...es] = type({
+    allOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "allOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("type: creates a ComplexType with the anyOf property", () => {
+  const [a, ...es] = type({
+    anyOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "anyOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
+})
+
+test("type: creates a ComplexType with the oneOf property", () => {
+  const [a, ...es] = type({
+    oneOf: [
+      {type: "string"},
+      {type: "number"},
+    ],
+  })
+  is(es.length, 0)
+
+  const e = new ComplexType()
+  e.by = "oneOf"
+  e.entities = [s(), n()]
+
+  eq(a, e)
+
+  function s(): Entity {
+    const y = new Entity()
+    y.type = new StringType()
+    return y
+  }
+
+  function n(): Entity {
+    const y = new Entity()
+    y.type = new NumberType()
+    return y
+  }
 })
 
 test("type: creates an EnumType", () => {
@@ -1060,7 +1287,7 @@ test("Entity: initializes an empty instance", () => {
   eq(y.type, new NoopType())
   is(y.format, "")
   eq(y.default, new NoopConst())
-  is(y.example, "")
+  eq(y.example, new NoopConst())
 })
 
 test("Entity: initializes from an OpenApi.SchemaObject", () => {
@@ -1081,7 +1308,8 @@ test("Entity: initializes from an OpenApi.SchemaObject", () => {
   e.format = "s"
   e.default = new PassthroughConst()
   e.default.value = "s"
-  e.example = "s"
+  e.example = new PassthroughConst()
+  e.example.value = "s"
 
   eq(a, e)
 })
@@ -1094,7 +1322,8 @@ test("Entity: converts to the Service.Entity", () => {
   y.format = "s"
   y.default = new PassthroughConst()
   y.default.value = "s"
-  y.example = "s"
+  y.example = new PassthroughConst()
+  y.example.value = "s"
 
   const a = y.toService()
 
@@ -1104,7 +1333,8 @@ test("Entity: converts to the Service.Entity", () => {
   e.type = y.type.toService()
   e.format = "s"
   e.default = y.default.toService()
-  e.example = "s"
+  e.example = new Service.PassthroughConst()
+  e.example.value = "s"
 
   eq(a, e)
 })
@@ -1172,12 +1402,20 @@ test("Property: converts to the Service.Property", () => {
 test("Parameter: initializes an empty instance", () => {
   const p = new Parameter()
   const k = Object.keys(p)
-  eq(k, ["identifier", "description", "required", "deprecated", "self"])
+  eq(k, [
+    "identifier",
+    "description",
+    "required",
+    "deprecated",
+    "self",
+    "example",
+  ])
   is(p.identifier, "")
   is(p.description, "")
   is(p.required, false)
   is(p.deprecated, false)
   eq(p.self, new Entity())
+  eq(p.example, new NoopConst())
 })
 
 test("Parameter: initializes from an OpenApi.ParameterObject with an error if the schema property is missing", () => {
@@ -1234,6 +1472,7 @@ test("Parameter: initializes from an OpenApi.ParameterObject with additional pro
     required: true,
     deprecated: true,
     schema: {type: "string"},
+    example: "e",
   })
   is(es.length, 0)
 
@@ -1244,6 +1483,8 @@ test("Parameter: initializes from an OpenApi.ParameterObject with additional pro
   e.deprecated = true
   e.self = new Entity()
   e.self.type = new StringType()
+  e.example = new PassthroughConst()
+  e.example.value = "e"
 
   eq(a, e)
 })
@@ -1268,6 +1509,8 @@ test("Parameter: converts to the Service.Parameter", () => {
   p.deprecated = true
   p.self = new Entity()
   p.self.type = new StringType()
+  p.example = new PassthroughConst()
+  p.example.value = "s"
 
   const a = p.toService()
 
@@ -1505,42 +1748,6 @@ test("Request: initializes from an OpenApi.OperationObject with additional prope
 
   const e = new Request()
   e.description = "d"
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of the headerParameters", () => {
-  const r = new Request()
-  r.headerParameters = ps(co(), ac())
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(ac(), co())
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of Accept header cases", () => {
-  const r = new Request()
-  r.headerParameters = ps(ac(ax(), aj()))
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(ac(aj(), ax()))
-
-  eq(a, e)
-})
-
-test("Request: normalizes the order of Content-Type header cases", () => {
-  const r = new Request()
-  r.headerParameters = ps(co(ax(), aj()))
-
-  const a = r.normalize()
-
-  const e = new Request()
-  e.headerParameters = ps(co(aj(), ax()))
 
   eq(a, e)
 })
@@ -2339,9 +2546,10 @@ test("OperationDeclaration: converts to the Service.OperationDeclaration", () =>
 test("GroupDeclaration: initializes an empty instance", () => {
   const d = new GroupDeclaration()
   const k = Object.keys(d)
-  eq(k, ["id", "name", "parent", "children"])
+  eq(k, ["id", "name", "description", "parent", "children"])
   is(isValidUUIDV4(d.id), true)
   is(d.name, "")
+  is(d.description, "")
   is(d.parent, "")
   eq(d.children, [])
 })
@@ -2349,6 +2557,7 @@ test("GroupDeclaration: initializes an empty instance", () => {
 test("GroupDeclaration: converts to the Service.GroupDeclaration", () => {
   const d = new GroupDeclaration()
   d.name = "n"
+  d.description = "d"
   d.children = ["a", "b"]
 
   const a = d.toService()
@@ -2356,6 +2565,7 @@ test("GroupDeclaration: converts to the Service.GroupDeclaration", () => {
   const e = new Service.GroupDeclaration()
   e.id = a.id
   e.name = "n"
+  e.description = "d"
   e.children = ["a", "b"]
 
   eq(a, e)

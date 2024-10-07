@@ -9,6 +9,7 @@ export class GroupDeclaration implements DeclarationNode {
   id = ""
   type = "group" as const
   name = ""
+  description = ""
   parent = ""
   children: string[] = []
 }
@@ -40,6 +41,7 @@ export class Request {
   pathParameters = new Entity()
   queryParameters = new Entity()
   bodyParameters = new Entity()
+  examples: Example[] = []
 }
 
 export type Authorization = AuthorizationMap[keyof AuthorizationMap]
@@ -79,7 +81,7 @@ export class Entity {
   type: Type = new NoopType()
   format = ""
   default: Const = new NoopConst()
-  example: unknown = ""
+  example: Const = new NoopConst()
 }
 
 export type Const = ConstMap[keyof ConstMap]
@@ -107,6 +109,7 @@ export type Type = TypeMap[keyof TypeMap]
 export interface TypeMap {
   array: ArrayType
   boolean: BooleanType
+  complex: ComplexType
   enum: EnumType
   integer: IntegerType
   literal: LiteralType
@@ -126,6 +129,12 @@ export class ArrayType implements TypeNode {
 
 export class BooleanType implements TypeNode {
   type = "boolean" as const
+}
+
+export class ComplexType implements TypeNode {
+  type = "complex" as const
+  by: "allOf" | "anyOf" | "oneOf" | "" = ""
+  entities: Entity[] = []
 }
 
 export class EnumType implements TypeNode {
@@ -189,4 +198,9 @@ export class CircularReference implements ReferenceNode {
 
 export interface ReferenceNode {
   type: string
+}
+
+export class Example {
+  syntax = ""
+  code = ""
 }

@@ -6,11 +6,11 @@ order: -2
 
 This documentation describes:
 
-- How to [create](../../Plugins%20SDK/Creating%20Plugin%20Template/index.md), [code](../../Plugins%20SDK/Coding%20Plugin/index.md), [build](../../Plugins%20SDK/Building%20Plugin/index.md), and [upload](../../Plugins%20SDK/Adding%20Plugin/index.md) a plugin
-- What [plugin types](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Types/index.md) and [items](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Items/index.md) are available
-- What the [plugin structure](../../Plugins%20SDK/Plugin%20Structure/index.md) consists of
-- How to use plugin variables, methods, [messages](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Message/index.md), and [events](../../Plugins%20SDK/Coding%20Plugin/Events/index.md)
-- What [plugin components](../../Plugins%20SDK/Coding%20Plugin/Plugin%20Components/index.md) can be used to build a plugin
+- How to [create](../../Usage%20SDK/Creating%20Plugin%20Template/index.md), [code](../../Usage%20SDK/Coding%20Plugin/index.md), [build](../../Usage%20SDK/Building%20Plugin/index.md), and [upload](../../Usage%20SDK/Adding%20Plugin/index.md) a plugin
+- What [plugin types](../../Usage%20SDK/Coding%20Plugin/Plugin%20Types/index.md) and [items](../../Usage%20SDK/Coding%20Plugin/Plugin%20Items/index.md) are available
+- What the [plugin structure](../../Usage%20SDK/Plugin%20Structure/index.md) consists of
+- How to use plugin variables, methods, [messages](../../Usage%20SDK/Coding%20Plugin/Plugin%20Message/index.md), and [events](../../Usage%20SDK/Coding%20Plugin/Events/index.md)
+- What [plugin components](../../Usage%20SDK/Coding%20Plugin/Plugin%20Components/index.md) can be used to build a plugin
 
 ## What plugins can do
 
@@ -26,5 +26,5 @@ Code samples are available at <https://github.com/ONLYOFFICE/docspace-plugins>.
 To create your own plugin, you need to follow a few steps:
 
 1. Learn the fundamental concepts for building plugins on the [Getting started](../Getting%20Started/index.md) page and write code that defines the plugin appearance and behavior.
-2. After creating the plugin, build it using the instructions [here](../../Plugins%20SDK/Building%20Plugin/index.md).
+2. After creating the plugin, build it using the instructions [here](../../Usage%20SDK/Building%20Plugin/index.md).
 3. Now you can upload the plugin to the DocSpace portal and use it.

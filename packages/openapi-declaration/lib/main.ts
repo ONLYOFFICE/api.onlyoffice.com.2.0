@@ -1,5 +1,6 @@
 import {Transform, type TransformCallback, Writable} from "node:stream"
-import type * as Service from "@onlyoffice/service-declaration"
+import * as Service from "@onlyoffice/service-declaration"
+import {ExampleGenerator} from "@onlyoffice/service-declaration/example.ts"
 import {OpenAPIV3, type OpenAPIV3_1 as OpenApi} from "openapi-types"
 import {Console} from "./console.ts"
 import {
@@ -12,6 +13,7 @@ import {
   NoopComponent,
   OperationDeclaration,
   State,
+  TagsCache,
   component,
   declaration,
 } from "./internal.ts"
@@ -21,6 +23,24 @@ type ValueOf<T> = T[keyof T]
 
 const {HttpMethods} = OpenAPIV3
 const console = Console.shared
+
+export interface TagChunk {
+  key: number
+  value: OpenApi.TagObject
+}
+
+export class ProcessTag extends Transform {
+  constructor() {
+    super({objectMode: true})
+  }
+
+  _transform(ch: TagChunk, _: BufferEncoding, cb: TransformCallback): void {
+    console.log(`Start processing '${ch.value.name}' tag (${ch.key})`)
+    this.push(ch.value)
+    console.log(`Finish processing '${ch.value.name}' tag (${ch.key})`)
+    cb()
+  }
+}
 
 export interface ComponentChunk<K extends OpenApiComponentsKey> {
   key: string
@@ -99,7 +119,19 @@ export class ProcessPath extends Transform {
           continue
         }
 
-        if (d instanceof OperationDeclaration) {
+        if (d instanceof GroupDeclaration) {
+          // All resolve methods of internal structures create a copy of their
+          // holders. However, we cannot create a new copy of a group
+          // declaration here because its ID is used in the transfer cache for
+          // the other declarations. Changing the behavior of the resolve method
+          // is probably not a good idea because it breaks the consistency with
+          // other methods that serve the same purpose. Holding an ID here is
+          // probably the best solution at the moment, despite it looking
+          // unattractive.
+          const g = d.resolve(this.t.tags.cache)
+          g.id = d.id
+          d = g
+        } else if (d instanceof OperationDeclaration) {
           const t = d.id
           const s = new State()
 
@@ -119,6 +151,12 @@ export class ProcessPath extends Transform {
         }
 
         const s = d.toService()
+
+        if (s instanceof Service.OperationDeclaration) {
+          const g = new ExampleGenerator(s.request)
+          s.request.examples = g.all()
+        }
+
         this.push(s)
       }
 
@@ -131,10 +169,14 @@ export class ProcessPath extends Transform {
 }
 
 export class Transfer {
+  tags: TransferContainer<OpenApi.TagObject>
   components: TransferContainer<Component>
   declarations: TransferContainer<Service.Declaration>
 
   constructor() {
+    const t = new TagsCache()
+    this.tags = new TransferContainer(t)
+
     const c = new ComponentsCache()
     this.components = new TransferContainer(c)
 

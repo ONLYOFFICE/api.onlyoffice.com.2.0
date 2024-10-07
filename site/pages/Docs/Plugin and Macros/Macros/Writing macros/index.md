@@ -18,7 +18,7 @@ Now that you know how macros work, try to write your own macro. We have a table 
    })()
    ```
 
-4. Let's consult the [Office API documentation](../../../Office%20API/Office%20API/Spreadsheet%20API/index.md) to see what we need to complete our task:
+4. Let's consult the [Office API documentation](../../../Office%20API/Usage%20API/Spreadsheet%20API/index.md) to see what we need to complete our task:
 
    - First, get the current worksheet using the GetActiveSheet method:
 

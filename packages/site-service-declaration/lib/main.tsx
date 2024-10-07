@@ -1,6 +1,13 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import type * as Service from "@onlyoffice/service-declaration"
-import {Badge} from "@onlyoffice/ui-kit"
+import {
+  Badge,
+  CodeListing,
+  CodeListingTab,
+  CodeListingTabList,
+  CodeListingTabListWrapper,
+  CodeListingTabPanel,
+} from "@onlyoffice/ui-kit"
 import {Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
 
@@ -146,6 +153,10 @@ function Request(p: RequestProperties): JSX.Element {
       <h3>Body</h3>
       <Entity entity={r.bodyParameters} />
     </>}
+    {r.examples.length !== 0 && <>
+      <h3>Examples</h3>
+      <Examples examples={r.examples} />
+    </>}
   </>
 }
 
@@ -228,6 +239,8 @@ function Type(p: TypeProperties): JSX.Element {
     return <ArrayType type={t} />
   case "boolean":
     return <></>
+  case "complex":
+    return <ComplexType type={t} />
   case "enum":
     return <EnumType type={t} />
   case "integer":
@@ -262,10 +275,32 @@ function ArrayType(p: ArrayTypeProperties): JSX.Element {
   const {type: t} = p
 
   if (t.items.type === "circular") {
-    return <code>[Circular]</code>
+    return <p>Circular reference</p>
   }
 
   return <Entity entity={t.items} />
+}
+
+interface ComplexTypeProperties {
+  type: Service.ComplexType
+}
+
+function ComplexType(p: ComplexTypeProperties): JSX.Element {
+  const {type: t} = p
+
+  return <>
+    {t.entities.length !== 0 && <dl>
+      {t.entities.map((e) => <>
+        <dt>
+          <TypeBadge type={e.type} />{" "}
+          {e.format && <Badge>{e.format}</Badge>}
+        </dt>
+        <dd>
+          <Entity entity={e} />
+        </dd>
+      </>)}
+    </dl>}
+  </>
 }
 
 interface EnumTypeProperties {
@@ -351,24 +386,66 @@ function PropertyBadges(p: PropertyProperties): JSX.Element {
   const {property: r} = p
 
   if (r.self.type === "circular") {
-    return <></>
+    return <Badge>circular</Badge>
   }
 
   return <>
-    <Badge>{s(r.self.type)}</Badge>{" "}
+    <TypeBadge type={r.self.type} />{" "}
     {r.self.format && <Badge>{r.self.format}</Badge>}{" "}
     {r.required && <Badge variant="danger">required</Badge>}
   </>
+}
 
-  function s(t: Service.Type): string {
+function PropertyDescription(p: PropertyProperties): JSX.Element {
+  const {self: e} = p.property
+  const {Description} = useContext(Context)
+
+  if (e.type === "circular") {
+    return <p>Circular reference</p>
+  }
+
+  return <dd>
+    {e.description && <Description>{e.description}</Description>}
+    <Type type={e.type} />
+    {e.type.type !== "object" && e.default.type !== "noop" && <p>
+      Default: <code>{String(e.default.value)}</code>
+    </p>}
+    {e.type.type !== "object" && e.example.type !== "noop" && <p>
+      Example: <code>{String(e.example.value)}</code>
+    </p>}
+  </dd>
+}
+
+interface TypeBadgeProperties {
+  type: Service.Type
+}
+
+function TypeBadge(p: TypeBadgeProperties): JSX.Element {
+  const {type: t} = p
+
+  return <Badge>{w(t)}</Badge>
+
+  function w(t: Service.Type): string {
     if (t.type === "array") {
       let l = t.type
 
       if (t.items.type !== "circular") {
-        l += ` of ${s(t.items.type)}`
+        l += ` of ${w(t.items.type)}`
       }
 
       return l
+    }
+
+    if (t.type === "complex") {
+      switch (t.by) {
+      case "allOf":
+        return "all of"
+      case "anyOf":
+        return "any of"
+      case "oneOf":
+        return "one of"
+      }
+      throw new Error(`Unknown complex type: ${t.by}`)
     }
 
     if (t.type === "enum") {
@@ -381,7 +458,7 @@ function PropertyBadges(p: PropertyProperties): JSX.Element {
           throw new Error(`Expected literal type, got: ${c.type.type}`)
         }
 
-        l += ` of ${s(c.type.base)}`
+        l += ` of ${w(c.type.base)}`
       }
 
       return l
@@ -398,56 +475,40 @@ function PropertyBadges(p: PropertyProperties): JSX.Element {
   }
 }
 
-function PropertyDescription(p: PropertyProperties): JSX.Element {
-  const {property: r} = p
-  const {Description} = useContext(Context)
+interface ExamplesProperties {
+  examples: Service.Example[]
+}
 
-  if (r.self.type === "circular") {
-    return <dd><code>[Circular]</code></dd>
+function Examples(p: ExamplesProperties): JSX.Element {
+  const {examples} = p
+  const {SyntaxHighlight} = useContext(Context)
+
+  return <CodeListing>
+    <CodeListingTabListWrapper>
+      <CodeListingTabList label="List of Request Examples">
+        {examples.map((e) => <CodeListingTab id={e.syntax}>
+          {title(e.syntax)}
+        </CodeListingTab>)}
+      </CodeListingTabList>
+    </CodeListingTabListWrapper>
+    {examples.map((e) => <CodeListingTabPanel by={e.syntax}>
+      <pre>
+        <code>
+          <SyntaxHighlight syntax={e.syntax}>
+            {e.code}
+          </SyntaxHighlight>
+        </code>
+      </pre>
+    </CodeListingTabPanel>)}
+  </CodeListing>
+
+  function title(s: string): string {
+    switch (s) {
+    case "http":
+      return "HTTP"
+    case "shell":
+      return "cURL"
+    }
+    throw new Error(`Unknown syntax: ${s}`)
   }
-
-  const d: JSX.Element[] = []
-
-  const {self: e} = r
-  const {type: t} = e
-
-  if (e.description) {
-    d.push(<Description>{e.description}</Description>)
-  }
-
-  if (e.default.type !== "noop" && e.example) {
-    d.push(<p>
-      Default: <code>{String(e.default.value)}</code><br />
-      Example: <code>{String(e.example)}</code>
-    </p>)
-  } else if (e.default.type !== "noop") {
-    d.push(<p>
-      Default: <code>{String(e.default.value)}</code>
-    </p>)
-  } else if (e.example) {
-    d.push(<p>
-      Example: <code>{String(e.example)}</code>
-    </p>)
-  }
-
-  // todo: There needs to be a more general solution to cover a wider range of
-  // use cases.
-
-  if (
-    t.type === "array" &&
-    t.items.type !== "circular" &&
-    t.items.type.type === "object" &&
-    t.items.type.properties.length !== 0 ||
-    t.type === "object" &&
-    t.properties.length !== 0
-  ) {
-    d.push(<details>
-      <summary>Properties of <code>{r.identifier}</code></summary>
-      <Type type={t} />
-    </details>)
-  } else {
-    d.push(<Type type={t} />)
-  }
-
-  return <dd>{d}</dd>
 }

@@ -9,6 +9,7 @@
   },
   "main": "lib/main.ts",
   "scripts": {
+    "clean": "rimraf node_modules",
     "test:types": "tsc",
     "test": "pnpm test:types"
   },
@@ -24,6 +25,7 @@
     "@onlyoffice/ui-content": "workspace:^",
     "@onlyoffice/ui-form-control": "workspace:^",
     "@onlyoffice/ui-logos": "workspace:^",
+    "@onlyoffice/ui-mascots": "workspace:^",
     "@onlyoffice/ui-primitives": "workspace:^",
     "@onlyoffice/ui-select": "workspace:^",
     "@onlyoffice/ui-sr-only": "workspace:^",
@@ -31,5 +33,8 @@
     "@onlyoffice/ui-text-input": "workspace:^",
     "preact": "10.22.0",
     "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
   }
 }

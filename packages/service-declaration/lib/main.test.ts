@@ -5,8 +5,10 @@ import {
   ArrayType,
   BooleanType,
   CircularReference,
+  ComplexType,
   Entity,
   EnumType,
+  Example,
   GroupDeclaration,
   IntegerType,
   LiteralType,
@@ -24,6 +26,14 @@ import {
   UnionType,
   UnknownType,
 } from "./main.ts"
+
+test("Example: initializes an empty instance", () => {
+  const e = new Example()
+  const k = Object.keys(e)
+  eq(k, ["syntax", "code"])
+  is(e.syntax, "")
+  is(e.code, "")
+})
 
 test("CircularReference: initializes an empty instance", () => {
   const r = new CircularReference()
@@ -114,6 +124,15 @@ test("BooleanType: initializes an empty instance", () => {
   is(t.type, "boolean")
 })
 
+test("ComplexType: initializes an empty instance", () => {
+  const t = new ComplexType()
+  const k = Object.keys(t)
+  eq(k, ["type", "by", "entities"])
+  is(t.type, "complex")
+  is(t.by, "")
+  eq(t.entities, [])
+})
+
 test("ArrayType: initializes an empty instance", () => {
   const t = new ArrayType()
   const k = Object.keys(t)
@@ -146,7 +165,7 @@ test("Entity: initializes an empty instance", () => {
   eq(e.type, new NoopType())
   is(e.format, "")
   eq(e.default, new NoopConst())
-  is(e.example, "")
+  eq(e.example, new NoopConst())
 })
 
 test("Property: initializes an empty instance", () => {
@@ -191,6 +210,7 @@ test("Request: initializes an empty instance", () => {
     "pathParameters",
     "queryParameters",
     "bodyParameters",
+    "examples",
   ])
   is(r.method, "")
   is(r.path, "")
@@ -201,6 +221,7 @@ test("Request: initializes an empty instance", () => {
   eq(r.pathParameters, new Entity())
   eq(r.queryParameters, new Entity())
   eq(r.bodyParameters, new Entity())
+  eq(r.examples, [])
 })
 
 test("OperationDeclaration: initializes an empty instance", () => {
@@ -227,10 +248,11 @@ test("OperationDeclaration: initializes an empty instance", () => {
 test("GroupDeclaration: initializes an empty instance", () => {
   const g = new GroupDeclaration()
   const k = Object.keys(g)
-  eq(k, ["id", "type", "name", "parent", "children"])
+  eq(k, ["id", "type", "name", "description", "parent", "children"])
   is(g.id, "")
   is(g.type, "group")
   is(g.name, "")
+  is(g.description, "")
   is(g.parent, "")
   eq(g.children, [])
 })

@@ -12,7 +12,7 @@ Create a folder using the DMS provider as a name (e.g. *onlyoffice*) in the *pro
 
 - For Linux - */opt/onlyoffice/desktopeditors/providers/*
 - For Windows - *%ProgramFiles%\ONLYOFFICE\DesktopEditors\providers\\*
-- For Mac OS - */Applications/ONLYOFFICE.app/Contents/Resources/providers/*
+- For macOS - */Applications/ONLYOFFICE.app/Contents/Resources/providers/*
 
 ## Step 2
 

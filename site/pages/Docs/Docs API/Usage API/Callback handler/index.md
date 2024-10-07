@@ -51,12 +51,12 @@ Type: integer
 
 Defines the URL to the JSON file with the submitted form data. The array structure with the form data is described here. This file contains the following parameters:
 
-| Parameter | Description                                                                                                   | Type   | Example      |
-| --------- | ------------------------------------------------------------------------------------------------------------- | ------ | ------------ |
-| key       | The form key. If the current form is a radio button, then this field contains the form group key.             | string | "Text1"      |
-| tag       | The form tag.                                                                                                 | string | ""           |
-| value     | The current form value.                                                                                       | string | "inner text" |
-| type      | The form type (**text**, **checkBox**, **picture**, **comboBox**, **dropDownList**, **dateTime**, **radio**). | string | "text"       |
+| Parameter | Type   | Example      | Description                                                                                                   |
+| --------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------- |
+| key       | string | "Text1"      | The form key. If the current form is a radio button, then this field contains the form group key.             |
+| tag       | string | ""           | The form tag.                                                                                                 |
+| value     | string | "inner text" | The current form value.                                                                                       |
+| type      | string | "text"       | The form type (**text**, **checkBox**, **picture**, **comboBox**, **dropDownList**, **dateTime**, **radio**). |
 
 The object is present when the *status* value is equal to *6* and the *forcesavetype* value is equal to *3*.
 

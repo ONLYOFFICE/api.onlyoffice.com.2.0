@@ -5,7 +5,7 @@ import {pipeline as chain} from "node:stream/promises"
 import {Console} from "@onlyoffice/console"
 import {throughJq} from "@onlyoffice/jq/next.ts"
 import {relative} from "@onlyoffice/node-path"
-import {ProcessComponent, ProcessPath, Transfer} from "@onlyoffice/openapi-declaration"
+import {ProcessComponent, ProcessPath, ProcessTag, Transfer} from "@onlyoffice/openapi-declaration"
 import {declarationBasename, indexBasename, rawURL, readURL, resourceBasename} from "@onlyoffice/resource"
 import {resource} from "@onlyoffice/service-resource"
 import {StringWritable} from "@onlyoffice/stream-string"
@@ -14,6 +14,7 @@ import Disassembler from "stream-json/Disassembler.js"
 import Parser from "stream-json/Parser.js"
 import Stringer from "stream-json/Stringer.js"
 import Pick from "stream-json/filters/Pick.js"
+import StreamArray from "stream-json/streamers/StreamArray.js"
 import StreamObject from "stream-json/streamers/StreamObject.js"
 import pack from "../package.json" with {type: "json"}
 
@@ -45,6 +46,7 @@ export async function download(cf: Config): Promise<StringWritable> {
 }
 
 export interface BuildPatches {
+  tag?: Transform[]
   component?: Transform[]
   path?: Transform[]
 }
@@ -61,6 +63,9 @@ export async function build(
   if (!pa) {
     pa = {}
   }
+  if (!pa.tag) {
+    pa.tag = []
+  }
   if (!pa.component) {
     pa.component = []
   }
@@ -69,6 +74,16 @@ export async function build(
   }
 
   const tr = new Transfer()
+
+  await chain(
+    rw.toReadable(),
+    new Parser(),
+    new Pick({filter: "tags"}),
+    new StreamArray(),
+    ...pa.tag,
+    new ProcessTag(),
+    tr.tags.toWritable(),
+  )
 
   const ks: (keyof OpenApi.ComponentsObject)[] = [
     "responses",

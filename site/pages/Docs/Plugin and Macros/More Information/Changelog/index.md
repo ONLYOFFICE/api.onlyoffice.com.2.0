@@ -9,6 +9,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 - Added the ActivateWindow method to *window\.Asc.plugin.executeMethod*.
 - Added the AddToolbarMenuItem method to *window\.Asc.plugin.executeMethod*.
 - Added the GetSelectedOleObjects method to *window\.Asc.plugin.executeMethod*.
+- Added the SetPluginsOptions method to *window\.Asc.plugin.executeMethod*.
 - Added the GetAllComments method to *window\.Asc.plugin.executeMethod* for Spreadsheet Api.
 - Added the GetCustomFunctions method to *window\.Asc.plugin.executeMethod* for Spreadsheet Api.
 - Added the SetCustomFunctions method to *window\.Asc.plugin.executeMethod* for Spreadsheet Api.
