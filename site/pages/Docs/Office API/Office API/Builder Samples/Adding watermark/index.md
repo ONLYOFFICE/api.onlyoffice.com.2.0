@@ -1,9 +1,9 @@
 Create a document with a watermark with custom settings:
 
-* create an empty page with a watermark (Api, ApiDocument/InsertWatermark);
-* edit watermark settings, set an image, specify size, direction and opacity (ApiWatermarkSettings);
+- create an empty page with a watermark (Api, ApiDocument/InsertWatermark);
+- edit watermark settings, set an image, specify size, direction and opacity (ApiWatermarkSettings);
 
-```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("docx")
 
 const oDocument = Api.GetDocument()

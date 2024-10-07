@@ -1,11 +1,10 @@
-
-
 Create a document with a styled table filled with array-based values:
-* create an empty document with a table (Api, ApiDocument/CreateTable)
-* create a custom style for the table (ApiDocument/GetStyle, ApiStyle, ApiTableCellPr, ApiTableRow);
-* populate the table with the array-based data cell by cell (ApiTableCell).
 
-```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
+- create an empty document with a table (Api, ApiDocument/CreateTable)
+- create a custom style for the table (ApiDocument/GetStyle, ApiStyle, ApiTableCellPr, ApiTableRow);
+- populate the table with the array-based data cell by cell (ApiTableCell).
+
+```ts document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("docx")
 
 const oDocument = Api.GetDocument()

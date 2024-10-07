@@ -1,12 +1,12 @@
 Create a basic form with the image and text inputs:
 
-* create a new document, add text to the first paragraph and style it as heading (ApiDocument, ApiStyle, ApiParagraph);
-* create an image form and a text form, and add the form to the document (Api/CreatePictureForm, Api/CreateTextForm).
+- create a new document, add text to the first paragraph and style it as heading (ApiDocument, ApiStyle, ApiParagraph);
+- create an image form and a text form, and add the form to the document (Api/CreatePictureForm, Api/CreateTextForm).
 
 This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
-```js document-builder={"documentType": "pdf", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "pdf", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("pdf")
 
 const oDocument = Api.GetDocument()

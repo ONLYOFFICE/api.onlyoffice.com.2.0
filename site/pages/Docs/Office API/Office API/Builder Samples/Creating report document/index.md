@@ -1,11 +1,11 @@
 Create reports on all the comments added to the document and on every change which was made to the document in the review mode:
 
-* open the created file (Api/GetDocument);
-* get the comments and review reports and save them to the global variable (ApiDocument/GetCommentsReport, ApiDocument/GetReviewReport);
-* create a table for the comments/review report and fill it in with the data from the global variable (Api/CreateParagraph, Api/CreateTable, ApiDocument/Push, ApiDocumentContent/GetElement, ApiParagraph/AddText, ApiTable/GetRow, ApiTable/MergeCells, ApiTableCell/GetContent, ApiTableRow/GetCell);
-* edit text style in the table (ApiDocument/GetStyle, ApiRun/SetColor, ApiRun/SetStrikeout).
+- open the created file (Api/GetDocument);
+- get the comments and review reports and save them to the global variable (ApiDocument/GetCommentsReport, ApiDocument/GetReviewReport);
+- create a table for the comments/review report and fill it in with the data from the global variable (Api/CreateParagraph, Api/CreateTable, ApiDocument/Push, ApiDocumentContent/GetElement, ApiParagraph/AddText, ApiTable/GetRow, ApiTable/MergeCells, ApiTableCell/GetContent, ApiTableRow/GetCell);
+- edit text style in the table (ApiDocument/GetStyle, ApiRun/SetColor, ApiRun/SetStrikeout).
 
-```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.OpenFile("https://api.onlyoffice.com/app_data/officeapi/sample-files/document_review_mode.docx")
 
 let oDocument = Api.GetDocument()

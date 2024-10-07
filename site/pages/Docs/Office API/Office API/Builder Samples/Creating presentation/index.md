@@ -1,15 +1,14 @@
 Create a presentation on a specific topic:
 
-
-* create the necessary number of slides in the current presentation (Api/CreateSlide, Api/GetPresentation, ApiPresentation/AddSlide, ApiPresentation/GetSlideByIndex);
-* set the presentation sizes (ApiPresentation/SetSizes);
-* set the background to each slide (Api/CreateBlipFill, ApiSlide/SetBackground);
-* set the slide title and text in the specified style (Api/CreateParagraph, Api/CreateRGBColor, Api/CreateShape, Api/CreateSolidFill, ApiDocumentContent/RemoveAllElements ApiDocumentContent/Push, ApiDrawing/SetPosition, ApiParagraph/AddText, ApiParagraph/SetJc, ApiParagraph/SetSpacingAfter, ApiParagraph/SetSpacingBefore, ApiRun/SetBold, ApiRun/SetFill, ApiRun/SetFontFamily, ApiRun/SetFontSize, ApiShape/GetDocContent, ApiSlide/AddObject, ApiSlide/RemoveAllObjects).
+- create the necessary number of slides in the current presentation (Api/CreateSlide, Api/GetPresentation, ApiPresentation/AddSlide, ApiPresentation/GetSlideByIndex);
+- set the presentation sizes (ApiPresentation/SetSizes);
+- set the background to each slide (Api/CreateBlipFill, ApiSlide/SetBackground);
+- set the slide title and text in the specified style (Api/CreateParagraph, Api/CreateRGBColor, Api/CreateShape, Api/CreateSolidFill, ApiDocumentContent/RemoveAllElements ApiDocumentContent/Push, ApiDrawing/SetPosition, ApiParagraph/AddText, ApiParagraph/SetJc, ApiParagraph/SetSpacingAfter, ApiParagraph/SetSpacingBefore, ApiRun/SetBold, ApiRun/SetFill, ApiRun/SetFontFamily, ApiRun/SetFontSize, ApiShape/GetDocContent, ApiSlide/AddObject, ApiSlide/RemoveAllObjects).
 
 This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
-```js document-builder={"documentType": "slide", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "slide", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("pptx")
 
 const oPresentation = Api.GetPresentation()

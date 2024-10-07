@@ -1,14 +1,14 @@
 Create a chart presentation:
 
-* get the first slide in the current presentation (Api/GetPresentation, ApiPresentation/GetSlideByIndex);
-* set the gradient background (Api/CreateGradientStop, ApiSlide/SetBackground);
-* set the slide title and text in the specified style (Api/CreateShape, ApiRun/AddText, ApiParagraph/SetJc, ApiTextPr/SetFill, ApiTextPr/SetFontFamily, ApiTextPr/SetFontSize,  ApiShape/GetDocContent, ApiSlide/AddObject);
-* create a chart and add it to the specified slide (Api/CreateChart, ApiSlide/AddObject)
+- get the first slide in the current presentation (Api/GetPresentation, ApiPresentation/GetSlideByIndex);
+- set the gradient background (Api/CreateGradientStop, ApiSlide/SetBackground);
+- set the slide title and text in the specified style (Api/CreateShape, ApiRun/AddText, ApiParagraph/SetJc, ApiTextPr/SetFill, ApiTextPr/SetFontFamily, ApiTextPr/SetFontSize,  ApiShape/GetDocContent, ApiSlide/AddObject);
+- create a chart and add it to the specified slide (Api/CreateChart, ApiSlide/AddObject)
 
 This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
-```js document-builder={"documentType": "slide", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "slide", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("pptx")
 
 const oPresentation = Api.GetPresentation()

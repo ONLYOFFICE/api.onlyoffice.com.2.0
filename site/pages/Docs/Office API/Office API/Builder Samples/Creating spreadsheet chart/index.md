@@ -1,10 +1,10 @@
 Creates a custom chart filled with array-based values in the spreadsheet:
 
-* create a spreadsheet and fill top cells with data (ApiRange/SetValue);
-* create a chart using the data (ApiWorksheet/AddChart);
-* customize the chart (ApiChart/SetTitle,ApiChart/SetLegendPos);
+- create a spreadsheet and fill top cells with data (ApiRange/SetValue);
+- create a chart using the data (ApiWorksheet/AddChart);
+- customize the chart (ApiChart/SetTitle,ApiChart/SetLegendPos);
 
-```js document-builder={"documentType": "cell", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "cell", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("xlsx")
 
 const oWorksheet = Api.GetActiveSheet()

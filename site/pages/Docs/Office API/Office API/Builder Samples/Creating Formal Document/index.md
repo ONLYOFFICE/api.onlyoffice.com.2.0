@@ -1,12 +1,12 @@
 Create a document following the structure of a formal paper:
 
-* create a title page with a document heading and subtitle (Api, ApiDocumentContent, ApiDrawing);
-* create different styles for the document text, heading, subtitle, table, footer (ApiParaPr, ApiStyle, ApiTable, ApiTableCell, ApiTablePr, ApiTableRow, ApiTextPr);
-* structure the document by marking up its section: set columns for text and pictures, set page size and margins, create header and footer (ApiDocument, ApiSection);
-* fill the document with text, dividing it into separate fragments and highlighting them with headings (ApiParagraph, ApiRun);
-* add images and charts to represent document text (Api, ApiChart).
+- create a title page with a document heading and subtitle (Api, ApiDocumentContent, ApiDrawing);
+- create different styles for the document text, heading, subtitle, table, footer (ApiParaPr, ApiStyle, ApiTable, ApiTableCell, ApiTablePr, ApiTableRow, ApiTextPr);
+- structure the document by marking up its section: set columns for text and pictures, set page size and margins, create header and footer (ApiDocument, ApiSection);
+- fill the document with text, dividing it into separate fragments and highlighting them with headings (ApiParagraph, ApiRun);
+- add images and charts to represent document text (Api, ApiChart).
 
-```js document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("docx")
 
 let oParagraph

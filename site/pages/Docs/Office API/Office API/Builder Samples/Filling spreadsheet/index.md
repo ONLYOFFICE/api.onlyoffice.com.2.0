@@ -1,13 +1,13 @@
 Fill an empty spreadsheet with the data stored in arrays:
 
-* create a loop for columns and nest another loop for rows;
-* get each cell (ApiWorksheet/GetRangeByNumber) and set the corresponding value from the data array (ApiRange/SetValue).
+- create a loop for columns and nest another loop for rows;
+- get each cell (ApiWorksheet/GetRangeByNumber) and set the corresponding value from the data array (ApiRange/SetValue).
 
 Check Exchanging data among files and Using command line arguments to learn more options for passing external data in the DocBuilder script.
 This sample is available for the **C++ and .Net DocBuilder Frameworks**.
 Download the sample and get more information on the [Builder framework samples](../../../../Document%20Builder/Builder%20Framework/Builder%20framework%20samples/index.md) page.
 
-```js document-builder={"documentType": "cell", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"documentType": "cell", "editorConfig": {"customization": {"zoom": 60}}}
 // builder.CreateFile("xlsx")
 
 const oWorksheet = Api.GetActiveSheet()
