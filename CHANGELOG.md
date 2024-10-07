@@ -1,7 +1,9 @@
 # Change Log
 
+- docspace api backend: http and curl examples
 - docbuilder: samples link
 - office api: added samples
+- 404 page
 
 ## 6.1.0
 - docspace js sdk: react component
