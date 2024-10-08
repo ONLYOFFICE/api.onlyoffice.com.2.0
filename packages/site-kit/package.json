@@ -27,6 +27,7 @@
     "@onlyoffice/site-service-declaration": "workspace:^",
     "@onlyoffice/site-status": "workspace:^",
     "@onlyoffice/site-theme-switcher": "workspace:^",
+    "@onlyoffice/site-toc": "workspace:^",
     "preact": "10.22.0",
     "typescript": "5.4.5"
   },
