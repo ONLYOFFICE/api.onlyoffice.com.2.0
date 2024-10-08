@@ -2260,9 +2260,6 @@ importers:
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../library-declaration
-      '@onlyoffice/library-resource':
-        specifier: workspace:^
-        version: link:../library-resource
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types

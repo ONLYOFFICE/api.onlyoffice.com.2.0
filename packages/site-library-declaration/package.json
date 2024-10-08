@@ -15,7 +15,6 @@
   "dependencies": {
     "@onlyoffice/declaration-tokenizer": "workspace:^",
     "@onlyoffice/library-declaration": "workspace:^",
-    "@onlyoffice/library-resource": "workspace:^",
     "@onlyoffice/preact-types": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",
     "preact": "10.22.0",
