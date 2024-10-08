@@ -1,5 +1,5 @@
-baseUrl: https://api2.teamlab.info/
-legacyBaseUrl: https://legacy-api2.teamlab.info/
+baseUrl: https://api.teamlab.info/
+legacyBaseUrl: https://legacy-api.teamlab.info/
 
 analytics: false
 
