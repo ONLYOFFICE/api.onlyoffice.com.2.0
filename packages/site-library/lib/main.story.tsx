@@ -3,15 +3,15 @@
 import {type Meta, type StoryObj} from "@storybook/preact"
 import {Fragment, h} from "preact"
 import {
-  LibraryDeclaration,
-  LibraryDeclarationDescription,
-  LibraryDeclarationHeading,
-  type LibraryDeclarationProperties,
-  LibraryDeclarationSyntaxHighlight,
+  Library,
+  LibraryDescription,
+  LibraryHeading,
+  type LibraryProperties,
+  LibrarySyntaxHighlight,
 } from "./main.tsx"
 
 export default {
-  title: "Site / Library Declaration",
+  title: "Site / Library",
 } satisfies Meta
 
 export const Default: StoryObj = {
@@ -25,11 +25,11 @@ export const Default: StoryObj = {
   },
   render() {
     // @ts-ignore todo
-    return <LibraryDeclaration declaration={{}} />
+    return <Library declaration={{}} />
   },
 }
 
-export const Playground: StoryObj<LibraryDeclarationProperties> = {
+export const Playground: StoryObj<LibraryProperties> = {
   parameters: {
     actions: {
       disable: true,
@@ -39,55 +39,55 @@ export const Playground: StoryObj<LibraryDeclarationProperties> = {
     // todo
   },
   render(p) {
-    return <LibraryDeclaration {...p}>
-      <LibraryDeclarationHeading for="Constructors">
+    return <Library {...p}>
+      <LibraryHeading for="Constructors">
         <h2>Constructors</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Description">
+      </LibraryHeading>
+      <LibraryHeading for="Description">
         <h2>Description</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Events">
+      </LibraryHeading>
+      <LibraryHeading for="Events">
         <h2>Events</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Examples">
+      </LibraryHeading>
+      <LibraryHeading for="Examples">
         <h2>Examples</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Extends By">
+      </LibraryHeading>
+      <LibraryHeading for="Extends By">
         <h2>Extends By</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Extends">
+      </LibraryHeading>
+      <LibraryHeading for="Extends">
         <h2>Extends</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Instance Methods">
+      </LibraryHeading>
+      <LibraryHeading for="Instance Methods">
         <h2>Instance Methods</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Instance Properties">
+      </LibraryHeading>
+      <LibraryHeading for="Instance Properties">
         <h2>Instance Properties</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Overloads By">
+      </LibraryHeading>
+      <LibraryHeading for="Overloads By">
         <h2>Overloads By</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Overloads">
+      </LibraryHeading>
+      <LibraryHeading for="Overloads">
         <h2>Overloads</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Parameters">
+      </LibraryHeading>
+      <LibraryHeading for="Parameters">
         <h2>Parameters</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Properties">
+      </LibraryHeading>
+      <LibraryHeading for="Properties">
         <h2>Properties</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Returns">
+      </LibraryHeading>
+      <LibraryHeading for="Returns">
         <h2>Returns</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationHeading for="Try It">
+      </LibraryHeading>
+      <LibraryHeading for="Try It">
         <h2>Try It</h2>
-      </LibraryDeclarationHeading>
-      <LibraryDeclarationDescription>
+      </LibraryHeading>
+      <LibraryDescription>
         {(p) => <p>{p.children}</p>}
-      </LibraryDeclarationDescription>
-      <LibraryDeclarationSyntaxHighlight>
+      </LibraryDescription>
+      <LibrarySyntaxHighlight>
         {(p) => <>{p.children}</>}
-      </LibraryDeclarationSyntaxHighlight>
-    </LibraryDeclaration>
+      </LibrarySyntaxHighlight>
+    </Library>
   },
 }

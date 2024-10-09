@@ -1,5 +1,5 @@
 import type * as Tokenizer from "@onlyoffice/declaration-tokenizer"
-import type * as Library from "@onlyoffice/library-declaration"
+import type * as LibraryDeclaration from "@onlyoffice/library-declaration"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {Badge} from "@onlyoffice/ui-kit"
 import {type ComponentChildren, Fragment, type JSX, createContext, h} from "preact"
@@ -21,7 +21,7 @@ class Context {
   /* eslint-disable unicorn/no-useless-undefined */
   Description: Description = () => null
   SyntaxHighlight: SyntaxHighlight = () => null
-  headings: Record<LibraryDeclarationSection, JSX.Element> = {
+  headings: Record<LibrarySection, JSX.Element> = {
     "Constructors": <h2>Constructors</h2>,
     "Description": <h2>Description</h2>,
     "Events": <h2>Events</h2>,
@@ -37,21 +37,24 @@ class Context {
     "Returns": <h2>Returns</h2>,
     "Try It": <h2>Try It</h2>,
   }
-  onLink: LibraryDeclarationProperties["onLink"] = () => undefined
-  onRetrieve: LibraryDeclarationProperties["onRetrieve"] = () => undefined
+  onLink: LibraryProperties["onLink"] = () => undefined
+  onRetrieve: LibraryProperties["onRetrieve"] = () => undefined
   /* eslint-enable unicorn/no-useless-undefined */
 }
 
 const ctx = createContext(new Context())
 
-export interface LibraryDeclarationProperties extends ChildrenIncludable {
-  declaration: Library.Declaration
+export interface LibraryProperties extends ChildrenIncludable {
+  declaration: LibraryDeclaration.Declaration
   onLink(this: void, t: Tokenizer.Token): string | undefined
-  onRetrieve(this: void, r: Library.Reference): Library.Declaration | undefined
+  onRetrieve(
+    this: void,
+    r: LibraryDeclaration.Reference,
+  ): LibraryDeclaration.Declaration | undefined
 }
 
-export function LibraryDeclaration(
-  p: LibraryDeclarationProperties,
+export function Library(
+  p: LibraryProperties,
 ): JSX.Element {
   const v = new Context()
   v.onLink = p.onLink
@@ -59,11 +62,11 @@ export function LibraryDeclaration(
 
   return <ctx.Provider value={v}>
     {p.children}
-    <Root declaration={p.declaration} />
+    <Declaration declaration={p.declaration} />
   </ctx.Provider>
 }
 
-export type LibraryDeclarationSection =
+export type LibrarySection =
   "Constructors" |
   "Description" |
   "Events" |
@@ -79,48 +82,48 @@ export type LibraryDeclarationSection =
   "Returns" |
   "Try It"
 
-export interface LibraryDeclarationHeadingProperties {
+export interface LibraryHeadingProperties {
   children: ComponentChildren
-  for: LibraryDeclarationSection
+  for: LibrarySection
 }
 
-export function LibraryDeclarationHeading(
-  p: LibraryDeclarationHeadingProperties,
+export function LibraryHeading(
+  p: LibraryHeadingProperties,
 ): JSX.Element {
   const c = useContext(ctx)
   c.headings[p.for] = <>{p.children}</>
   return <></>
 }
 
-export interface LibraryDeclarationDescriptionProperties {
+export interface LibraryDescriptionProperties {
   children: Description
 }
 
-export function LibraryDeclarationDescription(
-  p: LibraryDeclarationDescriptionProperties,
+export function LibraryDescription(
+  p: LibraryDescriptionProperties,
 ): JSX.Element {
   const c = useContext(ctx)
   c.Description = p.children
   return <></>
 }
 
-export interface LibraryDeclarationSyntaxHighlightProperties {
+export interface LibrarySyntaxHighlightProperties {
   children: SyntaxHighlight
 }
 
-export function LibraryDeclarationSyntaxHighlight(
-  p: LibraryDeclarationSyntaxHighlightProperties,
+export function LibrarySyntaxHighlight(
+  p: LibrarySyntaxHighlightProperties,
 ): JSX.Element {
   const c = useContext(ctx)
   c.SyntaxHighlight = p.children
   return <></>
 }
 
-interface RootProperties {
-  declaration: Library.Declaration
+interface DeclarationProperties {
+  declaration: LibraryDeclaration.Declaration
 }
 
-function Root(p: RootProperties): JSX.Element {
+function Declaration(p: DeclarationProperties): JSX.Element {
   const {declaration: d} = p
 
   switch (d.kind) {
@@ -138,7 +141,7 @@ function Root(p: RootProperties): JSX.Element {
 }
 
 interface ClassDeclarationProperties {
-  declaration: Library.ClassDeclaration
+  declaration: LibraryDeclaration.ClassDeclaration
 }
 
 function ClassDeclaration(p: ClassDeclarationProperties): JSX.Element {
@@ -196,11 +199,11 @@ function ClassDeclaration(p: ClassDeclarationProperties): JSX.Element {
 
 interface TypeDeclarationProperties {
   declaration:
-    Library.ConstructorDeclaration |
-    Library.EventDeclaration |
-    Library.MethodDeclaration |
-    Library.PropertyDeclaration |
-    Library.TypeDeclaration
+    LibraryDeclaration.ConstructorDeclaration |
+    LibraryDeclaration.EventDeclaration |
+    LibraryDeclaration.MethodDeclaration |
+    LibraryDeclaration.PropertyDeclaration |
+    LibraryDeclaration.TypeDeclaration
 }
 
 function TypeDeclaration(p: TypeDeclarationProperties): JSX.Element {
@@ -339,22 +342,12 @@ function ObjectTypeDeclaration(p: TypeDeclarationProperties): JSX.Element {
   </>
 }
 
-interface HeadingProperties {
-  for: LibraryDeclarationSection
-}
-
-function Heading(p: HeadingProperties): JSX.Element {
-  const {for: f} = p
-  const c = useContext(ctx)
-  return c.headings[f]
-}
-
 interface SignatureProperties {
   signature: Tokenizer.Token[]
 }
 
 interface ExamplesProperties {
-  examples: Library.Example[]
+  examples: LibraryDeclaration.Example[]
 }
 
 function Examples(p: ExamplesProperties): JSX.Element {
@@ -381,7 +374,7 @@ function Signature(p: SignatureProperties): JSX.Element {
 }
 
 interface ReferenceProperties {
-  references: Library.Reference[]
+  references: LibraryDeclaration.Reference[]
 }
 
 function References(p: ReferenceProperties): JSX.Element {
@@ -407,7 +400,7 @@ function References(p: ReferenceProperties): JSX.Element {
 }
 
 interface ValuesProperties {
-  values: Library.Value[]
+  values: LibraryDeclaration.Value[]
 }
 
 function Values(p: ValuesProperties): JSX.Element {
@@ -513,4 +506,14 @@ interface TextTokenProperties {
 function TextToken(p: TextTokenProperties): JSX.Element {
   const {token: t} = p
   return <>{t.text}</>
+}
+
+interface HeadingProperties {
+  for: LibrarySection
+}
+
+function Heading(p: HeadingProperties): JSX.Element {
+  const {for: f} = p
+  const c = useContext(ctx)
+  return c.headings[f]
 }
