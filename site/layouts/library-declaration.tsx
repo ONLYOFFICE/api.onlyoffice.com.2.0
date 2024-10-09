@@ -1,8 +1,6 @@
 import {type Context, type Data} from "@onlyoffice/eleventy-types"
-import {LibraryDeclaration} from "@onlyoffice/site-kit"
 import {type JSX, h} from "preact"
-import {Markdown} from "@/internal/markdown.tsx"
-import {SyntaxHighlight} from "@/internal/syntax-highlight.tsx"
+import {LibraryDeclaration} from "@/internal/library-declaration.tsx"
 
 export function data(): Data {
   return {
@@ -10,12 +8,6 @@ export function data(): Data {
   }
 }
 
-export function render(ctx: Context): JSX.Element {
-  return <LibraryDeclaration
-    declaration={ctx.pagination.items[0]}
-    onHighlightSyntax={SyntaxHighlight}
-    onLink={ctx.onLink}
-    onProcessMarkdown={Markdown}
-    onRetrieve={ctx.onRetrieve}
-  />
+export function render(c: Context): JSX.Element {
+  return <LibraryDeclaration url={c.page.url} />
 }

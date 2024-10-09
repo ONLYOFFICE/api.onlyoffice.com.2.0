@@ -1,63 +1,135 @@
-import {type Token, referenceToken, tokenNode} from "@onlyoffice/declaration-tokenizer"
+import type * as Tokenizer from "@onlyoffice/declaration-tokenizer"
 import type * as Library from "@onlyoffice/library-declaration"
-import {type Resource} from "@onlyoffice/library-resource"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {Badge} from "@onlyoffice/ui-kit"
-import {Fragment, type JSX, createContext, h} from "preact"
+import {type ComponentChildren, Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
 
-interface ContextProperties {
-  onHighlightSyntax(this: void, p: ChildrenIncludable & {syntax: string}): JSX.Element
-  onLink(this: void, t: Token): string | undefined
-  onProcessMarkdown(this: void, p: ChildrenIncludable): JSX.Element
-  onRetrieve: Resource["retrieve"]
+export interface Description {
+  (this: void, p: ChildrenIncludable): JSX.Element | null
 }
 
-const Context = createContext<ContextProperties>({
-  onHighlightSyntax() {
-    throw new Error("Not implemented")
-  },
-  onLink() {
-    throw new Error("Not implemented")
-  },
-  onProcessMarkdown() {
-    throw new Error("Not implemented")
-  },
-  onRetrieve() {
-    throw new Error("Not implemented")
-  },
-})
+export interface SyntaxHighlightProperties extends ChildrenIncludable {
+  syntax: string
+}
 
-export interface LibraryDeclarationProperties {
+export interface SyntaxHighlight {
+  (this: void, p: SyntaxHighlightProperties): JSX.Element | null
+}
+
+class Context {
+  /* eslint-disable unicorn/no-useless-undefined */
+  Description: Description = () => null
+  SyntaxHighlight: SyntaxHighlight = () => null
+  headings: Record<LibraryDeclarationSection, JSX.Element> = {
+    "Constructors": <h2>Constructors</h2>,
+    "Description": <h2>Description</h2>,
+    "Events": <h2>Events</h2>,
+    "Examples": <h2>Examples</h2>,
+    "Extends By": <h2>Extends By</h2>,
+    "Extends": <h2>Extends</h2>,
+    "Instance Methods": <h2>Instance Methods</h2>,
+    "Instance Properties": <h2>Instance Properties</h2>,
+    "Overloads By": <h2>Overloads By</h2>,
+    "Overloads": <h2>Overloads</h2>,
+    "Parameters": <h2>Parameters</h2>,
+    "Properties": <h2>Properties</h2>,
+    "Returns": <h2>Returns</h2>,
+    "Try It": <h2>Try It</h2>,
+  }
+  onLink: LibraryDeclarationProperties["onLink"] = () => undefined
+  onRetrieve: LibraryDeclarationProperties["onRetrieve"] = () => undefined
+  /* eslint-enable unicorn/no-useless-undefined */
+}
+
+const ctx = createContext(new Context())
+
+export interface LibraryDeclarationProperties extends ChildrenIncludable {
   declaration: Library.Declaration
-  onHighlightSyntax: ContextProperties["onHighlightSyntax"]
-  onLink: ContextProperties["onLink"]
-  onProcessMarkdown: ContextProperties["onProcessMarkdown"]
-  onRetrieve: ContextProperties["onRetrieve"]
+  onLink(this: void, t: Tokenizer.Token): string | undefined
+  onRetrieve(this: void, r: Library.Reference): Library.Declaration | undefined
 }
 
 export function LibraryDeclaration(
-  {declaration, ...props}: LibraryDeclarationProperties,
+  p: LibraryDeclarationProperties,
 ): JSX.Element {
-  return <Context.Provider value={props}>
-    <Declaration declaration={declaration} />
-  </Context.Provider>
+  const v = new Context()
+  v.onLink = p.onLink
+  v.onRetrieve = p.onRetrieve
+
+  return <ctx.Provider value={v}>
+    {p.children}
+    <Root declaration={p.declaration} />
+  </ctx.Provider>
 }
 
-interface DeclarationProperties {
+export type LibraryDeclarationSection =
+  "Constructors" |
+  "Description" |
+  "Events" |
+  "Examples" |
+  "Extends By" |
+  "Extends" |
+  "Instance Methods" |
+  "Instance Properties" |
+  "Overloads By" |
+  "Overloads" |
+  "Parameters" |
+  "Properties" |
+  "Returns" |
+  "Try It"
+
+export interface LibraryDeclarationHeadingProperties {
+  children: ComponentChildren
+  for: LibraryDeclarationSection
+}
+
+export function LibraryDeclarationHeading(
+  p: LibraryDeclarationHeadingProperties,
+): JSX.Element {
+  const c = useContext(ctx)
+  c.headings[p.for] = <>{p.children}</>
+  return <></>
+}
+
+export interface LibraryDeclarationDescriptionProperties {
+  children: Description
+}
+
+export function LibraryDeclarationDescription(
+  p: LibraryDeclarationDescriptionProperties,
+): JSX.Element {
+  const c = useContext(ctx)
+  c.Description = p.children
+  return <></>
+}
+
+export interface LibraryDeclarationSyntaxHighlightProperties {
+  children: SyntaxHighlight
+}
+
+export function LibraryDeclarationSyntaxHighlight(
+  p: LibraryDeclarationSyntaxHighlightProperties,
+): JSX.Element {
+  const c = useContext(ctx)
+  c.SyntaxHighlight = p.children
+  return <></>
+}
+
+interface RootProperties {
   declaration: Library.Declaration
 }
 
-function Declaration({declaration: d}: DeclarationProperties): JSX.Element {
+function Root(p: RootProperties): JSX.Element {
+  const {declaration: d} = p
+
   switch (d.kind) {
   case "class":
     return <ClassDeclaration declaration={d} />
   case "constructor":
   case "event":
   case "method":
-    return <CEMDeclaration declaration={d} />
   case "property":
-    return <PropertyDeclaration declaration={d} />
   case "type":
     return <TypeDeclaration declaration={d} />
   default:
@@ -65,422 +137,380 @@ function Declaration({declaration: d}: DeclarationProperties): JSX.Element {
   }
 }
 
-interface ClassDeclarationParameters {
+interface ClassDeclarationProperties {
   declaration: Library.ClassDeclaration
 }
 
-function ClassDeclaration({declaration: d}: ClassDeclarationParameters): JSX.Element {
+function ClassDeclaration(p: ClassDeclarationProperties): JSX.Element {
+  const {declaration: d} = p
+  const {Description} = useContext(ctx)
+
   return <>
-    {d.signature && <DeclarationSignature signature={d.signature} />}
-    {d.description && <DeclarationDescriptionSection description={d.description} />}
-    {d.examples && <DeclarationExamplesSection examples={d.examples} />}
-    {(d.constructors || d.instanceMethods || d.instanceProperties || d.events) &&
-      <DeclarationTopicsSection />}
-    {d.constructors && <DeclarationConstructorsSection references={d.constructors} />}
-    {d.instanceMethods && <DeclarationInstanceMethodsSection references={d.instanceMethods} />}
-    {d.instanceProperties &&
-      <DeclarationInstancePropertiesSection references={d.instanceProperties} />}
-    {d.events && <DeclarationEventsSection references={d.events} />}
-    {(d.extends || d.extendsBy || d.overloads || d.overloadsBy) &&
-      <DeclarationRelationshipsSection />}
-    {d.extends && <DeclarationExtendsSection references={d.extends} />}
-    {d.extendsBy && <DeclarationExtendsBySection references={d.extendsBy} />}
-    {d.overloads && <DeclarationOverloadsSection references={d.overloads} />}
-    {d.overloadsBy && <DeclarationOverloadsBySection references={d.overloadsBy} />}
-    {d.tryIt && <DeclarationTryItSection content={d.tryIt} />}
+    {d.signature && <Signature signature={d.signature} />}
+    {d.description && <>
+      <Heading for="Description" />
+      <Description>{d.description}</Description>
+    </>}
+    {d.examples && <>
+      <Heading for="Examples" />
+      <Examples examples={d.examples} />
+    </>}
+    {d.constructors && <>
+      <Heading for="Constructors" />
+      <References references={d.constructors} />
+    </>}
+    {d.instanceMethods && <>
+      <Heading for="Instance Methods" />
+      <References references={d.instanceMethods} />
+    </>}
+    {d.instanceProperties && <>
+      <Heading for="Instance Properties" />
+      <References references={d.instanceProperties} />
+    </>}
+    {d.events && <>
+      <Heading for="Events" />
+      <References references={d.events} />
+    </>}
+    {d.extends && <>
+      <Heading for="Extends" />
+      <References references={d.extends} />
+    </>}
+    {d.extendsBy && <>
+      <Heading for="Extends By" />
+      <References references={d.extendsBy} />
+    </>}
+    {d.overloads && <>
+      <Heading for="Overloads" />
+      <References references={d.overloads} />
+    </>}
+    {d.overloadsBy && <>
+      <Heading for="Overloads By" />
+      <References references={d.overloadsBy} />
+    </>}
+    {d.tryIt && <>
+      <Heading for="Try It" />
+      <Description>{d.tryIt}</Description>
+    </>}
   </>
 }
 
-interface CEMDeclarationParameters {
+interface TypeDeclarationProperties {
   declaration:
     Library.ConstructorDeclaration |
     Library.EventDeclaration |
-    Library.MethodDeclaration
+    Library.MethodDeclaration |
+    Library.PropertyDeclaration |
+    Library.TypeDeclaration
 }
 
-function CEMDeclaration({declaration: d}: CEMDeclarationParameters): JSX.Element {
-  return <>
-    {d.signature && <DeclarationSignature signature={d.signature} />}
-    {d.description && <DeclarationDescriptionSection description={d.description} />}
-    {d.type.parameters && <DeclarationParametersSection values={d.type.parameters} />}
-    {d.type.returns && <DeclarationReturnsSection returns={d.type.returns} />}
-    {d.examples && <DeclarationExamplesSection examples={d.examples} />}
-    {(d.overloads || d.overloadsBy) && <DeclarationRelationshipsSection />}
-    {d.overloads && <DeclarationOverloadsSection references={d.overloads} />}
-    {d.overloadsBy && <DeclarationOverloadsBySection references={d.overloadsBy} />}
-    {d.tryIt && <DeclarationTryItSection content={d.tryIt} />}
-  </>
-}
+function TypeDeclaration(p: TypeDeclarationProperties): JSX.Element {
+  const {declaration: d} = p
 
-interface PropertyDeclarationParameters {
-  declaration: Library.PropertyDeclaration
-}
-
-function PropertyDeclaration({declaration: d}: PropertyDeclarationParameters): JSX.Element {
-  return <>
-    {d.signature && <DeclarationSignature signature={d.signature} />}
-    {d.description && <DeclarationDescriptionSection description={d.description} />}
-    {d.examples && <DeclarationExamplesSection examples={d.examples} />}
-    {(d.overloads || d.overloadsBy) && <DeclarationRelationshipsSection />}
-    {d.overloads && <DeclarationOverloadsSection references={d.overloads} />}
-    {d.overloadsBy && <DeclarationOverloadsBySection references={d.overloadsBy} />}
-    {d.tryIt && <DeclarationTryItSection content={d.tryIt} />}
-  </>
-}
-
-interface TypeDeclarationParameters {
-  declaration: Library.TypeDeclaration
-}
-
-function TypeDeclaration({declaration: d}: TypeDeclarationParameters): JSX.Element {
   if ("id" in d.type) {
-    return <AnyTypeDeclaration declaration={d} />
+    return <AnyTypeDeclaration declaration={p.declaration} />
   }
+
   switch (d.type.type) {
   case "any":
   case "array":
     return <AnyTypeDeclaration declaration={d} />
   case "function":
-    return <FunctionTypeDeclaration declaration={d} type={d.type} />
+    return <FunctionTypeDeclaration declaration={d} />
   case "literal":
     return <AnyTypeDeclaration declaration={d} />
   case "object":
-    return <ObjectTypeDeclaration declaration={d} type={d.type} />
+    return <ObjectTypeDeclaration declaration={d} />
   default:
     return <AnyTypeDeclaration declaration={d} />
   }
 }
 
-function AnyTypeDeclaration({declaration: d}: TypeDeclarationParameters): JSX.Element {
+function AnyTypeDeclaration(p: TypeDeclarationProperties): JSX.Element {
+  const {declaration: d} = p
+  const {Description} = useContext(ctx)
+
   return <>
-    {d.signature && <DeclarationSignature signature={d.signature} />}
-    {d.description && <DeclarationDescriptionSection description={d.description} />}
-    {d.examples && <DeclarationExamplesSection examples={d.examples} />}
-    {(d.overloads || d.overloadsBy) && <DeclarationRelationshipsSection />}
-    {d.overloads && <DeclarationOverloadsSection references={d.overloads} />}
-    {d.overloadsBy && <DeclarationOverloadsBySection references={d.overloadsBy} />}
-    {d.tryIt && <DeclarationTryItSection content={d.tryIt} />}
+    {d.signature && <Signature signature={d.signature} />}
+    {d.description && <>
+      <Heading for="Description" />
+      <Description>{d.description}</Description>
+    </>}
+    {d.examples && <>
+      <Heading for="Examples" />
+      <Examples examples={d.examples} />
+    </>}
+    {d.overloads && <>
+      <Heading for="Overloads" />
+      <References references={d.overloads} />
+    </>}
+    {d.overloadsBy && <>
+      <Heading for="Overloads By" />
+      <References references={d.overloadsBy} />
+    </>}
+    {d.tryIt && <>
+      <Heading for="Try It" />
+      <Description>{d.tryIt}</Description>
+    </>}
   </>
 }
 
-interface FunctionTypeDeclarationParameters {
-  declaration: Library.TypeDeclaration
-  type: Library.FunctionType
-}
+function FunctionTypeDeclaration(p: TypeDeclarationProperties): JSX.Element {
+  const {declaration: d} = p
+  const {type: t} = d
+  const {Description} = useContext(ctx)
 
-function FunctionTypeDeclaration({declaration: d, type: t}: FunctionTypeDeclarationParameters): JSX.Element {
-  return <>
-    {d.signature && <DeclarationSignature signature={d.signature} />}
-    {d.description && <DeclarationDescriptionSection description={d.description} />}
-    {t.parameters && <DeclarationParametersSection values={t.parameters} />}
-    {t.returns && <DeclarationReturnsSection returns={t.returns} />}
-    {d.examples && <DeclarationExamplesSection examples={d.examples} />}
-    {(d.overloads || d.overloadsBy) && <DeclarationRelationshipsSection />}
-    {d.overloads && <DeclarationOverloadsSection references={d.overloads} />}
-    {d.overloadsBy && <DeclarationOverloadsBySection references={d.overloadsBy} />}
-    {d.tryIt && <DeclarationTryItSection content={d.tryIt} />}
-  </>
-}
-
-interface ObjectTypeDeclarationParameters {
-  declaration: Library.TypeDeclaration
-  type: Library.ObjectType
-}
-
-function ObjectTypeDeclaration({declaration: d, type: t}: ObjectTypeDeclarationParameters): JSX.Element {
-  return <>
-    {d.signature && <DeclarationSignature signature={d.signature} />}
-    {d.description && <DeclarationDescriptionSection description={d.description} />}
-    {t.properties && <DeclarationPropertiesSection values={t.properties} />}
-    {d.examples && <DeclarationExamplesSection examples={d.examples} />}
-    {(d.overloads || d.overloadsBy) && <DeclarationRelationshipsSection />}
-    {d.overloads && <DeclarationOverloadsSection references={d.overloads} />}
-    {d.overloadsBy && <DeclarationOverloadsBySection references={d.overloadsBy} />}
-    {d.tryIt && <DeclarationTryItSection content={d.tryIt} />}
-  </>
-}
-
-interface DeclarationSignatureParameters {
-  signature: Token[]
-}
-
-function DeclarationSignature({signature}: DeclarationSignatureParameters): JSX.Element {
-  const c = <Signature signature={signature} />
-  return <pre><code>{c}</code></pre>
-}
-
-interface DeclarationDescriptionSectionParameters {
-  description: string
-}
-
-function DeclarationDescriptionSection({description}: DeclarationDescriptionSectionParameters): JSX.Element {
-  const {onProcessMarkdown: Markdown} = useContext(Context)
-
-  return <>
-    <h2>Description</h2>
-    <Markdown>{description}</Markdown>
-  </>
-}
-
-interface DeclarationNamedValuesSectionParameters {
-  values: Library.Value[]
-}
-
-function DeclarationParametersSection({values}: DeclarationNamedValuesSectionParameters): JSX.Element {
-  return <DeclarationValuesSection title="Parameters" values={values} />
-}
-
-function DeclarationPropertiesSection({values}: DeclarationNamedValuesSectionParameters): JSX.Element {
-  return <DeclarationValuesSection title="Properties" values={values} />
-}
-
-interface DeclarationValuesSectionParameters {
-  title: string
-  values: Library.Value[]
-}
-
-function DeclarationValuesSection({title, values}: DeclarationValuesSectionParameters): JSX.Element {
-  const {onProcessMarkdown: Markdown} = useContext(Context)
-
-  return <>
-    <h2>{title}</h2>
-    <dl>
-      {values.map((p) => <>
-        <Term p={p} />
-        <dd>
-          {p.description && <Markdown>{p.description}</Markdown>}
-          {p.default && <p>Default:<> </><code>{String(p.default.value)}</code></p>}
-        </dd>
-      </>)}
-    </dl>
-  </>
-
-  function Term({p}: {p: Library.Value}): JSX.Element {
-    const a = [<code>{p.identifier}</code>]
-
-    if (p.signature) {
-      a.push(<> <Badge><Signature signature={p.signature} /></Badge></>)
-    }
-
-    return <dt>{a}</dt>
+  if ("id" in t || t.type !== "function") {
+    return <></>
   }
-}
-
-interface DeclarationReturnsSectionParameters {
-  returns: Library.FunctionReturns
-}
-
-function DeclarationReturnsSection({returns}: DeclarationReturnsSectionParameters): JSX.Element {
-  const {onProcessMarkdown: Markdown} = useContext(Context)
 
   return <>
-    <h2>Returns</h2>
-    {returns.signature && <code><Signature signature={returns.signature} /></code>}
-    {returns.description && <Markdown>{returns.description}</Markdown>}
+    {d.signature && <Signature signature={d.signature} />}
+    {d.description && <>
+      <Heading for="Description" />
+      <Description>{d.description}</Description>
+    </>}
+    {t.parameters && <>
+      <Heading for="Parameters" />
+      <Values values={t.parameters} />
+    </>}
+    {t.returns && <>
+      <Heading for="Returns" />
+      {t.returns.signature && <code>
+        <Tokens tokens={t.returns.signature} />
+      </code>}
+      {t.returns.description && <Description>
+        {t.returns.description}
+      </Description>}
+    </>}
+    {d.examples && <>
+      <Heading for="Examples" />
+      <Examples examples={d.examples} />
+    </>}
+    {d.overloads && <>
+      <Heading for="Overloads" />
+      <References references={d.overloads} />
+    </>}
+    {d.overloadsBy && <>
+      <Heading for="Overloads By" />
+      <References references={d.overloadsBy} />
+    </>}
+    {d.tryIt && <>
+      <Heading for="Try It" />
+      <Description>{d.tryIt}</Description>
+    </>}
   </>
 }
 
-interface DeclarationExamplesSectionParameters {
+function ObjectTypeDeclaration(p: TypeDeclarationProperties): JSX.Element {
+  const {declaration: d} = p
+  const {type: t} = d
+  const {Description} = useContext(ctx)
+
+  if ("id" in t || t.type !== "object") {
+    return <></>
+  }
+
+  return <>
+    {d.signature && <Signature signature={d.signature} />}
+    {d.description && <>
+      <Heading for="Description" />
+      <Description>{d.description}</Description>
+    </>}
+    {t.properties && <>
+      <Heading for="Properties" />
+      <Values values={t.properties} />
+    </>}
+    {d.examples && <>
+      <Heading for="Examples" />
+      <Examples examples={d.examples} />
+    </>}
+    {d.overloads && <>
+      <Heading for="Overloads" />
+      <References references={d.overloads} />
+    </>}
+    {d.overloadsBy && <>
+      <Heading for="Overloads By" />
+      <References references={d.overloadsBy} />
+    </>}
+    {d.tryIt && <>
+      <Heading for="Try It" />
+      <Description>{d.tryIt}</Description>
+    </>}
+  </>
+}
+
+interface HeadingProperties {
+  for: LibraryDeclarationSection
+}
+
+function Heading(p: HeadingProperties): JSX.Element {
+  const {for: f} = p
+  const c = useContext(ctx)
+  return c.headings[f]
+}
+
+interface SignatureProperties {
+  signature: Tokenizer.Token[]
+}
+
+interface ExamplesProperties {
   examples: Library.Example[]
 }
 
-function DeclarationExamplesSection({examples}: DeclarationExamplesSectionParameters): JSX.Element {
-  const {onHighlightSyntax: SyntaxHighlight} = useContext(Context)
+function Examples(p: ExamplesProperties): JSX.Element {
+  const {examples: e} = p
+  const {SyntaxHighlight} = useContext(ctx)
 
   return <>
-    <h2>Examples</h2>
-    {examples.map((e) => <Pre e={e} />)}
+    {e.map((e) => <pre>
+      <code>
+        <SyntaxHighlight syntax={e.syntax}>{e.code}</SyntaxHighlight>
+      </code>
+    </pre>)}
   </>
-
-  function Pre({e}: {e: Library.Example}): JSX.Element {
-    const c = <SyntaxHighlight syntax={e.syntax}>{e.code}</SyntaxHighlight>
-    return <pre><code>{c}</code></pre>
-  }
 }
 
-function DeclarationTopicsSection(): JSX.Element {
-  return <h2>Topics</h2>
+function Signature(p: SignatureProperties): JSX.Element {
+  const {signature: s} = p
+
+  return <pre>
+    <code>
+      <Tokens tokens={s} />
+    </code>
+  </pre>
 }
 
-function DeclarationRelationshipsSection(): JSX.Element {
-  return <h2>Relationships</h2>
-}
-
-interface DeclarationNamedTopicSectionParameters {
+interface ReferenceProperties {
   references: Library.Reference[]
 }
 
-function DeclarationConstructorsSection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Constructors" references={references} />
+function References(p: ReferenceProperties): JSX.Element {
+  const {references: r} = p
+  const {Description, onRetrieve} = useContext(ctx)
+
+  return <dl>
+    {r.map((r) => {
+      const d = onRetrieve(r)
+      if (!d) {
+        return <></>
+      }
+      return <>
+        {d.signature && <dt>
+          {d.identifier}
+        </dt>}
+        {d.summary && <dd>
+          <Description>{d.summary}</Description>
+        </dd>}
+      </>
+    })}
+  </dl>
 }
 
-function DeclarationInstanceMethodsSection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Instance Methods" references={references} />
+interface ValuesProperties {
+  values: Library.Value[]
 }
 
-function DeclarationInstancePropertiesSection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Instance Properties" references={references} />
+function Values(p: ValuesProperties): JSX.Element {
+  const {values: v} = p
+  const {Description} = useContext(ctx)
+
+  return <dl>
+    {v.map((v) => <>
+      <dt>
+        {v.identifier}
+        {v.signature && <>
+          {" "}
+          <Badge>
+            <Tokens tokens={v.signature} />
+          </Badge>
+        </>}
+      </dt>
+      <dd>
+        {v.description && <Description>{v.description}</Description>}
+        {v.default && <p>Default: <code>{String(v.default.value)}</code></p>}
+      </dd>
+    </>)}
+  </dl>
 }
 
-function DeclarationEventsSection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Events" references={references} />
+interface TokensProperties {
+  tokens: Tokenizer.Token[]
 }
 
-function DeclarationExtendsSection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Extends" references={references} />
+function Tokens(p: TokensProperties): JSX.Element {
+  const {tokens: t} = p
+  return <>{t.map((t) => <Token token={t} />)}</>
 }
 
-function DeclarationExtendsBySection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Extends By" references={references} />
+interface TokenProperties {
+  token: Tokenizer.Token
 }
 
-function DeclarationOverloadsSection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Overloads" references={references} />
-}
+function Token(p: TokenProperties): JSX.Element {
+  const {token: t} = p
 
-function DeclarationOverloadsBySection({references}: DeclarationNamedTopicSectionParameters): JSX.Element {
-  return <DeclarationTopicSection title="Overloads By" references={references} />
-}
-
-interface DeclarationTopicSectionParameters {
-  title: string
-  references: Library.Reference[]
-}
-
-function DeclarationTopicSection({title, references}: DeclarationTopicSectionParameters): JSX.Element {
-  const {
-    onProcessMarkdown: Markdown,
-    onRetrieve: retrieve,
-  } = useContext(Context)
-
-  return <>
-    <h3>{title}</h3>
-    <dl>
-      {references.map((r) => {
-        const d = retrieve(r)
-        if (!d) {
-          return <></>
-        }
-        return <>
-          {d.signature && <dt><FancyTitle id={d.id} signature={d.signature} /></dt>}
-          {d.summary && <dd><Markdown>{d.summary}</Markdown></dd>}
-        </>
-      })}
-    </dl>
-  </>
-}
-
-interface DeclarationTryItSectionParameters {
-  content: string
-}
-
-function DeclarationTryItSection({content}: DeclarationTryItSectionParameters): JSX.Element {
-  const {onProcessMarkdown: Markdown} = useContext(Context)
-
-  return <>
-    <h2>Try It</h2>
-    <Markdown>{content}</Markdown>
-  </>
-}
-
-interface SignatureParameters {
-  signature: Token[]
-}
-
-function Signature({signature}: SignatureParameters): JSX.Element {
-  return <>{signature.map((t) => <SignatureToken token={t} />)}</>
-}
-
-interface SignatureTokenParameters {
-  token: Token
-}
-
-function SignatureToken({token: t}: SignatureTokenParameters): JSX.Element {
-  const {onLink} = useContext(Context)
   switch (t.type) {
   case "decorator":
-    return <SignatureDecoratorToken>{t.text}</SignatureDecoratorToken>
+    return <DecoratorToken token={t} />
   case "identifier":
-    return <SignatureIdentifierToken>{t.text}</SignatureIdentifierToken>
+    return <IdentifierToken token={t} />
   case "keyword":
-    return <SignatureKeywordToken>{t.text}</SignatureKeywordToken>
+    return <KeywordToken token={t} />
   case "reference":
-    return <SignatureReferenceToken href={onLink(t)}>{t.text}</SignatureReferenceToken>
+    return <ReferenceToken token={t} />
   case "text":
-    return <SignatureTextToken>{t.text}</SignatureTextToken>
+    return <TextToken token={t} />
   default:
     return <></>
   }
 }
 
-function SignatureDecoratorToken({children}: JSX.ElementChildrenAttribute): JSX.Element {
-  return <span class="dt-de">{children}</span>
+interface DecoratorTokenProperties {
+  token: Tokenizer.DecoratorToken
 }
 
-function SignatureIdentifierToken({children}: JSX.ElementChildrenAttribute): JSX.Element {
-  return <span class="dt-id">{children}</span>
+function DecoratorToken(p: DecoratorTokenProperties): JSX.Element {
+  const {token: t} = p
+  return <span class="dt-de">{t.text}</span>
 }
 
-function SignatureKeywordToken({children}: JSX.ElementChildrenAttribute): JSX.Element {
-  return <span class="dt-ke">{children}</span>
+interface IdentifierTokenProperties {
+  token: Tokenizer.IdentifierToken
 }
 
-interface SignatureReferenceTokenParameters extends ChildrenIncludable {
-  href?: string
+function IdentifierToken(p: IdentifierTokenProperties): JSX.Element {
+  const {token: t} = p
+  return <span class="dt-id">{t.text}</span>
 }
 
-function SignatureReferenceToken({children, href}: SignatureReferenceTokenParameters): JSX.Element {
-  if (!href) {
-    return <span class="dt-re">{children}</span>
+interface KeywordTokenProperties {
+  token: Tokenizer.KeywordToken
+}
+
+function KeywordToken(p: KeywordTokenProperties): JSX.Element {
+  const {token: t} = p
+  return <span class="dt-ke">{t.text}</span>
+}
+
+interface ReferenceTokenProperties {
+  token: Tokenizer.ReferenceToken
+}
+
+function ReferenceToken(p: ReferenceTokenProperties): JSX.Element {
+  const {token: t} = p
+  const {onLink} = useContext(ctx)
+  const u = onLink(t)
+  if (u) {
+    return <a class="dt-re" href={u}>{t.text}</a>
   }
-  return <a href={href} class="dt-re">{children}</a>
+  return <span class="dt-re">{t.text}</span>
 }
 
-function SignatureTextToken({children}: JSX.ElementChildrenAttribute): JSX.Element {
-  return <>{children}</>
+interface TextTokenProperties {
+  token: Tokenizer.TextToken
 }
 
-interface FancyTitleParameters {
-  id: string
-  signature: Token[]
-}
-
-function FancyTitle({id, signature}: FancyTitleParameters): JSX.Element {
-  const {onLink} = useContext(Context)
-  const n = tokenNode()
-  const t = referenceToken(n)
-  t.id = id
-  const c = signature.map((t) => <FancyTitleToken token={t} />)
-  return <span class="dr">
-    <a href={onLink(t)}>
-      <code>{c}</code>
-    </a>
-  </span>
-}
-
-interface FancyTitleTokenParameters {
-  token: Token
-}
-
-function FancyTitleToken({token: t}: FancyTitleTokenParameters): JSX.Element {
-  switch (t.type) {
-  case "decorator":
-    return <FancyTitleTextToken>{t.text}</FancyTitleTextToken>
-  case "identifier":
-    return <FancyTitleIdentifierToken>{t.text}</FancyTitleIdentifierToken>
-  case "keyword":
-  case "reference":
-  case "text":
-    return <FancyTitleTextToken>{t.text}</FancyTitleTextToken>
-  default:
-    return <></>
-  }
-}
-
-function FancyTitleIdentifierToken({children}: JSX.ElementChildrenAttribute): JSX.Element {
-  return <span class="dr-id">{children}</span>
-}
-
-function FancyTitleTextToken({children}: JSX.ElementChildrenAttribute): JSX.Element {
-  return <>{children}</>
+function TextToken(p: TextTokenProperties): JSX.Element {
+  const {token: t} = p
+  return <>{t.text}</>
 }
