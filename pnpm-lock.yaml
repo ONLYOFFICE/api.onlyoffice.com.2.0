@@ -2214,9 +2214,9 @@ importers:
       '@onlyoffice/site-home':
         specifier: workspace:^
         version: link:../site-home
-      '@onlyoffice/site-library-declaration':
+      '@onlyoffice/site-library':
         specifier: workspace:^
-        version: link:../site-library-declaration
+        version: link:../site-library
       '@onlyoffice/site-page':
         specifier: workspace:^
         version: link:../site-page
@@ -2252,7 +2252,7 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
-  packages/site-library-declaration:
+  packages/site-library:
     dependencies:
       '@onlyoffice/declaration-tokenizer':
         specifier: workspace:^
