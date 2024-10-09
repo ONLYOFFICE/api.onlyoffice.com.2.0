@@ -90,8 +90,9 @@ export default {
   ],
 } satisfies Preview
 
-// todo: In the future, we should import a list of breakpoints as a JSON file
-// from the @onlyoffice/ui-primitives package.
+// todo: In the future we should import data of primitives from the
+// @onlyoffice/ui-primitives package.
+
 function breakpoints(): ViewportMap {
   const m: ViewportMap = {}
   const s = window.getComputedStyle(document.documentElement)
@@ -110,4 +111,98 @@ function breakpoints(): ViewportMap {
     }
   }
   return m
+}
+
+export interface VariablesCallback {
+  (a: Variable[]): void
+}
+
+export function useVariables(p: string, cb: VariablesCallback): void {
+  useEffect(() => {
+    const e = document.documentElement
+
+    const o = new MutationObserver(() => {
+      cb(variables(p))
+    })
+
+    o.observe(e, {attributes: true})
+
+    return o.disconnect.bind(o)
+  }, [cb])
+}
+
+export class Variable {
+  name = ""
+  originalValue = ""
+  computedValue = ""
+}
+
+function variables(x: string): Variable[] {
+  const a: Variable[] = []
+  const s = getComputedStyle(document.documentElement)
+  const t = document.documentElement.dataset.themePreference
+
+  const o: {
+    root: Record<string, string>
+    light: Record<string, string>
+    dark: Record<string, string>
+  } = {
+    root: {},
+    light: {},
+    dark: {},
+  }
+
+  for (const p of s) {
+    if (!p.startsWith("--")) {
+      continue
+    }
+    if (x && !p.includes(x)) {
+      continue
+    }
+
+    const v = new Variable()
+    v.name = p
+    v.computedValue = s.getPropertyValue(v.name)
+
+    for (const s of document.styleSheets) {
+      for (const r of s.cssRules) {
+        if (
+          r instanceof CSSStyleRule &&
+          r.selectorText === ":root"
+        ) {
+          o.root[v.name] = r.style.getPropertyValue(v.name)
+          continue
+        }
+
+        if (
+          r instanceof CSSStyleRule &&
+          r.selectorText.includes('[data-theme-preference="light"]')
+        ) {
+          o.light[v.name] = r.style.getPropertyValue(v.name)
+          continue
+        }
+
+        if (
+          r instanceof CSSStyleRule &&
+          r.selectorText.includes('[data-theme-preference="dark"]')
+        ) {
+          o.dark[v.name] = r.style.getPropertyValue(v.name)
+        }
+      }
+    }
+
+    if (t === "dark" && o.dark[v.name]) {
+      v.originalValue = o.dark[v.name]
+    } else if (t === "light" && o.dark[v.name]) {
+      v.originalValue = o.light[v.name]
+    } else if (o.root[v.name]) {
+      v.originalValue = o.root[v.name]
+    } else {
+      v.originalValue = v.computedValue
+    }
+
+    a.push(v)
+  }
+
+  return a.sort((a, b) => a.name.localeCompare(b.name))
 }
