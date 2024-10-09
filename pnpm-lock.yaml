@@ -2409,21 +2409,12 @@ importers:
 
   packages/site-service-declaration:
     dependencies:
-      '@onlyoffice/openapi-resource-fixtures':
-        specifier: workspace:^
-        version: link:../openapi-resource-fixtures
-      '@onlyoffice/preact-callback':
-        specifier: workspace:^
-        version: link:../preact-callback
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../service-declaration
-      '@onlyoffice/service-resource':
-        specifier: workspace:^
-        version: link:../service-resource
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit

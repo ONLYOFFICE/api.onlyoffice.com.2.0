@@ -8,12 +8,11 @@ import {
   CodeListingTabListWrapper,
   CodeListingTabPanel,
 } from "@onlyoffice/ui-kit"
-import {Fragment, type JSX, createContext, h} from "preact"
+import {type ComponentChildren, Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
 
-interface Contextual {
-  SyntaxHighlight: SyntaxHighlight
-  Description: Description
+export interface Description {
+  (this: void, p: ChildrenIncludable): JSX.Element | null
 }
 
 export interface SyntaxHighlightProperties extends ChildrenIncludable {
@@ -21,27 +20,26 @@ export interface SyntaxHighlightProperties extends ChildrenIncludable {
 }
 
 export interface SyntaxHighlight {
-  (this: void, p: SyntaxHighlightProperties): JSX.Element
+  (this: void, p: SyntaxHighlightProperties): JSX.Element | null
 }
 
-export interface DescriptionProperties extends ChildrenIncludable {}
-
-export interface Description {
-  (this: void, p: DescriptionProperties): JSX.Element
-}
-
-const Context = createContext<Contextual>(noopContext())
-
-function noopContext(): Contextual {
-  return {
-    SyntaxHighlight: () => {
-      throw new Error("not implemented")
-    },
-    Description: () => {
-      throw new Error("not implemented")
-    },
+class Context {
+  Description: Description = () => null
+  SyntaxHighlight: SyntaxHighlight = () => null
+  headings: Record<ServiceDeclarationSection, JSX.Element> = {
+    Authorization: <h3>Authorization</h3>,
+    Body: <h3>Body</h3>,
+    Cookies: <h3>Cookies</h3>,
+    Examples: <h3>Examples</h3>,
+    Headers: <h3>Headers</h3>,
+    Path: <h3>Path</h3>,
+    Query: <h3>Query</h3>,
+    Request: <h2>Request</h2>,
+    Responses: <h2>Responses</h2>,
   }
 }
+
+const ctx = createContext(new Context())
 
 export interface ServiceDeclarationProperties extends ChildrenIncludable {
   declaration: Service.Declaration
@@ -50,21 +48,33 @@ export interface ServiceDeclarationProperties extends ChildrenIncludable {
 export function ServiceDeclaration(
   p: ServiceDeclarationProperties,
 ): JSX.Element {
-  return <Context.Provider value={noopContext()}>
+  return <ctx.Provider value={new Context()}>
     {p.children}
     <Declaration declaration={p.declaration} />
-  </Context.Provider>
+  </ctx.Provider>
 }
 
-export interface ServiceDeclarationSyntaxHighlightProperties {
-  children: SyntaxHighlight
+export type ServiceDeclarationSection =
+  "Authorization" |
+  "Body" |
+  "Cookies" |
+  "Examples" |
+  "Headers" |
+  "Path" |
+  "Query" |
+  "Request" |
+  "Responses"
+
+export interface ServiceDeclarationHeadingProperties {
+  children: ComponentChildren
+  for: ServiceDeclarationSection
 }
 
-export function ServiceDeclarationSyntaxHighlight(
-  p: ServiceDeclarationSyntaxHighlightProperties,
+export function ServiceDeclarationHeading(
+  p: ServiceDeclarationHeadingProperties,
 ): JSX.Element {
-  const c = useContext(Context)
-  c.SyntaxHighlight = p.children
+  const c = useContext(ctx)
+  c.headings[p.for] = <>{p.children}</>
   return <></>
 }
 
@@ -75,8 +85,20 @@ export interface ServiceDeclarationDescriptionProperties {
 export function ServiceDeclarationDescription(
   p: ServiceDeclarationDescriptionProperties,
 ): JSX.Element {
-  const c = useContext(Context)
+  const c = useContext(ctx)
   c.Description = p.children
+  return <></>
+}
+
+export interface ServiceDeclarationSyntaxHighlightProperties {
+  children: SyntaxHighlight
+}
+
+export function ServiceDeclarationSyntaxHighlight(
+  p: ServiceDeclarationSyntaxHighlightProperties,
+): JSX.Element {
+  const c = useContext(ctx)
+  c.SyntaxHighlight = p.children
   return <></>
 }
 
@@ -94,8 +116,7 @@ function Declaration(p: DeclarationProperties): JSX.Element {
     return <OperationDeclaration declaration={d} />
   }
 
-  // @ts-expect-error
-  throw new Error(`Unknown declaration type: ${d.type}`)
+  return <></>
 }
 
 interface OperationDeclarationProperties {
@@ -110,10 +131,10 @@ function OperationDeclaration(p: OperationDeclarationProperties): JSX.Element {
     {r.method && r.path && <pre>
       <code>{r.method} {r.path}</code>
     </pre>}
-    <h2>Request</h2>
+    <Heading for="Request" />
     <Request request={r} />
     {d.responses.length !== 0 && <>
-      <h2>Responses</h2>
+      <Heading for="Responses" />
       {d.responses.map((r) => <Response response={r} />)}
     </>}
   </>
@@ -125,36 +146,36 @@ interface RequestProperties {
 
 function Request(p: RequestProperties): JSX.Element {
   const {request: r} = p
-  const {Description} = useContext(Context)
+  const {Description} = useContext(ctx)
 
   return <>
     {r.description && <Description>{r.description}</Description>}
     {r.authorizations.length !== 0 && <>
-      <h3>Authorization</h3>
+      <Heading for="Authorization" />
       {r.authorizations.map((a) => <Authorization authorization={a} />)}
     </>}
     {r.cookieParameters.type.type !== "noop" && <>
-      <h3>Cookies</h3>
+      <Heading for="Cookies" />
       <Entity entity={r.cookieParameters} />
     </>}
     {r.headerParameters.type.type !== "noop" && <>
-      <h3>Headers</h3>
+      <Heading for="Headers" />
       <Entity entity={r.headerParameters} />
     </>}
     {r.pathParameters.type.type !== "noop" && <>
-      <h3>Path</h3>
+      <Heading for="Path" />
       <Entity entity={r.pathParameters} />
     </>}
     {r.queryParameters.type.type !== "noop" && <>
-      <h3>Query</h3>
+      <Heading for="Query" />
       <Entity entity={r.queryParameters} />
     </>}
     {r.bodyParameters.type.type !== "noop" && <>
-      <h3>Body</h3>
+      <Heading for="Body" />
       <Entity entity={r.bodyParameters} />
     </>}
     {r.examples.length !== 0 && <>
-      <h3>Examples</h3>
+      <Heading for="Examples" />
       <Examples examples={r.examples} />
     </>}
   </>
@@ -166,7 +187,7 @@ interface AuthorizationProperties {
 
 function Authorization(p: AuthorizationProperties): JSX.Element {
   const {authorization: a} = p
-  const {Description} = useContext(Context)
+  const {Description} = useContext(ctx)
 
   let d = <></>
   let e = <></>
@@ -202,7 +223,7 @@ interface ResponseProperties {
 
 function Response(p: ResponseProperties): JSX.Element {
   const {response: r} = p
-  const {Description} = useContext(Context)
+  const {Description} = useContext(ctx)
 
   return <>
     <h3>{r.status}</h3>
@@ -219,7 +240,7 @@ interface EntityProperties {
 
 function Entity(p: EntityProperties): JSX.Element {
   const {entity: e} = p
-  const {Description} = useContext(Context)
+  const {Description} = useContext(ctx)
 
   return <>
     {e.description && <Description>{e.description}</Description>}
@@ -398,7 +419,7 @@ function PropertyBadges(p: PropertyProperties): JSX.Element {
 
 function PropertyDescription(p: PropertyProperties): JSX.Element {
   const {self: e} = p.property
-  const {Description} = useContext(Context)
+  const {Description} = useContext(ctx)
 
   if (e.type === "circular") {
     return <p>Circular reference</p>
@@ -481,7 +502,7 @@ interface ExamplesProperties {
 
 function Examples(p: ExamplesProperties): JSX.Element {
   const {examples} = p
-  const {SyntaxHighlight} = useContext(Context)
+  const {SyntaxHighlight} = useContext(ctx)
 
   return <CodeListing>
     <CodeListingTabListWrapper>
@@ -511,4 +532,14 @@ function Examples(p: ExamplesProperties): JSX.Element {
     }
     throw new Error(`Unknown syntax: ${s}`)
   }
+}
+
+interface HeadingProperties {
+  for: ServiceDeclarationSection
+}
+
+function Heading(p: HeadingProperties): JSX.Element {
+  const {for: f} = p
+  const c = useContext(ctx)
+  return c.headings[f]
 }
