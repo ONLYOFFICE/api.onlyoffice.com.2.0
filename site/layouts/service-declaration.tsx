@@ -1,6 +1,6 @@
 import {type Context, type Data} from "@onlyoffice/eleventy-types"
 import {type JSX, h} from "preact"
-import {ServiceDeclaration} from "@/internal/service-declaration.tsx"
+import {Service} from "@/internal/service.tsx"
 
 export function data(): Data {
   return {
@@ -9,5 +9,5 @@ export function data(): Data {
 }
 
 export function render(c: Context): JSX.Element {
-  return <ServiceDeclaration url={c.page.url} />
+  return <Service url={c.page.url} />
 }
