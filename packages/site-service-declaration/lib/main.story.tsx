@@ -1,32 +1,79 @@
 // todo: resuscitate stories
 // Add a step to generate service fixtures for the browser environment.
 
-// import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-// import {list, resolve} from "@onlyoffice/openapi-resource-fixtures/resource.client.ts"
-// import {Content as UiContent} from "@onlyoffice/ui-kit"
-import {type Meta} from "@storybook/preact"
-import {Fragment, type JSX, h} from "preact"
-// import {ServiceDeclaration} from "./main.tsx"
+import {type Meta, type StoryObj} from "@storybook/preact"
+import {Fragment, h} from "preact"
+import {
+  ServiceDeclaration,
+  ServiceDeclarationDescription,
+  ServiceDeclarationHeading,
+  type ServiceDeclarationProperties,
+  ServiceDeclarationSyntaxHighlight,
+} from "./main.tsx"
 
 export default {
-  title: "Site/Service Declaration",
+  title: "Site / Service Declaration",
 } satisfies Meta
 
-export function Default(): JSX.Element {
-  return <></>
-  // return <ServiceDeclaration
-  //   declaration={list()[1]}
-  //   onHighlightSyntax={Nop}
-  //   onRenderDescription={Nop}
-  //   onRetrieve={resolve}
-  // />
+export const Default: StoryObj = {
+  parameters: {
+    controls: {
+      disable: true,
+    },
+    actions: {
+      disable: true,
+    },
+  },
+  render() {
+    // @ts-ignore todo
+    return <ServiceDeclaration declaration={{}} />
+  },
 }
 
-export function Content(): JSX.Element {
-  return <></>
-  // return <UiContent><Default /></UiContent>
+export const Playground: StoryObj<ServiceDeclarationProperties> = {
+  parameters: {
+    actions: {
+      disable: true,
+    },
+  },
+  args: {
+    // todo
+  },
+  render(p) {
+    return <ServiceDeclaration {...p}>
+      <ServiceDeclarationHeading for="Authorization">
+        <h3>Authorization</h3>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Body">
+        <h3>Body</h3>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Cookies">
+        <h3>Cookies</h3>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Examples">
+        <h3>Examples</h3>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Headers">
+        <h3>Headers</h3>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Path">
+        <h3>Path</h3>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Query">
+        <h3>Query</h3>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Request">
+        <h2>Request</h2>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationHeading for="Responses">
+        <h2>Responses</h2>
+      </ServiceDeclarationHeading>
+      <ServiceDeclarationDescription>
+        {(p) => <p>{p.children}</p>}
+      </ServiceDeclarationDescription>
+      <ServiceDeclarationSyntaxHighlight>
+        {(p) => <>{p.children}</>}
+      </ServiceDeclarationSyntaxHighlight>
+    </ServiceDeclaration>
+  },
 }
-
-// function Nop(p: ChildrenIncludable): JSX.Element {
-//   return <>{p.children}</>
-// }
