@@ -9,10 +9,7 @@ import {type HomeData, HomeDatum} from "../internal/home.tsx"
 import {type LibraryData, LibraryDatum} from "../internal/library.tsx"
 import {type PageData, PageDatum} from "../internal/page.tsx"
 import {type PartData, PartDatum} from "../internal/part.tsx"
-import {
-  type ServiceDeclarationData,
-  ServiceDeclarationDatum,
-} from "../internal/service-declaration.tsx"
+import {type ServiceData, ServiceDatum} from "../internal/service.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -30,7 +27,7 @@ declare module "@onlyoffice/eleventy-types" {
     defaultGlobalNavigation?: GlobalNavigationData
     defaultHelp?: HelpData
     defaultLibrary?: LibraryData
-    defaultServiceDeclaration?: ServiceDeclarationData
+    defaultService?: ServiceData
     defaultChapter?: ChapterData
     defaultPart?: PartData
     defaultHome?: HomeData
@@ -49,7 +46,7 @@ declare module "@onlyoffice/eleventy-types" {
     defaultGlobalNavigation?(data: Data): GlobalNavigationData | undefined
     defaultHelp?(data: Data): HelpData | undefined
     defaultLibrary?(data: Data): LibraryData | undefined
-    defaultServiceDeclaration?(data: Data): ServiceDeclarationData | undefined
+    defaultService?(data: Data): ServiceData | undefined
     defaultChapter?(data: Data): ChapterData | undefined
     defaultPart?(data: Data): PartData | undefined
     defaultHome?(data: Data): HomeData | undefined
@@ -203,20 +200,20 @@ export function data(): Data {
         return new LibraryDatum()
       },
 
-      serviceDeclaration(d) {
-        const a = d.defaultServiceDeclaration
+      service(d) {
+        const a = d.defaultService
         if (!a) {
           return
         }
-        const b = d.serviceDeclaration
+        const b = d.service
         if (!b) {
           return a
         }
-        return ServiceDeclarationDatum.merge(a, b)
+        return ServiceDatum.merge(a, b)
       },
 
-      defaultServiceDeclaration() {
-        return new ServiceDeclarationDatum()
+      defaultService() {
+        return new ServiceDatum()
       },
 
       chapter(d) {

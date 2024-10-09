@@ -3,7 +3,7 @@ import {type Declaration} from "@onlyoffice/service-declaration"
 import {type Resource} from "@onlyoffice/service-resource"
 import {cutSuffix} from "@onlyoffice/strings"
 import {slug} from "github-slugger"
-import {ServiceDeclarationDatum} from "../internal/service-declaration.tsx"
+import {ServiceDatum} from "../internal/service.tsx"
 
 export function data({list, retrieve}: Resource): Data {
   const sl = new ResourceSlugger()
@@ -36,11 +36,11 @@ export function data({list, retrieve}: Resource): Data {
         return d.name
       },
 
-      serviceDeclaration(data) {
+      service(data) {
         if (!data.pagination || !data.pagination.items) {
           throw new Error("No pagination")
         }
-        const d = new ServiceDeclarationDatum()
+        const d = new ServiceDatum()
         ;[d.declaration] = data.pagination.items
         return d
       },

@@ -1,5 +1,5 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import type * as Service from "@onlyoffice/service-declaration"
+import type * as ServiceDeclaration from "@onlyoffice/service-declaration"
 import {
   Badge,
   CodeListing,
@@ -26,7 +26,7 @@ export interface SyntaxHighlight {
 class Context {
   Description: Description = () => null
   SyntaxHighlight: SyntaxHighlight = () => null
-  headings: Record<ServiceDeclarationSection, JSX.Element> = {
+  headings: Record<ServiceSection, JSX.Element> = {
     Authorization: <h3>Authorization</h3>,
     Body: <h3>Body</h3>,
     Cookies: <h3>Cookies</h3>,
@@ -41,12 +41,12 @@ class Context {
 
 const ctx = createContext(new Context())
 
-export interface ServiceDeclarationProperties extends ChildrenIncludable {
-  declaration: Service.Declaration
+export interface ServiceProperties extends ChildrenIncludable {
+  declaration: ServiceDeclaration.Declaration
 }
 
-export function ServiceDeclaration(
-  p: ServiceDeclarationProperties,
+export function Service(
+  p: ServiceProperties,
 ): JSX.Element {
   return <ctx.Provider value={new Context()}>
     {p.children}
@@ -54,7 +54,7 @@ export function ServiceDeclaration(
   </ctx.Provider>
 }
 
-export type ServiceDeclarationSection =
+export type ServiceSection =
   "Authorization" |
   "Body" |
   "Cookies" |
@@ -65,37 +65,37 @@ export type ServiceDeclarationSection =
   "Request" |
   "Responses"
 
-export interface ServiceDeclarationHeadingProperties {
+export interface ServiceHeadingProperties {
   children: ComponentChildren
-  for: ServiceDeclarationSection
+  for: ServiceSection
 }
 
-export function ServiceDeclarationHeading(
-  p: ServiceDeclarationHeadingProperties,
+export function ServiceHeading(
+  p: ServiceHeadingProperties,
 ): JSX.Element {
   const c = useContext(ctx)
   c.headings[p.for] = <>{p.children}</>
   return <></>
 }
 
-export interface ServiceDeclarationDescriptionProperties {
+export interface ServiceDescriptionProperties {
   children: Description
 }
 
-export function ServiceDeclarationDescription(
-  p: ServiceDeclarationDescriptionProperties,
+export function ServiceDescription(
+  p: ServiceDescriptionProperties,
 ): JSX.Element {
   const c = useContext(ctx)
   c.Description = p.children
   return <></>
 }
 
-export interface ServiceDeclarationSyntaxHighlightProperties {
+export interface ServiceSyntaxHighlightProperties {
   children: SyntaxHighlight
 }
 
-export function ServiceDeclarationSyntaxHighlight(
-  p: ServiceDeclarationSyntaxHighlightProperties,
+export function ServiceSyntaxHighlight(
+  p: ServiceSyntaxHighlightProperties,
 ): JSX.Element {
   const c = useContext(ctx)
   c.SyntaxHighlight = p.children
@@ -103,7 +103,7 @@ export function ServiceDeclarationSyntaxHighlight(
 }
 
 interface DeclarationProperties {
-  declaration: Service.Declaration
+  declaration: ServiceDeclaration.Declaration
 }
 
 function Declaration(p: DeclarationProperties): JSX.Element {
@@ -120,7 +120,7 @@ function Declaration(p: DeclarationProperties): JSX.Element {
 }
 
 interface OperationDeclarationProperties {
-  declaration: Service.OperationDeclaration
+  declaration: ServiceDeclaration.OperationDeclaration
 }
 
 function OperationDeclaration(p: OperationDeclarationProperties): JSX.Element {
@@ -141,7 +141,7 @@ function OperationDeclaration(p: OperationDeclarationProperties): JSX.Element {
 }
 
 interface RequestProperties {
-  request: Service.Request
+  request: ServiceDeclaration.Request
 }
 
 function Request(p: RequestProperties): JSX.Element {
@@ -182,7 +182,7 @@ function Request(p: RequestProperties): JSX.Element {
 }
 
 interface AuthorizationProperties {
-  authorization: Service.Authorization
+  authorization: ServiceDeclaration.Authorization
 }
 
 function Authorization(p: AuthorizationProperties): JSX.Element {
@@ -218,7 +218,7 @@ function Authorization(p: AuthorizationProperties): JSX.Element {
 }
 
 interface ResponseProperties {
-  response: Service.Response
+  response: ServiceDeclaration.Response
 }
 
 function Response(p: ResponseProperties): JSX.Element {
@@ -235,7 +235,7 @@ function Response(p: ResponseProperties): JSX.Element {
 }
 
 interface EntityProperties {
-  entity: Service.Entity
+  entity: ServiceDeclaration.Entity
 }
 
 function Entity(p: EntityProperties): JSX.Element {
@@ -249,7 +249,7 @@ function Entity(p: EntityProperties): JSX.Element {
 }
 
 interface TypeProperties {
-  type: Service.Type
+  type: ServiceDeclaration.Type
 }
 
 function Type(p: TypeProperties): JSX.Element {
@@ -289,7 +289,7 @@ function Type(p: TypeProperties): JSX.Element {
 }
 
 interface ArrayTypeProperties {
-  type: Service.ArrayType
+  type: ServiceDeclaration.ArrayType
 }
 
 function ArrayType(p: ArrayTypeProperties): JSX.Element {
@@ -303,7 +303,7 @@ function ArrayType(p: ArrayTypeProperties): JSX.Element {
 }
 
 interface ComplexTypeProperties {
-  type: Service.ComplexType
+  type: ServiceDeclaration.ComplexType
 }
 
 function ComplexType(p: ComplexTypeProperties): JSX.Element {
@@ -325,7 +325,7 @@ function ComplexType(p: ComplexTypeProperties): JSX.Element {
 }
 
 interface EnumTypeProperties {
-  type: Service.EnumType
+  type: ServiceDeclaration.EnumType
 }
 
 function EnumType(p: EnumTypeProperties): JSX.Element {
@@ -354,7 +354,7 @@ function EnumType(p: EnumTypeProperties): JSX.Element {
 }
 
 interface LiteralTypeProperties {
-  type: Service.LiteralType
+  type: ServiceDeclaration.LiteralType
 }
 
 function LiteralType(p: LiteralTypeProperties): JSX.Element {
@@ -368,7 +368,7 @@ function LiteralType(p: LiteralTypeProperties): JSX.Element {
 }
 
 interface ObjectTypeProperties {
-  type: Service.ObjectType
+  type: ServiceDeclaration.ObjectType
 }
 
 function ObjectType(p: ObjectTypeProperties): JSX.Element {
@@ -382,7 +382,7 @@ function ObjectType(p: ObjectTypeProperties): JSX.Element {
 }
 
 interface PropertyProperties {
-  property: Service.Property
+  property: ServiceDeclaration.Property
 }
 
 function Property(p: PropertyProperties): JSX.Element {
@@ -438,7 +438,7 @@ function PropertyDescription(p: PropertyProperties): JSX.Element {
 }
 
 interface TypeBadgeProperties {
-  type: Service.Type
+  type: ServiceDeclaration.Type
 }
 
 function TypeBadge(p: TypeBadgeProperties): JSX.Element {
@@ -446,7 +446,7 @@ function TypeBadge(p: TypeBadgeProperties): JSX.Element {
 
   return <Badge>{w(t)}</Badge>
 
-  function w(t: Service.Type): string {
+  function w(t: ServiceDeclaration.Type): string {
     if (t.type === "array") {
       let l = t.type
 
@@ -497,7 +497,7 @@ function TypeBadge(p: TypeBadgeProperties): JSX.Element {
 }
 
 interface ExamplesProperties {
-  examples: Service.Example[]
+  examples: ServiceDeclaration.Example[]
 }
 
 function Examples(p: ExamplesProperties): JSX.Element {
@@ -535,7 +535,7 @@ function Examples(p: ExamplesProperties): JSX.Element {
 }
 
 interface HeadingProperties {
-  for: ServiceDeclarationSection
+  for: ServiceSection
 }
 
 function Heading(p: HeadingProperties): JSX.Element {

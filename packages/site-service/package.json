@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/site-service-declaration",
+  "name": "@onlyoffice/site-service",
   "type": "module",
   "private": true,
   "main": "lib/main.tsx",
