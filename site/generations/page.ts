@@ -12,6 +12,10 @@ import {
 } from "../internal/library-declaration.tsx"
 import {type PageData, PageDatum} from "../internal/page.tsx"
 import {type PartData, PartDatum} from "../internal/part.tsx"
+import {
+  type ServiceDeclarationData,
+  ServiceDeclarationDatum,
+} from "../internal/service-declaration.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -29,6 +33,7 @@ declare module "@onlyoffice/eleventy-types" {
     defaultGlobalNavigation?: GlobalNavigationData
     defaultHelp?: HelpData
     defaultLibraryDeclaration?: LibraryDeclarationData
+    defaultServiceDeclaration?: ServiceDeclarationData
     defaultChapter?: ChapterData
     defaultPart?: PartData
     defaultHome?: HomeData
@@ -47,6 +52,7 @@ declare module "@onlyoffice/eleventy-types" {
     defaultGlobalNavigation?(data: Data): GlobalNavigationData | undefined
     defaultHelp?(data: Data): HelpData | undefined
     defaultLibraryDeclaration?(data: Data): LibraryDeclarationData | undefined
+    defaultServiceDeclaration?(data: Data): ServiceDeclarationData | undefined
     defaultChapter?(data: Data): ChapterData | undefined
     defaultPart?(data: Data): PartData | undefined
     defaultHome?(data: Data): HomeData | undefined
@@ -198,6 +204,22 @@ export function data(): Data {
 
       defaultLibraryDeclaration() {
         return new LibraryDeclarationDatum()
+      },
+
+      serviceDeclaration(d) {
+        const a = d.defaultServiceDeclaration
+        if (!a) {
+          return
+        }
+        const b = d.serviceDeclaration
+        if (!b) {
+          return a
+        }
+        return ServiceDeclarationDatum.merge(a, b)
+      },
+
+      defaultServiceDeclaration() {
+        return new ServiceDeclarationDatum()
       },
 
       chapter(d) {
