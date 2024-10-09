@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/site-library-declaration",
+  "name": "@onlyoffice/site-library",
   "type": "module",
   "private": true,
   "exports": {
