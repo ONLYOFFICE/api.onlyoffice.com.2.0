@@ -24,7 +24,7 @@
     "@onlyoffice/site-part": "workspace:^",
     "@onlyoffice/site-playground": "workspace:^",
     "@onlyoffice/site-search": "workspace:^",
-    "@onlyoffice/site-service-declaration": "workspace:^",
+    "@onlyoffice/site-service": "workspace:^",
     "@onlyoffice/site-status": "workspace:^",
     "@onlyoffice/site-theme-switcher": "workspace:^",
     "@onlyoffice/site-toc": "workspace:^",

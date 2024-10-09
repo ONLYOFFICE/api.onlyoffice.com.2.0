@@ -2229,9 +2229,9 @@ importers:
       '@onlyoffice/site-search':
         specifier: workspace:^
         version: link:../site-search
-      '@onlyoffice/site-service-declaration':
+      '@onlyoffice/site-service':
         specifier: workspace:^
-        version: link:../site-service-declaration
+        version: link:../site-service
       '@onlyoffice/site-status':
         specifier: workspace:^
         version: link:../site-status
@@ -2407,7 +2407,7 @@ importers:
         specifier: 5.1.6
         version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
 
-  packages/site-service-declaration:
+  packages/site-service:
     dependencies:
       '@onlyoffice/preact-types':
         specifier: workspace:^
