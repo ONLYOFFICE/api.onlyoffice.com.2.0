@@ -6,10 +6,7 @@ import {type ChapterData, ChapterDatum} from "../internal/chapter.tsx"
 import {type GlobalNavigationData, GlobalNavigationDatum} from "../internal/global-navigation.tsx"
 import {type HelpData, HelpDatum} from "../internal/help.tsx"
 import {type HomeData, HomeDatum} from "../internal/home.tsx"
-import {
-  type LibraryDeclarationData,
-  LibraryDeclarationDatum,
-} from "../internal/library-declaration.tsx"
+import {type LibraryData, LibraryDatum} from "../internal/library.tsx"
 import {type PageData, PageDatum} from "../internal/page.tsx"
 import {type PartData, PartDatum} from "../internal/part.tsx"
 import {
@@ -32,7 +29,7 @@ declare module "@onlyoffice/eleventy-types" {
     defaultSitemap?: SitemapData
     defaultGlobalNavigation?: GlobalNavigationData
     defaultHelp?: HelpData
-    defaultLibraryDeclaration?: LibraryDeclarationData
+    defaultLibrary?: LibraryData
     defaultServiceDeclaration?: ServiceDeclarationData
     defaultChapter?: ChapterData
     defaultPart?: PartData
@@ -51,7 +48,7 @@ declare module "@onlyoffice/eleventy-types" {
     defaultSitemap?(data: Data): SitemapData | undefined
     defaultGlobalNavigation?(data: Data): GlobalNavigationData | undefined
     defaultHelp?(data: Data): HelpData | undefined
-    defaultLibraryDeclaration?(data: Data): LibraryDeclarationData | undefined
+    defaultLibrary?(data: Data): LibraryData | undefined
     defaultServiceDeclaration?(data: Data): ServiceDeclarationData | undefined
     defaultChapter?(data: Data): ChapterData | undefined
     defaultPart?(data: Data): PartData | undefined
@@ -190,20 +187,20 @@ export function data(): Data {
         return m
       },
 
-      libraryDeclaration(d) {
-        const a = d.defaultLibraryDeclaration
+      library(d) {
+        const a = d.defaultLibrary
         if (!a) {
           return
         }
-        const b = d.libraryDeclaration
+        const b = d.library
         if (!b) {
           return a
         }
-        return LibraryDeclarationDatum.merge(a, b)
+        return LibraryDatum.merge(a, b)
       },
 
-      defaultLibraryDeclaration() {
-        return new LibraryDeclarationDatum()
+      defaultLibrary() {
+        return new LibraryDatum()
       },
 
       serviceDeclaration(d) {
