@@ -2314,6 +2314,9 @@ importers:
       '@onlyoffice/site-service':
         specifier: workspace:^
         version: link:../site-service
+      '@onlyoffice/site-signature':
+        specifier: workspace:^
+        version: link:../site-signature
       '@onlyoffice/site-status':
         specifier: workspace:^
         version: link:../site-status
@@ -2500,6 +2503,37 @@ importers:
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@storybook/preact':
+        specifier: 8.0.0
+        version: 8.0.0(preact@10.22.0)
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      vite:
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+
+  packages/site-signature:
+    dependencies:
+      '@onlyoffice/preact-elements':
+        specifier: workspace:^
+        version: link:../preact-elements
+      '@onlyoffice/preact-types':
+        specifier: workspace:^
+        version: link:../preact-types
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
