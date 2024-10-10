@@ -2,6 +2,7 @@ baseUrl: https://api.teamlab.info/
 legacyBaseUrl: https://legacy-api.teamlab.info/
 
 analytics: false
+robots: false
 
 server:
   baseUrl: https://api.teamlab.info/

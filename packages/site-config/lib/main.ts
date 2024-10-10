@@ -7,6 +7,7 @@ export interface InputConfig {
   baseUrl?: string
   legacyBaseUrl?: string
   analytics?: boolean
+  robots?: boolean
   server?: InputServer
   playground?: InputPlayground
 }
@@ -15,6 +16,7 @@ export interface Configurable {
   baseUrl: string
   legacyBaseUrl: string
   analytics: boolean
+  robots: boolean
   server: ServerConfigurable
   playground: PlaygroundConfigurable
 }
@@ -25,6 +27,7 @@ export class Config implements Configurable {
   baseUrl = ""
   legacyBaseUrl = ""
   analytics = false
+  robots = false
   server = new ServerConfig()
   playground = new PlaygroundConfig()
 
@@ -96,6 +99,10 @@ export class Config implements Configurable {
       co.analytics = ic.analytics
     }
 
+    if (ic.robots !== undefined) {
+      co.robots = ic.robots
+    }
+
     if (ic.server) {
       co.server = ServerConfig.fromInput(ic.server)
     }
@@ -126,6 +133,12 @@ export class Config implements Configurable {
       co.analytics = b.analytics
     } else if (a.analytics !== undefined) {
       co.analytics = a.analytics
+    }
+
+    if (b.robots !== undefined) {
+      co.robots = b.robots
+    } else if (a.robots !== undefined) {
+      co.robots = a.robots
     }
 
     co.server = ServerConfig.merge(a.server, b.server)
