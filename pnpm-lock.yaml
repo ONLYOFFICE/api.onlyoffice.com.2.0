@@ -2565,6 +2565,15 @@ importers:
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../service-declaration
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      '@onlyoffice/site-glossary':
+        specifier: workspace:^
+        version: link:../site-glossary
+      '@onlyoffice/site-signature':
+        specifier: workspace:^
+        version: link:../site-signature
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
