@@ -1997,6 +1997,9 @@ importers:
 
   packages/service-declaration:
     dependencies:
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
       httpsnippet:
         specifier: 3.0.1
         version: 3.0.1
