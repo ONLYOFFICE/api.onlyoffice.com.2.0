@@ -1,17 +1,114 @@
 .badge {
-  /* color: var(--badge-neutral-foreground-color); */
+  /* stylelint-disable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-disable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-disable @stylistic/declaration-colon-space-after */
+  --true: initial;
+  --false: ;
+  /* stylelint-enable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-enable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-enable @stylistic/declaration-colon-space-after */
+
+  --badge-variant-is-calm: var(--false);
+  --badge-variant-is-critical: var(--false);
+  --badge-variant-is-neutral: var(--false);
+  --badge-variant-is-transparent: var(--false);
+  --badge-variant-is-default: var(--true);
+
+  --badge-background-color-calm: var(--temp-color-background-calm);
+  --badge-foreground-color-calm: var(--temp-color-foreground-calm);
+  --badge-caption-foreground-color-calm: var(--temp-color-foreground-calm);
+
+  --badge-background-color-critical: var(--temp-color-background-critical);
+  --badge-foreground-color-critical: var(--temp-color-foreground-critical);
+  --badge-caption-foreground-color-critical: var(--temp-color-foreground-critical);
+
+  --badge-background-color-neutral: var(--temp-color-background-neutral);
+  --badge-foreground-color-neutral: var(--temp-color-foreground-neutral-rest);
+  --badge-caption-foreground-color-neutral: var(--temp-color-foreground-neutral-muted);
+
+  --badge-background-color-transparent: var(--base-color-transparent);
+  --badge-foreground-color-transparent: var(--temp-color-foreground-neutral-rest);
+  --badge-caption-foreground-color-transparent: var(--temp-color-foreground-neutral-rest);
+
+  --badge-background-color-default: var(--badge-background-color-neutral);
+  --badge-foreground-color-default: var(--badge-foreground-color-neutral);
+  --badge-caption-foreground-color-default: var(--badge-caption-foreground-color-neutral);
+
+  --badge-computed-background-color-calm: var(--badge-variant-is-calm, var(--badge-background-color-calm));
+  --badge-computed-foreground-color-calm: var(--badge-variant-is-calm, var(--badge-foreground-color-calm));
+  --badge-computed-caption-foreground-color-calm: var(--badge-variant-is-calm, var(--badge-caption-foreground-color-calm));
+
+  --badge-computed-background-color-critical: var(--badge-variant-is-critical, var(--badge-background-color-critical));
+  --badge-computed-foreground-color-critical: var(--badge-variant-is-critical, var(--badge-foreground-color-critical));
+  --badge-computed-caption-foreground-color-critical: var(--badge-variant-is-critical, var(--badge-caption-foreground-color-critical));
+
+  --badge-computed-background-color-neutral: var(--badge-variant-is-neutral, var(--badge-background-color-neutral));
+  --badge-computed-foreground-color-neutral: var(--badge-variant-is-neutral, var(--badge-foreground-color-neutral));
+  --badge-computed-caption-foreground-color-neutral: var(--badge-variant-is-neutral, var(--badge-caption-foreground-color-neutral));
+
+  --badge-computed-background-color-transparent: var(--badge-variant-is-transparent, var(--badge-background-color-transparent));
+  --badge-computed-foreground-color-transparent: var(--badge-variant-is-transparent, var(--badge-foreground-color-transparent));
+  --badge-computed-caption-foreground-color-transparent: var(--badge-variant-is-transparent, var(--badge-caption-foreground-color-transparent));
+
+  --badge-computed-background-color-default: var(--badge-variant-is-default, var(--badge-background-color-default));
+  --badge-computed-foreground-color-default: var(--badge-variant-is-default, var(--badge-foreground-color-default));
+  --badge-computed-caption-foreground-color-default: var(--badge-variant-is-default, var(--badge-caption-foreground-color-default));
+
+  --badge-computed-background-color-current: var(--badge-computed-background-color-calm) var(--badge-computed-background-color-critical) var(--badge-computed-background-color-neutral) var(--badge-computed-background-color-transparent) var(--badge-computed-background-color-default);
+  --badge-computed-foreground-color-current: var(--badge-computed-foreground-color-calm) var(--badge-computed-foreground-color-critical) var(--badge-computed-foreground-color-neutral) var(--badge-computed-foreground-color-transparent) var(--badge-computed-foreground-color-default);
+  --badge-computed-caption-foreground-color-current: var(--badge-computed-caption-foreground-color-calm) var(--badge-computed-caption-foreground-color-critical) var(--badge-computed-caption-foreground-color-neutral) var(--badge-computed-caption-foreground-color-transparent) var(--badge-computed-caption-foreground-color-default);
+
+  background-color: var(--badge-computed-background-color-current);
   border-radius: var(--size-border-radius-small);
+  color: var(--badge-computed-foreground-color-current);
   font-family: var(--base-text-font-family-monospace);
-  font-size: var(--text-body-font-size-small);
-  line-height: var(--text-body-line-height-small);
   padding: var(--base-size-4) var(--base-size-8);
 }
 
-.badge_danger {
-  /* color: var(--badge-danger-foreground-color); */
+.badge_variant_default {
+  --badge-variant-is-calm: var(--false);
+  --badge-variant-is-critical: var(--false);
+  --badge-variant-is-neutral: var(--false);
+  --badge-variant-is-transparent: var(--false);
+  --badge-variant-is-default: var(--true);
 }
 
-.badge_support {
-  /* color: var(--badge-support-foreground-color); */
-  text-decoration: underline;
+.badge_variant_calm {
+  --badge-variant-is-calm: var(--true);
+  --badge-variant-is-critical: var(--false);
+  --badge-variant-is-neutral: var(--false);
+  --badge-variant-is-transparent: var(--false);
+  --badge-variant-is-default: var(--false);
+}
+
+.badge_variant_critical {
+  --badge-variant-is-calm: var(--false);
+  --badge-variant-is-critical: var(--true);
+  --badge-variant-is-neutral: var(--false);
+  --badge-variant-is-transparent: var(--false);
+  --badge-variant-is-default: var(--false);
+}
+
+/* .badge_variant_innovative {} */
+
+.badge_variant_neutral {
+  --badge-variant-is-calm: var(--false);
+  --badge-variant-is-critical: var(--false);
+  --badge-variant-is-neutral: var(--true);
+  --badge-variant-is-transparent: var(--false);
+  --badge-variant-is-default: var(--false);
+}
+
+.badge_variant_transparent {
+  --badge-variant-is-calm: var(--false);
+  --badge-variant-is-critical: var(--false);
+  --badge-variant-is-neutral: var(--false);
+  --badge-variant-is-transparent: var(--true);
+  --badge-variant-is-default: var(--false);
+}
+
+/* .badge_variant_vibrant {} */
+
+.badge__caption {
+  color: var(--badge-computed-caption-foreground-color-current);
 }
