@@ -11,17 +11,44 @@ export const A = wrap("a")
 export type ButtonProperties = ElementProperties<"button">
 export const Button = wrap("button")
 
+export type CodeProperties = ElementProperties<"code">
+export const Code = wrap("code")
+
+export type DdProperties = ElementProperties<"dd">
+export const Dd = wrap("dd")
+
 export type DivProperties = ElementProperties<"div">
 export const Div = wrap("div")
+
+export type DlProperties = ElementProperties<"dl">
+export const Dl = wrap("dl")
+
+export type DtProperties = ElementProperties<"dt">
+export const Dt = wrap("dt")
 
 export type H2Properties = ElementProperties<"h2">
 export const H2 = wrap("h2")
 
+export type FooterProperties = ElementProperties<"footer">
+export const Footer = wrap("footer")
+
+export type HeaderProperties = ElementProperties<"header">
+export const Header = wrap("header")
+
 export type LiProperties = ElementProperties<"li">
 export const Li = wrap("li")
 
+export type NavProperties = ElementProperties<"nav">
+export const Nav = wrap("nav")
+
 export type PProperties = ElementProperties<"p">
 export const P = wrap("p")
+
+export type PreProperties = ElementProperties<"pre">
+export const Pre = wrap("pre")
+
+export type SpanProperties = ElementProperties<"span">
+export const Span = wrap("span")
 
 export type UlProperties = ElementProperties<"ul">
 export const Ul = wrap("ul")
