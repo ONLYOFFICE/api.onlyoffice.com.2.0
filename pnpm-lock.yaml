@@ -1473,6 +1473,19 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/preact-join:
+    dependencies:
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/preact-merge:
     dependencies:
       preact:
