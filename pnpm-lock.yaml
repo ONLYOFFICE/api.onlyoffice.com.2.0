@@ -1310,6 +1310,9 @@ importers:
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../service-declaration
+      '@onlyoffice/service-signature':
+        specifier: workspace:^
+        version: link:../service-signature
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12

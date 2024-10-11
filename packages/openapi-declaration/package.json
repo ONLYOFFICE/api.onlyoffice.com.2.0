@@ -12,6 +12,7 @@
   "dependencies": {
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/service-declaration": "workspace:^",
+    "@onlyoffice/service-signature": "workspace:^",
     "@types/node": "20.12.12",
     "openapi-types": "12.1.3",
     "typescript": "5.4.5"
