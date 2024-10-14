@@ -2,7 +2,7 @@
 order: -2
 ---
 
-**ONLYOFFICE Desktop Editors** allows developers to add specific features which are not directly related to the OOXML format using plugins. You can use ready-made plugins from [ONLYOFFICE App Directory](https://www.onlyoffice.com/en/app-directory) or create your own ones using our [Plugins and macros API documentation](../../../Plugin%20and%20Macros/Get%20Started/Plugin%20structure/index.md).
+**ONLYOFFICE Desktop Editors** allows developers to add specific features which are not directly related to the OOXML format using plugins. You can use ready-made plugins from [ONLYOFFICE App Directory](https://www.onlyoffice.com/en/app-directory) or create your own ones using our [Plugins and macros API documentation](../../../Plugin%20and%20Macros/Get%20Started/Getting%20started/index.md).
 
 There are two ways to add plugins: through the plugin manager and through the plugin folder.
 
@@ -24,7 +24,7 @@ Follow the steps below to add the plugins to the editor using plugin manager:
 
 If you want to add your own plugin, you can do it manually, even if you are offline:
 
-1. Pack all the [plugin files](../../../Plugin%20and%20Macros/Get%20Started/Plugin%20structure/index.md) within the plugin folder into a **zip** archive and change its extension to *.plugin* (all the plugin files and subfolders must be at the archive root).
+1. Pack all the [plugin files](../../../Plugin%20and%20Macros/Structure/Manifest/index.md) within the plugin folder into a **zip** archive and change its extension to *.plugin* (all the plugin files and subfolders must be at the archive root).
 
    > If you download a plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins), unpack the plugin folder first and then archive its elements only.
 

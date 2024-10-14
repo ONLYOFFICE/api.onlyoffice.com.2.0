@@ -1,9 +1,13 @@
+---
+order: -1
+---
+
 The list of changes for ONLYOFFICE Plugins and Macros API.
 
 ## Version 8.1
 
-- Added the ability to add the plugin [toolbar menu items](../../Get%20Started/Plugin%20types/index.md).
-- Added the ability to create [multiple left panels](../../Usage%20API/Config/Plugin%20variations/index.md) for plugins.
+- Added the ability to add the plugin [toolbar menu items](../../Customization/Toolbar/index.md).
+- Added the ability to create [multiple left panels](../../Structure/Manifest/Variations/index.md) for plugins.
 - Added the information about the current position of the context menu plugin event.
 - Added the onToolbarMenuClick event.
 - Added the ActivateWindow method to *window\.Asc.plugin.executeMethod*.
@@ -20,7 +24,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 - Added the ToolbarMenuTab type to the simple type definitions.
 - Added the ToolbarMenuItemType type to the simple type definitions.
 - Added the *icons* and *data* parameters to the ContextMenuItem object.
-- Added the [menu](../../Usage%20API/Config/index.md#menu) config parameter.
+- Added the [menu](../../Structure/Manifest/index.md#variationsmenu) config parameter.
 
 ## Version 8.0
 
@@ -39,7 +43,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 
 ## Version 7.4
 
-- Added the ability to download ready-to-use plugins from [ONLYOFFICE Plugin Marketplace](../../Plugins/Adding%20plugins/ONLYOFFICE%20Desktop%20Editors/index.md#adding-plugins-through-the-plugin-manager) in ONLYOFFICE Desktop Editors.
+- Added the ability to download ready-to-use plugins from [ONLYOFFICE Plugin Marketplace](../../Tutorials/Installing/ONLYOFFICE%20Desktop%20Editors/index.md#adding-plugins-through-the-plugin-manager) in ONLYOFFICE Desktop Editors.
 - Added the sendToPlugin method to the *Plugin* object.
 - Added the onContextMenuClick event.
 - Added the onContextMenuShow event.
@@ -63,7 +67,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 
 ## Version 7.3
 
-- Added the *sign* type to the [initDataType](../../Usage%20API/Config/index.md#initdatatype) config parameter.
+- Added the *sign* type to the [initDataType](../../Structure/Manifest/index.md#variationsinitdatatype) config parameter.
 - Added the AddAddinField method to *window\.Asc.plugin.executeMethod*.
 - Added the GetAllAddinFields method to *window\.Asc.plugin.executeMethod*.
 - Added the GetVBAMacros method to *window\.Asc.plugin.executeMethod*.
@@ -82,8 +86,8 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 - Added the AcceptReviewChanges method to *window\.Asc.plugin.executeMethod*.
 - Added the MoveToNextReviewChange method to *window\.Asc.plugin.executeMethod*.
 - Added the RejectReviewChanges method to *window\.Asc.plugin.executeMethod*.
-- Changed the plugin [localization](../../Plugins/Plugin%20localization/index.md) scheme.
-- Added the [ONLYOFFICE Plugin Marketplace](../../Plugins/Adding%20plugins/ONLYOFFICE%20Docs%20on-premises/index.md#adding-plugins-through-the-plugin-manager).
+- Changed the plugin [localization](../../Structure/Localization/index.md) scheme.
+- Added the [ONLYOFFICE Plugin Marketplace](../../Tutorials/Installing/ONLYOFFICE%20Docs%20on-premises/index.md#adding-plugins-through-the-plugin-manager).
 - Added the ChangeOleObject method to *window\.Asc.plugin.executeMethod*.
 - Added the GetAllForms method to *window\.Asc.plugin.executeMethod*.
 - Added the GetFileToDownload method to *window\.Asc.plugin.executeMethod*.

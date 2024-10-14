@@ -1,5 +1,5 @@
 ---
 chapter:
   tableOfContents: true
-order: -5
+order: -7
 ---

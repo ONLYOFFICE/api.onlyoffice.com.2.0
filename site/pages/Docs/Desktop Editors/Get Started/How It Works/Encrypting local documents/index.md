@@ -12,7 +12,7 @@ To build the **Encryption** plugin, you need to create three files:
 - JS file with code,
 - JSON file with config.
 
-More information about the plugin structure can be found [here](../../../../Plugin%20and%20Macros/Get%20Started/Plugin%20structure/index.md).
+More information about the plugin structure can be found [here](../../../../Plugin%20and%20Macros/Structure/Manifest/index.md).
 
 Let’s have a look at the config:
 
@@ -45,7 +45,7 @@ Let’s have a look at the config:
 }
 ```
 
-All the config parameters are described in the [documentation](../../../../Plugin%20and%20Macros/Usage%20API/Config/index.md).
+All the config parameters are described in the [documentation](../../../../Plugin%20and%20Macros/Structure/Manifest/index.md).
 
 After the config file is ready, create the plugin code file with the following contents:
 
@@ -173,7 +173,7 @@ Copy the folders with plugins to the *sdkjs-plugins* directory. The path to the 
 
 It is important that you use plugins GUID as a folder name.
 
-Detailed instructions can be found [here](../../../../Plugin%20and%20Macros/Plugins/Adding%20plugins/ONLYOFFICE%20Desktop%20Editors/index.md).
+Detailed instructions can be found [here](../../../../Plugin%20and%20Macros/Tutorials/Installing/ONLYOFFICE%20Desktop%20Editors/index.md).
 
 ## Step 4. Working with encryption plugins
 
