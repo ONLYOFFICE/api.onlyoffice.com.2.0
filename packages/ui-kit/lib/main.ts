@@ -1,4 +1,5 @@
 export * from "@onlyoffice/ui-article-card"
+export * from "@onlyoffice/ui-badge-group"
 export * from "@onlyoffice/ui-badge"
 export * from "@onlyoffice/ui-breadcrumb"
 export * from "@onlyoffice/ui-button"
