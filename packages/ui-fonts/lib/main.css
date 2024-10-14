@@ -1,0 +1,245 @@
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/OpenSans-Bold.woff2") format("woff2"), url("/OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/OpenSans-BoldItalic.woff2") format("woff2"), url("/OpenSans-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/OpenSans-Italic.woff2") format("woff2"), url("/OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/OpenSans-Medium.woff2") format("woff2"), url("/OpenSans-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/OpenSans-Italic.woff2") format("woff2"), url("/OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/OpenSans-MediumItalic.woff2") format("woff2"), url("/OpenSans-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/OpenSans-SemiBold.woff2") format("woff2"), url("/OpenSans-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/OpenSans-Regular.woff2") format("woff2"), url("/OpenSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/OpenSans-SemiBoldItalic.woff2") format("woff2"), url("/OpenSans-SemiBoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu Mono";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/UbuntuMono-BoldItalic.woff2") format("woff2"), url("/UbuntuMono-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/OpenSans-Regular.woff2") format("woff2"), url("/OpenSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/UbuntuMono-Bold.woff2") format("woff2"), url("/UbuntuMono-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/UbuntuMono-Italic.woff2") format("woff2"), url("/UbuntuMono-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/UbuntuMono-Regular.woff2") format("woff2"), url("/UbuntuMono-Regular.woff") format("woff");
+}
+
+/* Fontpie fallbacks */
+
+@font-face {
+  ascent-override: 101.97%;
+  descent-override: 27.95%;
+  font-family: "Open Sans Fallback";
+  font-style: normal;
+  font-weight: 700;
+  line-gap-override: 0%;
+  size-adjust: 104.82%;
+  src: local("Arial Bold");
+}
+
+@font-face {
+  ascent-override: 108.02%;
+  descent-override: 29.61%;
+  font-family: "Open Sans Fallback";
+  font-style: italic;
+  font-weight: 700;
+  line-gap-override: 0%;
+  size-adjust: 98.95%;
+  src: local("Arial Bold Italic");
+}
+
+@font-face {
+  ascent-override: 107.47%;
+  descent-override: 29.46%;
+  font-family: "Open Sans Fallback";
+  font-style: italic;
+  font-weight: 400;
+  line-gap-override: 0%;
+  size-adjust: 99.46%;
+  src: local("Arial Italic");
+}
+
+@font-face {
+  ascent-override: 99.63%;
+  descent-override: 27.31%;
+  font-family: "Open Sans Fallback";
+  font-style: normal;
+  font-weight: 500;
+  line-gap-override: 0%;
+  size-adjust: 107.28%;
+  src: local("Arial");
+}
+
+@font-face {
+  ascent-override: 107.47%;
+  descent-override: 29.46%;
+  font-family: "Open Sans Fallback";
+  font-style: italic;
+  font-weight: 400;
+  line-gap-override: 0%;
+  size-adjust: 99.46%;
+  src: local("Arial Italic");
+}
+
+@font-face {
+  ascent-override: 105.45%;
+  descent-override: 28.9%;
+  font-family: "Open Sans Fallback";
+  font-style: italic;
+  font-weight: 500;
+  line-gap-override: 0%;
+  size-adjust: 101.36%;
+  src: local("Arial Italic");
+}
+
+@font-face {
+  ascent-override: 105.77%;
+  descent-override: 28.99%;
+  font-family: "Open Sans Fallback";
+  font-style: normal;
+  font-weight: 600;
+  line-gap-override: 0%;
+  size-adjust: 101.06%;
+  src: local("Arial Bold");
+}
+
+@font-face {
+  ascent-override: 101.58%;
+  descent-override: 27.84%;
+  font-family: "Open Sans Fallback";
+  font-style: normal;
+  font-weight: 400;
+  line-gap-override: 0%;
+  size-adjust: 105.22%;
+  src: local("Arial");
+}
+
+@font-face {
+  ascent-override: 111.96%;
+  descent-override: 30.69%;
+  font-family: "Open Sans Fallback";
+  font-style: italic;
+  font-weight: 600;
+  line-gap-override: 0%;
+  size-adjust: 95.47%;
+  src: local("Arial Bold Italic");
+}
+
+@font-face {
+  ascent-override: 99.62%;
+  descent-override: 20.4%;
+  font-family: "Ubuntu Fallback";
+  font-style: normal;
+  font-weight: 700;
+  line-gap-override: 0%;
+  size-adjust: 83.32%;
+  src: local("Courier New Bold");
+}
+
+@font-face {
+  ascent-override: 99.62%;
+  descent-override: 20.4%;
+  font-family: "Ubuntu Fallback";
+  font-style: italic;
+  font-weight: 400;
+  line-gap-override: 0%;
+  size-adjust: 83.32%;
+  src: local("Courier New Italic");
+}
+
+@font-face {
+  ascent-override: 99.62%;
+  descent-override: 20.4%;
+  font-family: "Ubuntu Fallback";
+  font-style: normal;
+  font-weight: 400;
+  line-gap-override: 0%;
+  size-adjust: 83.32%;
+  src: local("Courier New");
+}

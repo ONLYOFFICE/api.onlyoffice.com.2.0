@@ -23,6 +23,7 @@
     "@onlyoffice/ui-code-listing": "workspace:^",
     "@onlyoffice/ui-code-preview": "workspace:^",
     "@onlyoffice/ui-content": "workspace:^",
+    "@onlyoffice/ui-fonts": "workspace:^",
     "@onlyoffice/ui-form-control": "workspace:^",
     "@onlyoffice/ui-logos": "workspace:^",
     "@onlyoffice/ui-mascots": "workspace:^",

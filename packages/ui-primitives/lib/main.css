@@ -9,7 +9,7 @@
 :root {
   /* prefix: base, variant: text, property: font-family */
   --base-text-font-family-sans-serif: "Open Sans", "Open Sans Fallback", system-ui, sans-serif;
-  --base-text-font-family-monospace: monaco, "Andale Mono", "Courier New", ui-monospace, monospace;
+  --base-text-font-family-monospace: "Ubuntu Mono", "Ubuntu Mono Fallback", ui-monospace, monospace;
 
   /* prefix: base, variant: text, property: font-size */
   --base-text-font-size-12: 12px;

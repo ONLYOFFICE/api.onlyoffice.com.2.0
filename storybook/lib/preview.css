@@ -1,7 +1,6 @@
 /* todo: resolve the ignore */
 /* stylelint-disable plugin/no-low-performance-animation-properties */
 
-@import "../../site/assets/font.css";
 @import "../node_modules/@onlyoffice/ui-kit/lib/main.css";
 @import "../node_modules/@onlyoffice/site-kit/lib/main.css";
 
