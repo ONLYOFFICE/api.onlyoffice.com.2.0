@@ -1,4 +1,5 @@
 export * from "@onlyoffice/site-chapter"
+export * from "@onlyoffice/site-content"
 export * from "@onlyoffice/site-document-editor-playground"
 export * from "@onlyoffice/site-glossary"
 export * from "@onlyoffice/site-help"
