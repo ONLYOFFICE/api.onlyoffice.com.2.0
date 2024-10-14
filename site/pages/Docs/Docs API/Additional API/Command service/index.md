@@ -1,4 +1,4 @@
-For the interaction with the **document command service** the POST requests are used. The request parameters are entered in JSON format in the request body. The requests are sent to the `https://documentserver/coauthoring/command` address where the **documentserver** is the name of the server with the ONLYOFFICE Docs installed.
+For the interaction with the **document command service** the POST requests are used. The request parameters are entered in JSON format in the request body. The requests are sent to the `https://documentserver/command` address where the **documentserver** is the name of the server with the ONLYOFFICE Docs installed.
 
 > Please note that prior to version 8.2, the `https://documentserver/coauthoring/CommandService.ashx` address was used to send requests.
 
