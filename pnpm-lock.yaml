@@ -2961,12 +2961,15 @@ importers:
       '@github/tab-container-element':
         specifier: 4.8.0
         version: 4.8.0
-      '@onlyoffice/preact-types':
+      '@onlyoffice/preact-elements':
         specifier: workspace:^
-        version: link:../preact-types
+        version: link:../preact-elements
       '@onlyoffice/tab-container-element-types':
         specifier: workspace:^
         version: link:../tab-container-element-types
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
