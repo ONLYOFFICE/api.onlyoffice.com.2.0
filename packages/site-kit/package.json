@@ -17,6 +17,7 @@
   "dependencies": {
     "@onlyoffice/site-chapter": "workspace:^",
     "@onlyoffice/site-document-editor-playground": "workspace:^",
+    "@onlyoffice/site-glossary": "workspace:^",
     "@onlyoffice/site-help": "workspace:^",
     "@onlyoffice/site-home": "workspace:^",
     "@onlyoffice/site-library": "workspace:^",

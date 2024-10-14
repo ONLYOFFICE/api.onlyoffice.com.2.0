@@ -1,0 +1,54 @@
+.glossary {
+  margin-block: 0;
+}
+
+.glossary > .glossary__term:first-child {
+  border-block-start: none;
+}
+
+.glossary__term {
+  border-block-start-color: var(--color-border-muted);
+  border-block-start-style: solid;
+  border-block-start-width: var(--size-border-width-thin);
+  padding-block-start: var(--base-size-16);
+}
+
+.glossary__name {
+  font-weight: var(--base-text-font-weight-bold);
+}
+
+.glossary__name > a {
+  color: inherit;
+  text-decoration: none;
+
+  &:focus-visible,
+  &:hover {
+    color: var(--color-foreground-link);
+  }
+}
+
+.glossary__details {
+  margin-block-start: var(--base-size-12);
+  margin-inline-start: 0;
+  padding-block-end: var(--base-size-16);
+
+  &:empty {
+    margin-block-start: 0;
+  }
+
+  &:has(> .glossary:only-child) {
+    margin-block-start: unset;
+  }
+
+  &:has(> .glossary:last-child) {
+    padding-block-end: unset;
+  }
+}
+
+.glossary__details > :first-child {
+  margin-block-start: 0;
+}
+
+.glossary__details .glossary {
+  margin-inline-start: var(--base-size-32);
+}
