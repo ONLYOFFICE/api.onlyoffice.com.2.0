@@ -5,7 +5,7 @@ The list of changes of ONLYOFFICE Docs API.
 - The [editorConfig.region](../../Usage%20API/Config/Editor/index.md#region) field is now used to define the default measurement units in all editor types.
 - The [editorConfig.location](../../Usage%20API/Config/Editor/index.md#location) field is deprecated, please use the [editorConfig.region](../../Usage%20API/Config/Editor/index.md#region) field instead.
 - Added the *insert-text* type of document selection to the *c* parameter of the [setRequestedDocument](../../Usage%20API/Methods/index.md#setrequesteddocument) method.
-- The `https://documentserver/coauthoring/CommandService.ashx` address of the [command service](../../Additional%20API/Command%20service/index.md) is replaced with `https://documentserver/coauthoring/command`.
+- The `https://documentserver/coauthoring/CommandService.ashx` address of the [command service](../../Additional%20API/Command%20service/index.md) is replaced with `https://documentserver/command`.
 - Added the *users* parameter to the response of the [info](../../Additional%20API/Command%20service/info/index.md) command.
 - Added the [tabBackground](../../Usage%20API/Config/Editor/Customization/index.md#featurestabbackground) field to the *editorConfig.customization.features* parameter.
 - Added the [tabStyle](../../Usage%20API/Config/Editor/Customization/index.md#featurestabstyle) field to the *editorConfig.customization.features* parameter.
