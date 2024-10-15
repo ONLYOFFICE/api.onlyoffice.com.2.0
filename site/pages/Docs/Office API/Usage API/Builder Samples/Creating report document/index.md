@@ -5,7 +5,7 @@ Create reports on all the comments added to the document and on every change whi
 - create a table for the comments/review report and fill it in with the data from the global variable (Api/CreateParagraph, Api/CreateTable, ApiDocument/Push, ApiDocumentContent/GetElement, ApiParagraph/AddText, ApiTable/GetRow, ApiTable/MergeCells, ApiTableCell/GetContent, ApiTableRow/GetCell);
 - edit text style in the table (ApiDocument/GetStyle, ApiRun/SetColor, ApiRun/SetStrikeout).
 
-```ts document-builder={"document": {"url": "https://api.onlyoffice.com/app_data/officeapi/sample-files/document_review_mode.docx"}, "documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
+```ts document-builder={"document": {"url": "https://static.onlyoffice.com/assets/docs/samples/document_review_mode.docx"}, "documentType": "word", "editorConfig": {"customization": {"zoom": 60}}}
 let oDocument = Api.GetDocument()
 GlobalVariable["CommentsReport"] = oDocument.GetCommentsReport()
 GlobalVariable["ReviewReport"] = oDocument.GetReviewReport()
