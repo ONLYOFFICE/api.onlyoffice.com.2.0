@@ -1,23 +1,11 @@
+// todo: separate chapter with article
+
 import {Sitemap, type SitemapEntity} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {
-  ChapterContent,
-  Chapter as SChapter,
-  ChapterNavigation as SChapterNavigation,
-  SearchClear,
-  SearchContainer,
-  SearchField,
-  SearchHidable,
-  SearchOutput,
-  SearchPlaceholder,
-  SearchTemplate,
-} from "@onlyoffice/site-kit"
-import {
-  BreadcrumbCrumb,
-  Content,
-  Breadcrumb as UBreadcrumb,
-} from "@onlyoffice/ui-kit"
-import {Fragment, type JSX, h} from "preact"
+import * as Site from "@onlyoffice/site-kit"
+import * as Ui from "@onlyoffice/ui-kit"
+import {Fragment, type JSX, createContext, h} from "preact"
+import {useContext} from "preact/hooks"
 import {Tree, TreeGroup, TreeItem, TreeLink} from "../components/tree/tree.tsx"
 import {Help} from "./help.tsx"
 import {TableOfContents} from "./table-of-contents.tsx"
@@ -68,12 +56,57 @@ export class ChapterDatum implements ChapterData {
   }
 }
 
+class Context {
+  Content: unknown = () => null
+  Sidebar: unknown = () => null
+}
+
+const ctx = createContext(new Context())
+
+export interface ArticleContentProperties {
+  children: unknown
+}
+
+export function ArticleContent(p: ArticleContentProperties): JSX.Element {
+  const c = useContext(ctx)
+  c.Content = p.children
+  return <></>
+}
+
+export interface ArticleSidebarProperties {
+  children: unknown
+}
+
+export function ArticleSidebar(p: ArticleSidebarProperties): JSX.Element {
+  const c = useContext(ctx)
+  c.Sidebar = p.children
+  return <></>
+}
+
 export interface ChapterProperties extends ChildrenIncludable {
   url: string
 }
 
 export function Chapter(p: ChapterProperties): JSX.Element {
   const s = Sitemap.shared
+
+  const ue = s.find(p.url, "url")
+  if (!ue) {
+    throw new Error(`Entity not found: ${p.url}`)
+  }
+  if (ue.type !== "page") {
+    throw new Error(`Current entity is not a page: ${ue.type} (${ue.id})`)
+  }
+
+  return <ctx.Provider value={new Context()}>
+    {ue.data.tempChapterNext && <>{p.children}</>}
+    <Root {...p} />
+  </ctx.Provider>
+}
+
+function Root(p: ChapterProperties): JSX.Element {
+  const s = Sitemap.shared
+  const {Content, Sidebar} = useContext(ctx)
 
   const ue = s.find(p.url, "url")
   if (!ue) {
@@ -116,13 +149,13 @@ export function Chapter(p: ChapterProperties): JSX.Element {
     throw new Error(`Chapter data not found: ${he.url} (${he.id})`)
   }
 
-  return <SChapter
+  return <Site.Chapter
     data-part={pe.title}
     data-chapter={hd.title}
     data-pagefind-filter="part[data-part], chapter[data-chapter]"
   >
-    <SChapterNavigation>
-      <SearchContainer
+    <Site.ChapterNavigation>
+      <Site.SearchContainer
         search-options={{
           filters: {
             part: [pe.title],
@@ -130,36 +163,55 @@ export function Chapter(p: ChapterProperties): JSX.Element {
           },
         }}
       >
-        <SearchPlaceholder>Type <kbd>/</kbd> to search</SearchPlaceholder>
-        <SearchField label="Search" />
-        <SearchClear label="Clear" />
-        <SearchTemplate>
+        <Site.SearchPlaceholder>Type <kbd>/</kbd> to search</Site.SearchPlaceholder>
+        <Site.SearchField label="Search" />
+        <Site.SearchClear label="Clear" />
+        <Site.SearchTemplate>
           <li>
             <p><a data-search-container-link /></p>
             <p data-search-container-matches />
           </li>
-        </SearchTemplate>
-      </SearchContainer>
+        </Site.SearchTemplate>
+      </Site.SearchContainer>
       <ChapterNavigation level={2} url={p.url} />
-    </SChapterNavigation>
-    <ChapterContent>
-      <Breadcrumb url={p.url} />
-      <SearchHidable>
-        <Content>
-          <h1>{ud.title}</h1>
-          {p.children}
-          {ud.tableOfContents && <TableOfContents url={p.url} depth={1} />}
-        </Content>
-      </SearchHidable>
-      <SearchOutput>
-        <Content>
-          <h1 aria-live="polite"><span data-search-container-counter /> Results</h1>
-          <ol data-search-container-results />
-        </Content>
-      </SearchOutput>
-      {ud.help && <Help current={p.url} />}
-    </ChapterContent>
-  </SChapter>
+    </Site.ChapterNavigation>
+    <Site.ChapterContent>
+      <Site.Article
+        variant={(() => {
+          if (ue.data.tempChapterNext) {
+            return "wide"
+          }
+          return "narrow"
+        })()}
+      >
+        <Site.ArticleBreadcrumb>
+          <Breadcrumb url={p.url} />
+        </Site.ArticleBreadcrumb>
+        {ue.data.tempChapterNext && <Site.ArticleSidebar>
+          <Sidebar />
+        </Site.ArticleSidebar>}
+        <Site.ArticleContent>
+          <Site.SearchHidable>
+            <Site.Content>
+              <h1>{ud.title}</h1>
+              {ue.data.tempChapterNext && <Content />}
+              {!ue.data.tempChapterNext && p.children}
+              {ud.tableOfContents && <TableOfContents url={p.url} depth={1} />}
+            </Site.Content>
+          </Site.SearchHidable>
+          <Site.SearchOutput>
+            <Site.Content>
+              <h1 aria-live="polite"><span data-search-container-counter /> Results</h1>
+              <ol data-search-container-results />
+            </Site.Content>
+          </Site.SearchOutput>
+        </Site.ArticleContent>
+        <Site.ArticleHelp>
+          {ud.help && <Help current={p.url} />}
+        </Site.ArticleHelp>
+      </Site.Article>
+    </Site.ChapterContent>
+  </Site.Chapter>
 }
 
 export interface ChapterNavigationProperties {
@@ -273,7 +325,7 @@ export function Breadcrumb(p: BreadcrumbProperties): JSX.Element | null {
     if (!e || e.url === "/") {
       break
     }
-    a.unshift(<BreadcrumbCrumb href={e.url}>{e.title}</BreadcrumbCrumb>)
+    a.unshift(<Ui.BreadcrumbCrumb href={e.url}>{e.title}</Ui.BreadcrumbCrumb>)
     e = s.find(e.parent, "id")
   }
 
@@ -281,5 +333,5 @@ export function Breadcrumb(p: BreadcrumbProperties): JSX.Element | null {
     return null
   }
 
-  return <UBreadcrumb>{a}</UBreadcrumb>
+  return <Ui.Breadcrumb>{a}</Ui.Breadcrumb>
 }

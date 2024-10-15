@@ -1,7 +1,6 @@
 @import "../node_modules/@onlyoffice/ui-kit/lib/main.css";
 @import "../node_modules/@onlyoffice/site-kit/lib/main.css";
 @import "../components/tree/tree.css";
-@import "../internal/global-navigation.css";
 @import "../internal/syntax-highlight.css";
 
 html {
@@ -34,7 +33,7 @@ body {
 .content h4,
 .content h5,
 .content h6 {
-  scroll-margin-block-start: calc(var(--page-header-height) + var(--base-size-20));
+  scroll-margin-block-start: calc(var(--header-block-size) + var(--base-size-20));
 }
 
 .content h1 a[href^="#"],

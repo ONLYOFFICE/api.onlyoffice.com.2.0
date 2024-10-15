@@ -71,8 +71,8 @@
 
 .tree__leaf {
   color: inherit;
-  font-size: var(--text-body-font-size-medium);
-  line-height: var(--text-body-line-height-medium);
+  font-size: var(--text-body-font-size-small);
+  line-height: var(--text-body-line-height-small);
   overflow: hidden;
   padding-inline-start: 23px;
   pointer-events: auto;
