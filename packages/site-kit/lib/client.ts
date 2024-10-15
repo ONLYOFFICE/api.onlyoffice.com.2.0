@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unassigned-import */
+import "@onlyoffice/site-article/client.ts"
 import "@onlyoffice/site-chapter/client.ts"
 import "@onlyoffice/site-document-editor-playground/client.ts"
 import "@onlyoffice/site-page/client.ts"

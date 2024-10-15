@@ -15,6 +15,7 @@
     "test": "pnpm test:types"
   },
   "dependencies": {
+    "@onlyoffice/site-article": "workspace:^",
     "@onlyoffice/site-chapter": "workspace:^",
     "@onlyoffice/site-content": "workspace:^",
     "@onlyoffice/site-document-editor-playground": "workspace:^",
