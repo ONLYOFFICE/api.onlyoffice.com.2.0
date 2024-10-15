@@ -41,7 +41,6 @@ const oTextForm = Api.CreateTextForm({
   autoFit: false,
 })
 oParagraph.AddElement(oTextForm)
-oPictureForm.SetImage("https://api.onlyoffice.com/content/img/docbuilder/examples/user-profile.png")
 oDocument.Push(oParagraph)
 
 Api.Save()
