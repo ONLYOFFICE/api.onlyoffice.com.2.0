@@ -84,10 +84,13 @@
 
 :root {
   /* prefix: base, variant: size */
+  /* +2 */
   --base-size-2: 2px;
   --base-size-4: 4px;
   --base-size-6: 6px;
   --base-size-8: 8px;
+
+  /* +4 */
   --base-size-12: 12px;
   --base-size-16: 16px;
   --base-size-20: 20px;
@@ -98,8 +101,14 @@
   --base-size-40: 40px;
   --base-size-44: 44px;
   --base-size-48: 48px;
+
+  /* +8 */
+  --base-size-56: 56px;
   --base-size-64: 64px;
+  --base-size-72: 72px;
   --base-size-80: 80px;
+
+  /* +16 */
   --base-size-96: 96px;
   --base-size-112: 112px;
   --base-size-128: 128px;
@@ -111,24 +120,20 @@
 @custom-media --size-viewport-width-xsmall (width >= 320px);
 @custom-media --size-viewport-width-small (width >= 544px);
 @custom-media --size-viewport-width-medium (width >= 768px);
-@custom-media --size-viewport-width-large (width >= 1012px);
-@custom-media --size-viewport-width-xlarge (width >= 1280px);
-@custom-media --size-viewport-width-xxlarge (width >= 1400px);
-
-/* prefix: size, variant: viewport, property: width */
-@custom-media --size-viewport-width-phone (width < 543px);
-@custom-media --size-viewport-width-tablet (width >= 544px);
-@custom-media --size-viewport-width-laptop (width >= 1012px);
-@custom-media --size-viewport-width-desktop (width >= 1400px);
+@custom-media --size-viewport-width-large (width >= 1024px);
+@custom-media --size-viewport-width-xlarge (width >= 1440px);
+@custom-media --size-viewport-width-xxlarge (width >= 1600px);
+@custom-media --size-viewport-width-xxxlarge (width >= 1920px);
 
 :root {
   /* prefix: size, variant: breakpoint */
   --size-breakpoint-xsmall: 320px;
   --size-breakpoint-small: 544px;
   --size-breakpoint-medium: 768px;
-  --size-breakpoint-large: 1012px;
-  --size-breakpoint-xlarge: 1280px;
-  --size-breakpoint-xxlarge: 1400px;
+  --size-breakpoint-large: 1024px;
+  --size-breakpoint-xlarge: 1440px;
+  --size-breakpoint-xxlarge: 1600px;
+  --size-breakpoint-xxxlarge: 1920px;
 
   /* prefix: size, variant: border-width */
   --size-border-width-thin: 1px;
