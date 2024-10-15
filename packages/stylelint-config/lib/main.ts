@@ -223,6 +223,7 @@ function selectorNestedPattern(): string {
     ":last-child",
     ":last-of-type",
     ":nth-of-type",
+    String.raw`:has\(.*\)`,
     String.raw`:state\(.*\)`,
     String.raw`\[aria-.*]`,
     String.raw`\[state-.*]`,
