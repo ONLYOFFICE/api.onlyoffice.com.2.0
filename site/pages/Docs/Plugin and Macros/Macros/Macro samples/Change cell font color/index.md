@@ -29,4 +29,4 @@ End Sub
 
 ## Result
 
-![Font color](/assets/images/plugins/font_color.png)
+![Font color](/assets/images/plugins/font-color.png)

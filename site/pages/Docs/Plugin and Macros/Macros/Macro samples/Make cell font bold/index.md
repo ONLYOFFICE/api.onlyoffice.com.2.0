@@ -29,4 +29,4 @@ End Sub
 
 ## Result
 
-![Font bold](/assets/images/plugins/font_bold.png)
+![Font bold](/assets/images/plugins/font-bold.png)
