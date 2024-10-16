@@ -206,7 +206,8 @@ The list of changes for Office JavaScript API.
 - Added the ApiDrawing/Select method to Presentation API.
 - Added the ApiParaPr/GetOutlineLvl method to Presentation API.
 - Added the ApiParaPr/SetOutlineLvl method to Presentation API.
-- Added the ReviewedElement property to the ReviewReportRecord object.
+- Added the *tag* property to the FormPrBase object.
+- Added the *ReviewedElement* property to the ReviewReportRecord object.
 - Added the *DeleteShiftDirection* type to the simple type definitions.
 - Added the *Drawing* type to the simple type definitions.
 
