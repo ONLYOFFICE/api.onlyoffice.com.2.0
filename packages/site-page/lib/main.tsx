@@ -20,14 +20,12 @@ export function PageHeader({children}: ChildrenIncludable): JSX.Element {
     logo: PageHeaderLogo,
     menu: PageHeaderMenu,
     nav: PageHeaderNavToggler,
-    legacy: PageHeaderLegacy,
   })
   return <header role="banner" class="page-header">
     {outer}
     <div class="page-header__logo">{slots.logo}</div>
     <div class="page-header__menu">{slots.menu}</div>
     {slots.nav && <div class="page-header__nav-toggler">{slots.nav}</div>}
-    <div class="page-header__legacy">{slots.legacy}</div>
   </header>
 }
 
@@ -47,10 +45,6 @@ export function PageHeaderNavToggler(p: PageHeaderNavTogglerProperties): JSX.Ele
   return <button class="page-header-nav-toggler" aria-label={p.label} data-page-container-chapter-navigation-toggler>
     <SidebarIcon height={24} width={24} />
   </button>
-}
-
-export function PageHeaderLegacy({children}: ChildrenIncludable): JSX.Element {
-  return <>{children}</>
 }
 
 export function PageFooter({children}: ChildrenIncludable): JSX.Element {

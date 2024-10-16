@@ -11,15 +11,15 @@ For the samples to work correctly, make sure that two conditions are met:
 
 ## Download a sample
 
-Download one of the Builder .Net samples archive and unzip it into a folder with general editing access.
+Download one of the Builder .Net samples and copy it into a folder with general editing access.
 
-- [Filling spreadsheet](https://api.teamlab.info:443/app_data/docbuilder/csharp-samples/FillingSpreadsheet.zip)
-- [Commenting spreadsheet errors](https://api.teamlab.info:443/app_data/docbuilder/csharp-samples/CommentingErrors.zip)
-- [Creating presentation](https://api.teamlab.info:443/app_data/docbuilder/csharp-samples/CreatingPresentation.zip)
-- [Creating chart presentation](https://api.teamlab.info:443/app_data/docbuilder/csharp-samples/CreatingChartPresentation.zip)
-- [Creating basic form](https://api.teamlab.info:443/app_data/docbuilder/csharp-samples/CreatingBasicForm.zip)
-- [Creating advanced form](https://api.teamlab.info:443/app_data/docbuilder/csharp-samples/CreatingAdvancedForm.zip)
-- [Filling form](https://api.teamlab.info:443/app_data/docbuilder/csharp-samples/FillingForm.zip)
+- [Filling spreadsheet](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/csharp/FillingSpreadsheet/FillingSpreadsheet/Program.cs)
+- [Commenting spreadsheet errors](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/csharp/CommentingErrors/CommentingErrors/Program.cs)
+- [Creating presentation](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/csharp/CreatingPresentation/CreatingPresentation/Program.cs)
+- [Creating chart presentation](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/csharp/CreatingChartPresentation/CreatingChartPresentation/Program.cs)
+- [Creating basic form](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/csharp/CreatingBasicForm/CreatingBasicForm/Program.cs)
+- [Creating advanced form](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/csharp/CreatingAdvancedForm/CreatingAdvancedForm/Program.cs)
+- [Filling form](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/csharp/FillingForm/FillingForm/Program.cs)
 
 ## Sample structure
 

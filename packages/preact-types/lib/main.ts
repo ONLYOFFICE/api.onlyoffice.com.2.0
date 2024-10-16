@@ -1,4 +1,5 @@
+import {type ComponentChildren} from "preact"
+
 export interface ChildrenIncludable {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  children?: any
+  children?: ComponentChildren
 }

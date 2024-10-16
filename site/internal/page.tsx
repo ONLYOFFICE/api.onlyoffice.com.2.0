@@ -1,12 +1,12 @@
 import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
+import {Config} from "@onlyoffice/site-config"
 import {
   PageFooter,
   PageFooterCopyright,
   PageFooterLinkContainer,
   PageFooterThemeSwitcher,
   PageHeader,
-  PageHeaderLegacy,
   PageHeaderLogo,
   PageHeaderMenu,
   PageHeaderNavToggler,
@@ -17,7 +17,6 @@ import {
 import {OnlyofficeBetaLogo, SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {GlobalNavigation} from "./global-navigation.tsx"
-import {Legacy} from "./legacy.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -54,6 +53,7 @@ export interface PageProperties extends ChildrenIncludable {
 }
 
 export function Page(p: PageProperties): JSX.Element {
+  const c = Config.shared
   // const s = Sitemap.shared
 
   // const e = s.find(p.url, "url")
@@ -75,7 +75,7 @@ export function Page(p: PageProperties): JSX.Element {
         <h2>Navigation Menu</h2>
       </SrOnly>
       <PageHeaderLogo>
-        <a href="/"><OnlyofficeBetaLogo /></a>
+        <a href="/"><OnlyofficeBetaLogo height={38} /></a>
       </PageHeaderLogo>
       <PageHeaderMenu>
         <GlobalNavigation current={p.url} />
@@ -112,9 +112,6 @@ export function Page(p: PageProperties): JSX.Element {
         }
       })()}
       {/* {d.chapterToggler && <PageHeaderNavToggler label="Chapter Navigation Toggler" />} */}
-      <PageHeaderLegacy>
-        <Legacy />
-      </PageHeaderLegacy>
     </PageHeader>
     <main>
       {p.children}
@@ -128,6 +125,7 @@ export function Page(p: PageProperties): JSX.Element {
         <a href="https://www.onlyoffice.com/blog/category/for-developers?from=api" target="_blank">Blog for developers</a>
         <a href="https://www.onlyoffice.com/contribute.aspx?from=api" target="_blank">For contributors</a>
         <a href="https://www.onlyoffice.com/legalterms.aspx?from=api" target="_blank">Legal notice</a>
+        <a href={c.legacyBaseUrl} target="_blank">Legacy version</a>
       </PageFooterLinkContainer>
       <PageFooterLinkContainer label="Links related to">
         <h3>Get Help</h3>

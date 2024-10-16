@@ -1,4 +1,4 @@
-## [General questions](General/index.md)
+## General questions
 
 If you do not know which category below to select, simply start with this section.
 
@@ -6,14 +6,18 @@ If you do not know which category below to select, simply start with this sectio
 - [How to find out the current version number of ONLYOFFICE Docs?](General/index.md#how-to-find-out-the-current-version-number-of-onlyoffice-docs)
 - [I want to change some ONLYOFFICE Docs parameters from the default.json configuration file. How can I do that so that my changes were not lost after update?](General/index.md#i-want-to-change-some-onlyoffice-docs-parameters-from-the-defaultjson-configuration-file-how-can-i-do-that-so-that-my-changes-were-not-lost-after-update)
 
-## [Security questions](Security/index.md)
+[More](General/index.md)
+
+## Security questions
 
 The questions concerning ONLYOFFICE Docs security issues are in this section.
 
 - [How to limit access to my ONLYOFFICE Docs?](Security/index.md#how-to-limit-access-to-my-document-server)
 - [What's the difference between sending the token in header and in body?](Security/index.md#whats-the-difference-between-sending-the-token-in-header-and-in-body)
 
-## [Sharing questions](Sharing/index.md)
+[More](Security/index.md)
+
+## Sharing questions
 
 The questions concerning document sharing with various permissions are in this section.
 
@@ -28,14 +32,18 @@ The questions concerning document sharing with various permissions are in this s
 - [How to view and change sharing settings for a certain document?](Sharing/index.md#how-to-view-and-change-sharing-settings-for-a-certain-document)
 - [How to restrict commenting?](Sharing/index.md#how-to-restrict-commenting)
 
-## [Embedding questions](Embedding/index.md)
+[More](Sharing/index.md)
+
+## Embedding questions
 
 The questions concerning inserting the document into a website page (embedding) are in this section.
 
 - [How to embed a document to a web site?](Embedding/index.md#how-to-embed-a-document-to-a-web-site)
 - [How to change the behavior of the buttons in the embedded mode?](Embedding/index.md#how-to-change-the-behavior-of-the-buttons-in-the-embedded-mode)
 
-## [Co-editing questions](Co-editing/index.md)
+[More](Embedding/index.md)
+
+## Co-editing questions
 
 The questions concerning co-editing the documents with other users are in this section.
 
@@ -43,7 +51,9 @@ The questions concerning co-editing the documents with other users are in this s
 - [How to find the information about users who are currently editing the document?](Co-editing/index.md#how-to-find-the-information-about-users-who-are-currently-editing-the-document)
 - [How to disconnect users who are currently editing the document before saving the document?](Co-editing/index.md#how-to-disconnect-users-who-are-currently-editing-the-document-before-saving-the-document)
 
-## [Customizing questions](Customizing/index.md)
+[More](Co-editing/index.md)
+
+## Customizing questions
 
 The questions concerning customizing the appearance of ONLYOFFICE Docs are in this section.
 
@@ -55,7 +65,9 @@ The questions concerning customizing the appearance of ONLYOFFICE Docs are in th
 - [How to optimize the appearance of editors for a desktop computer, or for a mobile device, or for embedding into a web page?](Customizing/index.md#how-to-optimize-the-appearance-of-editors-for-a-desktop-computer-or-for-a-mobile-device-or-for-embedding-into-a-web-page)
 - [How to connect plugins to ONLYOFFICE Docs so that they become visible for all editor users?](Customizing/index.md#how-to-connect-plugins-to-onlyoffice-docs-so-that-they-become-visible-for-all-editor-users)
 
-## [Integrating questions](Integrating/index.md)
+[More](Customizing/index.md)
+
+## Integrating questions
 
 The questions concerning integrating ONLYOFFICE Docs with your own website and some other popular services (ownCloud, Nextcloud, SharePoint, etc.) are in this section.
 
@@ -63,7 +75,9 @@ The questions concerning integrating ONLYOFFICE Docs with your own website and s
 - [Which paths should I specify when integrating ONLYOFFICE Docs with my website?](Integrating/index.md#which-paths-should-i-specify-when-integrating-onlyoffice-docs-with-my-website)
 - [What settings should be used when connecting ONLYOFFICE to ownClowd/Nextcloud via a local and public network?](Integrating/index.md#what-settings-should-be-used-when-connecting-onlyoffice-to-ownclowdnextcloud-via-a-local-and-public-network)
 
-## [Editing questions](Editing/index.md)
+[More](Integrating/index.md)
+
+## Editing questions
 
 The questions concerning editing documents using ONLYOFFICE Docs are in this section.
 
@@ -71,7 +85,9 @@ The questions concerning editing documents using ONLYOFFICE Docs are in this sec
 - [What is the 'document.key' parameter?](Editing/index.md#what-is-the-documentkey-parameter)
 - [How to define the mode that the file should be opened in (viewing or editing)?](Editing/index.md#how-to-define-the-mode-that-the-file-should-be-opened-in-viewing-or-editing)
 
-## [Managing versions questions](Managing%20versions/index.md)
+[More](Editing/index.md)
+
+## Managing versions questions
 
 The questions concerning working with versions of documents are in this section.
 
@@ -79,7 +95,9 @@ The questions concerning working with versions of documents are in this section.
 - [How to display a document with highlighted changes?](Managing%20versions/index.md#how-to-display-a-document-with-highlighted-changes)
 - [Why is a new version not shown in the document history after I forcefully save a document?](Managing%20versions/index.md#why-is-a-new-version-not-shown-in-the-document-history-after-i-forcefully-save-a-document)
 
-## [Saving questions](Saving/index.md)
+[More](Managing%20versions/index.md)
+
+## Saving questions
 
 The questions concerning saving the documents are in this section.
 
@@ -90,14 +108,18 @@ The questions concerning saving the documents are in this section.
 - [What is the conversion start delay time and how can it be changed?](Saving/index.md#what-is-the-conversion-start-delay-time-and-how-can-it-be-changed)
 - [How to specify the encoding type when converting from the csv or txt formats?](Saving/index.md#how-to-specify-the-encoding-type-when-converting-from-the-csv-or-txt-formats)
 
-## [Renaming questions](Renaming/index.md)
+[More](Saving/index.md)
+
+## Renaming questions
 
 The questions concerning renaming the documents are in this section.
 
 - [How to rename the created document?](Renaming/index.md#how-to-rename-the-created-document)
 - [How to update the name of the document for all collaborative editors?](Renaming/index.md#how-to-update-the-name-of-the-document-for-all-collaborative-editors)
 
-## [Using WOPI](Using%20WOPI/index.md)
+[More](Renaming/index.md)
+
+## Using WOPI
 
 The questions concerning using WOPI are in this section.
 
@@ -114,3 +136,5 @@ The questions concerning using WOPI are in this section.
 - [What actions are supported via WOPI?](Using%20WOPI/index.md#what-actions-are-supported-via-wopi)
 - [Which access rights can I set to the document via WOPI?](Using%20WOPI/index.md#which-access-rights-can-i-set-to-the-document-via-wopi)
 - [What are the difference between ONLYOFFICE Docs API and WOPI?](Using%20WOPI/index.md#what-are-the-difference-between-onlyoffice-docs-api-and-wopi)
+
+[More](Using%20WOPI/index.md)

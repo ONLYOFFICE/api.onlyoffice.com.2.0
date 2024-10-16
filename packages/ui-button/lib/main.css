@@ -1,37 +1,164 @@
 .button {
-  background-color: var(--color-button-default-background-rest);
-  border-color: var(--color-button-default-border-rest);
+  /* stylelint-disable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-disable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-disable @stylistic/declaration-colon-space-after */
+  --true: initial;
+  --false: ;
+  /* stylelint-enable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-enable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-enable @stylistic/declaration-colon-space-after */
+
+  --button-size-is-large: var(--false);
+  --button-size-is-medium: var(--false);
+  --button-size-is-small: var(--false);
+  --button-size-is-default: var(--true);
+
+  --button-padding-block-large: var(--size-control-padding-block-large);
+  --button-padding-inline-large: var(--size-control-padding-inline-large);
+
+  --button-padding-block-medium: var(--size-control-padding-block-medium);
+  --button-padding-inline-medium: var(--size-control-padding-inline-medium);
+
+  --button-padding-block-small: var(--size-control-padding-block-small);
+  --button-padding-inline-small: var(--size-control-padding-inline-small);
+
+  --button-padding-block-default: var(--button-padding-block-medium);
+  --button-padding-inline-default: var(--button-padding-inline-medium);
+
+  --button-computed-padding-block-large: var(--button-size-is-large, var(--button-padding-block-large));
+  --button-computed-padding-inline-large: var(--button-size-is-large, var(--button-padding-inline-large));
+
+  --button-computed-padding-block-medium: var(--button-size-is-medium, var(--button-padding-block-medium));
+  --button-computed-padding-inline-medium: var(--button-size-is-medium, var(--button-padding-inline-medium));
+
+  --button-computed-padding-block-small: var(--button-size-is-small, var(--button-padding-block-small));
+  --button-computed-padding-inline-small: var(--button-size-is-small, var(--button-padding-inline-small));
+
+  --button-computed-padding-block-default: var(--button-size-is-default, var(--button-padding-block-default));
+  --button-computed-padding-inline-default: var(--button-size-is-default, var(--button-padding-inline-default));
+
+  --button-computed-padding-block-current: var(--button-computed-padding-block-large) var(--button-computed-padding-block-medium) var(--button-computed-padding-block-small) var(--button-computed-padding-block-default);
+  --button-computed-padding-inline-current: var(--button-computed-padding-inline-large) var(--button-computed-padding-inline-medium) var(--button-computed-padding-inline-small) var(--button-computed-padding-inline-default);
+
+  --button-variant-is-accent: var(--false);
+  --button-variant-is-neutral: var(--false);
+  --button-variant-is-default: var(--true);
+
+  --button-background-color-accent: var(--color-button-accent-background-rest);
+  --button-border-color-accent: var(--color-button-accent-border-rest);
+  --button-foreground-color-accent: var(--color-button-accent-foreground-rest);
+  --button-hover-background-color-accent: var(--color-button-accent-background-hover);
+  --button-hover-border-color-accent: var(--color-button-accent-border-hover);
+  --button-hover-foreground-color-accent: var(--color-button-accent-foreground-hover);
+
+  --button-background-color-neutral: var(--color-button-default-background-rest);
+  --button-border-color-neutral: var(--color-button-default-border-rest);
+  --button-foreground-color-neutral: var(--color-button-default-foreground-rest);
+  --button-hover-background-color-neutral: var(--color-button-default-background-hover);
+  --button-hover-border-color-neutral: var(--color-button-default-border-hover);
+  --button-hover-foreground-color-neutral: var(--color-button-default-foreground-hover);
+
+  --button-background-color-default: var(--button-background-color-neutral);
+  --button-border-color-default: var(--button-border-color-neutral);
+  --button-foreground-color-default: var(--button-foreground-color-neutral);
+  --button-hover-background-color-default: var(--button-hover-background-color-neutral);
+  --button-hover-border-color-default: var(--button-hover-border-color-neutral);
+  --button-hover-foreground-color-default: var(--button-hover-foreground-color-neutral);
+
+  --button-computed-background-color-accent: var(--button-variant-is-accent, var(--button-background-color-accent));
+  --button-computed-border-color-accent: var(--button-variant-is-accent, var(--button-border-color-accent));
+  --button-computed-foreground-color-accent: var(--button-variant-is-accent, var(--button-foreground-color-accent));
+  --button-computed-hover-background-color-accent: var(--button-variant-is-accent, var(--button-hover-background-color-accent));
+  --button-computed-hover-border-color-accent: var(--button-variant-is-accent, var(--button-hover-border-color-accent));
+  --button-computed-hover-foreground-color-accent: var(--button-variant-is-accent, var(--button-hover-foreground-color-accent));
+
+  --button-computed-background-color-neutral: var(--button-variant-is-neutral, var(--button-background-color-neutral));
+  --button-computed-border-color-neutral: var(--button-variant-is-neutral, var(--button-border-color-neutral));
+  --button-computed-foreground-color-neutral: var(--button-variant-is-neutral, var(--button-foreground-color-neutral));
+  --button-computed-hover-background-color-neutral: var(--button-variant-is-neutral, var(--button-hover-background-color-neutral));
+  --button-computed-hover-border-color-neutral: var(--button-variant-is-neutral, var(--button-hover-border-color-neutral));
+  --button-computed-hover-foreground-color-neutral: var(--button-variant-is-neutral, var(--button-hover-foreground-color-neutral));
+
+  --button-computed-background-color-default: var(--button-variant-is-default, var(--button-background-color-default));
+  --button-computed-border-color-default: var(--button-variant-is-default, var(--button-border-color-default));
+  --button-computed-foreground-color-default: var(--button-variant-is-default, var(--button-foreground-color-default));
+  --button-computed-hover-background-color-default: var(--button-variant-is-default, var(--button-hover-background-color-default));
+  --button-computed-hover-border-color-default: var(--button-variant-is-default, var(--button-hover-border-color-default));
+  --button-computed-hover-foreground-color-default: var(--button-variant-is-default, var(--button-hover-foreground-color-default));
+
+  --button-computed-background-color-current: var(--button-computed-background-color-accent) var(--button-computed-background-color-neutral) var(--button-computed-background-color-default);
+  --button-computed-border-color-current: var(--button-computed-border-color-accent) var(--button-computed-border-color-neutral) var(--button-computed-border-color-default);
+  --button-computed-foreground-color-current: var(--button-computed-foreground-color-accent) var(--button-computed-foreground-color-neutral) var(--button-computed-foreground-color-default);
+  --button-computed-hover-background-color-current: var(--button-computed-hover-background-color-accent) var(--button-computed-hover-background-color-neutral) var(--button-computed-hover-background-color-default);
+  --button-computed-hover-border-color-current: var(--button-computed-hover-border-color-accent) var(--button-computed-hover-border-color-neutral) var(--button-computed-hover-border-color-default);
+  --button-computed-hover-foreground-color-current: var(--button-computed-hover-foreground-color-accent) var(--button-computed-hover-foreground-color-neutral) var(--button-computed-hover-foreground-color-default);
+
+  background-color: var(--button-computed-background-color-current);
+  border-color: var(--button-computed-border-color-current);
   border-radius: var(--size-border-radius-small);
   border-style: solid;
   border-width: var(--size-border-width-thin);
-  color: var(--color-button-default-foreground-rest);
+  color: var(--button-computed-foreground-color-current);
   cursor: pointer;
   display: inline-block;
   font-size: var(--text-body-font-size-small);
   font-weight: var(--base-text-font-weight-medium);
-  padding-block: var(--size-control-padding-block-medium);
-  padding-inline: var(--size-control-padding-inline-medium);
+  padding-block: var(--button-computed-padding-block-current);
+  padding-inline: var(--button-computed-padding-inline-current);
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
 
   &:focus-visible,
   &:hover {
-    background-color: var(--color-button-default-background-hover);
-    border-color: var(--color-button-default-border-hover);
-    color: var(--color-button-default-foreground-hover);
+    background-color: var(--button-computed-hover-background-color-current);
+    border-color: var(--button-computed-hover-border-color-current);
+    color: var(--button-computed-hover-foreground-color-current);
   }
 }
 
-.button_accent {
-  background-color: var(--color-button-accent-background-rest);
-  border-color: var(--color-button-accent-border-rest);
-  color: var(--color-button-accent-foreground-rest);
+.button_size_default {
+  --button-size-is-default: var(--true);
+  --button-size-is-small: var(--false);
+  --button-size-is-medium: var(--false);
+  --button-size-is-large: var(--false);
+}
 
-  &:focus-visible,
-  &:hover {
-    background-color: var(--color-button-accent-background-hover);
-    border-color: var(--color-button-accent-border-hover);
-    color: var(--color-button-accent-foreground-hover);
-  }
+.button_size_small {
+  --button-size-is-default: var(--false);
+  --button-size-is-small: var(--true);
+  --button-size-is-medium: var(--false);
+  --button-size-is-large: var(--false);
+}
+
+.button_size_medium {
+  --button-size-is-default: var(--false);
+  --button-size-is-small: var(--false);
+  --button-size-is-medium: var(--true);
+  --button-size-is-large: var(--false);
+}
+
+.button_size_large {
+  --button-size-is-default: var(--false);
+  --button-size-is-small: var(--false);
+  --button-size-is-medium: var(--false);
+  --button-size-is-large: var(--true);
+}
+
+.button_variant_default {
+  --button-variant-is-accent: var(--false);
+  --button-variant-is-neutral: var(--false);
+  --button-variant-is-default: var(--true);
+}
+
+.button_variant_accent {
+  --button-variant-is-accent: var(--true);
+  --button-variant-is-neutral: var(--false);
+  --button-variant-is-default: var(--false);
+}
+
+.button_variant_neutral {
+  --button-variant-is-accent: var(--false);
+  --button-variant-is-neutral: var(--true);
+  --button-variant-is-default: var(--false);
 }

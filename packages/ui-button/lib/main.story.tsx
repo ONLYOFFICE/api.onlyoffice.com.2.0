@@ -1,19 +1,52 @@
-import {type Meta} from "@storybook/preact"
-import {Fragment, type JSX, h} from "preact"
-import {Button, LinkButton} from "./main.tsx"
+import {type Meta, type StoryObj} from "@storybook/preact"
+import {h} from "preact"
+import {Button, type ButtonProperties} from "./main.tsx"
 
 export default {
-  title: "UI/Button",
+  title: "UI / Button",
 } satisfies Meta
 
-export function Default(): JSX.Element {
-  const r = window.location.href
-  return <>
-    <h2>Button</h2>
-    <Button>Default</Button>
-    <Button variant="accent">Accent</Button>
-    <h2>Link Button</h2>
-    <LinkButton href={r}>Default</LinkButton>
-    <LinkButton href={r} variant="accent">Accent</LinkButton>
-  </>
+export const Default: StoryObj = {
+  parameters: {
+    controls: {
+      disable: true,
+    },
+    actions: {
+      disable: true,
+    },
+  },
+  render() {
+    return <Button>Button</Button>
+  },
+}
+
+export const Playground: StoryObj<ButtonProperties> = {
+  parameters: {
+    actions: {
+      disable: true,
+    },
+  },
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["default", "small", "medium", "large"],
+    },
+    variant: {
+      control: "select",
+      options: ["default", "accent", "neutral"],
+    },
+  },
+  args: {
+    size: "default",
+    variant: "default",
+    children: "Button",
+  },
+  render(p) {
+    return <Button
+      size={p.size}
+      variant={p.variant}
+    >
+      {p.children}
+    </Button>
+  },
 }
