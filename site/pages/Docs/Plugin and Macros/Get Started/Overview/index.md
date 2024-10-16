@@ -10,7 +10,7 @@ This documentation describes:
 
 - How to [build](../../Structure/Manifest/index.md), [localize](../../Structure/Localization/index.md), run, [test](../../Tutorials/Developing/index.md) and [publish](../../Tutorials/Publishing/index.md) a plugin
 - How to customize plugins: create [context menu items](../../Customization/Context%20menu/index.md), [toolbar buttons](../../Customization/Toolbar/index.md), [windows and panels](../../Customization/Windows%20and%20panels/index.md), [input helpers](../../Customization/Input%20helper/index.md), process [buttons](../../Customization/Buttons/index.md)
-- How to [write](../../Macros/Writing%20macros/index.md), [debug](../../Macros/Debugging/index.md) and run a macro or [convert](../../Macros/Converting%20VBA%20macros/index.md) VBA macros to use in ONLYOFFICE
+- How to [write](../../Macros/Writing%20macros/index.md), [debug](../../Macros/Debugging/index.md) and run a macro, add a custom function, or [convert](../../Macros/Converting%20VBA%20macros/index.md) VBA macros to use in ONLYOFFICE
 - How to [interact with the editors](../../Interacting%20with%20editors/index.md), use ONLYOFFICE [methods](../../Interacting%20with%20editors/Methods/index.md) and [events](../../Interacting%20with%20editors/Events/index.md)
 - Where to find guides and [plugin](../../Tutorials/Samples/index.md)/[macro](../../Macros/Samples/index.md) code samples to get started
 

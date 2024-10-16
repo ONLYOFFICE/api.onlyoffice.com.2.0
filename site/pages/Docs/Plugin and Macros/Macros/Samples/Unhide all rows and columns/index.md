@@ -29,4 +29,4 @@ Methods used: GetActiveSheet, GetRows, SetHidden, GetRange, SetValue
 
 ## Result
 
-![Unhide all rows](/assets/images/plugins/unhide_all_rows.png)
+![Unhide all rows](/assets/images/plugins/unhide-all-rows.png)
