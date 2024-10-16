@@ -2,6 +2,7 @@
 
 import "@onlyoffice/site-kit/client.ts"
 import "@onlyoffice/ui-kit/client.ts"
+import {INITIAL_VIEWPORTS, type Viewport, type ViewportMap} from "@storybook/addon-viewport"
 import {type Preview} from "@storybook/preact"
 import {h} from "preact"
 import {useEffect} from "preact/hooks"
@@ -41,6 +42,14 @@ export default {
       },
     },
   },
+  parameters: {
+    viewport: {
+      viewports: {
+        ...breakpoints(),
+        ...INITIAL_VIEWPORTS,
+      },
+    },
+  },
   decorators: [
     (Story, ctx) => {
       const {theme, paddings} = ctx.globals
@@ -57,3 +66,25 @@ export default {
     },
   ],
 } satisfies Preview
+
+// todo: In the future, we should import a list of breakpoints as a JSON file
+// from the @onlyoffice/ui-primitives package.
+function breakpoints(): ViewportMap {
+  const m: ViewportMap = {}
+  const s = window.getComputedStyle(document.documentElement)
+  for (const k of Object.values(s)) {
+    if (k.includes("breakpoint")) {
+      const w = s.getPropertyValue(k)
+      const v: Viewport = {
+        name: k,
+        styles: {
+          height: "100%",
+          width: w,
+        },
+        type: "other",
+      }
+      m[k] = v
+    }
+  }
+  return m
+}

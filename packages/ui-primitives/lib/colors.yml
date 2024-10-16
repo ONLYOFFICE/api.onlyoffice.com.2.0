@@ -400,6 +400,12 @@ regular:
         - temp-base-icon.orange[3]  # "#FFC671"
         - temp-base-icon.orange[1]  # "#FF7541"
         - temp-base-icon.orange[0]  # "#FF6F3D"
+
+    temp-picture:
+      "404":
+        overflow: "#AAAAAA"
+        underflow: "#666666"
+
   light:
     # Basics
 
@@ -803,3 +809,8 @@ regular:
         - temp-base-icon.orange[3]    # "#FFC671"
         - temp-base-icon.orange[1]    # "#FF7541"
         - temp-base-icon.orange[0]    # "#FF6F3D"
+
+    temp-picture:
+      "404":
+        overflow: "#808080"
+        underflow: "#E2E2E2"

@@ -5,14 +5,18 @@ import yaml from "yaml"
 
 export interface InputConfig {
   baseUrl?: string
+  legacyBaseUrl?: string
   analytics?: boolean
+  robots?: boolean
   server?: InputServer
   playground?: InputPlayground
 }
 
 export interface Configurable {
   baseUrl: string
+  legacyBaseUrl: string
   analytics: boolean
+  robots: boolean
   server: ServerConfigurable
   playground: PlaygroundConfigurable
 }
@@ -21,7 +25,9 @@ export class Config implements Configurable {
   static shared: Configurable
 
   baseUrl = ""
+  legacyBaseUrl = ""
   analytics = false
+  robots = false
   server = new ServerConfig()
   playground = new PlaygroundConfig()
 
@@ -85,8 +91,16 @@ export class Config implements Configurable {
       co.baseUrl = ic.baseUrl
     }
 
+    if (ic.legacyBaseUrl) {
+      co.legacyBaseUrl = ic.legacyBaseUrl
+    }
+
     if (ic.analytics !== undefined) {
       co.analytics = ic.analytics
+    }
+
+    if (ic.robots !== undefined) {
+      co.robots = ic.robots
     }
 
     if (ic.server) {
@@ -109,10 +123,22 @@ export class Config implements Configurable {
       co.baseUrl = a.baseUrl
     }
 
+    if (b.legacyBaseUrl) {
+      co.legacyBaseUrl = b.legacyBaseUrl
+    } else if (a.legacyBaseUrl) {
+      co.legacyBaseUrl = a.legacyBaseUrl
+    }
+
     if (b.analytics !== undefined) {
       co.analytics = b.analytics
     } else if (a.analytics !== undefined) {
       co.analytics = a.analytics
+    }
+
+    if (b.robots !== undefined) {
+      co.robots = b.robots
+    } else if (a.robots !== undefined) {
+      co.robots = a.robots
     }
 
     co.server = ServerConfig.merge(a.server, b.server)

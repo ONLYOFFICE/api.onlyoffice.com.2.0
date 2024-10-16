@@ -3,7 +3,6 @@
 @import "../node_modules/@onlyoffice/site-kit/lib/main.css";
 @import "../components/tree/tree.css";
 @import "../internal/global-navigation.css";
-@import "../internal/legacy.css";
 @import "../internal/syntax-highlight.css";
 
 html {

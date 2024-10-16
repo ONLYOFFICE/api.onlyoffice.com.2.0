@@ -3,7 +3,7 @@ import {type JSX, h} from "preact"
 import {SpikyWow} from "../dist/main.tsx"
 
 export default {
-  title: "UI/Mascots",
+  title: "UI Assets / Mascots",
 } satisfies Meta
 
 export function Default(): JSX.Element {

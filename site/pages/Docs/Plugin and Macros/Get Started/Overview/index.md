@@ -9,7 +9,7 @@ Plugin is an HTML page that is embedded in the editor and uses API to work with 
 This documentation describes:
 
 - How to [build](../Plugin%20structure/index.md), [localize](../../Plugins/Plugin%20localization/index.md), run, [test](../../Plugins/Developing%20plugins/index.md) and [publish](../../Plugins/Publishing%20plugins/index.md) a plugin
-- How to [write](../../Macros/Writing%20macros/index.md), [debug](../../Macros/Debugging/index.md) and run a macro or [convert](../../Macros/Converting%20VBA%20macros/index.md) VBA macros to use in ONLYOFFICE
+- How to [write](../../Macros/Writing%20macros/index.md), [debug](../../Macros/Debugging/index.md) and run a macro, add a custom function, or [convert](../../Macros/Converting%20VBA%20macros/index.md) VBA macros to use in ONLYOFFICE
 - How to use ONLYOFFICE methods and events
 - Where to find guides and [plugin](../../Plugins/Plugin%20examples/index.md)/[macro](../../Macros/Macro%20samples/index.md) code samples to get started
 

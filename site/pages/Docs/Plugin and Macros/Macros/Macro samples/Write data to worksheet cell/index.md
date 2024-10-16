@@ -29,4 +29,4 @@ End Sub
 
 ## Result
 
-![Write data](/assets/images/plugins/write_data_to_cell.png)
+![Write data](/assets/images/plugins/write-data-to-cell.png)
