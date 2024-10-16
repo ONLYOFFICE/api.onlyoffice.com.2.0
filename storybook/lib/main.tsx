@@ -9,6 +9,8 @@ export default {
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-storysource",
+    "@storybook/addon-a11y",
+    "@storybook/addon-viewport",
   ],
   stories: [
     "../../packages/site-*/lib/*.story.tsx",

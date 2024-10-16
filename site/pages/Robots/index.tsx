@@ -16,5 +16,22 @@ export function render(): string {
   const c = Config.shared
   const p = postscript()
   const s = sitemap()
-  return `Sitemap: ${c.baseUrl}${s.permalink}\nUser-agent: *\nDisallow: ${p.permalink}\n`
+
+  let r = ""
+
+  if (typeof s.permalink === "string") {
+    r += `Sitemap: ${c.baseUrl}`
+    r += s.permalink.slice(1)
+    r += "\n"
+  }
+
+  r += "User-agent: *\n"
+
+  if (!c.robots) {
+    r += "Disallow: /\n"
+  } else if (typeof p.permalink === "string") {
+    r += `Disallow: ${p.permalink}\n`
+  }
+
+  return r
 }

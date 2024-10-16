@@ -26,6 +26,7 @@
     "@onlyoffice/ui-form-control": "workspace:^",
     "@onlyoffice/ui-logos": "workspace:^",
     "@onlyoffice/ui-mascots": "workspace:^",
+    "@onlyoffice/ui-pictures": "workspace:^",
     "@onlyoffice/ui-primitives": "workspace:^",
     "@onlyoffice/ui-select": "workspace:^",
     "@onlyoffice/ui-sr-only": "workspace:^",

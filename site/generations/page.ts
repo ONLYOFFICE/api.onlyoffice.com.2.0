@@ -6,8 +6,10 @@ import {type ChapterData, ChapterDatum} from "../internal/chapter.tsx"
 import {type GlobalNavigationData, GlobalNavigationDatum} from "../internal/global-navigation.tsx"
 import {type HelpData, HelpDatum} from "../internal/help.tsx"
 import {type HomeData, HomeDatum} from "../internal/home.tsx"
+import {type LibraryData, LibraryDatum} from "../internal/library.tsx"
 import {type PageData, PageDatum} from "../internal/page.tsx"
 import {type PartData, PartDatum} from "../internal/part.tsx"
+import {type ServiceData, ServiceDatum} from "../internal/service.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -24,6 +26,8 @@ declare module "@onlyoffice/eleventy-types" {
     defaultSitemap?: SitemapData
     defaultGlobalNavigation?: GlobalNavigationData
     defaultHelp?: HelpData
+    defaultLibrary?: LibraryData
+    defaultService?: ServiceData
     defaultChapter?: ChapterData
     defaultPart?: PartData
     defaultHome?: HomeData
@@ -41,6 +45,8 @@ declare module "@onlyoffice/eleventy-types" {
     defaultSitemap?(data: Data): SitemapData | undefined
     defaultGlobalNavigation?(data: Data): GlobalNavigationData | undefined
     defaultHelp?(data: Data): HelpData | undefined
+    defaultLibrary?(data: Data): LibraryData | undefined
+    defaultService?(data: Data): ServiceData | undefined
     defaultChapter?(data: Data): ChapterData | undefined
     defaultPart?(data: Data): PartData | undefined
     defaultHome?(data: Data): HomeData | undefined
@@ -176,6 +182,38 @@ export function data(): Data {
           m.title = d.title
         }
         return m
+      },
+
+      library(d) {
+        const a = d.defaultLibrary
+        if (!a) {
+          return
+        }
+        const b = d.library
+        if (!b) {
+          return a
+        }
+        return LibraryDatum.merge(a, b)
+      },
+
+      defaultLibrary() {
+        return new LibraryDatum()
+      },
+
+      service(d) {
+        const a = d.defaultService
+        if (!a) {
+          return
+        }
+        const b = d.service
+        if (!b) {
+          return a
+        }
+        return ServiceDatum.merge(a, b)
+      },
+
+      defaultService() {
+        return new ServiceDatum()
       },
 
       chapter(d) {

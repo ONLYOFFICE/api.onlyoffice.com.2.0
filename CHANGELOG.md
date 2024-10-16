@@ -1,5 +1,10 @@
 # Change Log
 
+- docspace api backend: http and curl examples
+- docbuilder: samples link
+- office api: added samples
+- 404 page
+- macros: adding custom functions
 - docs api: configuring toolbar appearance
 - docs api: users in response after info command
 - docs api: change command address

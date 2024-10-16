@@ -1,5 +1,5 @@
 ---
-order: -4
+order: -5
 ---
 
 *api.js* allows you to initialize the SDK in the following modes:

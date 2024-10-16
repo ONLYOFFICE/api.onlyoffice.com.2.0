@@ -10,20 +10,24 @@ You can debug any Document Builder [component](../../Get%20Started/Overview/inde
 
 2. Use the **debugger** command in your script:
 
+   <!-- This code snippet is shown in the screenshot. -->
+
+   <!-- eslint-skip -->
+   
    ```ts
-   debugger
-   const oDocument = Api.GetDocument()
-   const oParagraph = oDocument.GetElement(0)
-   oParagraph.AddText("Hello world!")
+   debugger;
+   const oDocument = Api.GetDocument();
+   const oParagraph = oDocument.GetElement(0);
+   oParagraph.AddText("Hello world!");
    ```
 
 3. Open the developer console by pressing the **F12** button.
 
-4. Press the **Run** button to run your script.
+4. Click ![Play icon](/assets/images/plugins/play.svg) to run your script.
 
  > Please note that the **debugger** command will only work if the development tools are open. Otherwise, the browser will ignore it.  
 
-![Builder debugger](/assets/images/docbuilder/builder-debugger.png)
+![Builder debugger](/assets/images/plugins/debugger.png)
 
 The **debugger** command works as a breakpoint and pauses the execution at the script point where this command is inserted.
 

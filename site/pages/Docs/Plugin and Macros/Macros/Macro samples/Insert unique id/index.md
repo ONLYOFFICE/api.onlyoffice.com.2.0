@@ -36,4 +36,4 @@ Methods used: GetDocument, CreateParagraph, AddText, InsertContent
 
 ## Result
 
-![Insert id](/assets/images/plugins/insert_id.png)
+![Insert id](/assets/images/plugins/insert-id.png)

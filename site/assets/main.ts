@@ -16,7 +16,6 @@ import "@onlyoffice/ui-kit/client.ts"
 import "../components/tree/tree.client.ts"
 import "../internal/document-builder-container.ts"
 import "../internal/global-navigation-container.ts"
-import "../internal/legacy-container.ts"
 
 function main(): void {
   const c = new Client()

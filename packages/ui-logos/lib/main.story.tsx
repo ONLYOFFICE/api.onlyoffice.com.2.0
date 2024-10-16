@@ -3,7 +3,7 @@ import {type JSX, h} from "preact"
 import {OnlyofficeBetaLogo, OnlyofficeLogo} from "../dist/main.tsx"
 
 export default {
-  title: "UI/Logos",
+  title: "UI Assets / Logos",
 } satisfies Meta
 
 export function Default(): JSX.Element {

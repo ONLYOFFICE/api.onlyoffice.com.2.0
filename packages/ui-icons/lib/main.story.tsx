@@ -8,7 +8,7 @@ import * as rich48 from "../dist/rich/48.tsx"
 import * as rich64 from "../dist/rich/64.tsx"
 
 export default {
-  title: "UI/Icons",
+  title: "UI Assets / Icons",
 } satisfies Meta
 
 export function Default(): JSX.Element {
