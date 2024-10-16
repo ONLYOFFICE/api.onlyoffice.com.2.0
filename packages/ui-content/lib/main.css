@@ -14,18 +14,22 @@
   font-weight: var(--text-title-font-weight-large);
   hyphens: none;
   line-height: var(--text-title-line-height-large);
-  margin-block-end: var(--base-size-28);
-  margin-block-start: var(--base-size-36);
+  margin-block-end: var(--base-size-32);
+  margin-block-start: var(--base-size-44);
   word-break: break-word;
 }
 
 .content h2 {
+  border-block-end-color: var(--color-border-muted);
+  border-block-end-style: solid;
+  border-block-end-width: var(--size-border-width-thin);
   font-size: var(--text-title-font-size-medium);
   font-weight: var(--text-title-font-weight-medium);
   hyphens: none;
   line-height: var(--text-title-line-height-medium);
   margin-block-end: var(--base-size-24);
-  margin-block-start: var(--base-size-32);
+  margin-block-start: var(--base-size-44);
+  padding-block-end: var(--base-size-6);
   word-break: break-word;
 }
 
@@ -34,14 +38,14 @@
   font-weight: var(--text-title-font-weight-small);
   hyphens: none;
   line-height: var(--text-title-line-height-small);
-  margin-block-end: var(--base-size-20);
-  margin-block-start: var(--base-size-28);
+  margin-block-end: var(--base-size-24);
+  margin-block-start: var(--base-size-44);
   word-break: break-word;
 }
 
 .content p {
   margin-block-end: 0;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
 }
 
 .content a {
@@ -51,7 +55,7 @@
 .content ol,
 .content ul {
   margin-block-end: 0;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
   padding-inline-start: var(--base-size-32);
 }
 
@@ -62,27 +66,28 @@
 
 .content ol ol,
 .content ul ul {
-  margin-block-start: var(--base-size-2);
+  margin-block-start: var(--base-size-12);
 }
 
 .content li {
-  margin-block-start: var(--base-size-2);
+  margin-block-start: var(--base-size-8);
+  padding-inline-start: var(--base-size-6);
 }
 
 .content blockquote {
   border-end-start-radius: var(--base-size-2);
-  border-inline-start: var(--base-size-4) solid var(--color-border-default);
+  border-inline-start: var(--base-size-4) solid var(--color-border-muted);
   border-start-start-radius: var(--base-size-2);
   margin-block-end: 0;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
   margin-inline-end: 0;
-  margin-inline-start: var(--base-size-16);
+  margin-inline-start: var(--base-size-20);
   padding-inline-start: calc(var(--base-size-4) + var(--base-size-8));
 }
 
 .content picture {
   display: block;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
 }
 
 .content figure {
@@ -90,28 +95,28 @@
 }
 
 .content img {
-  border-color: var(--color-border-default);
+  border-color: var(--color-border-muted);
   border-radius: var(--size-border-radius-small);
   border-style: solid;
   border-width: var(--size-border-width-thin);
   display: block;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
   max-inline-size: 100%;
 }
 
 .content pre {
   background-color: var(--color-code-editor-default-background);
-  border-color: var(--color-code-editor-default-border);
+  border-color: var(--color-border-muted);
   border-radius: var(--size-border-radius-small);
   border-style: solid;
   border-width: var(--size-border-width-thin);
   display: grid;
-  grid-template-columns: var(--base-size-16) 1fr var(--base-size-16);
+  grid-template-columns: var(--base-size-20) 1fr var(--base-size-20);
   margin-block-end: 0;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
   overflow: auto;
-  padding-block-end: var(--base-size-12);
-  padding-block-start: var(--base-size-12);
+  padding-block-end: var(--base-size-16);
+  padding-block-start: var(--base-size-16);
   tab-size: 2;
 }
 
@@ -130,55 +135,54 @@
   border: none;
   border-radius: 0;
   font-family: var(--base-text-font-family-monospace);
-  font-size: var(--text-code-block-font-size-default);
-  line-height: var(--text-code-block-line-height-default);
+  font-size: inherit;
+  line-height: inherit;
   padding: 0;
   white-space: unset;
 }
 
 .content code {
   background-color: var(--color-code-editor-default-background);
-  border-color: var(--color-code-editor-default-border);
   border-radius: var(--size-border-radius-small);
-  border-style: solid;
-  border-width: var(--size-border-width-thin);
   color: var(--color-code-editor-default-foreground);
   font-family: var(--base-text-font-family-monospace);
-  font-size: var(--text-code-inline-font-size-default);
-  padding: var(--base-size-2) var(--base-size-4);
+  font-size: inherit;
+  padding: var(--base-size-4) var(--base-size-8);
   white-space: break-spaces;
 }
 
 .content table {
   border-collapse: collapse;
+  display: block;
   inline-size: 100%;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
+  overflow: scroll;
 }
 
 .content tbody tr {
-  border-block-start-color: var(--color-border-default);
+  border-block-start-color: var(--color-border-muted);
   border-block-start-style: solid;
   border-block-start-width: var(--size-border-width-thin);
 
   &:last-child {
-    border-block-end-color: var(--color-border-default);
+    border-block-end-color: var(--color-border-muted);
     border-block-end-style: solid;
     border-block-end-width: var(--size-border-width-thin);
   }
 }
 
 .content th {
-  padding: var(--base-size-8) var(--base-size-16);
+  padding: var(--base-size-8) var(--base-size-20);
   text-align: start;
 }
 
 .content td {
-  padding: var(--base-size-12) var(--base-size-16);
+  padding: var(--base-size-16) var(--base-size-20);
 }
 
 /* .content dl {
   margin-block-end: 0;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
 }
 
 .content dl dt:first-of-type {
@@ -205,7 +209,7 @@
 
 /* .content-tab-container {
   display: block;
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
 }
 
 .content-tab-container div[slot="tablist-wrapper"] {
@@ -256,13 +260,13 @@
 /* Integration with @onlyoffice/code-editor */
 
 .content .code-editor {
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
 }
 
 /* Integration with @onlyoffice/code-listing */
 
 .content .code-listing {
-  margin-block-start: var(--base-size-20);
+  margin-block-start: var(--base-size-24);
 }
 
 .content .code-listing div[role="tabpanel"] pre {
