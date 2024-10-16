@@ -13,11 +13,13 @@
 
   /* prefix: base, variant: text, property: font-size */
   --base-text-font-size-12: 12px;
+  --base-text-font-size-13: 13px;
   --base-text-font-size-14: 14px;
   --base-text-font-size-16: 16px;
   --base-text-font-size-18: 18px;
-  --base-text-font-size-26: 26px;
+  --base-text-font-size-24: 24px;
   --base-text-font-size-32: 32px;
+  --base-text-font-size-40: 40px;
 
   /* prefix: base, variant: text, property: font-weight */
   --base-text-font-weight-normal: 400;
@@ -37,14 +39,14 @@
 
 :root {
   /* prefix: text, variant: display */
-  --text-display-font-size-default: var(--base-text-font-size-32);
+  --text-display-font-size-default: var(--base-text-font-size-40);
   --text-display-font-weight-default: var(--base-text-font-weight-bold);
   --text-display-line-height-default: var(--base-text-line-height-1-50);
 
   /* prefix: text, variant: title, property: font-size */
-  --text-title-font-size-small: var(--base-text-font-size-14);
-  --text-title-font-size-medium: var(--base-text-font-size-18);
-  --text-title-font-size-large: var(--base-text-font-size-26);
+  --text-title-font-size-small: var(--base-text-font-size-18);
+  --text-title-font-size-medium: var(--base-text-font-size-24);
+  --text-title-font-size-large: var(--base-text-font-size-32);
 
   /* prefix: text, variant: title, property: font-weight */
   --text-title-font-weight-small: var(--base-text-font-weight-bold);
@@ -57,9 +59,9 @@
   --text-title-line-height-large: var(--base-text-line-height-1-25);
 
   /* prefix: text, variant: body, property: font-size */
-  --text-body-font-size-small: var(--base-text-font-size-12);
-  --text-body-font-size-medium: var(--base-text-font-size-14);
-  --text-body-font-size-large: var(--base-text-font-size-16);
+  --text-body-font-size-small: var(--base-text-font-size-14);
+  --text-body-font-size-medium: var(--base-text-font-size-16);
+  --text-body-font-size-large: var(--base-text-font-size-18);
 
   /* prefix: text, variant: body, property: line-height */
   --text-body-line-height-small: var(--base-text-line-height-1-50);
@@ -71,13 +73,18 @@
   --text-body-line-height-size-medium: calc(var(--text-body-font-size-medium) * var(--text-body-line-height-medium));
   --text-body-line-height-size-large: calc(var(--text-body-font-size-large) * var(--text-body-line-height-large));
 
+  /* prefix: text, variant: caption */
+  --text-caption-font-size: var(--base-text-font-size-13);
+  --text-caption-font-weight: var(--base-text-font-weight-normal);
+  --text-caption-line-height: var(--base-text-line-height-1-50);
+
   /* prefix: text, variant: code-block */
-  --text-code-block-font-size-default: var(--base-text-font-size-12);
+  --text-code-block-font-size-default: var(--base-text-font-size-18);
   --text-code-block-line-height-default: var(--base-text-line-height-1-50);
   --text-code-block-line-height-size-default: calc(var(--text-code-block-font-size-default) * var(--text-code-block-line-height-default));
 
   /* prefix: text, variant: code-inline */
-  --text-code-inline-font-size-default: var(--base-text-font-size-12);
+  --text-code-inline-font-size-default: var(--base-text-font-size-18);
 }
 
 /* Sizes: Basics */
