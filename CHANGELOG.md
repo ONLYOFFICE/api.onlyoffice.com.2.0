@@ -1,5 +1,6 @@
 # Change Log
 
+- restructured Plugins and Macros section
 - docspace api backend: http and curl examples
 - docbuilder: samples link
 - office api: added samples
