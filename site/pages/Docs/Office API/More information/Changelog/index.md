@@ -25,12 +25,174 @@ The list of changes for Office JavaScript API.
 
 ### Pivot tables methods
 
+- Added the Api/GetAllPivotTables method to Spreadsheet API.
+- Added the Api/GetPivotByName method to Spreadsheet API.
+- Added the Api/InsertPivotExistingWorksheet method to Spreadsheet API.
+- Added the Api/InsertPivotNewWorksheet method to Spreadsheet API.
+- Added the Api/RefreshAllPivots method to Spreadsheet API.
+- Added the ApiPivotDataField class to Spreadsheet API.
+- Added the ApiPivotDataField/GetCaption method to Spreadsheet API.
+- Added the ApiPivotDataField/GetFunction method to Spreadsheet API.
+- Added the ApiPivotDataField/GetIndex method to Spreadsheet API.
+- Added the ApiPivotDataField/GetName method to Spreadsheet API.
+- Added the ApiPivotDataField/GetNumberFormat method to Spreadsheet API.
+- Added the ApiPivotDataField/GetOrientation method to Spreadsheet API.
+- Added the ApiPivotDataField/GetPivotField method to Spreadsheet API.
+- Added the ApiPivotDataField/GetPosition method to Spreadsheet API.
+- Added the ApiPivotDataField/GetValue method to Spreadsheet API.
+- Added the ApiPivotDataField/Move method to Spreadsheet API.
+- Added the ApiPivotDataField/Remove method to Spreadsheet API.
+- Added the ApiPivotDataField/SetCaption method to Spreadsheet API.
+- Added the ApiPivotDataField/SetFunction method to Spreadsheet API.
+- Added the ApiPivotDataField/SetName method to Spreadsheet API.
+- Added the ApiPivotDataField/SetNumberFormat method to Spreadsheet API.
+- Added the ApiPivotDataField/SetPosition method to Spreadsheet API.
+- Added the ApiPivotDataField/SetValue method to Spreadsheet API.
 - Added the ApiPivotField class to Spreadsheet API.
+- Added the ApiPivotField/ClearAllFilters method to Spreadsheet API.
+- Added the ApiPivotField/ClearLabelFilters method to Spreadsheet API.
+- Added the ApiPivotField/ClearManualFilters method to Spreadsheet API.
+- Added the ApiPivotField/ClearValueFilters method to Spreadsheet API.
+- Added the ApiPivotField/GetCaption method to Spreadsheet API.
+- Added the ApiPivotField/GetCurrentPage method to Spreadsheet API.
+- Added the ApiPivotField/GetDragToColumn method to Spreadsheet API.
+- Added the ApiPivotField/GetDragToData method to Spreadsheet API.
+- Added the ApiPivotField/GetDragToPage method to Spreadsheet API.
+- Added the ApiPivotField/GetDragToRow method to Spreadsheet API.
+- Added the ApiPivotField/GetFunction method to Spreadsheet API.
+- Added the ApiPivotField/GetIndex method to Spreadsheet API.
+- Added the ApiPivotField/GetLayoutBlankLine method to Spreadsheet API.
+- Added the ApiPivotField/GetLayoutCompactRow method to Spreadsheet API.
+- Added the ApiPivotField/GetLayoutForm method to Spreadsheet API.
+- Added the ApiPivotField/GetLayoutPageBreak method to Spreadsheet API.
+- Added the ApiPivotField/GetLayoutSubtotals method to Spreadsheet API.
+- Added the ApiPivotField/GetLayoutSubtotalLocation method to Spreadsheet API.
+- Added the ApiPivotField/GetName method to Spreadsheet API.
+- Added the ApiPivotField/GetNumberFormat method to Spreadsheet API.
+- Added the ApiPivotField/GetOrientation method to Spreadsheet API.
+- Added the ApiPivotField/GetParent method to Spreadsheet API.
+- Added the ApiPivotField/GetPivotItems method to Spreadsheet API.
+- Added the ApiPivotField/GetPosition method to Spreadsheet API.
+- Added the ApiPivotField/GetRepeatLabels method to Spreadsheet API.
+- Added the ApiPivotField/GetShowAllItems method to Spreadsheet API.
+- Added the ApiPivotField/GetShowingInAxis method to Spreadsheet API.
+- Added the ApiPivotField/GetSourceName method to Spreadsheet API.
+- Added the ApiPivotField/GetSubtotalName method to Spreadsheet API.
+- Added the ApiPivotField/GetSubtotals method to Spreadsheet API.
+- Added the ApiPivotField/GetTable method to Spreadsheet API.
+- Added the ApiPivotField/GetValue method to Spreadsheet API.
+- Added the ApiPivotField/Move method to Spreadsheet API.
+- Added the ApiPivotField/Remove method to Spreadsheet API.
+- Added the ApiPivotField/SetCaption method to Spreadsheet API.
+- Added the ApiPivotField/SetDragToColumn method to Spreadsheet API.
+- Added the ApiPivotField/SetDragToData method to Spreadsheet API.
+- Added the ApiPivotField/SetDragToPage method to Spreadsheet API.
+- Added the ApiPivotField/SetDragToRow method to Spreadsheet API.
+- Added the ApiPivotField/SetFunction method to Spreadsheet API.
+- Added the ApiPivotField/SetLayoutBlankLine method to Spreadsheet API.
+- Added the ApiPivotField/SetLayoutCompactRow method to Spreadsheet API.
+- Added the ApiPivotField/SetLayoutForm method to Spreadsheet API.
+- Added the ApiPivotField/SetLayoutPageBreak method to Spreadsheet API.
+- Added the ApiPivotField/SetLayoutSubtotals method to Spreadsheet API.
+- Added the ApiPivotField/SetLayoutSubtotalLocation method to Spreadsheet API.
+- Added the ApiPivotField/SetName method to Spreadsheet API.
+- Added the ApiPivotField/SetNumberFormat method to Spreadsheet API.
+- Added the ApiPivotField/SetOrientation method to Spreadsheet API.
+- Added the ApiPivotField/SetPosition method to Spreadsheet API.
+- Added the ApiPivotField/SetRepeatLabels method to Spreadsheet API.
+- Added the ApiPivotField/SetShowAllItems method to Spreadsheet API.
+- Added the ApiPivotField/SetSubtotalName method to Spreadsheet API.
+- Added the ApiPivotField/SetSubtotals method to Spreadsheet API.
+- Added the ApiPivotField/SetValue method to Spreadsheet API.
+- Added the ApiPivotItem class to Spreadsheet API.
+- Added the ApiPivotItem/GetCaption method to Spreadsheet API.
+- Added the ApiPivotItem/GetName method to Spreadsheet API.
+- Added the ApiPivotItem/GetParent method to Spreadsheet API.
+- Added the ApiPivotItem/GetValue method to Spreadsheet API.
 - Added the ApiPivotTable class to Spreadsheet API.
-- Added the ApiParaPr/SetOutlineLvl method to Spreadsheet API.
+- Added the ApiPivotTable/AddDataField method to Spreadsheet API.
+- Added the ApiPivotTable/AddFields method to Spreadsheet API.
+- Added the ApiPivotTable/ClearAllFilters method to Spreadsheet API.
+- Added the ApiPivotTable/ClearTable method to Spreadsheet API.
+- Added the ApiPivotTable/GetColumnFields method to Spreadsheet API.
+- Added the ApiPivotTable/GetColumnGrand method to Spreadsheet API.
+- Added the ApiPivotTable/GetColumnRange method to Spreadsheet API.
+- Added the ApiPivotTable/GetData method to Spreadsheet API.
+- Added the ApiPivotTable/GetDataBodyRange method to Spreadsheet API.
+- Added the ApiPivotTable/GetDataFields method to Spreadsheet API.
+- Added the ApiPivotTable/GetDescription method to Spreadsheet API.
+- Added the ApiPivotTable/GetDisplayFieldCaptions method to Spreadsheet API.
+- Added the ApiPivotTable/GetDisplayFieldsInReportFilterArea method to Spreadsheet API.
+- Added the ApiPivotTable/GetGrandTotalName method to Spreadsheet API.
+- Added the ApiPivotTable/GetHiddenFields method to Spreadsheet API.
+- Added the ApiPivotTable/GetName method to Spreadsheet API.
+- Added the ApiPivotTable/GetPageFields method to Spreadsheet API.
+- Added the ApiPivotTable/GetParent method to Spreadsheet API.
+- Added the ApiPivotTable/GetPivotData method to Spreadsheet API.
+- Added the ApiPivotTable/GetPivotFields method to Spreadsheet API.
+- Added the ApiPivotTable/GetRowFields method to Spreadsheet API.
+- Added the ApiPivotTable/GetRowGrand method to Spreadsheet API.
+- Added the ApiPivotTable/GetRowRange method to Spreadsheet API.
+- Added the ApiPivotTable/GetSource method to Spreadsheet API.
+- Added the ApiPivotTable/GetStyleName method to Spreadsheet API.
+- Added the ApiPivotTable/GetTableRange1 method to Spreadsheet API.
+- Added the ApiPivotTable/GetTableRange2 method to Spreadsheet API.
+- Added the ApiPivotTable/GetTableStyleColumnHeaders method to Spreadsheet API.
+- Added the ApiPivotTable/GetTableStyleColumnStripes method to Spreadsheet API.
+- Added the ApiPivotTable/GetTableStyleRowHeaders method to Spreadsheet API.
+- Added the ApiPivotTable/GetTableStyleRowStripes method to Spreadsheet API.
+- Added the ApiPivotTable/GetTitle method to Spreadsheet API.
+- Added the ApiPivotTable/GetVisibleFields method to Spreadsheet API.
+- Added the ApiPivotTable/MoveField method to Spreadsheet API.
+- Added the ApiPivotTable/PivotValueCell method to Spreadsheet API.
+- Added the ApiPivotTable/RefreshTable method to Spreadsheet API.
+- Added the ApiPivotTable/RemoveField method to Spreadsheet API.
+- Added the ApiPivotTable/Select method to Spreadsheet API.
+- Added the ApiPivotTable/SetColumnGrand method to Spreadsheet API.
+- Added the ApiPivotTable/SetDescription method to Spreadsheet API.
+- Added the ApiPivotTable/SetDisplayFieldCaptions method to Spreadsheet API.
+- Added the ApiPivotTable/SetDisplayFieldsInReportFilterArea method to Spreadsheet API.
+- Added the ApiPivotTable/SetGrandTotalName method to Spreadsheet API.
+- Added the ApiPivotTable/SetLayoutBlankLine method to Spreadsheet API.
+- Added the ApiPivotTable/SetLayoutSubtotals method to Spreadsheet API.
+- Added the ApiPivotTable/SetName method to Spreadsheet API.
+- Added the ApiPivotTable/SetRepeatAllLabels method to Spreadsheet API.
+- Added the ApiPivotTable/SetRowAxisLayout method to Spreadsheet API.
+- Added the ApiPivotTable/SetRowGrand method to Spreadsheet API.
+- Added the ApiPivotTable/SetSource method to Spreadsheet API.
+- Added the ApiPivotTable/SetStyleName method to Spreadsheet API.
+- Added the ApiPivotTable/SetSubtotalLocation method to Spreadsheet API.
+- Added the ApiPivotTable/SetTableStyleColumnHeaders method to Spreadsheet API.
+- Added the ApiPivotTable/SetTableStyleColumnStripes method to Spreadsheet API.
+- Added the ApiPivotTable/SetTableStyleRowHeaders method to Spreadsheet API.
+- Added the ApiPivotTable/SetTableStyleRowStripes method to Spreadsheet API.
+- Added the ApiPivotTable/SetTitle method to Spreadsheet API.
+- Added the ApiPivotTable/ShowDetails method to Spreadsheet API.
+- Added the ApiPivotTable/Update method to Spreadsheet API.
+- Added the ApiRange/GetPivotTable method to Spreadsheet API.
+- Added the ApiWorksheet/GetAllPivotTables method to Spreadsheet API.
+- Added the ApiWorksheet/GetPivotByName method to Spreadsheet API.
+- Added the ApiWorksheet/RefreshAllPivots method to Spreadsheet API.
 - Added the *PivotTable* property to the ApiRange object of Spreadsheet API.
 - Added the *PivotTables* property to the Api object of Spreadsheet API.
 - Added the *PivotTables* property to the ApiWorksheet object of Spreadsheet API.
+- Added the *DataConsolidateFunctionType* type to the simple type definitions.
+- Added the *FieldsInReportFilterType* type to the simple type definitions.
+- Added the *LayoutSubtotalLocationType* type to the simple type definitions.
+- Added the *PivotFieldOrientationType* type to the simple type definitions.
+- Added the *PivotFieldSubtotals* type to the simple type definitions.
+- Added the *PivotLayoutType* type to the simple type definitions.
+- Added the *PivotMoveFieldType* type to the simple type definitions.
+
+### Placeholder methods
+
+- Added the ApiLayout/GetDrawingsByPlaceholderType method to Presentation API.
+- Added the ApiMaster/GetDrawingsByPlaceholderType method to Presentation API.
+- Added the ApiPlaceholder/GetIndex method to Presentation API.
+- Added the ApiPlaceholder/GetType method to Presentation API.
+- Added the ApiPlaceholder/SetIndex method to Presentation API.
+- Added the ApiSlide/GetDrawingsByPlaceholderType method to Presentation API.
+- Added the *PlaceholderType* type to the simple type definitions.
 
 ### Other methods
 
@@ -38,11 +200,15 @@ The list of changes for Office JavaScript API.
 - Added the ApiParaPr/SetOutlineLvl method to Text document API.
 - Added the ApiRun/MoveCursorToPos method to Text document API.
 - Added the ApiSection/GetType method to Text document API.
+- Added the Api/AddCustomFunctionLibrary method to Spreadsheet API.
 - Added the ApiParaPr/GetOutlineLvl method to Spreadsheet API.
 - Added the ApiParaPr/SetOutlineLvl method to Spreadsheet API.
+- Added the ApiDrawing/Select method to Presentation API.
 - Added the ApiParaPr/GetOutlineLvl method to Presentation API.
 - Added the ApiParaPr/SetOutlineLvl method to Presentation API.
 - Added the ReviewedElement property to the ReviewReportRecord object.
+- Added the *DeleteShiftDirection* type to the simple type definitions.
+- Added the *Drawing* type to the simple type definitions.
 
 ## Version 8.1
 
@@ -599,7 +765,10 @@ The list of changes for Office JavaScript API.
 
 ### Other methods
 
-- Added the *nWidth- and *nHeight- parameters to the ApiPictureForm/SetImage method of Text document API.
+- Added the ApiDocument/GetDocumentInfo method to Text document API.
+- Added the Api/GetDocumentInfo method to Spreadsheet API.
+- Added the ApiPresentation/GetDocumentInfo method to Presentation API.
+- Added the *nWidth* and *nHeight* parameters to the ApiPictureForm/SetImage method of Text document API.
 
 ## Version 8.0
 
@@ -623,14 +792,14 @@ The list of changes for Office JavaScript API.
 
 ### Comment methods
 
-- Added the *sUserId- parameter to the Api/AddComment method of Text document API.
-- Added the *sUserId- parameter to the ApiBlockLvlSdt/AddComment method of Text document API.
-- Added the *sUserId- parameter to the ApiDocument/AddComment method of Text document API.
-- Added the *sUserId- parameter to the ApiInlineLvlSdt/AddComment method of Text document API.
-- Added the *sUserId- parameter to the ApiParagraph/AddComment method of Text document API.
-- Added the *sUserId- parameter to the ApiRange/AddComment method of Text document API.
-- Added the *sUserId- parameter to the ApiRun/AddComment method of Text document API.
-- Added the *sUserId- parameter to the ApiTable/AddComment method of Text document API.
+- Added the *sUserId* parameter to the Api/AddComment method of Text document API.
+- Added the *sUserId* parameter to the ApiBlockLvlSdt/AddComment method of Text document API.
+- Added the *sUserId* parameter to the ApiDocument/AddComment method of Text document API.
+- Added the *sUserId* parameter to the ApiInlineLvlSdt/AddComment method of Text document API.
+- Added the *sUserId* parameter to the ApiParagraph/AddComment method of Text document API.
+- Added the *sUserId* parameter to the ApiRange/AddComment method of Text document API.
+- Added the *sUserId* parameter to the ApiRun/AddComment method of Text document API.
+- Added the *sUserId* parameter to the ApiTable/AddComment method of Text document API.
 - Added the Api/GetAllComments method to Spreadsheet API.
 - Added the ApiComment/AddReply method to Presentation API.
 - Added the ApiComment/Delete method to Presentation API.
@@ -670,9 +839,9 @@ The list of changes for Office JavaScript API.
 
 ### Other methods
 
-- Removed the *ApiBlockLvlSdt/SetBackgroundColor- method from Text document API.
+- Removed the *ApiBlockLvlSdt/SetBackgroundColor* method from Text document API.
 - Added the ApiDocument/AddDrawingToPage method to Text document API.
-- Added the *bWithotPaddings- parameter to the ApiWorksheet/SetColumnWidth method of Spreadsheet API.
+- Added the *bWithotPaddings* parameter to the ApiWorksheet/SetColumnWidth method of Spreadsheet API.
 
 ## Version 7.5
 
@@ -1303,7 +1472,7 @@ The list of changes for Office JavaScript API.
 - Added the ApiRange/GetAreas method to Spreadsheet API.
 - Added the ApiRange/Insert method to Spreadsheet API.
 - Added the ApiRange/Paste method to Spreadsheet API.
-- Changed the *data- parameter type of the ApiRange/SetValue method of Spreadsheet API.
+- Changed the *data* parameter type of the ApiRange/SetValue method of Spreadsheet API.
 
 ### Layout methods
 
@@ -1433,9 +1602,9 @@ The list of changes for Office JavaScript API.
 
 ### Other methods
 
-- Added the *sParaTab- and *sParaNewLine- parameters to the Api/ReplaceTextSmart method of Text document API.
+- Added the *sParaTab* and *sParaNewLine* parameters to the Api/ReplaceTextSmart method of Text document API.
 - Added the ApiInlineLvlSdt/GetParentParagraph method to Text document API.
-- Removed the *ApiShape/GetDocContent- method from Spreadsheet API.
+- Removed the *ApiShape/GetDocContent* method from Spreadsheet API.
 
 ## Version 7.0
 
@@ -1454,24 +1623,24 @@ The list of changes for Office JavaScript API.
 ## Version 6.4
 
 - Changed the return value of the Api/CreateRange method of Text document API.
-- Removed the *Api/GetFirstRunInArray- method from Text document API.
-- Removed the *Api/GetLastRunInArray- method from Text document API.
+- Removed the *Api/GetFirstRunInArray* method from Text document API.
+- Removed the *Api/GetLastRunInArray* method from Text document API.
 - Added parameters to the ApiChart/SetLegendFontSize method of Text document API.
 - Added parameters to the ApiDocument/GetElement method of Text document API.
 - Added the return value to the ApiDocument/Push method of Text document API.
 - Added parameters to the ApiDocumentContent/GetElement method of Text document API.
 - Added the return value to the ApiDocumentContent/Push method of Text document API.
 - Removed parameters from the ApiRange/Select method of Text document API.
-- Added the *oCell- parameter to the ApiTable/AddElement method of Text document API.
+- Added the *oCell* parameter to the ApiTable/AddElement method of Text document API.
 - Added parameters to the Api/GetRange method of Spreadsheet API.
 - Added the ApiComment/GetClassType method to Spreadsheet API.
-- Removed the *ApiDocument/Last- method from Spreadsheet and Presentation API.
+- Removed the *ApiDocument/Last* method from Spreadsheet and Presentation API.
 - Added the ApiRange/GetCols method to Spreadsheet API.
 - Added the ApiRange/End method to Spreadsheet API.
 - Added the ApiRange/GetCells method to Spreadsheet API.
 - Added the ApiRange/GetOrientation method to Spreadsheet API.
 - Added the ApiRange/SetOrientation method to Spreadsheet API.
-- Added the *Cols- and *Orientation- properties to the ApiRange object of Spreadsheet API.
+- Added the *Cols* and *Orientation* properties to the ApiRange object of Spreadsheet API.
 - Added parameters to the ApiWorksheet/GetCells method of Spreadsheet API.
 - Added parameters to the Api/CreateGroup method of Presentation API.
 - Added parameters to the ApiChart/SetLegendFontSize method of Presentation API.
