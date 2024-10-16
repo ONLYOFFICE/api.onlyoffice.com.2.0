@@ -2611,18 +2611,18 @@ importers:
 
   packages/site-page:
     dependencies:
-      '@onlyoffice/preact-slots':
+      '@onlyoffice/preact-elements':
         specifier: workspace:^
-        version: link:../preact-slots
-      '@onlyoffice/preact-types':
-        specifier: workspace:^
-        version: link:../preact-types
+        version: link:../preact-elements
       '@onlyoffice/site-chapter':
         specifier: workspace:^
         version: link:../site-chapter
       '@onlyoffice/ui-icons':
         specifier: workspace:^
         version: link:../ui-icons
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
@@ -2630,9 +2630,9 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
     devDependencies:
-      '@onlyoffice/ui-kit':
+      '@onlyoffice/site-header':
         specifier: workspace:^
-        version: link:../ui-kit
+        version: link:../site-header
       '@storybook/preact':
         specifier: 8.0.0
         version: 8.0.0(preact@10.22.0)
