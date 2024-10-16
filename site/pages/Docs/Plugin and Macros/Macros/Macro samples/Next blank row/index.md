@@ -50,4 +50,4 @@ End Sub
 
 ## Result
 
-![Next blank row](/assets/images/plugins/next_blank_row.png)
+![Next blank row](/assets/images/plugins/next-blank-row.png)

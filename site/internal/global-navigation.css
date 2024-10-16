@@ -282,13 +282,3 @@
     inline-size: calc(50% + var(--size-border-width-thin));
   }
 }
-
-.global-navigation__legacy {
-  padding-block: calc(var(--base-size-20) / 2);
-  padding-inline: var(--base-size-24);
-  text-align: end;
-
-  @media (--size-viewport-width-medium) {
-    display: none;
-  }
-}

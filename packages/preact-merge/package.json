@@ -1,0 +1,18 @@
+{
+  "name": "@onlyoffice/preact-merge",
+  "type": "module",
+  "private": true,
+  "main": "lib/main.ts",
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "preact": "10.22.0",
+    "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "rimraf": "6.0.1"
+  }
+}

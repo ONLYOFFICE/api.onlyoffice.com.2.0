@@ -289,7 +289,7 @@
 
 .home__preview img {
   block-size: auto;
-  border-radius: var(--base-size-8);
+  border-radius: var(--size-border-radius-large);
   box-shadow: var(--temp-color-shadow-default-small);
   display: block;
   inline-size: 100%;

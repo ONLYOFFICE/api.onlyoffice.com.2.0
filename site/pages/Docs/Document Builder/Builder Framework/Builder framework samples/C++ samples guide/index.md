@@ -11,15 +11,15 @@ For the samples to work correctly, make sure that two conditions are met:
 
 ## Download a sample
 
-Download one of the Builder C++ samples archive and unzip it into a folder with general editing access.
+Download one of the Builder C++ samples and copy it into a folder with general editing access.
 
-- [Filling spreadsheet](https://api.teamlab.info:443/app_data/docbuilder/cpp-samples/FillingSpreadsheet.zip)
-- [Commenting spreadsheet errors](https://api.teamlab.info:443/app_data/docbuilder/cpp-samples/CommentingErrors.zip)
-- [Creating presentation](https://api.teamlab.info:443/app_data/docbuilder/cpp-samples/CreatingPresentation.zip)
-- [Creating chart presentation](https://api.teamlab.info:443/app_data/docbuilder/cpp-samples/CreatingChartPresentation.zip)
-- [Creating basic form](https://api.teamlab.info:443/app_data/docbuilder/cpp-samples/CreatingBasicForm.zip)
-- [Creating advanced form](https://api.teamlab.info:443/app_data/docbuilder/cpp-samples/CreatingAdvancedForm.zip)
-- [Filling form](https://api.teamlab.info:443/app_data/docbuilder/cpp-samples/FillingForm.zip)
+- [Filling spreadsheet](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/cpp/FillingSpreadsheet/FillingSpreadsheet/FillingSpreadsheet.cpp)
+- [Commenting spreadsheet errors](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/cpp/CommentingErrors/CommentingErrors/CommentingErrors.cpp)
+- [Creating presentation](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/cpp/CreatingPresentation/CreatingPresentation/CreatingPresentation.cpp)
+- [Creating chart presentation](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/cpp/CreatingChartPresentation/CreatingChartPresentation/CreatingChartPresentation.cpp)
+- [Creating basic form](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/cpp/CreatingBasicForm/CreateBasicForm/CreateBasicForm.cpp)
+- [Creating advanced form](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/cpp/CreatingAdvancedForm/CreateAdvancedForm/CreateAdvancedForm.cpp)
+- [Filling form](https://github.com/ONLYOFFICE/document-builder-samples/blob/master/cpp/FillingForm/FillForm/FillForm.cpp)
 
 ## Sample structure
 

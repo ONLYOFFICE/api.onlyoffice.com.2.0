@@ -24,4 +24,4 @@ Methods used: GetDocument, CreateParagraph, AddText, InsertContent
 
 ## Result
 
-![Chart](/assets/images/plugins/insert-text.png)
+![Chart](/assets/images/plugins/macro-window.png)

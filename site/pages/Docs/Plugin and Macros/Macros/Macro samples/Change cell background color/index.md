@@ -29,4 +29,4 @@ End Sub
 
 ## Result
 
-![Background color](/assets/images/plugins/background_color.png)
+![Background color](/assets/images/plugins/background-color.png)

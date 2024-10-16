@@ -1,5 +1,8 @@
 baseUrl: https://api.onlyoffice.com/
+legacyBaseUrl: https://legacy-api.onlyoffice.com/
+
 analytics: true
+robots: true
 
 server:
   baseUrl: https://api.teamlab.info/

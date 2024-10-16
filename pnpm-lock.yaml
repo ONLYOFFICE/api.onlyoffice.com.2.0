@@ -1435,6 +1435,22 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/preact-elements:
+    dependencies:
+      '@onlyoffice/preact-slots':
+        specifier: workspace:^
+        version: link:../preact-slots
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/preact-eleventy-img:
     dependencies:
       '@11ty/eleventy-img':
@@ -1457,8 +1473,24 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/preact-merge:
+    dependencies:
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/preact-slots:
     dependencies:
+      '@onlyoffice/preact-merge':
+        specifier: workspace:^
+        version: link:../preact-merge
       preact:
         specifier: 10.22.0
         version: 10.22.0
@@ -2182,9 +2214,9 @@ importers:
       '@onlyoffice/site-home':
         specifier: workspace:^
         version: link:../site-home
-      '@onlyoffice/site-library-declaration':
+      '@onlyoffice/site-library':
         specifier: workspace:^
-        version: link:../site-library-declaration
+        version: link:../site-library
       '@onlyoffice/site-page':
         specifier: workspace:^
         version: link:../site-page
@@ -2197,12 +2229,18 @@ importers:
       '@onlyoffice/site-search':
         specifier: workspace:^
         version: link:../site-search
-      '@onlyoffice/site-service-declaration':
+      '@onlyoffice/site-service':
         specifier: workspace:^
-        version: link:../site-service-declaration
+        version: link:../site-service
+      '@onlyoffice/site-status':
+        specifier: workspace:^
+        version: link:../site-status
       '@onlyoffice/site-theme-switcher':
         specifier: workspace:^
         version: link:../site-theme-switcher
+      '@onlyoffice/site-toc':
+        specifier: workspace:^
+        version: link:../site-toc
       preact:
         specifier: 10.22.0
         version: 10.22.0
@@ -2214,7 +2252,7 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
-  packages/site-library-declaration:
+  packages/site-library:
     dependencies:
       '@onlyoffice/declaration-tokenizer':
         specifier: workspace:^
@@ -2222,9 +2260,6 @@ importers:
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../library-declaration
-      '@onlyoffice/library-resource':
-        specifier: workspace:^
-        version: link:../library-resource
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
@@ -2372,26 +2407,48 @@ importers:
         specifier: 5.1.6
         version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
 
-  packages/site-service-declaration:
+  packages/site-service:
     dependencies:
-      '@onlyoffice/openapi-resource-fixtures':
-        specifier: workspace:^
-        version: link:../openapi-resource-fixtures
-      '@onlyoffice/preact-callback':
-        specifier: workspace:^
-        version: link:../preact-callback
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
       '@onlyoffice/service-declaration':
         specifier: workspace:^
         version: link:../service-declaration
-      '@onlyoffice/service-resource':
-        specifier: workspace:^
-        version: link:../service-resource
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@storybook/preact':
+        specifier: 8.0.0
+        version: 8.0.0(preact@10.22.0)
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      vite:
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+
+  packages/site-status:
+    dependencies:
+      '@onlyoffice/preact-elements':
+        specifier: workspace:^
+        version: link:../preact-elements
+      '@onlyoffice/preact-types':
+        specifier: workspace:^
+        version: link:../preact-types
+      '@onlyoffice/ui-kit':
+        specifier: workspace:^
+        version: link:../ui-kit
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
@@ -2424,6 +2481,31 @@ importers:
       '@onlyoffice/radiogroup-container-html-element':
         specifier: workspace:^
         version: link:../radiogroup-container-html-element
+      '@storybook/preact':
+        specifier: 8.0.0
+        version: 8.0.0(preact@10.22.0)
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      vite:
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+
+  packages/site-toc:
+    dependencies:
+      '@onlyoffice/preact-elements':
+        specifier: workspace:^
+        version: link:../preact-elements
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
       '@storybook/preact':
         specifier: 8.0.0
         version: 8.0.0(preact@10.22.0)
@@ -2750,6 +2832,12 @@ importers:
 
   packages/ui-button:
     dependencies:
+      '@onlyoffice/preact-elements':
+        specifier: workspace:^
+        version: link:../preact-elements
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
@@ -2952,6 +3040,9 @@ importers:
       '@onlyoffice/ui-mascots':
         specifier: workspace:^
         version: link:../ui-mascots
+      '@onlyoffice/ui-pictures':
+        specifier: workspace:^
+        version: link:../ui-pictures
       '@onlyoffice/ui-primitives':
         specifier: workspace:^
         version: link:../ui-primitives
@@ -3002,6 +3093,37 @@ importers:
 
   packages/ui-mascots:
     dependencies:
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@onlyoffice/svg-library':
+        specifier: workspace:^
+        version: link:../svg-library
+      '@storybook/preact':
+        specifier: 8.0.0
+        version: 8.0.0(preact@10.22.0)
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      vite:
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+
+  packages/ui-pictures:
+    dependencies:
+      '@onlyoffice/preact-elements':
+        specifier: workspace:^
+        version: link:../preact-elements
+      '@onlyoffice/ui-mascots':
+        specifier: workspace:^
+        version: link:../ui-mascots
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
@@ -3355,9 +3477,6 @@ importers:
       hast-util-to-text:
         specifier: 4.0.0
         version: 4.0.0
-      js-cookie:
-        specifier: 3.0.5
-        version: 3.0.5
       lightningcss:
         specifier: 1.23.0
         version: 1.23.0
@@ -3430,10 +3549,16 @@ importers:
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../packages/ui-kit
+      '@storybook/addon-a11y':
+        specifier: 8.0.0
+        version: 8.0.0
       '@storybook/addon-essentials':
         specifier: 8.0.0
         version: 8.0.0(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@storybook/addon-storysource':
+        specifier: 8.0.0
+        version: 8.0.0
+      '@storybook/addon-viewport':
         specifier: 8.0.0
         version: 8.0.0
       '@storybook/blocks':
@@ -5037,6 +5162,9 @@ packages:
   '@sindresorhus/transliterate@0.1.2':
     resolution: {integrity: sha512-5/kmIOY9FF32nicXH+5yLNTX4NJ4atl7jRgqAJuIn/iyDFXBktOKDxCvyGE/EzmF4ngSUvjXxQUQlQiZ5lfw+w==}
     engines: {node: '>=10'}
+
+  '@storybook/addon-a11y@8.0.0':
+    resolution: {integrity: sha512-lxvXOMYqeM6DOUvNP3e18GzPDVhcOZtLnjkJ8XQbRk2xx2qHodAEiFhiKBhfStsn6/rg0zWLRpZ1NJxjnZ0l/Q==}
 
   '@storybook/addon-actions@8.0.0':
     resolution: {integrity: sha512-QXfnEWZt5k35cPYsLvxq505XrCgXujc4UEkky1lBtSMI9SLzlXZg3fC/lW0c0hiu2c0+zI+y4fj5vTE9AZJdjw==}
@@ -7713,10 +7841,6 @@ packages:
     resolution: {integrity: sha512-ZDi3aP+fG/LchyBzUM804VjddnwfSfsdeYkwt8NcbKRvo4rFkjhs456iLFn3k2ZUWvNe4i48WACDbza8fhq2+w==}
     engines: {node: '>=10'}
     hasBin: true
-
-  js-cookie@3.0.5:
-    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
-    engines: {node: '>=14'}
 
   js-levenshtein-esm@1.2.0:
     resolution: {integrity: sha512-fzreKVq1eD7eGcQr7MtRpQH94f8gIfhdrc7yeih38xh684TNMK9v5aAu2wxfIRMk/GpAJRrzcirMAPIaSDaByQ==}
@@ -12077,6 +12201,11 @@ snapshots:
       escape-string-regexp: 2.0.0
       lodash.deburr: 4.1.0
 
+  '@storybook/addon-a11y@8.0.0':
+    dependencies:
+      '@storybook/addon-highlight': 8.0.0
+      axe-core: 4.9.1
+
   '@storybook/addon-actions@8.0.0':
     dependencies:
       '@storybook/core-events': 8.0.0
@@ -15641,8 +15770,6 @@ snapshots:
       chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
-
-  js-cookie@3.0.5: {}
 
   js-levenshtein-esm@1.2.0: {}
 

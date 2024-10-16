@@ -1,6 +1,6 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {OnlyofficeLogo, SrOnly} from "@onlyoffice/ui-kit"
-import {type Meta} from "@storybook/preact"
+import {type Meta, type StoryObj} from "@storybook/preact"
 import {type JSX, h} from "preact"
 import {Default as ChapterStory} from "../../site-chapter/lib/main.story.tsx"
 import {Default as HomeStory} from "../../site-home/lib/main.story.tsx"
@@ -9,6 +9,7 @@ import {Default as PartStory} from "../../site-part/lib/main.story.tsx"
 //   Default as PlaygroundStory,
 //   WithDocumentEditor as PlaygroundDocumentEditorStory
 // } from "../../site-playground/lib/main.story.tsx"
+import {Default as StatusStory} from "../../site-status/lib/main.story.tsx"
 import {Default as ThemeSwitcherStory} from "../../site-theme-switcher/lib/main.story.tsx"
 import {
   Page,
@@ -83,6 +84,14 @@ export function WithPart(): JSX.Element {
 
 export function WithChapter(): JSX.Element {
   return <Default><ChapterStory /></Default>
+}
+
+export const WithStatus: StoryObj = {
+  render(_, ctx) {
+    return <Default>
+      {StatusStory.render && StatusStory.render({}, ctx)}
+    </Default>
+  },
 }
 
 // export function WithPlayground(): JSX.Element {

@@ -51,16 +51,31 @@ When the document is ready, the form data can be submitted by clicking the **Com
 ``` ts
 $("#persons").change(function personChange(e) {
   const postalCode = $(this).val()
-  $.getJSON("/app_data/editor/wildcarddata/persons.json", (persons) => {
-    for (const person of persons) {
-      if (person["PostalCode"] === postalCode) {
-        for (key in person) {
-          const value = person[key]
-          setFormValue(key, value)
-        }
+  const persons = [
+    {
+      Title: "Miss",
+      Name: "Isabella",
+      Phone: "(972)234-8261",
+      Email: "Isabella.Robinson@email.com",
+      PostalCode: "75061",
+    },
+    {
+      Title: "Mr",
+      Name: "Emma",
+      Phone: "(972)321-8512",
+      Email: "Emma.Smith@email.com",
+      PostalCode: "11225",
+    },
+  ]
+
+  for (const person of persons) {
+    if (person["PostalCode"] === postalCode) {
+      for (key in person) {
+        const value = person[key]
+        setFormValue(key, value)
       }
     }
-  })
+  }
 
   function setFormValue(tag, value) {
     connector.executeMethod(

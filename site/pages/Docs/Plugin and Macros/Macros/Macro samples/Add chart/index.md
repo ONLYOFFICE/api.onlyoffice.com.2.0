@@ -31,4 +31,4 @@ End Sub
 
 ## Result
 
-![Chart](/assets/images/plugins/add_chart.png)
+![Chart](/assets/images/plugins/add-chart.png)

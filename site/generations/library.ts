@@ -1,11 +1,12 @@
 import {SitemapDatum} from "@onlyoffice/eleventy-sitemap"
 import {type Data} from "@onlyoffice/eleventy-types"
-import {type Declaration, type Reference, type Token} from "@onlyoffice/library-declaration"
+import {type Declaration} from "@onlyoffice/library-declaration"
 import {type Resource} from "@onlyoffice/library-resource"
+import {LibraryDatum} from "../internal/library.tsx"
 
 export function data({list, retrieve}: Resource): Data {
   return {
-    layout: "library-declaration",
+    layout: "library",
 
     items: list(),
     pagination: {
@@ -21,10 +22,6 @@ export function data({list, retrieve}: Resource): Data {
       const [d]: Declaration[] = data.pagination.items
       const p = d.id.split("#").join("/")
       return `${p}/index`
-    },
-
-    onRetrieve(r: Reference): Declaration | undefined {
-      return retrieve(r.id)
     },
 
     eleventyComputed: {
@@ -74,20 +71,33 @@ export function data({list, retrieve}: Resource): Data {
         return SitemapDatum.merge(a, b)
       },
 
-      onLink(data) {
-        return function onLink(t: Token): string | undefined {
-          if (t.type !== "reference") {
+      library(data) {
+        if (!data.pagination || !data.pagination.items) {
+          return
+        }
+
+        const d = new LibraryDatum()
+        ;[d.declaration] = data.pagination.items
+
+        d.onLink = function onLink(t) {
+          if (!data || !data.crosslink || t.type !== "reference") {
             return
           }
 
-          const d = retrieve(t.id)
-          if (!d) {
+          const r = retrieve(t.id)
+          if (!r) {
             return
           }
 
-          const s = d.id.split("#").join("/")
+          const s = r.id.split("#").join("/")
           return data.crosslink(data, `${s}/`)
         }
+
+        d.onRetrieve = function onRetrieve(r) {
+          return retrieve(r.id)
+        }
+
+        return d
       },
     },
   }

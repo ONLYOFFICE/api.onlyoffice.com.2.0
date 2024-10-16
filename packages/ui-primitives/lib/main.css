@@ -138,9 +138,9 @@
   --side-outline-width-default: 2px;
 
   /* prefix: size, variant: border-radius */
-  --size-border-radius-small: 3px;
-  --size-border-radius-medium: 6px;
-  --size-border-radius-large: 10px;
+  --size-border-radius-small: 2px;
+  --size-border-radius-medium: 4px;
+  --size-border-radius-large: 8px;
 
   /* prefix: size, variant: control, property: padding-block */
   --size-control-padding-block-small: var(--base-size-4);
