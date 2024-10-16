@@ -2,7 +2,6 @@
   align-items: center;
   column-gap: var(--base-size-12);
   display: flex;
-  font-size: var(--text-body-font-size-small);
 }
 
 .breadcrumb__crumb {
