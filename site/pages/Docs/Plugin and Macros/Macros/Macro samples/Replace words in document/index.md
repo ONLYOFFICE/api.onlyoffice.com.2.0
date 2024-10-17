@@ -46,4 +46,5 @@ End Sub
 ## Result
 
 <!-- imgpath -->
+
 ![Replace Words in Document](/assets/images/plugins/replace-words-in-document.png)
