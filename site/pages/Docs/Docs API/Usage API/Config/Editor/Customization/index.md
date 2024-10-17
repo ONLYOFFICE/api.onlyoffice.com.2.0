@@ -372,7 +372,7 @@ Type: boolean
 
 Example: true
 
-![Tab background](/assets/images/editor/tabBackground.png)
+![Tab background](/assets/images/editor/tab-background.png)
 
 ### features.tabStyle
 
@@ -398,7 +398,7 @@ Type: boolean
 
 Example: true
 
-![Tab style](/assets/images/editor/tabStyle.png)
+![Tab style](/assets/images/editor/tab-style.png)
 
 ## feedback
 
