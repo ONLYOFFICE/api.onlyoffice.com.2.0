@@ -4,6 +4,7 @@
 - docbuilder: samples link
 - office api: added samples
 - 404 page
+- macros: added replace words in document macro sample
 
 ## 6.1.0
 - docspace js sdk: react component

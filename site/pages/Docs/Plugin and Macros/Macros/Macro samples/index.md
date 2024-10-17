@@ -118,9 +118,11 @@ In this example we are completing address information in the spreadsheet.
 
 [More](Complete%20address%20information/index.md)
 
-## Replace Words in Document
+## Replace words in document
 
 In this example we are replacing words in the text editor.
+
+[More](Replace%20words%20in%20document/index.md)
 
 ## Support
 
