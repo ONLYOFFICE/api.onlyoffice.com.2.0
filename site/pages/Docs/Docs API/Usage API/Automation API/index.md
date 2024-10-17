@@ -21,6 +21,7 @@ The connector has the same interface as plugins. Below you can find methods that
 - [attachEvent](#attachevent) - add an event listener.
 - [callCommand](#callcommand) - send the data back to the editor.
 - [connect](#connect) - connect the connector to the editor.
+- [createWindow](#createwindow) - create the connector modal window to display the additional information inside the editor.
 - [detachEvent](#detachevent) - remove an event listener.
 - [disconnect](#disconnect) - disconnect the connector from the editor.
 - [executeMethod](#executemethod) - execute certain editor methods using the connector.
@@ -28,43 +29,44 @@ The connector has the same interface as plugins. Below you can find methods that
 
 ## addContextMenuItem
 
-The function called to add an item to the context menu.
+The function called to add an item to the context menu. The process of working with the context menu is the same as for [plugins](../../../Plugin%20and%20Macros/Customization/Context%20menu/index.md) except for the *onClick* method, which is used instead of subscribing by ID.
 
-### Parameters
+Parameters:
 
-| Name  | Type                                         | Description                                           |
-| ----- | -------------------------------------------- | ----------------------------------------------------- |
-| items | array of [ContextMenuItem](#contextmenuitem) | An array containing the context menu item parameters. |
+| Name  | Type                                        | Description                                           |
+| ----- | ------------------------------------------- | ----------------------------------------------------- |
+| items | Array.<[ContextMenuItem](#contextmenuitem)> | An array containing the context menu item parameters. |
 
 ### ContextMenuItem
 
-| Name     | Type                     | Description                                                                                                                |
-| -------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| id       | string                   | The item ID.                                                                                                               |
-| text     | string                   | The item text.                                                                                                             |
-| data     | string                   | The item data (this data will be sent to the click event callback).                                                        |
-| disabled | boolean                  | Specifies if the current item is disabled or not.                                                                          |
-| icons    | string                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Usage%20API/Config/index.md#icons) documentation). |
-| items    | array of ContextMenuItem | An array containing the context menu items for the current item.                                                           |
+| Name       | Type                     | Description                                                                                                                |
+| ---------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| *id*       | string                   | The item ID.                                                                                                               |
+| *text*     | string                   | The item caption.                                                                                                          |
+| *data*     | string                   | The item data (this data will be sent to the click event callback).                                                        |
+| *disabled* | boolean                  | Specifies if the current item is disabled or not.                                                                          |
+| *icons*    | string                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#icons) documentation). |
+| *onClick*  | function                 | The click event callback.                                                                                                  |
+| *items*    | Array.\<ContextMenuItem> | An array containing the context menu items for the current item.                                                           |
 
-### Example
+Example:
 
-  ``` ts
-  const items = [
-    {
-      id: "onConvert",
-      text: getMessage("Convert to Markdown or HTML"),
+``` ts
+connector.attachEvent("onContextMenuShow", (options) => {
+  connector.addContextMenuItem([{
+    text: "mainItem",
+    onClick: () => {
+      console.log("[CONTEXTMENUCLICK] menuSubItem1")
     },
-  ]
-
-  connector.addContextMenuItem(items)
-  ```
+  }])
+})
+```
 
 ## addToolbarMenuItem
 
-The function called to add an item to the toolbar menu.
+The function called to add an item to the toolbar menu. The process of working with the toolbar menu is the same as for [plugins](../../../Plugin%20and%20Macros/Customization/Toolbar/index.md) except for the *onClick* method, which is used instead of subscribing by ID.
 
-### Parameters
+Parameters:
 
 | Name  | Type                                        | Description                            |
 | ----- | ------------------------------------------- | -------------------------------------- |
@@ -72,101 +74,92 @@ The function called to add an item to the toolbar menu.
 
 ### ToolbarMenuMainItem
 
-| Name | Type                                       | Description                                                     |
-| ---- | ------------------------------------------ | --------------------------------------------------------------- |
-| guid | string                                     | The plugin guid.                                                |
-| tabs | array of [ToolbarMenuTab](#toolbarmenutab) | An array containing the toolbar menu tabs for the current item. |
+| Name | Type                                      | Description                                                     |
+| ---- | ----------------------------------------- | --------------------------------------------------------------- |
+| guid | string                                    | The plugin guid.                                                |
+| tabs | Array.<[ToolbarMenuTab](#toolbarmenutab)> | An array containing the toolbar menu tabs for the current item. |
 
 ### ToolbarMenuTab
 
-| Name  | Type                                         | Description                                                     |
-| ----- | -------------------------------------------- | --------------------------------------------------------------- |
-| id    | string                                       | The tab ID.                                                     |
-| text  | string                                       | The tab text.                                                   |
-| items | array of [ToolbarMenuItem](#toolbarmenuitem) | An array containing the toolbar menu items for the current tab. |
+| Name  | Type                                        | Description                                                     |
+| ----- | ------------------------------------------- | --------------------------------------------------------------- |
+| id    | string                                      | The tab ID.                                                     |
+| text  | string                                      | The tab text.                                                   |
+| items | Array.<[ToolbarMenuItem](#toolbarmenuitem)> | An array containing the toolbar menu items for the current tab. |
 
 ### ToolbarMenuItem
 
-| Name           | Type                     | Description                                                                                                                |
-| -------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| id             | string                   | The item ID.                                                                                                               |
-| type           | ToolbarMenuItemType      | The possible values of the base which the relative vertical position of the toolbar menu item will be calculated from.     |
-| text           | string                   | The item text.                                                                                                             |
-| hint           | string                   | The item hint.                                                                                                             |
-| icons          | string                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Usage%20API/Config/index.md#icons) documentation). |
-| disabled       | boolean                  | Specifies if the current item is disabled or not.                                                                          |
-| enableToggle   | boolean                  | Specifies if an item toggle is enabled or not.                                                                             |
-| lockInViewMode | boolean                  | Specifies if the current item is locked in the view mode or not.                                                           |
-| separator      | boolean                  | Specifies if a separator is used between the toolbar menu items or not.                                                    |
-| split          | boolean                  | Specifies if the toolbar menu items are split or not.                                                                      |
-| onClick        | function                 | The click event callback.                                                                                                  |
-| items          | array of ContextMenuItem | An array containing the [context menu items](#contextmenuitem) for the current item.                                       |
+| Name             | Type                                        | Description                                                                                                                              |
+| ---------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| *id*             | string                                      | The item ID.                                                                                                                             |
+| *type*           | [ToolbarMenuItemType](#toolbarmenuitemtype) | The item type.                                                                                                                           |
+| *text*           | string                                      | The item caption. If this field is "", the toolbar button is displayed only with an icon, without a caption.                             |
+| *hint*           | string                                      | The item hint.                                                                                                                           |
+| *icons*          | string                                      | object                                                                                                                                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#variationsicons) documentation). |
+| *disabled*       | boolean                                     | Specifies whether the current item is locked.                                                                                            |
+| *enableToggle*   | boolean                                     | Specifies whether the toolbar menu item (when *"split == false"*) or its top part (when *"split == true"*) can be toggled.               |
+| *lockInViewMode* | boolean                                     | Specifies whether the toolbar menu item is automatically locked in the view modes (when previewing, viewing forms, disconnecting, etc.). |
+| *separator*      | boolean                                     | Specifies whether a separator is used between the toolbar menu items.                                                                    |
+| *split*          | boolean                                     | Specifies whether the toolbar menu item is split into two parts and includes the drop-down menu.                                         |
+| onClick          | function                                    | The click event callback.                                                                                                                |
+| *items*          | Array.\<ToolbarMenuItem>                    | An array containing the context menu items for the current item.                                                                         |
 
-### Example
+### ToolbarMenuItemType
 
-  ``` ts
-  const oToolbarMenuItem = {
-    id: "MeaningItem",
-    type: "button",
-    text: "Meaning",
-    hint: "Meaning",
-    icons: "resources/light/icon.png",
-    disabled: false,
-    enableToggle: false,
-    lockInViewMode: false,
-    separator: true,
-    split: true,
-    onClick,
-    items: [
-      {
-        id: "onMeaningT",
-        text: "Explain text in comment",
-      },
-      {
-        id: "onFixSpelling",
-        text: "Fix spelling & grammar",
-      },
-      {
-        id: "onMakeLonger",
-        text: "Make longer",
-      },
-      {
-        id: "onMakeShorter",
-        text: "Make shorter",
-      },
-    ],
-  }
-  const oToolbarMenuTab = {
-    id: "ChatGPT",
-    text: "AI Assistant",
-    items: [oToolbarMenuItem],
-  }
-  const oToolbarMenuMainItem = {
-    guid: "asc.{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}",
-    tabs: [oToolbarMenuTab],
-  }
-  
-  connector.addToolbarMenuItem(oToolbarMenuMainItem)
-  ```
+The toolbar menu item type. The *button* and *big-button* values are the same and can be equally used to specify the toolbar button.
+
+Type: "button" | "big-button"
+
+Example:
+
+``` ts
+connector.addToolbarMenuItem({
+  tabs: [
+    {
+      text: "Connector",
+      items: [
+        {
+          id: "toolConnector1",
+          type: "button",
+          text: "Meaning",
+          hint: "Meaning",
+          lockInViewMode: true,
+          icons: "./icon.svg",
+          items: [
+            {
+              id: "toolC1",
+              text: "Text",
+              data: "Hello",
+              onClick: (data) => {
+                console.log(`[TOOLBARMENUCLICK]: ${data}`)
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+})
+```
 
 ## attachEvent
 
 The function called to add an event listener, a function that will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins. It can be found here.
 
-### Parameters
+Parameters:
 
 | Name     | Type     | Description         |
 | -------- | -------- | ------------------- |
 | name     | string   | The event name.     |
 | callback | function | The event listener. |
 
-### Example
+Example:
 
-  ``` ts
-  connector.attachEvent("onChangeContentControl", () => {
-    console.log("event: onChangeContentControl")
-  })
-  ```
+``` ts
+connector.attachEvent("onChangeContentControl", (obj) => {
+  console.log(`[EVENT] onChangeContentControl: ${JSON.stringify(obj)}`)
+})
+```
 
 ## callCommand
 
@@ -174,7 +167,7 @@ The function called to send the data back to the editor. It allows the connector
 
 > **ONLYOFFICE Document Builder** commands can be only used to create content and insert it into the document editor (using the *Api.GetDocument().InsertContent(...))*. This limitation exists due to the co-editing feature in the online editors.
 
-### Parameters
+Parameters:
 
 | Name     | Type     | Description                                                                                                                                                                                                                                                                                                                                                                      |
 | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -184,18 +177,18 @@ The function called to send the data back to the editor. It allows the connector
 
 This method is executed in its context isolated from other JavaScript data. If some parameters or other data need to be passed to this method, use Asc.scope object.
 
-### Example
+Example:
 
-  ``` ts
-  Asc.scope.text = "Hello world!"
-  
-  connector.callCommand(() => {
-    const oDocument = Api.GetDocument()
-    const oParagraph = Api.CreateParagraph()
-    oParagraph.AddText(Asc.scope.text)
-    oDocument.InsertContent([oParagraph])
-  }, () => { console.log("callback command") })
-  ```
+``` ts
+connector.callCommand(() => {
+  const oDocument = Api.GetDocument()
+  const oParagraph = Api.CreateParagraph()
+  oParagraph.AddText("Hello")
+  oDocument.InsertContent([oParagraph])
+}, () => {
+  console.log("[COMMAND] Callback command")
+})
+```
 
 ## connect
 
@@ -203,43 +196,53 @@ The function called to connect the connector to the editor.
 
 > Please note that this method should only be called if you have disconnected the connector with the [disconnect](#disconnect) method and need to connect it to the editor again. When creating a connector, you do not need to use the *connect* method, as it is called automatically along with the [createConnector](../Methods/index.md#createconnector) method.
 
-### Example
+Example:
 
-  ``` ts
-  connector.connect()
-  ```
+``` ts
+connector.connect()
+```
+
+## createWindow
+
+The function called to create the [connector modal window](#connector-window) to display the additional information inside the editor.
+
+Example:
+
+``` ts
+const testConnectorWindow = connector.createWindow()
+```
 
 ## detachEvent
 
 The function called to remove an event listener.
 
-### Parameters
+Parameters:
 
 | Name | Type   | Description     |
 | ---- | ------ | --------------- |
 | name | string | The event name. |
 
-### Example
+Example:
 
-  ``` ts
-  connector.detachEvent("onChangeContentControl")
-  ```
+``` ts
+connector.detachEvent("onChangeContentControl")
+```
 
 ## disconnect
 
 The function called to disconnect the connector from the editor.
 
-### Example
+Example:
 
-  ``` ts
-  connector.disconnect()
-  ```
+``` ts
+connector.disconnect()
+```
 
 ## executeMethod
 
 The function called to execute certain editor methods using the connector. The full list of these methods is the same as for the plugins. It can be found here.
 
-### Parameters
+Parameters:
 
 | Name     | Type     | Description                                                      |
 | -------- | -------- | ---------------------------------------------------------------- |
@@ -247,17 +250,19 @@ The function called to execute certain editor methods using the connector. The f
 | args     | array    | The arguments that the method in use has (if it has any).        |
 | callback | function | The result that the method returns. It is an optional parameter. |
 
-### Example
+Example:
 
-  ``` ts
-  connector.executeMethod("SetFormValue", [forms[i]["InternalId"], "OnlyOffice BANK"], null)
-  ```
+``` ts
+connector.executeMethod("GetCurrentWord", [], (word) => {
+  console.log(`[METHOD] GetCurrentWord: ${word}`)
+})
+```
 
 ## updateContextMenuItem
 
 The function called to update an item in the context menu with the specified items.
 
-### Parameters
+Parameters:
 
 | Name  | Type                                         | Description                                           |
 | ----- | -------------------------------------------- | ----------------------------------------------------- |
@@ -271,18 +276,101 @@ The function called to update an item in the context menu with the specified ite
 | text     | string                   | The item text.                                                                                                             |
 | data     | string                   | The item data (this data will be sent to the click event callback).                                                        |
 | disabled | boolean                  | Specifies if the current item is disabled or not.                                                                          |
-| icons    | string                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Usage%20API/Config/index.md#icons) documentation). |
+| icons    | string                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#icons) documentation). |
 | items    | array of ContextMenuItem | An array containing the context menu items for the current item.                                                           |
 
-### Example
+Example:
 
-  ``` ts
-  const items = [
-    {
-      id: "onConvert",
-      text: getMessage("Convert to Markdown or HTML"),
-    },
-  ]
+``` ts
+const items = [
+  {
+    id: "onConvert",
+    text: getMessage("Convert to Markdown or HTML"),
+  },
+]
 
-  connector.updateContextMenuItem(items)
-  ```
+connector.updateContextMenuItem(items)
+```
+
+## Connector window
+
+Connector window is a class that represents the connector window. To create it, use the [createWindow](#createwindow) method of the connector object.
+
+Below you can find methods that are available for this class.
+
+### attachEvent
+
+The function called to add an event listener to the modal window frame. This function will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins. It can be found [here](../../../Plugin%20and%20Macros/Interacting%20with%20editors/Events/index.md).
+
+Parameters:
+
+| Name   | Type     | Description         |
+| ------ | -------- | ------------------- |
+| id     | string   | The event name.     |
+| action | function | The event listener. |
+
+Example:
+
+``` ts
+testConnectorWindow.attachEvent("onWindowMessage", (message) => {
+  console.log(`panel message: ${message}`)
+})
+```
+
+### dispatchEvent
+
+The function called to send an event to the modal window frame. The list of all the available events is the same as for the plugins. It can be found [here](../../../Plugin%20and%20Macros/Interacting%20with%20editors/Events/index.md).
+
+Parameters:
+
+| Name | Type            | Description     |
+| ---- | --------------- | --------------- |
+| name | string          | The event name. |
+| data | string / object | The event data. |
+
+Example:
+
+``` ts
+testConnectorWindow.dispatchEvent("messageName", {
+  prop: "value",
+})
+```
+
+### sendToPlugin
+
+The function called to send a message to the editor from the modal window.
+
+Parameters:
+
+| Name | Type   | Description     |
+| ---- | ------ | --------------- |
+| name | string | The event name. |
+| data | object | The event data. |
+
+Example:
+
+``` ts
+testConnectorWindow.sendToPlugin("onWindowMessage", {type: "onWindowReady"})
+```
+
+### show
+
+The function called to show a modal window inside the editor.
+
+Parameters:
+
+| Name     | Type   | Description                                                                                                                                      |
+| -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| settings | object | The modal window parameters that are the same as for plugin [variations](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#variations). |
+
+Example:
+
+``` ts
+testConnectorWindow.show({
+  url: "./window/panel.html",
+  description: "Panel example!",
+  type: "panel",
+  buttons: [],
+  icons: "./icon.svg",
+})
+```
