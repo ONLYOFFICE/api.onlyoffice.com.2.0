@@ -7,6 +7,7 @@
 - 404 page
 - macros: adding custom functions
 - plugins: v8.2
+- office api: v8.2
 
 ## 6.1.0
 - docspace js sdk: react component
