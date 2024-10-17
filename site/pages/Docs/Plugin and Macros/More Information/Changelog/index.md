@@ -4,6 +4,14 @@ order: -1
 
 The list of changes for ONLYOFFICE Plugins and Macros API.
 
+## Version 8.2
+
+- Added the onSubmitForm event.
+- Added the CanRedo method to *window\.Asc.plugin.executeMethod* for Text document Api.
+- Added the CanUndo method to *window\.Asc.plugin.executeMethod* for Text document Api.
+- Added the Redo method to *window\.Asc.plugin.executeMethod* for Text document Api.
+- Added the Undo method to *window\.Asc.plugin.executeMethod* for Text document Api.
+
 ## Version 8.1
 
 - Added the ability to [add custom functions](../../Macros/Adding%20custom%20functions/index.md) to the spreadsheets using the **Macros** plugin.
