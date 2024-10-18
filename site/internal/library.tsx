@@ -25,7 +25,7 @@ export class LibraryDatum implements LibraryData {
   /* eslint-disable unicorn/no-useless-undefined */
   // @ts-ignore todo: add noop declaration similar to the service declaration
   declaration: Declaration = {}
-  onLink: Site.LibraryProperties["onLink"] = () => undefined
+  onLink: Site.LibraryProperties["onLink"] = () => ""
   onRetrieve: Site.LibraryProperties["onRetrieve"] = () => undefined
   /* eslint-enable unicorn/no-useless-undefined */
 
