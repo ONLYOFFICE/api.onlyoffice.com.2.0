@@ -2,6 +2,7 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 8.2
 
+- Added the *Password* and *PasswordToOpen* request parameters to the [WOPI conversion API](../../Using%20WOPI/Conversion%20API/index.md).
 - The [editorConfig.region](../../Usage%20API/Config/Editor/index.md#region) field is now used to define the default measurement units in all editor types.
 - The [editorConfig.location](../../Usage%20API/Config/Editor/index.md#location) field is deprecated, please use the [editorConfig.region](../../Usage%20API/Config/Editor/index.md#region) field instead.
 - Added the *insert-text* type of document selection to the *c* parameter of the [setRequestedDocument](../../Usage%20API/Methods/index.md#setrequesteddocument) method.

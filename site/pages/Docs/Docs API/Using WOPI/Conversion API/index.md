@@ -13,6 +13,8 @@ In order to convert different file formats in the online office, the POST reques
 | FullSheetPreview | bollean | optional | Specifies if the full sheet previews will be available or not.                                                                          |
 | file             | object  | required | A file to convert in the payload.                                                                                                       |
 | lang             | string  | optional | The default format language. It is used for the date type cells. If the language is specified, it determines the display/output format. |
+| Password         | string  | optional | A password for the protected document. Available from version 8.2.                                                                      |
+| PasswordToOpen   | string  | optional | A password to open the protected document. Available from version 8.2.                                                                  |
 
 ## Examples of requests
 
