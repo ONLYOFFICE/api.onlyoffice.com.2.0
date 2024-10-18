@@ -1,0 +1,295 @@
+/* todo: use :state instead of plain attributes */
+/* todo: create variants of menubar and use them instead of media queries */
+/* todo: resolve the ignore */
+/* stylelint-disable plugin/no-low-performance-animation-properties */
+
+menubar-container[expanded] .menubar__toggle svg {
+  &:first-of-type {
+    display: none;
+  }
+
+  &:last-of-type {
+    display: block;
+  }
+}
+
+menubar-container[expanded] .menubar__navigation {
+  display: block;
+}
+
+.menubar-accessor,
+.menubar {
+  --menubar-navigation-inset-block-start: 0px;
+  --menubar-menu-item-padding-inline: var(--base-size-24);
+
+  @media (--size-viewport-width-medium) {
+    --menubar-menu-item-padding-inline: var(--base-size-36);
+  }
+
+  @media (--size-viewport-width-large) {
+    --menubar-menu-item-padding-inline: var(--base-size-48);
+  }
+}
+
+.menubar {
+  align-items: center;
+  block-size: 100%;
+  display: flex;
+
+  @media (--size-viewport-width-medium) {
+    display: block;
+  }
+}
+
+.menubar__toggle {
+  background-color: transparent;
+  border: none;
+  color: var(--base-color-white);
+  cursor: pointer;
+  display: block;
+  padding: 0;
+
+  @media (--size-viewport-width-medium) {
+    display: none;
+  }
+}
+
+.menubar__toggle svg {
+  display: block;
+  pointer-events: none;
+
+  &:last-of-type {
+    display: none;
+  }
+}
+
+.menubar__navigation {
+  background-color: var(--color-background-default);
+  box-shadow: var(--temp-color-shadow-default-small);
+  display: none;
+  inset-block-start: var(--menubar-navigation-inset-block-start);
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+  max-block-size: calc(100vh - var(--menubar-navigation-inset-block-start));
+  overflow: auto;
+  padding-block: calc(var(--base-size-20) / 2);
+  position: absolute;
+
+  @media (--size-viewport-width-medium) {
+    background-color: transparent;
+    block-size: inherit;
+    box-shadow: none;
+    display: block;
+    overflow: unset;
+    padding-block: 0;
+    position: static;
+  }
+}
+
+.menubar__menu {
+  list-style: none;
+  margin-block: 0;
+  padding-block: calc(var(--base-size-20) / 2);
+  padding-inline-start: 0;
+
+  @media (--size-viewport-width-medium) {
+    block-size: inherit;
+    display: flex;
+    padding-block: 0;
+  }
+}
+
+.menubar__menu-item {
+  margin-block-start: var(--base-size-20);
+  padding-inline: var(--menubar-menu-item-padding-inline);
+
+  @media (--size-viewport-width-medium) {
+    align-items: center;
+    display: flex;
+    margin-block-start: 0;
+    position: relative;
+  }
+
+  &:first-of-type {
+    margin-block-start: 0;
+  }
+}
+
+.menubar__menu-item:focus-within .menubar__submenu,
+.menubar__menu-item:hover .menubar__submenu {
+  display: block;
+}
+
+.menubar__menu-item:focus-within .menubar__submenu::before,
+.menubar__menu-item:hover .menubar__submenu::before {
+  animation: 0.3s forwards ease-in-out menubar-submenu-border-before;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.menubar__menu-item:focus-within .menubar__submenu::after,
+.menubar__menu-item:hover .menubar__submenu::after {
+  animation: 0.3s forwards ease-in-out menubar-submenu-border-after;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.menubar__menu-link {
+  color: var(--color-foreground-default);
+  display: block;
+  font-size: var(--base-text-font-size-12);
+  font-weight: var(--base-text-font-weight-semi-bold);
+  inline-size: min-content;
+  letter-spacing: var(--base-text-letter-spacing-0-04);
+  line-height: var(--text-body-line-height-small);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  @media (--size-viewport-width-medium) {
+    color: var(--color-page-header-default-foreground);
+  }
+
+  &:focus,
+  &:hover {
+    color: var(--color-foreground-link);
+  }
+}
+
+.menubar__menu-link::before {
+  display: block;
+  inset: 0;
+  position: absolute;
+
+  @media (--size-viewport-width-medium) {
+    content: "";
+  }
+}
+
+.menubar__menu-link_active {
+  color: var(--color-foreground-link);
+}
+
+.menubar__submenu {
+  list-style: none;
+  margin-block-end: 0;
+  margin-block-start: var(--base-size-20);
+  padding-inline-start: 0;
+
+  @media (--size-viewport-width-medium) {
+    background-color: var(--color-background-default);
+    border-color: var(--color-border-muted);
+    border-end-end-radius: var(--size-border-radius-large);
+    border-end-start-radius: var(--size-border-radius-large);
+    border-style: solid;
+    border-width: var(--size-border-width-thin);
+    box-shadow: var(--temp-color-shadow-default-small);
+    display: none;
+    inline-size: max-content;
+    inset-block-start: 100%;
+    inset-inline-start: 50%;
+    margin-block-start: 0;
+    max-inline-size: 300px;
+    min-inline-size: 256px;
+    padding: var(--base-size-32);
+    padding-inline-start: var(--base-size-32);
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+.menubar__submenu::before,
+.menubar__submenu::after {
+  background-color: var(--color-border-accent-emphasis);
+  block-size: var(--size-border-width-thin);
+  display: block;
+  inline-size: 0;
+  inset-block-start: calc(var(--size-border-width-thin) * -1);
+  inset-inline-start: 50%;
+  position: absolute;
+  transition: inline-size 0.2s ease-in-out;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.menubar__submenu::before {
+  /* https://github.com/parcel-bundler/lightningcss/issues/781/ */
+  @media (--size-viewport-width-medium) {
+    content: "";
+  }
+}
+
+.menubar__submenu::after {
+  /* https://github.com/parcel-bundler/lightningcss/issues/781/ */
+  @media (--size-viewport-width-medium) {
+    content: "";
+  }
+}
+
+.menubar__submenu-item {
+  align-items: center;
+  column-gap: var(--base-size-12);
+  display: flex;
+  inline-size: min-content;
+  margin-block-start: var(--base-size-16);
+  position: relative;
+  white-space: nowrap;
+
+  &:first-of-type {
+    margin-block-start: 0;
+  }
+}
+
+.menubar__submenu-link {
+  color: var(--color-foreground-default);
+  font-size: var(--text-body-font-size-small);
+  font-weight: var(--base-text-font-weight-small);
+  line-height: var(--text-body-line-height-small);
+  text-decoration: none;
+
+  @media (--size-viewport-width-medium) {
+    font-size: var(--text-body-font-size-medium);
+    font-weight: var(--base-text-font-weight-semi-bold);
+    line-height: var(--text-body-line-height-medium);
+  }
+
+  &:focus-visible,
+  &:hover {
+    color: var(--color-foreground-link);
+  }
+}
+
+.menubar__submenu-link::before {
+  content: "";
+  display: block;
+  inset: 0;
+  position: absolute;
+}
+
+@keyframes menubar-submenu-border-before {
+  0% {
+    inline-size: 0;
+    inset-inline-start: 50%;
+  }
+
+  100% {
+    inline-size: calc(50% + var(--size-border-width-thin));
+    inset-inline-start: calc(var(--size-border-width-thin) * -1);
+  }
+}
+
+@keyframes menubar-submenu-border-after {
+  0% {
+    inline-size: 0;
+  }
+
+  100% {
+    inline-size: calc(50% + var(--size-border-width-thin));
+  }
+}
