@@ -118,6 +118,12 @@ In this example we are completing address information in the spreadsheet.
 
 [More](Complete%20address%20information/index.md)
 
+## Replace words in document
+
+In this example we are replacing words in the text editor.
+
+[More](Replace%20words%20in%20document/index.md)
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)
