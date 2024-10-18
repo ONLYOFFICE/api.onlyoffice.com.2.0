@@ -19,6 +19,7 @@
     "@onlyoffice/site-chapter": "workspace:^",
     "@onlyoffice/site-content": "workspace:^",
     "@onlyoffice/site-document-editor-playground": "workspace:^",
+    "@onlyoffice/site-footer": "workspace:^",
     "@onlyoffice/site-glossary": "workspace:^",
     "@onlyoffice/site-header": "workspace:^",
     "@onlyoffice/site-help": "workspace:^",
