@@ -2,10 +2,6 @@
   "name": "@onlyoffice/site-library",
   "type": "module",
   "private": true,
-  "exports": {
-    ".": "./lib/main.tsx",
-    "./main.css": "./lib/main.css"
-  },
   "main": "lib/main.tsx",
   "scripts": {
     "clean": "rimraf node_modules",
@@ -13,9 +9,11 @@
     "test": "pnpm test:types"
   },
   "dependencies": {
-    "@onlyoffice/declaration-tokenizer": "workspace:^",
     "@onlyoffice/library-declaration": "workspace:^",
     "@onlyoffice/preact-types": "workspace:^",
+    "@onlyoffice/signature": "workspace:^",
+    "@onlyoffice/site-glossary": "workspace:^",
+    "@onlyoffice/site-signature": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",
     "preact": "10.22.0",
     "typescript": "5.4.5"

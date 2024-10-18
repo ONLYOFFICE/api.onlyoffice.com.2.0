@@ -2530,15 +2530,21 @@ importers:
 
   packages/site-library:
     dependencies:
-      '@onlyoffice/declaration-tokenizer':
-        specifier: workspace:^
-        version: link:../declaration-tokenizer
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../library-declaration
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      '@onlyoffice/site-glossary':
+        specifier: workspace:^
+        version: link:../site-glossary
+      '@onlyoffice/site-signature':
+        specifier: workspace:^
+        version: link:../site-signature
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
