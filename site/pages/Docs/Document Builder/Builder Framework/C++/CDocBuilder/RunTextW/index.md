@@ -8,7 +8,7 @@ Runs all the commands for the document creation using a single command in the Un
 
 | Name        | Type             | Description                                                                                                                                                                                                                                                                                                                  |
 | ----------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| *sCommands* | const wchar\_t\* | The commands in the Unicode format which will be used to create the document file (in C++, the escape character must be used when the command contains quotation symbols). All the commands containing *builder.* are line separated, i.e. you cannot write them in one line, each command **must** start with its own line. |
+| *sCommands* | const wchar\_t\* | The commands in the Unicode format which will be used to create the document file (in C++, the escape character must be used when the command contains quotation symbols). All the commands containing *builder.* are line separated, i.e. you cannot write them in one line, each command **must** start with its own line. |
 
 ## Example
 

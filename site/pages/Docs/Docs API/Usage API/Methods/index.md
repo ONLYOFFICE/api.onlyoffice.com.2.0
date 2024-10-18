@@ -21,7 +21,7 @@ const docEditor = new DocsAPI.DocEditor("placeholder", config)
 - [setMailMergeRecipients](#setmailmergerecipients) - insert recipient data for mail merge into the file.
 - [setReferenceData](#setreferencedata) - refresh data by a link to a file.
 - [setReferenceSource](#setreferencesource) - change a source of the external data.
-- [setRequestedDocument](#setrequesteddocument) - select a document for comparing or combining.
+- [setRequestedDocument](#setrequesteddocument) - select a document for comparing, combining, or inserting text.
 - [setRequestedSpreadsheet](#setrequestedspreadsheet) - insert recipient data for mail merge into the file.
 - [setRevisedFile](#setrevisedfile) - select a document for comparing.
 - [setSharingSettings](#setsharingsettings) - update the *information* about the settings which allow to share the document with other users.
@@ -397,7 +397,7 @@ Show an error message explaining if any error occurred:
 
 ## setRequestedDocument
 
-Select a document for comparing or combining. This method must be called after the [onRequestSelectDocument](../Config/Events/index.md#onrequestselectdocument) event.
+Select a document for comparing, combining, or inserting text. This method must be called after the [onRequestSelectDocument](../Config/Events/index.md#onrequestselectdocument) event.
 
 > This parameter is available only for ONLYOFFICE Enterprise Edition and ONLYOFFICE Developer Edition.
 
@@ -414,7 +414,7 @@ Where **example.com** is the name of the server where **document manager** and *
 
 | Parameter | Type   | Presence | Description                                                                                                                                                                                            |
 | --------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| c         | string | required | Defines a type of document selection from the event. Can be: *compare*, *combine*. The default value is "compare".                                                                                     |
+| c         | string | required | Defines a type of document selection from the event. Can be: *compare*, *combine*, or *insert-text*. The default value is "compare".                                                                   |
 | fileType  | string | required | Defines a type of the document to be selected. Can be: *doc*, *docm*, *docx*, *dot*, *dotm*, *dotx*, *epub*, *fodt*, *odt*, *ott*, *rtf*, *wps*.                                                       |
 | token     | string | optional | Defines the encrypted signature added to the parameter in the form of a [token](../../Additional%20API/Signature/Browser/index.md#setrequesteddocument).                                               |
 | url       | string | required | Defines the absolute URL where the source document is stored. Be sure to add a [token](../../Get%20Started/How%20It%20Works/Security/index.md) when using local links. Otherwise, an error will occur. |
@@ -521,7 +521,7 @@ Where **example.com** is the name of the server where **document manager** and *
 | users       | array of strings | optional | Defines the list of the users.                                                                                                                                                                                   |
 | users.email | string           | optional | Defines the email address of the user. This field is required when the *c* parameter is *mention*.                                                                                                               |
 | users.id    | string           | optional | Defines the identification of the user. This field is required when the *c* parameter is *protect*.                                                                                                              |
-| users.image | string           | optional | Defines the path to the user's avatar. This field is required when the *c* parameter is *info*.                                                                                                                  |
+| users.image | string           | optional | Defines the path to the user's avatar. This field is required when the *c* parameter is *info*.                                                                                                                  |
 | users.name  | string           | optional | Defines the full name of the user.                                                                                                                                                                               |
 
 > Please note that the request to the user's avatar is sent without authorization because the avatar URL is inserted into the HTML of the editor frame. Moreover, the CORS problem may occur. In this case, use the avatar in the base64 format. For example, *"data:image/png,base64,\*\*\*\*\*"*.
