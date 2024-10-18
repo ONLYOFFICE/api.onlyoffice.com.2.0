@@ -3,7 +3,7 @@ import {Fragment, type JSX, h} from "preact"
 import {SrOnly} from "./main.tsx"
 
 export default {
-  title: "UI/Screen Reader Only",
+  title: "UI Utilities / Screen Reader Only",
 } satisfies Meta
 
 export function Composition(): JSX.Element {
