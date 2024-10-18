@@ -1,6 +1,7 @@
 import {Transform, type TransformCallback, Writable} from "node:stream"
 import * as Service from "@onlyoffice/service-declaration"
 import {ExampleGenerator} from "@onlyoffice/service-declaration/example.ts"
+import * as Signature from "@onlyoffice/service-signature"
 import {OpenAPIV3, type OpenAPIV3_1 as OpenApi} from "openapi-types"
 import {Console} from "./console.ts"
 import {
@@ -151,6 +152,7 @@ export class ProcessPath extends Transform {
         }
 
         const s = d.toService()
+        Signature.computeDeclaration(s)
 
         if (s instanceof Service.OperationDeclaration) {
           const g = new ExampleGenerator(s.request)

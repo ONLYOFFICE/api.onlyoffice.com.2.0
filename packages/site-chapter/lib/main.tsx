@@ -1,17 +1,23 @@
-import {type ChildrenIncludable} from "@onlyoffice/preact-types"
+import * as Elements from "@onlyoffice/preact-elements"
+import {clsx} from "clsx"
 import {type JSX, h} from "preact"
-import {type HTMLAttributes} from "preact/compat"
-import {type ChapterContainer} from "./client.ts"
 
-export function Chapter(p: HTMLAttributes<ChapterContainer>): JSX.Element {
-  const {children, ...props} = p
-  return <chapter-container class="chapter" {...props}>{children}</chapter-container>
+export function Chapter(p: Elements.DivProperties): JSX.Element {
+  const {children, ...o} = p
+  o.class = clsx("chapter", o.class)
+  return <chapter-container>
+    <Elements.Div {...o}>{children}</Elements.Div>
+  </chapter-container>
 }
 
-export function ChapterNavigation({children}: ChildrenIncludable): JSX.Element {
-  return <div class="chapter__navigation">{children}</div>
+export function ChapterNavigation(p: Elements.DivProperties): JSX.Element {
+  const {...o} = p
+  o.class = clsx("chapter__navigation", o.class)
+  return <Elements.Div {...o} />
 }
 
-export function ChapterContent({children}: ChildrenIncludable): JSX.Element {
-  return <div class="chapter__content">{children}</div>
+export function ChapterContent(p: Elements.DivProperties): JSX.Element {
+  const {...o} = p
+  o.class = clsx("chapter__content", o.class)
+  return <Elements.Div {...o} />
 }

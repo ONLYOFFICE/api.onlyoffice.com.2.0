@@ -1,0 +1,25 @@
+{
+  "name": "@onlyoffice/ui-fonts",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./dist/main.tsx",
+    "./*": "./dist/*"
+  },
+  "main": "dist/main.tsx",
+  "scripts": {
+    "build": "node --input-type module --eval \"import {cp} from 'node:fs/promises'; await cp('static', 'dist', {recursive: true}); await cp('lib', 'dist', {recursive: true})\"",
+    "clean": "rimraf dist node_modules",
+    "generate": "fontpie --fallback sans-serif --style normal --weight 700 --name 'Open Sans' static/OpenSans-Bold.woff2 && fontpie --fallback sans-serif --style italic --weight 700 --name 'Open Sans' static/OpenSans-BoldItalic.woff2 && fontpie --fallback sans-serif --style italic --weight 400 --name 'Open Sans' static/OpenSans-Italic.woff2 && fontpie --fallback sans-serif --style normal --weight 500 --name 'Open Sans' static/OpenSans-Medium.woff2 && fontpie --fallback sans-serif --style italic --weight 400 --name 'Open Sans' static/OpenSans-Italic.woff2 && fontpie --fallback sans-serif --style italic --weight 500 --name 'Open Sans' static/OpenSans-MediumItalic.woff2 && fontpie --fallback sans-serif --style normal --weight 600 --name 'Open Sans' static/OpenSans-SemiBold.woff2 && fontpie --fallback sans-serif --style normal --weight 400 --name 'Open Sans' static/OpenSans-Regular.woff2 && fontpie --fallback sans-serif --style italic --weight 600 --name 'Open Sans' static/OpenSans-SemiBoldItalic.woff2 && fontpie --fallback mono --style normal --weight 700 --name 'Ubuntu' static/UbuntuMono-Bold.woff2 && fontpie --fallback mono --style italic --weight 400 --name 'Ubuntu' static/UbuntuMono-Italic.woff2 && fontpie --fallback mono --style normal --weight 400 --name 'Ubuntu' static/UbuntuMono-Regular.woff2",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "preact": "10.22.0",
+    "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "fontpie": "0.3.0",
+    "rimraf": "6.0.1"
+  }
+}

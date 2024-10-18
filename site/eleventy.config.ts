@@ -61,7 +61,11 @@ function config(uc: UserConfig): unknown {
   uc.addPlugin(eleventySitemap)
   uc.addPlugin(eleventyPagefind)
 
-  uc.addPassthroughCopy({static: "."})
+  uc.addPassthroughCopy({
+    "node_modules/@onlyoffice/ui-kit/node_modules/@onlyoffice/ui-fonts/dist/*.woff": ".",
+    "node_modules/@onlyoffice/ui-kit/node_modules/@onlyoffice/ui-fonts/dist/*.woff2": ".",
+    "static": ".",
+  })
 
   return {
     dir: {

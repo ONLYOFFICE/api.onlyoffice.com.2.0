@@ -1,20 +1,8 @@
 import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {Config} from "@onlyoffice/site-config"
-import {
-  PageFooter,
-  PageFooterCopyright,
-  PageFooterLinkContainer,
-  PageFooterThemeSwitcher,
-  PageHeader,
-  PageHeaderLogo,
-  PageHeaderMenu,
-  PageHeaderNavToggler,
-  Page as SPage,
-  ThemeSwitcher,
-  ThemeSwitcherOption,
-} from "@onlyoffice/site-kit"
-import {OnlyofficeBetaLogo, SrOnly} from "@onlyoffice/ui-kit"
+import * as Site from "@onlyoffice/site-kit"
+import {SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {GlobalNavigation} from "./global-navigation.tsx"
 
@@ -69,82 +57,109 @@ export function Page(p: PageProperties): JSX.Element {
   //   throw new Error(`Page data not found: ${e.url}`)
   // }
 
-  return <SPage>
-    <PageHeader>
-      <SrOnly>
-        <h2>Navigation Menu</h2>
-      </SrOnly>
-      <PageHeaderLogo>
-        <a href="/"><OnlyofficeBetaLogo height={38} /></a>
-      </PageHeaderLogo>
-      <PageHeaderMenu>
-        <GlobalNavigation current={p.url} />
-      </PageHeaderMenu>
-      {(() => {
-        // todo: A few pages utilize the eleventyExcludeFromCollections
-        // property. This property, when present, excludes the page from the
-        // Sitemap. Currently, we can not remove this property as some of the
-        // page formation logic depends on it.
+  return <Site.HeaderAccessor>
+    <Site.Page>
+      <Site.PageHeader>
+        <Site.MenubarAccessor>
+          <Site.Header>
+            <SrOnly>
+              <h2>Navigation Menu</h2>
+            </SrOnly>
+            <Site.HeaderLeading>
+              <a href="/">
+                <Site.Logo />
+              </a>
+              {(() => {
+                // todo: A few pages utilize the eleventyExcludeFromCollections
+                // property. This property, when present, excludes the page from the
+                // Sitemap. Currently, we can not remove this property as some of the
+                // page formation logic depends on it.
 
-        try {
-          const s = Sitemap.shared
+                try {
+                  const s = Sitemap.shared
 
-          const e = s.find(p.url, "url")
-          if (!e) {
-            throw new Error(`Entity not found: ${p.url}`)
-          }
-          if (e.type !== "page") {
-            throw new Error(`Current entity is not a page: ${e.type} (${p.url})`)
-          }
+                  const e = s.find(p.url, "url")
+                  if (!e) {
+                    throw new Error(`Entity not found: ${p.url}`)
+                  }
+                  if (e.type !== "page") {
+                    throw new Error(`Current entity is not a page: ${e.type} (${p.url})`)
+                  }
 
-          const d = e.data.document
-          if (!d) {
-            throw new Error(`Page data not found: ${e.url}`)
-          }
+                  const d = e.data.document
+                  if (!d) {
+                    throw new Error(`Page data not found: ${e.url}`)
+                  }
 
-          if (d.chapterToggler) {
-            return <PageHeaderNavToggler label="Chapter Navigation Toggler" />
-          }
+                  if (d.chapterToggler) {
+                    return <Site.PageHeaderNavToggler label="Chapter Navigation Toggler" />
+                  }
 
-          return null
-        } catch {
-          return null
-        }
-      })()}
-      {/* {d.chapterToggler && <PageHeaderNavToggler label="Chapter Navigation Toggler" />} */}
-    </PageHeader>
-    <main>
-      {p.children}
-    </main>
-    <PageFooter>
-      <SrOnly>
-        <h2>Site-wide Links</h2>
-      </SrOnly>
-      <PageFooterLinkContainer label="Links related to">
-        <h3>Get Information</h3>
-        <a href="https://www.onlyoffice.com/blog/category/for-developers?from=api" target="_blank">Blog for developers</a>
-        <a href="https://www.onlyoffice.com/contribute.aspx?from=api" target="_blank">For contributors</a>
-        <a href="https://www.onlyoffice.com/legalterms.aspx?from=api" target="_blank">Legal notice</a>
-        <a href={c.legacyBaseUrl} target="_blank">Legacy version</a>
-      </PageFooterLinkContainer>
-      <PageFooterLinkContainer label="Links related to">
-        <h3>Get Help</h3>
-        <a href="https://forum.onlyoffice.com" target="_blank">Forum</a>
-        <a href="https://github.com/ONLYOFFICE/" target="_blank">Code on GitHub</a>
-        <a href="https://helpcenter.onlyoffice.com/installation/docs-developer-index.aspx?from=api" target="_blank">Installation guides</a>
-        <a href="https://www.onlyoffice.com/support-contact-form.aspx?from=api" target="_blank">Support contact form</a>
-      </PageFooterLinkContainer>
-      <PageFooterThemeSwitcher>
-        <ThemeSwitcher>
-          <ThemeSwitcherOption value="light">Light</ThemeSwitcherOption>
-          <ThemeSwitcherOption value="dark">Dark</ThemeSwitcherOption>
-          <ThemeSwitcherOption value="auto">Auto</ThemeSwitcherOption>
-        </ThemeSwitcher>
-      </PageFooterThemeSwitcher>
-      <PageFooterCopyright>
-        <a href="https://onlyoffice.com/">onlyoffice.com</a>
-        <p>© Ascensio System SIA 2024. All right reserved</p>
-      </PageFooterCopyright>
-    </PageFooter>
-  </SPage>
+                  return null
+                } catch {
+                  return null
+                }
+              })()}
+              {/* {d.chapterToggler && <PageHeaderNavToggler label="Chapter Navigation Toggler" />} */}
+            </Site.HeaderLeading>
+            <Site.HeaderContent>
+              <GlobalNavigation current={p.url} />
+            </Site.HeaderContent>
+            <Site.HeaderTrailing />
+          </Site.Header>
+        </Site.MenubarAccessor>
+      </Site.PageHeader>
+      <Site.PageContent>
+        <main>
+          {p.children}
+        </main>
+      </Site.PageContent>
+      <Site.PageFooter>
+        <Site.Footer>
+          <SrOnly>
+            <h2>Site-wide Links</h2>
+          </SrOnly>
+          <Site.FooterContainer>
+            <Site.FooterNavigation>
+              <h3>Get Information</h3>
+              <Site.FooterList>
+                {[
+                  {title: "Blog for developers", href: "https://www.onlyoffice.com/blog/category/for-developers?from=api"},
+                  {title: "For contributors", href: "https://www.onlyoffice.com/contribute.aspx?from=api"},
+                  {title: "Legal notice", href: "https://www.onlyoffice.com/legalterms.aspx?from=api"},
+                  {title: "Legacy version", href: c.legacyBaseUrl},
+                ].map((o) => <Site.FooterListItem>
+                  <a href={o.href} target="_blank">{o.title}</a>
+                </Site.FooterListItem>)}
+              </Site.FooterList>
+            </Site.FooterNavigation>
+            <Site.FooterNavigation>
+              <h3>Get Help</h3>
+              <Site.FooterList>
+                {[
+                  {title: "Forum", href: "https://forum.onlyoffice.com"},
+                  {title: "Code on GitHub", href: "https://github.com/ONLYOFFICE/"},
+                  {title: "Installation guides", href: "https://helpcenter.onlyoffice.com/installation/docs-developer-index.aspx?from=api"},
+                  {title: "Support contact form", href: "https://www.onlyoffice.com/support-contact-form.aspx?from=api"},
+                ].map((o) => <Site.FooterListItem>
+                  <a href={o.href} target="_blank">{o.title}</a>
+                </Site.FooterListItem>)}
+              </Site.FooterList>
+            </Site.FooterNavigation>
+          </Site.FooterContainer>
+          <Site.FooterThemeSwitcher>
+            <Site.ThemeSwitcher>
+              <Site.ThemeSwitcherOption value="light">Light</Site.ThemeSwitcherOption>
+              <Site.ThemeSwitcherOption value="dark">Dark</Site.ThemeSwitcherOption>
+              <Site.ThemeSwitcherOption value="auto">Auto</Site.ThemeSwitcherOption>
+            </Site.ThemeSwitcher>
+          </Site.FooterThemeSwitcher>
+          <Site.FooterCopyright>
+            <a href="https://onlyoffice.com/">onlyoffice.com</a>
+            <p>© Ascensio System SIA 2024. All right reserved</p>
+          </Site.FooterCopyright>
+        </Site.Footer>
+      </Site.PageFooter>
+    </Site.Page>
+  </Site.HeaderAccessor>
 }

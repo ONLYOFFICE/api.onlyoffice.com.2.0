@@ -15,8 +15,9 @@
   },
   "dependencies": {
     "@github/tab-container-element": "4.8.0",
-    "@onlyoffice/preact-types": "workspace:^",
+    "@onlyoffice/preact-elements": "workspace:^",
     "@onlyoffice/tab-container-element-types": "workspace:^",
+    "clsx": "2.1.0",
     "preact": "10.22.0",
     "typescript": "5.4.5"
   },

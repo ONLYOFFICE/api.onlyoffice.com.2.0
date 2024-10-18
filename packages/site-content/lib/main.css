@@ -1,0 +1,14 @@
+/* Integration with @onlyoffice/site-signature */
+
+.content .signature {
+  background-color: var(--signature-computed-background-color-current);
+  color: var(--signature-computed-foreground-color-current);
+  font-family: var(--signature-computed-font-family-current);
+}
+
+.content .signature_variant_inline {
+  border: unset;
+  border-radius: unset;
+  font-size: unset;
+  padding: unset;
+}

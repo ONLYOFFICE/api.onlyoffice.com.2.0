@@ -1,5 +1,6 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {Config} from "@onlyoffice/site-config"
+import {FontsPreload} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {GoogleTagManagerNoscript, GoogleTagManagerScript} from "./google-tag-manager.tsx"
 import {Script} from "./script.tsx"
@@ -30,12 +31,7 @@ export function Html(p: HtmlProperties): JSX.Element {
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="/favicon.png" />
-      {[
-        "OpenSans-Regular.woff2",
-        "OpenSans-Medium.woff2",
-        "OpenSans-SemiBold.woff2",
-        "OpenSans-Bold.woff2",
-      ].map((f) => <link rel="preload" href={`/${f}`} crossorigin="" as="font" type="font/woff2" />)}
+      <FontsPreload />
       {c.analytics && <GoogleTagManagerScript />}
       <Style href="/assets/main.css" />
       <Script async src="/assets/prerender.js" inline />

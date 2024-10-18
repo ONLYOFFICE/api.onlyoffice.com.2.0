@@ -1,7 +1,8 @@
+import {FontsPreload} from "@onlyoffice/ui-kit"
 import {type StorybookConfig} from "@storybook/preact-vite"
 import browserslist from "browserslist"
 import {browserslistToTargets} from "lightningcss"
-import {Fragment, h} from "preact"
+import {h} from "preact"
 import {renderToString} from "preact-render-to-string"
 
 export default {
@@ -20,16 +21,10 @@ export default {
     {from: "../../packages/pagefind-fixtures/dist/pagefind", to: "pagefind"},
     "../../site/assets/images",
     "../../site/static",
+    "../node_modules/@onlyoffice/ui-kit/node_modules/@onlyoffice/ui-fonts/dist",
   ],
   previewHead(head) {
-    return head + renderToString(<>
-      {[
-        "OpenSans-Regular.woff2",
-        "OpenSans-Medium.woff2",
-        "OpenSans-SemiBold.woff2",
-        "OpenSans-Bold.woff2",
-      ].map((f) => <link rel="preload" href={`/${f}`} crossorigin="" as="font" type="font/woff2" />)}
-    </>)
+    return head + renderToString(<FontsPreload />)
   },
   async viteFinal(d) {
     const {defineConfig, mergeConfig} = await import("vite")

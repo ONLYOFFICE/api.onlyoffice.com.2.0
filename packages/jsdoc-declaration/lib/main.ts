@@ -1,6 +1,5 @@
 // todo: add support for the @link tag.
 // todo: should we bring back the see also?
-// todo: omit quotes from string literals.
 // todo: should we apple void if no returns statement?
 //       what about class constructors?
 
@@ -9,14 +8,14 @@ import {Readable, Writable} from "node:stream"
 import {AsyncTransform} from "@onlyoffice/async-transform"
 import {Console} from "@onlyoffice/console"
 import * as code from "@onlyoffice/declaration-code-example"
-import type * as Tokenizer from "@onlyoffice/declaration-tokenizer"
 import {ESLint} from "@onlyoffice/eslint-config"
 import {type Catharsis, type Doclet, type DocletParam} from "@onlyoffice/jsdoc"
 import type * as Library from "@onlyoffice/library-declaration"
 // eslint-disable-next-line no-duplicate-imports
 import * as library from "@onlyoffice/library-declaration"
-import * as tokenizer from "@onlyoffice/library-declaration/tokenizer.ts"
+import * as signature from "@onlyoffice/library-signature"
 import {firstParagraph, firstSentence, selectSection} from "@onlyoffice/markdown"
+import * as Signature from "@onlyoffice/signature"
 import {isStringLiteral} from "@onlyoffice/strings"
 import languagedetection from "@vscode/vscode-languagedetection"
 import {type ListItem} from "mdast"
@@ -287,71 +286,33 @@ export class ThirdIteration extends AsyncTransform {
     const m = JSON.stringify({id: d.id})
     console.log(`Start processing '${m}' at third iteration`)
 
-    d.signature = tokenizer.declaration(d)
-    if (d.signature.length === 0) {
-      d.signature = undefined
-    }
-
-    if (d.signature) {
-      this.sig(d.signature)
-    }
-
-    // Cannot merge statements, TS does not understand well the in keyword.
-
-    if (
-      d.kind === "constructor" ||
-      d.kind === "event" ||
-      d.kind === "method"
-    ) {
-      this.func(d.type)
-    }
-
-    if (
-      d.kind === "type" &&
-      !("id" in d.type) &&
-      d.type.type === "function"
-    ) {
-      this.func(d.type)
-    }
-
+    signature.computeDeclaration(d, this.link.bind(this))
     this.index(d)
     this.push(d)
 
     console.log(`Finish processing '${m}' at third iteration`)
   }
 
-  func(t: Library.FunctionType): void {
-    if (t.parameters) {
-      for (const p of t.parameters) {
-        // Conceptually there should be toValueTokens.
-        p.signature = tokenizer.type(p.type)
-        this.sig(p.signature)
-      }
-    }
-
-    if (t.returns) {
-      t.returns.signature = tokenizer.type(t.returns.type)
-      this.sig(t.returns.signature)
-    }
-  }
-
-  sig(s: Tokenizer.Token[]): void {
+  link(s: Signature.Signature): void {
     const b = this.c.current
     for (const t of s) {
-      if (t.type === "reference" && t.text === "") {
+      if (
+        t instanceof Signature.Reference &&
+        !(t.token instanceof Signature.NoopToken)
+      ) {
         const i = b.indexes[t.id]
         if (i === undefined) {
-          t.text = t.id
+          t.token.text = t.id
           continue
         }
 
         const d = b.declarations[i]
         if (!d) {
-          t.text = t.id
+          t.token.text = t.id
           continue
         }
 
-        t.text = d.identifier
+        t.token.text = d.identifier
       }
     }
   }
@@ -647,12 +608,16 @@ async function declarationNode(dc: Doclet): Promise<[Library.DeclarationNode, ..
     d.parent = library.reference(dc.memberof)
   }
 
-  [d.summary, d.description] = resolveAbstract(dc)
-  if (!d.summary) {
-    d.summary = undefined
+  const [summary, description] = resolveAbstract(dc)
+
+  if (summary) {
+    const s = library.summary()
+    s.text = summary
+    d.summary = s
   }
-  if (!d.description) {
-    d.description = undefined
+
+  if (description) {
+    d.description = description
   }
 
   // todo: it is a temporary solution.
@@ -773,8 +738,8 @@ function type(ca: Catharsis): [Library.Type, ...Error[]] {
     }
 
     if (isStringLiteral(ca.name)) {
-      // const v = omitStringQuotes(ca.name)
-      return [library.literalType(t, ca.name)]
+      const v = omitStringQuotes(ca.name)
+      return [library.literalType(t, v)]
     }
 
     return [library.reference(ca.name)]
@@ -945,6 +910,6 @@ function isNumberLiteral(s: string): boolean {
   return !Number.isNaN(Number.parseFloat(s))
 }
 
-// function omitStringQuotes(s: string): string {
-//   return s.slice(1, -1)
-// }
+function omitStringQuotes(s: string): string {
+  return s.slice(1, -1)
+}

@@ -3,7 +3,7 @@ import {h} from "preact"
 import {Toc, TocHeading, TocItem, TocLink, TocList} from "./main.tsx"
 
 export default {
-  title: "Site / Table of Contents (TOC)",
+  title: "Site Patterns / Table of Contents (TOC)",
 } satisfies Meta
 
 export const Default: StoryObj = {

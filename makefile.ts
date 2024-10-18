@@ -43,6 +43,7 @@ function main(): void {
       for (const n of p._) {
         // todo: this is a temporary solution to run only verified tests.
         if (
+          n !== "signature" &&
           n !== "service-declaration" &&
           n !== "openapi-declaration" &&
           n !== "svg-preact"

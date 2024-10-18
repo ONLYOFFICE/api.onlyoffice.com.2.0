@@ -4,10 +4,10 @@ import {Default as CodeEditorStory} from "../../ui-code-editor/lib/main.story.ts
 import {Default as CodeListingStory} from "../../ui-code-listing/lib/main.story.tsx"
 import {
   Content,
-  ContentTab,
-  ContentTabContainer,
-  ContentTabList,
-  ContentTabPanel,
+  // ContentTab,
+  // ContentTabContainer,
+  // ContentTabList,
+  // ContentTabPanel,
 } from "./main.tsx"
 
 export default {
@@ -36,7 +36,7 @@ export function Default(): JSX.Element {
     <p>Plain img</p>
     <img src="/docspace-preview.svg" width={400} />
     <p>Paragraph before tabs</p>
-    <ContentTabContainer>
+    {/* <ContentTabContainer>
       <ContentTabList label="Group of Tabs">
         <ContentTab id="first">First Tab</ContentTab>
         <ContentTab id="second">Second Tab</ContentTab>
@@ -47,7 +47,7 @@ export function Default(): JSX.Element {
       <ContentTabPanel by="second">
         <p>Second Tab Content</p>
       </ContentTabPanel>
-    </ContentTabContainer>
+    </ContentTabContainer> */}
     <p>Paragraph after tabs</p>
     <ul>
       <li>First list item.</li>

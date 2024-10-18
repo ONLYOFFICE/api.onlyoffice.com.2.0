@@ -1,0 +1,7 @@
+.badge-group {
+  column-gap: var(--base-size-8);
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.25; /* todo: Why 1.25? This is correct, but why? */
+  row-gap: var(--base-size-8);
+}

@@ -1,0 +1,174 @@
+.signature {
+  /* stylelint-disable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-disable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-disable @stylistic/declaration-colon-space-after */
+  --true: initial;
+  --false: ;
+  /* stylelint-enable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-enable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-enable @stylistic/declaration-colon-space-after */
+
+  --signature-variant-is-block: var(--false);
+  --signature-variant-is-inline: var(--false);
+  --signature-variant-is-default: var(--true);
+
+  --signature-background-color-block: var(--temp-color-signature-background);
+  --signature-background-color-inline: var(--base-color-transparent);
+  --signature-background-color-default: var(--signature-background-color-block);
+
+  --signature-internal-reference-text-decoration-rest-block: none;
+  --signature-internal-reference-text-decoration-rest-inline: none;
+  --signature-internal-reference-text-decoration-rest-default: var(--signature-internal-reference-text-decoration-rest-block);
+
+  --signature-internal-reference-text-decoration-hover-block: underline;
+  --signature-internal-reference-text-decoration-hover-inline: underline;
+  --signature-internal-reference-text-decoration-hover-default: var(--signature-internal-reference-text-decoration-hover-block);
+
+  --signature-hover-internal-reference-text-decoration-block: underline;
+  --signature-hover-internal-reference-text-decoration-inline: none;
+  --signature-hover-internal-reference-text-decoration-default: var(--signature-hover-internal-reference-text-decoration-block);
+
+  --signature-external-reference-text-decoration-rest-block: underline;
+  --signature-external-reference-text-decoration-rest-inline: none;
+  --signature-external-reference-text-decoration-rest-default: var(--signature-external-reference-text-decoration-rest-block);
+
+  --signature-external-reference-text-decoration-hover-block: underline;
+  --signature-external-reference-text-decoration-hover-inline: underline;
+  --signature-external-reference-text-decoration-hover-default: var(--signature-external-reference-text-decoration-hover-block);
+
+  --signature-hover-external-reference-text-decoration-block: underline;
+  --signature-hover-external-reference-text-decoration-inline: none;
+  --signature-hover-external-reference-text-decoration-default: var(--signature-hover-external-reference-text-decoration-block);
+
+  --signature-computed-background-color-block: var(--signature-variant-is-block, var(--signature-background-color-block));
+  --signature-computed-background-color-inline: var(--signature-variant-is-inline, var(--signature-background-color-inline));
+  --signature-computed-background-color-default: var(--signature-variant-is-default, var(--signature-background-color-default));
+  --signature-computed-background-color-current: var(--signature-computed-background-color-block) var(--signature-computed-background-color-inline) var(--signature-computed-background-color-default);
+
+  --signature-computed-internal-reference-text-decoration-rest-block: var(--signature-variant-is-block, var(--signature-internal-reference-text-decoration-rest-block));
+  --signature-computed-internal-reference-text-decoration-rest-inline: var(--signature-variant-is-inline, var(--signature-internal-reference-text-decoration-rest-inline));
+  --signature-computed-internal-reference-text-decoration-rest-default: var(--signature-variant-is-default, var(--signature-internal-reference-text-decoration-rest-default));
+  --signature-computed-internal-reference-text-decoration-rest-current: var(--signature-computed-internal-reference-text-decoration-rest-block) var(--signature-computed-internal-reference-text-decoration-rest-inline) var(--signature-computed-internal-reference-text-decoration-rest-default);
+
+  --signature-computed-internal-reference-text-decoration-hover-block: var(--signature-variant-is-block, var(--signature-internal-reference-text-decoration-hover-block));
+  --signature-computed-internal-reference-text-decoration-hover-inline: var(--signature-variant-is-inline, var(--signature-internal-reference-text-decoration-hover-inline));
+  --signature-computed-internal-reference-text-decoration-hover-default: var(--signature-variant-is-default, var(--signature-internal-reference-text-decoration-hover-default));
+  --signature-computed-internal-reference-text-decoration-hover-current: var(--signature-computed-internal-reference-text-decoration-hover-block) var(--signature-computed-internal-reference-text-decoration-hover-inline) var(--signature-computed-internal-reference-text-decoration-hover-default);
+
+  --signature-computed-hover-internal-reference-text-decoration-block: var(--signature-variant-is-block, var(--signature-hover-internal-reference-text-decoration-block));
+  --signature-computed-hover-internal-reference-text-decoration-inline: var(--signature-variant-is-inline, var(--signature-hover-internal-reference-text-decoration-inline));
+  --signature-computed-hover-internal-reference-text-decoration-default: var(--signature-variant-is-default, var(--signature-hover-internal-reference-text-decoration-default));
+  --signature-computed-hover-internal-reference-text-decoration-current: var(--signature-computed-hover-internal-reference-text-decoration-block) var(--signature-computed-hover-internal-reference-text-decoration-inline) var(--signature-computed-hover-internal-reference-text-decoration-default);
+
+  --signature-computed-external-reference-text-decoration-rest-block: var(--signature-variant-is-block, var(--signature-external-reference-text-decoration-rest-block));
+  --signature-computed-external-reference-text-decoration-rest-inline: var(--signature-variant-is-inline, var(--signature-external-reference-text-decoration-rest-inline));
+  --signature-computed-external-reference-text-decoration-rest-default: var(--signature-variant-is-default, var(--signature-external-reference-text-decoration-rest-default));
+  --signature-computed-external-reference-text-decoration-rest-current: var(--signature-computed-external-reference-text-decoration-rest-block) var(--signature-computed-external-reference-text-decoration-rest-inline) var(--signature-computed-external-reference-text-decoration-rest-default);
+
+  --signature-computed-external-reference-text-decoration-hover-block: var(--signature-variant-is-block, var(--signature-external-reference-text-decoration-hover-block));
+  --signature-computed-external-reference-text-decoration-hover-inline: var(--signature-variant-is-inline, var(--signature-external-reference-text-decoration-hover-inline));
+  --signature-computed-external-reference-text-decoration-hover-default: var(--signature-variant-is-default, var(--signature-external-reference-text-decoration-hover-default));
+  --signature-computed-external-reference-text-decoration-hover-current: var(--signature-computed-external-reference-text-decoration-hover-block) var(--signature-computed-external-reference-text-decoration-hover-inline) var(--signature-computed-external-reference-text-decoration-hover-default);
+
+  --signature-computed-hover-external-reference-text-decoration-block: var(--signature-variant-is-block, var(--signature-hover-external-reference-text-decoration-block));
+  --signature-computed-hover-external-reference-text-decoration-inline: var(--signature-variant-is-inline, var(--signature-hover-external-reference-text-decoration-inline));
+  --signature-computed-hover-external-reference-text-decoration-default: var(--signature-variant-is-default, var(--signature-hover-external-reference-text-decoration-default));
+  --signature-computed-hover-external-reference-text-decoration-current: var(--signature-computed-hover-external-reference-text-decoration-block) var(--signature-computed-hover-external-reference-text-decoration-inline) var(--signature-computed-hover-external-reference-text-decoration-default);
+
+  --signature-computed-foreground-color-current: var(--temp-color-signature-text);
+  --signature-computed-font-family-current: var(--base-text-font-family-monospace);
+
+  background-color: var(--signature-computed-background-color-current);
+  color: var(--signature-computed-foreground-color-current);
+  font-family: var(--signature-computed-font-family-current);
+}
+
+.signature > code {
+  font-family: var(--base-text-font-family-monospace);
+}
+
+.signature > a,
+.signature > code > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.signature:hover > a[href^="#"] > [class^="sg-"],
+.signature:hover > code > a[href^="#"] > [class^="sg-"] {
+  text-decoration: var(--signature-computed-hover-internal-reference-text-decoration-current);
+}
+
+.signature > a[href^="#"] > [class^="sg-"],
+.signature > code > a[href^="#"] > [class^="sg-"] {
+  text-decoration: var(--signature-computed-internal-reference-text-decoration-rest-current);
+}
+
+.signature > a[href^="#"]:focus-visible > [class^="sg-"],
+.signature:hover > a[href^="#"]:focus-visible > [class^="sg-"],
+.signature > a[href^="#"]:hover > [class^="sg-"],
+.signature:hover > a[href^="#"]:hover > [class^="sg-"],
+.signature > code > a[href^="#"]:focus-visible > [class^="sg-"],
+.signature:hover > code > a[href^="#"]:focus-visible > [class^="sg-"],
+.signature > code > a[href^="#"]:hover > [class^="sg-"],
+.signature:hover > code > a[href^="#"]:hover > [class^="sg-"] {
+  text-decoration: var(--signature-computed-internal-reference-text-decoration-hover-current);
+}
+
+.signature:hover > a[href]:not([href^="#"]) > [class^="sg-"],
+.signature:hover > code > a[href]:not([href^="#"]) > [class^="sg-"] {
+  text-decoration: var(--signature-computed-hover-external-reference-text-decoration-current);
+}
+
+.signature > a[href]:not([href^="#"]) > [class^="sg-"],
+.signature > code > a[href]:not([href^="#"]) > [class^="sg-"] {
+  text-decoration: var(--signature-computed-external-reference-text-decoration-rest-current);
+}
+
+.signature > a[href]:not([href^="#"]):focus-visible > [class^="sg-"],
+.signature:hover > a[href]:not([href^="#"]):focus-visible > [class^="sg-"],
+.signature > a[href]:not([href^="#"]):hover > [class^="sg-"],
+.signature:hover > a[href]:not([href^="#"]):hover > [class^="sg-"],
+.signature > code > a[href]:not([href^="#"]):focus-visible > [class^="sg-"],
+.signature:hover > code > a[href]:not([href^="#"]):focus-visible > [class^="sg-"],
+.signature > code > a[href]:not([href^="#"]):hover > [class^="sg-"],
+.signature:hover > code > a[href]:not([href^="#"]):hover > [class^="sg-"] {
+  text-decoration: var(--signature-computed-external-reference-text-decoration-hover-current);
+}
+
+.signature_variant_default {
+  --signature-variant-is-block: var(--false);
+  --signature-variant-is-inline: var(--false);
+  --signature-variant-is-default: var(--true);
+}
+
+.signature_variant_block {
+  --signature-variant-is-default: var(--false);
+  --signature-variant-is-block: var(--true);
+  --signature-variant-is-inline: var(--false);
+}
+
+.signature_variant_inline {
+  --signature-variant-is-default: var(--false);
+  --signature-variant-is-block: var(--false);
+  --signature-variant-is-inline: var(--true);
+}
+
+.sg-en {
+  color: var(--temp-color-signature-entity);
+}
+
+.sg-kw {
+  color: var(--temp-color-signature-keyword);
+}
+
+.sg-pm {
+  color: var(--temp-color-signature-parameter);
+}
+
+.sg-st {
+  color: var(--temp-color-signature-string);
+}
+
+.sg-tp {
+  color: var(--temp-color-signature-type);
+}

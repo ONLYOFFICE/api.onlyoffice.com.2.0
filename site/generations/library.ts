@@ -80,17 +80,22 @@ export function data({list, retrieve}: Resource): Data {
         ;[d.declaration] = data.pagination.items
 
         d.onLink = function onLink(t) {
-          if (!data || !data.crosslink || t.type !== "reference") {
-            return
+          if (!data || !data.crosslink) {
+            return ""
           }
 
           const r = retrieve(t.id)
           if (!r) {
-            return
+            return ""
           }
 
           const s = r.id.split("#").join("/")
-          return data.crosslink(data, `${s}/`)
+          const u = data.crosslink(data, `${s}/`)
+          if (!u) {
+            return ""
+          }
+
+          return u
         }
 
         d.onRetrieve = function onRetrieve(r) {

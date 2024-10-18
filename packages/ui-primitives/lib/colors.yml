@@ -22,7 +22,11 @@ regular:
       - "#FF6E3D" # hsl(15.2deg, 100%, 62%)
       - "#F16741" # hsl(13deg, 86.3%, 60%)
       red:
-      - "#B93737" # hsl(0deg, 54.2%, 47.1%)
+      - "#E09094"
+      - "#391F20"
+      navy:
+      - "#A2CADF"
+      - "#143F53"
 
     # Functional
 
@@ -33,12 +37,28 @@ regular:
         emphasis: base.orange[1]
         muted: base.orange[0]
 
+    temp-background:
+      calm: base.navy[1]
+      critical: base.red[1]
+      # innovative
+      neutral: base.gray[8]
+      # vibrant
+
     foreground:
       default: base.white
       muted: base.gray[4]
       link: base.orange[1]
       accent: base.orange[1]
       danger: base.red[0]
+
+    temp-foreground:
+      calm: base.navy[0]
+      critical: base.red[0]
+      # innovative
+      neutral:
+        rest: base.gray[2]
+        muted: base.gray[3]
+      # vibrant
 
     border:
       default: base.gray[6]
@@ -171,6 +191,16 @@ regular:
       brackethighlighter-angle: "#8b949e"
       sublimelinter-gutter-mark: "#484f58"
       constant-other-reference-link: "#a5d6ff"
+
+    temp-signature:
+      # background: "#404040"
+      background: background.muted
+      entity: "#E09094"
+      keyword: "#F2B4EA"
+      parameter: "#ACC8F5"
+      string: "#A1D099"
+      text: "#A3A8B4"
+      type: "#AA99F2"
 
     temp-base-icon:
       black: "#333333"
@@ -429,7 +459,11 @@ regular:
       - "#FF6E3D" # hsl(15.2deg, 100%, 62%)
       - "#F16741" # hsl(13deg, 86.3%, 60%)
       red:
-      - "#B93737" # hsl(0deg, 54.2%, 47.1%)
+      - "#FEEBEC"
+      - "#C73B41"
+      navy:
+      - "#ECF9FF"
+      - "#276085"
 
     # Functional
 
@@ -440,12 +474,28 @@ regular:
         emphasis: base.orange[1]
         muted: base.orange[0]
 
+    temp-background:
+      calm: base.navy[0]
+      critical: base.red[0]
+      # innovative
+      neutral: base.gray[0]
+      # vibrant
+
     foreground:
       default: base.black
       muted: base.gray[6]
       link: base.orange[1]
       accent: base.orange[1]
       danger: base.red[0]
+
+    temp-foreground:
+      calm: base.navy[1]
+      critical: base.red[1]
+      # innovative
+      neutral:
+        rest: base.gray[7]
+        muted: base.gray[6]
+      # vibrant
 
     border:
       default: base.gray[4]
@@ -580,6 +630,16 @@ regular:
       brackethighlighter-angle: "#57606a"
       sublimelinter-gutter-mark: "#8c959f"
       constant-other-reference-link: "#0a3069"
+
+    temp-signature:
+      # background: "#FAFBFC"
+      background: background.muted
+      entity: "#C73B41"
+      keyword: "#A32A8A"
+      parameter: "#3D63DD"
+      string: "#438443"
+      text: "#4F5561"
+      type: "#6848BA"
 
     temp-base-icon:
       black: "#333333"

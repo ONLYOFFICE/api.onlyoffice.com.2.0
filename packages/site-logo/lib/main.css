@@ -1,0 +1,46 @@
+.logo {
+  /* stylelint-disable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-disable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-disable @stylistic/declaration-colon-space-after */
+  --true: initial;
+  --false: ;
+  /* stylelint-enable @stylistic/declaration-block-semicolon-newline-before */
+  /* stylelint-enable @stylistic/declaration-block-semicolon-space-before */
+  /* stylelint-enable @stylistic/declaration-colon-space-after */
+
+  --logo-size-is-small: var(--false);
+  --logo-size-is-medium: var(--false);
+  --logo-size-is-default: var(--true);
+
+  --logo-svg-block-size-small: 28px;
+  --logo-svg-block-size-medium: 38px;
+  --logo-svg-block-size-default: var(--logo-svg-block-size-medium);
+
+  --logo-computed-svg-block-size-small: var(--logo-size-is-small, var(--logo-svg-block-size-small));
+  --logo-computed-svg-block-size-medium: var(--logo-size-is-medium, var(--logo-svg-block-size-medium));
+  --logo-computed-svg-block-size-default: var(--logo-size-is-default, var(--logo-svg-block-size-default));
+  --logo-computed-svg-block-size-current: var(--logo-computed-svg-block-size-small) var(--logo-computed-svg-block-size-medium) var(--logo-computed-svg-block-size-default);
+}
+
+.logo_size_default {
+  --logo-size-is-small: var(--false);
+  --logo-size-is-medium: var(--false);
+  --logo-size-is-default: var(--true);
+}
+
+.logo_size_small {
+  --logo-size-is-small: var(--true);
+  --logo-size-is-medium: var(--false);
+  --logo-size-is-default: var(--false);
+}
+
+.logo_size_medium {
+  --logo-size-is-small: var(--false);
+  --logo-size-is-medium: var(--true);
+  --logo-size-is-default: var(--false);
+}
+
+.logo svg {
+  block-size: var(--logo-computed-svg-block-size-current);
+  inline-size: auto;
+}

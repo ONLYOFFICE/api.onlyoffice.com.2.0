@@ -1,3 +1,5 @@
+import {type Signature} from "@onlyoffice/signature"
+
 export type Declaration = DeclarationMap[keyof DeclarationMap]
 
 export interface DeclarationMap {
@@ -34,6 +36,7 @@ export interface DeclarationNode {
 export class Request {
   method = ""
   path = ""
+  signature: Signature = []
   description = ""
   authorizations: Authorization[] = []
   headerParameters = new Entity()
@@ -80,6 +83,7 @@ export class Entity {
   deprecated = false
   type: Type = new NoopType()
   format = ""
+  signature: Signature = []
   default: Const = new NoopConst()
   example: Const = new NoopConst()
 }

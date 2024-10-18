@@ -11,6 +11,9 @@
   "dependencies": {
     "@onlyoffice/preact-types": "workspace:^",
     "@onlyoffice/service-declaration": "workspace:^",
+    "@onlyoffice/signature": "workspace:^",
+    "@onlyoffice/site-glossary": "workspace:^",
+    "@onlyoffice/site-signature": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",
     "preact": "10.22.0",
     "typescript": "5.4.5"

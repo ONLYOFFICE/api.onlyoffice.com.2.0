@@ -90,10 +90,10 @@ export function Service(p: ServiceProperties): JSX.Element {
         <h3>Query</h3>
       </Site.ServiceHeading>
       <Site.ServiceHeading for="Request">
-        <h2>Request</h2>
+        <h2 id="request">Request</h2>
       </Site.ServiceHeading>
       <Site.ServiceHeading for="Responses">
-        <h2>Responses</h2>
+        <h2 id="responses">Responses</h2>
       </Site.ServiceHeading>
       <Site.ServiceDescription>
         {Markdown}
@@ -105,4 +105,18 @@ export function Service(p: ServiceProperties): JSX.Element {
   }
 
   return <></>
+}
+
+export function ServiceToc(): JSX.Element {
+  return <Site.Toc>
+    <Site.TocHeading>In this article</Site.TocHeading>
+    <Site.TocList>
+      <Site.TocItem>
+        <Site.TocLink href="#request">Request</Site.TocLink>
+      </Site.TocItem>
+      <Site.TocItem>
+        <Site.TocLink href="#responses">Responses</Site.TocLink>
+      </Site.TocItem>
+    </Site.TocList>
+  </Site.Toc>
 }

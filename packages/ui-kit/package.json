@@ -16,6 +16,7 @@
   "dependencies": {
     "@onlyoffice/ui-article-card": "workspace:^",
     "@onlyoffice/ui-badge": "workspace:^",
+    "@onlyoffice/ui-badge-group": "workspace:^",
     "@onlyoffice/ui-base": "workspace:^",
     "@onlyoffice/ui-breadcrumb": "workspace:^",
     "@onlyoffice/ui-button": "workspace:^",
@@ -23,6 +24,7 @@
     "@onlyoffice/ui-code-listing": "workspace:^",
     "@onlyoffice/ui-code-preview": "workspace:^",
     "@onlyoffice/ui-content": "workspace:^",
+    "@onlyoffice/ui-fonts": "workspace:^",
     "@onlyoffice/ui-form-control": "workspace:^",
     "@onlyoffice/ui-logos": "workspace:^",
     "@onlyoffice/ui-mascots": "workspace:^",

@@ -1,10 +1,5 @@
-// The current global navigation relies on css, which is not the optimal
-// solution. Creating a dedicated web component that implements the menubar
-// pattern for global navigation would be beneficial.
-//
-// https://www.w3.org/WAI/ARIA/apg/patterns/menubar/
-
 import {Sitemap} from "@onlyoffice/eleventy-sitemap"
+import * as Site from "@onlyoffice/site-kit"
 import {CloseIcon, MenuIcon} from "@onlyoffice/ui-icons/poor/24.tsx"
 import {type JSX, h} from "preact"
 import {Icon} from "./icon.tsx"
@@ -68,13 +63,13 @@ export function GlobalNavigation(p: GlobalNavigationProperties): JSX.Element {
     throw new Error("Root page not found")
   }
 
-  return <global-navigation-container class="global-navigation">
-    <button class="global-navigation__toggle" type="button">
+  return <Site.Menubar>
+    <Site.MenubarToggle aria-label="Toggle Global Navigation">
       <MenuIcon width={24} height={24} />
       <CloseIcon width={24} height={24} />
-    </button>
-    <nav class="global-navigation__nav" aria-label="Global Navigation">
-      <ul class="global-navigation__menu">
+    </Site.MenubarToggle>
+    <Site.MenubarNavigation aria-label="Global Navigation">
+      <Site.MenubarMenu>
         {e.children.map((id) => {
           const e = s.find(id, "id")
           if (!e) {
@@ -83,15 +78,14 @@ export function GlobalNavigation(p: GlobalNavigationProperties): JSX.Element {
           if (e.type !== "page") {
             throw new Error(`Entity is not a page: ${id}`)
           }
-
-          let c = "global-navigation__menu-link"
-          if (p.current.startsWith(e.url)) {
-            c += " global-navigation__menu-link_active"
-          }
-
-          return <li class="global-navigation__menu-item">
-            <a class={c} href={e.url}>{e.title}</a>
-            <ul class="global-navigation__submenu">
+          return <Site.MenubarMenuItem>
+            <Site.MenubarMenuLink
+              active={p.current.startsWith(e.url)}
+              href={e.url}
+            >
+              {e.title}
+            </Site.MenubarMenuLink>
+            <Site.MenubarSubmenu>
               {e.children.map((id) => {
                 const e = s.find(id, "id")
                 if (!e) {
@@ -100,21 +94,23 @@ export function GlobalNavigation(p: GlobalNavigationProperties): JSX.Element {
                 if (e.type !== "page") {
                   throw new Error(`Entity is not a page: ${id}`)
                 }
-
                 const n = e.data.globalNavigation
                 if (!n) {
                   throw new Error(`Global navigation data not found: ${id}`)
                 }
-
-                return <li class="global-navigation__submenu-item">
+                return <Site.MenubarSubmenuItem>
                   <Icon src="rich24" name={n.icon} height={24} width={24} />
-                  <Link class="global-navigation__submenu-link" href={n.path}>{n.title}</Link>
-                </li>
+                  <Site.MenubarSubmenuLink asChild>
+                    <Link href={n.path}>
+                      {n.title}
+                    </Link>
+                  </Site.MenubarSubmenuLink>
+                </Site.MenubarSubmenuItem>
               })}
-            </ul>
-          </li>
+            </Site.MenubarSubmenu>
+          </Site.MenubarMenuItem>
         })}
-      </ul>
-    </nav>
-  </global-navigation-container>
+      </Site.MenubarMenu>
+    </Site.MenubarNavigation>
+  </Site.Menubar>
 }

@@ -4,7 +4,7 @@ import {Default as SearchStory} from "../../site-search/lib/main.story.tsx"
 import {Chapter, ChapterContent, ChapterNavigation} from "./main.tsx"
 
 export default {
-  title: "Site/Chapter",
+  title: "Site Regions / Chapter",
 } satisfies Meta
 
 export function Default(): JSX.Element {

@@ -1,14 +1,25 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import type * as ServiceDeclaration from "@onlyoffice/service-declaration"
+import * as Sig from "@onlyoffice/signature"
+import * as SiteGlossary from "@onlyoffice/site-glossary"
+import {Signature} from "@onlyoffice/site-signature"
 import {
   Badge,
+  BadgeCaption,
+  BadgeGroup,
   CodeListing,
   CodeListingTab,
   CodeListingTabList,
   CodeListingTabListWrapper,
   CodeListingTabPanel,
 } from "@onlyoffice/ui-kit"
-import {type ComponentChildren, Fragment, type JSX, createContext, h} from "preact"
+import {
+  type ComponentChildren,
+  Fragment,
+  type JSX,
+  createContext,
+  h,
+} from "preact"
 import {useContext} from "preact/hooks"
 
 export interface Description {
@@ -128,9 +139,7 @@ function OperationDeclaration(p: OperationDeclarationProperties): JSX.Element {
   const {request: r} = d
 
   return <>
-    {r.method && r.path && <pre>
-      <code>{r.method} {r.path}</code>
-    </pre>}
+    {r.signature.length !== 0 && <Signature signature={r.signature} />}
     <Heading for="Request" />
     <Request request={r} />
     {d.responses.length !== 0 && <>
@@ -228,9 +237,7 @@ function Response(p: ResponseProperties): JSX.Element {
   return <>
     <h3>{r.status}</h3>
     {r.description && <Description>{r.description}</Description>}
-    {r.body.type.type !== "noop" && <>
-      <Entity entity={r.body} />
-    </>}
+    {r.body.type.type !== "noop" && <Entity entity={r.body} />}
   </>
 }
 
@@ -269,23 +276,18 @@ function Type(p: TypeProperties): JSX.Element {
   case "literal":
     return <LiteralType type={t} />
   case "noop":
-    return <></>
   case "null":
-    return <></>
   case "number":
     return <></>
   case "object":
     return <ObjectType type={t} />
   case "string":
-    return <></>
   case "union":
-    return <></>
   case "unknown":
     return <></>
   }
 
-  // @ts-expect-error
-  throw new Error(`Unknown type: ${t.type}`)
+  return <></>
 }
 
 interface ArrayTypeProperties {
@@ -296,7 +298,7 @@ function ArrayType(p: ArrayTypeProperties): JSX.Element {
   const {type: t} = p
 
   if (t.items.type === "circular") {
-    return <p>Circular reference</p>
+    return <></>
   }
 
   return <Entity entity={t.items} />
@@ -308,20 +310,7 @@ interface ComplexTypeProperties {
 
 function ComplexType(p: ComplexTypeProperties): JSX.Element {
   const {type: t} = p
-
-  return <>
-    {t.entities.length !== 0 && <dl>
-      {t.entities.map((e) => <>
-        <dt>
-          <TypeBadge type={e.type} />{" "}
-          {e.format && <Badge>{e.format}</Badge>}
-        </dt>
-        <dd>
-          <Entity entity={e} />
-        </dd>
-      </>)}
-    </dl>}
-  </>
+  return <Glossary entities={t.entities} />
 }
 
 interface EnumTypeProperties {
@@ -373,127 +362,94 @@ interface ObjectTypeProperties {
 
 function ObjectType(p: ObjectTypeProperties): JSX.Element {
   const {type: t} = p
+  return <Glossary properties={t.properties} />
+}
 
+interface GlossaryProperties {
+  properties?: ServiceDeclaration.Property[]
+  entities?: ServiceDeclaration.Entity[]
+}
+
+function Glossary(p: GlossaryProperties): JSX.Element {
   return <>
-    {t.properties.length !== 0 && <dl>
-      {t.properties.map((p) => <Property property={p} />)}
-    </dl>}
+    {p.properties && p.properties.length !== 0 && <SiteGlossary.Glossary>
+      {p.properties.map((p) => <GlossaryItem property={p} entity={p.self} />)}
+    </SiteGlossary.Glossary>}
+    {p.entities && p.entities.length !== 0 && <SiteGlossary.Glossary>
+      {p.entities.map((e) => <GlossaryItem entity={e} />)}
+    </SiteGlossary.Glossary>}
   </>
 }
 
-interface PropertyProperties {
-  property: ServiceDeclaration.Property
+interface GlossaryItemProperties {
+  property?: ServiceDeclaration.Property
+  entity: ServiceDeclaration.Entity | ServiceDeclaration.CircularReference
 }
 
-function Property(p: PropertyProperties): JSX.Element {
-  const {property: r} = p
+function GlossaryItem(p: GlossaryItemProperties): JSX.Element {
+  const {entity: e, property: r} = p
+  const t: JSX.Element[] = []
+  const d: JSX.Element[] = []
 
-  return <>
-    <PropertyTerm property={r} />
-    <PropertyDescription property={r} />
-  </>
-}
-
-function PropertyTerm(p: PropertyProperties): JSX.Element {
-  const {property: r} = p
-
-  return <dt>
-    <code>{r.identifier}</code>{" "}
-    <PropertyBadges property={r} />
-  </dt>
-}
-
-function PropertyBadges(p: PropertyProperties): JSX.Element {
-  const {property: r} = p
-
-  if (r.self.type === "circular") {
-    return <Badge>circular</Badge>
+  if (r && r.identifier) {
+    t.push(<Badge variant="calm">{r.identifier}</Badge>)
+  } else {
+    t.push(<Badge variant="calm">.</Badge>)
   }
 
-  return <>
-    <TypeBadge type={r.self.type} />{" "}
-    {r.self.format && <Badge>{r.self.format}</Badge>}{" "}
-    {r.required && <Badge variant="danger">required</Badge>}
-  </>
-}
-
-function PropertyDescription(p: PropertyProperties): JSX.Element {
-  const {self: e} = p.property
-  const {Description} = useContext(ctx)
+  let s: Sig.Signature = []
 
   if (e.type === "circular") {
-    return <p>Circular reference</p>
+    const t = new Sig.TypeToken()
+    t.text = "circular reference"
+    s = [t]
+  } else {
+    s = e.signature
   }
 
-  return <dd>
-    {e.description && <Description>{e.description}</Description>}
-    <Type type={e.type} />
-    {e.type.type !== "object" && e.default.type !== "noop" && <p>
-      Default: <code>{String(e.default.value)}</code>
-    </p>}
-    {e.type.type !== "object" && e.example.type !== "noop" && <p>
-      Example: <code>{String(e.example.value)}</code>
-    </p>}
-  </dd>
-}
-
-interface TypeBadgeProperties {
-  type: ServiceDeclaration.Type
-}
-
-function TypeBadge(p: TypeBadgeProperties): JSX.Element {
-  const {type: t} = p
-
-  return <Badge>{w(t)}</Badge>
-
-  function w(t: ServiceDeclaration.Type): string {
-    if (t.type === "array") {
-      let l = t.type
-
-      if (t.items.type !== "circular") {
-        l += ` of ${w(t.items.type)}`
-      }
-
-      return l
-    }
-
-    if (t.type === "complex") {
-      switch (t.by) {
-      case "allOf":
-        return "all of"
-      case "anyOf":
-        return "any of"
-      case "oneOf":
-        return "one of"
-      }
-      throw new Error(`Unknown complex type: ${t.by}`)
-    }
-
-    if (t.type === "enum") {
-      let l = t.type
-
-      if (t.cases.length !== 0) {
-        const [c] = t.cases
-
-        if (c.type.type !== "literal") {
-          throw new Error(`Expected literal type, got: ${c.type.type}`)
-        }
-
-        l += ` of ${w(c.type.base)}`
-      }
-
-      return l
-    }
-
-    if (t.type === "literal") {
-      if (t.const.type === "noop") {
-        return ""
-      }
-      return String(t.const.value)
-    }
-
-    return t.type
+  if (s.length !== 0) {
+    t.push(<Badge variant="transparent">
+      <Signature variant="inline" signature={s} />
+    </Badge>)
   }
+
+  if (e.type !== "circular" && e.format) {
+    t.push(<Badge variant="neutral">
+      <BadgeCaption>format</BadgeCaption>
+      {e.format}
+    </Badge>)
+  }
+
+  if (e.type !== "circular" && r && r.required) {
+    t.push(<Badge variant="critical">required</Badge>)
+  }
+
+  if (e.type !== "circular" && e.default.type !== "noop") {
+    t.push(<Badge variant="neutral">
+      <BadgeCaption>default</BadgeCaption>
+      {e.default.value}
+    </Badge>)
+  }
+
+  // if (e.type !== "circular" && e.example.type !== "noop") {
+  //   t.push(<Badge variant="neutral">
+  //     <BadgeCaption>example</BadgeCaption>
+  //     {e.example.value}
+  //   </Badge>)
+  // }
+
+  if (e.type !== "circular") {
+    d.push(<Entity entity={e} />)
+  }
+
+  return <>
+    <SiteGlossary.GlossaryTerm>
+      {t.length !== 0 && <BadgeGroup>{t}</BadgeGroup>}
+    </SiteGlossary.GlossaryTerm>
+    <SiteGlossary.GlossaryDetails>
+      {d}
+    </SiteGlossary.GlossaryDetails>
+  </>
 }
 
 interface ExamplesProperties {

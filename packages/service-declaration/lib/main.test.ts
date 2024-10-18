@@ -159,11 +159,20 @@ test("NoopConst: initializes an empty instance", () => {
 test("Entity: initializes an empty instance", () => {
   const e = new Entity()
   const k = Object.keys(e)
-  eq(k, ["description", "deprecated", "type", "format", "default", "example"])
+  eq(k, [
+    "description",
+    "deprecated",
+    "type",
+    "format",
+    "signature",
+    "default",
+    "example",
+  ])
   is(e.description, "")
   is(e.deprecated, false)
   eq(e.type, new NoopType())
   is(e.format, "")
+  eq(e.signature, [])
   eq(e.default, new NoopConst())
   eq(e.example, new NoopConst())
 })
@@ -203,6 +212,7 @@ test("Request: initializes an empty instance", () => {
   eq(k, [
     "method",
     "path",
+    "signature",
     "description",
     "authorizations",
     "headerParameters",
@@ -214,6 +224,7 @@ test("Request: initializes an empty instance", () => {
   ])
   is(r.method, "")
   is(r.path, "")
+  eq(r.signature, [])
   is(r.description, "")
   eq(r.authorizations, [])
   eq(r.headerParameters, new Entity())
