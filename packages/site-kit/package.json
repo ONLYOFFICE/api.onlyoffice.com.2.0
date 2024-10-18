@@ -23,6 +23,7 @@
     "@onlyoffice/site-help": "workspace:^",
     "@onlyoffice/site-home": "workspace:^",
     "@onlyoffice/site-library": "workspace:^",
+    "@onlyoffice/site-logo": "workspace:^",
     "@onlyoffice/site-page": "workspace:^",
     "@onlyoffice/site-part": "workspace:^",
     "@onlyoffice/site-playground": "workspace:^",
