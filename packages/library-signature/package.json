@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/declaration-tokenizer",
+  "name": "@onlyoffice/library-signature",
   "type": "module",
   "private": true,
   "main": "lib/main.ts",
@@ -10,6 +10,8 @@
     "test": "pnpm test:types && pnpm test:unit"
   },
   "dependencies": {
+    "@onlyoffice/library-declaration": "workspace:^",
+    "@onlyoffice/signature": "workspace:^",
     "typescript": "5.4.5"
   },
   "devDependencies": {

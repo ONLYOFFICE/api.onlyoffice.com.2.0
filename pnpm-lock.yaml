@@ -255,25 +255,6 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
-  packages/declaration-tokenizer:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      c8:
-        specifier: 9.1.0
-        version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      tsx:
-        specifier: 4.16.5
-        version: 4.16.5
-      uvu:
-        specifier: 0.5.6
-        version: 0.5.6
-
   packages/docspace-hosted-solutions-resource:
     dependencies:
       '@onlyoffice/service-declaration':
@@ -990,9 +971,6 @@ importers:
       '@onlyoffice/declaration-code-example':
         specifier: workspace:^
         version: link:../declaration-code-example
-      '@onlyoffice/declaration-tokenizer':
-        specifier: workspace:^
-        version: link:../declaration-tokenizer
       '@onlyoffice/eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
@@ -1002,9 +980,15 @@ importers:
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../library-declaration
+      '@onlyoffice/library-signature':
+        specifier: workspace:^
+        version: link:../library-signature
       '@onlyoffice/markdown':
         specifier: workspace:^
         version: link:../markdown
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
       '@onlyoffice/strings':
         specifier: workspace:^
         version: link:../strings
@@ -1119,9 +1103,9 @@ importers:
       '@onlyoffice/declaration-reference':
         specifier: workspace:^
         version: link:../declaration-reference
-      '@onlyoffice/declaration-tokenizer':
+      '@onlyoffice/signature':
         specifier: workspace:^
-        version: link:../declaration-tokenizer
+        version: link:../signature
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -1150,6 +1134,31 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/library-signature:
+    dependencies:
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -3710,9 +3719,6 @@ importers:
       '@onlyoffice/community-server-resource':
         specifier: workspace:^
         version: link:../packages/community-server-resource
-      '@onlyoffice/declaration-tokenizer':
-        specifier: workspace:^
-        version: link:../packages/declaration-tokenizer
       '@onlyoffice/docspace-hosted-solutions-resource':
         specifier: workspace:^
         version: link:../packages/docspace-hosted-solutions-resource

@@ -23,7 +23,6 @@
     "@11ty/eleventy-img": "4.0.2",
     "@onlyoffice/combobox-container-html-element": "workspace:^",
     "@onlyoffice/community-server-resource": "workspace:^",
-    "@onlyoffice/declaration-tokenizer": "workspace:^",
     "@onlyoffice/docspace-hosted-solutions-resource": "workspace:^",
     "@onlyoffice/docspace-resource": "workspace:^",
     "@onlyoffice/document-builder-hast-element": "workspace:^",

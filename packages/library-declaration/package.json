@@ -2,10 +2,6 @@
   "name": "@onlyoffice/library-declaration",
   "type": "module",
   "private": true,
-  "exports": {
-    ".": "./lib/main.ts",
-    "./tokenizer.ts": "./lib/tokenizer.ts"
-  },
   "main": "lib/main.ts",
   "scripts": {
     "clean": "rimraf coverage node_modules",
@@ -16,7 +12,7 @@
   "dependencies": {
     "@onlyoffice/declaration-code-example": "workspace:^",
     "@onlyoffice/declaration-reference": "workspace:^",
-    "@onlyoffice/declaration-tokenizer": "workspace:^",
+    "@onlyoffice/signature": "workspace:^",
     "typescript": "5.4.5"
   },
   "devDependencies": {
