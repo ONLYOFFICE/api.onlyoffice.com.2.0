@@ -13,6 +13,7 @@
 - docs api: users in response after info command
 - docs api: change command address
 - docs api: insert-text in setRequestedDocument
+- docs api: added the Password and PasswordToOpen request parameters to the WOPI conversion API
 
 ## 6.1.0
 - docspace js sdk: react component
