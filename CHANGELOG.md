@@ -1,6 +1,7 @@
 # Change Log
 
 - restructured Plugins and Macros section
+- docbuilder: added the Java builder framework
 - docspace api backend: http and curl examples
 - docbuilder: samples link
 - office api: added samples

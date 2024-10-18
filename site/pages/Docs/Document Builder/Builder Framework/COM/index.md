@@ -1,5 +1,5 @@
 ---
-order: -4
+order: -5
 ---
 
 For the integration of **ONLYOFFICE Document Builder** into any application, the COM **doctrenderer** library is used. The current application version contains five main classes:

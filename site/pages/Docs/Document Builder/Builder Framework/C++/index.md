@@ -1,5 +1,5 @@
 ---
-order: -5
+order: -6
 ---
 
 For the integration of **ONLYOFFICE Document Builder** into any application, the C++ **doctrenderer** library is used. The current application version contains six main classes:
