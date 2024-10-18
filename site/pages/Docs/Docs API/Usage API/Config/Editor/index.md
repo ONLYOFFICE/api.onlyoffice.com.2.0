@@ -104,7 +104,7 @@ Example: "en"
 
 ## location
 
-Defines the default measurement units. Specify **us** or **ca** to set inches. The default value is **""**.
+Defines the default measurement units. Specify **us** or **ca** to set inches. The default value is **""**. Deprecated since version 8.2, please use the [region](#region) parameter instead.
 
 Type: string
 
@@ -167,6 +167,8 @@ Example: `https://example.com/exampledocument1.docx`
 ## region
 
 Defines the default display format for currency and date and time (in the **Spreadsheet Editor** only). Is set using the four letter (**en-US**, **fr-FR**, etc.) language codes. For the default value the *lang* parameter is taken, or, if no regional setting corresponding to the *lang* value is available, **en-US** is used.
+
+Starting from version 8.2, this parameter also defines the default measurement units in all editor types. For the **...-US** or **...-CA** regions, inches are used by default if other values are not specified in the [editorConfig.customization.unit](../Editor/Customization/index.md#unit) parameter.
 
 Type: string
 
@@ -298,7 +300,6 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
     },
     createUrl: "https://example.com/url-to-create-document/",
     lang: "en",
-    location: "",
     mode: "edit",
     recent: [
       {

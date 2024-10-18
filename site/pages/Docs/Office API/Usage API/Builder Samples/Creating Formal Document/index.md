@@ -200,13 +200,6 @@ oParagraph.AddDrawing(oDrawing)
 oDocument.Push(oParagraph)
 
 oParagraph = Api.CreateParagraph()
-oParagraph.SetStyle(oHeading1Style)
-oDrawing = Api.CreateImage("https://api.onlyoffice.com/content/img/docbuilder/examples/launch_photo.png", 720_725, 1_204_595)
-oDrawing.SetWrappingStyle("tight")
-oDrawing.SetHorAlign("margin", "left")
-oDrawing.SetVerPosition("page", 1_810_470)
-oDrawing.SetDistances(114_300, 0, 114_300, 0)
-oParagraph.AddDrawing(oDrawing)
 oParagraph.AddText("Overview")
 oDocument.Push(oParagraph)
 
@@ -676,7 +669,7 @@ if (oRow) {
     oParagraph = oCellContent.GetElement(0)
     oParagraph.SetStyle(oFooterStyle)
     oParagraph.SetJc("right")
-    oDrawing = Api.CreateImage("https://api.onlyoffice.com/content/img/docbuilder/examples/onlyoffice_logo.png", 495_300, 481_965)
+    oDrawing = Api.CreateImage("https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png", 495_300, 481_965)
     oDrawing.SetWrappingStyle("inline")
     oParagraph.AddDrawing(oDrawing)
   }

@@ -27,7 +27,7 @@ The events section allows to change all the functions pertaining to the events.
 - [onRequestRename](#onrequestrename) - the user is trying to rename the file by clicking the *Rename...* button.
 - [onRequestRestore](#onrequestrestore) - the user is trying to restore the file version by clicking the *Restore* button in the version history.
 - [onRequestSaveAs](#onrequestsaveas) - the user is trying to save file by clicking *Save Copy as...* button.
-- [onRequestSelectDocument](#onrequestselectdocument) - the user is trying to select a document for comparing or combining.
+- [onRequestSelectDocument](#onrequestselectdocument) - the user is trying to select a document for comparing, combining, or inserting text.
 - [onRequestSelectSpreadsheet](#onrequestselectspreadsheet) - the user is trying to select recipients data by clicking the *Mail merge* button.
 - [onRequestSendNotify](#onrequestsendnotify) - the user is mentioned in a comment.
 - [onRequestSharingSettings](#onrequestsharingsettings) - the user is trying to manage document access rights by clicking *Change access rights* button.
@@ -694,15 +694,17 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
 
 ## onRequestSelectDocument
 
-The function called when the user is trying to select a document for comparing or combining.
+The function called when the user is trying to select a document for comparing, combining, or inserting text.
 
 The type of document selection is specified in the *data.c* parameter.
 
-To select a document for comparing or combining, you must call the [setRequestedDocument](../../Methods/index.md#setrequesteddocument) method.
+To select a document for comparing, combining, or inserting text, you must call the [setRequestedDocument](../../Methods/index.md#setrequesteddocument) method.
 
 > This event is available only for ONLYOFFICE Enterprise Edition and ONLYOFFICE Developer Edition.
 
 ![onRequestSelectDocument](/assets/images/editor/onRequestSelectDocument.png)
+
+![Insert text](/assets/images/editor/insert-text.png)
 
 Example:
 

@@ -1,10 +1,14 @@
+---
+order: -2
+---
+
 ## How to install plugins to the ONLYOFFICE editors?
 
-Some plugins are installed by default. Switch to the **Plugins** tab to see the available ones. To install additional plugins, see the [desktop](../../Plugins/Adding%20plugins/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Plugins/Adding%20plugins/ONLYOFFICE%20Docs%20on-premises/index.md) or [cloud](../../Plugins/Adding%20plugins/ONLYOFFICE%20Cloud/index.md) installation instructions.
+Some plugins are installed by default. Switch to the **Plugins** tab to see the available ones. To install additional plugins, see the [desktop](../../Tutorials/Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Tutorials/Installing/ONLYOFFICE%20Docs%20on-premises/index.md) or [cloud](../../Tutorials/Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.
 
 ## How to adjust my plugin to the ONLYOFFICE style?
 
-ONLYOFFICE offers its own style sheet in the [plugin.css](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.css) file connected to the *index.html* file. Detailed instructions on connecting ONLYOFFICE styles to the editors can be found [here](../../Plugins/Plugin%20styles/index.md).
+ONLYOFFICE offers its own style sheet in the [plugin.css](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.css) file connected to the *index.html* file. Detailed instructions on connecting ONLYOFFICE styles to the editors can be found [here](../../Structure/Styles/index.md).
 
 ## How to localize a plugin?
 
@@ -14,11 +18,11 @@ To localize a plugin, you need to do the following:
 - Localize *index.html* and plugin code files.
 - Apply translations to plugin.
 
-Further information about the localization can be found [at this page](../../Plugins/Plugin%20localization/index.md).
+Further information about the localization can be found [at this page](../../Structure/Localization/index.md).
 
 ## How can I create an About window for my plugin?
 
-Use the [plugin variations](../../Usage%20API/Config/Plugin%20variations/index.md) or *subplugins* to create an **About** window for your plugin or add extra plugin settings. Have a look at the plugin example with two variations [here](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/helloworld). In addition to two variations in the config, you also need to create an additional *index\_about.html* file.
+Use the [plugin variations](../../Structure/Manifest/Variations/index.md) or *subplugins* to create an **About** window for your plugin or add extra plugin settings. Have a look at the plugin example with two variations [here](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/helloworld). In addition to two variations in the config, you also need to create an additional *index\_about.html* file.
 
 ## Where to find the existing plugins available for integration?
 
@@ -44,4 +48,4 @@ Macros use JavaScript language syntax and [Office JavaScript API](../../../Offic
 
 ## Can I make a macro global?
 
-Macros are attached to the specific documents and there is no possibility to make them global. However, you can write a [plugin](../../Get%20Started/Plugin%20structure/index.md) that will be loaded for all the users.
+Macros are attached to the specific documents and there is no possibility to make them global. However, you can write a [plugin](../../Structure/Manifest/index.md) that will be loaded for all the users.

@@ -3549,6 +3549,9 @@ importers:
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../packages/ui-kit
+      '@storybook/addon-a11y':
+        specifier: 8.0.0
+        version: 8.0.0
       '@storybook/addon-essentials':
         specifier: 8.0.0
         version: 8.0.0(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -5159,6 +5162,9 @@ packages:
   '@sindresorhus/transliterate@0.1.2':
     resolution: {integrity: sha512-5/kmIOY9FF32nicXH+5yLNTX4NJ4atl7jRgqAJuIn/iyDFXBktOKDxCvyGE/EzmF4ngSUvjXxQUQlQiZ5lfw+w==}
     engines: {node: '>=10'}
+
+  '@storybook/addon-a11y@8.0.0':
+    resolution: {integrity: sha512-lxvXOMYqeM6DOUvNP3e18GzPDVhcOZtLnjkJ8XQbRk2xx2qHodAEiFhiKBhfStsn6/rg0zWLRpZ1NJxjnZ0l/Q==}
 
   '@storybook/addon-actions@8.0.0':
     resolution: {integrity: sha512-QXfnEWZt5k35cPYsLvxq505XrCgXujc4UEkky1lBtSMI9SLzlXZg3fC/lW0c0hiu2c0+zI+y4fj5vTE9AZJdjw==}
@@ -12194,6 +12200,11 @@ snapshots:
     dependencies:
       escape-string-regexp: 2.0.0
       lodash.deburr: 4.1.0
+
+  '@storybook/addon-a11y@8.0.0':
+    dependencies:
+      '@storybook/addon-highlight': 8.0.0
+      axe-core: 4.9.1
 
   '@storybook/addon-actions@8.0.0':
     dependencies:

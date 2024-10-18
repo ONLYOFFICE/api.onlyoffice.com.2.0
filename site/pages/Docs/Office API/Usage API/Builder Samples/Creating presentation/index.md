@@ -34,7 +34,7 @@ function addText(oShape, oContent, text, fontSize, isBold, js) {
   oParagraph.SetJc(js)
 }
 
-const image_url = "https://api.onlyoffice.com/content/img/docbuilder/examples/presentation_gun.png"
+const image_url = "https://static.onlyoffice.com/assets/docs/samples/img/presentation_gun.png"
 let oSlide = createSlide(oPresentation, image_url)
 oPresentation.GetSlideByIndex(0).Delete()
 
@@ -49,7 +49,7 @@ oSlide.AddObject(oShape)
 
 oSlide = Api.CreateSlide()
 oPresentation.AddSlide(oSlide)
-let oFill = Api.CreateBlipFill("https://api.onlyoffice.com/content/img/docbuilder/examples/presentation_axe.png", "stretch")
+let oFill = Api.CreateBlipFill("https://static.onlyoffice.com/assets/docs/samples/img/presentation_axe.png", "stretch")
 oSlide.SetBackground(oFill)
 oSlide.RemoveAllObjects()
 
@@ -71,7 +71,7 @@ oSlide.AddObject(oShape)
 
 oSlide = Api.CreateSlide()
 oPresentation.AddSlide(oSlide)
-oFill = Api.CreateBlipFill("https://api.onlyoffice.com/content/img/docbuilder/examples/presentation_knight.png", "stretch")
+oFill = Api.CreateBlipFill("https://static.onlyoffice.com/assets/docs/samples/img/presentation_knight.png", "stretch")
 oSlide.SetBackground(oFill)
 oSlide.RemoveAllObjects()
 
@@ -93,7 +93,7 @@ oSlide.AddObject(oShape)
 
 oSlide = Api.CreateSlide()
 oPresentation.AddSlide(oSlide)
-oFill = Api.CreateBlipFill("https://api.onlyoffice.com/content/img/docbuilder/examples/presentation_sky.png", "stretch")
+oFill = Api.CreateBlipFill("https://static.onlyoffice.com/assets/docs/samples/img/presentation_sky.png", "stretch")
 oSlide.SetBackground(oFill)
 oSlide.RemoveAllObjects()
 

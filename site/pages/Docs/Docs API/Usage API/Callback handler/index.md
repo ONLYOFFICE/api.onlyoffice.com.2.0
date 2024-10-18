@@ -140,7 +140,7 @@ It is received when the force saving request is performed.The *callbackUrl* depe
 
 - If *forcesavetype* parameter is set to **1**, the *callbackUrl* from the user who clicked the **Save** button is used.
 - If *forcesavetype* parameter is set to **0** or **2**, the *callbackUrl* from the user who made the last changes to the file is used.
-- If *forcesavetype* parameter is set to **3**, the *callbackUrl* from the user who clicked the **Submit** button is used.Starting from version 5.5 to version 6.1, the *callbackUrl* from the user who made the last changes to the file is always used.
+- If *forcesavetype* parameter is set to **3**, the *callbackUrl* from the user who clicked the **Submit** button is used.Starting from version 5.5 to version 6.1, the *callbackUrl* from the user who made the last changes to the file is always used.
 
 ## Examples of requests
 

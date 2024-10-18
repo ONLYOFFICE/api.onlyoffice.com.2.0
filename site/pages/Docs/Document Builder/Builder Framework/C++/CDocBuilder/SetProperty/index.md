@@ -8,8 +8,8 @@ Sets an argument in the UTF8 format to the builder class which can be trasferred
 
 | Name     | Type         | Description                                                                |
 | -------- | ------------ | -------------------------------------------------------------------------- |
-| *sParam* | const char\* | The parameter name in the UTF8 format, the value is always *--argument*.   |
-| *sValue* | const char\* | The parameter value in the UTF8 format which will be used in the document. |
+| *sParam* | const char\* | The parameter name in the UTF8 format, the value is always *--argument*.   |
+| *sValue* | const char\* | The parameter value in the UTF8 format which will be used in the document. |
 
 ## Supported properties
 
@@ -17,13 +17,13 @@ Sets an argument in the UTF8 format to the builder class which can be trasferred
 | --------------------------- | ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
 | *--use-doctrenderer-scheme* | bool             | false   | Specifies if the doctrenderer mode is used when building a document or getting content from the editor when saving a file. |
 | *--check-fonts*             | bool             | true    | Specifies if the system fonts are cached for faster work.                                                                  |
-| *--work-directory*          | const wchar\_t\* | ""      | The path to the temporary directory.                                                                                       |
+| *--work-directory*          | const wchar\_t\* | ""      | The path to the temporary directory.                                                                                       |
 | *--cache-scripts*           | bool             | true    | Specifies if the sdkjs scripts are cached.                                                                                 |
 | *--save-use-only-names*     | bool             | false   | Specifies if the destination paths are used (for server work). For example: /home/user/1.txt => /tmp/1.txt                 |
-| *--all-fonts-path*          | const wchar\_t\* | ""      | The path to the *AllFonts.js* script.                                                                                      |
-| *--argument*                | const wchar\_t\* | ""      | The JSON argument which is sent to the global parameters of all the opened JS context.                                     |
+| *--all-fonts-path*          | const wchar\_t\* | ""      | The path to the *AllFonts.js* script.                                                                                      |
+| *--argument*                | const wchar\_t\* | ""      | The JSON argument which is sent to the global parameters of all the opened JS context.                                     |
 | *--fonts-system*            | bool             | true    | Specifies if the system fonts are used.                                                                                    |
-| *--fonts-dir*               | const wchar\_t\* | ""      | The path to the additional fonts directory (may be many records).                                                          |
+| *--fonts-dir*               | const wchar\_t\* | ""      | The path to the additional fonts directory (may be many records).                                                          |
 
 Once added, the argument will be available as the **Argument** variable with its parameter values set:
 
