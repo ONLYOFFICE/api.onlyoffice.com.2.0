@@ -49,6 +49,29 @@ export default {
         ...INITIAL_VIEWPORTS,
       },
     },
+    options: {
+      storySort: {
+        order: [
+          "Site",
+          "Site Regions",
+          "Site Composites",
+          "Site Patterns",
+          "UI",
+          "UI Foundation",
+          "UI Assets",
+          "UI Primitives",
+          "UI Utilities",
+        ],
+      },
+      // todo: sort stories by [Use Cases, Default, Playground, *]
+      // Do not convert it into a regular function, it will not work.
+      // storySort: (a, b) => {
+      //   if (a.id === b.id) {
+      //     return 0
+      //   }
+      //   return a.id.localeCompare(b.id, undefined, {numeric: true})
+      // },
+    },
   },
   decorators: [
     (Story, ctx) => {
