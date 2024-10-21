@@ -1,5 +1,5 @@
 ---
-order: -7
+order: -8
 ---
 
 Before starting plugin development, create a plugin template and configure its settings which will be displayed in the DocSpace plugin settings.

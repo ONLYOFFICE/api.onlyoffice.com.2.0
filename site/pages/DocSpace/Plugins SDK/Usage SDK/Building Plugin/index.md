@@ -1,5 +1,5 @@
 ---
-order: -4
+order: -5
 ---
 
 To build a plugin, you need the *yarn* package manager to be installed. After that, follow the instructions below:

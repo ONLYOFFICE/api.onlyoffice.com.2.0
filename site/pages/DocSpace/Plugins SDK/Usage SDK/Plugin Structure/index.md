@@ -1,5 +1,5 @@
 ---
-order: -6
+order: -7
 ---
 
 Each DocSpace plugin is a folder with files. It must contain the following files required for the plugin to work:
