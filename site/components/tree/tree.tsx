@@ -7,6 +7,7 @@ import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {ArrowDropdownIcon} from "@onlyoffice/ui-icons/poor/24.tsx"
 import {clsx} from "clsx"
 import {type JSX, cloneElement, h} from "preact"
+import {type HTMLAttributes} from "preact/compat"
 
 export function Tree(p: ChildrenIncludable): JSX.Element {
   return <chapter-navigation class="tree">
@@ -60,6 +61,7 @@ export function TreeItem(p: TreeItemProperties): JSX.Element {
 
 export interface TreeLinkProperties extends ChildrenIncludable {
   active?: boolean
+  blank?: boolean
   class?: string
   href?: string
 }
@@ -69,5 +71,13 @@ export function TreeLink(p: TreeLinkProperties): JSX.Element {
   if (!p.href) {
     return <span class={c}>{p.children}</span>
   }
-  return <a class={c} href={p.href}>{p.children}</a>
+  const o: HTMLAttributes<HTMLAnchorElement> = {
+    class: c,
+    href: p.href,
+    children: p.children,
+  }
+  if (p.blank) {
+    o.target = "_blank"
+  }
+  return <a {...o} />
 }

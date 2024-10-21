@@ -20,6 +20,7 @@ declare module "@onlyoffice/eleventy-types" {
     title?: string
     description?: string
     summary?: string
+    blank?: boolean
     order?: number
     items?: unknown[]
 
@@ -39,6 +40,7 @@ declare module "@onlyoffice/eleventy-types" {
     title?(data: Data): string | undefined
     description?(data: Data): string | undefined
     summary?(data: Data): string | undefined
+    blank?(data: Data): boolean | undefined
     order?(data: Data): number | undefined
     items?(data: Data): unknown[] | undefined
 

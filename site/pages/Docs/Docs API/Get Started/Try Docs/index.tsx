@@ -6,6 +6,7 @@ import {type JSX, h} from "preact"
 export function data(): Data {
   return {
     layout: "page",
+    blank: true,
     order: -6,
   }
 }

@@ -299,7 +299,7 @@ export function ChapterNavigation(p: ChapterNavigationProperties): JSX.Element |
       }
       if (e.type === "page") {
         return <TreeItem expanded={p.url.startsWith(e.url)}>
-          <TreeLink href={e.url} active={p.url === e.url}>{e.title}</TreeLink>
+          <TreeLink href={e.url} active={p.url === e.url} blank={e.data.blank}>{e.title}</TreeLink>
           {e.children.length !== 0 && <Sub e={e} />}
         </TreeItem>
       }
