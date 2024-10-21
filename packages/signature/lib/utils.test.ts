@@ -3,6 +3,7 @@ import {equal as eq} from "uvu/assert"
 import {
   KeywordToken,
   NoopToken,
+  Reference,
   type Signature,
   TextToken,
   type Token,
@@ -58,6 +59,37 @@ test("normalize: removes noop tokens", () => {
 
   t = new NoopToken()
   a.push(t)
+
+  t = new TextToken()
+  t.text = "b"
+  a.push(t)
+
+  a = normalize(a)
+
+  const e: Signature = []
+
+  t = new KeywordToken()
+  t.text = "a"
+  e.push(t)
+
+  t = new TextToken()
+  t.text = "b"
+  e.push(t)
+
+  eq(a, e)
+})
+
+test("normalize: removes references with noop tokens", () => {
+  let a: Signature = []
+  let t: Token
+
+  t = new KeywordToken()
+  t.text = "a"
+  a.push(t)
+
+  const r = new Reference()
+  r.token = new NoopToken()
+  a.push(r)
 
   t = new TextToken()
   t.text = "b"

@@ -6,6 +6,10 @@ export function normalize(s: Signature): Signature {
   let c: Token | undefined
 
   for (const t of s) {
+    if (t instanceof Reference && t.token instanceof NoopToken) {
+      continue
+    }
+
     if (t instanceof Reference) {
       r.push(t)
       continue
