@@ -420,7 +420,7 @@ function Values(p: ValuesProperties): JSX.Element {
             <BadgeCaption>
               default
             </BadgeCaption>
-            {v.default.value}
+            {s(v.default.value)}
           </Badge>}
         </BadgeGroup>
       </SiteGlossary.GlossaryTerm>
@@ -429,6 +429,16 @@ function Values(p: ValuesProperties): JSX.Element {
       </SiteGlossary.GlossaryDetails>
     </>)}
   </SiteGlossary.Glossary>
+
+  function s(u: unknown): string {
+    if (u === undefined) {
+      return "undefined"
+    }
+    if (u === null) {
+      return "null"
+    }
+    return String(u)
+  }
 }
 
 function Signature(p: SiteSignature.SignatureProperties): JSX.Element {
