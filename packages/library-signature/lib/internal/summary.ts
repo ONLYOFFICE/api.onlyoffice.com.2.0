@@ -41,6 +41,7 @@ export function classDeclaration(d: Library.ClassDeclaration): Signature {
     for (const e of d.extends) {
       const r = new Reference()
       r.id = e.id
+      r.token = new TypeToken()
       a.push(r)
 
       t = new TextToken()
@@ -108,6 +109,7 @@ export function type(t: Library.Type): Signature {
   if ("id" in t) {
     const u = new Reference()
     u.id = t.id
+    u.token = new TypeToken()
     return [u]
   }
 

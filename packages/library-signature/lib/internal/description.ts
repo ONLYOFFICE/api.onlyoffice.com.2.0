@@ -2,6 +2,7 @@ import type * as Library from "@onlyoffice/library-declaration"
 import {
   EntityToken,
   KeywordToken,
+  NoopToken,
   ParameterToken,
   Reference,
   type Signature,
@@ -63,6 +64,7 @@ export function classDeclaration(d: Library.ClassDeclaration): Signature {
     for (const e of d.extends) {
       const r = new Reference()
       r.id = e.id
+      r.token = new TypeToken()
       a.push(r)
 
       t = new TextToken()
@@ -205,6 +207,7 @@ export function type(t: Library.Type): Signature {
   if ("id" in t) {
     const u = new Reference()
     u.id = t.id
+    u.token = new TypeToken()
     return [u]
   }
 
@@ -366,72 +369,93 @@ export class Formatter {
   newline = "\n"
 
   format(a: Signature): Signature {
-    const f = [...a]
-
     let l = 0
-    for (const e of f) {
-      if (e.text) {
+
+    for (const e of a) {
+      if (!(e instanceof Reference || e instanceof NoopToken)) {
         l += e.text.length
       }
     }
 
     if (l < this.limit) {
-      return f
+      return a
     }
 
     let s = 0
     let e = 0
     let o = 0
-    let im = false
+    let m = false
 
-    for (const [i, t] of f.entries()) {
-      if (t.text === "(" && !im) {
-        im = true
+    for (const [i, t] of a.entries()) {
+      if (t instanceof TextToken && t.text === "(" && !m) {
+        m = true
         s = i
       }
 
-      if (im) {
-        if (t.text === "(") {
-          o += 1
-        }
+      if (!m) {
+        continue
+      }
 
-        if (t.text === ")") {
-          o -= 1
-        }
+      if (t instanceof TextToken && t.text === "(") {
+        o += 1
+      }
 
-        if (o === 0) {
-          e = i
-          break
-        }
+      if (t instanceof TextToken && t.text === ")") {
+        o -= 1
+      }
+
+      if (o === 0) {
+        e = i
+        break
       }
     }
 
-    let b = new TextToken()
-    b.text = this.newline
+    const b: Signature = []
+    let t: Token | Reference
 
-    let t = new TextToken()
+    for (let i = 0; i <= s; i += 1) {
+      t = a[i]
+      b.push(t)
+    }
+
+    t = new TextToken()
+    t.text = this.newline
+    b.push(t)
+
+    t = new TextToken()
     t.text = " ".repeat(this.indent)
+    b.push(t)
 
-    f.splice(s + 1, 0, b, t)
-    e += 2
+    for (let i = s + 1; i < e; i += 1) {
+      t = a[i]
+      b.push(t)
 
-    for (let i = s; i <= e; i += 1) {
-      if (f[i].text === ", ") {
-        b = new TextToken()
-        b.text = "\n"
+      if (t instanceof TextToken && t.text === ", ") {
+        t.text = ","
+
+        t = new TextToken()
+        t.text = this.newline
+        b.push(t)
+
         t = new TextToken()
         t.text = " ".repeat(this.indent)
-        f.splice(i + 1, 0, b, t)
-        e += 2
+        b.push(t)
       }
     }
 
-    const c = new TextToken()
-    c.text = ", "
-    b = new TextToken()
-    b.text = "\n"
-    f.splice(e, 0, c, b)
+    t = new TextToken()
+    t.text = ","
+    b.push(t)
 
-    return f
+    t = new TextToken()
+    t.text = this.newline
+    b.push(t)
+
+    for (let i = e; i < a.length; i += 1) {
+      t = a[i]
+      b.push(t)
+    }
+
+    return b
   }
 }
