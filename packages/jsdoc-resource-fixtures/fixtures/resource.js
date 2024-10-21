@@ -61,6 +61,47 @@ class Account {
    * @returns {boolean} - Returns true if the check is successful.
    */
   auditTransactions(accountId, transactions, transactionDetails, categorizedTransactions) {}
+
+  /**
+   * Retrieves the user's shopping cart.
+   * @summary Gets the current items in the user's cart.
+   * @returns {Cart} - Returns an array of items in the cart.
+   */
+  getCart() {}
+}
+
+/**
+ * A user account with administrative privileges.
+ * @extends {Account}
+ * @summary Represents an admin account for managing products.
+ */
+class Admin extends Account {
+  /**
+   * A user account with administrative privileges.
+   * @summary Creates a new admin account.
+   * @param {string} username - The admin's name.
+   * @param {number} balance - The account balance.
+   * @param {Array.<string>} transactionHistory - List of past transactions.
+   * @param {number} permission - Permission types.
+   */
+  constructor(username, balance, transactionHistory, permission) {}
+
+  /**
+   * Creates a new product.
+   * @summary Adds a new item to the inventory.
+   * @param {Object} itemDetails - Details about the product.
+   * @param {string} itemName - The name of the product.
+   * @returns {boolean} - Returns true if the product is created successfully.
+   */
+  createProduct(itemDetails, itemName) {}
+
+  /**
+   * Removes a product from the inventory.
+   * @summary Deletes an item from the inventory by its ID.
+   * @param {string} productId - The ID of the product to remove.
+   * @returns {boolean} - Returns true if the product is removed successfully.
+   */
+  removeProduct(productId) {}
 }
 
 /**
