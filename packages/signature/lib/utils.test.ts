@@ -110,4 +110,40 @@ test("normalize: removes references with noop tokens", () => {
   eq(a, e)
 })
 
+test("normalize: keeps token order before Reference", () => {
+  let a: Signature = []
+  let t: Token
+
+  t = new KeywordToken()
+  t.text = "a"
+  a.push(t)
+
+  const r1 = new Reference()
+  r1.token = new TextToken()
+  r1.token.text = "r1"
+  a.push(r1)
+
+  t = new TextToken()
+  t.text = "b"
+  a.push(t)
+
+  const r2 = new Reference()
+  r2.token = new TextToken()
+  r2.token.text = "r2"
+  a.push(r2)
+
+  a = normalize(a)
+
+  const e: Signature = []
+
+  t = new KeywordToken()
+  t.text = "a"
+  e.push(t, r1)
+  t = new TextToken()
+  t.text = "b"
+  e.push(t, r2)
+
+  eq(a, e)
+})
+
 test.run()

@@ -6,26 +6,26 @@ export function normalize(s: Signature): Signature {
   let c: Token | undefined
 
   for (const t of s) {
-    if (t instanceof Reference && t.token instanceof NoopToken) {
+    if (
+      t instanceof NoopToken ||
+      t instanceof Reference && t.token instanceof NoopToken
+    ) {
       continue
     }
 
-    if (t instanceof Reference) {
-      r.push(t)
-      continue
-    }
-
-    if (t instanceof NoopToken) {
-      continue
-    }
-
-    if (c && c.type === t.type) {
+    if (c && !(t instanceof Reference) && c.type === t.type) {
       c.text += t.text
       continue
     }
 
     if (c) {
       r.push(c)
+    }
+
+    if (t instanceof Reference) {
+      r.push(t)
+      c = undefined
+      continue
     }
 
     c = t
