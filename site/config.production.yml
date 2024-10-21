@@ -5,7 +5,7 @@ analytics: true
 robots: true
 
 server:
-  baseUrl: https://api.teamlab.info/
+  baseUrl: https://legacy-api.teamlab.info/
 
 playground:
   documentEditor:
