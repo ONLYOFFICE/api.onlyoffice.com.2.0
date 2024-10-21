@@ -9,7 +9,7 @@ export function data({list, retrieve}: Resource): Data {
   const sl = new ResourceSlugger()
 
   return {
-    layout: "service-declaration",
+    layout: "service",
 
     items: list(),
     pagination: {
