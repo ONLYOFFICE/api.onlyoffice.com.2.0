@@ -189,7 +189,6 @@
 }
 
 .home__in p {
-  hyphens: auto;
   margin-block-end: 0;
   margin-block-start: var(--base-size-24);
 }

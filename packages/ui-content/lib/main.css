@@ -1,6 +1,5 @@
 .content {
   font-size: var(--text-body-font-size-medium);
-  hyphens: auto;
   line-height: var(--text-body-line-height-medium);
 }
 
