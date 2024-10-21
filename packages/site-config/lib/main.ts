@@ -6,6 +6,7 @@ import yaml from "yaml"
 export interface InputConfig {
   baseUrl?: string
   legacyBaseUrl?: string
+  storybookUrl?: string
   analytics?: boolean
   robots?: boolean
   server?: InputServer
@@ -15,6 +16,7 @@ export interface InputConfig {
 export interface Configurable {
   baseUrl: string
   legacyBaseUrl: string
+  storybookUrl: string
   analytics: boolean
   robots: boolean
   server: ServerConfigurable
@@ -26,6 +28,7 @@ export class Config implements Configurable {
 
   baseUrl = ""
   legacyBaseUrl = ""
+  storybookUrl = ""
   analytics = false
   robots = false
   server = new ServerConfig()
@@ -95,6 +98,10 @@ export class Config implements Configurable {
       co.legacyBaseUrl = ic.legacyBaseUrl
     }
 
+    if (ic.storybookUrl) {
+      co.storybookUrl = ic.storybookUrl
+    }
+
     if (ic.analytics !== undefined) {
       co.analytics = ic.analytics
     }
@@ -127,6 +134,12 @@ export class Config implements Configurable {
       co.legacyBaseUrl = b.legacyBaseUrl
     } else if (a.legacyBaseUrl) {
       co.legacyBaseUrl = a.legacyBaseUrl
+    }
+
+    if (b.storybookUrl) {
+      co.storybookUrl = b.storybookUrl
+    } else if (a.storybookUrl) {
+      co.storybookUrl = a.storybookUrl
     }
 
     if (b.analytics !== undefined) {
