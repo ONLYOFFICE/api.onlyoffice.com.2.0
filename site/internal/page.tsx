@@ -4,7 +4,7 @@ import * as Site from "@onlyoffice/site-kit"
 import {SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {Footer} from "./footer.tsx"
-import {GlobalNavigation} from "./global-navigation.tsx"
+import {Menubar, MenubarAccessor} from "./menubar.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -59,7 +59,7 @@ export function Page(p: PageProperties): JSX.Element {
   return <Site.HeaderAccessor>
     <Site.Page>
       <Site.PageHeader>
-        <Site.MenubarAccessor>
+        <MenubarAccessor>
           <Site.Header>
             <SrOnly>
               <h2>Navigation Menu</h2>
@@ -102,11 +102,11 @@ export function Page(p: PageProperties): JSX.Element {
               {/* {d.chapterToggler && <PageHeaderNavToggler label="Chapter Navigation Toggler" />} */}
             </Site.HeaderLeading>
             <Site.HeaderContent>
-              <GlobalNavigation current={p.url} />
+              <Menubar current={p.url} />
             </Site.HeaderContent>
             <Site.HeaderTrailing />
           </Site.Header>
-        </Site.MenubarAccessor>
+        </MenubarAccessor>
       </Site.PageHeader>
       <Site.PageContent>
         <main>

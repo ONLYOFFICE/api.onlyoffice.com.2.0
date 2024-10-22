@@ -145,14 +145,14 @@ export function Home(): JSX.Element {
               throw new Error(`Entity is not a page: ${id}`)
             }
 
-            const n = e.data.globalNavigation
-            if (!n) {
-              throw new Error(`Global navigation data not found: ${id}`)
+            const m = e.data.menubar
+            if (!m) {
+              throw new Error(`Menubar data not found: ${id}`)
             }
 
             return <HomeLink>
-              <Icon src="rich32" name={n.icon} height={32} width={32} />
-              <Link href={n.path}>{n.title}</Link>
+              <Icon src="rich32" name={m.icon} height={32} width={32} />
+              <Link href={m.path}>{m.title}</Link>
             </HomeLink>
           })}
         </HomeLinks>
