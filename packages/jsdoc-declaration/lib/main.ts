@@ -564,6 +564,11 @@ async function functionDeclarationUnits(dc: Doclet): Promise<[[Library.FunctionT
     }
 
     f.returns = fr
+  } else {
+    const [t, ...e] = voidType()
+    errs.push(...e)
+
+    f.returns = library.functionReturns(t)
   }
 
   return [[f, d], ...errs]
