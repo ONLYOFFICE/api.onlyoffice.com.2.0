@@ -1,12 +1,12 @@
 // todo: separate chapter with article
 
-import {Sitemap, type SitemapEntity} from "@onlyoffice/eleventy-sitemap"
+import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import * as Site from "@onlyoffice/site-kit"
 import {Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
-import {Tree, TreeGroup, TreeItem, TreeLink} from "../components/tree/tree.tsx"
 import {Breadcrumb} from "./breadcrumb.tsx"
+import {Explorer} from "./explorer.tsx"
 import {Help} from "./help.tsx"
 import {TableOfContents} from "./table-of-contents.tsx"
 
@@ -173,7 +173,7 @@ function Root(p: ChapterProperties): JSX.Element {
           </li>
         </Site.SearchTemplate>
       </Site.SearchContainer>
-      <ChapterNavigation level={2} url={p.url} />
+      <Explorer level={2} url={p.url} />
     </Site.ChapterNavigation>
     <Site.ChapterContent>
       <Site.Article
@@ -212,99 +212,4 @@ function Root(p: ChapterProperties): JSX.Element {
       </Site.Article>
     </Site.ChapterContent>
   </Site.Chapter>
-}
-
-export interface ChapterNavigationProperties {
-  level: number
-  url: string
-}
-
-export function ChapterNavigation(p: ChapterNavigationProperties): JSX.Element | null {
-  const s = Sitemap.shared
-
-  let l = p.level
-  let e = s.find("/", "url")
-  while (true) {
-    if (!e || l === 0) {
-      break
-    }
-    for (const id of e.children) {
-      const c = s.find(id, "id")
-      if (!c) {
-        continue
-      }
-      let u = ""
-      if (c.type === "group") {
-        const b = s.find(c.parent, "id")
-        if (!b || b.type !== "page") {
-          continue
-        }
-        u = b.url
-      } else if (c.type === "page") {
-        u = c.url
-      } else {
-        // @ts-expect-error
-        throw new Error(`Unexpected entity type: ${c.type}`)
-      }
-      if (p.url.startsWith(u)) {
-        e = c
-        l -= 1
-        break
-      }
-    }
-  }
-
-  if (!e) {
-    return null
-  }
-
-  return <Tree>
-    {e.children.map((id) => {
-      const e = s.find(id, "id")
-      if (!e || e.type !== "page") {
-        return null
-      }
-      return <TreeGroup>
-        <TreeLink href={e.url} active={p.url === e.url}>{e.title}</TreeLink>
-        <Sub e={e} />
-      </TreeGroup>
-    })}
-  </Tree>
-
-  function Sub({e}: {e: SitemapEntity}): JSX.Element | null {
-    return <>{e.children.map((id) => {
-      const e = s.find(id, "id")
-      if (!e) {
-        return null
-      }
-      if (e.type === "group") {
-        if (e.children.length === 0) {
-          return null
-        }
-        const r = s.find(e.parent, "id")
-        if (!r) {
-          return null
-        }
-        if (r.type !== "page") {
-          throw new Error(`Nested group is not supported: ${e.id}`)
-        }
-        const b = s.find(p.url, "url")
-        if (!b) {
-          return null
-        }
-        return <TreeItem expanded={e.children.includes(b.id)}>
-          <TreeLink href="" active={false}>{e.title}</TreeLink>
-          <Sub e={e} />
-        </TreeItem>
-      }
-      if (e.type === "page") {
-        return <TreeItem expanded={p.url.startsWith(e.url)}>
-          <TreeLink href={e.url} active={p.url === e.url} blank={e.data.blank}>{e.title}</TreeLink>
-          {e.children.length !== 0 && <Sub e={e} />}
-        </TreeItem>
-      }
-      // @ts-expect-error
-      throw new Error(`Unexpected entity type: ${e.type}`)
-    })}</>
-  }
 }
