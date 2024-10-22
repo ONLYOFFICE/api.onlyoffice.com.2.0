@@ -360,11 +360,11 @@ function Examples(p: ExamplesProperties): JSX.Element {
   </>
 }
 
-interface ReferenceProperties {
+interface ReferencesProperties {
   references: LibraryDeclaration.Reference[]
 }
 
-function References(p: ReferenceProperties): JSX.Element {
+function References(p: ReferencesProperties): JSX.Element {
   const {references: r} = p
   const {Description, onLink, onRetrieve} = useContext(ctx)
 
@@ -398,6 +398,29 @@ function References(p: ReferenceProperties): JSX.Element {
       </>
     })}
   </SiteGlossary.Glossary>
+}
+
+interface ReferencesItemProperties {
+  reference: LibraryDeclaration.Reference
+}
+
+function ReferencesItem(p: ReferencesItemProperties) {
+  const {reference: r} = p
+  const {Description, onLink, onRetrieve} = useContext(ctx)
+
+  const d = onRetrieve(r)
+  if (!d) {
+    return <></>
+  }
+
+  const w = <></>
+  const n = <></>
+
+  return <>
+    <SiteGlossary.GlossaryTerm>
+      {n}
+    </SiteGlossary.GlossaryTerm>
+  </>
 }
 
 interface ValuesProperties {
