@@ -9,7 +9,7 @@ import {type JSX, h} from "preact"
 // import {DocumentEditorPlayground} from "./main.tsx"
 
 export default {
-  title: "Site/Document Editor Playground",
+  title: "Site Regions / Document Editor Playground",
   tags: ["!dev"],
 } satisfies Meta
 

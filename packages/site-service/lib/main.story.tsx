@@ -12,7 +12,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "Site / Service",
+  title: "Site Composites / Service",
 } satisfies Meta
 
 export const Default: StoryObj = {

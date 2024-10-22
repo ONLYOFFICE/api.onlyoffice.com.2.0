@@ -6,7 +6,7 @@ import {Default as SearchStory} from "../../site-search/lib/main.story.tsx"
 import {Home, HomeHero, HomeIn, HomeLink, HomeLinks, HomePart, HomePreview} from "./main.tsx"
 
 export default {
-  title: "Site/Home",
+  title: "Site Regions / Home",
 } satisfies Meta
 
 export function Default(): JSX.Element {

@@ -12,7 +12,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "UI/Code Listing",
+  title: "UI Foundation / Code Listing",
 } satisfies Meta
 
 export function Default(): JSX.Element {

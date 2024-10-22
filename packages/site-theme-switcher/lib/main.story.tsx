@@ -3,7 +3,7 @@ import {type JSX, h} from "preact"
 import {ThemeSwitcher, ThemeSwitcherOption} from "./main.tsx"
 
 export default {
-  title: "Site/Theme Switcher",
+  title: "Site Patterns / Theme Switcher",
 } satisfies Meta
 
 export function Default(): JSX.Element {

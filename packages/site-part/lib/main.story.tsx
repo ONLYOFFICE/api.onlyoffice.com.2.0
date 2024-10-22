@@ -8,7 +8,7 @@ import {Default as HelpStory} from "../../site-help/lib/main.story.tsx"
 import {Part, PartChapter, PartChapters, PartHelp, PartHero} from "./main.tsx"
 
 export default {
-  title: "Site/Part",
+  title: "Site Regions / Part",
 } satisfies Meta
 
 export function Default(): JSX.Element {

@@ -10,7 +10,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "UI/Form Control",
+  title: "UI Foundation / Form Control",
 } satisfies Meta
 
 export function Default(): JSX.Element {

@@ -4,7 +4,7 @@ import {type JSX, h} from "preact"
 import {CodeEditor} from "./main.tsx"
 
 export default {
-  title: "UI/Code Editor",
+  title: "UI Foundation / Code Editor",
 } satisfies Meta
 
 export function Default(p: ChildrenIncludable): JSX.Element {

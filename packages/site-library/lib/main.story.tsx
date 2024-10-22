@@ -11,7 +11,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "Site / Library",
+  title: "Site Composites / Library",
 } satisfies Meta
 
 export const Default: StoryObj = {
