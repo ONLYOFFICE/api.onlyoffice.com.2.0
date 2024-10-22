@@ -3,10 +3,10 @@
 import {Sitemap, type SitemapEntity} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import * as Site from "@onlyoffice/site-kit"
-import * as Ui from "@onlyoffice/ui-kit"
 import {Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
 import {Tree, TreeGroup, TreeItem, TreeLink} from "../components/tree/tree.tsx"
+import {Breadcrumb} from "./breadcrumb.tsx"
 import {Help} from "./help.tsx"
 import {TableOfContents} from "./table-of-contents.tsx"
 
@@ -307,31 +307,4 @@ export function ChapterNavigation(p: ChapterNavigationProperties): JSX.Element |
       throw new Error(`Unexpected entity type: ${e.type}`)
     })}</>
   }
-}
-
-export interface BreadcrumbProperties {
-  url: string
-}
-
-export function Breadcrumb(p: BreadcrumbProperties): JSX.Element | null {
-  const a: JSX.Element[] = []
-  const s = Sitemap.shared
-
-  let e = s.find(p.url, "url")
-  while (true) {
-    while (e && e.type === "group") {
-      e = s.find(e.parent, "id")
-    }
-    if (!e || e.url === "/") {
-      break
-    }
-    a.unshift(<Ui.BreadcrumbCrumb href={e.url}>{e.title}</Ui.BreadcrumbCrumb>)
-    e = s.find(e.parent, "id")
-  }
-
-  if (a.length === 0) {
-    return null
-  }
-
-  return <Ui.Breadcrumb>{a}</Ui.Breadcrumb>
 }

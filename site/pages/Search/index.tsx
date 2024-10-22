@@ -12,7 +12,8 @@ import {
 } from "@onlyoffice/site-kit"
 import {Content} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
-import {Breadcrumb, ChapterNavigation} from "../../internal/chapter.tsx"
+import {Breadcrumb} from "../../internal/breadcrumb.tsx"
+import {ChapterNavigation} from "../../internal/chapter.tsx"
 
 export function data(): Data {
   return {
