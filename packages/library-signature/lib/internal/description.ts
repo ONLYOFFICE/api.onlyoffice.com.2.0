@@ -169,6 +169,12 @@ export function typeDeclaration(d: Library.TypeDeclaration): Signature {
   a.push(t)
 
   const b = type(d.type)
+  if (!("id" in d.type) && d.type.type !== "function") {
+    t = new TextToken()
+    t.text = " = "
+    a.push(t)
+  }
+
   a.push(...b)
 
   return a

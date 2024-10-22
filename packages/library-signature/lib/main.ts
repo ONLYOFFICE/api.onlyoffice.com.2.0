@@ -62,5 +62,19 @@ export function computeType(u: Type, cb: ComputeCallback): void {
         u.returns.signature = s
       }
     }
+
+    return
+  }
+
+  if (u.type === "object" && u.properties) {
+    for (const p of u.properties) {
+      let s = description.type(p.type)
+      s = normalize(s)
+      cb(s)
+
+      if (s.length !== 0) {
+        p.signature = s
+      }
+    }
   }
 }

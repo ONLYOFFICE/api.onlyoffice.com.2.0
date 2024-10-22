@@ -203,7 +203,13 @@ export function functionType(t: Library.FunctionType): Signature {
   u.text = ")"
   a.push(u)
 
-  if (t.returns) {
+  if (
+    t.returns &&
+    !(
+      !("id" in t.returns.type) &&
+      t.returns.type.type === "void"
+    )
+  ) {
     u = new TextToken()
     u.text = ": "
     a.push(u)
