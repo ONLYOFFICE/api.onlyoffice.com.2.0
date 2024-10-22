@@ -11,7 +11,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "Site / Status",
+  title: "Site Regions / Status",
 } satisfies Meta
 
 export const Default: StoryObj = {

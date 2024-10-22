@@ -11,7 +11,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "UI/Content",
+  title: "UI Foundation / Content",
 } satisfies Meta
 
 export function Default(): JSX.Element {

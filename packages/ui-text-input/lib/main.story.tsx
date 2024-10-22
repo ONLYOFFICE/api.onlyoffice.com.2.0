@@ -12,7 +12,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "UI/Text Input",
+  title: "UI Foundation / Text Input",
 } satisfies Meta
 
 export function Default(): JSX.Element {

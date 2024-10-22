@@ -3,7 +3,7 @@ import {h} from "preact"
 import {Button, type ButtonProperties} from "./main.tsx"
 
 export default {
-  title: "UI / Button",
+  title: "UI Foundation / Button",
 } satisfies Meta
 
 export const Default: StoryObj = {

@@ -4,7 +4,7 @@ import {type JSX, h} from "preact"
 import {Help} from "./main.tsx"
 
 export default {
-  title: "Site/Help",
+  title: "Site Patterns / Help",
 } satisfies Meta
 
 export function Default(): JSX.Element {

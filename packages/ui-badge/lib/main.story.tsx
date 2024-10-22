@@ -3,7 +3,7 @@ import {h} from "preact"
 import {Badge, BadgeCaption, type BadgeProperties} from "./main.tsx"
 
 export default {
-  title: "UI / Badge",
+  title: "UI Foundation / Badge",
 } satisfies Meta
 
 export const Default: StoryObj = {

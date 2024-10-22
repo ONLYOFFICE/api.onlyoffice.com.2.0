@@ -3,7 +3,7 @@ import {type JSX, h} from "preact"
 import {Breadcrumb, BreadcrumbCrumb} from "./main.tsx"
 
 export default {
-  title: "UI/Breadcrumb",
+  title: "UI Foundation / Breadcrumb",
 } satisfies Meta
 
 export function Default(): JSX.Element {

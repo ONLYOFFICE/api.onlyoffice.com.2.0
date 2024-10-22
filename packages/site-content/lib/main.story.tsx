@@ -4,7 +4,7 @@ import {h} from "preact"
 import {Content} from "./main.tsx"
 
 export default {
-  title: "Site / Content",
+  title: "Site Patterns / Content",
 } satisfies Meta
 
 export const Default: StoryObj = {

@@ -13,7 +13,7 @@ import {
 } from "./main.tsx"
 
 export default {
-  title: "Site/Search",
+  title: "Site Patterns / Search",
 } satisfies Meta
 
 export function Default({...props}: SearchContainerProperties): JSX.Element {
