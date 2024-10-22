@@ -20,6 +20,12 @@ export function GlossaryName(p: Elements.SpanProperties): JSX.Element {
   return <Elements.Span {...o} />
 }
 
+export function GlossaryTail(p: Elements.SpanProperties): JSX.Element {
+  const {...o} = p
+  o.class = clsx("glossary__tail", o.class)
+  return <Elements.Span {...o} />
+}
+
 export function GlossaryDetails(p: Elements.DdProperties): JSX.Element {
   const {...o} = p
   o.class = clsx("glossary__details", o.class)
