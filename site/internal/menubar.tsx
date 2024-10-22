@@ -7,27 +7,27 @@ import {Link} from "./link.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
-    globalNavigation?: GlobalNavigationData
+    menubar?: MenubarData
   }
 
   interface EleventyComputed {
-    globalNavigation?(data: Data): GlobalNavigationData | undefined
+    menubar?(data: Data): MenubarData | undefined
   }
 }
 
-export interface GlobalNavigationData {
+export interface MenubarData {
   icon: string
   title: string
   path: string
 }
 
-export class GlobalNavigationDatum implements GlobalNavigationData {
+export class MenubarDatum implements MenubarData {
   icon = ""
   title = ""
   path = ""
 
-  static merge(a: GlobalNavigationData, b: GlobalNavigationData): GlobalNavigationData {
-    const c = new GlobalNavigationDatum()
+  static merge(a: MenubarData, b: MenubarData): MenubarData {
+    const c = new MenubarDatum()
 
     if (b.icon) {
       c.icon = b.icon
@@ -51,11 +51,13 @@ export class GlobalNavigationDatum implements GlobalNavigationData {
   }
 }
 
-export interface GlobalNavigationProperties {
+export {MenubarAccessor} from "@onlyoffice/site-kit"
+
+export interface MenubarProperties {
   current: string
 }
 
-export function GlobalNavigation(p: GlobalNavigationProperties): JSX.Element {
+export function Menubar(p: MenubarProperties): JSX.Element {
   const s = Sitemap.shared
 
   const e = s.find("/", "url")
@@ -94,15 +96,15 @@ export function GlobalNavigation(p: GlobalNavigationProperties): JSX.Element {
                 if (e.type !== "page") {
                   throw new Error(`Entity is not a page: ${id}`)
                 }
-                const n = e.data.globalNavigation
-                if (!n) {
-                  throw new Error(`Global navigation data not found: ${id}`)
+                const m = e.data.menubar
+                if (!m) {
+                  throw new Error(`Menubar data not found: ${id}`)
                 }
                 return <Site.MenubarSubmenuItem>
-                  <Icon src="rich24" name={n.icon} height={24} width={24} />
+                  <Icon src="rich24" name={m.icon} height={24} width={24} />
                   <Site.MenubarSubmenuLink asChild>
-                    <Link href={n.path}>
-                      {n.title}
+                    <Link href={m.path}>
+                      {m.title}
                     </Link>
                   </Site.MenubarSubmenuLink>
                 </Site.MenubarSubmenuItem>

@@ -12,7 +12,8 @@ import {
 } from "@onlyoffice/site-kit"
 import {Content} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
-import {Breadcrumb, ChapterNavigation} from "../../internal/chapter.tsx"
+import {Breadcrumb} from "../../internal/breadcrumb.tsx"
+import {Explorer} from "../../internal/explorer.tsx"
 
 export function data(): Data {
   return {
@@ -35,7 +36,7 @@ export function render({content, ...ctx}: Context): JSX.Element {
           </li>
         </SearchTemplate>
       </SearchContainer>
-      <ChapterNavigation level={0} url="/" />
+      <Explorer level={0} url="/" />
     </SChapterNavigation>
     <ChapterContent>
       <Breadcrumb url={ctx.page.url} />

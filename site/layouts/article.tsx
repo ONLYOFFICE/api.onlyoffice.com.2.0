@@ -1,13 +1,13 @@
 import {type Context, type Data} from "@onlyoffice/eleventy-types"
 import {type JSX, h} from "preact"
-import {Library} from "@/internal/library.tsx"
+import {Article} from "../internal/article.tsx"
 
 export function data(): Data {
   return {
-    layout: "article",
+    layout: "chapter",
   }
 }
 
 export function render(c: Context): JSX.Element {
-  return <Library url={c.page.url} />
+  return <Article url={c.page.url}>{c.content}</Article>
 }

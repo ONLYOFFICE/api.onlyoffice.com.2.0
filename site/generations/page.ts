@@ -3,10 +3,10 @@ import {type Data} from "@onlyoffice/eleventy-types"
 import {cutSuffix} from "@onlyoffice/strings"
 import {slug} from "github-slugger"
 import {type ChapterData, ChapterDatum} from "../internal/chapter.tsx"
-import {type GlobalNavigationData, GlobalNavigationDatum} from "../internal/global-navigation.tsx"
 import {type HelpData, HelpDatum} from "../internal/help.tsx"
 import {type HomeData, HomeDatum} from "../internal/home.tsx"
 import {type LibraryData, LibraryDatum} from "../internal/library.tsx"
+import {type MenubarData, MenubarDatum} from "../internal/menubar.tsx"
 import {type PageData, PageDatum} from "../internal/page.tsx"
 import {type PartData, PartDatum} from "../internal/part.tsx"
 import {type ServiceData, ServiceDatum} from "../internal/service.tsx"
@@ -25,7 +25,7 @@ declare module "@onlyoffice/eleventy-types" {
     items?: unknown[]
 
     defaultSitemap?: SitemapData
-    defaultGlobalNavigation?: GlobalNavigationData
+    defaultMenubar?: MenubarData
     defaultHelp?: HelpData
     defaultLibrary?: LibraryData
     defaultService?: ServiceData
@@ -45,7 +45,7 @@ declare module "@onlyoffice/eleventy-types" {
     items?(data: Data): unknown[] | undefined
 
     defaultSitemap?(data: Data): SitemapData | undefined
-    defaultGlobalNavigation?(data: Data): GlobalNavigationData | undefined
+    defaultMenubar?(data: Data): MenubarData | undefined
     defaultHelp?(data: Data): HelpData | undefined
     defaultLibrary?(data: Data): LibraryData | undefined
     defaultService?(data: Data): ServiceData | undefined
@@ -91,7 +91,7 @@ export function data(): Data {
       return p
     },
 
-    layout: "chapter",
+    layout: "article",
 
     eleventyComputed: {
       title(d) {
@@ -137,20 +137,20 @@ export function data(): Data {
         return m
       },
 
-      globalNavigation(d) {
-        const a = d.defaultGlobalNavigation
+      menubar(d) {
+        const a = d.defaultMenubar
         if (!a) {
           return
         }
-        const b = d.globalNavigation
+        const b = d.menubar
         if (!b) {
           return a
         }
-        return GlobalNavigationDatum.merge(a, b)
+        return MenubarDatum.merge(a, b)
       },
 
-      defaultGlobalNavigation(d) {
-        const m = new GlobalNavigationDatum()
+      defaultMenubar(d) {
+        const m = new MenubarDatum()
         if (d.icon) {
           m.icon = d.icon
         }
