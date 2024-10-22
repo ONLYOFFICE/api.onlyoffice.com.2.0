@@ -1,9 +1,9 @@
 import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {Config} from "@onlyoffice/site-config"
 import * as Site from "@onlyoffice/site-kit"
 import {SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
+import {Footer} from "./footer.tsx"
 import {GlobalNavigation} from "./global-navigation.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
@@ -41,7 +41,6 @@ export interface PageProperties extends ChildrenIncludable {
 }
 
 export function Page(p: PageProperties): JSX.Element {
-  const c = Config.shared
   // const s = Sitemap.shared
 
   // const e = s.find(p.url, "url")
@@ -115,50 +114,7 @@ export function Page(p: PageProperties): JSX.Element {
         </main>
       </Site.PageContent>
       <Site.PageFooter>
-        <Site.Footer>
-          <SrOnly>
-            <h2>Site-wide Links</h2>
-          </SrOnly>
-          <Site.FooterContainer>
-            <Site.FooterNavigation>
-              <h3>Get Information</h3>
-              <Site.FooterList>
-                {[
-                  {title: "Blog for developers", href: "https://www.onlyoffice.com/blog/category/for-developers?from=api"},
-                  {title: "For contributors", href: "https://www.onlyoffice.com/contribute.aspx?from=api"},
-                  {title: "Legal notice", href: "https://www.onlyoffice.com/legalterms.aspx?from=api"},
-                  {title: "Legacy version", href: c.legacyBaseUrl},
-                ].map((o) => <Site.FooterListItem>
-                  <a href={o.href} target="_blank">{o.title}</a>
-                </Site.FooterListItem>)}
-              </Site.FooterList>
-            </Site.FooterNavigation>
-            <Site.FooterNavigation>
-              <h3>Get Help</h3>
-              <Site.FooterList>
-                {[
-                  {title: "Forum", href: "https://forum.onlyoffice.com"},
-                  {title: "Code on GitHub", href: "https://github.com/ONLYOFFICE/"},
-                  {title: "Installation guides", href: "https://helpcenter.onlyoffice.com/installation/docs-developer-index.aspx?from=api"},
-                  {title: "Support contact form", href: "https://www.onlyoffice.com/support-contact-form.aspx?from=api"},
-                ].map((o) => <Site.FooterListItem>
-                  <a href={o.href} target="_blank">{o.title}</a>
-                </Site.FooterListItem>)}
-              </Site.FooterList>
-            </Site.FooterNavigation>
-          </Site.FooterContainer>
-          <Site.FooterThemeSwitcher>
-            <Site.ThemeSwitcher>
-              <Site.ThemeSwitcherOption value="light">Light</Site.ThemeSwitcherOption>
-              <Site.ThemeSwitcherOption value="dark">Dark</Site.ThemeSwitcherOption>
-              <Site.ThemeSwitcherOption value="auto">Auto</Site.ThemeSwitcherOption>
-            </Site.ThemeSwitcher>
-          </Site.FooterThemeSwitcher>
-          <Site.FooterCopyright>
-            <a href="https://onlyoffice.com/">onlyoffice.com</a>
-            <p>© Ascensio System SIA 2024. All right reserved</p>
-          </Site.FooterCopyright>
-        </Site.Footer>
+        <Footer />
       </Site.PageFooter>
     </Site.Page>
   </Site.HeaderAccessor>
