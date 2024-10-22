@@ -1,20 +1,24 @@
 # Change Log
 
-- restructured Plugins and Macros section
-- docbuilder: added the Java builder framework
+- docspace js sdk: storybook link
+- docspace js sdk: added samples
 - docspace api backend: http and curl examples
-- docbuilder: samples link
-- office api: added samples
-- 404 page
-- macros: added replace words in document macro sample
-- macros: adding custom functions
-- plugins: v8.2
-- office api: v8.2
 - docs api: configuring toolbar appearance
 - docs api: users in response after info command
 - docs api: change command address
 - docs api: insert-text in setRequestedDocument
 - docs api: added the Password and PasswordToOpen request parameters to the WOPI conversion API
+- office api: v8.2
+- office api: added samples
+- plugins: v8.2
+- plugins: restructured section
+- macros: added replace words in document macro sample
+- macros: adding custom functions
+- docbuilder: added the Java builder framework
+- docbuilder: fix samples link
+- method redesign
+- 404 page
+- legacy version link
 
 ## 6.1.0
 - docspace js sdk: react component
