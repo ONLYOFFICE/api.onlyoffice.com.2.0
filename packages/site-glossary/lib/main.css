@@ -28,6 +28,10 @@
   }
 }
 
+.glossary__name + .glossary__tail {
+  margin-inline-start: var(--base-size-16);
+}
+
 .glossary__details {
   margin-block-start: var(--base-size-12);
   margin-inline-start: 0;

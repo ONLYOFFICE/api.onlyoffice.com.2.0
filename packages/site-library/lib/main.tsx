@@ -360,44 +360,88 @@ function Examples(p: ExamplesProperties): JSX.Element {
   </>
 }
 
-interface ReferenceProperties {
+interface ReferencesProperties {
   references: LibraryDeclaration.Reference[]
 }
 
-function References(p: ReferenceProperties): JSX.Element {
+function References(p: ReferencesProperties): JSX.Element {
   const {references: r} = p
-  const {Description, onLink, onRetrieve} = useContext(ctx)
 
   return <SiteGlossary.Glossary>
-    {r.map((r) => {
-      const d = onRetrieve(r)
-      if (!d) {
-        return <></>
-      }
-      return <>
-        <SiteGlossary.GlossaryTerm>
-          {d.identifier && <SiteGlossary.GlossaryName>
-            {(() => {
-              const t = new Sig.Reference()
-              t.id = d.id
-              const u = onLink(t)
-              if (!u) {
-                return <>{d.identifier}</>
-              }
-              return <a href={u}>{d.identifier}</a>
-            })()}
-          </SiteGlossary.GlossaryName>}
-          {d.summary && d.summary.signature &&
-            <Signature variant="inline" signature={d.summary.signature} />}
-        </SiteGlossary.GlossaryTerm>
-        <SiteGlossary.GlossaryDetails>
-          {d.summary && d.summary.text && <Description>
-            {d.summary.text}
-          </Description>}
-        </SiteGlossary.GlossaryDetails>
-      </>
-    })}
+    {r.map((r) => <ReferencesItem reference={r} />)}
   </SiteGlossary.Glossary>
+}
+
+interface ReferencesItemProperties {
+  reference: LibraryDeclaration.Reference
+}
+
+function ReferencesItem(p: ReferencesItemProperties): JSX.Element {
+  const {reference: r} = p
+  const {Description, onLink, onRetrieve} = useContext(ctx)
+
+  const y = onRetrieve(r)
+  if (!y) {
+    return <></>
+  }
+
+  let W = (p: ChildrenIncludable): JSX.Element => <>{p.children}</>
+
+  if (
+    !(
+      (
+        y.kind === "constructor" ||
+        y.kind === "event" ||
+        y.kind === "method" ||
+        y.kind === "type"
+      ) &&
+      !("id" in y.type) &&
+      y.type.type === "function"
+    )
+  ) {
+    W = (p) => <SiteGlossary.GlossaryTail>
+      {p.children}
+    </SiteGlossary.GlossaryTail>
+  }
+
+  let n = <></>
+
+  if (y.identifier) {
+    let c = <></>
+
+    const t = new Sig.Reference()
+    t.id = y.id
+
+    const u = onLink(t)
+    if (!u) {
+      c = <>{y.identifier}</>
+    } else {
+      c = <a href={u}>{y.identifier}</a>
+    }
+
+    n = <SiteGlossary.GlossaryName>{c}</SiteGlossary.GlossaryName>
+  }
+
+  let s = <></>
+
+  if (y.summary && y.summary.signature) {
+    s = <Signature variant="inline" signature={y.summary.signature} />
+  }
+
+  let t = <></>
+
+  if (y.summary && y.summary.text) {
+    t = <Description>{y.summary.text}</Description>
+  }
+
+  return <>
+    <SiteGlossary.GlossaryTerm>
+      {n}<W>{s}</W>
+    </SiteGlossary.GlossaryTerm>
+    <SiteGlossary.GlossaryDetails>
+      {t}
+    </SiteGlossary.GlossaryDetails>
+  </>
 }
 
 interface ValuesProperties {
