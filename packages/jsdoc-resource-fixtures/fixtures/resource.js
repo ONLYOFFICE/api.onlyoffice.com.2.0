@@ -68,6 +68,20 @@ class Account {
    * @returns {Cart} - Returns an array of items in the cart.
    */
   getCart() {}
+
+
+  /**
+   * Removes all items from the user's shopping cart.
+   * @summary Clears the shopping cart, removing all items.
+   */
+  removeCart() {}
+
+  /**
+   * Removes all items from the user's favorites list.
+   * @summary Clears the favorites list, removing all saved items.
+   * @returns {void} - This function does not return anything.
+   */
+  removeFavorites() {}
 }
 
 /**
@@ -121,3 +135,16 @@ function updateStock(productId, quantity) {}
  * @returns {boolean} - Returns true if the data is okay.
  */
 function validateData(data, identifiers, maxLimit) {}
+
+/**
+ * @typedef {Object} Order - User order.
+ * @property {number} [invoice=0] - The invoice number.
+ * @property {number} [amount=0] - The amount of money.
+ * @property {string} [address] - The address.
+ */
+const OrderObject = {}
+
+/**
+ * @typedef {string|number} Address - User address.
+ */
+const addressUnion = ""
