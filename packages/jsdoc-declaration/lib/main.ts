@@ -735,6 +735,9 @@ function type(ca: Catharsis): [Library.Type, ...Error[]] {
     case "String":
     case "string":
       return [library.passthroughType(t, ca.name)]
+    case "Void":
+    case "void":
+      return [library.voidType(t)]
     }
 
     if (isNumberLiteral(ca.name)) {
