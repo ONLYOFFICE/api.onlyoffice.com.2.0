@@ -1,7 +1,15 @@
 .badge-group {
+  /*
+  This is a magic number that was derived through practice. It ensures that the
+  height of the Badge component aligns with the height of the Inline Code within
+  the Content component.
+  */
+  /* stylelint-disable-next-line number-max-precision */
+  line-height: 1.031;
+
+  /* stylelint-disable-next-line order/properties-alphabetical-order */
   column-gap: var(--base-size-8);
   display: flex;
   flex-wrap: wrap;
-  line-height: 1.25; /* todo: Why 1.25? This is correct, but why? */
   row-gap: var(--base-size-8);
 }
