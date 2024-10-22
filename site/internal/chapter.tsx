@@ -1,14 +1,8 @@
-// todo: separate chapter with article
-
 import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import * as Site from "@onlyoffice/site-kit"
-import {Fragment, type JSX, createContext, h} from "preact"
-import {useContext} from "preact/hooks"
-import {Breadcrumb} from "./breadcrumb.tsx"
+import {type JSX, h} from "preact"
 import {Explorer} from "./explorer.tsx"
-import {Help} from "./help.tsx"
-import {TableOfContents} from "./table-of-contents.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -56,57 +50,12 @@ export class ChapterDatum implements ChapterData {
   }
 }
 
-class Context {
-  Content: unknown = () => null
-  Sidebar: unknown = () => null
-}
-
-const ctx = createContext(new Context())
-
-export interface ArticleContentProperties {
-  children: unknown
-}
-
-export function ArticleContent(p: ArticleContentProperties): JSX.Element {
-  const c = useContext(ctx)
-  c.Content = p.children
-  return <></>
-}
-
-export interface ArticleSidebarProperties {
-  children: unknown
-}
-
-export function ArticleSidebar(p: ArticleSidebarProperties): JSX.Element {
-  const c = useContext(ctx)
-  c.Sidebar = p.children
-  return <></>
-}
-
 export interface ChapterProperties extends ChildrenIncludable {
   url: string
 }
 
 export function Chapter(p: ChapterProperties): JSX.Element {
   const s = Sitemap.shared
-
-  const ue = s.find(p.url, "url")
-  if (!ue) {
-    throw new Error(`Entity not found: ${p.url}`)
-  }
-  if (ue.type !== "page") {
-    throw new Error(`Current entity is not a page: ${ue.type} (${ue.id})`)
-  }
-
-  return <ctx.Provider value={new Context()}>
-    {ue.data.tempChapterNext && <>{p.children}</>}
-    <Root {...p} />
-  </ctx.Provider>
-}
-
-function Root(p: ChapterProperties): JSX.Element {
-  const s = Sitemap.shared
-  const {Content, Sidebar} = useContext(ctx)
 
   const ue = s.find(p.url, "url")
   if (!ue) {
@@ -176,40 +125,7 @@ function Root(p: ChapterProperties): JSX.Element {
       <Explorer level={2} url={p.url} />
     </Site.ChapterNavigation>
     <Site.ChapterContent>
-      <Site.Article
-        variant={(() => {
-          if (ue.data.tempChapterNext) {
-            return "wide"
-          }
-          return "narrow"
-        })()}
-      >
-        <Site.ArticleBreadcrumb>
-          <Breadcrumb url={p.url} />
-        </Site.ArticleBreadcrumb>
-        {ue.data.tempChapterNext && <Site.ArticleSidebar>
-          <Sidebar />
-        </Site.ArticleSidebar>}
-        <Site.ArticleContent>
-          <Site.SearchHidable>
-            <Site.Content>
-              <h1>{ud.title}</h1>
-              {ue.data.tempChapterNext && <Content />}
-              {!ue.data.tempChapterNext && p.children}
-              {ud.tableOfContents && <TableOfContents url={p.url} depth={1} />}
-            </Site.Content>
-          </Site.SearchHidable>
-          <Site.SearchOutput>
-            <Site.Content>
-              <h1 aria-live="polite"><span data-search-container-counter /> Results</h1>
-              <ol data-search-container-results />
-            </Site.Content>
-          </Site.SearchOutput>
-        </Site.ArticleContent>
-        <Site.ArticleHelp>
-          {ud.help && <Help current={p.url} />}
-        </Site.ArticleHelp>
-      </Site.Article>
+      {p.children}
     </Site.ChapterContent>
   </Site.Chapter>
 }

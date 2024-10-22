@@ -91,7 +91,7 @@ export function data(): Data {
       return p
     },
 
-    layout: "chapter",
+    layout: "article",
 
     eleventyComputed: {
       title(d) {

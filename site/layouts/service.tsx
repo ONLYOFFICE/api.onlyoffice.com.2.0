@@ -4,7 +4,7 @@ import {Service} from "@/internal/service.tsx"
 
 export function data(): Data {
   return {
-    layout: "chapter",
+    layout: "article",
   }
 }
 
