@@ -1,5 +1,5 @@
 ---
-order: -2
+order: -3
 ---
 
 You can upload your own plugins to your server. For the DocSpace Saas solution, only system plugins created by our developers are available.

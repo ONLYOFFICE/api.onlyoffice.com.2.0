@@ -3,6 +3,7 @@ import {type Data} from "@onlyoffice/eleventy-types"
 import {cutSuffix} from "@onlyoffice/strings"
 import {slug} from "github-slugger"
 import {type ChapterData, ChapterDatum} from "../internal/chapter.tsx"
+import {type ExplorerData, ExplorerDatum} from "../internal/explorer.tsx"
 import {type HelpData, HelpDatum} from "../internal/help.tsx"
 import {type HomeData, HomeDatum} from "../internal/home.tsx"
 import {type LibraryData, LibraryDatum} from "../internal/library.tsx"
@@ -18,6 +19,7 @@ declare module "@onlyoffice/eleventy-types" {
 
     icon?: string
     title?: string
+    url?: string
     description?: string
     summary?: string
     blank?: boolean
@@ -26,6 +28,7 @@ declare module "@onlyoffice/eleventy-types" {
 
     defaultSitemap?: SitemapData
     defaultMenubar?: MenubarData
+    defaultExplorer?: ExplorerData
     defaultHelp?: HelpData
     defaultLibrary?: LibraryData
     defaultService?: ServiceData
@@ -38,6 +41,7 @@ declare module "@onlyoffice/eleventy-types" {
   interface EleventyComputed {
     icon?(data: Data): string | undefined
     title?(data: Data): string | undefined
+    url?(data: Data): string | undefined
     description?(data: Data): string | undefined
     summary?(data: Data): string | undefined
     blank?(data: Data): boolean | undefined
@@ -46,6 +50,7 @@ declare module "@onlyoffice/eleventy-types" {
 
     defaultSitemap?(data: Data): SitemapData | undefined
     defaultMenubar?(data: Data): MenubarData | undefined
+    defaultExplorer?(data: Data): ExplorerData | undefined
     defaultHelp?(data: Data): HelpData | undefined
     defaultLibrary?(data: Data): LibraryData | undefined
     defaultService?(data: Data): ServiceData | undefined
@@ -160,6 +165,34 @@ export function data(): Data {
         if (d.page) {
           // Remove the leading dot to pass this path to the Link component.
           m.path = d.page.inputPath.slice(1)
+        }
+        return m
+      },
+
+      explorer(d) {
+        const a = d.defaultExplorer
+        if (!a) {
+          return
+        }
+        const b = d.explorer
+        if (!b) {
+          return a
+        }
+        return ExplorerDatum.merge(a, b)
+      },
+
+      defaultExplorer(d) {
+        const m = new ExplorerDatum()
+        if (d.title) {
+          m.title = d.title
+        }
+        if (d.url) {
+          m.url = d.url
+        } else if (d.page) {
+          m.url = d.page.url
+        }
+        if (d.blank) {
+          m.blank = d.blank
         }
         return m
       },

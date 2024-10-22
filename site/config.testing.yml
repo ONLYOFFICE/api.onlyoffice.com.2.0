@@ -1,5 +1,6 @@
 baseUrl: https://api.teamlab.info/
 legacyBaseUrl: https://legacy-api.teamlab.info/
+storybookUrl: https://storybook.onlyoffice.io/
 
 analytics: false
 robots: false

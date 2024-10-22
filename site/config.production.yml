@@ -1,5 +1,6 @@
 baseUrl: https://api.onlyoffice.com/
 legacyBaseUrl: https://legacy-api.onlyoffice.com/
+storybookUrl: https://storybook.onlyoffice.com/
 
 analytics: true
 robots: true

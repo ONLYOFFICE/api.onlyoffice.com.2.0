@@ -2,6 +2,52 @@ import {Sitemap, type SitemapEntity} from "@onlyoffice/eleventy-sitemap"
 import {Fragment, type JSX, h} from "preact"
 import {Tree, TreeGroup, TreeItem, TreeLink} from "../components/tree/tree.tsx"
 
+declare module "@onlyoffice/eleventy-types" {
+  interface Data {
+    explorer?: ExplorerData
+  }
+
+  interface EleventyComputed {
+    explorer?(data: Data): ExplorerData | undefined
+  }
+}
+
+export interface ExplorerData {
+  title?: string
+  url?: string
+  blank?: boolean
+}
+
+export class ExplorerDatum implements ExplorerData {
+  title = ""
+  url = ""
+  blank = false
+
+  static merge(a: ExplorerData, b: ExplorerData): ExplorerData {
+    const e = new ExplorerDatum()
+
+    if (b.title) {
+      e.title = b.title
+    } else if (a.title) {
+      e.title = a.title
+    }
+
+    if (b.url) {
+      e.url = b.url
+    } else if (a.url) {
+      e.url = a.url
+    }
+
+    if (b.blank) {
+      e.blank = b.blank
+    } else if (a.blank) {
+      e.blank = a.blank
+    }
+
+    return e
+  }
+}
+
 export interface ExplorerProperties {
   level: number
   url: string
@@ -86,8 +132,12 @@ export function Explorer(p: ExplorerProperties): JSX.Element {
         </TreeItem>
       }
       if (e.type === "page") {
+        const x = e.data.explorer
+        if (!x) {
+          throw new Error(`Explorer data not found: ${e.url} (${e.id})`)
+        }
         return <TreeItem expanded={p.url.startsWith(e.url)}>
-          <TreeLink href={e.url} active={p.url === e.url} blank={e.data.blank}>{e.title}</TreeLink>
+          <TreeLink href={x.url} active={p.url === e.url} blank={x.blank}>{e.title}</TreeLink>
           {e.children.length !== 0 && <Sub e={e} />}
         </TreeItem>
       }
