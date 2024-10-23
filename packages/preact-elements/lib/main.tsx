@@ -50,6 +50,9 @@ export const Pre = wrap("pre")
 export type SpanProperties = ElementProperties<"span">
 export const Span = wrap("span")
 
+export type TemplateProperties = ElementProperties<"template">
+export const Template = wrap("template")
+
 export type UlProperties = ElementProperties<"ul">
 export const Ul = wrap("ul")
 
