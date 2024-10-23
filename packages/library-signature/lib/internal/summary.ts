@@ -1,6 +1,5 @@
 import type * as Library from "@onlyoffice/library-declaration"
 import {
-  ParameterToken,
   Reference,
   type Signature,
   StringToken,
@@ -81,9 +80,8 @@ export function methodDeclaration(d: Library.MethodDeclaration): Signature {
 export function propertyDeclaration(d: Library.PropertyDeclaration): Signature {
   const a: Signature = []
 
-  const t = new ParameterToken()
-  t.text = d.identifier
-  a.push(t)
+  const b = type(d.type)
+  a.push(...b)
 
   return a
 }
