@@ -2496,9 +2496,6 @@ importers:
       '@onlyoffice/site-part':
         specifier: workspace:^
         version: link:../site-part
-      '@onlyoffice/site-playground':
-        specifier: workspace:^
-        version: link:../site-playground
       '@onlyoffice/site-search':
         specifier: workspace:^
         version: link:../site-search
@@ -2673,31 +2670,6 @@ importers:
       '@onlyoffice/ui-icons':
         specifier: workspace:^
         version: link:../ui-icons
-      '@onlyoffice/ui-kit':
-        specifier: workspace:^
-        version: link:../ui-kit
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
-
-  packages/site-playground:
-    dependencies:
-      '@onlyoffice/preact-types':
-        specifier: workspace:^
-        version: link:../preact-types
-      preact:
-        specifier: 10.22.0
-        version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit

@@ -29,7 +29,6 @@
     "@onlyoffice/site-menubar": "workspace:^",
     "@onlyoffice/site-page": "workspace:^",
     "@onlyoffice/site-part": "workspace:^",
-    "@onlyoffice/site-playground": "workspace:^",
     "@onlyoffice/site-search": "workspace:^",
     "@onlyoffice/site-service": "workspace:^",
     "@onlyoffice/site-signature": "workspace:^",
