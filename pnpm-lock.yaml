@@ -1574,6 +1574,25 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/preact-template:
+    dependencies:
+      '@onlyoffice/preact-elements':
+        specifier: workspace:^
+        version: link:../preact-elements
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      preact-render-to-string:
+        specifier: 6.4.1
+        version: 6.4.1(preact@10.22.0)
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/preact-types:
     dependencies:
       preact:
