@@ -32,6 +32,16 @@ class Cart {
   processCart(productIds, itemDetails, groupedItems, itemNames, itemQuantities, mixedValues, isActive, retryCount) {}
 }
 
+/**
+ * A user account.
+ * @class
+ * @property {number} id - User id.
+ * @property {boolean} isActive - Is the user active.
+ * @property {Cart} cart - A shopping cart for a user.
+ * @property {Array.<string>|null} purchaseHistory - Purchase history.
+ * @constructor
+ * @public
+ */
 class Account {
   /**
    * A user account.
@@ -61,6 +71,15 @@ class Account {
    * @returns {boolean} - Returns true if the check is successful.
    */
   auditTransactions(accountId, transactions, transactionDetails, categorizedTransactions) {}
+
+  /**
+   * Remote function call.
+   * @summary The call or remote execution of a Remote Function.
+   * @param {number} delay - Time before function call.
+   * @param {Function} func - Called function.
+   * @returns {}
+   */
+  remoteTransaction(delay, func, paramFunc) {}
 
   /**
    * Retrieves the user's shopping cart.
@@ -148,3 +167,8 @@ const OrderObject = {}
  * @typedef {string|number} Address - User address.
  */
 const addressUnion = ""
+
+/**
+ * @typedef {number|number[]|string|string[]|boolean|boolean[]|object|object[]|undefined|null} Types - Types.
+ */
+const typesUnion = ""
