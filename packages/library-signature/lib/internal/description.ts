@@ -153,10 +153,10 @@ export function typeDeclaration(d: Library.TypeDeclaration): Signature {
   let t: Token
 
   t = new KeywordToken()
-  if ("id" in d.type) {
-    t.text += d.type.id
+  if (!("id" in d.type) && d.type.type === "function") {
+    t.text = "function"
   } else {
-    t.text += d.type.type
+    t.text = "type"
   }
   a.push(t)
 
