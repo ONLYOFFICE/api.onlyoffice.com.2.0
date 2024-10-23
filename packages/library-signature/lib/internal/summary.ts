@@ -34,10 +34,6 @@ export function classDeclaration(d: Library.ClassDeclaration): Signature {
   let t: Token
 
   if (d.extends) {
-    t = new TextToken()
-    t.text = " "
-    a.push(t)
-
     for (const e of d.extends) {
       const r = new Reference()
       r.id = e.id
@@ -66,10 +62,6 @@ export function constructorDeclaration(d: Library.ConstructorDeclaration): Signa
 
 export function eventDeclaration(d: Library.EventDeclaration): Signature {
   const a: Signature = []
-
-  const t = new TextToken()
-  t.text = " "
-  a.push(t)
 
   const b = functionType(d.type)
   a.push(...b)
