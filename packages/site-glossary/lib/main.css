@@ -10,7 +10,6 @@
   border-block-start-color: var(--color-border-muted);
   border-block-start-style: solid;
   border-block-start-width: var(--size-border-width-thin);
-  display: flex;
   padding-block-start: var(--base-size-16);
 }
 
