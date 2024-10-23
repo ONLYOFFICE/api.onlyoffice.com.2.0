@@ -32,7 +32,6 @@
     "@onlyoffice/ui-primitives": "workspace:^",
     "@onlyoffice/ui-select": "workspace:^",
     "@onlyoffice/ui-sr-only": "workspace:^",
-    "@onlyoffice/ui-template": "workspace:^",
     "@onlyoffice/ui-text-input": "workspace:^",
     "preact": "10.22.0",
     "typescript": "5.4.5"

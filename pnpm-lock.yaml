@@ -2274,6 +2274,9 @@ importers:
       '@onlyoffice/document-server-utils':
         specifier: workspace:^
         version: link:../document-server-utils
+      '@onlyoffice/preact-template':
+        specifier: workspace:^
+        version: link:../preact-template
       '@onlyoffice/server-client':
         specifier: workspace:^
         version: link:../server-client
@@ -2710,6 +2713,9 @@ importers:
       '@onlyoffice/preact-slots':
         specifier: workspace:^
         version: link:../preact-slots
+      '@onlyoffice/preact-template':
+        specifier: workspace:^
+        version: link:../preact-template
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
@@ -3480,9 +3486,6 @@ importers:
       '@onlyoffice/ui-sr-only':
         specifier: workspace:^
         version: link:../ui-sr-only
-      '@onlyoffice/ui-template':
-        specifier: workspace:^
-        version: link:../ui-template
       '@onlyoffice/ui-text-input':
         specifier: workspace:^
         version: link:../ui-text-input

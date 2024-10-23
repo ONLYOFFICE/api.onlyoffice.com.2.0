@@ -16,6 +16,7 @@
   "dependencies": {
     "@onlyoffice/pagefind-types": "workspace:^",
     "@onlyoffice/preact-slots": "workspace:^",
+    "@onlyoffice/preact-template": "workspace:^",
     "@onlyoffice/preact-types": "workspace:^",
     "@onlyoffice/ui-icons": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",

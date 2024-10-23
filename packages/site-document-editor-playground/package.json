@@ -20,6 +20,7 @@
     "@onlyoffice/document-editor-mirror-html-element": "workspace:^",
     "@onlyoffice/document-server-types": "workspace:^",
     "@onlyoffice/document-server-utils": "workspace:^",
+    "@onlyoffice/preact-template": "workspace:^",
     "@onlyoffice/server-client": "workspace:^",
     "@onlyoffice/site-config": "workspace:^",
     "@onlyoffice/ui-icons": "workspace:^",

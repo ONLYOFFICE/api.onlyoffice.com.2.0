@@ -1,3 +1,4 @@
+import {Template} from "@onlyoffice/preact-template"
 import {
   type EnumRepresentable,
   type PlaygroundConfigurable,
@@ -22,7 +23,6 @@ import {
   SelectListbox,
   SelectOption,
   SrOnly,
-  Template,
   TextInput,
   TextInputControl,
 } from "@onlyoffice/ui-kit"
