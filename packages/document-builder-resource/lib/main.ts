@@ -25,7 +25,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api/word.json",
     },
   },
@@ -35,7 +35,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api/forms.json",
     },
   },
@@ -45,7 +45,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api/slide.json",
     },
   },
@@ -55,7 +55,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api/cell.json",
     },
   },
@@ -66,7 +66,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api-plugins/common.json",
     },
   },
@@ -76,7 +76,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api-plugins/word.json",
     },
   },
@@ -86,7 +86,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api-plugins/forms.json",
     },
   },
@@ -96,7 +96,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api-plugins/slide.json",
     },
   },
@@ -106,7 +106,7 @@ const config = [
     source: {
       owner: "onlyoffice",
       repo: "office-js-api-declarations",
-      branch: "release",
+      branch: "master",
       path: "office-js-api-plugins/cell.json",
     },
   },
