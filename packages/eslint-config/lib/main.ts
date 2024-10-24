@@ -698,6 +698,20 @@ const c: Config = [
   },
 
   {
+    name: "json5",
+
+    files: [
+      "*.json5",
+      "**/*.json5",
+    ],
+
+    rules: {
+      "jsonc/comma-dangle": [e, "always-multiline"],
+      "jsonc/quote-props": [e, "consistent"],
+    },
+  },
+
+  {
     // Based on https://github.com/ota-meshi/eslint-plugin-yml/blob/v1.14.0/src/configs/base.ts
     name: "yaml",
 
@@ -844,6 +858,23 @@ const c: Config = [
       "import/extensions": "off",
 
       "unicorn/filename-case": "off",
+    },
+  },
+
+  {
+    name: "markdown/jsonc",
+
+    files: [
+      "*.md/*.json",
+      "*.md/*.json5",
+      "*.md/*.jsonc",
+      "**/*.md/*.json",
+      "**/*.md/*.json5",
+      "**/*.md/*.jsonc",
+    ],
+
+    rules: {
+      "jsonc/object-property-newline": "off",
     },
   },
 ]
