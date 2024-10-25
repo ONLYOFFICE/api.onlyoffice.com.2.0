@@ -186,6 +186,7 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 5.5
 
+- The `https://documentserver/ConvertService.ashx` address of the [conversion service](../../Additional%20API/Conversion%20API/index.md) is replaced with `https://documentserver/converter`.
 - Added the [editorConfig.customization.spellcheck](../../Usage%20API/Config/Editor/Customization/index.md#spellcheck) field.
 - Added conversion to [pdfa](../../Additional%20API/Conversion%20API/index.md#text-document-file-formats) format.
 - Added the [events.onRequestCompareFile](../../Usage%20API/Config/Events/index.md#onrequestcomparefile) event.

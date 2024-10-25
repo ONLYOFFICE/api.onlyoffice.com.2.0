@@ -69,7 +69,7 @@ Where the **example.com** is the name of the server where **document manager** a
 Sample of request to convert the document:
 
 ``` http
-POST /ConvertService.ashx HTTP/1.1
+POST /converter HTTP/1.1
 Host: documentserver
 Content-Type: application/json
 
