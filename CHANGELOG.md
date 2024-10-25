@@ -1,5 +1,6 @@
 # Change Log
 
+## 6.2.0
 - docs api: change convert address
 - docspace js sdk: storybook link
 - docspace js sdk: added samples
