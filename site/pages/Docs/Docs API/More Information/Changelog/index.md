@@ -25,7 +25,7 @@ The list of changes of ONLYOFFICE Docs API.
 - The *docxf* format is deprecated, please use the *pdf* format to create and edit forms.
 - Changed the [documentType](../../Usage%20API/Config/index.md#documenttype) of the *docxf* and *oform* formats to *pdf*.
 - Added the *roles* field to the [editorConfig.customization.features](../../Usage%20API/Config/Editor/Customization/index.md#features) parameter.
-- Added the [shardkey](../../Get%20Started/How%20It%20Works/index.md#shard-key) parameter to the URL query string when sending requests to the document command service, document conversion service, or document builder service.
+- Added the [shardkey](../../Get%20Started/How%20It%20Works/index.md#shard-key) parameter to the URL query string when sending requests to the ONLYOFFICE Docs API, document command service, document conversion service, or document builder service.
 - Added the [addContextMenuItem](../../Usage%20API/Automation%20API/index.md#addcontextmenuitem), [addToolbarMenuItem](../../Usage%20API/Automation%20API/index.md#addtoolbarmenuitem) and [updateContextMenuItem](../../Usage%20API/Automation%20API/index.md#updatecontextmenuitem) methods to the *Automation API*.
 - Added the [-10 error code](../../Additional%20API/Conversion%20API/index.md#possible-error-codes-and-their-description) to the Conversion API.
 - The [editorConfig.customization.logo](../../Usage%20API/Config/Editor/Customization/index.md#logo) parameter is now available for the mobile editors.

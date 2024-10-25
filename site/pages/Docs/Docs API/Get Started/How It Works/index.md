@@ -50,7 +50,7 @@ Please note, that ONLYOFFICE Docs includes the **document editor**, **document e
 
 ## Shard key
 
-Starting from version 8.1, the *shardkey* parameter is added to the URL *QueryString* when sending requests to the **document command service**, **document conversion service**, or **document builder service**. It is also added to the browser-server interaction during the collaborative editing as the [WOPISrc](../../Using%20WOPI/Overview/index.md#wopisrc) query parameter.
+Starting from version 8.1, the *shardkey* parameter is added to the URL *QueryString* when sending requests to the ONLYOFFICE Docs API, **document command service**, **document conversion service**, or **document builder service**. It is also added to the browser-server interaction during the collaborative editing as the [WOPISrc](../../Using%20WOPI/Overview/index.md#wopisrc) query parameter.
 
 The *key* field is used as a value. For example, *?shardkey=Khirz6zTPdfd7*. If there is no key in the body, you do not have to send it (for example, in the [getForgottenList](../../Additional%20API/Command%20service/getForgottenList/index.md) command).
 

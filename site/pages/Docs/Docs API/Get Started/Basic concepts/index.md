@@ -17,6 +17,8 @@ The API JavaScript file can normally be found in the following editors folder:
 
 Where **documentserver** is the name of the server with the ONLYOFFICE Docs installed.
 
+Starting from version 8.1, it is recommended to add the [shardkey](../../Get%20Started/How%20It%20Works/index.md#shard-key) parameter to the URL *QueryString* with the *key* value in it. For example, *?shardkey=Khirz6zTPdfd7*. This allows you to load balance requests.
+
 The target HTML file where the editors are to be embedded need to have a placeholder *div* tag, where all the information about the editor parameters will be passed:
 
 ``` html
