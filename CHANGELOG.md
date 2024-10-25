@@ -1,5 +1,6 @@
 # Change Log
 
+- docs api: change convert address
 - docspace js sdk: storybook link
 - docspace js sdk: added samples
 - docspace api backend: http and curl examples
