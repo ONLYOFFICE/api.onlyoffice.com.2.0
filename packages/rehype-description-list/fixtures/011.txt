@@ -1,0 +1,41 @@
+modifies an unordered loose list with multiple pairs
+
+---
+
+<ul>
+<li>
+<p>term0</p>
+<ul>
+<li>
+<p>: details0</p>
+</li>
+</ul>
+</li>
+<li>
+<p>term1</p>
+<ul>
+<li>
+<p>: details1</p>
+</li>
+</ul>
+</li>
+</ul>
+
+---
+
+<dl>
+<dt>
+<p>term0</p>
+</dt>
+<dd>
+<p>details0</p>
+</dd>
+<dt>
+<p>term1</p>
+</dt>
+<dd>
+<p>details1</p>
+</dd>
+</dl>
+
+---

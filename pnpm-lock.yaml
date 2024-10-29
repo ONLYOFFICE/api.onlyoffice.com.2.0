@@ -1715,6 +1715,52 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/rehype-description-list:
+    dependencies:
+      '@onlyoffice/hast-util-is-element':
+        specifier: workspace:^
+        version: link:../hast-util-is-element
+      '@onlyoffice/hast-util-is-text':
+        specifier: workspace:^
+        version: link:../hast-util-is-text
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      hastscript:
+        specifier: 8.0.0
+        version: 8.0.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+    devDependencies:
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-parse:
+        specifier: 9.0.0
+        version: 9.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/rehype-metaobject:
     dependencies:
       '@types/hast':

@@ -1,0 +1,23 @@
+does not modify an unordered list without a term
+
+---
+
+<ul>
+<li>
+<ul>
+<li>: details</li>
+</ul>
+</li>
+</ul>
+
+---
+
+<ul>
+<li>
+<ul>
+<li>: details</li>
+</ul>
+</li>
+</ul>
+
+---
