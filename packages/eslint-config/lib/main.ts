@@ -69,7 +69,6 @@ const c: Config = [
 
     rules: {
       "array-callback-return": e,
-      "arrow-body-style": [e, "always"],
       "camelcase": e,
       "constructor-super": e,
       "curly": [e, "all"],
@@ -613,19 +612,6 @@ const c: Config = [
     rules: {
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
-    },
-  },
-
-  {
-    name: "jsx/exceptions",
-
-    files: [
-      "*.tsx",
-      "**/*.tsx",
-    ],
-
-    rules: {
-      "arrow-body-style": [e, "as-needed"],
     },
   },
 
