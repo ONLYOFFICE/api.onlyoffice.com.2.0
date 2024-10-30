@@ -3,6 +3,7 @@ import {type UserConfig} from "@onlyoffice/eleventy-types"
 import {useSuspense} from "@onlyoffice/preact-suspense"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {rehypeClean} from "@onlyoffice/rehype-clean"
+import {rehypeDescriptionList} from "@onlyoffice/rehype-description-list"
 import {rehypeMetaobject} from "@onlyoffice/rehype-metaobject"
 import {rehypeMetastring} from "@onlyoffice/rehype-metastring"
 import {rehypePreact} from "@onlyoffice/rehype-preact"
@@ -77,6 +78,7 @@ function markdown(): MarkdownProcessor {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype, {allowDangerousHtml: true})
+    .use(rehypeDescriptionList)
     .use(rehypeMetastring)
     .use(rehypeRaw)
     .use(rehypeMetaobject)
