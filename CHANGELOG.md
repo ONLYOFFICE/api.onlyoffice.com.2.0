@@ -1,10 +1,10 @@
 # Change Log
 
 ## 6.2.0
-- docs api: change convert address
 - docspace js sdk: storybook link
 - docspace js sdk: added samples
 - docspace api backend: http and curl examples
+- docs api: change convert address
 - docs api: configuring toolbar appearance
 - docs api: users in response after info command
 - docs api: change command address

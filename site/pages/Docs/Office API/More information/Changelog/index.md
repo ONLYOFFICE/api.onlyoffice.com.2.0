@@ -764,12 +764,41 @@ The list of changes for Office JavaScript API.
 - Added the ApiUniColor/GetRGB method to Text document API.
 - Added the ApiColor/GetRGB method to Spreadsheet API.
 
+### Chart series methods
+
+- Added the ApiChart/GetAllSeries method to Text document API.
+- Added the ApiChart/GetChartType method to Text document API.
+- Added the ApiChart/GetSeries method to Text document API.
+- Added the ApiChartSeries class to Text document API.
+- Added the ApiChartSeries/ChangeChartType method to Text document API.
+- Added the ApiChartSeries/GetChartType method to Text document API.
+- Added the ApiChartSeries/GetClassType method to Text document API.
+- Added the ApiChart/GetAllSeries method to Spreadsheet API.
+- Added the ApiChart/GetChartType method to Spreadsheet API.
+- Added the ApiChart/GetSeries method to Spreadsheet API.
+- Added the ApiChartSeries class to Spreadsheet API.
+- Added the ApiChartSeries/ChangeChartType method to Spreadsheet API.
+- Added the ApiChartSeries/GetChartType method to Spreadsheet API.
+- Added the ApiChartSeries/GetClassType method to Spreadsheet API.
+- Added the ApiChart/GetAllSeries method to Presentation API.
+- Added the ApiChart/GetChartType method to Presentation API.
+- Added the ApiChart/GetSeries method to Presentation API.
+- Added the ApiChartSeries class to Presentation API.
+- Added the ApiChartSeries/ChangeChartType method to Presentation API.
+- Added the ApiChartSeries/GetChartType method to Presentation API.
+- Added the ApiChartSeries/GetClassType method to Presentation API.
+- Added the *"comboBarLine"*, *"comboBarLineSecondary"*, *"comboCustom"*, and *"unknown"* available values for the ChartType definition.
+
 ### Other methods
 
 - Added the ApiDocument/GetDocumentInfo method to Text document API.
 - Added the Api/GetDocumentInfo method to Spreadsheet API.
 - Added the ApiPresentation/GetDocumentInfo method to Presentation API.
+- Added the DrawingLockType type to the simple type definitions.
 - Added the *nWidth* and *nHeight* parameters to the ApiPictureForm/SetImage method of Text document API.
+- Removed the *ApiTable/GetNext* method from Text document API.
+- Removed the *ApiTable/GetPrevious* method from Text document API.
+- Removed the *ApiTable/Select* method from Presentation API.
 
 ## Version 8.0
 
@@ -787,6 +816,7 @@ The list of changes for Office JavaScript API.
 - Added the ApiFreezePanes/FreezeColumns method to Spreadsheet API.
 - Added the ApiFreezePanes/FreezeRows method to Spreadsheet API.
 - Added the ApiFreezePanes/GetLocation method to Spreadsheet API.
+- Added the ApiFreezePanes/Unfreeze method to Spreadsheet API.
 - Added the ApiWorksheet/GetFreezePanes method to Spreadsheet API.
 - Added the *FreezePanes* property to the Api object of Spreadsheet API.
 - Added the *FreezePanes* property to the ApiWorksheet object of Spreadsheet API.
