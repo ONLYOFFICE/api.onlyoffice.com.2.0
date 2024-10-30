@@ -1640,6 +1640,9 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
     devDependencies:
+      '@onlyoffice/rehype-metaobject':
+        specifier: workspace:^
+        version: link:../rehype-metaobject
       '@onlyoffice/rehype-metastring':
         specifier: workspace:^
         version: link:../rehype-metastring

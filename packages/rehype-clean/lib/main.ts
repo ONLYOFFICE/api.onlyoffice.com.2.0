@@ -32,6 +32,10 @@ export function rehypeClean(): RehypeCleanTransform {
       if (p.metastring) {
         delete p.metastring
       }
+
+      if (p.metaobject) {
+        delete p.metaobject
+      }
     })
   }
 }
