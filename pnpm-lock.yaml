@@ -3851,6 +3851,9 @@ importers:
       '@onlyoffice/rehype-clean':
         specifier: workspace:^
         version: link:../packages/rehype-clean
+      '@onlyoffice/rehype-metaobject':
+        specifier: workspace:^
+        version: link:../packages/rehype-metaobject
       '@onlyoffice/rehype-metastring':
         specifier: workspace:^
         version: link:../packages/rehype-metastring
