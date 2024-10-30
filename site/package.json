@@ -42,7 +42,6 @@
     "@onlyoffice/eleventy-types": "workspace:^",
     "@onlyoffice/hast-util-eleventy-img": "workspace:^",
     "@onlyoffice/jsdoc-resource-fixtures": "workspace:^",
-    "@onlyoffice/keyed-json": "workspace:^",
     "@onlyoffice/library-declaration": "workspace:^",
     "@onlyoffice/library-resource": "workspace:^",
     "@onlyoffice/node-path": "workspace:^",
