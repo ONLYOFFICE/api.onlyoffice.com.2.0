@@ -919,6 +919,31 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/hast-util-is-element:
+    dependencies:
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/hastscript:
     dependencies:
       '@types/hast':
