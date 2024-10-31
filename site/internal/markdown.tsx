@@ -7,6 +7,7 @@ import {rehypeDescriptionList} from "@onlyoffice/rehype-description-list"
 import {rehypeMetaobject} from "@onlyoffice/rehype-metaobject"
 import {rehypeMetastring} from "@onlyoffice/rehype-metastring"
 import {rehypePreact} from "@onlyoffice/rehype-preact"
+import {rehypeSignature} from "@onlyoffice/rehype-signature"
 import {rehypeStarryNight} from "@onlyoffice/rehype-starry-night"
 import type * as Hast from "hast"
 import type * as Mdast from "mdast"
@@ -24,7 +25,7 @@ import {reporterPretty} from "vfile-reporter-pretty"
 import pack from "../package.json" with {type: "json"}
 import {rehypeDocumentBuilderContainer} from "./document-builder-container.tsx"
 import {rehypeImage} from "./image.tsx"
-import {rehypeLink} from "./link.tsx"
+import {rehypeLink, resolveLink} from "./link.tsx"
 
 export function Markdown(p: ChildrenIncludable): JSX.Element {
   let r: JSX.Element | null = null
@@ -86,6 +87,11 @@ function markdown(): MarkdownProcessor {
     .use(rehypeAutolink, {behavior: "wrap"})
     .use(rehypeLink)
     .use(rehypeImage)
+    .use(rehypeSignature, {
+      onLink(f, t) {
+        return resolveLink(f.path, t.id)
+      },
+    })
     .use(rehypeStarryNight, starryNight)
     .use(rehypeDocumentBuilderContainer)
     .use(rehypeClean)

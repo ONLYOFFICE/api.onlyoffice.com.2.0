@@ -4066,6 +4066,9 @@ importers:
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
+      '@onlyoffice/rehype-signature':
+        specifier: workspace:^
+        version: link:../packages/rehype-signature
       '@onlyoffice/rehype-starry-night':
         specifier: workspace:^
         version: link:../packages/rehype-starry-night
