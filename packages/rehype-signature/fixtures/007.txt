@@ -1,0 +1,13 @@
+creates a signature with yaml language
+
+---
+
+```yaml signature
+- {type: keyword, text: function}
+```
+
+---
+
+<pre class="signature"><code><span class="sg-kw">function</span></code></pre>
+
+---

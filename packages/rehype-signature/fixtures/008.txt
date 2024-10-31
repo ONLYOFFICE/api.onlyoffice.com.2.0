@@ -1,0 +1,13 @@
+creates a signature with custom properties
+
+---
+
+```yml signature.variant="inline"
+- {type: keyword, text: function}
+```
+
+---
+
+<code class="signature signature_variant_inline"><span class="sg-kw">function</span></code>
+
+---

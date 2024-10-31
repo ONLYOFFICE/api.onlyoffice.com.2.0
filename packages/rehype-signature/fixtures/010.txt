@@ -1,0 +1,13 @@
+creates a signature with onLink event
+
+---
+
+```yml signature test.id="#"
+- {id: "#", token: {type: "entity", text: "a"}}
+```
+
+---
+
+<pre class="signature"><code><a href="#"><span class="sg-en">a</span></a></code></pre>
+
+---

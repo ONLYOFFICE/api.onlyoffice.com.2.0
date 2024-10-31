@@ -1851,6 +1851,73 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
 
+  packages/rehype-signature:
+    dependencies:
+      '@onlyoffice/hast-util-is-element':
+        specifier: workspace:^
+        version: link:../hast-util-is-element
+      '@onlyoffice/hast-util-is-text':
+        specifier: workspace:^
+        version: link:../hast-util-is-text
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      '@onlyoffice/signature-hastscript':
+        specifier: workspace:^
+        version: link:../signature-hastscript
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+      vfile:
+        specifier: 6.0.1
+        version: 6.0.1
+      yaml:
+        specifier: 2.4.1
+        version: 2.4.1
+    devDependencies:
+      '@onlyoffice/rehype-metaobject':
+        specifier: workspace:^
+        version: link:../rehype-metaobject
+      '@onlyoffice/rehype-metastring':
+        specifier: workspace:^
+        version: link:../rehype-metastring
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-raw:
+        specifier: 7.0.0
+        version: 7.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      remark-rehype:
+        specifier: 11.1.0
+        version: 11.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/rehype-starry-night:
     dependencies:
       '@types/hast':

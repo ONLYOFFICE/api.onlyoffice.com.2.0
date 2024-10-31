@@ -1,0 +1,13 @@
+creates a signature without onLink event
+
+---
+
+```yml signature
+- {id: "#", token: {type: "entity", text: "a"}}
+```
+
+---
+
+<pre class="signature"><code><span class="sg-en">a</span></code></pre>
+
+---

@@ -1,0 +1,12 @@
+ignores a fenced code block without content
+
+---
+
+```js
+```
+
+---
+
+<pre><code class="language-js"></code></pre>
+
+---
