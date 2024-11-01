@@ -38,7 +38,6 @@ Sub SimpleAddCommentsAndChangeColor()
     Range("A1").ClearComments
     Range("A1").AddComment "This is a comment for A1"
     Range("A1").Interior.Color = RGB(255, 255, 0)
-
 End Sub
 ```
 
