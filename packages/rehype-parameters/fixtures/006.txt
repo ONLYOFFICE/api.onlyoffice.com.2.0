@@ -1,0 +1,24 @@
+creates a list of parameters with badges
+
+---
+
+<parameters>
+
+- t, required, format: f, default: d, example: e
+
+  - : d
+
+</parameters>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">t</span><span class="badge badge_variant_critical">required</span><span class="badge badge_variant_neutral"><span class="badge__caption">format: </span>f</span><span class="badge badge_variant_neutral"><span class="badge__caption">default: </span>d</span><span class="badge badge_variant_neutral"><span class="badge__caption">example: </span>e</span>
+</div>
+</dt>
+<dd class="glossary__details">d</dd>
+</dl>
+
+---

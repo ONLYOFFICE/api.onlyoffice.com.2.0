@@ -1,0 +1,24 @@
+creates a list of parameters with escaped commas in badges
+
+---
+
+<parameters>
+
+- t, format: \\,f\\,f\\,, default: d
+
+  - : d
+
+</parameters>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">t</span><span class="badge badge_variant_neutral"><span class="badge__caption">format: </span>,f,f,</span><span class="badge badge_variant_neutral"><span class="badge__caption">default: </span>d</span>
+</div>
+</dt>
+<dd class="glossary__details">d</dd>
+</dl>
+
+---

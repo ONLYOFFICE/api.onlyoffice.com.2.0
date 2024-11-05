@@ -1,0 +1,28 @@
+creates a list of parameters with a signature and badges
+
+---
+
+<parameters>
+
+- t, required
+
+  ```yml signature.variant="inline"
+  - {type: keyword, text: function}
+  ```
+
+  - : d
+
+</parameters>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">t</span><span class="badge badge_variant_transparent"><code class="signature signature_variant_inline"><span class="sg-kw">function</span></code></span><span class="badge badge_variant_critical">required</span>
+</div>
+</dt>
+<dd class="glossary__details">d</dd>
+</dl>
+
+---

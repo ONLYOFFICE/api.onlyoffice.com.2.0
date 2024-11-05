@@ -1,0 +1,34 @@
+creates a list of parameters with multiple parameters
+
+---
+
+<parameters>
+
+- a
+
+  - : a.d
+
+- b
+
+  - : b.d
+
+</parameters>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">a</span>
+</div>
+</dt>
+<dd class="glossary__details">a.d</dd>
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">b</span>
+</div>
+</dt>
+<dd class="glossary__details">b.d</dd>
+</dl>
+
+---

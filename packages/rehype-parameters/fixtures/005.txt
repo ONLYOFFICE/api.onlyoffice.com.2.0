@@ -1,0 +1,44 @@
+creates a nested list of parameters
+
+---
+
+<parameters>
+
+- a
+
+  - :
+
+    a.d
+
+    <parameters>
+
+    - b
+
+      - : b.d
+
+    </parameters>
+
+</parameters>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">a</span>
+</div>
+</dt>
+<dd class="glossary__details">
+<p>a.d</p>
+<dl class="glossary">
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">b</span>
+</div>
+</dt>
+<dd class="glossary__details">b.d</dd>
+</dl>
+</dd>
+</dl>
+
+---
