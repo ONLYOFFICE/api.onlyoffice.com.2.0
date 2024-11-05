@@ -6,6 +6,7 @@ import {rehypeClean} from "@onlyoffice/rehype-clean"
 import {rehypeDescriptionList} from "@onlyoffice/rehype-description-list"
 import {rehypeMetaobject} from "@onlyoffice/rehype-metaobject"
 import {rehypeMetastring} from "@onlyoffice/rehype-metastring"
+import {rehypeParameters} from "@onlyoffice/rehype-parameters"
 import {rehypePreact} from "@onlyoffice/rehype-preact"
 import {rehypeSignature} from "@onlyoffice/rehype-signature"
 import {rehypeStarryNight} from "@onlyoffice/rehype-starry-night"
@@ -94,6 +95,7 @@ function markdown(): MarkdownProcessor {
     })
     .use(rehypeStarryNight, starryNight)
     .use(rehypeDocumentBuilderContainer)
+    .use(rehypeParameters)
     .use(rehypeClean)
     .use(rehypePreact, {Fragment, jsx, jsxs})
     .freeze() as unknown as MarkdownProcessor

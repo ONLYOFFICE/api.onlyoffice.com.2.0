@@ -4211,6 +4211,9 @@ importers:
       '@onlyoffice/rehype-metastring':
         specifier: workspace:^
         version: link:../packages/rehype-metastring
+      '@onlyoffice/rehype-parameters':
+        specifier: workspace:^
+        version: link:../packages/rehype-parameters
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact

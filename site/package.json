@@ -56,6 +56,7 @@
     "@onlyoffice/rehype-description-list": "workspace:^",
     "@onlyoffice/rehype-metaobject": "workspace:^",
     "@onlyoffice/rehype-metastring": "workspace:^",
+    "@onlyoffice/rehype-parameters": "workspace:^",
     "@onlyoffice/rehype-preact": "workspace:^",
     "@onlyoffice/rehype-signature": "workspace:^",
     "@onlyoffice/rehype-starry-night": "workspace:^",
