@@ -521,6 +521,8 @@ To refresh data by a link to a file which is specified with the event parameters
 
 <img alt="Update values" src="/assets/images/editor/update-values.png" width="400px">
 
+This event also fires when the user runs the [IMPORTRANGE](https://helpcenter.onlyoffice.com/onlyoffice-editors/onlyoffice-spreadsheet-editor/Functions/importrange.aspx?from=api) function. The URL of the source spreadsheet which is used in the *IMPORTRANGE* parameters is passed to the *onRequestReferenceData* event in the *event.data.link* parameter.
+
 Example:
 
 ``` ts
