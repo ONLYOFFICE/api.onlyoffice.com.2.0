@@ -1,0 +1,21 @@
+creates a list of references with a single reference
+
+---
+
+<references>
+
+- [t](.)
+  - : d
+
+</references>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<span class="glossary__name"><a href=".">t</a></span>
+</dt>
+<dd class="glossary__details">d</dd>
+</dl>
+
+---
