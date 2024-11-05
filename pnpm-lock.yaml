@@ -4275,6 +4275,9 @@ importers:
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
+      '@onlyoffice/rehype-references':
+        specifier: workspace:^
+        version: link:../packages/rehype-references
       '@onlyoffice/rehype-signature':
         specifier: workspace:^
         version: link:../packages/rehype-signature
