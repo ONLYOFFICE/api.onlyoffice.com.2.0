@@ -1,0 +1,27 @@
+creates a list of references with multiple references
+
+---
+
+<references>
+
+- [a](.)
+  - : a.d
+- [b](.)
+  - : b.d
+
+</references>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<span class="glossary__name"><a href=".">a</a></span>
+</dt>
+<dd class="glossary__details">a.d</dd>
+<dt class="glossary__term">
+<span class="glossary__name"><a href=".">b</a></span>
+</dt>
+<dd class="glossary__details">b.d</dd>
+</dl>
+
+---

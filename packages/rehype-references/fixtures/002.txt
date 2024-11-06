@@ -1,0 +1,17 @@
+ignores content without a descriptions list
+
+---
+
+<references>
+
+**b**
+
+</references>
+
+---
+
+<references>
+<p><strong>b</strong></p>
+</references>
+
+---

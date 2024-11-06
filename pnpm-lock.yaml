@@ -900,6 +900,31 @@ importers:
 
   packages/eslint-plugin: {}
 
+  packages/glossary-hastscript:
+    dependencies:
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/hast-util-eleventy-img:
     dependencies:
       '@11ty/eleventy-img':
@@ -918,6 +943,90 @@ importers:
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
+
+  packages/hast-util-is-element:
+    dependencies:
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/hast-util-is-text:
+    dependencies:
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/hastscript:
+    dependencies:
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      '@types/unist':
+        specifier: 3.0.3
+        version: 3.0.3
+      hastscript:
+        specifier: 8.0.0
+        version: 8.0.0
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-builder:
+        specifier: 4.0.0
+        version: 4.0.0
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
 
   packages/jq:
     dependencies:
@@ -1075,25 +1184,6 @@ importers:
       tsx:
         specifier: 4.16.5
         version: 4.16.5
-
-  packages/keyed-json:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      c8:
-        specifier: 9.1.0
-        version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      tsx:
-        specifier: 4.16.5
-        version: 4.16.5
-      uvu:
-        specifier: 0.5.6
-        version: 0.5.6
 
   packages/library-declaration:
     dependencies:
@@ -1640,12 +1730,110 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
     devDependencies:
+      '@onlyoffice/rehype-metaobject':
+        specifier: workspace:^
+        version: link:../rehype-metaobject
       '@onlyoffice/rehype-metastring':
         specifier: workspace:^
         version: link:../rehype-metastring
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
+
+  packages/rehype-description-list:
+    dependencies:
+      '@onlyoffice/hast-util-is-element':
+        specifier: workspace:^
+        version: link:../hast-util-is-element
+      '@onlyoffice/hast-util-is-text':
+        specifier: workspace:^
+        version: link:../hast-util-is-text
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      hastscript:
+        specifier: 8.0.0
+        version: 8.0.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+    devDependencies:
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-parse:
+        specifier: 9.0.0
+        version: 9.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/rehype-metaobject:
+    dependencies:
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      json5:
+        specifier: 2.2.3
+        version: 2.2.3
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+    devDependencies:
+      '@onlyoffice/rehype-metastring':
+        specifier: workspace:^
+        version: link:../rehype-metastring
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-raw:
+        specifier: 7.0.0
+        version: 7.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      remark-rehype:
+        specifier: 11.1.0
+        version: 11.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
 
   packages/rehype-metastring:
     dependencies:
@@ -1665,6 +1853,79 @@ importers:
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
+
+  packages/rehype-parameters:
+    dependencies:
+      '@onlyoffice/glossary-hastscript':
+        specifier: workspace:^
+        version: link:../glossary-hastscript
+      '@onlyoffice/hast-util-is-element':
+        specifier: workspace:^
+        version: link:../hast-util-is-element
+      '@onlyoffice/hast-util-is-text':
+        specifier: workspace:^
+        version: link:../hast-util-is-text
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@onlyoffice/ui-badge-group-hastscript':
+        specifier: workspace:^
+        version: link:../ui-badge-group-hastscript
+      '@onlyoffice/ui-badge-hastscript':
+        specifier: workspace:^
+        version: link:../ui-badge-hastscript
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+    devDependencies:
+      '@onlyoffice/rehype-description-list':
+        specifier: workspace:^
+        version: link:../rehype-description-list
+      '@onlyoffice/rehype-metaobject':
+        specifier: workspace:^
+        version: link:../rehype-metaobject
+      '@onlyoffice/rehype-metastring':
+        specifier: workspace:^
+        version: link:../rehype-metastring
+      '@onlyoffice/rehype-signature':
+        specifier: workspace:^
+        version: link:../rehype-signature
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-parse:
+        specifier: 9.0.0
+        version: 9.0.0
+      rehype-raw:
+        specifier: 7.0.0
+        version: 7.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      remark-rehype:
+        specifier: 11.1.0
+        version: 11.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
 
   packages/rehype-preact:
     dependencies:
@@ -1687,6 +1948,131 @@ importers:
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
+
+  packages/rehype-references:
+    dependencies:
+      '@onlyoffice/glossary-hastscript':
+        specifier: workspace:^
+        version: link:../glossary-hastscript
+      '@onlyoffice/hast-util-is-element':
+        specifier: workspace:^
+        version: link:../hast-util-is-element
+      '@onlyoffice/hast-util-is-text':
+        specifier: workspace:^
+        version: link:../hast-util-is-text
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+    devDependencies:
+      '@onlyoffice/rehype-description-list':
+        specifier: workspace:^
+        version: link:../rehype-description-list
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-parse:
+        specifier: 9.0.0
+        version: 9.0.0
+      rehype-raw:
+        specifier: 7.0.0
+        version: 7.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      remark-rehype:
+        specifier: 11.1.0
+        version: 11.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/rehype-signature:
+    dependencies:
+      '@onlyoffice/hast-util-is-element':
+        specifier: workspace:^
+        version: link:../hast-util-is-element
+      '@onlyoffice/hast-util-is-text':
+        specifier: workspace:^
+        version: link:../hast-util-is-text
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      '@onlyoffice/signature-hastscript':
+        specifier: workspace:^
+        version: link:../signature-hastscript
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+      vfile:
+        specifier: 6.0.1
+        version: 6.0.1
+      yaml:
+        specifier: 2.4.1
+        version: 2.4.1
+    devDependencies:
+      '@onlyoffice/rehype-metaobject':
+        specifier: workspace:^
+        version: link:../rehype-metaobject
+      '@onlyoffice/rehype-metastring':
+        specifier: workspace:^
+        version: link:../rehype-metastring
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-raw:
+        specifier: 7.0.0
+        version: 7.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      remark-rehype:
+        specifier: 11.1.0
+        version: 11.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
 
   packages/rehype-starry-night:
     dependencies:
@@ -2106,6 +2492,34 @@ importers:
 
   packages/signature:
     dependencies:
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/signature-hastscript:
+    dependencies:
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -3212,6 +3626,56 @@ importers:
         specifier: 5.1.6
         version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
 
+  packages/ui-badge-group-hastscript:
+    dependencies:
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/ui-badge-hastscript:
+    dependencies:
+      '@onlyoffice/hastscript':
+        specifier: workspace:^
+        version: link:../hastscript
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/ui-base: {}
 
   packages/ui-breadcrumb:
@@ -3763,9 +4227,6 @@ importers:
       '@onlyoffice/jsdoc-resource-fixtures':
         specifier: workspace:^
         version: link:../packages/jsdoc-resource-fixtures
-      '@onlyoffice/keyed-json':
-        specifier: workspace:^
-        version: link:../packages/keyed-json
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../packages/library-declaration
@@ -3799,12 +4260,27 @@ importers:
       '@onlyoffice/rehype-clean':
         specifier: workspace:^
         version: link:../packages/rehype-clean
+      '@onlyoffice/rehype-description-list':
+        specifier: workspace:^
+        version: link:../packages/rehype-description-list
+      '@onlyoffice/rehype-metaobject':
+        specifier: workspace:^
+        version: link:../packages/rehype-metaobject
       '@onlyoffice/rehype-metastring':
         specifier: workspace:^
         version: link:../packages/rehype-metastring
+      '@onlyoffice/rehype-parameters':
+        specifier: workspace:^
+        version: link:../packages/rehype-parameters
       '@onlyoffice/rehype-preact':
         specifier: workspace:^
         version: link:../packages/rehype-preact
+      '@onlyoffice/rehype-references':
+        specifier: workspace:^
+        version: link:../packages/rehype-references
+      '@onlyoffice/rehype-signature':
+        specifier: workspace:^
+        version: link:../packages/rehype-signature
       '@onlyoffice/rehype-starry-night':
         specifier: workspace:^
         version: link:../packages/rehype-starry-night
@@ -10691,6 +11167,9 @@ packages:
   unique-string@2.0.0:
     resolution: {integrity: sha512-uNaeirEPvpZWSgzwsPGtU2zVSTrn/8L5q/IexZmH0eH6SA73CmAA5U4GwORTxQAZs95TAXLNqeLoPPNO5gZfWg==}
     engines: {node: '>=8'}
+
+  unist-builder@4.0.0:
+    resolution: {integrity: sha512-wmRFnH+BLpZnTKpc5L7O67Kac89s9HMrtELpnNaE6TAobq5DTZZs5YaTQfAZBA9bFPECx2uVAPO31c+GVug8mg==}
 
   unist-util-find-after@5.0.0:
     resolution: {integrity: sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==}
@@ -19503,6 +19982,10 @@ snapshots:
   unique-string@2.0.0:
     dependencies:
       crypto-random-string: 2.0.0
+
+  unist-builder@4.0.0:
+    dependencies:
+      '@types/unist': 3.0.3
 
   unist-util-find-after@5.0.0:
     dependencies:

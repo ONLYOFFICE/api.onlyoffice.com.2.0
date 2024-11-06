@@ -1,0 +1,15 @@
+does not modify an unordered tight list with a single item
+
+---
+
+<ul>
+<li>term</li>
+</ul>
+
+---
+
+<ul>
+<li>term</li>
+</ul>
+
+---

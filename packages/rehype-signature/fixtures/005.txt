@@ -1,0 +1,14 @@
+ignores a fenced code block with unsupported language
+
+---
+
+```js signature
+[{type: keyword, text: function}]
+```
+
+---
+
+<pre><code class="language-js" metastring="signature" metaobject="[object Object]">[{type: keyword, text: function}]
+</code></pre>
+
+---

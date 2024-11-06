@@ -1,0 +1,14 @@
+ignores empty content
+
+---
+
+<references>
+
+</references>
+
+---
+
+<references>
+</references>
+
+---

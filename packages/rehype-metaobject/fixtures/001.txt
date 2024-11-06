@@ -1,0 +1,12 @@
+does not populate the metaobject if the metastring is not present
+
+---
+
+```js
+```
+
+---
+
+
+
+---

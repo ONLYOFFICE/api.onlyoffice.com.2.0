@@ -27,7 +27,7 @@ export function Link(p: LinkProperties): JSX.Element {
     throw new TypeError("The 'href' attribute must be a string.")
   }
 
-  p.href = resolve(p.file, p.href)
+  p.href = resolveLink(p.file, p.href)
 
   return <a {...p} />
 }
@@ -52,12 +52,12 @@ export function rehypeLink(): RehypeLinkTransform {
         throw new TypeError("The 'href' attribute must be a string.")
       }
 
-      n.properties.href = resolve(f.path, p.href)
+      n.properties.href = resolveLink(f.path, p.href)
     })
   }
 }
 
-function resolve(a: string, b: string): string {
+export function resolveLink(a: string, b: string): string {
   const s = Sitemap.shared
 
   if (URL.canParse(b)) {

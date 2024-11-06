@@ -93,6 +93,7 @@ export function remarkConfig(): Preset {
           "ini",
           "java",
           "json",
+          "json5",
           "kt",         // kotlin,
           "php",
           "ps1",        // powershell,

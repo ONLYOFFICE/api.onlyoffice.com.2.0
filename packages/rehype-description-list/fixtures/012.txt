@@ -1,0 +1,26 @@
+modifies an unordered list with a content in the details
+
+---
+
+<ul>
+<li>term
+<ul>
+<li>
+<p>: details</p>
+<p>more details</p>
+</li>
+</ul>
+</li>
+</ul>
+
+---
+
+<dl>
+<dt>term</dt>
+<dd>
+<p>details</p>
+<p>more details</p>
+</dd>
+</dl>
+
+---

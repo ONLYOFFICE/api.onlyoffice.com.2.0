@@ -1,0 +1,14 @@
+ignores a fenced code block without properties
+
+---
+
+```yml
+- {type: keyword, text: function}
+```
+
+---
+
+<pre><code class="language-yml">- {type: keyword, text: function}
+</code></pre>
+
+---

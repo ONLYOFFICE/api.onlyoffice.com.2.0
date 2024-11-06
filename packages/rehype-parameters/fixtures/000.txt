@@ -1,0 +1,9 @@
+ignores an empty document
+
+---
+
+
+---
+
+
+---

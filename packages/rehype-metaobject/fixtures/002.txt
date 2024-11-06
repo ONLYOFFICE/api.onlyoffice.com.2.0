@@ -1,0 +1,16 @@
+populates the metaobject
+
+---
+
+```js o={p: "v"}
+```
+
+---
+
+{
+  "o": {
+    "p": "v"
+  }
+}
+
+---

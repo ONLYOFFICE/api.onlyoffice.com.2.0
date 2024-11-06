@@ -1,0 +1,20 @@
+modifies an unordered tight list with a single pair
+
+---
+
+<ul>
+<li>term
+<ul>
+<li>: details</li>
+</ul>
+</li>
+</ul>
+
+---
+
+<dl>
+<dt>term</dt>
+<dd>details</dd>
+</dl>
+
+---

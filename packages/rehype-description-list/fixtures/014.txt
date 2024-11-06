@@ -1,0 +1,25 @@
+modifies an unordered loose list with a short details
+todo: this test case is invalid
+
+---
+
+<ul>
+<li>term
+<ul>
+<li>
+<p>:</p>
+</li>
+</ul>
+</li>
+</ul>
+
+---
+
+<dl>
+<dt>term</dt>
+<dd>
+
+</dd>
+</dl>
+
+---

@@ -1,0 +1,24 @@
+creates a list of parameters with a single parameter
+
+---
+
+<parameters>
+
+- t
+
+  - : d
+
+</parameters>
+
+---
+
+<dl class="glossary">
+<dt class="glossary__term">
+<div class="badge-group">
+<span class="badge badge_variant_calm">t</span>
+</div>
+</dt>
+<dd class="glossary__details">d</dd>
+</dl>
+
+---

@@ -1,0 +1,12 @@
+ignores an empty fenced code block
+
+---
+
+```
+```
+
+---
+
+<pre><code></code></pre>
+
+---
