@@ -194,7 +194,10 @@ const config = {
       macros: true,
       macrosMode: "warn",
       mentionShare: true,
-      mobileForceView: true,
+      mobile: {
+        forceView: true,
+        standardView: false,
+      },
       plugins: true,
       review: {
         hideReviewDisplay: false,

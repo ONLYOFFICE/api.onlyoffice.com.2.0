@@ -29,7 +29,7 @@ The customization section allows to customize the editor interface so that it lo
 - [macros](#macros)
 - [macrosMode](#macrosmode)
 - [mentionShare](#mentionshare)
-- [mobileForceView](#mobileforceview)
+- [mobile](#mobile)
 - [plugins](#plugins)
 - [review](#review)
 - [reviewDisplay](#reviewdisplay)
@@ -45,7 +45,7 @@ The customization section allows to customize the editor interface so that it lo
 - [unit](#unit)
 - [zoom](#zoom)
 
-> Please note that only the following parameters are available for the mobile editors: [close](#close), [feedback](#feedback), [goback](#goback), [help](#help), [logo](#logo), [macrosMode](#macrosmode), [mobileForceView](#mobileforceview).
+> Please note that only the following parameters are available for the mobile editors: [close](#close), [feedback](#feedback), [goback](#goback), [help](#help), [logo](#logo), [macrosMode](#macrosmode), [mobile](#mobile).
 
 ## about
 
@@ -1104,6 +1104,39 @@ Example: true
 
 <img alt="Mention share" src="/assets/images/editor/mentionShare.png" width="379px">
 
+## mobile
+
+Defines the mobile document editor settings.
+
+Type: object
+
+Example:
+
+``` ts
+const mobile = {
+  forceView: true,
+  standardView: false,
+}
+```
+
+> Please note that this parameter is only available for the mobile editors.
+
+### mobile.forceView
+
+Defines whether the view mode is enabled on launch in the mobile document editor. The default value is **true**.
+
+Type: boolean
+
+Example: true
+
+### mobile.standardView
+
+Defines whether the editor will be opened in **Standard view** instead of **Mobile view**. The default value is **false**.
+
+Type: boolean
+
+Example: false
+
 ## mobileForceView
 
 Defines if the mobile document editor is opened in the view/edit mode on launch. The default value is **true**.
@@ -1113,6 +1146,8 @@ Type: boolean
 Example: true
 
 > Please note that this parameter is only available for the mobile editors.
+
+> Deprecated since version 8.2. Please use the [mobile](#mobile) parameter instead.
 
 ## plugins
 
@@ -1472,7 +1507,10 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
       macros: true,
       macrosMode: "warn",
       mentionShare: true,
-      mobileForceView: true,
+      mobile: {
+        forceView: true,
+        standardView: false,
+      },
       plugins: true,
       review: {
         hideReviewDisplay: false,
