@@ -46,6 +46,7 @@ function main(): void {
           n === "async-transform" ||
           n === "caller-position" ||
           n === "combobox-container-html-element" ||
+          n === "command" ||
           n === "console" ||
           n === "document-builder-hast-element" ||
           n === "document-editor-code-sample" ||
