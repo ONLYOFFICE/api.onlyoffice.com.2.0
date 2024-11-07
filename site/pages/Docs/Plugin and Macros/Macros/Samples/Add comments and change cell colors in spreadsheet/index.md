@@ -16,11 +16,11 @@ Adds comments to the cells in the selection and can also change the background c
   var oRange = Api.GetSelection();
   oRange.ForEach(function (range) {
     var sValue = range.GetValue();
-    if (sValue > 10000000) {
-      range.AddComment("The value is bigger than 10000000.");
+    if (sValue > 100) {
+      range.AddComment("The value is bigger than 100.");
       range.SetFillColor(Api.CreateColorFromRGB(255, 213, 191));
     } else {
-      range.AddComment("The value is less than 10000000.");
+      range.AddComment("The value is less than 100.");
       range.SetFillColor(Api.CreateColorFromRGB(204, 255, 255));
     }
   });
