@@ -38,6 +38,14 @@ export function mergeConfig(
     c.document = b.document
   }
 
+  if (a.documentType && b.documentType) {
+    c.documentType = b.documentType
+  } else if (a.documentType) {
+    c.documentType = a.documentType
+  } else if (b.documentType) {
+    c.documentType = b.documentType
+  }
+
   if (a.editorConfig && b.editorConfig) {
     c.editorConfig = mergeConfigEditorConfig(a.editorConfig, b.editorConfig)
   } else if (a.editorConfig) {
