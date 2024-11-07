@@ -1,6 +1,6 @@
 # Change Log
 
-- docs api: the editorConfig.customization.mobileForceView parameter is deprecated, please use the editorConfig.customization.mobile parameter instead
+- docs api: the editorConfig.customization.mobileForceView parameter is deprecated, please use the editorConfig.customization.mobile parameter instead
 
 ## 6.2.0
 - docspace js sdk: storybook link

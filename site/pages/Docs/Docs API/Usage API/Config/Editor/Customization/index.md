@@ -1123,7 +1123,7 @@ const mobile = {
 
 ### mobile.forceView
 
-Defines whether the view mode is enabled on launch in the mobile document editor. The default value is **true**.
+Defines whether the view mode is enabled on launch in the mobile document editor. The default value is **true**.
 
 Type: boolean
 
@@ -1131,7 +1131,7 @@ Example: true
 
 ### mobile.standardView
 
-Defines whether the editor will be opened in **Standard view** instead of **Mobile view**. The default value is **false**.
+Defines whether the editor will be opened in **Standard view** instead of **Mobile view**. The default value is **false**.
 
 Type: boolean
 
