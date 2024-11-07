@@ -1306,6 +1306,43 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/mdast-util-first-sentence:
+    dependencies:
+      '@onlyoffice/mdast-util-is-node':
+        specifier: workspace:^
+        version: link:../mdast-util-is-node
+      '@types/mdast':
+        specifier: 4.0.3
+        version: 4.0.3
+      mdast-util-to-string:
+        specifier: 4.0.0
+        version: 4.0.0
+      sentence-splitter:
+        specifier: 5.0.0
+        version: 5.0.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      mdast-util-from-markdown:
+        specifier: 2.0.0
+        version: 2.0.0
+      mdast-util-to-markdown:
+        specifier: 2.1.0
+        version: 2.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/mdast-util-is-node:
     dependencies:
       '@types/mdast':
