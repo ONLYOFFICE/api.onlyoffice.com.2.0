@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/markdown",
+  "name": "@onlyoffice/mdast-util-is-node",
   "type": "module",
   "private": true,
   "main": "lib/main.ts",
@@ -11,13 +11,7 @@
   },
   "dependencies": {
     "@types/mdast": "4.0.3",
-    "mdast-util-from-markdown": "2.0.0",
-    "mdast-util-to-markdown": "2.1.0",
-    "mdast-util-to-string": "4.0.0",
-    "sentence-splitter": "5.0.0",
-    "typescript": "5.4.5",
-    "unist-util-remove": "4.0.0",
-    "unist-util-select": "5.1.0"
+    "typescript": "5.4.5"
   },
   "devDependencies": {
     "c8": "9.1.0",
