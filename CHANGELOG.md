@@ -1,5 +1,7 @@
 # Change Log
 
+- docs api: restructured the Get Started section
+
 ## 6.2.0
 - docspace js sdk: storybook link
 - docspace js sdk: added samples
