@@ -124,6 +124,12 @@ In this example we are replacing words in the text editor.
 
 [More](Replace%20words%20in%20document/index.md)
 
+## Add comments and change cell colors in spreadsheet
+
+In this example we are adding comments and changing the background colors of selected cells.
+
+[More](Add%20comments%20and%20change%20cell%20colors%20in%20spreadsheet/index.md)
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)

@@ -21,9 +21,6 @@ jobs:
 
     - name: Setup mise
       uses: jdx/mise-action@v2
-      env:
-        MISE_HTTP_TIMEOUT: 120s
-        MISE_VERBOSE: true
 
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile

@@ -1092,9 +1092,12 @@ importers:
       '@onlyoffice/library-signature':
         specifier: workspace:^
         version: link:../library-signature
-      '@onlyoffice/markdown':
+      '@onlyoffice/mdast-util-first-sentence':
         specifier: workspace:^
-        version: link:../markdown
+        version: link:../mdast-util-first-sentence
+      '@onlyoffice/mdast-util-select-section':
+        specifier: workspace:^
+        version: link:../mdast-util-select-section
       '@onlyoffice/signature':
         specifier: workspace:^
         version: link:../signature
@@ -1266,17 +1269,14 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
-  packages/markdown:
+  packages/mdast-util-first-sentence:
     dependencies:
+      '@onlyoffice/mdast-util-is-node':
+        specifier: workspace:^
+        version: link:../mdast-util-is-node
       '@types/mdast':
         specifier: 4.0.3
         version: 4.0.3
-      mdast-util-from-markdown:
-        specifier: 2.0.0
-        version: 2.0.0
-      mdast-util-to-markdown:
-        specifier: 2.1.0
-        version: 2.1.0
       mdast-util-to-string:
         specifier: 4.0.0
         version: 4.0.0
@@ -1286,16 +1286,72 @@ importers:
       typescript:
         specifier: 5.4.5
         version: 5.4.5
-      unist-util-remove:
-        specifier: 4.0.0
-        version: 4.0.0
-      unist-util-select:
-        specifier: 5.1.0
-        version: 5.1.0
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
+      mdast-util-from-markdown:
+        specifier: 2.0.0
+        version: 2.0.0
+      mdast-util-to-markdown:
+        specifier: 2.1.0
+        version: 2.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/mdast-util-is-node:
+    dependencies:
+      '@types/mdast':
+        specifier: 4.0.3
+        version: 4.0.3
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/mdast-util-select-section:
+    dependencies:
+      '@onlyoffice/mdast-util-is-node':
+        specifier: workspace:^
+        version: link:../mdast-util-is-node
+      '@types/mdast':
+        specifier: 4.0.3
+        version: 4.0.3
+      mdast-util-to-string:
+        specifier: 4.0.0
+        version: 4.0.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      mdast-util-from-markdown:
+        specifier: 2.0.0
+        version: 2.0.0
+      mdast-util-to-markdown:
+        specifier: 2.1.0
+        version: 2.1.0
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -11186,9 +11242,6 @@ packages:
   unist-util-remove-position@5.0.0:
     resolution: {integrity: sha512-Hp5Kh3wLxv0PHj9m2yZhhLt58KzPtEYKQQ4yxfYFEO7EvHwzyDYnduhHnY1mDxoqr7VUwVuHXk9RXKIiYS1N8Q==}
 
-  unist-util-remove@4.0.0:
-    resolution: {integrity: sha512-b4gokeGId57UVRX/eVKej5gXqGlc9+trkORhFJpu9raqZkZhU0zm8Doi05+HaiBsMEIJowL+2WtQ5ItjsngPXg==}
-
   unist-util-select@5.1.0:
     resolution: {integrity: sha512-4A5mfokSHG/rNQ4g7gSbdEs+H586xyd24sdJqF1IWamqrLHvYb+DH48fzxowyOhOfK7YSqX+XlCojAyuuyyT2A==}
 
@@ -20008,12 +20061,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-visit: 5.0.0
-
-  unist-util-remove@4.0.0:
-    dependencies:
-      '@types/unist': 3.0.3
-      unist-util-is: 6.0.0
-      unist-util-visit-parents: 6.0.1
 
   unist-util-select@5.1.0:
     dependencies:

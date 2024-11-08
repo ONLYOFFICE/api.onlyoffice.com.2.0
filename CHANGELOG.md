@@ -1,6 +1,7 @@
 # Change Log
 
 - docs api: restructured the Get Started section
+- docs api: the editorConfig.customization.mobileForceView parameter is deprecated, please use the editorConfig.customization.mobile parameter instead
 
 ## 6.2.0
 - docspace js sdk: storybook link
@@ -23,6 +24,7 @@
 - method redesign
 - 404 page
 - legacy version link
+- macros: added add comments and change cell colors in spreadsheet macro sample
 
 ## 6.1.0
 - docspace js sdk: react component
