@@ -6,7 +6,7 @@ You can debug any Document Builder [component](../../Get%20Started/Overview/inde
 
 ## Executing from a browser (for plugins and macros)
 
-1. Open the **Plugins** tab and click **Macros**.
+1. Open the **View** tab and click **Macros**.
 
 2. Use the **debugger** command in your script:
 

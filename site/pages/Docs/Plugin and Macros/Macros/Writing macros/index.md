@@ -5,7 +5,7 @@ order: -5
 Now that you know how macros work, try to write your own macro. We have a table and need to color the alternate table rows (odd will be colored green, even will become red). The table contains 200 rows and columns from **A** to **S**. It would take a lot of time to do that manually. So, using macros will be the best solution for this problem.
 
 1. Open ONLYOFFICE editors and create a new spreadsheet.
-2. Now open the **Plugins** tab and select **Macros**. The macros window will pop up. You will be presented with the basic function wrapper which will allow you to enter the necessary code:
+2. Now open the **View** tab and select **Macros**. The macros window will pop up. You will be presented with the basic function wrapper which will allow you to enter the necessary code:
 
 <!-- This code is related to macros. -->
 

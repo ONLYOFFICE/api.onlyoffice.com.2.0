@@ -4,7 +4,7 @@ order: -4
 
 Starting from version 8.1, you can add custom functions to the spreadsheets using the **Macros** plugin:
 
-1. Open the **Plugins** tab and select **Macros**. The macros window will pop up.
+1. Open the **View** tab and select **Macros**. The macros window will pop up.
 2. In the **Custom functions** section, click ![Plus icon](/assets/images/plugins/plus.svg). You will be presented with the custom function template:
 
 <!-- This code is related to macros. -->
