@@ -45,11 +45,11 @@ Presence: optional
 
 The verification method when receiving a JWT token. To receive the token, you will need to send the SHA key. Check **Allow public client (PKCE)** to use PKCE.
 
-PKCE ([RFC 7636](https://www.rfc-editor.org/rfc/rfc7636)) is an extension to the [Authorization Code flow](https://oauth.net/2/grant-types/authorization-code/) to prevent CSRF and authorization code injection attacks.
+PKCE ([RFC 7636](https://www.rfc-editor.org/rfc/rfc7636)) is an extension to the [Authorization Code flow](https://oauth.net/2/grant-types/authorization-code/) to prevent CSRF and authorization code injection attacks.
 
-PKCE is not a form of client authentication, and PKCE is not a replacement for a client secret or other client authentication. PKCE is recommended even if a client is using a client secret or other form of [client authentication](https://oauth.net/2/client-authentication/) like [private_key_jwt](https://oauth.net/private-key-jwt/).
+PKCE is not a form of client authentication, and PKCE is not a replacement for a client secret or other client authentication. PKCE is recommended even if a client is using a client secret or other form of [client authentication](https://oauth.net/2/client-authentication/) like [private_key_jwt](https://oauth.net/private-key-jwt/).
 
-Because PKCE is not a replacement for client authentication, it does not allow treating a public client as a confidential client.
+Because PKCE is not a replacement for client authentication, it does not allow treating a public client as a confidential client.
 
 Presence: optional
 
@@ -73,11 +73,11 @@ Defines the capabilities of a third-party application in relation to Docspace AP
 
 | Scope           | Read                                                              | Write                                                                         |
 | --------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Profile         | *accounts.self:read* – view basic information about your profile. | *accounts.self:write* – view and manage basic information about your profile. |
-| Accounts        | *accounts:read* – view all accounts.                              | *accounts:write* – view and manage all accounts.                              |
-| Files & Folders | *files:read* – view all files and folders.                        | *files:write* – view and manage all files and folders.                        |
-| Rooms           | *rooms:read* – view all rooms.                                    | *rooms:write* – view and manage all rooms.                                    |
-| Open ID         | *openid* – view your personal data.                               |                                                                               |
+| Profile         | *accounts.self:read* - view basic information about your profile. | *accounts.self:write* - view and manage basic information about your profile. |
+| Accounts        | *accounts:read* - view all accounts.                              | *accounts:write* - view and manage all accounts.                              |
+| Files & Folders | *files:read* - view all files and folders.                        | *files:write* - view and manage all files and folders.                        |
+| Rooms           | *rooms:read* - view all rooms.                                    | *rooms:write* - view and manage all rooms.                                    |
+| Open ID         | *openid* - view your personal data.                               |                                                                               |
 
 Check **Read** or **Write** options near each scope. When selecting the **Write** capability, the **Read** option is automatically enabled.
 
