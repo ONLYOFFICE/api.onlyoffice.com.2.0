@@ -21,6 +21,7 @@ The **action** element of the discovery XML provides the important characteristi
 | embedview  | Renders a non-editable view of a document that is optimized for embedding in a web page. This action is available starting from version 7.2.                                                                                                      |
 | convert    | Converts a document in a [binary format](../Editing%20binary%20documents/index.md) (*doc, ppt, xls*) into a modern format (*docx, pptx, xlsx*) so that it can be edited in the online office. This action is available starting from version 7.3. |
 | formsubmit | Supports opening *pdf* files in the form filling mode. In this case, a user might be able to make changes to a *pdf* file even if they didn't have permission to use the *edit* action. This action is available starting from version 8.1.       |
+| mobileView | Renders a non-editable view of a document that is optimized for viewing on mobile devices such as smartphones. This action is available starting from version 7.4.                                                                                |
 
 ### Attributes
 

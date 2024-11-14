@@ -1,5 +1,6 @@
 # Change Log
 
+- docs api: added the mobileView actions to the WOPI discovery
 - docspace oauth api: added a new section
 - docs api: restructured the Get Started section
 - docs api: the editorConfig.customization.mobileForceView parameter is deprecated, please use the editorConfig.customization.mobile parameter instead
