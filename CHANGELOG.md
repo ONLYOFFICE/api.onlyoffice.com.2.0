@@ -1,5 +1,6 @@
 # Change Log
 
+- docspace oauth api: added a new section
 - docs api: restructured the Get Started section
 - docs api: the editorConfig.customization.mobileForceView parameter is deprecated, please use the editorConfig.customization.mobile parameter instead
 
