@@ -14,9 +14,9 @@ Sums the answer of all highlighted cells in a spreadsheet.
 (function () {
     const oWorksheet = Api.GetActiveSheet();
     const range1 = oWorksheet.GetRange("B1"); // Set your range for the color reference
-    const colorReference = range1.SetFillColor(Api.CreateColorFromRGB(91, 155, 213)); // Set targeted background color. To use fill color form the exisiting range, comment this line out
+    const colorReference = range1.SetFillColor(Api.CreateColorFromRGB(91, 155, 213)); // Set targeted background color. To use fill color form the exsisting range, comment this line out
     const targetedColor = range1.GetFillColor()
-    const range2 = oWorksheet.GetRange("A1:A16"); // Set the targeted range on the spreadsheet
+    const range2 = oWorksheet.GetRange("A1:A16"); // Set the targeted range in the spreadsheet
     const result = oWorksheet.GetRange("A17"); // Set the cell where the result will be displayed
     let sum = 0;
     let cellColorCode;
