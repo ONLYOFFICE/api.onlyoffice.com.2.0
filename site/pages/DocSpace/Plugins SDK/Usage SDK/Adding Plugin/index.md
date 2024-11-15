@@ -42,6 +42,8 @@ Now the plugin is available to use.
 
 ## Uploading plugins
 
+> You can upload your own plugins only in the DocSpace on-premises solution. In the SaaS solution, this option is unavailable.
+
 In the DocSpace on-premises solution, the system plugins will be available on the same **Plugins** page. But in this case, you also have the option to upload your own plugins. To do this:
 
 1. In the lower left corner, click ![More icon](/assets/images/docspace/more-icon.png) and open the **Settings** page.
