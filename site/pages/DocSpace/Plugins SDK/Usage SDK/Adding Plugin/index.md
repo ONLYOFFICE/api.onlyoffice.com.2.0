@@ -54,7 +54,7 @@ In the DocSpace on-premises solution, the system plugins will be available on th
 
 4. Click the **Upload plugin** button.
 
-   ![Plugin uploading](/assets/images/docspace/upload-plugin.jpg)
+   ![Plugin uploading](/assets/images/docspace/upload-plugin.png)
 
 5. Choose the plugin archive and click **Open**.
 
