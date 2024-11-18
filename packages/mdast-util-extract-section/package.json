@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/mdast-util-select-section",
+  "name": "@onlyoffice/mdast-util-extract-section",
   "type": "module",
   "private": true,
   "main": "lib/main.ts",
