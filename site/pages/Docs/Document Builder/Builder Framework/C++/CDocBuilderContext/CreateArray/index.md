@@ -1,14 +1,33 @@
-`CDocBuilderValue CreateArray(nLength);`
+```yml signature
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: " "}
+- {type: entity, text: CreateArray}
+- {type: text, text: (}
+- {type: parameter, text: nLength}
+- {type: text, text: ": "}
+- {type: type, text: const int&}
+- {type: text, text: )}
+```
 
-Creates an array value, an analogue of *new Array (length)* in JS.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateArray* method is not used.
+Creates an array value, an analogue of `new Array (length)` in JS.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.CreateArray` method is not used.
 
 ## Parameters
 
-| Name      | Type       | Description       |
-| --------- | ---------- | ----------------- |
-| *nLength* | const int& | The array length. |
+<parameters>
+
+- nLength
+
+  ```yml signature.variant="inline"
+  - {type: type, text: const int&}
+  ```
+
+  - : The array length.
+
+</parameters>
 
 ## Example
 
