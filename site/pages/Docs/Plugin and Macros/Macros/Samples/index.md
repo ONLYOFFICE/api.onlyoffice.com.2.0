@@ -132,7 +132,7 @@ In this example we are adding comments and changing the background colors of sel
 
 ## Sum of highlighted cells
 
-In this example we are adding the values of highlighted cells in the spreadsheet.
+In this example we are summing the answer of all highlighted cells in a spreadsheet.
 
 [More](Sum%20of%20highlighted%20cells/index.md)
 
