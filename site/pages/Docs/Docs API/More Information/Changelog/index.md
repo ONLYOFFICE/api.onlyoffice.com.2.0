@@ -66,6 +66,7 @@ The list of changes of ONLYOFFICE Docs API.
 
 ## Version 7.4
 
+- Added the [mobileView](../../Using%20WOPI/WOPI%20discovery/index.md#wopi-actions) actions to the WOPI discovery.
 - Added opening for [dps, dpt, et, ett, mhtml, stw, sxc, sxi, sxw, wps, wpt](../../Usage%20API/Config/index.md#documenttype) formats.
 - Added the *users.id* field to the [setUsers](../../Usage%20API/Methods/index.md#setusers) method.
 - Added the *c* parameter to the [setUsers](../../Usage%20API/Methods/index.md#setusers) method and [events.onRequestUsers](../../Usage%20API/Config/Events/index.md#onrequestusers) event.
