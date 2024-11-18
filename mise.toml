@@ -1,3 +1,7 @@
+[settings]
+lockfile = true
+experimental = true
+
 [tools]
 node = "prefix:21"
 pnpm = "prefix:9"
