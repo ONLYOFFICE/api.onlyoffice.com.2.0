@@ -37,7 +37,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImMiO
 
 ### Request to convert the document
 
-Validation is performed for incoming requests from the **document storage service** to the [document conversion service](../../../Conversion%20API/index.md).
+Validation is performed for incoming requests from the **document storage service** to the [document conversion service](../../../Conversion%20API/Request/index.md).
 
 Sample payload of request to convert the document:
 
