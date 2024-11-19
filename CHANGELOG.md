@@ -1,5 +1,6 @@
 # Change Log
 
+- docbuilder: redesign python section
 - docs api: added the mobileView actions to the WOPI discovery
 - docspace oauth api: added a new section
 - docs api: restructured the Get Started section
