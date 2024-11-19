@@ -1,8 +1,17 @@
-`def IsBool(self);`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: IsBool}
+- {type: text, text: (}
+- {type: parameter, text: self}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is a boolean value.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsBool* method is not used.
+Returns true if the `CDocBuilderValue` object is a boolean value.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.IsBool` method is not used.
 
 ## Example
 
