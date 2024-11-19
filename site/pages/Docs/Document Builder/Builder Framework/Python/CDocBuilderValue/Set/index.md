@@ -1,15 +1,47 @@
-`def Set(self, key, value);`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: Set}
+- {type: text, text: (}
+- {type: parameter, text: self}
+- {type: text, text: ", "}
+- {type: parameter, text: key}
+- {type: text, text: ": "}
+- {type: type, text: int}
+- {type: text, text: ", "}
+- {type: parameter, text: value}
+- {type: text, text: ": "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: )}
+```
+
+## Description
 
 Sets an array value by its index.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.Set* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.Set` method is not used.
 
 ## Parameters
 
-| Name    | Type             | Description                   |
-| ------- | ---------------- | ----------------------------- |
-| *key*   | int              | The index of the array value. |
-| *value* | CDocBuilderValue | The array value to be set.    |
+<parameters>
+
+- key
+
+  ```yml signature.variant="inline"
+  - {type: type, text: int}
+  ```
+
+  - : The index of the array value.
+
+- value
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+  ```
+
+  - : The array value to be set.
+
+</parameters>
 
 ## Example
 
@@ -29,7 +61,7 @@ chart =  api.Call("CreateChart", "bar3D", [
 charts.Set(1, oChart)
 ```
 
-The **default[]** postfix expression can be also used to set an array value by its index:
+The `default[]` postfix expression can be also used to set an array value by its index:
 
 ``` py
 property CDocBuilderValue default[int]

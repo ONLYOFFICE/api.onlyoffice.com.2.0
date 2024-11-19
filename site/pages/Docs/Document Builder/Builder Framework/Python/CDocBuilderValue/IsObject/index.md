@@ -1,8 +1,17 @@
-`def IsObject(self);`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: IsObject}
+- {type: text, text: (}
+- {type: parameter, text: self}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is an object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsObject* method is not used.
+Returns true if the `CDocBuilderValue` object is an object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.IsObject` method is not used.
 
 ## Example
 
