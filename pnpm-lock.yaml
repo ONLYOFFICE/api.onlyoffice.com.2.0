@@ -1095,9 +1095,9 @@ importers:
       '@onlyoffice/mdast-util-first-sentence':
         specifier: workspace:^
         version: link:../mdast-util-first-sentence
-      '@onlyoffice/mdast-util-select-section':
+      '@onlyoffice/mdast-util-extract-section':
         specifier: workspace:^
-        version: link:../mdast-util-select-section
+        version: link:../mdast-util-extract-section
       '@onlyoffice/signature':
         specifier: workspace:^
         version: link:../signature
@@ -1328,7 +1328,7 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
-  packages/mdast-util-select-section:
+  packages/mdast-util-extract-section:
     dependencies:
       '@onlyoffice/mdast-util-is-node':
         specifier: workspace:^
