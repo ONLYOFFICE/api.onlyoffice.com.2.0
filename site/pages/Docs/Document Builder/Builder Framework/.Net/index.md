@@ -2,13 +2,55 @@
 order: -3
 ---
 
-For the integration of **ONLYOFFICE Document Builder** into any application, the .Net **doctrenderer** library is used. The current application version contains five main classes:
+For the integration of ONLYOFFICE Document Builder into any application, the .Net doctrenderer library is used.
 
-- *CDoctrenderer* class - used by **ONLYOFFICE Document Builder** in the file conversion process.
-- [CDocBuilder](CDocBuilder/index.md) class - used by **ONLYOFFICE Document Builder** for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
-- [CDocBuilderValue](CDocBuilderValue/index.md) class - used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
-- [CDocBuilderContextScope](CDocBuilderContextScope/index.md) class - the stack-allocated class which sets the execution context for all operations executed within a local scope.
-- [CDocBuilderContext](CDocBuilderContext/index.md) class - used by **ONLYOFFICE Document Builder** for getting JS context for working.
+## Classes
+
+The current application version contains five main classes:
+
+<parameters>
+
+- CDoctrenderer
+
+  ```yml signature.variant="inline"
+  - {type: type, text: CDoctrenderer}
+  ```
+
+  - : Used by ONLYOFFICE Document Builder in the file conversion process.
+
+- CDocBuilder
+
+  ```yml signature.variant="inline"
+  - {id: CDocBuilder/index.md, token: {type: type, text: CDocBuilder}}
+  ```
+
+  - : Used by ONLYOFFICE Document Builder for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
+
+- CDocBuilderContext
+
+  ```yml signature.variant="inline"
+  - {id: CDocBuilderContext/index.md, token: {type: type, text: CDocBuilderContext}}
+  ```
+
+  - : Used by ONLYOFFICE Document Builder for getting JS context for working.
+
+- CDocBuilderContextScope
+
+  ```yml signature.variant="inline"
+  - {id: CDocBuilderContextScope/index.md, token: {type: type, text: CDocBuilderContextScope}}
+  ```
+
+  - : The stack-allocated class which sets the execution context for all operations executed within a local scope.
+
+- CDocBuilderValue
+
+  ```yml signature.variant="inline"
+  - {id: CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+  ```
+
+  - : Used by ONLYOFFICE Document Builder for getting the results of called JS commands. It represents a wrapper for a JS object.
+
+</parameters>
 
 ## Example
 
