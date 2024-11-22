@@ -1,14 +1,33 @@
-`HRESULT CreateUndefined([out, retval] I_DOCBUILDER_VALUE** result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: CreateUndefined}
+- {type: text, text: (}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
 
-Creates an undefined value, an analogue of *undefined* in JS.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateUndefined* method is not used.
+Creates an undefined value, an analogue of `undefined` in JS.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.CreateUndefined` method is not used.
 
 ## Parameters
 
-| Name     | Type                     | Description                   |
-| -------- | ------------------------ | ----------------------------- |
-| *result* | I\_DOCBUILDER\_VALUE\*\* | The returned undefined value. |
+<parameters>
+
+- result
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The returned undefined value.
+
+</parameters>
 
 ## Example
 
