@@ -13,7 +13,7 @@ const config: Config[] = [
     source: {
       owner: "onlyoffice",
       repo: "docspace-declarations",
-      reference: "dist",
+      reference: "release/v3.0.0",
       path: "asc.data.backup.swagger.json",
     },
   },
@@ -23,7 +23,7 @@ const config: Config[] = [
     source: {
       owner: "onlyoffice",
       repo: "docspace-declarations",
-      reference: "dist",
+      reference: "release/v3.0.0",
       path: "asc.files.swagger.json",
     },
   },
@@ -33,7 +33,7 @@ const config: Config[] = [
     source: {
       owner: "onlyoffice",
       repo: "docspace-declarations",
-      reference: "dist",
+      reference: "release/v3.0.0",
       path: "asc.people.swagger.json",
     },
   },
@@ -43,7 +43,7 @@ const config: Config[] = [
     source: {
       owner: "onlyoffice",
       repo: "docspace-declarations",
-      reference: "dist",
+      reference: "release/v3.0.0",
       path: "asc.web.api.swagger.json",
     },
   },
