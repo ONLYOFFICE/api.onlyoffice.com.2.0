@@ -8,6 +8,16 @@ import pack from "../package.json" with {type: "json"}
 
 const config: Config[] = [
   {
+    name: "apisystem",
+    variant: "master",
+    source: {
+      owner: "onlyoffice",
+      repo: "docspace-declarations",
+      reference: "release/v3.0.0",
+      path: "asc.apisystem.swagger.json",
+    },
+  },
+  {
     name: "data",
     variant: "master",
     source: {
