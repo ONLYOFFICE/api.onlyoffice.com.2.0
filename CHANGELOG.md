@@ -1,5 +1,8 @@
 # Change Log
 
+- docspace api backend: v3.0
+- docspace api-system: auto creation
+- docspace api-system: v3.0
 - docs api: restructured Conversion API
 - docbuilder: redesign python section
 - docs api: added the mobileView actions to the WOPI discovery
