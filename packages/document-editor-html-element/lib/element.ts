@@ -1,9 +1,16 @@
 /* eslint-disable @typescript-eslint/no-implied-eval, no-new-func */
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
 
+// todo: replace uniqueString with something else
+// todo: rewrite this using the https://github.com/vanyauhalin/some-container-html-element-template/
+// todo: remove the on* listeners (from properties) on disconnect? (need to research)
+// todo: complete the implementation of the DocumentEditorEventList class to fit the DOMTokenList interface
+// todo: add the event attribute similar to the class attribute (continuation of the previous todo)
+
 import {
   type DocEditor,
   type DocEditorConfig,
+  type DocEditorConfigEvents,
   type DocEditorConfigurableOptions,
 } from "@onlyoffice/document-server-types"
 import {
@@ -235,6 +242,12 @@ export class DocumentEditor extends HTMLElement {
 
   set config(c: DocumentEditorConfig | null) {
     this.#config = c
+  }
+
+  #eventList = new DocumentEditorEventList()
+
+  get eventList(): DocumentEditorEventList {
+    return this.#eventList
   }
 
   #editor: DocEditor | null = null
@@ -1079,145 +1092,250 @@ export class DocumentEditor extends HTMLElement {
       throw new Error("The attribute 'config' is required, but it is missing")
     }
 
-    return {
+    const c: DocEditorConfig = {
       ...structuredClone(this.#config),
-      events: {
-        onAppReady: () => {
-          const e = new DocumentEditorAppReadyEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onCollaborativeChanges: () => {
-          const e = new DocumentEditorCollaborativeChangesEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onDocumentReady: () => {
-          const e = new DocumentEditorDocumentReadyEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onDocumentStateChange: (ev) => {
-          const e = new DocumentEditorDocumentStateChangeEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onDownloadAs: (ev) => {
-          const e = new DocumentEditorDownloadAsEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onError: (ev) => {
-          const er = new Error(`${ev.data.errorDescription} (${ev.data.errorCode})`)
-          const e = new DocumentEditorErrorEvent({...ev, bubbles: true, error: er, message: er.message})
-          this.dispatchEvent(e)
-        },
-        onInfo: (ev) => {
-          const e = new DocumentEditorInfoEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onMakeActionLink: (ev) => {
-          const e = new DocumentEditorMakeActionLinkEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onMetaChange: (ev) => {
-          const e = new DocumentEditorMetaChangeEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onOutdatedVersion: () => {
-          const e = new DocumentEditorOutdatedVersionEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onPluginsReady: () => {
-          const e = new DocumentEditorPluginsReadyEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onReady: () => {
-          const e = new DocumentEditorReadyEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestClose: () => {
-          const e = new DocumentEditorRequestCloseEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestCompareFile: () => {
-          const e = new DocumentEditorRequestCompareFileEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestCreateNew: () => {
-          const e = new DocumentEditorRequestCreateNewEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestEditRights: () => {
-          const e = new DocumentEditorRequestEditRightsEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestHistory: () => {
-          const e = new DocumentEditorRequestHistoryEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestHistoryClose: () => {
-          const e = new DocumentEditorRequestHistoryCloseEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestHistoryData: (ev) => {
-          const e = new DocumentEditorRequestHistoryDataEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestInsertImage: (ev) => {
-          const e = new DocumentEditorRequestInsertImageEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestMailMergeRecipients: () => {
-          const e = new DocumentEditorRequestMailMergeRecipientsEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestOpen: (ev) => {
-          const e = new DocumentEditorRequestOpenEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestReferenceData: (ev) => {
-          const e = new DocumentEditorRequestReferenceDataEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestReferenceSource: (ev) => {
-          const e = new DocumentEditorRequestReferenceSourceEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestRename: (ev) => {
-          const e = new DocumentEditorRequestRenameEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestRestore: (ev) => {
-          const e = new DocumentEditorRequestRestoreEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestSaveAs: (ev) => {
-          const e = new DocumentEditorRequestSaveAsEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestSelectDocument: (ev) => {
-          const e = new DocumentEditorRequestSelectDocumentEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestSelectSpreadsheet: (ev) => {
-          const e = new DocumentEditorRequestSelectSpreadsheetEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestSendNotify: (ev) => {
-          const e = new DocumentEditorRequestSendNotifyEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestSharingSettings: () => {
-          const e = new DocumentEditorRequestSharingSettingsEvent({bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onRequestUsers: (ev) => {
-          const e = new DocumentEditorRequestUsersEvent({...ev, bubbles: true})
-          this.dispatchEvent(e)
-        },
-        onWarning: (ev) => {
-          const er = new Error(`${ev.data.warningDescription} (${ev.data.warningCode})`)
-          const e = new DocumentEditorWarningEvent({...ev, bubbles: true, error: er, message: er.message})
-          this.dispatchEvent(e)
-        },
-      },
     }
+
+    const e: DocEditorConfigEvents = {}
+
+    if (this.#eventList.contains("documenteditorappready")) {
+      e.onAppReady = () => {
+        const e = new DocumentEditorAppReadyEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorcollaborativechanges")) {
+      e.onCollaborativeChanges = () => {
+        const e = new DocumentEditorCollaborativeChangesEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditordocumentready")) {
+      e.onDocumentReady = () => {
+        const e = new DocumentEditorDocumentReadyEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditordocumentstatechange")) {
+      e.onDocumentStateChange = (ev) => {
+        const e = new DocumentEditorDocumentStateChangeEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditordownloadas")) {
+      e.onDownloadAs = (ev) => {
+        const e = new DocumentEditorDownloadAsEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorerror")) {
+      e.onError = (ev) => {
+        const er = new Error(`${ev.data.errorDescription} (${ev.data.errorCode})`)
+        const e = new DocumentEditorErrorEvent({...ev, bubbles: true, error: er, message: er.message})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorinfo")) {
+      e.onInfo = (ev) => {
+        const e = new DocumentEditorInfoEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditormakeactionlink")) {
+      e.onMakeActionLink = (ev) => {
+        const e = new DocumentEditorMakeActionLinkEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditormetachange")) {
+      e.onMetaChange = (ev) => {
+        const e = new DocumentEditorMetaChangeEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditoroutdatedversion")) {
+      e.onOutdatedVersion = () => {
+        const e = new DocumentEditorOutdatedVersionEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorpluginsready")) {
+      e.onPluginsReady = () => {
+        const e = new DocumentEditorPluginsReadyEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorready")) {
+      e.onReady = () => {
+        const e = new DocumentEditorReadyEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestclose")) {
+      e.onRequestClose = () => {
+        const e = new DocumentEditorRequestCloseEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestcomparefile")) {
+      e.onRequestCompareFile = () => {
+        const e = new DocumentEditorRequestCompareFileEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestcreatenew")) {
+      e.onRequestCreateNew = () => {
+        const e = new DocumentEditorRequestCreateNewEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequesteditrights")) {
+      e.onRequestEditRights = () => {
+        const e = new DocumentEditorRequestEditRightsEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequesthistory")) {
+      e.onRequestHistory = () => {
+        const e = new DocumentEditorRequestHistoryEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequesthistoryclose")) {
+      e.onRequestHistoryClose = () => {
+        const e = new DocumentEditorRequestHistoryCloseEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequesthistorydata")) {
+      e.onRequestHistoryData = (ev) => {
+        const e = new DocumentEditorRequestHistoryDataEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestinsertimage")) {
+      e.onRequestInsertImage = (ev) => {
+        const e = new DocumentEditorRequestInsertImageEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestmailmergerecipients")) {
+      e.onRequestMailMergeRecipients = () => {
+        const e = new DocumentEditorRequestMailMergeRecipientsEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestopen")) {
+      e.onRequestOpen = (ev) => {
+        const e = new DocumentEditorRequestOpenEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestreferencedata")) {
+      e.onRequestReferenceData = (ev) => {
+        const e = new DocumentEditorRequestReferenceDataEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestreferencesource")) {
+      e.onRequestReferenceSource = (ev) => {
+        const e = new DocumentEditorRequestReferenceSourceEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestrename")) {
+      e.onRequestRename = (ev) => {
+        const e = new DocumentEditorRequestRenameEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestrestore")) {
+      e.onRequestRestore = (ev) => {
+        const e = new DocumentEditorRequestRestoreEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestsaveas")) {
+      e.onRequestSaveAs = (ev) => {
+        const e = new DocumentEditorRequestSaveAsEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestselectdocument")) {
+      e.onRequestSelectDocument = (ev) => {
+        const e = new DocumentEditorRequestSelectDocumentEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestselectspreadsheet")) {
+      e.onRequestSelectSpreadsheet = (ev) => {
+        const e = new DocumentEditorRequestSelectSpreadsheetEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestsendnotify")) {
+      e.onRequestSendNotify = (ev) => {
+        const e = new DocumentEditorRequestSendNotifyEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestsharingsettings")) {
+      e.onRequestSharingSettings = () => {
+        const e = new DocumentEditorRequestSharingSettingsEvent({bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorrequestusers")) {
+      e.onRequestUsers = (ev) => {
+        const e = new DocumentEditorRequestUsersEvent({...ev, bubbles: true})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (this.#eventList.contains("documenteditorwarning")) {
+      e.onWarning = (ev) => {
+        const er = new Error(`${ev.data.warningDescription} (${ev.data.warningCode})`)
+        const e = new DocumentEditorWarningEvent({...ev, bubbles: true, error: er, message: er.message})
+        this.dispatchEvent(e)
+      }
+    }
+
+    if (Object.keys(e).length !== 0) {
+      c.events = e
+    }
+
+    return c
   }
 
   #unmount(): void {
@@ -1230,5 +1348,25 @@ export class DocumentEditor extends HTMLElement {
     }
     // eslint-disable-next-line new-cap
     this.#editor = window.DocsAPI.DocEditor(p.id, c)
+  }
+}
+
+export class DocumentEditorEventList {
+  #s = new Set<string>()
+
+  add(...a: DocumentEditorEventType[]): void {
+    for (const e of a) {
+      this.#s.add(e)
+    }
+  }
+
+  contains(e: DocumentEditorEventType): boolean {
+    return this.#s.has(e)
+  }
+
+  remove(...a: DocumentEditorEventType[]): void {
+    for (const e of a) {
+      this.#s.delete(e)
+    }
   }
 }

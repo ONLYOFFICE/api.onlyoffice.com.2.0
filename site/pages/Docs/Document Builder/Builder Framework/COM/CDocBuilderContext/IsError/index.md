@@ -1,14 +1,33 @@
-`HRESULT IsError([out, retval] VARIANT_BOOL* result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: IsError}
+- {type: text, text: (}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {type: type, text: VARIANT_BOOL*}
+- {type: text, text: )}
+```
+
+## Description
 
 Checks for errors in JS.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.IsError* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.IsError` method is not used.
 
 ## Parameters
 
-| Name     | Type            | Description                        |
-| -------- | --------------- | ---------------------------------- |
-| *result* | VARIANT\_BOOL\* | Specifies whether an error occurs. |
+<parameters>
+
+- result
+
+  ```yml signature.variant="inline"
+  - {type: type, text: VARIANT_BOOL*}
+  ```
+
+  - : Specifies whether an error occurs.
+
+</parameters>
 
 ## Example
 

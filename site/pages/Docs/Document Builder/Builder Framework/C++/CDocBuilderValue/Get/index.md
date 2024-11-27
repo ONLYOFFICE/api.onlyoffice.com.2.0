@@ -1,14 +1,33 @@
-`CDocBuilderValue Get(nIndex);`
+```yml signature
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: " "}
+- {type: entity, text: Get}
+- {type: text, text: (}
+- {type: parameter, text: nIndex}
+- {type: text, text: ": "}
+- {type: type, text: const int&}
+- {type: text, text: )}
+```
+
+## Description
 
 Returns an array value by its index.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.Get* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.Get` method is not used.
 
 ## Parameters
 
-| Name     | Type       | Description                   |
-| -------- | ---------- | ----------------------------- |
-| *nIndex* | const int& | The index of the array value. |
+<parameters>
+
+- nIndex
+
+  ```yml signature.variant="inline"
+  - {type: type, text: const int&}
+  ```
+
+  - : The index of the array value.
+
+</parameters>
 
 ## Example
 
@@ -27,7 +46,7 @@ CValue oChart = aCharts.Get(1);
 CDocBuilder::Dispose();
 ```
 
-The **operator\[]** postfix expression can be also used to get an array value by its index:
+The `operator[]` postfix expression can be also used to get an array value by its index:
 
 ```cpp
 CDocBuilderValue operator[](const int& name);
