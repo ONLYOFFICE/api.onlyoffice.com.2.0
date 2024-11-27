@@ -1,14 +1,33 @@
-`HRESULT CreateObject([out, retval] I_DOCBUILDER_VALUE** result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: CreateObject}
+- {type: text, text: (}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
 
-Creates an empty object, an analogue of *{}* in JS.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateObject* method is not used.
+Creates an empty object, an analogue of `{}` in JS.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.CreateObject` method is not used.
 
 ## Parameters
 
-| Name     | Type                     | Description                |
-| -------- | ------------------------ | -------------------------- |
-| *result* | I\_DOCBUILDER\_VALUE\*\* | The returned empty object. |
+<parameters>
+
+- result
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The returned empty object.
+
+</parameters>
 
 ## Example
 

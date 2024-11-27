@@ -1,14 +1,33 @@
-`HRESULT GetGlobal([out, retval] I_DOCBUILDER_VALUE** result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: GetGlobal}
+- {type: text, text: (}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
+
+## Description
 
 Returns the global object for the current context.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.GetGlobal* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.GetGlobal` method is not used.
 
 ## Parameters
 
-| Name     | Type                     | Description                 |
-| -------- | ------------------------ | --------------------------- |
-| *result* | I\_DOCBUILDER\_VALUE\*\* | The returned global object. |
+<parameters>
+
+- result
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The returned global object.
+
+</parameters>
 
 ## Example
 

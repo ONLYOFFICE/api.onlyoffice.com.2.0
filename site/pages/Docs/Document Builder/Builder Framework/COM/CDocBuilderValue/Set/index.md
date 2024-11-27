@@ -1,15 +1,45 @@
-`HRESULT Set([in] long index, [in] I_DOCBUILDER_VALUE* value);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: Set}
+- {type: text, text: (}
+- {type: parameter, text: index}
+- {type: text, text: ": [in] "}
+- {type: type, text: long}
+- {type: text, text: ", "}
+- {type: parameter, text: value}
+- {type: text, text: ": [in] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
+
+## Description
 
 Sets an array value by its index.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.Set* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.Set` method is not used.
 
 ## Parameters
 
-| Name    | Type                   | Description                   |
-| ------- | ---------------------- | ----------------------------- |
-| *index* | long                   | The index of the array value. |
-| *value* | I\_DOCBUILDER\_VALUE\* | The array value to be set.    |
+<parameters>
+
+- index
+
+  ```yml signature.variant="inline"
+  - {type: type, text: long}
+  ```
+
+  - : The index of the array value.
+
+- value
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The array value to be set.
+
+</parameters>
 
 ## Example
 
