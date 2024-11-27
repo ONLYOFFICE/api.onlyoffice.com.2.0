@@ -1,5 +1,6 @@
 # Change Log
 
+- docbuilder: updated builder framework samples
 - docs api: restructured Conversion API
 - docbuilder: redesign python section
 - docs api: added the mobileView actions to the WOPI discovery
