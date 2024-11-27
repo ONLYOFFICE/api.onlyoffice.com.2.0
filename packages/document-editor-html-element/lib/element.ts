@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/no-implied-eval, no-new-func */
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
 
+// todo: replace uniqueString with something else
+// todo: rewrite this using the https://github.com/vanyauhalin/some-container-html-element-template/
+// todo: remove the on* listeners (from properties) on disconnect? (need to research)
+// todo: complete the implementation of the DocumentEditorEventList class to fit the DOMTokenList interface
+// todo: add the event attribute similar to the class attribute (continuation of the previous todo)
+
 import {
   type DocEditor,
   type DocEditorConfig,
