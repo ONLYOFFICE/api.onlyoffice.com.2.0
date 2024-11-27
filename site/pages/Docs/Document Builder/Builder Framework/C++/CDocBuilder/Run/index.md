@@ -1,12 +1,31 @@
-`bool Run(sPath);`
+```yml signature
+- {type: type, text: bool}
+- {type: text, text: " "}
+- {type: entity, text: Run}
+- {type: text, text: (}
+- {type: parameter, text: sPath}
+- {type: text, text: ": "}
+- {type: type, text: const wchar_t*}
+- {type: text, text: )}
+```
 
-Runs the **ONLYOFFICE Document Builder** executable. If you do not want to write a C++ application, you can simply use the **docbuilder.exe** executable file and run it with the ### .docbuilder file as an argument, where all the code for the document file creation will be written. For C++, create the *CDocBuilder* object and call the *Run* method with the path to the executable file from the *sPath* parameter.
+## Description
+
+Runs the ONLYOFFICE Document Builder executable. If you do not want to write a C++ application, you can simply use the `docbuilder.exe` executable file and run it with the `.docbuilder` file as an argument, where all the code for the document file creation will be written. For C++, create the `CDocBuilder` object and call the `Run` method with the path to the executable file from the `sPath` parameter.
 
 ## Parameters
 
-| Name    | Type             | Description                                                 |
-| ------- | ---------------- | ----------------------------------------------------------- |
-| *sPath* | const wchar\_t\* | The path to the **ONLYOFFICE Document Builder** executable. |
+<parameters>
+
+- sPath
+
+  ```yml signature.variant="inline"
+  - {type: type, text: const wchar_t*}
+  ```
+
+  - : The path to the ONLYOFFICE Document Builder executable.
+
+</parameters>
 
 ## Example
 
