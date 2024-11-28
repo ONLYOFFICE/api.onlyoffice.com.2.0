@@ -1,5 +1,6 @@
 # Change Log
 
+- docbuilder: updated builder framework samples
 - docspace api backend: v3.0
 - docspace api-system: auto creation
 - docspace api-system: v3.0
