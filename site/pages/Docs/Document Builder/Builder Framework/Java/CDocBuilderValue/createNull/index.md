@@ -1,8 +1,16 @@
-`static CDocBuilderValue createNull();`
+```yml signature
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: " "}
+- {type: entity, text: createNull}
+- {type: text, text: (}
+- {type: text, text: )}
+```
+
+## Description
 
 Creates a null value. This method returns the current [context](../../CDocBuilderContext/index.md) and calls its [createNull](../../CDocBuilderContext/createNull/index.md) method.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.createNull* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.createNull` method is not used.
 
 ## Example
 
