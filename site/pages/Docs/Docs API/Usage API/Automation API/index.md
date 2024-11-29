@@ -300,7 +300,7 @@ Below you can find methods that are available for this class.
 
 ### attachEvent
 
-The function called to add an event listener to the modal window frame. This function will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins. It can be found [here](../../../Plugin%20and%20Macros/Interacting%20with%20editors/Events/index.md).
+The function called to add an event listener to the modal window frame. This function will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins.
 
 Parameters:
 
@@ -319,7 +319,7 @@ testConnectorWindow.attachEvent("onWindowMessage", (message) => {
 
 ### dispatchEvent
 
-The function called to send an event to the modal window frame. The list of all the available events is the same as for the plugins. It can be found [here](../../../Plugin%20and%20Macros/Interacting%20with%20editors/Events/index.md).
+The function called to send an event to the modal window frame. The list of all the available events is the same as for the plugins.
 
 Parameters:
 
