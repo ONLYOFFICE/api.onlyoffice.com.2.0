@@ -6,51 +6,20 @@ For the integration of ONLYOFFICE Document Builder into any application, the .Ne
 
 ## Classes
 
-The current application version contains five main classes:
+The current application version contains four main classes:
 
-<parameters>
+<references>
 
-- CDoctrenderer
-
-  ```yml signature.variant="inline"
-  - {type: type, text: CDoctrenderer}
-  ```
-
-  - : Used by ONLYOFFICE Document Builder in the file conversion process.
-
-- CDocBuilder
-
-  ```yml signature.variant="inline"
-  - {id: CDocBuilder/index.md, token: {type: type, text: CDocBuilder}}
-  ```
-
+- [CDocBuilder](CDocBuilder/index.md)
   - : Used by ONLYOFFICE Document Builder for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
-
-- CDocBuilderContext
-
-  ```yml signature.variant="inline"
-  - {id: CDocBuilderContext/index.md, token: {type: type, text: CDocBuilderContext}}
-  ```
-
+- [CDocBuilderContext](CDocBuilderContext/index.md)
   - : Used by ONLYOFFICE Document Builder for getting JS context for working.
-
-- CDocBuilderContextScope
-
-  ```yml signature.variant="inline"
-  - {id: CDocBuilderContextScope/index.md, token: {type: type, text: CDocBuilderContextScope}}
-  ```
-
+- [CDocBuilderContextScope](CDocBuilderContextScope/index.md)
   - : The stack-allocated class which sets the execution context for all operations executed within a local scope.
-
-- CDocBuilderValue
-
-  ```yml signature.variant="inline"
-  - {id: CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
-  ```
-
+- [CDocBuilderValue](CDocBuilderValue/index.md)
   - : Used by ONLYOFFICE Document Builder for getting the results of called JS commands. It represents a wrapper for a JS object.
 
-</parameters>
+</references>
 
 ## Example
 
