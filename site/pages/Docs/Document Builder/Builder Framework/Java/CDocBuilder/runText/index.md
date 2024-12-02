@@ -1,14 +1,33 @@
-`boolean runText(String commands);`
+```yml signature
+- {type: type, text: boolean}
+- {type: text, text: " "}
+- {type: entity, text: runText}
+- {type: text, text: (}
+- {type: parameter, text: commands}
+- {type: text, text: ": "}
+- {type: type, text: String}
+- {type: text, text: )}
+```
 
-Runs all the commands for the document creation using a single command. Compared to [CDocBuilder.executeCommand](../executeCommand/index.md) where only one command at a time is allowed, *CDocBuilder.runText* makes it possible to enter all the commands for the document creation at once.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilder.runText* method is not used.
+Runs all the commands for the document creation using a single command. Compared to [CDocBuilder.executeCommand](../executeCommand/index.md) where only one command at a time is allowed, `CDocBuilder.runText` makes it possible to enter all the commands for the document creation at once.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilder.runText` method is not used.
 
 ## Parameters
 
-| Name       | Type   | Description                                                                                                                                                                                                                                                                                             |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| *commands* | String | The commands which will be used to create the document file (in Java, the escape character must be used when the command contains quotation symbols). All the commands containing *builder.* are line separated, i.e. you cannot write them in one line, each command **must** start with its own line. |
+<parameters>
+
+- commands
+
+  ```yml signature.variant="inline"
+  - {type: type, text: String}
+  ```
+
+  - : The commands which will be used to create the document file (in Java, the escape character must be used when the command contains quotation symbols). All the commands containing `builder.` are line separated, i.e. you cannot write them in one line, each command must start with its own line.
+
+</parameters>
 
 ## Example
 

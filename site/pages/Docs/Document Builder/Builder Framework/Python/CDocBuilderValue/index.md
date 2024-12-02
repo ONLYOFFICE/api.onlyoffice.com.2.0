@@ -25,7 +25,7 @@ Class used by ONLYOFFICE Document Builder for getting the results of called JS c
 - [Get](Get/index.md)
   - : Returns an array value by its index.
 - [GetLength](GetLength/index.md)
-  - : Returns the length if this object is an array/typed array.
+  - : Returns the length if this object is an array.
 - [GetProperty](GetProperty/index.md)
   - : Returns a property of this object.
 - [IsArray](IsArray/index.md)

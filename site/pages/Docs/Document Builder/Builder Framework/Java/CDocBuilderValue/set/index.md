@@ -1,15 +1,49 @@
-`void set(int index, Object value);`
+```yml signature
+- {type: type, text: void}
+- {type: text, text: " "}
+- {type: entity, text: set}
+- {type: text, text: (}
+- {type: parameter, text: index}
+- {type: text, text: ": "}
+- {type: type, text: int}
+- {type: text, text: " | "}
+- {type: type, text: String}
+- {type: text, text: ", "}
+- {type: parameter, text: value}
+- {type: text, text: ": "}
+- {type: type, text: Object}
+- {type: text, text: )}
+```
+
+## Description
 
 Sets an array value by its index or name.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.set* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.set` method is not used.
 
 ## Parameters
 
-| Name    | Type         | Description                           |
-| ------- | ------------ | ------------------------------------- |
-| *index* | int / String | The index or name of the array value. |
-| *value* | Object       | The array value to be set.            |
+<parameters>
+
+- index
+
+  ```yml signature.variant="inline"
+  - {type: type, text: int}
+  - {type: text, text: " | "}
+  - {type: type, text: String}
+  ```
+
+  - : The index or name of the array value.
+
+- value
+
+  ```yml signature.variant="inline"
+  - {type: type, text: Object}
+  ```
+
+  - : The array value to be set.
+
+</parameters>
 
 ## Example
 
@@ -31,7 +65,7 @@ charts.set(1, chart);
 CDocBuilder.dispose();
 ```
 
-The **default\[]** postfix expression can be also used to set an array value by its index:
+The `default[]` postfix expression can be also used to set an array value by its index:
 
 ``` java
 property CDocBuilderValue default[int]
