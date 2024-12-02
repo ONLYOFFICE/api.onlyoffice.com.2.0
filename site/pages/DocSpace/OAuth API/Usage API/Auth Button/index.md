@@ -22,7 +22,7 @@ Example: code
 
 The ID of the client that will be used for authorization.
 
-Example: a585c162-9587-4e5c-8796-d675ff2dbd6c
+Example: 695d37b7-18aa-4033-91b4-09690178e99a
 
 ## redirect_uri
 
@@ -41,7 +41,7 @@ const scopesString = client.scopes.join(" ")
 const encodingScopes = encodeURI(scopesString || "")
 ```
 
-Example: files:write%20accounts:write%20files:read%20rooms:read%20openid%20accounts.self:read%20accounts:read%20accounts.self:write%20rooms:write
+Example: files:write%20accounts:write%20files:read%20openid%20rooms:read%20accounts.self:read%20accounts:read%20accounts.self:write%20rooms:write
 
 ## state
 
@@ -69,10 +69,10 @@ const codeVerifierHash = sha256(randomVerifier).toString(crypto.enc.Base64)
 
 This parameter is used only when the authentication method is not specified (none) and the public client (PKCE) is allowed.
 
-Example: 4Q2s0UnFr-azOwsUyUFRy9I_frVjzumIUKoEGCwHAYs
+Example: kNDpYrWzia4n6BoUewMVbnb5kQRIFgVdiaKwNGZ-_Wc
 
 > Please note that the code verifier will be generated anew each time the preview dialog is reopened.
 
 You can click the example button to go through the entire [authorization flow](../Authorization%20Flow/index.md).
 
-![Authorization flow](/assets/images/docspace/authorization-flow.png)
+<img alt="Authorization flow" src="/assets/images/docspace/authorization-flow.png" width="400px">
