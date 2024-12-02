@@ -5,7 +5,7 @@
 - docspace api-system: auto creation
 - docspace api-system: v3.0
 - docs api: restructured Conversion API
-- docbuilder: redesign python, com, c++ and .net section
+- docbuilder: redesign sections
 - docs api: added the mobileView actions to the WOPI discovery
 - docspace oauth api: added a new section
 - docs api: restructured the Get Started section
