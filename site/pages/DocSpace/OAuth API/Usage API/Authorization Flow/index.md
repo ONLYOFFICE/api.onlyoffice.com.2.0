@@ -40,7 +40,7 @@ If the authorization link contains non-existent [client_id](../Auth%20Button/ind
 
 3. The application sends the POST request:
 
-``` http
+``` ini
 {{docspace_address}}/oauth2/token
 ```
 
@@ -52,13 +52,13 @@ The parameters that must be specified in the request body depends on the client 
 
 The ID of the client that will be used for authorization.
 
-Example: a585c162-9587-4e5c-8796-d675ff2dbd6c
+Example: 695d37b7-18aa-4033-91b4-09690178e99a
 
 #### client_secret
 
 The secret of the client that will be used for authorization.
 
-Example: 2e336694-e4b4-45c0-bff6-48bb5704235b
+Example: 49487362-7d4a-471f-bbf3-c04e2e1c541f
 
 #### grant_type
 
@@ -86,4 +86,4 @@ For the client with PKCE, the parameters are the same as for **client_secret_pos
 
 The code verifier, a cryptographically random string between 43 and 128 characters long.
 
-Example: e60fa46a25136f901ad3c21ea96bdfecd2b14106ad8ca278c2462a4d1b0ff1da2d03aa27
+Example: a50883696b67d1e91e52be26d86b78ae902b354a4b3a8965aaffbe30fc8056c8b9afa066
