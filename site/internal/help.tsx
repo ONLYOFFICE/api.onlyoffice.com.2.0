@@ -1,8 +1,8 @@
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {Help as SHelp} from "@onlyoffice/site-kit"
 import {GithubIcon} from "@onlyoffice/ui-icons/rich/24.tsx"
 import {type JSX, h} from "preact"
 import {Link} from "./link.tsx"
+import {Sitemap} from "./sitemap.ts"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -59,37 +59,29 @@ export class HelpDatum implements HelpData {
 }
 
 export interface HelpProperties {
-  current: string
+  sitemapUrl: string
 }
 
 export function Help(p: HelpProperties): JSX.Element {
   const s = Sitemap.shared
+  const e = s.findPageByUrl(p.sitemapUrl)
 
-  const e = s.find(p.current, "url")
-  if (!e) {
-    throw new Error(`Entity not found: ${p.current}`)
-  }
-  if (e.type !== "page") {
-    throw new Error(`Entity is not a page: ${p.current}`)
-  }
+  let f = e.data.path
+  let c = e
 
-  let f = e.path
-  let d = e.data.help
-  if (!d) {
-    const t = s.trace(e)
-    for (const id of t) {
-      const e = s.find(id, "id")
-      if (!e || e.type !== "page" || !e.data.help) {
-        continue
-      }
-      f = e.path
-      d = e.data.help
+  for (const id of s.trailOf(e).reverse()) {
+    try {
+      const e = s.findPageById(id)
+      const _ = e.help
+      f = e.data.path
+      c = e
       break
+    } catch {
+      continue
     }
   }
-  if (!d) {
-    throw new Error(`Help data not found: ${e.id} (${e.url})`)
-  }
+
+  const d = c.help
 
   return <SHelp>
     <GithubIcon height={24} width={24} />

@@ -1,7 +1,5 @@
 import {type SitemapData, SitemapDatum} from "@onlyoffice/eleventy-sitemap"
 import {type Data} from "@onlyoffice/eleventy-types"
-import {cutSuffix} from "@onlyoffice/strings"
-import {slug} from "github-slugger"
 import {type ChapterData, ChapterDatum} from "../internal/chapter.tsx"
 import {type ExplorerData, ExplorerDatum} from "../internal/explorer.tsx"
 import {type HelpData, HelpDatum} from "../internal/help.tsx"
@@ -11,12 +9,10 @@ import {type MenubarData, MenubarDatum} from "../internal/menubar.tsx"
 import {type PageData, PageDatum} from "../internal/page.tsx"
 import {type PartData, PartDatum} from "../internal/part.tsx"
 import {type ServiceData, ServiceDatum} from "../internal/service.tsx"
+import {writeUrl} from "../internal/url.ts"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
-    slug?(data: Data): string | undefined
-    crosslink?(data: Data, slug: string): string | undefined
-
     icon?: string
     title?: string
     url?: string
@@ -64,36 +60,7 @@ declare module "@onlyoffice/eleventy-types" {
 export function data(): Data {
   return {
     permalink(d) {
-      if (!d.page) {
-        return
-      }
-      let p = d.page.filePathStem
-      if (d.slug) {
-        [p] = cutSuffix(p, d.page.fileSlug)
-        p += d.slug(d)
-      }
-      p = p.split("/")
-        .map((s) => {
-          return slug(s)
-        })
-        .join("/")
-      p += `.${d.page.outputFileExtension}`
-      return p
-    },
-
-    crosslink(d, s) {
-      if (!d.page) {
-        return
-      }
-      let p = d.page.filePathStem
-      ;[p] = cutSuffix(p, d.page.fileSlug)
-      p += s
-      p = p.split("/")
-        .map((s) => {
-          return slug(s)
-        })
-        .join("/")
-      return p
+      return writeUrl(d)
     },
 
     layout: "article",
@@ -131,14 +98,17 @@ export function data(): Data {
         if (d.title) {
           m.title = d.title
         }
+        const u = d.sitemapUrl
+        if (!u) {
+          return
+        }
+        m.url = u
         if (d.page) {
-          m.url = d.page.url
           m.path = d.page.inputPath
         }
         if (d.order) {
           m.order = d.order
         }
-        m.data = d
         return m
       },
 
@@ -188,8 +158,12 @@ export function data(): Data {
         }
         if (d.url) {
           m.url = d.url
-        } else if (d.page) {
-          m.url = d.page.url
+        } else {
+          const u = d.canonicalUrl
+          if (!u) {
+            return
+          }
+          m.url = u
         }
         if (d.blank) {
           m.blank = d.blank

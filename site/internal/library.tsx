@@ -1,8 +1,8 @@
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type Declaration} from "@onlyoffice/library-declaration"
 import * as Site from "@onlyoffice/site-kit"
 import {type JSX, h} from "preact"
 import {Markdown} from "./markdown.tsx"
+import {Sitemap} from "./sitemap.ts"
 import {SyntaxHighlight} from "./syntax-highlight.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
@@ -55,24 +55,13 @@ export class LibraryDatum implements LibraryData {
 }
 
 export interface LibraryProperties {
-  url: string
+  sitemapUrl: string
 }
 
 export function Library(p: LibraryProperties): JSX.Element {
   const s = Sitemap.shared
-
-  const e = s.find(p.url, "url")
-  if (!e) {
-    throw new Error(`Library site entity not found: ${p.url}`)
-  }
-  if (e.type !== "page") {
-    throw new Error(`Library site entity is not a page: ${e.type}`)
-  }
-
-  const d = e.data.library
-  if (!d) {
-    throw new Error(`Library data not found: ${p.url}`)
-  }
+  const e = s.findPageByUrl(p.sitemapUrl)
+  const d = e.library
 
   return <Site.Library {...d}>
     <Site.LibraryHeading for="Constructors">

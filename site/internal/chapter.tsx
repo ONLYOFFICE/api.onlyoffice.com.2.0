@@ -1,8 +1,8 @@
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import * as Site from "@onlyoffice/site-kit"
 import {type JSX, h} from "preact"
 import {Explorer} from "./explorer.tsx"
+import {Sitemap} from "./sitemap.ts"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -51,55 +51,29 @@ export class ChapterDatum implements ChapterData {
 }
 
 export interface ChapterProperties extends ChildrenIncludable {
-  url: string
+  sitemapUrl: string
 }
 
 export function Chapter(p: ChapterProperties): JSX.Element {
-  const s = Sitemap.shared
+  const sm = Sitemap.shared
 
-  const ue = s.find(p.url, "url")
-  if (!ue) {
-    throw new Error(`Entity not found: ${p.url}`)
-  }
-  if (ue.type !== "page") {
-    throw new Error(`Current entity is not a page: ${ue.type} (${ue.id})`)
-  }
+  const ce = sm.findPageByUrl(p.sitemapUrl)
 
-  const ud = ue.data.chapter
-  if (!ud) {
-    throw new Error(`Chapter data not found: ${ue.url} (${ue.id})`)
+  const ct = sm.trailOf(ce)
+  if (ct.length < 3) {
+    throw new Error(`Chapter layout requires at least three levels: #${ce.id}, ${ce.sitemapUrl}, ${ct}`)
   }
 
-  const ut = s.trace(ue)
-  if (ut.length < 3) {
-    throw new Error(`Chapter layout requires at least three levels: ${ue.url} (${ue.id})`)
-  }
+  const [, pi, hi] = ct
 
-  const [, pi, hi] = ut
+  const pe = sm.findPageById(pi)
+  const pd = pe.part
 
-  const pe = s.find(pi, "id")
-  if (!pe) {
-    throw new Error(`Entity not found: ${pi}`)
-  }
-  if (pe.type !== "page") {
-    throw new Error(`Part entity is not a page: ${pe.type} (${pe.id})`)
-  }
-
-  const he = s.find(hi, "id")
-  if (!he) {
-    throw new Error(`Entity not found: ${hi}`)
-  }
-  if (he.type !== "page") {
-    throw new Error(`Chapter entity is not a page: ${he.type} (${he.id})`)
-  }
-
-  const hd = he.data.chapter
-  if (!hd) {
-    throw new Error(`Chapter data not found: ${he.url} (${he.id})`)
-  }
+  const he = sm.findPageById(hi)
+  const hd = he.chapter
 
   return <Site.Chapter
-    data-part={pe.title}
+    data-part={pd.title}
     data-chapter={hd.title}
     data-pagefind-filter="part[data-part], chapter[data-chapter]"
   >
@@ -107,7 +81,7 @@ export function Chapter(p: ChapterProperties): JSX.Element {
       <Site.SearchContainer
         search-options={{
           filters: {
-            part: [pe.title],
+            part: [pd.title],
             chapter: [hd.title],
           },
         }}
@@ -122,7 +96,7 @@ export function Chapter(p: ChapterProperties): JSX.Element {
           </li>
         </Site.SearchTemplate>
       </Site.SearchContainer>
-      <Explorer level={2} url={p.url} />
+      <Explorer sitemapUrl={p.sitemapUrl} level={2} />
     </Site.ChapterNavigation>
     <Site.ChapterContent>
       {p.children}
