@@ -1,5 +1,6 @@
 # Change Log
 
+## 6.3.0
 - docspace oauth api: added a new section
 - docspace api backend: v3.0
 - docspace api-system: auto creation
