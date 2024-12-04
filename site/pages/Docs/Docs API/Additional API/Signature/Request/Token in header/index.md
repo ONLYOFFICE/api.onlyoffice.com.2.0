@@ -1,10 +1,12 @@
-When performing the HTTP requests from ONLYOFFICE Docs an authorization header with the *token* is added to validate the request. When performing the HTTP requests to ONLYOFFICE Docs an authorization header with the *token* must be added to validate the request.
+When performing the HTTP requests from or to ONLYOFFICE Docs an authorization header with the token is added to validate the request.
 
-The *payload* for the JSON Web Token contains the following fields:
+The `payload` for the JSON Web Token contains the following fields:
 
-- **payload** - the object containing the request body parameters in JSON format if not empty.
+- `payload` - the object containing the request body parameters in JSON format if not empty.
 
 ## Incoming request
+
+> Please note that it is not recommended to send a signature in the header when performing the HTTP requests to ONLYOFFICE Docs. Send the signature [in the body](../Token%20in%20body/index.md).
 
 ### Request to receive the status of the edited document
 
@@ -191,4 +193,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVyb
 
 Where the **example.com** is the name of the server where **document manager** and **document storage service** are installed. See the [How it works](../../../../Get%20Started/How%20It%20Works/index.md) section to find out more on ONLYOFFICE Docs service client-server interactions.
 
-The token includes the payload (the full URL to the document, in the example above it is `{"url: "http://example.com/url-to-document-changes.zip"}`), which is also duplicated in the header as the **Host** (*example.com*) and the document address the GET request is sent to (*url-to-document-changes.zip*).
+The token includes the payload (the full URL to the document, in the example above it is `{"url: "http://example.com/url-to-document-changes.zip"}`), which is also duplicated in the header as the `Host` (`example.com`) and the document address the GET request is sent to (`url-to-document-changes.zip`).
