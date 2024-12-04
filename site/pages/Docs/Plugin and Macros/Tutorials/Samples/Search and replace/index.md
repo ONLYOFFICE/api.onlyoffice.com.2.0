@@ -6,8 +6,6 @@ Searches for target text and replaces it with something else.
 
 **Supported editors:** documents.
 
-![SearchandReplace](/assets/images/plugins/gifs/search-and-replace.gif)
-
 ## Installation
 
 Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_search_replace) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

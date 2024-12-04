@@ -8,8 +8,6 @@ Gets the document content as HTML code, modifies it, and pastes back to the docu
 
 **Analogue:** [Doc2md](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/doc2md).
 
-![GetAndPasteHTML](/assets/images/plugins/gifs/get-and-paste-html.gif)
-
 ## Installation
 
 Available by default in ONLYOFFICE Enterprise Edition and Community Edition (Docs + Workspace).

@@ -8,8 +8,6 @@ Connects the [Google Translate API](https://cloud.google.com/translate?hl=ru) fo
 
 **Analogues:** [Apertium](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/apertium), [DeepL](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/deepl).
 
-![Translator](/assets/images/plugins/gifs/translator.gif)
-
 ## Installation
 
 Available by default in the cloud, on-premises and desktop versions of ONLYOFFICE editors.

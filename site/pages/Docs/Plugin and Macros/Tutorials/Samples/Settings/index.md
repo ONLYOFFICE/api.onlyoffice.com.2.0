@@ -6,8 +6,6 @@ Protects a document using a watermark.
 
 **Supported editors:** documents, spreadsheets, presentations.
 
-![Settings](/assets/images/plugins/gifs/settings.gif)
-
 ## Installation
 
 Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/settings) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.
