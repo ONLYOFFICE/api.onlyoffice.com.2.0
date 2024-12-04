@@ -16,7 +16,7 @@ You can find ready-to-use macros [here](../Samples/index.md) or create your own 
 
 How to start writing your macro:
 
-1. Open the **Plugins** tab and click **Macros**.
+1. Open the **View** tab and click **Macros**.
 2. Consult the [API documentation](../../../Office%20API/Get%20Started/Overview/index.md) to write the script.
 3. [Write](../Writing%20macros/index.md) code for your macro.
 4. To rename the macro, click ![Dots icon](/assets/images/plugins/dots.svg) next to the macro name and select **Rename**. Enter a new name for the macro and click **Ok**.

@@ -1,8 +1,16 @@
-`def CreateNull();`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: CreateNull}
+- {type: text, text: (}
+- {type: text, text: )}
+```
+
+## Description
 
 Creates a null value. This method returns the current [context](../../CDocBuilderContext/index.md) and calls its [CreateNull](../../CDocBuilderContext/CreateNull/index.md) method.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.CreateNull* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.CreateNull` method is not used.
 
 ## Example
 

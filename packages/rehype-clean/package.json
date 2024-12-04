@@ -14,6 +14,7 @@
     "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
+    "@onlyoffice/rehype-metaobject": "workspace:^",
     "@onlyoffice/rehype-metastring": "workspace:^",
     "rimraf": "6.0.1"
   }

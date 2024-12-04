@@ -1,0 +1,25 @@
+does not modify an unordered loose list with multiple items
+
+---
+
+<ul>
+<li>
+<p>term0</p>
+</li>
+<li>
+<p>term1</p>
+</li>
+</ul>
+
+---
+
+<ul>
+<li>
+<p>term0</p>
+</li>
+<li>
+<p>term1</p>
+</li>
+</ul>
+
+---

@@ -3,8 +3,13 @@ import {type UserConfig} from "@onlyoffice/eleventy-types"
 import {useSuspense} from "@onlyoffice/preact-suspense"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {rehypeClean} from "@onlyoffice/rehype-clean"
+import {rehypeDescriptionList} from "@onlyoffice/rehype-description-list"
+import {rehypeMetaobject} from "@onlyoffice/rehype-metaobject"
 import {rehypeMetastring} from "@onlyoffice/rehype-metastring"
+import {rehypeParameters} from "@onlyoffice/rehype-parameters"
 import {rehypePreact} from "@onlyoffice/rehype-preact"
+import {rehypeReferences} from "@onlyoffice/rehype-references"
+import {rehypeSignature} from "@onlyoffice/rehype-signature"
 import {rehypeStarryNight} from "@onlyoffice/rehype-starry-night"
 import type * as Hast from "hast"
 import type * as Mdast from "mdast"
@@ -22,7 +27,7 @@ import {reporterPretty} from "vfile-reporter-pretty"
 import pack from "../package.json" with {type: "json"}
 import {rehypeDocumentBuilderContainer} from "./document-builder-container.tsx"
 import {rehypeImage} from "./image.tsx"
-import {rehypeLink} from "./link.tsx"
+import {rehypeLink, resolveLink} from "./link.tsx"
 
 export function Markdown(p: ChildrenIncludable): JSX.Element {
   let r: JSX.Element | null = null
@@ -76,14 +81,23 @@ function markdown(): MarkdownProcessor {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype, {allowDangerousHtml: true})
+    .use(rehypeDescriptionList)
     .use(rehypeMetastring)
     .use(rehypeRaw)
+    .use(rehypeMetaobject)
     .use(rehypeSlug, {enableCustomId: true})
     .use(rehypeAutolink, {behavior: "wrap"})
     .use(rehypeLink)
     .use(rehypeImage)
+    .use(rehypeSignature, {
+      onLink(f, t) {
+        return resolveLink(f.path, t.id)
+      },
+    })
     .use(rehypeStarryNight, starryNight)
     .use(rehypeDocumentBuilderContainer)
+    .use(rehypeParameters)
+    .use(rehypeReferences)
     .use(rehypeClean)
     .use(rehypePreact, {Fragment, jsx, jsxs})
     .freeze() as unknown as MarkdownProcessor

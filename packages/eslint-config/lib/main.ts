@@ -69,7 +69,6 @@ const c: Config = [
 
     rules: {
       "array-callback-return": e,
-      "arrow-body-style": [e, "always"],
       "camelcase": e,
       "constructor-super": e,
       "curly": [e, "all"],
@@ -616,19 +615,6 @@ const c: Config = [
     },
   },
 
-  {
-    name: "jsx/exceptions",
-
-    files: [
-      "*.tsx",
-      "**/*.tsx",
-    ],
-
-    rules: {
-      "arrow-body-style": [e, "as-needed"],
-    },
-  },
-
   // @ts-ignore the source configs are not typed
   eslintOnlyoffice.configs["sort-package-json"],
   // @ts-ignore the source configs are not typed
@@ -694,6 +680,20 @@ const c: Config = [
       "jsonc/quotes": e,
       "jsonc/space-unary-ops": e,
       "jsonc/valid-json-number": e,
+    },
+  },
+
+  {
+    name: "json5",
+
+    files: [
+      "*.json5",
+      "**/*.json5",
+    ],
+
+    rules: {
+      "jsonc/comma-dangle": [e, "always-multiline"],
+      "jsonc/quote-props": [e, "consistent"],
     },
   },
 
@@ -844,6 +844,23 @@ const c: Config = [
       "import/extensions": "off",
 
       "unicorn/filename-case": "off",
+    },
+  },
+
+  {
+    name: "markdown/jsonc",
+
+    files: [
+      "*.md/*.json",
+      "*.md/*.json5",
+      "*.md/*.jsonc",
+      "**/*.md/*.json",
+      "**/*.md/*.json5",
+      "**/*.md/*.jsonc",
+    ],
+
+    rules: {
+      "jsonc/object-property-newline": "off",
     },
   },
 ]

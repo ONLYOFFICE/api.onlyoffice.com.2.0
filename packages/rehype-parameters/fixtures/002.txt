@@ -1,0 +1,17 @@
+ignores content without a descriptions list
+
+---
+
+<parameters>
+
+**b**
+
+</parameters>
+
+---
+
+<parameters>
+<p><strong>b</strong></p>
+</parameters>
+
+---

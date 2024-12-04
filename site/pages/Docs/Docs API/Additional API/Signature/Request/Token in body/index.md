@@ -50,7 +50,7 @@ As you can see there is no need to include the above parameters into the request
 
 ### Request to convert the document
 
-Validation is performed for incoming requests with the commands from the **document storage service** to the [document conversion service](../../../Conversion%20API/index.md).
+Validation is performed for incoming requests with the commands from the **document storage service** to the [document conversion service](../../../Conversion%20API/Request/index.md).
 
 Sample parameters of request to convert the document:
 

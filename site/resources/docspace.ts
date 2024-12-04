@@ -4,6 +4,7 @@ import {type Resource, nop} from "@onlyoffice/service-resource"
 
 const require = createRequire(import.meta.url)
 
+export const apisystem = or("apisystem")
 export const data = or("data")
 export const files = op("files")
 export const people = op("people")

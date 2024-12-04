@@ -129,9 +129,22 @@ Starting from version 7.0, the [assemblyFormatAsOrigin](https://helpcenter.onlyo
 
 ### Parameters
 
-| Parameter                                          | Type    | Example | Description                                                                                          |
-| -------------------------------------------------- | ------- | ------- | ---------------------------------------------------------------------------------------------------- |
-| services.CoAuthoring.server.assemblyFormatAsOrigin | boolean | true    | Defines if the assembled file is saved in its original format or not. The default value is **true**. |
+#### services.CoAuthoring.server.assemblyFormatAsOrigin
+
+Defines whether the editor will try to save the assembled file in its original format.
+
+This parameter works as follows:
+
+1. The editor always returns a file in the OOXML format.
+2. If the *assemblyFormatAsOrigin* parameter is set to **true**, the editor tries to convert the file to the original format.
+3. If the original format is old (for example, `doc`) and converting back to the old format fails, the *rollback to save changes to ooxml* warning will be thrown, and the file will be converted back to the OOXML format.
+4. If the *assemblyFormatAsOrigin* parameter is set to **false**, the editor will not convert the file to the original format and return it in the OOXML format.
+
+The default value is **true**.
+
+Type: boolean
+
+Example: true
 
 ### Sample local.json configuration
 

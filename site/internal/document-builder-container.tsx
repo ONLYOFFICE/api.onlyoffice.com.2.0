@@ -1,12 +1,17 @@
 import {documentBuilder} from "@onlyoffice/document-builder-hast-element"
 import {type DocumentEditorConfig} from "@onlyoffice/document-editor-html-element"
 import {mergeConfig, normalizeConfig} from "@onlyoffice/document-server-utils"
-import {fromKeys} from "@onlyoffice/keyed-json"
 import {Config} from "@onlyoffice/site-config"
 import {template} from "@onlyoffice/template-hast-element"
 import {type Element, type Root} from "hast"
 import {toText} from "hast-util-to-text"
 import {visit} from "unist-util-visit"
+
+declare module "hast" {
+  interface Metaobject {
+    "document-builder"?: DocumentEditorConfig
+  }
+}
 
 export interface RehypeDocumentBuilderContainerTransform {
   (tree: Root): void
@@ -26,13 +31,12 @@ export function rehypeDocumentBuilderContainer(): RehypeDocumentBuilderContainer
         return
       }
 
-      const m = e.properties.metastring
+      const m = e.properties.metaobject
       if (!m) {
         return
       }
 
-      const o = fromKeys(m)
-      const b = o["document-builder"] as DocumentEditorConfig | undefined
+      const b = m["document-builder"]
       if (!b) {
         return
       }

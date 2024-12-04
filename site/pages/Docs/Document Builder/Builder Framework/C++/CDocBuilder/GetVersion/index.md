@@ -1,8 +1,16 @@
-`char* GetVersion();`
+```yml signature
+- {type: type, text: char*}
+- {type: text, text: " "}
+- {type: entity, text: GetVersion}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns the **ONLYOFFICE Document Builder** engine version.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilder.GetVersion* method is not used.
+Returns the ONLYOFFICE Document Builder engine version.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilder.GetVersion` method is not used.
 
 ## Example
 

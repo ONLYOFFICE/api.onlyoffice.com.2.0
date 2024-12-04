@@ -116,4 +116,4 @@ For this purpose the POST request with the parameters set in the request body is
   }
   ```
 
-Further information about using the codepage during conversion can be found [at this page](../../../Additional%20API/Conversion%20API/index.md#codepage).
+Further information about using the codepage during conversion can be found [at this page](../../../Additional%20API/Conversion%20API/Request/index.md#codepage).

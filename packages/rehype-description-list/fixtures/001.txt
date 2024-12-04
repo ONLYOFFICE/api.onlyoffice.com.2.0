@@ -1,0 +1,11 @@
+does not modify an unordered list without items
+
+---
+
+<ul></ul>
+
+---
+
+<ul></ul>
+
+---

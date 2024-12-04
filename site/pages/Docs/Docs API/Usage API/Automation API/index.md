@@ -144,7 +144,7 @@ connector.addToolbarMenuItem({
 
 ## attachEvent
 
-The function called to add an event listener, a function that will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins. It can be found here.
+The function called to add an event listener, a function that will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins.
 
 Parameters:
 
@@ -240,7 +240,7 @@ connector.disconnect()
 
 ## executeMethod
 
-The function called to execute certain editor methods using the connector. The full list of these methods is the same as for the plugins. It can be found here.
+The function called to execute certain editor methods using the connector. The full list of these methods is the same as for the plugins.
 
 Parameters:
 
@@ -285,7 +285,7 @@ Example:
 const items = [
   {
     id: "onConvert",
-    text: getMessage("Convert to Markdown or HTML"),
+    text: "Convert to Markdown or HTML",
   },
 ]
 
@@ -300,7 +300,7 @@ Below you can find methods that are available for this class.
 
 ### attachEvent
 
-The function called to add an event listener to the modal window frame. This function will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins. It can be found [here](../../../Plugin%20and%20Macros/Interacting%20with%20editors/Events/index.md).
+The function called to add an event listener to the modal window frame. This function will be called whenever the specified event is delivered to the target. The list of all the available events is the same as for the plugins.
 
 Parameters:
 
@@ -319,7 +319,7 @@ testConnectorWindow.attachEvent("onWindowMessage", (message) => {
 
 ### dispatchEvent
 
-The function called to send an event to the modal window frame. The list of all the available events is the same as for the plugins. It can be found [here](../../../Plugin%20and%20Macros/Interacting%20with%20editors/Events/index.md).
+The function called to send an event to the modal window frame. The list of all the available events is the same as for the plugins.
 
 Parameters:
 
@@ -334,23 +334,6 @@ Example:
 testConnectorWindow.dispatchEvent("messageName", {
   prop: "value",
 })
-```
-
-### sendToPlugin
-
-The function called to send a message to the editor from the modal window.
-
-Parameters:
-
-| Name | Type   | Description     |
-| ---- | ------ | --------------- |
-| name | string | The event name. |
-| data | object | The event data. |
-
-Example:
-
-``` ts
-testConnectorWindow.sendToPlugin("onWindowMessage", {type: "onWindowReady"})
 ```
 
 ### show
@@ -373,4 +356,44 @@ testConnectorWindow.show({
   buttons: [],
   icons: "./icon.svg",
 })
+```
+
+In the connector window code, you can also use the following methods:
+
+### attachEvent
+
+The function called to subscribe to the messages from the plugin.
+
+Parameters:
+
+| Name     | Type     | Description         |
+| -------- | -------- | ------------------- |
+| *id*     | string   | The event name.     |
+| *action* | function | The event listener. |
+
+Returns: This method doesn't return any data.
+
+Example:
+
+``` ts
+window.Asc.plugin.attachEvent("messageName", (message) => {
+  console.log(message)
+})
+```
+
+### sendToPlugin
+
+The function called to send a message to the editor from the modal window.
+
+Parameters:
+
+| Name | Type   | Description     |
+| ---- | ------ | --------------- |
+| name | string | The event name. |
+| data | object | The event data. |
+
+Example:
+
+``` ts
+window.Asc.plugin.sendToPlugin("onWindowMessage", {type: "onWindowReady"})
 ```

@@ -64,7 +64,7 @@ Example: ""
 
 ## group
 
-Plugin group that is separated from other plugins in the **Plugins** tab. The first group usually includes the **Plugin Manager** and **Background plugins**, if they exist. The second group is for **Macros**. Other plugins are placed after them in the third group. You can add as many groups as you need. If this parameter is omitted, the plugin will be added to the last group.
+Plugin group that is separated from other plugins in the **Plugins** tab. The first group usually includes the **Plugin Manager** and **Background plugins**, if they exist. Other plugins are placed after them in the second group. You can add as many groups as you need. If this parameter is omitted, the plugin will be added to the last group.
 
 Type: object
 

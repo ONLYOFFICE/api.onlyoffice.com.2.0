@@ -43,10 +43,70 @@ function main(): void {
       for (const n of p._) {
         // todo: this is a temporary solution to run only verified tests.
         if (
-          n !== "signature" &&
-          n !== "service-declaration" &&
-          n !== "openapi-declaration" &&
-          n !== "svg-preact"
+          n === "async-transform" ||
+          n === "caller-position" ||
+          n === "combobox-container-html-element" ||
+          n === "command" ||
+          n === "console" ||
+          n === "document-builder-hast-element" ||
+          n === "document-editor-code-sample" ||
+          n === "document-editor-hast-element" ||
+          n === "document-server-utils" ||
+          n === "eleventy-clean" ||
+          n === "eleventy-env" ||
+          n === "eleventy-esbuild" ||
+          n === "eleventy-html-minifier-terser" ||
+          n === "eleventy-lightningcss" ||
+          n === "eleventy-pagefind" ||
+          n === "eleventy-starry-night" ||
+          n === "eslint-config" ||
+          n === "jq" ||
+          n === "library-signature" ||
+          n === "node-path" ||
+          n === "preact-elements" ||
+          n === "preact-slots" ||
+          n === "preact-template" ||
+          n === "rehype-clean" ||
+          n === "remark-config" ||
+          n === "remark-lint-eslint" ||
+          n === "server-client" ||
+          n === "service-resource" ||
+          n === "site-article" ||
+          n === "site-chapter" ||
+          n === "site-config-fixtures" ||
+          n === "site-config" ||
+          n === "site-content" ||
+          n === "site-document-editor-playground" ||
+          n === "site-env" ||
+          n === "site-footer" ||
+          n === "site-glossary" ||
+          n === "site-header" ||
+          n === "site-home" ||
+          n === "site-kit" ||
+          n === "site-library" ||
+          n === "site-logo" ||
+          n === "site-menubar" ||
+          n === "site-page" ||
+          n === "site-part" ||
+          n === "site-search" ||
+          n === "site-service" ||
+          n === "site-signature" ||
+          n === "site-status" ||
+          n === "site-toc" ||
+          n === "strings" ||
+          n === "stylelint-config" ||
+          n === "svg-library" ||
+          n === "ui-badge-group" ||
+          n === "ui-badge" ||
+          n === "ui-breadcrumb" ||
+          n === "ui-button" ||
+          n === "ui-content" ||
+          n === "ui-form-control" ||
+          n === "ui-kit" ||
+          n === "ui-pictures" ||
+          n === "ui-primitives" ||
+          n === "ui-select" ||
+          n === "ui-text-input"
         ) {
           continue
         }

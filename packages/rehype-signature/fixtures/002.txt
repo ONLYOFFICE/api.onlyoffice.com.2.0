@@ -1,0 +1,12 @@
+ignores a fenced code block without language
+
+---
+
+```
+```
+
+---
+
+<pre><code></code></pre>
+
+---

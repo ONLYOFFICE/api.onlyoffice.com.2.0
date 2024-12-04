@@ -1,8 +1,16 @@
-`bool IsObject();`
+```yml signature
+- {type: type, text: bool}
+- {type: text, text: " "}
+- {type: entity, text: IsObject}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is an object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsObject* method is not used.
+Returns true if the `CDocBuilderValue` object is an object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.IsObject` method is not used.
 
 ## Example
 

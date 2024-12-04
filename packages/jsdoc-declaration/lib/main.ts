@@ -14,7 +14,8 @@ import type * as Library from "@onlyoffice/library-declaration"
 // eslint-disable-next-line no-duplicate-imports
 import * as library from "@onlyoffice/library-declaration"
 import * as signature from "@onlyoffice/library-signature"
-import {firstParagraph, firstSentence, selectSection} from "@onlyoffice/markdown"
+import {extractSection} from "@onlyoffice/mdast-util-extract-section"
+import {firstSentence} from "@onlyoffice/mdast-util-first-sentence"
 import * as Signature from "@onlyoffice/signature"
 import {isStringLiteral} from "@onlyoffice/strings"
 import languagedetection from "@vscode/vscode-languagedetection"
@@ -627,12 +628,12 @@ async function declarationNode(dc: Doclet): Promise<[Library.DeclarationNode, ..
 
   // todo: it is a temporary solution.
   if (d.description) {
-    // todo: my bad, capitalize the title in the document builder declarations too.
-    const s = selectSection("Try it", d.description)
-    if (s !== "") {
-      // do not do it, create a new utility function.
-      d.description = d.description.replace("## Try it", "").replace(s, "")
-      d.tryIt = s
+    const a = fromMarkdown(d.description)
+    const r = extractSection("Try It", a)
+    const b = toMarkdown(r)
+    if (b) {
+      d.description = toMarkdown(a)
+      d.tryIt = b
     }
   }
 
@@ -878,9 +879,10 @@ function resolveAbstract(dc: Doclet): [string, string] {
     }
 
     if (dc.description) {
-      let s = firstParagraph(dc.description)
-      s = firstSentence(s)
-      return [s, dc.description]
+      const a = fromMarkdown(dc.description)
+      const r = firstSentence(a)
+      const b = toMarkdown(r)
+      return [b, dc.description]
     }
 
     return ["", ""]

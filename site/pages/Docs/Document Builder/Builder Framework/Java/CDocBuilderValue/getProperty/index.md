@@ -1,14 +1,33 @@
-`CDocBuilderValue getProperty(String name);`
+```yml signature
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: " "}
+- {type: entity, text: getProperty}
+- {type: text, text: (}
+- {type: parameter, text: name}
+- {type: text, text: ": "}
+- {type: type, text: String}
+- {type: text, text: )}
+```
 
-Returns a property of the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.getProperty* method is not used.
+Returns a property of the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.getProperty` method is not used.
 
 ## Parameters
 
-| Name   | Type   | Description                                           |
-| ------ | ------ | ----------------------------------------------------- |
-| *name* | String | The name of the **CDocBuilderValue** object property. |
+<parameters>
+
+- name
+
+  ```yml signature.variant="inline"
+  - {type: type, text: String}
+  ```
+
+  - : The name of the `CDocBuilderValue` object property.
+
+</parameters>
 
 ## Example
 
@@ -25,9 +44,9 @@ CDocBuilderValue docPr = document.getProperty("color");
 CDocBuilder.dispose();
 ```
 
-There are two more ways to get a property of the **CDocBuilderValue** object:
+There are two more ways to get a property of the `CDocBuilderValue` object:
 
-1. use the **get** method that takes an argument in the string format:
+1. use the `get` method that takes an argument in the string format:
 
    ``` java
    CDocBuilderValue get(String name);
@@ -48,7 +67,7 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
    CDocBuilder.dispose();
    ```
 
-2. use the **default\[]** postfix expression that takes an argument in the string format:
+2. use the `default[]` postfix expression that takes an argument in the string format:
 
    ``` java
    property CDocBuilderValue default[String]

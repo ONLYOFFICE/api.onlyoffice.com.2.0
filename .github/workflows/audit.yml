@@ -7,16 +7,20 @@ on:
 
 jobs:
   audit:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os:
+        - ubuntu-latest
+        # - windows-latest
+
+    runs-on: ${{matrix.os}}
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
     - name: Setup mise
       uses: jdx/mise-action@v2
-      env:
-        MISE_HTTP_TIMEOUT: 120s
-        MISE_VERBOSE: true
 
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile

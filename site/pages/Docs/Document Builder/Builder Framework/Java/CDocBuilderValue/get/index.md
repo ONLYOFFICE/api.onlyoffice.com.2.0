@@ -1,14 +1,37 @@
-`CDocBuilderValue get(int index);`
+```yml signature
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: " "}
+- {type: entity, text: get}
+- {type: text, text: (}
+- {type: parameter, text: index}
+- {type: text, text: ": "}
+- {type: type, text: int}
+- {type: text, text: " | "}
+- {type: type, text: String}
+- {type: text, text: )}
+```
+
+## Description
 
 Returns an array value by its index or name.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.get* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.get` method is not used.
 
 ## Parameters
 
-| Name    | Type         | Description                           |
-| ------- | ------------ | ------------------------------------- |
-| *index* | int / String | The index or name of the array value. |
+<parameters>
+
+- index
+
+  ```yml signature.variant="inline"
+  - {type: type, text: int}
+  - {type: text, text: " | "}
+  - {type: type, text: String}
+  ```
+
+  - : The index or name of the array value.
+
+</parameters>
 
 ## Example
 
@@ -26,7 +49,7 @@ CDocBuilderValue chart = charts.get(1);
 CDocBuilder.dispose();
 ```
 
-The **default\[]** postfix expression can be also used to get an array value by its index:
+The `default[]` postfix expression can be also used to get an array value by its index:
 
 ``` java
 property CDocBuilderValue default[int]
