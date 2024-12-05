@@ -1,8 +1,10 @@
 import {test} from "uvu"
 import {is} from "uvu/assert"
 import {
+  isCodeNode,
   isHeadingNode,
   isHtmlNode,
+  isInlineCodeNode,
   isLiteralNode,
   isNode,
   isParagraphNode,
@@ -36,7 +38,9 @@ const p1: [Is, unknown][] = [
   [isTextNode, {type: "text", value: ""}],
   [isHtmlNode, {type: "html", value: ""}],
   [isParagraphNode, {type: "paragraph", children: []}],
+  [isInlineCodeNode, {type: "inlineCode", value: ""}],
   [isHeadingNode, {type: "heading", depth: 1, children: []}],
+  [isCodeNode, {type: "code", value: ""}],
 ]
 
 for (const [xi, xn] of p1) {
