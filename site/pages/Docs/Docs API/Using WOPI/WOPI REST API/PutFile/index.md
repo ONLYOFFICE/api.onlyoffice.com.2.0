@@ -1,6 +1,6 @@
 `POST /wopi/files/(file_id)/contents`
 
-Updates a file’s binary contents for the `HTTP://server/<...>/wopi*/files/<id>/contents` operation.
+Updates a file's binary contents for the `HTTP://server/<...>/wopi*/files/<id>/contents` operation.
 
 This operation works as follows:
 

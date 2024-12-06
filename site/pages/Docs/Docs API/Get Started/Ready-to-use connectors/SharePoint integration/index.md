@@ -50,7 +50,7 @@ To start using ONLYOFFICE Docs with SharePoint, the following steps must be perf
 
 9. Go back to **Web Application Management** and click the **Anonymous Policy** icon.
 
-10. Under **Anonymous Access Restrictions**, select your **Zone**, set the **Permissions** to *None – No policy* and click **Save**.
+10. Under **Anonymous Access Restrictions**, select your **Zone**, set the **Permissions** to *None - No policy* and click **Save**.
 
 ## Configuring SharePoint ONLYOFFICE integration solution
 

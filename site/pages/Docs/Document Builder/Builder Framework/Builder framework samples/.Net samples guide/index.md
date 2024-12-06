@@ -109,9 +109,9 @@ To use `configure.py`, specify the following options:
 
 2. Test samples with `--test TEST`. Some available options:
 
-   - `--test all` – generate projects for all samples;
-   - `--test cs` – generate projects only for C# samples;
-   - `--test cs/creating_basic_form` – generate only the project for the specified sample.
+   - `--test all` — generate projects for all samples;
+   - `--test cs` — generate projects only for C# samples;
+   - `--test cs/creating_basic_form` — generate only the project for the specified sample.
 
    Several test options are available at the same time. To see all available `TEST` options call `configure.py -l`.
 
