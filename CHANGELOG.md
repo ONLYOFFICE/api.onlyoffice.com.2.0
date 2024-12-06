@@ -1,5 +1,7 @@
 # Change Log
 
+- docspace backend: added the Removed user page
+
 ## 6.3.0
 - docspace oauth api: added a new section
 - docspace api backend: v3.0
