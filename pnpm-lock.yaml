@@ -2187,6 +2187,9 @@ importers:
       '@onlyoffice/remark-lint-eslint':
         specifier: workspace:^
         version: link:../remark-lint-eslint
+      '@onlyoffice/remark-lint-no-unicode':
+        specifier: workspace:^
+        version: link:../remark-lint-no-unicode
       remark-lint:
         specifier: 10.0.0
         version: 10.0.0
