@@ -69,7 +69,8 @@ class ResourcePather {
     let c: Declaration | undefined = d
 
     while (c) {
-      s = `${c.name}/${s}`
+      const n = sanitizeName(c.name)
+      s = `${n}/${s}`
       c = retrieve(c.parent)
     }
 
@@ -93,4 +94,8 @@ class ResourcePather {
 
     return s
   }
+}
+
+function sanitizeName(t: string): string {
+  return t.replaceAll("/", " ")
 }
