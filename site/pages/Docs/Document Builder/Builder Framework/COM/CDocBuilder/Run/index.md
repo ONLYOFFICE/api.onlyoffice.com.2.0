@@ -15,7 +15,7 @@
 
 ## Description
 
-Runs the ONLYOFFICE Document Builder executable. If you do not want to write an application, you can simply use the `docbuilder.exe` executable file and run it with the `.docbuilder` file as an argument, where all the code for the document file creation will be written. For COM, create the `CDocBuilder` object and call the `Run` method with the path to the executable file from the `patр` parameter.
+Runs the ONLYOFFICE Document Builder executable. If you do not want to write an application, you can simply use the `docbuilder.exe` executable file and run it with the `.docbuilder` file as an argument, where all the code for the document file creation will be written. For COM, create the `CDocBuilder` object and call the `Run` method with the path to the executable file from the `path` parameter.
 
 ## Parameters
 
