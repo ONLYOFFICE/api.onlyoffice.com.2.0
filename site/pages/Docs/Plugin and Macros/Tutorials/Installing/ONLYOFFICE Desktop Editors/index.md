@@ -83,7 +83,7 @@ If you need to uninstall the default plugins, go to the *sdkjs-plugins* folder a
 
 The table below contains default plugins guids to make it easier for you to find them:
 
-## Default plugins guid’s
+## Default plugins guid's
 
 |                |                                        |
 | -------------- | -------------------------------------- |

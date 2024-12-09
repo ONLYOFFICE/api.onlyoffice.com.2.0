@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@onlyoffice/remark-lint-eslint": "workspace:^",
+    "@onlyoffice/remark-lint-no-unicode": "workspace:^",
     "remark-lint": "10.0.0",
     "remark-lint-blockquote-indentation": "4.0.0",
     "remark-lint-checkbox-character-style": "5.0.0",

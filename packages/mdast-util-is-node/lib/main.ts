@@ -1,6 +1,8 @@
 import {
+  type Code,
   type Heading,
   type Html,
+  type InlineCode,
   type Literal,
   type Node,
   type Paragraph,
@@ -8,11 +10,19 @@ import {
   type Text,
 } from "mdast"
 
+export function isCodeNode(u: unknown): u is Code {
+  return isLiteralNode(u) && u.type === "code"
+}
+
 export function isHeadingNode(u: unknown): u is Heading {
   return isParentNode(u) &&
     u.type === "heading" &&
     "depth" in u &&
     typeof u.depth === "number"
+}
+
+export function isInlineCodeNode(u: unknown): u is InlineCode {
+  return isLiteralNode(u) && u.type === "inlineCode"
 }
 
 export function isParagraphNode(u: unknown): u is Paragraph {

@@ -21,7 +21,7 @@ The connector has the same interface as plugins. Below you can find methods that
 - [attachEvent](#attachevent) - add an event listener.
 - [callCommand](#callcommand) - send the data back to the editor.
 - [connect](#connect) - connect the connector to the editor.
-- [createWindow](#createwindow) - create the connector modal window to display the additional information inside the editor.
+- [createWindow](#createwindow) - create the connector modal window to display the additional information inside the editor.
 - [detachEvent](#detachevent) - remove an event listener.
 - [disconnect](#disconnect) - disconnect the connector from the editor.
 - [executeMethod](#executemethod) - execute certain editor methods using the connector.
@@ -45,7 +45,7 @@ Parameters:
 | *text*     | string                   | The item caption.                                                                                                          |
 | *data*     | string                   | The item data (this data will be sent to the click event callback).                                                        |
 | *disabled* | boolean                  | Specifies if the current item is disabled or not.                                                                          |
-| *icons*    | string                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#icons) documentation). |
+| *icons*    | string                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#icons) documentation). |
 | *onClick*  | function                 | The click event callback.                                                                                                  |
 | *items*    | Array.\<ContextMenuItem> | An array containing the context menu items for the current item.                                                           |
 
@@ -95,7 +95,7 @@ Parameters:
 | *type*           | [ToolbarMenuItemType](#toolbarmenuitemtype) | The item type.                                                                                                                           |
 | *text*           | string                                      | The item caption. If this field is "", the toolbar button is displayed only with an icon, without a caption.                             |
 | *hint*           | string                                      | The item hint.                                                                                                                           |
-| *icons*          | string                                      | object                                                                                                                                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#variationsicons) documentation). |
+| *icons*          | string                                      | object                                                                                                                                   | The item icons (see the plugins [config](../../../Plugin%20and%20Macros/Structure/Manifest/index.md#variationsicons) documentation). |
 | *disabled*       | boolean                                     | Specifies whether the current item is locked.                                                                                            |
 | *enableToggle*   | boolean                                     | Specifies whether the toolbar menu item (when *"split == false"*) or its top part (when *"split == true"*) can be toggled.               |
 | *lockInViewMode* | boolean                                     | Specifies whether the toolbar menu item is automatically locked in the view modes (when previewing, viewing forms, disconnecting, etc.). |
@@ -204,7 +204,7 @@ connector.connect()
 
 ## createWindow
 
-The function called to create the [connector modal window](#connector-window) to display the additional information inside the editor.
+The function called to create the [connector modal window](#connector-window) to display the additional information inside the editor.
 
 Example:
 
@@ -294,7 +294,7 @@ connector.updateContextMenuItem(items)
 
 ## Connector window
 
-Connector window is a class that represents the connector window. To create it, use the [createWindow](#createwindow) method of the connector object.
+Connector window is a class that represents the connector window. To create it, use the [createWindow](#createwindow) method of the connector object.
 
 Below you can find methods that are available for this class.
 

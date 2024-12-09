@@ -8,7 +8,7 @@ To process [buttons](../../Structure/Manifest/index.md#variationsbuttons) which 
 
 | Name       | Type   | Description                                                                                                                                                                                                                                                                     |
 | ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| *id*       | number | Defines the button index in the [buttons](../../Structure/Manifest/index.md#variationsbuttons) array of the *config.json* file. If *id == -1*, then the plugin considers that the **Close** window cross button has been clicked or its operation has been somehow interrupted. |
+| *id*       | number | Defines the button index in the [buttons](../../Structure/Manifest/index.md#variationsbuttons) array of the *config.json* file. If *id == -1*, then the plugin considers that the **Close** window cross button has been clicked or its operation has been somehow interrupted. |
 | *windowId* | number | Defines an index of the button from the modal window.                                                                                                                                                                                                                           |
 
 ## Example

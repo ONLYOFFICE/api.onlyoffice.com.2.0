@@ -1367,19 +1367,22 @@ importers:
       '@types/mdast':
         specifier: 4.0.3
         version: 4.0.3
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
+      esbuild:
+        specifier: 0.23.0
+        version: 0.23.0
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2184,6 +2187,9 @@ importers:
       '@onlyoffice/remark-lint-eslint':
         specifier: workspace:^
         version: link:../remark-lint-eslint
+      '@onlyoffice/remark-lint-no-unicode':
+        specifier: workspace:^
+        version: link:../remark-lint-no-unicode
       remark-lint:
         specifier: 10.0.0
         version: 10.0.0
@@ -2363,6 +2369,21 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/remark-lint:
+    dependencies:
+      '@types/unist':
+        specifier: 3.0.3
+        version: 3.0.3
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      unified-lint-rule:
+        specifier: 3.0.0
+        version: 3.0.0
+      vfile:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/remark-lint-eslint:
     dependencies:
       '@onlyoffice/eslint-config':
@@ -2393,6 +2414,58 @@ importers:
       typescript:
         specifier: 5.4.5
         version: 5.4.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/remark-lint-no-unicode:
+    dependencies:
+      '@onlyoffice/mdast-util-is-node':
+        specifier: workspace:^
+        version: link:../mdast-util-is-node
+      '@onlyoffice/remark-lint':
+        specifier: workspace:^
+        version: link:../remark-lint
+      '@types/mdast':
+        specifier: 4.0.3
+        version: 4.0.3
+      '@types/unist':
+        specifier: 3.0.3
+        version: 3.0.3
+      unified-lint-rule:
+        specifier: 3.0.0
+        version: 3.0.0
+      vfile:
+        specifier: 6.0.1
+        version: 6.0.1
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      esbuild:
+        specifier: 0.23.0
+        version: 0.23.0
+      remark-lint:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      remark-stringify:
+        specifier: 11.0.0
+        version: 11.0.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
       uvu:
         specifier: 0.5.6
         version: 0.5.6

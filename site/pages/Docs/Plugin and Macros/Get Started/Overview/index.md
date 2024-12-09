@@ -20,7 +20,7 @@ Here are some examples of what you can do with ONLYOFFICE plugins:
 
 - connect third-party services, like [Telegram](../../Tutorials/Samples/Telegram/index.md), [YouTube](../../Tutorials/Samples/YouTube/index.md), [Thesaurus](../../Tutorials/Samples/Thesaurus/index.md), [Translator](../../Tutorials/Samples/Translator/index.md), [Zotero](../../Tutorials/Samples/Zotero/index.md), [OCR](../../Tutorials/Samples/OCR/index.md), etc.;
 - add custom components & controls in the UI, like **Trackchanges**, **Trackchanges\_off**;
-- enhance the existing user experience and the editors’ functionality: [Autocomplete](../../Tutorials/Samples/Autocomplete/index.md), [Search & Replace](../../Tutorials/Samples/Search%20and%20replace/index.md), [Move cursor](../../Tutorials/Samples/Move%20cursor/index.md), [Extended comments](../../Tutorials/Samples/Extended%20comments/index.md);
+- enhance the existing user experience and the editors functionality: [Autocomplete](../../Tutorials/Samples/Autocomplete/index.md), [Search & Replace](../../Tutorials/Samples/Search%20and%20replace/index.md), [Move cursor](../../Tutorials/Samples/Move%20cursor/index.md), [Extended comments](../../Tutorials/Samples/Extended%20comments/index.md);
 - automate tasks in documents with [Macros](../../Macros/Getting%20started/index.md).
 
 Code samples are available at <https://github.com/ONLYOFFICE/sdkjs-plugins>.
