@@ -1,7 +1,6 @@
 import {type Context, type Data} from "@onlyoffice/eleventy-types"
 import {type JSX, h} from "preact"
 import {Library} from "@/internal/library.tsx"
-import {isWritten} from "../internal/url.ts"
 
 export function data(): Data {
   return {
@@ -10,7 +9,7 @@ export function data(): Data {
 }
 
 export function render(c: Context): JSX.Element {
-  if (!isWritten(c)) {
+  if (!c.isWritten) {
     return <div>This page should not be rendered</div>
   }
 

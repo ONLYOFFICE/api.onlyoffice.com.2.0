@@ -9,7 +9,6 @@ import {type MenubarData, MenubarDatum} from "../internal/menubar.tsx"
 import {type PageData, PageDatum} from "../internal/page.tsx"
 import {type PartData, PartDatum} from "../internal/part.tsx"
 import {type ServiceData, ServiceDatum} from "../internal/service.tsx"
-import {writeUrl} from "../internal/url.ts"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -59,10 +58,6 @@ declare module "@onlyoffice/eleventy-types" {
 
 export function data(): Data {
   return {
-    permalink(d) {
-      return writeUrl(d)
-    },
-
     layout: "article",
 
     eleventyComputed: {

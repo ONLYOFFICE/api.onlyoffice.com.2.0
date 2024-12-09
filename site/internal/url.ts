@@ -7,6 +7,7 @@ import {slug} from "github-slugger"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
+    isWritten?: boolean
     doWrite?(this: void, data: Data): boolean | undefined
   }
 }
@@ -16,6 +17,8 @@ declare module "@onlyoffice/eleventy-types" {
     canonicalUrl?: string
     sitemapUrl?: string
     virtualUrl?: string
+    specificUrl?: string
+    writeUrl?: string
   }
 }
 
@@ -31,26 +34,41 @@ export function eleventyUrl(uc: UserConfig): void {
     await rmTempDir(c.dir.output)
   })
 
-  uc.addGlobalData("eleventyComputed", {
-    canonicalUrl,
-    sitemapUrl,
-    virtualUrl,
+  uc.addGlobalData("permalink", () => {
+    return permalink
   })
 }
 
-export function isWritten(d: Data): boolean {
-  const p = d.page
-  if (!p) {
-    throw new Error("The page data is missing")
+function permalink(d: Data): string {
+  if (d.writeUrl) {
+    return d.writeUrl
   }
-  return !isTempPath(p.outputPath)
-}
 
-export function writeUrl(d: Data): string {
-  if (doWrite(d)) {
-    return specificUrl(d)
+  const sp = computePath(d, d.specificPath)
+  const su = slugify(sp)
+
+  const vp = computePath(d, d.virtualPath)
+  const vu = slugify(vp)
+
+  const [mu] = cutSuffix(vu, "index.html")
+  const [cu] = cutSuffix(su, "index.html")
+
+  d.isWritten = doWrite(d)
+
+  if (d.isWritten) {
+    d.writeUrl = su
+  } else {
+    const tp = computePath(d, tempPath)
+    const tu = slugify(tp)
+    d.writeUrl = tu
   }
-  return tempUrl()
+
+  d.specificUrl = su
+  d.virtualUrl = vu
+  d.sitemapUrl = mu
+  d.canonicalUrl = cu
+
+  return d.writeUrl
 }
 
 function doWrite(d: Data): boolean {
@@ -63,11 +81,6 @@ function doWrite(d: Data): boolean {
   return true
 }
 
-function tempUrl(): string {
-  const p = tempPath()
-  return slugify(p)
-}
-
 async function rmTempDir(r: string): Promise<void> {
   const d = both.join(r, "temp")
   await rm(d, {recursive: true})
@@ -78,33 +91,7 @@ let tempCount = 0
 function tempPath(): string {
   const i = tempCount
   tempCount += 1
-  return `temp/${i}.txt`
-}
-
-function isTempPath(u: string): boolean {
-  return /temp\/\d+\.txt$/.test(u)
-}
-
-function canonicalUrl(d: Data): string {
-  let u = specificUrl(d)
-  ;[u] = cutSuffix(u, "index.html")
-  return u
-}
-
-function sitemapUrl(d: Data): string {
-  let u = virtualUrl(d)
-  ;[u] = cutSuffix(u, "index.html")
-  return u
-}
-
-function virtualUrl(d: Data): string {
-  const p = computePath(d, d.virtualPath)
-  return slugify(p)
-}
-
-function specificUrl(d: Data): string {
-  const p = computePath(d, d.specificPath)
-  return slugify(p)
+  return `/temp/${i}.txt`
 }
 
 function slugify(s: string): string {
