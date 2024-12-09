@@ -122,7 +122,7 @@ Example:
 
 ```vue
 onDocumentReady() {
-   const documentEditor = window.DocEditor.instances["docEditor"]
+  const documentEditor = window.DocEditor.instances["docEditor"]
 
   documentEditor.showMessage("Welcome to ONLYOFFICE Editor!")
 }
