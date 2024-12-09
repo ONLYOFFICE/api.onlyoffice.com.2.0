@@ -26,6 +26,7 @@ In this section you will learn how to:
 - [Embedding forms into a web page](Embedding%20forms%20into%20a%20web%20page/index.md)
 - [Protecting ranges](Protecting%20ranges/index.md)
 - [Setting avatars](Setting%20avatars/index.md)
+- [Checking PDF forms](Checking%20PDF%20forms/index.md)
 
 ## User-document interaction
 
