@@ -91,8 +91,7 @@ This plugin can't access the editing features but has almost the same config:
 ``` json
 {
   "name": "Encryption",
-  "nameLocale": { 
-    "ru": "Шифрование",
+  "nameLocale": {
     "it": "Crittografia",
     "fr": "Chiffrement",
     "es": "Encriptación",
