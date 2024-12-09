@@ -104,6 +104,30 @@ This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/
 
    - To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
 
+## Calling editor methods in the Vue.js application
+
+1. Add the `DocEditor.instances` parameter to the `window` object and get the editor object from it by the editor ID:
+
+   ```vue
+   const documentEditor = window.DocEditor.instances["docEditor"]
+   ```
+
+2. Call any editor [method](../../../Usage%20API/Methods/index.md) from this object:
+
+   ```vue
+   documentEditor.showMessage("Welcome to ONLYOFFICE Editor!")
+   ```
+
+Example:
+
+```vue
+onDocumentReady() {
+   const documentEditor = window.DocEditor.instances["docEditor"]
+
+  documentEditor.showMessage("Welcome to ONLYOFFICE Editor!")
+}
+```
+
 ## Deploying the demo Vue.js application
 
 The easiest way to deploy the application to a production environment is to install [serve](https://github.com/vercel/serve) and create a static server:
