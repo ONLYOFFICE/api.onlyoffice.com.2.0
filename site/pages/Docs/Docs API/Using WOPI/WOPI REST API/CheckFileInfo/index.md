@@ -22,6 +22,8 @@ The *CheckFileInfo* operation must be implemented for all WOPI actions. This ope
 
 ## Required response properties
 
+> Please note that the default value for any response string value is the empty string.
+
 ### BaseFileName
 
 A name of the file, including extension, without a path. Used for display in user interface (UI), and determining the extension of the file.
