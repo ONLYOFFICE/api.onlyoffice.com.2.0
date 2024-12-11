@@ -4,15 +4,15 @@ The *CheckFileInfo* operation must be implemented for all WOPI actions. This ope
 
 ## Parameters
 
-| Name     | Type   | Description                                                         |
-| -------- | ------ | ------------------------------------------------------------------- |
-| file\_id | string | The ID of a file managed by the host. This string must be URL safe. |
+| Name     | Type   | Description                                                                                                  |
+| -------- | ------ | ------------------------------------------------------------------------------------------------------------ |
+| file\_id | string | The [ID of a file](../../Key%20concepts/index.md#file-id) managed by the host. This string must be URL safe. |
 
 ## Query parameters
 
-| Name          | Type   | Description                                                                        |
-| ------------- | ------ | ---------------------------------------------------------------------------------- |
-| access\_token | string | An access token that the host uses to determine whether the request is authorized. |
+| Name          | Type   | Description                                                                                                                      |
+| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| access\_token | string | An [access token](../../Key%20concepts/index.md#access-token) that the host uses to determine whether the request is authorized. |
 
 ## Request headers
 
