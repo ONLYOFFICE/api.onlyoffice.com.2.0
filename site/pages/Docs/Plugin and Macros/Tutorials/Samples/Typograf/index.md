@@ -8,8 +8,6 @@ Supported languages are listed [here](https://github.com/typograf/typograf/blob/
 
 **Supported editors:** documents.
 
-![Typograf](/assets/images/plugins/gifs/typograf.gif)
-
 ## Installation
 
 Available by default in ONLYOFFICE Enterprise Edition and Community Edition (Docs + Workspace).

@@ -6,7 +6,7 @@ The **document editing service** informs the **document storage service** about 
 
 ## actions
 
-Defines the object received when the user takes an action with the document. The *type* field value can have the following values:
+Defines the array of object received when the user takes an action with the document. The *type* field value can have the following values:
 
 - **0** - the user disconnects from the document co-editing;
 - **1** - the new user connects to the document co-editing;

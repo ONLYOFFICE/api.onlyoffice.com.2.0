@@ -21,6 +21,7 @@ The **action** element of the discovery XML provides the important characteristi
 | embedview  | Renders a non-editable view of a document that is optimized for embedding in a web page. This action is available starting from version 7.2.                                                                                                      |
 | convert    | Converts a document in a [binary format](../Editing%20binary%20documents/index.md) (*doc, ppt, xls*) into a modern format (*docx, pptx, xlsx*) so that it can be edited in the online office. This action is available starting from version 7.3. |
 | formsubmit | Supports opening *pdf* files in the form filling mode. In this case, a user might be able to make changes to a *pdf* file even if they didn't have permission to use the *edit* action. This action is available starting from version 8.1.       |
+| mobileView | Renders a non-editable view of a document that is optimized for viewing on mobile devices such as smartphones. This action is available starting from version 7.4.                                                                                |
 
 ### Attributes
 
@@ -50,7 +51,7 @@ ui=en-us&amp;thm=1&amp;"/>
 | thm        | 1                                                                | Indicates that the WOPI server includes a value to designate the theme used. The current values are *"1"* to indicate a light-colored theme and *"2"* to indicate a dark-colored theme.                                                                    |
 | dchat      | 1                                                                | Indicates that the WOPI server includes the value *"1"* to load a view of the document that does not create or join a chat session.                                                                                                                        |
 | embed      | true                                                             | Indicates that the output of the action will be embedded in a web page (**true**).                                                                                                                                                                         |
-| wopisrc    | https\://\<host\_address>/ wopi/files/(file\_id)                 | Indicates that the WOPI server includes the [WOPISrc](../Overview/index.md#wopisrc) value. It tells the WOPI client what URL to call back to when running WOPI operations on a file. This parameter is required.                                           |
+| wopisrc    | https\://\<host\_address>/ wopi/files/(file\_id)                 | Indicates that the WOPI server includes the [WOPISrc](../Key%20concepts/index.md#wopisrc) value. It tells the WOPI client what URL to call back to when running WOPI operations on a file. This parameter is required.                                     |
 | favIconUrl | "/web-apps/apps/ documenteditor/main/ resources/img/favicon.ico" | Indicates that the WOPI server includes a URL to an appropriate favicon for all online office applications. Hosts should use this URL as the favicon for their host page, so that the appropriate application icon appears when the online office is used. |
 
 ## Nextcloud specific

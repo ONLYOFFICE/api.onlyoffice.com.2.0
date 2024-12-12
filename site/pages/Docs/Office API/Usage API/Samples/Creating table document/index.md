@@ -51,7 +51,7 @@ for (let i = 1; i < 10; i += 1) {
     const oCell = oTable.GetRow(i).GetCell(j)
     oCell.SetVerticalAlign("center")
     const oCellContent = oCell.GetContent()
-    oParagraph = oCellContent.GetElement(0)
+    const oParagraph = oCellContent.GetElement(0)
     oParagraph.AddText(data[j][i - 1])
     oParagraph.SetJc("center")
     setTextColor(oParagraph, data[j][i - 1])

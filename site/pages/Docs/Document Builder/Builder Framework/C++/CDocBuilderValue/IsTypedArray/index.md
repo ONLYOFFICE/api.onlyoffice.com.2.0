@@ -1,8 +1,16 @@
-`bool IsTypedArray();`
+```yml signature
+- {type: type, text: bool}
+- {type: text, text: " "}
+- {type: entity, text: IsTypedArray}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is a typed array.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsTypedArray* method is not used.
+Returns true if the `CDocBuilderValue` object is a typed array.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.IsTypedArray` method is not used.
 
 ## Example
 

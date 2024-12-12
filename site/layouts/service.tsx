@@ -9,5 +9,11 @@ export function data(): Data {
 }
 
 export function render(c: Context): JSX.Element {
-  return <Service url={c.page.url} />
+  const u = c.sitemapUrl
+
+  if (!u) {
+    throw new Error("Missing sitemap URL")
+  }
+
+  return <Service sitemapUrl={u} />
 }

@@ -8,8 +8,6 @@ Loads custom fields from the document.
 
 **Supported editors:** documents.
 
-![LoadCustomFields](/assets/images/plugins/gifs/load-custom-fields.gif)
-
 ## Installation
 
 Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_customfields_load) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

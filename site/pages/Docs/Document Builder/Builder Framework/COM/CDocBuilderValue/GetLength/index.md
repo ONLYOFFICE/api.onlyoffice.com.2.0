@@ -1,14 +1,33 @@
-`HRESULT GetLength([out, retval] long* result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: GetLength}
+- {type: text, text: (}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {type: type, text: long*}
+- {type: text, text: )}
+```
 
-Returns the length if the **CDocBuilderValue** object is an array/typed array. Otherwise, returns 0.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetLength* method is not used.
+Returns the length if the `CDocBuilderValue` object is an array/typed array. Otherwise, returns 0.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.GetLength` method is not used.
 
 ## Parameters
 
-| Name     | Type   | Description                 |
-| -------- | ------ | --------------------------- |
-| *result* | long\* | The returned object length. |
+<parameters>
+
+- result
+
+  ```yml signature.variant="inline"
+  - {type: type, text: long*}
+  ```
+
+  - : The returned object length.
+
+</parameters>
 
 ## Example
 

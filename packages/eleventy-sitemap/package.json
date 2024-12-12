@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@onlyoffice/eleventy-types": "workspace:^",
-    "@onlyoffice/objects": "workspace:^",
+    "@onlyoffice/errors": "workspace:^",
+    "@onlyoffice/result": "workspace:^",
     "typescript": "5.4.5"
   },
   "devDependencies": {

@@ -6,8 +6,6 @@ Inserts a Chess Board object into the document editor. The object makes it possi
 
 **Supported editors:** documents, spreadsheets, presentations.
 
-![Chess](/assets/images/plugins/gifs/chess.gif)
-
 ## Installation
 
 Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/chess) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

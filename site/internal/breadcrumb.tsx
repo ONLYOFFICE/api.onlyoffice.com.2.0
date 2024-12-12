@@ -1,33 +1,37 @@
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import * as Ui from "@onlyoffice/ui-kit"
 import {Fragment, type JSX, h} from "preact"
+import {type Entity, GroupEntity, Sitemap} from "./sitemap.ts"
 
 export interface BreadcrumbProperties {
-  url: string
+  sitemapUrl: string
 }
 
 export function Breadcrumb(p: BreadcrumbProperties): JSX.Element {
   const s = Sitemap.shared
-  const a: JSX.Element[] = []
+  const b: JSX.Element[] = []
 
-  let e = s.find(p.url, "url")
+  let e: Entity = s.findPageByUrl(p.sitemapUrl)
 
   while (true) {
-    while (e && e.type === "group") {
-      e = s.find(e.parent, "id")
+    while (e instanceof GroupEntity) {
+      e = s.findById(e.parentId)
     }
 
-    if (!e || e.url === "/") {
+    if (e.isRoot) {
       break
     }
 
-    a.unshift(<Ui.BreadcrumbCrumb href={e.url}>{e.title}</Ui.BreadcrumbCrumb>)
-    e = s.find(e.parent, "id")
+    const c = <Ui.BreadcrumbCrumb href={e.canonicalUrl}>
+      {e.title}
+    </Ui.BreadcrumbCrumb>
+
+    b.unshift(c)
+    e = s.findById(e.parentId)
   }
 
-  if (a.length === 0) {
+  if (b.length === 0) {
     return <></>
   }
 
-  return <Ui.Breadcrumb>{a}</Ui.Breadcrumb>
+  return <Ui.Breadcrumb>{b}</Ui.Breadcrumb>
 }

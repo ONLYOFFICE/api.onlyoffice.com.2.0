@@ -6,8 +6,6 @@ Connects [Big Huge Thesaurus](https://words.bighugelabs.com/) to search for word
 
 **Supported editors:** documents, spreadsheets, presentations.
 
-![Thesaurus](/assets/images/plugins/gifs/thesaurus.gif)
-
 ## Installation
 
 Available by default in the cloud, on-premises and desktop versions of ONLYOFFICE editors.

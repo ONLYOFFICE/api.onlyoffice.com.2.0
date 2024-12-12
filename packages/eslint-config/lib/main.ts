@@ -568,7 +568,6 @@ const c: Config = [
       "unicorn/prefer-string-trim-start-end": e,
       "unicorn/prefer-structured-clone": e,
       "unicorn/prefer-top-level-await": e,
-      "unicorn/prefer-type-error": e,
       "unicorn/relative-url-style": e,
       "unicorn/require-array-join-separator": e,
       "unicorn/require-number-to-fixed-digits-argument": e,

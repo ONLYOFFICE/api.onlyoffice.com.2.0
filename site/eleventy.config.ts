@@ -6,7 +6,6 @@ import {eleventyClean} from "@onlyoffice/eleventy-clean"
 import {isBuild} from "@onlyoffice/eleventy-env"
 import {eleventyHtmlMinifierTerser} from "@onlyoffice/eleventy-html-minifier-terser"
 import {eleventyPagefind} from "@onlyoffice/eleventy-pagefind"
-import {eleventySitemap} from "@onlyoffice/eleventy-sitemap"
 import {eleventyStarryNight} from "@onlyoffice/eleventy-starry-night"
 import {type UserConfig} from "@onlyoffice/eleventy-types"
 import {Config} from "@onlyoffice/site-config"
@@ -15,6 +14,8 @@ import esbuild from "esbuild"
 import requireFromString from "require-from-string"
 import {eleventyImage} from "./internal/image.tsx"
 import {eleventyMarkdown} from "./internal/markdown.tsx"
+import {eleventySitemap} from "./internal/sitemap.ts"
+import {eleventyUrl} from "./internal/url.ts"
 
 function config(uc: UserConfig): unknown {
   Config.shared = Config.read(cwd(), configMode())
@@ -57,6 +58,7 @@ function config(uc: UserConfig): unknown {
     sortAttributes: true,
   })
 
+  uc.addPlugin(eleventyUrl)
   uc.addPlugin(eleventyStarryNight)
   uc.addPlugin(eleventySitemap)
   uc.addPlugin(eleventyPagefind)

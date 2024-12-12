@@ -6,8 +6,6 @@ Tracks the events of calling the context menu and clicking on its items. It also
 
 **Supported editors:** documents.
 
-![Context menu and events](/assets/images/plugins/gifs/context-menu-and-events.gif)
-
 ## Installation
 
 Copy the code below and save it in the *config.json*, *index.html*, and *code.js* files respectively. Download the *resources* folder with icons from [this plugin](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_customfields_add/resources). Put all the files and the folder into the plugin folder and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

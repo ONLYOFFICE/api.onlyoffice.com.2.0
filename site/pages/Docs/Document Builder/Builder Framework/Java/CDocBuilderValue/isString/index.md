@@ -1,8 +1,16 @@
-`boolean isString();`
+```yml signature
+- {type: type, text: boolean}
+- {type: text, text: " "}
+- {type: entity, text: isString}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is a string.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.isString* method is not used.
+Returns true if the `CDocBuilderValue` object is a string.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.isString` method is not used.
 
 ## Example
 

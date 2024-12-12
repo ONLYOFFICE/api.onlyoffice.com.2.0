@@ -1,8 +1,16 @@
-`boolean isInt();`
+```yml signature
+- {type: type, text: boolean}
+- {type: text, text: " "}
+- {type: entity, text: isInt}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is an integer.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.isInt* method is not used.
+Returns true if the `CDocBuilderValue` object is an integer.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.isInt` method is not used.
 
 ## Example
 

@@ -35,14 +35,14 @@ export class PageDatum implements PageData {
 }
 
 export interface PageProperties extends ChildrenIncludable {
-  url: string
+  sitemapUrl: string
 }
 
 export function Page(p: PageProperties): JSX.Element {
   return <HeaderAccessor>
     <Site.Page>
       <Site.PageHeader>
-        <Header url={p.url} />
+        <Header sitemapUrl={p.sitemapUrl} />
       </Site.PageHeader>
       <Site.PageContent>
         <main>

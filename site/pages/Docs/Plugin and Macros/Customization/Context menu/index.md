@@ -92,7 +92,7 @@ The plugin can be accessed via the context menu.
    | *text*     | string                   | The item caption.                                                                           |
    | *data*     | string                   | The item data (this data will be sent to the click event callback).                         |
    | *disabled* | boolean                  | Specifies whether the current item is disabled or not.                                      |
-   | *icons*    | string                   | The item icons (see the plugins [config](../../Structure/Manifest/index.md) documentation). |
+   | *icons*    | string                   | The item icons (see the plugins [config](../../Structure/Manifest/index.md) documentation). |
    | *items*    | Array.\<ContextMenuItem> | An array containing the context menu items for the current item.                            |
 
    Example:

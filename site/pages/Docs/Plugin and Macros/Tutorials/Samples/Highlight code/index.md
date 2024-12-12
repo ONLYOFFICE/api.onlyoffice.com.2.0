@@ -6,8 +6,6 @@ Connects the [highlight.js library](https://highlightjs.org/) for highlighting c
 
 **Supported editors:** documents, spreadsheets, presentations.
 
-![HighlightCode](/assets/images/plugins/gifs/highlight-code.gif)
-
 ## Installation
 
 Available by default in the cloud, on-premises and desktop versions of ONLYOFFICE editors.

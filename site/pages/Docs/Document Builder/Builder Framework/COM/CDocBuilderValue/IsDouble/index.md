@@ -1,14 +1,33 @@
-`HRESULT IsDouble([out, retval] VARIANT_BOOL* result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: IsDouble}
+- {type: text, text: (}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {type: type, text: VARIANT_BOOL*}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is a double value.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsDouble* method is not used.
+Returns true if the `CDocBuilderValue` object is a double value.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.IsDouble` method is not used.
 
 ## Parameters
 
-| Name     | Type            | Description                                                          |
-| -------- | --------------- | -------------------------------------------------------------------- |
-| *result* | VARIANT\_BOOL\* | Specifies whether the **CDocBuilderValue** object is a double value. |
+<parameters>
+
+- result
+
+  ```yml signature.variant="inline"
+  - {type: type, text: VARIANT_BOOL*}
+  ```
+
+  - : Specifies whether the `CDocBuilderValue` object is a double value.
+
+</parameters>
 
 ## Example
 

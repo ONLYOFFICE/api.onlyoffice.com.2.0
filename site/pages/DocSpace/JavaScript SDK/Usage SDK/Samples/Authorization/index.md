@@ -1,6 +1,6 @@
 Logs in to the DocSpace account using the specified email and password hash.
 
-<img alt="Authorization sample" src="/assets/images/docspace/gifs/js-sdk-authorization-sample.gif" width="720px">
+![Authorization sample](/assets/images/docspace/js-sdk-authorization-sample.svg)
 
 ## Before you start
 

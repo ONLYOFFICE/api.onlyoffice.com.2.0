@@ -1,15 +1,45 @@
-`void SetProperty(sName, sValue);`
+```yml signature
+- {type: type, text: void}
+- {type: text, text: " "}
+- {type: entity, text: SetProperty}
+- {type: text, text: (}
+- {type: parameter, text: sName}
+- {type: text, text: ": "}
+- {type: type, text: const wchar_t*}
+- {type: text, text: ", "}
+- {type: parameter, text: sValue}
+- {type: text, text: ": "}
+- {type: type, text: const wchar_t*}
+- {type: text, text: )}
+```
 
-Sets a property to the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.SetProperty* method is not used.
+Sets a property to the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.SetProperty` method is not used.
 
 ## Parameters
 
-| Name     | Type             | Description                                            |
-| -------- | ---------------- | ------------------------------------------------------ |
-| *sName*  | const wchar\_t\* | The name of the **CDocBuilderValue** object property.  |
-| *sValue* | const wchar\_t\* | The value of the **CDocBuilderValue** object property. |
+<parameters>
+
+- sName
+
+  ```yml signature.variant="inline"
+  - {type: type, text: const wchar_t*}
+  ```
+
+  - : The name of the `CDocBuilderValue` object property.
+
+- sValue
+
+  ```yml signature.variant="inline"
+  - {type: type, text: const wchar_t*}
+  ```
+
+  - : The value of the `CDocBuilderValue` object property.
+
+</parameters>
 
 ## Example
 
@@ -27,7 +57,7 @@ oDocument.SetProperty("color", {"zX":{"red":112,"green":173,"blue":71,"alpha":25
 CDocBuilder::Dispose();
 ```
 
-The **Set** method can be also used to set a property to the **CDocBuilderValue** object. The object property can be specified with its name in the Unicode format:
+The `Set` method can be also used to set a property to the `CDocBuilderValue` object. The object property can be specified with its name in the Unicode format:
 
 ```cpp
 void Set(const wchar_t* name, CDocBuilderValue value);

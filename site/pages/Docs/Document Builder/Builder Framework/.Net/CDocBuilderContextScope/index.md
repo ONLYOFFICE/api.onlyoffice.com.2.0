@@ -1,9 +1,18 @@
-`new CDocBuilderContextScope`
+```yml signature
+- {type: keyword, text: class}
+- {type: text, text: " "}
+- {type: entity, text: CDocBuilderContextScope}
+```
 
-The stack-allocated class used by **ONLYOFFICE Document Builder** which sets the execution context for all operations executed within a local scope. All opened scopes will be closed automatically when the builder [CloseFile](../CDocBuilder/CloseFile/index.md) method is called.
+## Description
 
-## Methods
+The stack-allocated class used by ONLYOFFICE Document Builder which sets the execution context for all operations executed within a local scope. All opened scopes will be closed automatically when the builder [CloseFile](../CDocBuilder/CloseFile/index.md) method is called.
 
-| Name                    | Description               |
-| ----------------------- | ------------------------- |
-| [Close](Close/index.md) | Closes the current scope. |
+## Instance Methods
+
+<references>
+
+- [Close](Close/index.md)
+  - : Closes the current scope.
+
+</references>

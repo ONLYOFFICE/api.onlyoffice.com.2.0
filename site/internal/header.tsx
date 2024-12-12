@@ -1,13 +1,13 @@
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import * as Site from "@onlyoffice/site-kit"
 import {SrOnly} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
 import {Menubar, MenubarAccessor} from "./menubar.tsx"
+import {Sitemap} from "./sitemap.ts"
 
 export {HeaderAccessor} from "@onlyoffice/site-kit"
 
 export interface HeaderProperties {
-  url: string
+  sitemapUrl: string
 }
 
 export function Header(p: HeaderProperties): JSX.Element {
@@ -29,18 +29,8 @@ export function Header(p: HeaderProperties): JSX.Element {
           // page formation logic depends on it.
 
           try {
-            const e = s.find(p.url, "url")
-            if (!e) {
-              throw new Error(`Entity not found: ${p.url}`)
-            }
-            if (e.type !== "page") {
-              throw new Error(`Current entity is not a page: ${e.type} (${p.url})`)
-            }
-
-            const d = e.data.document
-            if (!d) {
-              throw new Error(`Page data not found: ${e.url}`)
-            }
+            const e = s.findPageByUrl(p.sitemapUrl)
+            const d = e.document
 
             if (d.chapterToggler) {
               return <Site.PageHeaderNavToggler label="Chapter Navigation Toggler" />
@@ -54,7 +44,7 @@ export function Header(p: HeaderProperties): JSX.Element {
         {/* {d.chapterToggler && <PageHeaderNavToggler label="Chapter Navigation Toggler" />} */}
       </Site.HeaderLeading>
       <Site.HeaderContent>
-        <Menubar current={p.url} />
+        <Menubar sitemapUrl={p.sitemapUrl} />
       </Site.HeaderContent>
       <Site.HeaderTrailing />
     </Site.Header>

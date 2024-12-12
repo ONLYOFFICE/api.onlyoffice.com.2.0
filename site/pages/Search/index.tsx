@@ -1,4 +1,4 @@
-import {type Context, type Data} from "@onlyoffice/eleventy-types"
+import {type Data} from "@onlyoffice/eleventy-types"
 import {
   Chapter,
   ChapterContent,
@@ -12,7 +12,6 @@ import {
 } from "@onlyoffice/site-kit"
 import {Content} from "@onlyoffice/ui-kit"
 import {type JSX, h} from "preact"
-import {Breadcrumb} from "../../internal/breadcrumb.tsx"
 import {Explorer} from "../../internal/explorer.tsx"
 
 export function data(): Data {
@@ -22,7 +21,7 @@ export function data(): Data {
   }
 }
 
-export function render({content, ...ctx}: Context): JSX.Element {
+export function render(): JSX.Element {
   return <Chapter>
     <SChapterNavigation>
       <SearchContainer>
@@ -36,10 +35,9 @@ export function render({content, ...ctx}: Context): JSX.Element {
           </li>
         </SearchTemplate>
       </SearchContainer>
-      <Explorer level={0} url="/" />
+      <Explorer sitemapUrl="/" level={0} />
     </SChapterNavigation>
     <ChapterContent>
-      <Breadcrumb url={ctx.page.url} />
       <SearchOutput hidden={false}>
         <Content>
           <h1 aria-live="polite"><span data-search-container-counter /> Results</h1>

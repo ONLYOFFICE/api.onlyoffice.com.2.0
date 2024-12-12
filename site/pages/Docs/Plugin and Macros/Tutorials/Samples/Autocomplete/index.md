@@ -6,8 +6,6 @@ Helps the user to input text quickly.
 
 **Supported editors:** documents, spreadsheets, presentations.
 
-![Autocomplete](/assets/images/plugins/gifs/autocomplete.gif)
-
 ## Installation
 
 Download this plugin from the [ONLYOFFICE App Directory](https://www.onlyoffice.com/en/app-directory/autocomplete) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

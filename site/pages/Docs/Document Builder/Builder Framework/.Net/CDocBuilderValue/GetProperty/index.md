@@ -1,14 +1,33 @@
-`CDocBuilderValue^ GetProperty(sName);`
+```yml signature
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue^}}
+- {type: text, text: " "}
+- {type: entity, text: GetProperty}
+- {type: text, text: (}
+- {type: parameter, text: sName}
+- {type: text, text: ": "}
+- {type: type, text: String^}
+- {type: text, text: )}
+```
 
-Returns a property of the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetProperty* method is not used.
+Returns a property of the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.GetProperty` method is not used.
 
 ## Parameters
 
-| Name    | Type    | Description                                           |
-| ------- | ------- | ----------------------------------------------------- |
-| *sName* | String^ | The name of the **CDocBuilderValue** object property. |
+<parameters>
+
+- sName
+
+  ```yml signature.variant="inline"
+  - {type: type, text: String^}
+  ```
+
+  - : The name of the `CDocBuilderValue` object property.
+
+</parameters>
 
 ## Example
 
@@ -26,9 +45,9 @@ CValue oDocPr = oDocument.GetProperty("color");
 CDocBuilder.Destroy();
 ```
 
-There are two more ways to get a property of the **CDocBuilderValue** object:
+There are two more ways to get a property of the `CDocBuilderValue` object:
 
-1. use the **Get** method that takes an argument in the string format:
+1. use the `Get` method that takes an argument in the string format:
 
    ```cs
    CDocBuilderValue^ Get(String^ name);
@@ -50,7 +69,7 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
    CDocBuilder.Destroy();
    ```
 
-2. use the **default\[]** postfix expression that takes an argument in the string format:
+2. use the `default[]` postfix expression that takes an argument in the string format:
 
    ```cs
    property CDocBuilderValue^ default[String^]

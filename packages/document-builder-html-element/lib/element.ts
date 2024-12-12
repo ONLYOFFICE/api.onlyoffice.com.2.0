@@ -78,6 +78,11 @@ export class DocumentBuilder extends DocumentEditor {
     return this.#connector
   }
 
+  constructor() {
+    super()
+    this.eventList.add("documenteditordocumentready")
+  }
+
   connectedCallback(): void {
     super.connectedCallback()
     this.#listen()
