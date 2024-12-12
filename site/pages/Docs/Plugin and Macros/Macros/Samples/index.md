@@ -136,6 +136,12 @@ In this example we are removing extra spaces in the text document.
 
 [More](Remove%20extra%20spaces)
 
+## Sum of highlighted cells
+
+In this example we are summing the answer of all highlighted cells in a spreadsheet.
+
+[More](Sum%20of%20highlighted%20cells/index.md)
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)
