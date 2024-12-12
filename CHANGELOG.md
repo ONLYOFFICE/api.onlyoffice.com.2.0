@@ -4,6 +4,7 @@
 - docs api: added the information about calling editor methods in the frameworks
 - docs api: added the Checking PDF forms page
 - docspace backend: added the Removed user page
+- macros: added remove extra spaces in document macro sample
 
 ## 6.3.0
 - docspace oauth api: added a new section
@@ -16,6 +17,7 @@
 - docs api: the editorConfig.customization.mobileForceView parameter is deprecated, please use the editorConfig.customization.mobile parameter instead
 - docbuilder: redesign sections
 - docbuilder: updated builder framework samples
+- macros: added add comments and change cell colors in spreadsheet macro sample
 
 ## 6.2.0
 - docspace js sdk: storybook link
@@ -38,8 +40,6 @@
 - method redesign
 - 404 page
 - legacy version link
-- macros: added add comments and change cell colors in spreadsheet macro sample
-- macros: added remove extra spaces in document macro sample
 
 ## 6.1.0
 - docspace js sdk: react component
