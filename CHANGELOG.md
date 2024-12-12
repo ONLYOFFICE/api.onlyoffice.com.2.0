@@ -24,6 +24,7 @@
 - 404 page
 - legacy version link
 - macros: added add comments and change cell colors in spreadsheet macro sample
+- macros: added remove extra spaces in document macro sample
 
 ## 6.1.0
 - docspace js sdk: react component
