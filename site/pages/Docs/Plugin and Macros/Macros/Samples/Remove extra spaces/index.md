@@ -1,5 +1,5 @@
 ---
-order: -1
+order: 
 ---
 
 ## Description
@@ -65,4 +65,4 @@ End Sub
 
 <!-- imgpath -->
 
-![Remove extra spaces]()
+![Remove extra spaces](/assets/images/plugins/remove-extra-spaces.png)
