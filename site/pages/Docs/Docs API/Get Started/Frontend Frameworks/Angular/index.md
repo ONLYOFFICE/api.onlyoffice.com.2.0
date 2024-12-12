@@ -213,6 +213,30 @@ Test the application using the Node.js development server:
 
 - To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
 
+## Calling editor methods in the Angular component
+
+1. Add the `DocEditor.instances` parameter to the `window` object and get the editor object from it by the editor ID:
+
+   ```ts
+   const documentEditor = window.DocEditor.instances["docxEditor"]
+   ```
+
+2. Call any editor [method](../../../Usage%20API/Methods/index.md) from this object:
+
+   ```ts
+   documentEditor.showMessage("Welcome to ONLYOFFICE Editor!")
+   ```
+
+Example:
+
+```ts
+onDocumentReady = () => {
+  const documentEditor = window.DocEditor.instances["docxEditor"]
+
+  documentEditor.showMessage("Welcome to ONLYOFFICE Editor!")
+}
+```
+
 ## Deploying the demo Angular application
 
 To deploy the application to a production environment, create the build-specific configuration options for Angular projects:
