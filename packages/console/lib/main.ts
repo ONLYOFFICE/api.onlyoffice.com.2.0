@@ -31,6 +31,12 @@ export class Console extends NodeConsole {
     this.error = () => {}
   }
 
+  unmute(): void {
+    this.log = this.#log.bind(this)
+    this.warn = this.#warn.bind(this)
+    this.error = this.#error.bind(this)
+  }
+
   restore(c: Console): void {
     this.log = c.log.bind(c)
     this.warn = c.warn.bind(c)
@@ -38,16 +44,28 @@ export class Console extends NodeConsole {
   }
 
   log(...data: Parameters<typeof NodeConsole["prototype"]["log"]>): void {
+    this.#log(...data)
+  }
+
+  warn(...data: Parameters<typeof NodeConsole["prototype"]["warn"]>): void {
+    this.#warn(...data)
+  }
+
+  error(...data: Parameters<typeof NodeConsole["prototype"]["error"]>): void {
+    this.#error(...data)
+  }
+
+  #log(...data: Parameters<typeof NodeConsole["prototype"]["log"]>): void {
     const p = `${this.#prefix()} info:`
     super.log(p, ...data)
   }
 
-  warn(...data: Parameters<typeof NodeConsole["prototype"]["warn"]>): void {
+  #warn(...data: Parameters<typeof NodeConsole["prototype"]["warn"]>): void {
     const p = yellow(`${this.#prefix()} warn:`)
     super.warn(p, ...data)
   }
 
-  error(...data: Parameters<typeof NodeConsole["prototype"]["error"]>): void {
+  #error(...data: Parameters<typeof NodeConsole["prototype"]["error"]>): void {
     const p = red(`${this.#prefix()} error:`)
     super.error(p, ...data)
   }
