@@ -72,6 +72,7 @@ export class Console extends NodeConsole {
 
   #prefix(): string {
     const d = new Date().toISOString()
-    return `${d} ${this.#name}`
+    const n = this.#name.replace("@onlyoffice/", "")
+    return `${d} ${n}`
   }
 }
