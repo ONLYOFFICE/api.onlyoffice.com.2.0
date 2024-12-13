@@ -3785,6 +3785,31 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/typedoc-resource:
+    dependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
+      '@onlyoffice/stream-string':
+        specifier: workspace:^
+        version: link:../stream-string
+      '@onlyoffice/typedoc-declaration':
+        specifier: workspace:^
+        version: link:../typedoc-declaration
+      sade:
+        specifier: 1.8.1
+        version: 1.8.1
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/typedoc-transformer:
     dependencies:
       '@onlyoffice/async-transform':
