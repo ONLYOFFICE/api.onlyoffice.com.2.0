@@ -3348,6 +3348,49 @@ importers:
         specifier: 5.7.2
         version: 5.7.2
 
+  packages/typedoc-signature:
+    dependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      '@onlyoffice/strings':
+        specifier: workspace:^
+        version: link:../strings
+      '@onlyoffice/typedoc-transformer':
+        specifier: workspace:^
+        version: link:../typedoc-transformer
+      '@onlyoffice/typedoc-transport':
+        specifier: workspace:^
+        version: link:../typedoc-transport
+      '@onlyoffice/typedoc-util-is-reflection':
+        specifier: workspace:^
+        version: link:../typedoc-util-is-reflection
+      '@onlyoffice/typedoc-util-is-type':
+        specifier: workspace:^
+        version: link:../typedoc-util-is-type
+      typedoc:
+        specifier: 0.26.11
+        version: 0.26.11(typescript@5.7.2)
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/typedoc-transformer:
     dependencies:
       '@onlyoffice/async-transform':
