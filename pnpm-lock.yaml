@@ -3748,6 +3748,76 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/typedoc-transformer:
+    dependencies:
+      '@onlyoffice/async-transform':
+        specifier: workspace:^
+        version: link:../async-transform
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/errors':
+        specifier: workspace:^
+        version: link:../errors
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
+      '@onlyoffice/mdast-util-eslint':
+        specifier: workspace:^
+        version: link:../mdast-util-eslint
+      '@onlyoffice/mdast-util-first-sentence':
+        specifier: workspace:^
+        version: link:../mdast-util-first-sentence
+      '@onlyoffice/result':
+        specifier: workspace:^
+        version: link:../result
+      '@onlyoffice/strings':
+        specifier: workspace:^
+        version: link:../strings
+      '@onlyoffice/typedoc-transport':
+        specifier: workspace:^
+        version: link:../typedoc-transport
+      '@onlyoffice/typedoc-util-is-reflection':
+        specifier: workspace:^
+        version: link:../typedoc-util-is-reflection
+      '@onlyoffice/typedoc-util-is-type':
+        specifier: workspace:^
+        version: link:../typedoc-util-is-type
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+      '@types/remark-strip-html':
+        specifier: workspace:^
+        version: link:../types-remark-strip-html
+      mdast-util-from-markdown:
+        specifier: 2.0.0
+        version: 2.0.0
+      mdast-util-to-markdown:
+        specifier: 2.1.0
+        version: 2.1.0
+      remark-strip-html:
+        specifier: 1.0.2
+        version: 1.0.2
+      typedoc:
+        specifier: 0.26.11
+        version: 0.26.11(typescript@5.4.5)
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/typedoc-transport:
     dependencies:
       '@onlyoffice/library-declaration':
