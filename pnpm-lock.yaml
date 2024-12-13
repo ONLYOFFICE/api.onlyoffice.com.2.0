@@ -1312,6 +1312,40 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/mdast-util-eslint:
+    dependencies:
+      '@onlyoffice/eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
+      '@onlyoffice/lang-to-ext':
+        specifier: workspace:^
+        version: link:../lang-to-ext
+      '@types/mdast':
+        specifier: 4.0.3
+        version: 4.0.3
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      unist-builder:
+        specifier: 4.0.0
+        version: 4.0.0
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/mdast-util-extract-section:
     dependencies:
       '@onlyoffice/mdast-util-is-node':
