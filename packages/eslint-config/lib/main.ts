@@ -524,7 +524,6 @@ const c: Config = [
       "unicorn/no-useless-undefined": e,
       "unicorn/no-zero-fractions": e,
       "unicorn/number-literal-case": e,
-      "unicorn/numeric-separators-style": e,
       "unicorn/prefer-add-event-listener": e,
       "unicorn/prefer-array-find": e,
       "unicorn/prefer-array-flat-map": e,
