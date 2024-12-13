@@ -63,6 +63,21 @@ export function Library(p: LibraryProperties): JSX.Element {
   const e = s.findPageByUrl(p.sitemapUrl)
   const d = e.library
 
+  if ("parentId" in d.declaration) {
+    return <Site.NextLibrary.Library
+      entity={d.declaration}
+      onLink={d.onLink}
+      onRetrieve={d.onRetrieve}
+    >
+      <Site.NextLibrary.LibraryDescription>
+        {Markdown}
+      </Site.NextLibrary.LibraryDescription>
+      <Site.NextLibrary.LibrarySyntaxHighlight>
+        {SyntaxHighlight}
+      </Site.NextLibrary.LibrarySyntaxHighlight>
+    </Site.NextLibrary.Library>
+  }
+
   return <Site.Library {...d}>
     <Site.LibraryHeading for="Constructors">
       <h2>Constructors</h2>
