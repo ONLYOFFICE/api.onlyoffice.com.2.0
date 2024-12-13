@@ -318,6 +318,19 @@ importers:
         specifier: 4.16.5
         version: 4.16.5
 
+  packages/docspace-sdk-js-resource:
+    dependencies:
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
+    devDependencies:
+      '@onlyoffice/typedoc-resource':
+        specifier: workspace:^
+        version: link:../typedoc-resource
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+
   packages/document-builder-hast-element:
     dependencies:
       '@onlyoffice/document-builder-html-element':
