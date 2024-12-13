@@ -26,6 +26,7 @@
     "@onlyoffice/docspace-hosted-solutions-resource": "workspace:^",
     "@onlyoffice/docspace-plugin-sdk-resource": "workspace:^",
     "@onlyoffice/docspace-resource": "workspace:^",
+    "@onlyoffice/docspace-sdk-js-resource": "workspace:^",
     "@onlyoffice/document-builder-hast-element": "workspace:^",
     "@onlyoffice/document-builder-html-element": "workspace:^",
     "@onlyoffice/document-builder-resource": "workspace:^",

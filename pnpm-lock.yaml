@@ -4665,6 +4665,9 @@ importers:
       '@onlyoffice/docspace-resource':
         specifier: workspace:^
         version: link:../packages/docspace-resource
+      '@onlyoffice/docspace-sdk-js-resource':
+        specifier: workspace:^
+        version: link:../packages/docspace-sdk-js-resource
       '@onlyoffice/document-builder-hast-element':
         specifier: workspace:^
         version: link:../packages/document-builder-hast-element
