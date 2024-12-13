@@ -1,0 +1,22 @@
+{
+  "name": "@onlyoffice/typedoc-util-is-type",
+  "type": "module",
+  "private": true,
+  "main": "lib/main.ts",
+  "scripts": {
+    "clean": "rimraf coverage node_modules",
+    "test:types": "tsc",
+    "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
+    "test": "pnpm test:types && pnpm test:unit"
+  },
+  "dependencies": {
+    "typedoc": "0.26.11",
+    "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "c8": "9.1.0",
+    "rimraf": "6.0.1",
+    "tsx": "4.16.5",
+    "uvu": "0.5.6"
+  }
+}

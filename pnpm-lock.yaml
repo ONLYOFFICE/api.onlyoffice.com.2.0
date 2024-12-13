@@ -3795,6 +3795,28 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/typedoc-util-is-type:
+    dependencies:
+      typedoc:
+        specifier: 0.26.11
+        version: 0.26.11(typescript@5.4.5)
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/types-remark-strip-html:
     dependencies:
       '@types/mdast':
