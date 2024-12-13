@@ -7,6 +7,8 @@ import {Badge, BadgeCaption, BadgeGroup} from "@onlyoffice/ui-kit"
 import {type ComponentChildren, Fragment, type JSX, createContext, h} from "preact"
 import {useContext} from "preact/hooks"
 
+export * as NextLibrary from "./next.tsx"
+
 export interface Description {
   (this: void, p: ChildrenIncludable): JSX.Element | null
 }
