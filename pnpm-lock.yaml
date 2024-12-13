@@ -3297,6 +3297,12 @@ importers:
       '@onlyoffice/library-declaration':
         specifier: workspace:^
         version: link:../library-declaration
+      '@onlyoffice/signature':
+        specifier: workspace:^
+        version: link:../signature
+      '@onlyoffice/typedoc-signature':
+        specifier: workspace:^
+        version: link:../typedoc-signature
       '@onlyoffice/typedoc-transformer':
         specifier: workspace:^
         version: link:../typedoc-transformer

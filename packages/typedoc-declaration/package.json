@@ -16,6 +16,8 @@
   "dependencies": {
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/library-declaration": "workspace:^",
+    "@onlyoffice/signature": "workspace:^",
+    "@onlyoffice/typedoc-signature": "workspace:^",
     "@onlyoffice/typedoc-transformer": "workspace:^",
     "@onlyoffice/typedoc-transport": "workspace:^",
     "typedoc": "0.26.11"
