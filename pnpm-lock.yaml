@@ -922,6 +922,22 @@ importers:
 
   packages/eslint-plugin: {}
 
+  packages/fixture-resource:
+    dependencies:
+      '@onlyoffice/library-declaration':
+        specifier: workspace:^
+        version: link:../library-declaration
+    devDependencies:
+      '@onlyoffice/typedoc-resource':
+        specifier: workspace:^
+        version: link:../typedoc-resource
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      typedoc:
+        specifier: 0.26.11
+        version: 0.26.11(typescript@5.4.5)
+
   packages/glossary-hastscript:
     dependencies:
       '@onlyoffice/hastscript':
