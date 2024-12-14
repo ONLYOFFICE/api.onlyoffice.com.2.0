@@ -130,6 +130,10 @@ In this example we are adding comments and changing the background colors of sel
 
 [More](Add%20comments%20and%20change%20cell%20colors%20in%20spreadsheet/index.md)
 
+## Change font family and size
+
+In this example we are changing font family and/or size in the presentation.
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)

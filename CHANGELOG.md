@@ -24,6 +24,7 @@
 - 404 page
 - legacy version link
 - macros: added add comments and change cell colors in spreadsheet macro sample
+- macros: added change font family and size in presentations macro sample
 
 ## 6.1.0
 - docspace js sdk: react component
