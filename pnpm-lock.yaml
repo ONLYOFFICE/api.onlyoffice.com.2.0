@@ -4678,6 +4678,9 @@ importers:
       '@onlyoffice/combobox-container-html-element':
         specifier: workspace:^
         version: link:../packages/combobox-container-html-element
+      '@onlyoffice/community-server-hosted-solutions-resource':
+        specifier: workspace:^
+        version: link:../packages/community-server-hosted-solutions-resource
       '@onlyoffice/community-server-resource':
         specifier: workspace:^
         version: link:../packages/community-server-resource
