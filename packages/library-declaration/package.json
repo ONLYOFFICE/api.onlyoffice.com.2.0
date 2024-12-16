@@ -2,6 +2,10 @@
   "name": "@onlyoffice/library-declaration",
   "type": "module",
   "private": true,
+  "exports": {
+    ".": "./lib/main.ts",
+    "./next.ts": "./lib/next.ts"
+  },
   "main": "lib/main.ts",
   "scripts": {
     "clean": "rimraf coverage node_modules",

@@ -130,6 +130,18 @@ In this example we are adding comments and changing the background colors of sel
 
 [More](Add%20comments%20and%20change%20cell%20colors%20in%20spreadsheet/index.md)
 
+## Remove extra spaces
+
+In this example we are removing extra spaces in the text document. 
+
+[More](Remove%20extra%20spaces/index.md)
+
+## Sum of highlighted cells
+
+In this example we are summing the answer of all highlighted cells in a spreadsheet.
+
+[More](Sum%20of%20Highlighted%20Cells/index.md)
+
 ## Change font family and size
 
 In this example we are changing font family and/or size in the presentation.

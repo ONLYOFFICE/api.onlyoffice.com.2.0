@@ -1,15 +1,45 @@
-`HRESULT Get([in] long index, [out, retval] I_DOCBUILDER_VALUE** result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: Get}
+- {type: text, text: (}
+- {type: parameter, text: index}
+- {type: text, text: ": [in] "}
+- {type: type, text: long}
+- {type: text, text: ", "}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
+
+## Description
 
 Returns an array value by its index.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.Get* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.Get` method is not used.
 
 ## Parameters
 
-| Name     | Type                     | Description                   |
-| -------- | ------------------------ | ----------------------------- |
-| *index*  | long                     | The index of the array value. |
-| *result* | I\_DOCBUILDER\_VALUE\*\* | The returned array value.     |
+<parameters>
+
+- index
+
+  ```yml signature.variant="inline"
+  - {type: type, text: long}
+  ```
+
+  - : The index of the array value.
+
+- result
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The returned array value.
+
+</parameters>
 
 ## Example
 

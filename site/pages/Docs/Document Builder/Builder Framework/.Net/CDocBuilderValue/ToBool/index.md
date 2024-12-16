@@ -1,8 +1,16 @@
-`bool ToBool();`
+```yml signature
+- {type: type, text: bool}
+- {type: text, text: " "}
+- {type: entity, text: ToBool}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Converts the **CDocBuilderValue** object to a boolean value.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.ToBool* method is not used.
+Converts the `CDocBuilderValue` object to a boolean value.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.ToBool` method is not used.
 
 ## Example
 

@@ -2,21 +2,25 @@
   "name": "@onlyoffice/mdast-util-is-node",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf coverage node_modules",
+    "build:code": "esbuild lib/* --outdir=dist",
+    "build:types": "tsc --project tsconfig.emit.json",
+    "build": "pnpm build:types && pnpm build:code",
+    "clean": "rimraf coverage dist node_modules",
     "test:types": "tsc",
     "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
     "test": "pnpm test:types && pnpm test:unit"
   },
   "dependencies": {
-    "@types/mdast": "4.0.3",
-    "typescript": "5.4.5"
+    "@types/mdast": "4.0.3"
   },
   "devDependencies": {
     "c8": "9.1.0",
+    "esbuild": "0.23.0",
     "rimraf": "6.0.1",
     "tsx": "4.16.5",
+    "typescript": "5.4.5",
     "uvu": "0.5.6"
   }
 }

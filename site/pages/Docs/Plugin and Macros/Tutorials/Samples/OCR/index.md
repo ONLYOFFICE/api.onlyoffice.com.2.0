@@ -6,8 +6,6 @@ Connects the [TesseractJS-Core library](https://tesseract.projectnaptha.com/) fo
 
 **Supported editors:** documents, spreadsheets, presentations.
 
-![OCR](/assets/images/plugins/gifs/ocr.gif)
-
 ## Installation
 
 Available by default in the cloud, on-premises and desktop versions of ONLYOFFICE editors.

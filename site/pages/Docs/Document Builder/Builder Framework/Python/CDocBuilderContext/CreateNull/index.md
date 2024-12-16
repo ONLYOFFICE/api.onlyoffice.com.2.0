@@ -1,8 +1,17 @@
-`def CreateNull(self);`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: CreateNull}
+- {type: text, text: (}
+- {type: parameter, text: self}
+- {type: text, text: )}
+```
 
-Creates a null value, an analogue of *null* in JS.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateNull* method is not used.
+Creates a null value, an analogue of `null` in JS.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.CreateNull` method is not used.
 
 ## Example
 

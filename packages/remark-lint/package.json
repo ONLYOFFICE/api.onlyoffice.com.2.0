@@ -1,0 +1,17 @@
+{
+  "name": "@onlyoffice/remark-lint",
+  "type": "module",
+  "private": true,
+  "main": "lib/main.ts",
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@types/unist": "3.0.3",
+    "unified": "11.0.5",
+    "unified-lint-rule": "3.0.0",
+    "vfile": "6.0.1"
+  }
+}

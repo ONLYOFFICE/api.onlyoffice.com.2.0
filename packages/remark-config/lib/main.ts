@@ -4,6 +4,7 @@
 // https://github.com/remarkjs/remark-lint/tree/10.0.0/packages/remark-lint-no-html
 
 import {remarkLintEslint} from "@onlyoffice/remark-lint-eslint"
+import {remarkLintNoUnicode} from "@onlyoffice/remark-lint-no-unicode"
 import remarkLint from "remark-lint"
 import remarkLintBlockquoteIndentation from "remark-lint-blockquote-indentation"
 import remarkLintCheckboxCharacterStyle from "remark-lint-checkbox-character-style"
@@ -143,6 +144,123 @@ export function remarkConfig(): Preset {
       remarkLintNoTableIndentation,
       remarkLintNoTabs,
       remarkLintNoUndefinedReferences,
+      [remarkLintNoUnicode, {
+        hints: [
+          ["0060", "Grave Accent", "0027", "Apostrophe"],
+          ["00A0", "No-Break Space", "0020", "Space"],
+          ["2013", "En Dash", "002D", "Hyphen-Minus"],
+          ["2019", "Right Single Quotation Mark", "0027", "Apostrophe"],
+        ],
+        codes: [
+          // Basic Latin
+          "000A",    // \n
+          "0020",    // EMPTY SPACE
+          "0021",    // !
+          "0022",    // "
+          "0023",    // #
+          "0024",    // $
+          "0025",    // %
+          "0026",    // &
+          "0027",    // '
+          "0028",    // (
+          "0029",    // )
+          "002A",    // *
+          "002B",    // +
+          "002C",    // ,
+          "002D",    // -
+          "002E",    // .
+          "002F",    // /
+          "0030",    // 0
+          "0031",    // 1
+          "0032",    // 2
+          "0033",    // 3
+          "0034",    // 4
+          "0035",    // 5
+          "0036",    // 6
+          "0037",    // 7
+          "0038",    // 8
+          "0039",    // 9
+          "003A",    // :
+          "003B",    // ;
+          "003C",    // <
+          "003D",    // =
+          "003E",    // >
+          "003F",    // ?
+          "0040",    // @
+          "0041",    // A
+          "0042",    // B
+          "0043",    // C
+          "0044",    // D
+          "0045",    // E
+          "0046",    // F
+          "0047",    // G
+          "0048",    // H
+          "0049",    // I
+          "004A",    // J
+          "004B",    // K
+          "004C",    // L
+          "004D",    // M
+          "004E",    // N
+          "004F",    // O
+          "0050",    // P
+          "0051",    // Q
+          "0052",    // R
+          "0053",    // S
+          "0054",    // T
+          "0055",    // U
+          "0056",    // V
+          "0057",    // W
+          "0058",    // X
+          "0059",    // Y
+          "005A",    // Z
+          "005B",    // [
+          "005C",    // \
+          "005D",    // ]
+          "005E",    // ^
+          "005F",    // _
+          "0061",    // a
+          "0062",    // b
+          "0063",    // c
+          "0064",    // d
+          "0065",    // e
+          "0066",    // f
+          "0067",    // g
+          "0068",    // h
+          "0069",    // i
+          "006A",    // j
+          "006B",    // k
+          "006C",    // l
+          "006D",    // m
+          "006E",    // n
+          "006F",    // o
+          "0070",    // p
+          "0071",    // q
+          "0072",    // r
+          "0073",    // s
+          "0074",    // t
+          "0075",    // u
+          "0076",    // v
+          "0077",    // w
+          "0078",    // x
+          "0079",    // y
+          "007A",    // z
+          "007B",    // {
+          "007C",    // |
+          "007D",    // }
+          "007E",    // ~
+
+          // Latin-1 Supplement
+          "00E4",    // ä
+          "00F6",    // ö
+          "00FC",    // ü
+
+          // General Punctuation
+          "2014",    // —
+
+          // Mathematical Operators
+          "22EE",    // ⋮
+        ],
+      }],
       remarkLintNoUnusedDefinitions,
       [remarkLintOrderedListMarkerStyle, "."],
       [remarkLintOrderedListMarkerValue, "ordered"],

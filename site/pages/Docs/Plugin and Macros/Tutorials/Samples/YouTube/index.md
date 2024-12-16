@@ -6,8 +6,6 @@ Connects [youtube iframe\_api](https://developers.google.com/youtube/iframe_api_
 
 **Supported editors:** documents, spreadsheets, presentations.
 
-![Youtube](/assets/images/plugins/gifs/youtube.gif)
-
 ## Installation
 
 Available by default in the cloud, on-premises and desktop versions of ONLYOFFICE editors.
