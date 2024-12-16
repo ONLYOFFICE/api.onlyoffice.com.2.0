@@ -4684,9 +4684,6 @@ importers:
       '@onlyoffice/community-server-resource':
         specifier: workspace:^
         version: link:../packages/community-server-resource
-      '@onlyoffice/docspace-hosted-solutions-resource':
-        specifier: workspace:^
-        version: link:../packages/docspace-hosted-solutions-resource
       '@onlyoffice/docspace-plugin-sdk-resource':
         specifier: workspace:^
         version: link:../packages/docspace-plugin-sdk-resource
