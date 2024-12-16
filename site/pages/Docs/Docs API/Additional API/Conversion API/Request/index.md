@@ -170,7 +170,7 @@ Presence: required
 
 ### password
 
-Defines the password for the document file if it is protected with a password.
+Defines the password for the document file if it is protected with a password. After conversion the file has no password.
 
 Type: string
 
