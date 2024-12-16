@@ -276,11 +276,11 @@ export interface DocEditorMailMergeRecipient {
 export interface DocEditorReferenceData {
   error?: string
   fileType?: string
+  key: string
   path: string
   referenceData?: {
     fileKey: string
     instanceId: string
-    key: string
   }
   token?: string
   url: string
@@ -289,11 +289,11 @@ export interface DocEditorReferenceData {
 export interface DocEditorReferenceSource {
   error?: string
   fileType?: string
+  key: string
   path: string
   referenceData?: {
     fileKey: string
     instanceId: string
-    key: string
   }
   token?: string
   url: string
@@ -430,7 +430,6 @@ export interface DocEditorConfigDocument {
 export interface DocEditorConfigDocumentReferenceData {
   fileKey: string
   instanceId: string
-  key: string
 }
 
 /**
@@ -1245,11 +1244,11 @@ export interface DocEditorRequestInsertImageEvent {
 
 export interface DocEditorRequestOpenEvent {
   data: {
+    key: string
     path: string
     referenceData: {
       fileKey: string
       instanceId: string
-      key: string
     }
     windowName: string
   }
@@ -1257,23 +1256,23 @@ export interface DocEditorRequestOpenEvent {
 
 export interface DocEditorRequestReferenceDataEvent {
   data: {
+    key: string
     link: string
     path: string
     referenceData: {
       fileKey: string
       instanceId: string
-      key: string
     }
   }
 }
 
 export interface DocEditorRequestReferenceSourceEvent {
   data: {
+    key: string
     path: string
     referenceData: {
       fileKey: string
       instanceId: string
-      key: string
     }
   }
 }

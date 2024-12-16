@@ -146,11 +146,11 @@ The `payload` for the JWT token in the JSON format must have the same structure 
   ``` json
   {
     "fileType": "xlsx",
+    "key": "Khirz6zTPdfd7",
     "path": "sample.xlsx",
     "referenceData": {
       "fileKey": "BCFA2CED",
-      "instanceId": "https://example.com",
-      "key": "Khirz6zTPdfd7"
+      "instanceId": "https://example.com"
     },
     "url": "https://example.com/url-to-example-document.xlsx"
   }
@@ -162,7 +162,7 @@ Sample token:
 
 ``` json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJwYXRoIjoic2FtcGxlLnhsc3giLCJyZWZlcmVuY2VEYXRhIjp7ImZpbGVLZXkiOiJCQ0ZBMkNFRCIsImluc3RhbmNlSWQiOiJodHRwczovL2V4YW1wbGUuY29tIn0sInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQueGxzeCJ9.UXosmM-E_Cu9j9QGSlcj9FEoSu5m-zCS4b6FxO_2k7w"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJrZXkiOiJLaGlyejZ6VFBkZmQ3IiwicGF0aCI6InNhbXBsZS54bHN4IiwicmVmZXJlbmNlRGF0YSI6eyJmaWxlS2V5IjoiQkNGQTJDRUQiLCJpbnN0YW5jZUlkIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSJ9LCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLWRvY3VtZW50Lnhsc3gifQ.US2wsI__77B0ApzMOIUGIU49cUAORvdzGZ4V49BO4Dc"
 }
 ```
 
@@ -175,11 +175,11 @@ The `payload` for the JWT token in the JSON format must have the same structure 
   ``` json
   {
     "fileType": "xlsx",
+    "key": "Khirz6zTPdfd7",
     "path": "sample.xlsx",
     "referenceData": {
       "fileKey": "BCFA2CED",
-      "instanceId": "https://example.com",
-      "key": "Khirz6zTPdfd7"
+      "instanceId": "https://example.com"
     },
     "url": "https://example.com/url-to-example-document.xlsx"
   }
@@ -191,7 +191,7 @@ Sample token:
 
 ``` json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJwYXRoIjoic2FtcGxlLnhsc3giLCJyZWZlcmVuY2VEYXRhIjp7ImZpbGVLZXkiOiJCQ0ZBMkNFRCIsImluc3RhbmNlSWQiOiJodHRwczovL2V4YW1wbGUuY29tIn0sInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQueGxzeCJ9.UXosmM-E_Cu9j9QGSlcj9FEoSu5m-zCS4b6FxO_2k7w"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJrZXkiOiJLaGlyejZ6VFBkZmQ3IiwicGF0aCI6InNhbXBsZS54bHN4IiwicmVmZXJlbmNlRGF0YSI6eyJmaWxlS2V5IjoiQkNGQTJDRUQiLCJpbnN0YW5jZUlkIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSJ9LCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLWRvY3VtZW50Lnhsc3gifQ.US2wsI__77B0ApzMOIUGIU49cUAORvdzGZ4V49BO4Dc"
 }
 ```
 
