@@ -75,4 +75,4 @@ Methods used: GetActiveSheet, GetSelection, GetRange, GetValue, SetValue, GetRow
 
 <!-- imgpath -->
 
-![Find Company Logos]()
+![Find Company Logos](/assets/images/plugins/find-company-logos.png)
