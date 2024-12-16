@@ -145,6 +145,31 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/community-server-hosted-solutions-resource:
+    dependencies:
+      '@onlyoffice/service-declaration':
+        specifier: workspace:^
+        version: link:../service-declaration
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@onlyoffice/console':
+        specifier: workspace:^
+        version: link:../console
+      '@onlyoffice/openapi-resource':
+        specifier: workspace:^
+        version: link:../openapi-resource
+      rimraf:
+        specifier: 6.0.1
+        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+
   packages/community-server-resource:
     dependencies:
       '@onlyoffice/service-declaration':

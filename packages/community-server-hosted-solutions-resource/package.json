@@ -1,0 +1,25 @@
+{
+  "name": "@onlyoffice/community-server-hosted-solutions-resource",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./*": "./dist/*"
+  },
+  "scripts": {
+    "clean": "rimraf dist node_modules",
+    "build": "tsx lib/main.ts",
+    "test:types": "tsc",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/service-declaration": "workspace:^",
+    "@types/node": "20.12.12",
+    "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "@onlyoffice/console": "workspace:^",
+    "@onlyoffice/openapi-resource": "workspace:^",
+    "rimraf": "6.0.1",
+    "tsx": "4.16.5"
+  }
+}
