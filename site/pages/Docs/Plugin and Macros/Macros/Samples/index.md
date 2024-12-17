@@ -144,7 +144,7 @@ In this example we are summing the answer of all highlighted cells in a spreadsh
 
 ## Generate word definitions
 
-In this example we are generating word definitions in our documents.
+In this example we are generating word definitions in our documents using API Ninjas' Dictionary API.
 
 [More](Generate%20word%20definitions/index.md);
 

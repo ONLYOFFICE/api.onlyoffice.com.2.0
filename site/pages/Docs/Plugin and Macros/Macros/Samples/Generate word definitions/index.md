@@ -4,7 +4,7 @@ order:
 
 ## Description
 
-Generate definitions for your words in your document.
+Generate definitions for your words in your document using API Ninjas' Dictionary API. Requires an API key.
 
 <!-- This code snippet is shown in the screenshot. -->
 
