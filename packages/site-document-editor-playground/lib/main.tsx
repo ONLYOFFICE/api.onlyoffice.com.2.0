@@ -4,7 +4,7 @@ import {
   type PlaygroundConfigurable,
   type PropertyConfigurable,
 } from "@onlyoffice/site-config"
-import {CloseIcon} from "@onlyoffice/ui-icons/poor/24.tsx"
+import {CloseIcon} from "@onlyoffice/ui-icons/poor/24.js"
 import {
   Button,
   CodeEditor,
@@ -26,7 +26,7 @@ import {
   TextInput,
   TextInputControl,
 } from "@onlyoffice/ui-kit"
-import {Fragment, type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 const samples = [
   {id: "html", label: "HTML"},
@@ -302,7 +302,7 @@ function NumberProperty({property}: PropertyParameters): JSX.Element {
     <FormControlControl>
       <TextInput>
         <TextInputControl>
-          <input name={property.path} type="number" value={property.default} />
+          <input name={property.path} type="number" value={String(property.default)} />
         </TextInputControl>
       </TextInput>
     </FormControlControl>

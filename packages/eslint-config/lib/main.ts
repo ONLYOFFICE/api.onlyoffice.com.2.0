@@ -388,7 +388,7 @@ const c: Config = [
         caughtErrors: "all",
         caughtErrorsIgnorePattern: "^_+$",
         destructuredArrayIgnorePattern: "^_+$",
-        varsIgnorePattern: "(^_+$)|(^Fragment$)|(^h$)",
+        varsIgnorePattern: "^_+$",
         ignoreRestSiblings: true,
       }],
       "@typescript-eslint/no-useless-constructor": e,

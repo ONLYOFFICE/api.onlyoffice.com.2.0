@@ -1,6 +1,6 @@
 import {AsyncTransform} from "@onlyoffice/async-transform"
 import * as errors from "@onlyoffice/errors"
-import * as L from "@onlyoffice/library-declaration/next.ts"
+import * as L from "@onlyoffice/library-declaration/next.js"
 import {eslint} from "@onlyoffice/mdast-util-eslint"
 import {firstSentence} from "@onlyoffice/mdast-util-first-sentence"
 import {type Result} from "@onlyoffice/result"

@@ -2,20 +2,19 @@
   "name": "@onlyoffice/rehype-preact",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
     "@types/hast": "3.0.4",
     "hast-util-to-jsx-runtime": "2.3.0",
     "preact": "10.22.0",
-    "typescript": "5.4.5",
     "unified": "11.0.5"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

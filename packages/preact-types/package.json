@@ -3,20 +3,16 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./reference": "./lib/reference.d.ts",
-    ".": "./lib/main.ts"
+    ".": "./lib/main.ts",
+    "./reference": "./lib/reference.d.ts"
   },
   "main": "lib/main.ts",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
     "preact": "10.22.0",
-    "typescript": "5.4.5"
-  },
-  "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

@@ -46,22 +46,19 @@ importers:
         version: 1.8.1
       stylelint:
         specifier: 16.8.2
-        version: 16.8.2(typescript@5.4.5)
+        version: 16.8.2(typescript@5.7.2)
       tsx:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/async-transform:
     dependencies:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/stream-string':
         specifier: workspace:^
@@ -69,40 +66,36 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/caller-position:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/combobox-container-html-element:
     dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+      '@types/web':
+        specifier: 0.0.187
+        version: 0.0.187
     devDependencies:
       '@web/dev-server':
         specifier: 0.4.4
@@ -110,24 +103,21 @@ importers:
       '@web/dev-server-esbuild':
         specifier: 1.0.2
         version: 1.0.2
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/command:
     dependencies:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/stream-string':
         specifier: workspace:^
@@ -135,12 +125,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -153,9 +143,6 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -163,12 +150,12 @@ importers:
       '@onlyoffice/openapi-resource':
         specifier: workspace:^
         version: link:../openapi-resource
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/community-server-resource:
     dependencies:
@@ -178,9 +165,6 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -188,12 +172,12 @@ importers:
       '@onlyoffice/openapi-resource':
         specifier: workspace:^
         version: link:../openapi-resource
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/console:
     dependencies:
@@ -203,9 +187,6 @@ importers:
       kleur:
         specifier: 4.1.5
         version: 4.1.5
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/stream-string':
         specifier: workspace:^
@@ -213,69 +194,57 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/css-calc:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/declaration-code-example:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/declaration-reference:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -289,9 +258,6 @@ importers:
       '@onlyoffice/typedoc-resource':
         specifier: workspace:^
         version: link:../typedoc-resource
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
 
   packages/docspace-resource:
     dependencies:
@@ -301,9 +267,6 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -311,12 +274,12 @@ importers:
       '@onlyoffice/openapi-resource':
         specifier: workspace:^
         version: link:../openapi-resource
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/docspace-sdk-js-resource:
     dependencies:
@@ -327,9 +290,6 @@ importers:
       '@onlyoffice/typedoc-resource':
         specifier: workspace:^
         version: link:../typedoc-resource
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
 
   packages/document-builder-hast-element:
     dependencies:
@@ -339,9 +299,6 @@ importers:
       '@onlyoffice/document-editor-hast-element':
         specifier: workspace:^
         version: link:../document-editor-hast-element
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/document-editor-html-element':
         specifier: workspace:^
@@ -355,12 +312,12 @@ importers:
       hast-util-to-html:
         specifier: 9.0.1
         version: 9.0.1
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -373,16 +330,16 @@ importers:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+      '@types/web':
+        specifier: 0.0.187
+        version: 0.0.187
     devDependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/document-builder-resource:
     dependencies:
@@ -392,9 +349,6 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -420,9 +374,6 @@ importers:
       '@types/stream-json':
         specifier: 1.7.7
         version: 1.7.7
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       stream-chain:
         specifier: 2.2.5
         version: 2.2.5
@@ -432,16 +383,9 @@ importers:
       tsx:
         specifier: 4.16.5
         version: 4.16.5
-
-  packages/document-builder-types:
-    dependencies:
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/document-editor-code-sample:
     dependencies:
@@ -454,9 +398,6 @@ importers:
       '@onlyoffice/object-to-string':
         specifier: workspace:^
         version: link:../object-to-string
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@open-wc/testing':
         specifier: 4.0.0
@@ -476,12 +417,12 @@ importers:
       '@web/test-runner-playwright':
         specifier: 0.11.0
         version: 0.11.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/document-editor-hast-element:
     dependencies:
@@ -491,9 +432,6 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
@@ -501,12 +439,12 @@ importers:
       hast-util-to-html:
         specifier: 9.0.1
         version: 9.0.1
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -519,9 +457,9 @@ importers:
       '@onlyoffice/strings':
         specifier: workspace:^
         version: link:../strings
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+      '@types/web':
+        specifier: 0.0.187
+        version: 0.0.187
     devDependencies:
       '@onlyoffice/store-demo':
         specifier: workspace:^
@@ -532,15 +470,15 @@ importers:
       '@web/dev-server-esbuild':
         specifier: 1.0.2
         version: 1.0.2
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/document-editor-mirror-html-element:
     dependencies:
@@ -556,9 +494,6 @@ importers:
       '@onlyoffice/strings':
         specifier: workspace:^
         version: link:../strings
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@types/node':
         specifier: 20.12.12
@@ -569,28 +504,21 @@ importers:
       '@web/dev-server-esbuild':
         specifier: 1.0.2
         version: 1.0.2
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/document-server-types:
     dependencies:
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/document-server-utils:
     dependencies:
@@ -600,19 +528,16 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -622,12 +547,12 @@ importers:
       '@onlyoffice/eleventy-types':
         specifier: workspace:^
         version: link:../eleventy-types
+      '@types/11ty__eleventy':
+        specifier: workspace:^
+        version: link:../types-11ty__eleventy
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@11ty/eleventy':
         specifier: 2.0.1
@@ -635,31 +560,31 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/eleventy-env:
     dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -678,19 +603,16 @@ importers:
       p-queue:
         specifier: 6.6.2
         version: 6.6.2
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -706,9 +628,6 @@ importers:
       html-minifier-terser:
         specifier: 7.2.0
         version: 7.2.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@11ty/eleventy':
         specifier: 2.0.1
@@ -716,12 +635,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -740,19 +659,16 @@ importers:
       p-queue:
         specifier: 6.6.2
         version: 6.6.2
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -768,9 +684,6 @@ importers:
       pagefind:
         specifier: 1.1.0
         version: 1.1.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@11ty/eleventy':
         specifier: 2.0.1
@@ -778,12 +691,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -799,25 +712,22 @@ importers:
       '@onlyoffice/result':
         specifier: workspace:^
         version: link:../result
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/eleventy-starry-night:
     dependencies:
       '@onlyoffice/eleventy-types':
         specifier: workspace:^
         version: link:../eleventy-types
+      '@types/11ty__eleventy':
+        specifier: workspace:^
+        version: link:../types-11ty__eleventy
       '@wooorm/starry-night':
         specifier: 3.2.0
         version: 3.2.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@11ty/eleventy':
         specifier: 2.0.1
@@ -828,12 +738,12 @@ importers:
       hast-util-to-html:
         specifier: 9.0.1
         version: 9.0.1
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -844,28 +754,20 @@ importers:
         specifier: 2.0.14
         version: 2.0.14
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/errors:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -880,16 +782,22 @@ importers:
         version: link:../eslint-plugin
       '@stylistic/eslint-plugin':
         specifier: 2.6.2
-        version: 2.6.2(eslint@9.8.0)(typescript@5.4.5)
+        version: 2.6.2(eslint@9.8.0)(typescript@5.7.2)
+      '@types/eslint-plugin-markdown':
+        specifier: 2.0.2
+        version: 2.0.2
+      '@types/eslint__js':
+        specifier: 8.42.3
+        version: 8.42.3
       '@typescript-eslint/eslint-plugin':
         specifier: 8.0.1
-        version: 8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5))(eslint@9.8.0)(typescript@5.4.5)
+        version: 8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2))(eslint@9.8.0)(typescript@5.7.2)
       eslint:
         specifier: 9.8.0
         version: 9.8.0
       eslint-plugin-import:
         specifier: 2.29.1
-        version: 2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5))(eslint@9.8.0)
+        version: 2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2))(eslint@9.8.0)
       eslint-plugin-jsonc:
         specifier: 2.15.1
         version: 2.15.1(eslint@9.8.0)
@@ -914,39 +822,31 @@ importers:
       jsonc-eslint-parser:
         specifier: 2.4.0
         version: 2.4.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       typescript-eslint:
         specifier: 8.0.1
-        version: 8.0.1(eslint@9.8.0)(typescript@5.4.5)
+        version: 8.0.1(eslint@9.8.0)(typescript@5.7.2)
       yaml-eslint-parser:
         specifier: 1.2.3
         version: 1.2.3
     devDependencies:
-      '@types/eslint-plugin-markdown':
-        specifier: 2.0.2
-        version: 2.0.2
-      '@types/eslint__js':
-        specifier: 8.42.3
-        version: 8.42.3
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
-  packages/eslint-plugin: {}
+  packages/eslint-plugin:
+    devDependencies:
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/fixture-resource:
     dependencies:
@@ -957,12 +857,12 @@ importers:
       '@onlyoffice/typedoc-resource':
         specifier: workspace:^
         version: link:../typedoc-resource
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       typedoc:
         specifier: 0.26.11
-        version: 0.26.11(typescript@5.4.5)
+        version: 0.26.11(typescript@5.7.2)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/glossary-hastscript:
     dependencies:
@@ -972,19 +872,16 @@ importers:
       clsx:
         specifier: 2.1.0
         version: 2.1.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1000,13 +897,10 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/hast-util-is-element:
     dependencies:
@@ -1016,19 +910,16 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1041,19 +932,16 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1072,9 +960,6 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-builder:
         specifier: 4.0.0
         version: 4.0.0
@@ -1082,12 +967,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1103,19 +988,16 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1125,13 +1007,10 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/jsdoc-declaration:
     dependencies:
@@ -1183,9 +1062,6 @@ importers:
       mdast-util-to-markdown:
         specifier: 2.1.0
         version: 2.1.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-select:
         specifier: 5.1.0
         version: 5.1.0
@@ -1193,9 +1069,9 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/jsdoc-resource-fixtures:
     dependencies:
@@ -1205,9 +1081,6 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -1239,9 +1112,6 @@ importers:
       jsdoc:
         specifier: 4.0.3
         version: 4.0.3
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       stream-chain:
         specifier: 2.2.5
         version: 2.2.5
@@ -1251,24 +1121,21 @@ importers:
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/lang-to-ext:
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1284,19 +1151,16 @@ importers:
       '@onlyoffice/signature':
         specifier: workspace:^
         version: link:../signature
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1312,19 +1176,16 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1337,19 +1198,16 @@ importers:
       '@onlyoffice/signature':
         specifier: workspace:^
         version: link:../signature
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1365,9 +1223,6 @@ importers:
       '@types/mdast':
         specifier: 4.0.3
         version: 4.0.3
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -1375,12 +1230,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unist-builder:
         specifier: 4.0.0
         version: 4.0.0
@@ -1399,9 +1254,6 @@ importers:
       mdast-util-to-string:
         specifier: 4.0.0
         version: 4.0.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
@@ -1412,12 +1264,12 @@ importers:
       mdast-util-to-markdown:
         specifier: 2.1.0
         version: 2.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1436,9 +1288,6 @@ importers:
       sentence-splitter:
         specifier: 5.0.0
         version: 5.0.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
@@ -1449,12 +1298,12 @@ importers:
       mdast-util-to-markdown:
         specifier: 2.1.0
         version: 2.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1468,53 +1317,31 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
-
-  packages/node-assert:
-    dependencies:
-      '@types/node':
-        specifier: 20.12.12
-        version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
 
   packages/node-http:
     dependencies:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1524,38 +1351,31 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/object-to-string:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1577,9 +1397,6 @@ importers:
       openapi-types:
         specifier: 12.1.3
         version: 12.1.3
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
@@ -1587,12 +1404,12 @@ importers:
       is-valid-uuid-v4:
         specifier: 1.2.3
         version: 1.2.3
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1632,13 +1449,10 @@ importers:
       stream-json:
         specifier: 1.8.0
         version: 1.8.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/openapi-resource-fixtures:
     dependencies:
@@ -1648,9 +1462,6 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/console':
         specifier: workspace:^
@@ -1661,12 +1472,12 @@ importers:
       '@onlyoffice/stream-string':
         specifier: workspace:^
         version: link:../stream-string
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       yaml:
         specifier: 2.4.1
         version: 2.4.1
@@ -1682,38 +1493,19 @@ importers:
       pagefind:
         specifier: 1.1.0
         version: 1.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-
-  packages/pagefind-types:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-callback:
     dependencies:
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
-      preact:
-        specifier: 10.22.0
-        version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-elements:
     dependencies:
@@ -1723,13 +1515,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-eleventy-img:
     dependencies:
@@ -1745,39 +1534,26 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-join:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-merge:
-    dependencies:
-      preact:
-        specifier: 10.22.0
-        version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-slots:
     dependencies:
@@ -1787,13 +1563,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-suspense:
     dependencies:
@@ -1803,9 +1576,6 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
@@ -1813,12 +1583,12 @@ importers:
       preact-render-to-string:
         specifier: 6.4.1
         version: 6.4.1(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -1834,13 +1604,10 @@ importers:
       preact-render-to-string:
         specifier: 6.4.1
         version: 6.4.1(preact@10.22.0)
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/preact-types:
     dependencies:
@@ -1848,18 +1615,14 @@ importers:
         specifier: 10.22.0
         version: 10.22.0
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/radiogroup-container-html-element:
     dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+      '@types/web':
+        specifier: 0.0.187
+        version: 0.0.187
     devDependencies:
       '@web/dev-server':
         specifier: 0.4.4
@@ -1867,24 +1630,18 @@ importers:
       '@web/dev-server-esbuild':
         specifier: 1.0.2
         version: 1.0.2
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/rehype-clean:
     dependencies:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -1895,9 +1652,9 @@ importers:
       '@onlyoffice/rehype-metastring':
         specifier: workspace:^
         version: link:../rehype-metastring
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/rehype-description-list:
     dependencies:
@@ -1913,9 +1670,6 @@ importers:
       hastscript:
         specifier: 8.0.0
         version: 8.0.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -1932,12 +1686,12 @@ importers:
       rehype-stringify:
         specifier: 10.0.0
         version: 10.0.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -1953,9 +1707,6 @@ importers:
       json5:
         specifier: 2.2.3
         version: 2.2.3
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -1981,12 +1732,12 @@ importers:
       remark-rehype:
         specifier: 11.1.0
         version: 11.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -1999,9 +1750,6 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -2009,9 +1757,9 @@ importers:
       mdast-util-to-hast:
         specifier: 13.2.0
         version: 13.2.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/rehype-parameters:
     dependencies:
@@ -2036,9 +1784,6 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -2073,12 +1818,12 @@ importers:
       remark-rehype:
         specifier: 11.1.0
         version: 11.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -2097,16 +1842,13 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unified:
         specifier: 11.0.5
         version: 11.0.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/rehype-references:
     dependencies:
@@ -2125,9 +1867,6 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -2153,12 +1892,12 @@ importers:
       remark-rehype:
         specifier: 11.1.0
         version: 11.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -2186,9 +1925,6 @@ importers:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -2220,12 +1956,12 @@ importers:
       remark-rehype:
         specifier: 11.1.0
         version: 11.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -2244,9 +1980,6 @@ importers:
       hast-util-to-text:
         specifier: 4.0.0
         version: 4.0.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -2269,9 +2002,9 @@ importers:
       remark-rehype:
         specifier: 11.1.0
         version: 11.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -2450,18 +2183,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2480,6 +2207,10 @@ importers:
       vfile:
         specifier: 6.0.1
         version: 6.0.1
+    devDependencies:
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/remark-lint-eslint:
     dependencies:
@@ -2499,18 +2230,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2539,9 +2264,6 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
       remark-lint:
         specifier: 10.0.0
         version: 10.0.0
@@ -2551,15 +2273,12 @@ importers:
       remark-stringify:
         specifier: 11.0.0
         version: 11.0.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -2572,9 +2291,6 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/stream-string':
         specifier: workspace:^
@@ -2582,12 +2298,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2595,21 +2311,14 @@ importers:
   packages/result:
     dependencies:
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/server-client:
     dependencies:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/node-http':
         specifier: workspace:^
@@ -2638,15 +2347,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2659,19 +2365,16 @@ importers:
       httpsnippet:
         specifier: 3.0.1
         version: 3.0.1
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2687,19 +2390,16 @@ importers:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2712,38 +2412,31 @@ importers:
       '@onlyoffice/signature':
         specifier: workspace:^
         version: link:../signature
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/signature:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2759,19 +2452,16 @@ importers:
       clsx:
         specifier: 2.1.0
         version: 2.1.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2790,9 +2480,6 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/preact-join':
         specifier: workspace:^
@@ -2809,15 +2496,9 @@ importers:
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-chapter:
     dependencies:
@@ -2830,28 +2511,16 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-config:
     dependencies:
       '@onlyoffice/document-server-types':
         specifier: workspace:^
         version: link:../document-server-types
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
       yaml:
         specifier: 2.4.1
         version: 2.4.1
@@ -2859,53 +2528,28 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
-
-  packages/site-config-fixtures:
-    dependencies:
-      '@onlyoffice/site-config':
-        specifier: workspace:^
-        version: link:../site-config
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
 
   packages/site-content:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/site-signature':
-        specifier: workspace:^
-        version: link:../site-signature
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-document-editor-playground:
     dependencies:
@@ -2948,38 +2592,22 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/site-config-fixtures':
-        specifier: workspace:^
-        version: link:../site-config-fixtures
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-env:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -2995,19 +2623,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-glossary:
     dependencies:
@@ -3020,28 +2639,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/preact-join':
-        specifier: workspace:^
-        version: link:../preact-join
-      '@onlyoffice/site-signature':
-        specifier: workspace:^
-        version: link:../site-signature
-      '@onlyoffice/ui-kit':
-        specifier: workspace:^
-        version: link:../ui-kit
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-header:
     dependencies:
@@ -3057,22 +2658,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/site-menubar':
-        specifier: workspace:^
-        version: link:../site-menubar
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-help:
     dependencies:
@@ -3082,22 +2671,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/ui-icons':
-        specifier: workspace:^
-        version: link:../ui-icons
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-home:
     dependencies:
@@ -3107,25 +2684,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/ui-icons':
-        specifier: workspace:^
-        version: link:../ui-icons
-      '@onlyoffice/ui-kit':
-        specifier: workspace:^
-        version: link:../ui-kit
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-kit:
     dependencies:
@@ -3192,13 +2754,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-library:
     dependencies:
@@ -3223,19 +2782,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-logo:
     dependencies:
@@ -3251,19 +2801,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-menubar:
     dependencies:
@@ -3279,22 +2820,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/ui-icons':
-        specifier: workspace:^
-        version: link:../ui-icons
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-page:
     dependencies:
@@ -3313,22 +2842,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/site-header':
-        specifier: workspace:^
-        version: link:../site-header
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-part:
     dependencies:
@@ -3338,9 +2855,6 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/ui-icons':
         specifier: workspace:^
@@ -3348,21 +2862,12 @@ importers:
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-search:
     dependencies:
-      '@onlyoffice/pagefind-types':
-        specifier: workspace:^
-        version: link:../pagefind-types
       '@onlyoffice/preact-slots':
         specifier: workspace:^
         version: link:../preact-slots
@@ -3381,19 +2886,16 @@ importers:
       '@onlyoffice/ui-text-input':
         specifier: workspace:^
         version: link:../ui-text-input
+      '@types/pagefind':
+        specifier: workspace:^
+        version: link:../types-pagefind
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       vite:
         specifier: 5.1.6
         version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
@@ -3421,19 +2923,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-signature:
     dependencies:
@@ -3452,19 +2945,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-status:
     dependencies:
@@ -3483,28 +2967,16 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-theme-switcher:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/preact-types':
         specifier: workspace:^
@@ -3512,15 +2984,9 @@ importers:
       '@onlyoffice/radiogroup-container-html-element':
         specifier: workspace:^
         version: link:../radiogroup-container-html-element
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/site-toc:
     dependencies:
@@ -3533,19 +2999,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/store-demo:
     dependencies:
@@ -3573,16 +3030,10 @@ importers:
       sade:
         specifier: 1.8.1
         version: 1.8.1
-      tsx:
-        specifier: 4.16.5
-        version: 4.16.5
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/stream-json:
     dependencies:
@@ -3595,51 +3046,41 @@ importers:
       stream-json:
         specifier: 1.8.0
         version: 1.8.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/stream-string:
     dependencies:
       '@types/node':
         specifier: 20.12.12
         version: 20.12.12
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
 
   packages/strings:
-    dependencies:
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -3648,47 +3089,41 @@ importers:
     dependencies:
       '@double-great/stylelint-a11y':
         specifier: 3.0.2
-        version: 3.0.2(stylelint@16.8.2(typescript@5.4.5))
+        version: 3.0.2(stylelint@16.8.2(typescript@5.7.2))
       '@stylistic/stylelint-plugin':
         specifier: 3.0.0
-        version: 3.0.0(stylelint@16.8.2(typescript@5.4.5))
+        version: 3.0.0(stylelint@16.8.2(typescript@5.7.2))
       stylelint:
         specifier: 16.8.2
-        version: 16.8.2(typescript@5.4.5)
+        version: 16.8.2(typescript@5.7.2)
       stylelint-at-rule-no-children:
         specifier: 0.3.1
         version: 0.3.1
       stylelint-declaration-block-no-ignored-properties:
         specifier: 2.8.0
-        version: 2.8.0(stylelint@16.8.2(typescript@5.4.5))
+        version: 2.8.0(stylelint@16.8.2(typescript@5.7.2))
       stylelint-high-performance-animation:
         specifier: 1.10.0
-        version: 1.10.0(stylelint@16.8.2(typescript@5.4.5))
+        version: 1.10.0(stylelint@16.8.2(typescript@5.7.2))
       stylelint-media-use-custom-media:
         specifier: 4.0.0
-        version: 4.0.0(stylelint@16.8.2(typescript@5.4.5))
+        version: 4.0.0(stylelint@16.8.2(typescript@5.7.2))
       stylelint-order:
         specifier: 6.0.4
-        version: 6.0.4(stylelint@16.8.2(typescript@5.4.5))
+        version: 6.0.4(stylelint@16.8.2(typescript@5.7.2))
       stylelint-plugin-logical-css:
         specifier: 1.2.1
-        version: 1.2.1(stylelint@16.8.2(typescript@5.4.5))
+        version: 1.2.1(stylelint@16.8.2(typescript@5.7.2))
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      esbuild:
-        specifier: 0.23.0
-        version: 0.23.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -3710,16 +3145,10 @@ importers:
       sade:
         specifier: 1.8.1
         version: 1.8.1
-      tsx:
-        specifier: 4.16.5
-        version: 4.16.5
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/svg-preact:
     dependencies:
@@ -3735,57 +3164,35 @@ importers:
       svgo:
         specifier: 3.3.2
         version: 3.3.2
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
-
-  packages/tab-container-element-types:
-    dependencies:
-      '@github/tab-container-element':
-        specifier: 4.8.0
-        version: 4.8.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      preact:
-        specifier: 10.22.0
-        version: 10.22.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
 
   packages/template-hast-element:
     dependencies:
       '@types/hast':
         specifier: 3.0.4
         version: 3.0.4
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -3806,10 +3213,7 @@ importers:
         version: link:../typedoc-transport
       typedoc:
         specifier: 0.26.11
-        version: 0.26.11(typescript@5.4.5)
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        version: 0.26.11(typescript@5.7.2)
     devDependencies:
       '@types/node':
         specifier: 20.12.12
@@ -3817,12 +3221,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -3844,13 +3248,13 @@ importers:
       sade:
         specifier: 1.8.1
         version: 1.8.1
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+      yaml:
+        specifier: 2.4.1
+        version: 2.4.1
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/typedoc-transformer:
     dependencies:
@@ -3904,20 +3308,17 @@ importers:
         version: 1.0.2
       typedoc:
         specifier: 0.26.11
-        version: 0.26.11(typescript@5.4.5)
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        version: 0.26.11(typescript@5.7.2)
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -3935,10 +3336,7 @@ importers:
         version: link:../typedoc-util-is-type
       typedoc:
         specifier: 0.26.11
-        version: 0.26.11(typescript@5.4.5)
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        version: 0.26.11(typescript@5.7.2)
     devDependencies:
       '@types/node':
         specifier: 20.12.12
@@ -3946,12 +3344,12 @@ importers:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -3960,20 +3358,17 @@ importers:
     dependencies:
       typedoc:
         specifier: 0.26.11
-        version: 0.26.11(typescript@5.4.5)
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        version: 0.26.11(typescript@5.7.2)
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -3985,20 +3380,17 @@ importers:
         version: link:../typedoc-util-is-kind
       typedoc:
         specifier: 0.26.11
-        version: 0.26.11(typescript@5.4.5)
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        version: 0.26.11(typescript@5.7.2)
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -4007,23 +3399,32 @@ importers:
     dependencies:
       typedoc:
         specifier: 0.26.11
-        version: 0.26.11(typescript@5.4.5)
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        version: 0.26.11(typescript@5.7.2)
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
+
+  packages/types-11ty__eleventy:
+    dependencies:
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+
+  packages/types-pagefind:
+    dependencies:
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/types-remark-strip-html:
     dependencies:
@@ -4034,8 +3435,18 @@ importers:
         specifier: 1.0.2
         version: 1.0.2
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
+
+  packages/types-tab-container-element:
+    dependencies:
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+    devDependencies:
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
 
   packages/ui-article-card:
     dependencies:
@@ -4045,19 +3456,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-badge:
     dependencies:
@@ -4070,19 +3472,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-badge-group:
     dependencies:
@@ -4095,22 +3488,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/ui-badge':
-        specifier: workspace:^
-        version: link:../ui-badge
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-badge-group-hastscript:
     dependencies:
@@ -4120,19 +3501,16 @@ importers:
       clsx:
         specifier: 2.1.0
         version: 2.1.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -4145,19 +3523,16 @@ importers:
       clsx:
         specifier: 2.1.0
         version: 2.1.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       c8:
         specifier: 9.1.0
         version: 9.1.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       tsx:
         specifier: 4.16.5
         version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       uvu:
         specifier: 0.5.6
         version: 0.5.6
@@ -4175,19 +3550,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-button:
     dependencies:
@@ -4200,41 +3566,20 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-code-editor:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/preact-types':
-        specifier: workspace:^
-        version: link:../preact-types
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-code-listing:
     dependencies:
@@ -4244,44 +3589,26 @@ importers:
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
-      '@onlyoffice/tab-container-element-types':
+      '@types/tab-container-element':
         specifier: workspace:^
-        version: link:../tab-container-element-types
+        version: link:../types-tab-container-element
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-code-preview:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-content:
     dependencies:
@@ -4291,44 +3618,32 @@ importers:
       '@onlyoffice/preact-elements':
         specifier: workspace:^
         version: link:../preact-elements
-      '@onlyoffice/tab-container-element-types':
+      '@types/tab-container-element':
         specifier: workspace:^
-        version: link:../tab-container-element-types
+        version: link:../types-tab-container-element
       clsx:
         specifier: 2.1.0
         version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-fonts:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       fontpie:
         specifier: 0.3.0
         version: 0.3.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-form-control:
     dependencies:
@@ -4341,44 +3656,23 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@onlyoffice/ui-icons':
-        specifier: workspace:^
-        version: link:../ui-icons
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-icons:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/svg-library':
         specifier: workspace:^
         version: link:../svg-library
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-kit:
     dependencies:
@@ -4442,57 +3736,36 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-logos:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/svg-library':
         specifier: workspace:^
         version: link:../svg-library
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-mascots:
     dependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/svg-library':
         specifier: workspace:^
         version: link:../svg-library
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-pictures:
     dependencies:
@@ -4508,28 +3781,16 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
       '@onlyoffice/svg-library':
         specifier: workspace:^
         version: link:../svg-library
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-primitives:
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
       '@types/color':
         specifier: 3.0.6
         version: 3.0.6
@@ -4542,12 +3803,6 @@ importers:
       dot-prop:
         specifier: 9.0.0
         version: 9.0.0
-      preact:
-        specifier: 10.22.0
-        version: 10.22.0
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
       sade:
         specifier: 1.8.1
         version: 1.8.1
@@ -4555,11 +3810,8 @@ importers:
         specifier: 4.16.5
         version: 4.16.5
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@20.12.12)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+        specifier: 5.7.2
+        version: 5.7.2
       yaml:
         specifier: 2.4.1
         version: 2.4.1
@@ -4575,19 +3827,10 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-sr-only:
     dependencies:
@@ -4597,47 +3840,23 @@ importers:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      typescript:
-        specifier: 5.4.5
-        version: 5.4.5
     devDependencies:
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   packages/ui-text-input:
     dependencies:
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
+    devDependencies:
       preact:
         specifier: 10.22.0
         version: 10.22.0
-      preact-render-to-string:
-        specifier: 6.4.1
-        version: 6.4.1(preact@10.22.0)
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
-    devDependencies:
-      '@onlyoffice/ui-icons':
-        specifier: workspace:^
-        version: link:../ui-icons
-      '@storybook/preact':
-        specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
-      vite:
-        specifier: 5.1.6
-        version: 5.1.6(@types/node@22.4.1)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
+        specifier: 5.7.2
+        version: 5.7.2
 
   site:
     devDependencies:
@@ -4911,6 +4130,9 @@ importers:
       require-from-string:
         specifier: 2.0.2
         version: 2.0.2
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -4929,9 +4151,18 @@ importers:
       '@11ty/eleventy-dev-server':
         specifier: 1.0.4
         version: 1.0.4
+      '@onlyoffice/preact-join':
+        specifier: workspace:^
+        version: link:../packages/preact-join
+      '@onlyoffice/preact-types':
+        specifier: workspace:^
+        version: link:../packages/preact-types
       '@onlyoffice/site-kit':
         specifier: workspace:^
         version: link:../packages/site-kit
+      '@onlyoffice/ui-icons':
+        specifier: workspace:^
+        version: link:../packages/ui-icons
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../packages/ui-kit
@@ -4955,7 +4186,7 @@ importers:
         version: 8.0.0(preact@10.22.0)
       '@storybook/preact-vite':
         specifier: 8.0.0
-        version: 8.0.0(preact@10.22.0)(typescript@5.4.5)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))
+        version: 8.0.0(preact@10.22.0)(typescript@5.7.2)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))
       browserslist:
         specifier: 4.23.2
         version: 4.23.2
@@ -4978,8 +4209,8 @@ importers:
         specifier: 8.0.0
         version: 8.0.0(@babel/preset-env@7.25.3(@babel/core@7.24.7))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.7.2
+        version: 5.7.2
       vite:
         specifier: 5.1.6
         version: 5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
@@ -7063,6 +6294,9 @@ packages:
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==, tarball: https://registry.npmjs.org/@types/uuid/-/uuid-9.0.8.tgz}
 
+  '@types/web@0.0.187':
+    resolution: {integrity: sha512-PNvOlIo9AkUA8dvdqJHrvvIZG40Qi37QHNyl1qOD1m/4Lj+2thAtwJM2N9UmtGBtkhb3x9mP/6JlXYtQcZ3uFg==, tarball: https://registry.npmjs.org/@types/web/-/web-0.0.187.tgz}
+
   '@types/ws@7.4.7':
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==, tarball: https://registry.npmjs.org/@types/ws/-/ws-7.4.7.tgz}
 
@@ -8701,11 +7935,6 @@ packages:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==, tarball: https://registry.npmjs.org/glob/-/glob-10.4.5.tgz}
     hasBin: true
 
-  glob@11.0.0:
-    resolution: {integrity: sha512-9UiX/Bl6J2yaBbxKoEBRm4Cipxgok8kQYcOPEhScPwebu2I0HoQOuYdIO6S3hLuWoZgpDpwQZMzTFxgpkyT76g==, tarball: https://registry.npmjs.org/glob/-/glob-11.0.0.tgz}
-    engines: {node: 20 || >=22}
-    hasBin: true
-
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==, tarball: https://registry.npmjs.org/glob/-/glob-7.2.3.tgz}
     deprecated: Glob versions prior to v9 are no longer supported
@@ -9240,10 +8469,6 @@ packages:
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==, tarball: https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz}
 
-  jackspeak@4.0.2:
-    resolution: {integrity: sha512-bZsjR/iRjl1Nk1UkjGpAzLNfQtzuijhn2g+pbZb98HQ1Gk8vM9hfbxeMBP+M2/UUdwj0RqGG3mlvk2MsAqwvEw==, tarball: https://registry.npmjs.org/jackspeak/-/jackspeak-4.0.2.tgz}
-    engines: {node: 20 || >=22}
-
   jake@10.8.7:
     resolution: {integrity: sha512-ZDi3aP+fG/LchyBzUM804VjddnwfSfsdeYkwt8NcbKRvo4rFkjhs456iLFn3k2ZUWvNe4i48WACDbza8fhq2+w==, tarball: https://registry.npmjs.org/jake/-/jake-10.8.7.tgz}
     engines: {node: '>=10'}
@@ -9688,10 +8913,6 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==, tarball: https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz}
 
-  lru-cache@11.0.1:
-    resolution: {integrity: sha512-CgeuL5uom6j/ZVrg7G/+1IXqRY8JXX4Hghfy5YE0EhoYQWvndP1kufu58cmZLNIDKnRhZrXfdS9urVWx98AipQ==, tarball: https://registry.npmjs.org/lru-cache/-/lru-cache-11.0.1.tgz}
-    engines: {node: 20 || >=22}
-
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==, tarball: https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz}
 
@@ -10006,10 +9227,6 @@ packages:
   min-indent@1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==, tarball: https://registry.npmjs.org/min-indent/-/min-indent-1.0.1.tgz}
     engines: {node: '>=4'}
-
-  minimatch@10.0.1:
-    resolution: {integrity: sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==, tarball: https://registry.npmjs.org/minimatch/-/minimatch-10.0.1.tgz}
-    engines: {node: 20 || >=22}
 
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==, tarball: https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz}
@@ -10387,10 +9604,6 @@ packages:
   path-scurry@1.11.1:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==, tarball: https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz}
     engines: {node: '>=16 || 14 >=14.18'}
-
-  path-scurry@2.0.0:
-    resolution: {integrity: sha512-ypGJsmGtdXUOeM5u93TyeIEfEhM6s+ljAhrk5vAvSx8uyY/02OvrZnA0YNGUrPXfpJMgI1ODd3nwz8Npx4O4cg==, tarball: https://registry.npmjs.org/path-scurry/-/path-scurry-2.0.0.tgz}
-    engines: {node: 20 || >=22}
 
   path-to-regexp@0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==, tarball: https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz}
@@ -11048,11 +10261,6 @@ packages:
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
-  rimraf@6.0.1:
-    resolution: {integrity: sha512-9dkvaxAsk/xNXSJzMgFqqMCuFgt2+KsOFek3TMLfo8NCPfWpBmqwyNn5Y+NX56QUYfCtsyhF3ayiboEoUmJk/A==, tarball: https://registry.npmjs.org/rimraf/-/rimraf-6.0.1.tgz}
-    engines: {node: 20 || >=22}
-    hasBin: true
-
   rollup@4.13.0:
     resolution: {integrity: sha512-3YegKemjoQnYKmsBlOHfMLVPPA5xLkQ8MHLLSw/fBrFaVkEayL51DilPpNNLq1exr98F2B1TzrV0FUlN3gWRPg==, tarball: https://registry.npmjs.org/rollup/-/rollup-4.13.0.tgz}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -11626,8 +10834,8 @@ packages:
       typescript:
         optional: true
 
-  typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.4.5.tgz}
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.7.2.tgz}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -11668,8 +10876,8 @@ packages:
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==, tarball: https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz}
 
-  undici-types@6.19.6:
-    resolution: {integrity: sha512-e/vggGopEfTKSvj4ihnOLTsqhrKRN3LeO6qSN/GxohhuRv8qH9bNQ4B8W7e/vFL+0XTnmHPB4/kegunZGA4Org==, tarball: https://registry.npmjs.org/undici-types/-/undici-types-6.19.6.tgz}
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==, tarball: https://registry.npmjs.org/undici-types/-/undici-types-6.19.8.tgz}
 
   unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==, tarball: https://registry.npmjs.org/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-2.0.0.tgz}
@@ -13025,10 +12233,10 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
-  '@double-great/stylelint-a11y@3.0.2(stylelint@16.8.2(typescript@5.4.5))':
+  '@double-great/stylelint-a11y@3.0.2(stylelint@16.8.2(typescript@5.7.2))':
     dependencies:
       postcss: 8.4.41
-      stylelint: 16.8.2(typescript@5.4.5)
+      stylelint: 16.8.2(typescript@5.7.2)
 
   '@dual-bundle/import-meta-resolve@4.1.0': {}
 
@@ -13829,7 +13037,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@storybook/builder-vite@8.0.0(typescript@5.4.5)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))':
+  '@storybook/builder-vite@8.0.0(typescript@5.7.2)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))':
     dependencies:
       '@storybook/channels': 8.0.0
       '@storybook/client-logger': 8.0.0
@@ -13850,7 +13058,7 @@ snapshots:
       ts-dedent: 2.2.0
       vite: 5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -14112,9 +13320,9 @@ snapshots:
 
   '@storybook/node-logger@8.0.0': {}
 
-  '@storybook/preact-vite@8.0.0(preact@10.22.0)(typescript@5.4.5)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))':
+  '@storybook/preact-vite@8.0.0(preact@10.22.0)(typescript@5.7.2)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))':
     dependencies:
-      '@storybook/builder-vite': 8.0.0(typescript@5.4.5)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))
+      '@storybook/builder-vite': 8.0.0(typescript@5.7.2)(vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6))
       '@storybook/preact': 8.0.0(preact@10.22.0)
       preact: 10.22.0
       vite: 5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6)
@@ -14225,38 +13433,38 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.2
 
-  '@stylistic/eslint-plugin-plus@2.6.2(eslint@9.8.0)(typescript@5.4.5)':
+  '@stylistic/eslint-plugin-plus@2.6.2(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
       '@types/eslint': 9.6.0
-      '@typescript-eslint/utils': 8.1.0(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/utils': 8.1.0(eslint@9.8.0)(typescript@5.7.2)
       eslint: 9.8.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@stylistic/eslint-plugin-ts@2.6.2(eslint@9.8.0)(typescript@5.4.5)':
+  '@stylistic/eslint-plugin-ts@2.6.2(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin-js': 2.6.2(eslint@9.8.0)
       '@types/eslint': 9.6.0
-      '@typescript-eslint/utils': 8.1.0(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/utils': 8.1.0(eslint@9.8.0)(typescript@5.7.2)
       eslint: 9.8.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@stylistic/eslint-plugin@2.6.2(eslint@9.8.0)(typescript@5.4.5)':
+  '@stylistic/eslint-plugin@2.6.2(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin-js': 2.6.2(eslint@9.8.0)
       '@stylistic/eslint-plugin-jsx': 2.6.2(eslint@9.8.0)
-      '@stylistic/eslint-plugin-plus': 2.6.2(eslint@9.8.0)(typescript@5.4.5)
-      '@stylistic/eslint-plugin-ts': 2.6.2(eslint@9.8.0)(typescript@5.4.5)
+      '@stylistic/eslint-plugin-plus': 2.6.2(eslint@9.8.0)(typescript@5.7.2)
+      '@stylistic/eslint-plugin-ts': 2.6.2(eslint@9.8.0)(typescript@5.7.2)
       '@types/eslint': 9.6.0
       eslint: 9.8.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@stylistic/stylelint-plugin@3.0.0(stylelint@16.8.2(typescript@5.4.5))':
+  '@stylistic/stylelint-plugin@3.0.0(stylelint@16.8.2(typescript@5.7.2))':
     dependencies:
       '@csstools/css-parser-algorithms': 2.7.1(@csstools/css-tokenizer@2.4.1)
       '@csstools/css-tokenizer': 2.4.1
@@ -14265,7 +13473,7 @@ snapshots:
       postcss-selector-parser: 6.1.2
       postcss-value-parser: 4.2.0
       style-search: 0.1.0
-      stylelint: 16.8.2(typescript@5.4.5)
+      stylelint: 16.8.2(typescript@5.7.2)
 
   '@swc/helpers@0.4.14':
     dependencies:
@@ -14508,7 +13716,7 @@ snapshots:
 
   '@types/node@22.4.1':
     dependencies:
-      undici-types: 6.19.6
+      undici-types: 6.19.8
     optional: true
 
   '@types/normalize-package-data@2.4.4': {}
@@ -14581,6 +13789,8 @@ snapshots:
 
   '@types/uuid@9.0.8': {}
 
+  '@types/web@0.0.187': {}
+
   '@types/ws@7.4.7':
     dependencies:
       '@types/node': 20.12.12
@@ -14590,34 +13800,34 @@ snapshots:
       '@types/node': 20.12.12
     optional: true
 
-  '@typescript-eslint/eslint-plugin@8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5))(eslint@9.8.0)(typescript@5.4.5)':
+  '@typescript-eslint/eslint-plugin@8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2))(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
       '@eslint-community/regexpp': 4.11.0
-      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
       '@typescript-eslint/scope-manager': 8.0.1
-      '@typescript-eslint/type-utils': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
-      '@typescript-eslint/utils': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/type-utils': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
+      '@typescript-eslint/utils': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
       '@typescript-eslint/visitor-keys': 8.0.1
       eslint: 9.8.0
       graphemer: 1.4.0
       ignore: 5.3.2
       natural-compare: 1.4.0
-      ts-api-utils: 1.3.0(typescript@5.4.5)
+      ts-api-utils: 1.3.0(typescript@5.7.2)
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5)':
+  '@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.0.1
       '@typescript-eslint/types': 8.0.1
-      '@typescript-eslint/typescript-estree': 8.0.1(typescript@5.4.5)
+      '@typescript-eslint/typescript-estree': 8.0.1(typescript@5.7.2)
       '@typescript-eslint/visitor-keys': 8.0.1
       debug: 4.3.6
       eslint: 9.8.0
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
     transitivePeerDependencies:
       - supports-color
 
@@ -14631,14 +13841,14 @@ snapshots:
       '@typescript-eslint/types': 8.1.0
       '@typescript-eslint/visitor-keys': 8.1.0
 
-  '@typescript-eslint/type-utils@8.0.1(eslint@9.8.0)(typescript@5.4.5)':
+  '@typescript-eslint/type-utils@8.0.1(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
-      '@typescript-eslint/typescript-estree': 8.0.1(typescript@5.4.5)
-      '@typescript-eslint/utils': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/typescript-estree': 8.0.1(typescript@5.7.2)
+      '@typescript-eslint/utils': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
       debug: 4.3.6
-      ts-api-utils: 1.3.0(typescript@5.4.5)
+      ts-api-utils: 1.3.0(typescript@5.7.2)
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -14647,7 +13857,7 @@ snapshots:
 
   '@typescript-eslint/types@8.1.0': {}
 
-  '@typescript-eslint/typescript-estree@8.0.1(typescript@5.4.5)':
+  '@typescript-eslint/typescript-estree@8.0.1(typescript@5.7.2)':
     dependencies:
       '@typescript-eslint/types': 8.0.1
       '@typescript-eslint/visitor-keys': 8.0.1
@@ -14656,13 +13866,13 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 9.0.5
       semver: 7.6.3
-      ts-api-utils: 1.3.0(typescript@5.4.5)
+      ts-api-utils: 1.3.0(typescript@5.7.2)
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/typescript-estree@8.1.0(typescript@5.4.5)':
+  '@typescript-eslint/typescript-estree@8.1.0(typescript@5.7.2)':
     dependencies:
       '@typescript-eslint/types': 8.1.0
       '@typescript-eslint/visitor-keys': 8.1.0
@@ -14671,29 +13881,29 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 9.0.5
       semver: 7.6.3
-      ts-api-utils: 1.3.0(typescript@5.4.5)
+      ts-api-utils: 1.3.0(typescript@5.7.2)
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@8.0.1(eslint@9.8.0)(typescript@5.4.5)':
+  '@typescript-eslint/utils@8.0.1(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.8.0)
       '@typescript-eslint/scope-manager': 8.0.1
       '@typescript-eslint/types': 8.0.1
-      '@typescript-eslint/typescript-estree': 8.0.1(typescript@5.4.5)
+      '@typescript-eslint/typescript-estree': 8.0.1(typescript@5.7.2)
       eslint: 9.8.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@typescript-eslint/utils@8.1.0(eslint@9.8.0)(typescript@5.4.5)':
+  '@typescript-eslint/utils@8.1.0(eslint@9.8.0)(typescript@5.7.2)':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.8.0)
       '@typescript-eslint/scope-manager': 8.1.0
       '@typescript-eslint/types': 8.1.0
-      '@typescript-eslint/typescript-estree': 8.1.0(typescript@5.4.5)
+      '@typescript-eslint/typescript-estree': 8.1.0(typescript@5.7.2)
       eslint: 9.8.0
     transitivePeerDependencies:
       - supports-color
@@ -15578,14 +14788,14 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cosmiconfig@9.0.0(typescript@5.4.5):
+  cosmiconfig@9.0.0(typescript@5.7.2):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
 
   cross-env@7.0.3:
     dependencies:
@@ -16107,17 +15317,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint@9.8.0):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint@9.8.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
-      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
       eslint: 9.8.0
       eslint-import-resolver-node: 0.3.9
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5))(eslint@9.8.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2))(eslint@9.8.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -16127,7 +15337,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.8.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint@9.8.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint@9.8.0)
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -16138,7 +15348,7 @@ snapshots:
       semver: 6.3.1
       tsconfig-paths: 3.15.0
     optionalDependencies:
-      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -16648,15 +15858,6 @@ snapshots:
       minipass: 7.1.2
       package-json-from-dist: 1.0.0
       path-scurry: 1.11.1
-
-  glob@11.0.0:
-    dependencies:
-      foreground-child: 3.1.1
-      jackspeak: 4.0.2
-      minimatch: 10.0.1
-      minipass: 7.1.2
-      package-json-from-dist: 1.0.0
-      path-scurry: 2.0.0
 
   glob@7.2.3:
     dependencies:
@@ -17243,10 +16444,6 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
-  jackspeak@4.0.2:
-    dependencies:
-      '@isaacs/cliui': 8.0.2
-
   jake@10.8.7:
     dependencies:
       async: 3.2.5
@@ -17709,8 +16906,6 @@ snapshots:
       tslib: 2.6.3
 
   lru-cache@10.4.3: {}
-
-  lru-cache@11.0.1: {}
 
   lru-cache@5.1.1:
     dependencies:
@@ -18264,10 +17459,6 @@ snapshots:
 
   min-indent@1.0.1: {}
 
-  minimatch@10.0.1:
-    dependencies:
-      brace-expansion: 2.0.1
-
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
@@ -18668,11 +17859,6 @@ snapshots:
   path-scurry@1.11.1:
     dependencies:
       lru-cache: 10.4.3
-      minipass: 7.1.2
-
-  path-scurry@2.0.0:
-    dependencies:
-      lru-cache: 11.0.1
       minipass: 7.1.2
 
   path-to-regexp@0.1.7: {}
@@ -19761,11 +18947,6 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rimraf@6.0.1:
-    dependencies:
-      glob: 11.0.0
-      package-json-from-dist: 1.0.0
-
   rollup@4.13.0:
     dependencies:
       '@types/estree': 1.0.5
@@ -20143,30 +19324,30 @@ snapshots:
 
   stylelint-at-rule-no-children@0.3.1: {}
 
-  stylelint-declaration-block-no-ignored-properties@2.8.0(stylelint@16.8.2(typescript@5.4.5)):
+  stylelint-declaration-block-no-ignored-properties@2.8.0(stylelint@16.8.2(typescript@5.7.2)):
     dependencies:
-      stylelint: 16.8.2(typescript@5.4.5)
+      stylelint: 16.8.2(typescript@5.7.2)
 
-  stylelint-high-performance-animation@1.10.0(stylelint@16.8.2(typescript@5.4.5)):
+  stylelint-high-performance-animation@1.10.0(stylelint@16.8.2(typescript@5.7.2)):
     dependencies:
       postcss-value-parser: 4.2.0
-      stylelint: 16.8.2(typescript@5.4.5)
+      stylelint: 16.8.2(typescript@5.7.2)
 
-  stylelint-media-use-custom-media@4.0.0(stylelint@16.8.2(typescript@5.4.5)):
+  stylelint-media-use-custom-media@4.0.0(stylelint@16.8.2(typescript@5.7.2)):
     dependencies:
-      stylelint: 16.8.2(typescript@5.4.5)
+      stylelint: 16.8.2(typescript@5.7.2)
 
-  stylelint-order@6.0.4(stylelint@16.8.2(typescript@5.4.5)):
+  stylelint-order@6.0.4(stylelint@16.8.2(typescript@5.7.2)):
     dependencies:
       postcss: 8.4.41
       postcss-sorting: 8.0.2(postcss@8.4.41)
-      stylelint: 16.8.2(typescript@5.4.5)
+      stylelint: 16.8.2(typescript@5.7.2)
 
-  stylelint-plugin-logical-css@1.2.1(stylelint@16.8.2(typescript@5.4.5)):
+  stylelint-plugin-logical-css@1.2.1(stylelint@16.8.2(typescript@5.7.2)):
     dependencies:
-      stylelint: 16.8.2(typescript@5.4.5)
+      stylelint: 16.8.2(typescript@5.7.2)
 
-  stylelint@16.8.2(typescript@5.4.5):
+  stylelint@16.8.2(typescript@5.7.2):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.1(@csstools/css-tokenizer@3.0.1)
       '@csstools/css-tokenizer': 3.0.1
@@ -20175,7 +19356,7 @@ snapshots:
       '@dual-bundle/import-meta-resolve': 4.1.0
       balanced-match: 2.0.0
       colord: 2.9.3
-      cosmiconfig: 9.0.0(typescript@5.4.5)
+      cosmiconfig: 9.0.0(typescript@5.7.2)
       css-functions-list: 3.2.2
       css-tree: 2.3.1
       debug: 4.3.6
@@ -20376,9 +19557,9 @@ snapshots:
 
   trough@2.2.0: {}
 
-  ts-api-utils@1.3.0(typescript@5.4.5):
+  ts-api-utils@1.3.0(typescript@5.7.2):
     dependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
 
   ts-dedent@2.2.0: {}
 
@@ -20459,27 +19640,27 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typedoc@0.26.11(typescript@5.4.5):
+  typedoc@0.26.11(typescript@5.7.2):
     dependencies:
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
       shiki: 1.24.2
-      typescript: 5.4.5
+      typescript: 5.7.2
       yaml: 2.6.1
 
-  typescript-eslint@8.0.1(eslint@9.8.0)(typescript@5.4.5):
+  typescript-eslint@8.0.1(eslint@9.8.0)(typescript@5.7.2):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.4.5))(eslint@9.8.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
-      '@typescript-eslint/utils': 8.0.1(eslint@9.8.0)(typescript@5.4.5)
+      '@typescript-eslint/eslint-plugin': 8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.7.2))(eslint@9.8.0)(typescript@5.7.2)
+      '@typescript-eslint/parser': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
+      '@typescript-eslint/utils': 8.0.1(eslint@9.8.0)(typescript@5.7.2)
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.7.2
     transitivePeerDependencies:
       - eslint
       - supports-color
 
-  typescript@5.4.5: {}
+  typescript@5.7.2: {}
 
   typical@4.0.0: {}
 
@@ -20512,7 +19693,7 @@ snapshots:
 
   undici-types@5.26.5: {}
 
-  undici-types@6.19.6:
+  undici-types@6.19.8:
     optional: true
 
   unicode-canonical-property-names-ecmascript@2.0.0: {}
@@ -20779,18 +19960,6 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
-
-  vite@5.1.6(@types/node@20.12.12)(lightningcss@1.26.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6):
-    dependencies:
-      esbuild: 0.19.12
-      postcss: 8.4.41
-      rollup: 4.13.0
-    optionalDependencies:
-      '@types/node': 20.12.12
-      fsevents: 2.3.3
-      lightningcss: 1.26.0
-      sugarss: 4.0.1(postcss@8.4.41)
-      terser: 5.31.6
 
   vite@5.1.6(@types/node@22.4.1)(lightningcss@1.23.0)(sugarss@4.0.1(postcss@8.4.41))(terser@5.31.6):
     dependencies:

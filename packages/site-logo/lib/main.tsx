@@ -1,7 +1,7 @@
 import * as Elements from "@onlyoffice/preact-elements"
 import {OnlyofficeBetaLogo} from "@onlyoffice/ui-logos"
 import {clsx} from "clsx"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export interface LogoProperties extends Omit<Elements.SpanProperties, "size"> {
   size?: "default" | "small" | "medium"

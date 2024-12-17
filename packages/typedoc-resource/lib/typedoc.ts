@@ -25,14 +25,14 @@ const Resource = {
     const cf = path.join(d, `${e.name}.json`)
     await writeFile(cf, cc)
 
-    const ff = path.join(d, `${e.name}.ts`)
+    const ff = path.join(d, `${e.name}.js`)
     await writeFile(ff, fc)
   },
 }
 
 const Fixture = {
   async read(e: ConfigEntity): Promise<string> {
-    const f = path.join(import.meta.dirname, "..", "fixtures", "typedoc.ts")
+    const f = path.join(import.meta.dirname, "..", "fixtures", "typedoc.js")
     const c = await readFile(f, "utf8")
     return c.replace("typedoc.json", `${e.name}.json`)
   },

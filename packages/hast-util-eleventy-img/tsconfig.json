@@ -1,7 +1,3 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "allowImportingTsExtensions": false
-  },
-  "include": ["lib"]
+  "extends": "../../tsconfig.base.json"
 }

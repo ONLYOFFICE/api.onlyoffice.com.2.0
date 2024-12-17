@@ -3,13 +3,16 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "storybook build --config-dir ./lib --disable-telemetry --output-dir ./dist",
+    "build": "storybook build --config-dir config --disable-telemetry --output-dir dist",
     "preview": "eleventy-dev-server --dir dist",
-    "serve": "storybook dev --config-dir ./lib --no-open --port 6006"
+    "serve": "storybook dev --config-dir config --no-open --port 6006"
   },
   "devDependencies": {
     "@11ty/eleventy-dev-server": "1.0.4",
+    "@onlyoffice/preact-join": "workspace:^",
+    "@onlyoffice/preact-types": "workspace:^",
     "@onlyoffice/site-kit": "workspace:^",
+    "@onlyoffice/ui-icons": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",
     "@storybook/addon-a11y": "8.0.0",
     "@storybook/addon-essentials": "8.0.0",
@@ -25,7 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "storybook": "8.0.0",
-    "typescript": "5.4.5",
+    "typescript": "5.7.2",
     "vite": "5.1.6"
   }
 }

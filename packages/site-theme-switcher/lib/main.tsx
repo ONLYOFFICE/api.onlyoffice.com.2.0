@@ -1,5 +1,5 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export interface ThemeSwitcherParameters extends ChildrenIncludable {
   label?: string

@@ -19,11 +19,11 @@ class RadiogroupContainerEvent extends Event {
     return this.#radioValue
   }
 
-  constructor(type: string, eventInitDict: RadiogroupContainerChangeEventInit) {
-    super(type, eventInitDict)
-    this.#radio = eventInitDict.radio
-    this.#radioIndex = eventInitDict.radioIndex
-    this.#radioValue = eventInitDict.radioValue
+  constructor(type: string, d: RadiogroupContainerChangeEventInit) {
+    super(type, d)
+    this.#radio = d.radio
+    this.#radioIndex = d.radioIndex
+    this.#radioValue = d.radioValue
   }
 }
 
@@ -34,12 +34,16 @@ export interface RadiogroupContainerChangeEventInit extends EventInit {
 }
 
 export class RadiogroupContainerChangeEvent extends RadiogroupContainerEvent {
-  static get type(): string {
+  static get handlerName(): `on${typeof RadiogroupContainerChangeEvent.type}` {
+    return `on${this.type}`
+  }
+
+  static get type(): "radiogroupcontainerchange" {
     return "radiogroupcontainerchange"
   }
 
-  constructor(eventInitDict: RadiogroupContainerChangeEventInit) {
-    super(RadiogroupContainerChangeEvent.type, eventInitDict)
+  constructor(d: RadiogroupContainerChangeEventInit) {
+    super(RadiogroupContainerChangeEvent.type, d)
   }
 }
 
@@ -47,17 +51,21 @@ export interface RadiogroupContainerChangeEventListener extends EventListener {
   (this: RadiogroupContainer, ev: RadiogroupContainerChangeEvent): void
 }
 
-export interface GlobalRadiogroupContainerChangeHandler {
+export interface GlobalRadiogroupContainerChangeEventHandler {
   (this: GlobalEventHandlers, ev: RadiogroupContainerChangeEvent): void
 }
 
 export class RadiogroupContainerChangedEvent extends RadiogroupContainerEvent {
-  static get type(): string {
+  static get handlerName(): `on${typeof RadiogroupContainerChangedEvent.type}` {
+    return `on${this.type}`
+  }
+
+  static get type(): "radiogroupcontainerchanged" {
     return "radiogroupcontainerchanged"
   }
 
-  constructor(eventInitDict: RadiogroupContainerChangeEventInit) {
-    super(RadiogroupContainerChangedEvent.type, eventInitDict)
+  constructor(d: RadiogroupContainerChangeEventInit) {
+    super(RadiogroupContainerChangedEvent.type, d)
   }
 }
 
@@ -65,6 +73,6 @@ export interface RadiogroupContainerChangedEventListener extends EventListener {
   (this: RadiogroupContainer, ev: RadiogroupContainerChangedEvent): void
 }
 
-export interface GlobalRadiogroupContainerChangedHandler {
+export interface GlobalRadiogroupContainerChangedEventHandler {
   (this: GlobalEventHandlers, ev: RadiogroupContainerChangedEvent): void
 }

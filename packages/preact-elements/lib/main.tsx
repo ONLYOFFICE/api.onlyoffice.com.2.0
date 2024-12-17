@@ -3,7 +3,7 @@
 // [@radix-ui/react-primitives]: https://github.com/radix-ui/primitives/blob/74b182b401c8ca0fa5b66a5a9a47f507bb3d5adc/packages/react/primitive/src/Primitive.tsx
 
 import {Slot} from "@onlyoffice/preact-slots"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export type AProperties = ElementProperties<"a">
 export const A = wrap("a")

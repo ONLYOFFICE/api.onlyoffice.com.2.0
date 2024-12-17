@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/documentation",
+  "name": "@onlyoffice/api.onlyoffice.com",
   "type": "module",
   "private": true,
   "engines": {
@@ -7,12 +7,13 @@
   },
   "scripts": {
     "build": "tsx makefile.ts build",
-    "clean": "tsx makefile.ts clean",
-    "lint:code": "eslint .",
+    "lint:code": "node --max-old-space-size=8192 node_modules/eslint/bin/eslint.js .",
     "lint:pages": "remark --frail --quiet site/pages",
     "lint:styles": "stylelint --ignore-path .gitignore \"+(packages|site|storybook)/**/*.css\"",
     "lint": "pnpm lint:code && pnpm lint:styles && pnpm lint:pages",
-    "test": "tsx makefile.ts test"
+    "test:packages": "tsx makefile.ts test",
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types && pnpm test:packages"
   },
   "devDependencies": {
     "@onlyoffice/eslint-config": "workspace:^",
@@ -29,12 +30,19 @@
     "sade": "1.8.1",
     "stylelint": "16.8.2",
     "tsx": "4.16.5",
-    "typescript": "5.4.5"
+    "typescript": "5.7.2"
   },
   "pnpm": {
     "supportedArchitectures": {
-      "os": ["current", "darwin", "win32"],
-      "cpu": ["arm64", "x64"]
+      "os": [
+        "current",
+        "darwin",
+        "win32"
+      ],
+      "cpu": [
+        "arm64",
+        "x64"
+      ]
     }
   }
 }

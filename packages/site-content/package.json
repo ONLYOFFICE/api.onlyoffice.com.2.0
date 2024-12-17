@@ -3,24 +3,20 @@
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./lib/main.tsx",
+    ".": "./dist/main.js",
     "./main.css": "./lib/main.css"
   },
-  "main": "lib/main.tsx",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
-    "preact": "10.22.0",
-    "typescript": "5.4.5"
+    "preact": "10.22.0"
   },
   "devDependencies": {
-    "@onlyoffice/site-signature": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",
-    "@storybook/preact": "8.0.0",
-    "rimraf": "6.0.1",
-    "vite": "5.1.6"
+    "typescript": "5.7.2"
   }
 }

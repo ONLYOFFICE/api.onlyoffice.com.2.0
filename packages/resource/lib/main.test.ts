@@ -48,7 +48,7 @@ test("creates a component basename", () => {
 
 test("creates a resource basename", () => {
   const n = resourceBasename("n")
-  is(n, "n.ts")
+  is(n, "n.js")
 })
 
 test.run()

@@ -2,21 +2,15 @@
   "name": "@onlyoffice/ui-logos",
   "type": "module",
   "private": true,
-  "main": "dist/main.tsx",
+  "main": "dist/main.js",
   "scripts": {
-    "build": "svg-library static dist",
-    "clean": "rimraf dist node_modules",
-    "test:types": "tsc",
-    "test": "pnpm test:types"
+    "build": "svg-library static dist"
   },
   "dependencies": {
-    "preact": "10.22.0",
-    "typescript": "5.4.5"
+    "preact": "10.22.0"
   },
   "devDependencies": {
     "@onlyoffice/svg-library": "workspace:^",
-    "@storybook/preact": "8.0.0",
-    "rimraf": "6.0.1",
-    "vite": "5.1.6"
+    "typescript": "5.7.2"
   }
 }

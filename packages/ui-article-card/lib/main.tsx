@@ -1,5 +1,5 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export function ArticleCard(p: ChildrenIncludable): JSX.Element {
   return <article class="article-card">{p.children}</article>

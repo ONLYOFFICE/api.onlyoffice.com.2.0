@@ -2,19 +2,18 @@
   "name": "@onlyoffice/stream-json",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
     "@types/node": "20.12.12",
     "@types/stream-json": "1.7.7",
-    "stream-json": "1.8.0",
-    "typescript": "5.4.5"
+    "stream-json": "1.8.0"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

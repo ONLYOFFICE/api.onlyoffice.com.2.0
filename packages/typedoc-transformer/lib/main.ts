@@ -4,7 +4,7 @@ import {
   type TransformCallback,
   pipeline,
 } from "node:stream"
-import type * as L from "@onlyoffice/library-declaration/next.ts"
+import type * as L from "@onlyoffice/library-declaration/next.js"
 import {type JSONOutput as J} from "typedoc"
 import {Collector} from "./collector.ts"
 import {type Entity, Processor} from "./processor.ts"

@@ -1,6 +1,6 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {clsx} from "clsx"
-import {type JSX, createContext, h} from "preact"
+import {type JSX, createContext} from "preact"
 import {useContext} from "preact/hooks"
 
 interface Contextual {

@@ -2,19 +2,22 @@
   "name": "@onlyoffice/document-builder-html-element",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
   },
   "dependencies": {
     "@onlyoffice/document-editor-html-element": "workspace:^",
     "@onlyoffice/document-server-types": "workspace:^",
-    "typescript": "5.4.5"
+    "@types/web": "0.0.187"
   },
   "devDependencies": {
     "preact": "10.22.0",
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

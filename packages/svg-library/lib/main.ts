@@ -3,7 +3,7 @@ import {mkdir, readFile, readdir, stat, writeFile} from "node:fs/promises"
 import path from "node:path"
 import {argv} from "node:process"
 import {pascalCase} from "@onlyoffice/strings"
-import {toJsxFile} from "@onlyoffice/svg-preact"
+import {toJsFile, toTdsFile} from "@onlyoffice/svg-preact"
 import sade from "sade"
 import {Console} from "./console.ts"
 
@@ -35,9 +35,9 @@ async function walk(src: string, dest: string): Promise<void> {
 
   for (const n of a) {
     const p = path.join(src, n)
-    const s = await stat(p)
+    const t = await stat(p)
 
-    if (s.isDirectory()) {
+    if (t.isDirectory()) {
       const d = path.join(dest, n)
       await walk(p, d)
       continue
@@ -50,13 +50,20 @@ async function walk(src: string, dest: string): Promise<void> {
 
     const b = path.basename(n, e)
     const x = pascalCase(b)
-    const o = path.join(dest, `${x}.tsx`)
 
-    let c = await readFile(p, "utf8")
-    c = await toJsxFile(x, c)
+    const s = await readFile(p, "utf8")
 
-    console.log(`Writing ${o}`)
-    await writeFile(o, c)
+    let f = path.join(dest, `${x}.js`)
+    let c = await toJsFile(x, s)
+
+    console.log(`Writing ${f}`)
+    await writeFile(f, c)
+
+    f = path.join(dest, `${x}.d.ts`)
+    c = toTdsFile(x)
+
+    console.log(`Writing ${f}`)
+    await writeFile(f, c)
 
     m.push(x)
   }
@@ -73,12 +80,27 @@ async function walk(src: string, dest: string): Promise<void> {
     g += `/${n}`
   }
 
-  const f = path.join(d, `${n}.tsx`)
-
+  let f = path.join(d, `${n}.js`)
   let c = ""
+
   for (const x of m) {
-    c += `export {${x}} from "${g}/${x}.tsx";\n`
+    c += `export {${x}} from "${g}/${x}.js";\n`
   }
+
+  if (c.length === 0) {
+    return
+  }
+
+  console.log(`Writing ${f}`)
+  await writeFile(f, c)
+
+  f = path.join(d, `${n}.d.ts`)
+  c = ""
+
+  for (const x of m) {
+    c += `export {${x}} from "${g}/${x}.js";\n`
+  }
+
   if (c.length === 0) {
     return
   }

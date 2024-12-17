@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
@@ -13,6 +12,8 @@
     "strict": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
+    "rewriteRelativeImportExtensions": true,
     "skipLibCheck": true
-  }
+  },
+  "include": ["${configDir}/bin", "${configDir}/demo", "${configDir}/lib", "${configDir}/*.ts"]
 }

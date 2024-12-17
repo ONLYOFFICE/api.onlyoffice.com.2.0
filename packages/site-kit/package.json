@@ -3,15 +3,15 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./client/prerender.ts": "./lib/client/prerender.ts",
-    "./client.ts": "./lib/client.ts",
-    "./main.css": "./lib/main.css",
-    ".": "./lib/main.ts"
+    ".": "./dist/main.js",
+    "./client.js": "./dist/client.js",
+    "./client/prerender.js": "./dist/client/prerender.js",
+    "./main.css": "./lib/main.css"
   },
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
@@ -35,10 +35,9 @@
     "@onlyoffice/site-status": "workspace:^",
     "@onlyoffice/site-theme-switcher": "workspace:^",
     "@onlyoffice/site-toc": "workspace:^",
-    "preact": "10.22.0",
-    "typescript": "5.4.5"
+    "preact": "10.22.0"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

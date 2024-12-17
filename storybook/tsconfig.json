@@ -4,7 +4,7 @@
     "jsx": "react",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
-    "rootDir": ".",
-    "outDir": "dist"
-  }
+    "jsxImportSource": null
+  },
+  "include": ["config", "stories"]
 }

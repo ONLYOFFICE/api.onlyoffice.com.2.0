@@ -2,7 +2,7 @@ import * as Elements from "@onlyoffice/preact-elements"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import {Button, type ButtonProperties, SrOnly} from "@onlyoffice/ui-kit"
 import {clsx} from "clsx"
-import {Fragment, type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export interface StatusProperties extends Omit<Elements.DivProperties, "size"> {
   size?: "default" | "small" | "medium" | "large"

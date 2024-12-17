@@ -2,10 +2,10 @@
   "name": "@onlyoffice/jsdoc-declaration",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
@@ -25,11 +25,10 @@
     "@vscode/vscode-languagedetection": "1.0.22",
     "mdast-util-from-markdown": "2.0.0",
     "mdast-util-to-markdown": "2.1.0",
-    "typescript": "5.4.5",
     "unist-util-select": "5.1.0",
     "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

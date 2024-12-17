@@ -1,6 +1,6 @@
 import {Transform, type TransformCallback, Writable} from "node:stream"
 import * as Service from "@onlyoffice/service-declaration"
-import {ExampleGenerator} from "@onlyoffice/service-declaration/example.ts"
+import {ExampleGenerator} from "@onlyoffice/service-declaration/example.js"
 import * as Signature from "@onlyoffice/service-signature"
 import {OpenAPIV3, type OpenAPIV3_1 as OpenApi} from "openapi-types"
 import {Console} from "./console.ts"

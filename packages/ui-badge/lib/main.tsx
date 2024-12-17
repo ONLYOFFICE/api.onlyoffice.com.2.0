@@ -1,13 +1,6 @@
 import * as Elements from "@onlyoffice/preact-elements"
 import {clsx} from "clsx"
-import {
-  type ComponentChild,
-  Fragment,
-  type JSX,
-  cloneElement,
-  h,
-  toChildArray,
-} from "preact"
+import {type ComponentChild, type JSX, cloneElement, toChildArray} from "preact"
 
 export interface BadgeProperties extends Elements.SpanProperties {
   variant?:

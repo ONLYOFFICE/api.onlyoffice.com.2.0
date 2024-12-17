@@ -28,7 +28,7 @@ export default [
       "!package.json",
       "!stylelint.config.js",
       "!tsconfig.base.json",
-      "!tsconfig.emit.json",
+      "!tsconfig.build.json",
       "!tsconfig.json",
     ],
   },

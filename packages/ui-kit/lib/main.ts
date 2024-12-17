@@ -1,3 +1,6 @@
+// todo: ensure that this rule is false for this file
+/* eslint-disable import/export */
+
 export * from "@onlyoffice/ui-article-card"
 export * from "@onlyoffice/ui-badge-group"
 export * from "@onlyoffice/ui-badge"

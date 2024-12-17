@@ -4,8 +4,8 @@ import {
   DeclarationEntity,
   type Entity,
   GroupEntity,
-} from "@onlyoffice/library-declaration/next.ts"
-import {Console as C1} from "@onlyoffice/typedoc-transformer/console.ts"
+} from "@onlyoffice/library-declaration/next.js"
+import {Console as C1} from "@onlyoffice/typedoc-transformer/console.js"
 import {Application, type JSONOutput as J} from "typedoc"
 import {test} from "uvu"
 import {equal as eq} from "uvu/assert"

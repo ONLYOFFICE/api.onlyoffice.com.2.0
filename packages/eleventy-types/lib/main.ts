@@ -1,3 +1,6 @@
+// todo: write multiple interfaces for data cascade
+// todo: move types to the @types/11ty__eleventy package
+
 import type copy from "recursive-copy"
 
 // todo: https://github.com/timkendrick/recursive-copy/pull/45/
