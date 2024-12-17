@@ -132,7 +132,7 @@ In this example we are adding comments and changing the background colors of sel
 
 ## Find company logos
 
-In this example we are finding company logos in a spreadsheet. 
+In this example we are finding company logos in a spreadsheet using API Ninjas' Logo API.
 
 [More](Find%20company%20logos/index.md)
 

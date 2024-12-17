@@ -4,7 +4,7 @@ order: -1
 
 ## Description
 
-Searches for a company logo throughout the spreadsheet.
+Searches for a company logo throughout the spreadsheet using API Ninjas' Logo API. Requires an API key.
 
 <!-- This code snippet is shown in the screenshot. -->
 
