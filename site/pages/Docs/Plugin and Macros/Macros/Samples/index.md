@@ -134,6 +134,8 @@ In this example we are adding comments and changing the background colors of sel
 
 In this example we are hiding or unhiding specifed rows or columns in the spreadsheet.
 
+[More](Hide%20unhide%20rows%20columns/index.md)
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)
