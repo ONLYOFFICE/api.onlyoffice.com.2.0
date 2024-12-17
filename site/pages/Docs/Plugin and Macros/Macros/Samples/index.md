@@ -142,6 +142,12 @@ In this example we are summing the answer of all highlighted cells in a spreadsh
 
 [More](Sum%20of%20Highlighted%20Cells/index.md)
 
+## Generate word definitions
+
+In this example we are generating word definitions in our documents.
+
+[More](Generate%20word%20definitions/index.md);
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)

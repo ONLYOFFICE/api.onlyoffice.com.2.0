@@ -6,6 +6,7 @@
 - docspace backend: added the Removed user page
 - macros: added remove extra spaces in document macro sample
 - macros: added the Sum of highlighted cells macro sample
+- macros: added generate word definitons macro sample
 
 ## 6.3.0
 - docspace oauth api: added a new section
