@@ -37,7 +37,7 @@ Removes extra spaces in text document.
     // Insert the cleanedText into the original paragraph structure
     const oParagraph = Api.CreateParagraph();
     oParagraph.AddText(cleanedText);
-    oDocument.InsertContent([oParagraph], { "KeepTextOnly": true });   
+    oDocument.InsertContent([oParagraph], { "KeepTextOnly": true });
 })();
 ```
 
