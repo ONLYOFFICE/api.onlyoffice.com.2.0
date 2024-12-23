@@ -194,7 +194,7 @@ It is received when the force saving request is performed.The *callbackUrl* depe
 }
 ```
 
-### Sample of JSON object sent to the "callbackUrl" address by document editing service after the [forcesave](../../Additional%20API/Command%20service/forcesave/index.md) command had been received
+### Sample of JSON object sent to the "callbackUrl" address by document editing service after the forcesave command had been received
 
 <!-- The 'changes' and 'serverVersion' fields should be left as they are, since the information about the types of these properties is not known. -->
 
