@@ -130,11 +130,11 @@ In this example we are adding comments and changing the background colors of sel
 
 [More](Add%20comments%20and%20change%20cell%20colors%20in%20spreadsheet/index.md)
 
-## Hide and unhide rows or columns in spreadsheet
+## Hide or unhide rows and columns
 
-In this example we are hiding or unhiding specifed rows or columns in the spreadsheet.
+In this example we are hiding or unhiding specified rows and/or columns in the spreadsheet.
 
-[More](Hide%20unhide%20rows%20columns/index.md)
+[More](Hide%20or%20unhide%20rows%20and%20columns/index.md)
 
 ## Support
 

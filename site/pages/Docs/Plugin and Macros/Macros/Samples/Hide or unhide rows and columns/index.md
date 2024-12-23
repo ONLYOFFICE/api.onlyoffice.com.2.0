@@ -4,7 +4,7 @@ order:
 
 ## Description
 
-Hides or unhides specifed rows and/or columns in the spreadsheet.
+Hides or unhides the specified rows and/or columns in the spreadsheet.
 
 <!-- This code snippet is shown in the screenshot. -->
 
@@ -31,7 +31,7 @@ Hides or unhides specifed rows and/or columns in the spreadsheet.
 })();
 ```
 
-Methods used: GetActiveSheet, GetRange, GetRows, GetHidden, hideUnhideDetails, GetCols, SetHidden
+Methods used: GetActiveSheet, GetRange, GetRows, GetHidden, GetCols, SetHidden
 
 ## Reference Microsoft VBA macro code
 
@@ -48,4 +48,4 @@ End Sub
 
 <!-- imgpath -->
 
-![Hide unhide rows columns](/assets/images/plugins/hide-unhide-rows-columns.png)
+![Hide or unhide rows and columns](/assets/images/plugins/hide-unhide-rows-columns.png)
