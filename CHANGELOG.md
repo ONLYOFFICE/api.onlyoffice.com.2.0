@@ -1,6 +1,7 @@
 # Change Log
 
 - docs api: the editorConfig.customization.mobileForceView parameter is deprecated, please use the editorConfig.customization.mobile parameter instead
+- macros: added find company logos macro sample
 
 ## 6.2.0
 - docspace js sdk: storybook link
@@ -24,7 +25,6 @@
 - 404 page
 - legacy version link
 - macros: added add comments and change cell colors in spreadsheet macro sample
-- macros: added find company logos macro sample
 
 ## 6.1.0
 - docspace js sdk: react component

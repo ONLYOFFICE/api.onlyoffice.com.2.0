@@ -4,7 +4,9 @@ order: -1
 
 ## Description
 
-Searches for a company logo throughout the spreadsheet using API Ninjas' Logo API. Requires an API key.
+Searches for a company logo throughout the spreadsheet using the [Logo API](https://api-ninjas.com/api/logo) offered by [API Ninjas](https://api-ninjas.com).
+
+To use this macro, you need to obtain your own API key from API Ninjas.
 
 <!-- This code snippet is shown in the screenshot. -->
 
@@ -61,7 +63,7 @@ Searches for a company logo throughout the spreadsheet using API Ninjas' Logo AP
 })();
 ```
 
-Methods used: GetActiveSheet, GetSelection, GetRange, GetValue, SetValue, GetRow, GetRangeByNumber, 
+Methods used: GetActiveSheet, GetSelection, GetRange, GetValue, ForEach, AutoFit, SetValue, GetRow, GetRangeByNumber 
 
 ## Reference Microsoft VBA macro code
 
