@@ -2017,6 +2017,9 @@ importers:
       '@onlyoffice/remark-lint-eslint':
         specifier: workspace:^
         version: link:../remark-lint-eslint
+      '@onlyoffice/remark-lint-no-heading-link':
+        specifier: workspace:^
+        version: link:../remark-lint-no-heading-link
       '@onlyoffice/remark-lint-no-unicode':
         specifier: workspace:^
         version: link:../remark-lint-no-unicode
