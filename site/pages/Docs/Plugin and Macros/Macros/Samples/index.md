@@ -132,7 +132,9 @@ In this example we are adding comments and changing the background colors of sel
 
 ## Change font family and size
 
-In this example we are changing font family and/or size in the presentation.
+In this example we are changing the font family and/or size in the presentation.
+
+[More](Change%20font%20family%20and%20size/index.md)
 
 ## Support
 
