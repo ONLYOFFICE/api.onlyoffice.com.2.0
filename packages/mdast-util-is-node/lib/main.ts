@@ -3,6 +3,7 @@ import {
   type Heading,
   type Html,
   type InlineCode,
+  type Link,
   type Literal,
   type Node,
   type Paragraph,
@@ -23,6 +24,10 @@ export function isHeadingNode(u: unknown): u is Heading {
 
 export function isInlineCodeNode(u: unknown): u is InlineCode {
   return isLiteralNode(u) && u.type === "inlineCode"
+}
+
+export function isLinkNode(u: unknown): u is Link {
+  return isParentNode(u) && u.type === "link"
 }
 
 export function isParagraphNode(u: unknown): u is Paragraph {
