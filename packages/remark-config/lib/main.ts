@@ -4,6 +4,7 @@
 // https://github.com/remarkjs/remark-lint/tree/10.0.0/packages/remark-lint-no-html
 
 import {remarkLintEslint} from "@onlyoffice/remark-lint-eslint"
+import {remarkLintNoHeadingLink} from "@onlyoffice/remark-lint-no-heading-link"
 import {remarkLintNoUnicode} from "@onlyoffice/remark-lint-no-unicode"
 import remarkLint from "remark-lint"
 import remarkLintBlockquoteIndentation from "remark-lint-blockquote-indentation"
@@ -135,6 +136,7 @@ export function remarkConfig(): Preset {
       remarkLintNoHeadingContentIndent,
       remarkLintNoHeadingIndent,
       remarkLintNoHeadingLikeParagraph,
+      remarkLintNoHeadingLink,
       remarkLintNoLiteralUrls,
       [remarkLintNoMissingBlankLines, {exceptTightLists: true}],
       remarkLintNoParagraphContentIndent,
