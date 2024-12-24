@@ -12,6 +12,7 @@
   "dependencies": {
     "@onlyoffice/remark-lint-eslint": "workspace:^",
     "@onlyoffice/remark-lint-no-heading-link": "workspace:^",
+    "@onlyoffice/remark-lint-no-thematic-break": "workspace:^",
     "@onlyoffice/remark-lint-no-unicode": "workspace:^",
     "remark-lint": "10.0.0",
     "remark-lint-blockquote-indentation": "4.0.0",

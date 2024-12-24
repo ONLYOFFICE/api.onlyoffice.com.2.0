@@ -11,6 +11,7 @@ import {
   isParagraphNode,
   isParentNode,
   isTextNode,
+  isThematicBreakNode,
 } from "./main.ts"
 
 interface Is {
@@ -38,6 +39,7 @@ for (const [xi, xn] of p0) {
 const p1: [Is, unknown][] = [
   [isTextNode, {type: "text", value: ""}],
   [isHtmlNode, {type: "html", value: ""}],
+  [isThematicBreakNode, {type: "thematicBreak"}],
   [isParagraphNode, {type: "paragraph", children: []}],
   [isLinkNode, {type: "link", children: []}],
   [isInlineCodeNode, {type: "inlineCode", value: ""}],
