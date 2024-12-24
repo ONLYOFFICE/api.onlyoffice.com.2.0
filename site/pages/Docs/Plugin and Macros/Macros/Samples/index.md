@@ -76,12 +76,6 @@ In this example we are inserting text into the document at the current cursor po
 
 [More](Insert%20text/index.md)
 
-## Currency exchange rates
-
-In this example we are returning information about the exchange rates for the last several days and fill in the table with the received values.
-
-[More](Currency%20exchange%20rates/index.md)
-
 ## Import CSV/TXT data
 
 In this example we are importing data from remote CSV/TXT files into the spreadsheet.
