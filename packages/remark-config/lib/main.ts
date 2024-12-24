@@ -5,6 +5,7 @@
 
 import {remarkLintEslint} from "@onlyoffice/remark-lint-eslint"
 import {remarkLintNoHeadingLink} from "@onlyoffice/remark-lint-no-heading-link"
+import {remarkLintNoThematicBreak} from "@onlyoffice/remark-lint-no-thematic-break"
 import {remarkLintNoUnicode} from "@onlyoffice/remark-lint-no-unicode"
 import remarkLint from "remark-lint"
 import remarkLintBlockquoteIndentation from "remark-lint-blockquote-indentation"
@@ -145,6 +146,7 @@ export function remarkConfig(): Preset {
       remarkLintNoShortcutReferenceLink,
       remarkLintNoTableIndentation,
       remarkLintNoTabs,
+      remarkLintNoThematicBreak,
       remarkLintNoUndefinedReferences,
       [remarkLintNoUnicode, {
         hints: [
