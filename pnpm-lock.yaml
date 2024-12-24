@@ -2020,6 +2020,9 @@ importers:
       '@onlyoffice/remark-lint-no-heading-link':
         specifier: workspace:^
         version: link:../remark-lint-no-heading-link
+      '@onlyoffice/remark-lint-no-thematic-break':
+        specifier: workspace:^
+        version: link:../remark-lint-no-thematic-break
       '@onlyoffice/remark-lint-no-unicode':
         specifier: workspace:^
         version: link:../remark-lint-no-unicode
@@ -2244,6 +2247,49 @@ importers:
         version: 0.5.6
 
   packages/remark-lint-no-heading-link:
+    dependencies:
+      '@onlyoffice/mdast-util-is-node':
+        specifier: workspace:^
+        version: link:../mdast-util-is-node
+      '@onlyoffice/remark-lint':
+        specifier: workspace:^
+        version: link:../remark-lint
+      '@types/mdast':
+        specifier: 4.0.3
+        version: 4.0.3
+      unified-lint-rule:
+        specifier: 3.0.0
+        version: 3.0.0
+      vfile:
+        specifier: 6.0.1
+        version: 6.0.1
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      remark-lint:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      remark-stringify:
+        specifier: 11.0.0
+        version: 11.0.0
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
+  packages/remark-lint-no-thematic-break:
     dependencies:
       '@onlyoffice/mdast-util-is-node':
         specifier: workspace:^
