@@ -1,6 +1,6 @@
 import {type Metaobject, type Root} from "hast"
 import {visit} from "unist-util-visit"
-import {metaobject} from "./internal.ts"
+import {parse} from "./internal.ts"
 
 declare module "hast" {
   interface Properties {
@@ -19,7 +19,7 @@ export function rehypeMetaobject(): RehypeMetaobjectTransform {
     visit(t, "element", (n) => {
       const p = n.properties
       if (n.tagName === "code" && p.metastring) {
-        p.metaobject = metaobject(p.metastring) as Metaobject
+        p.metaobject = parse(p.metastring) as Metaobject
       }
     })
   }

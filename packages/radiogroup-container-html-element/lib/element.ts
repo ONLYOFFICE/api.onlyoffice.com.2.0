@@ -9,46 +9,16 @@ import {
   RadiogroupContainerChangedEvent,
   type RadiogroupContainerChangedEventListener,
 } from "./events.ts"
-
-export type RadiogroupContainerAttributeName =
-  Exclude<keyof RadiogroupContainerAttributes, undefined>
-
-export interface RadiogroupContainerAttributes {
-  "default-index"?: string
-  "default-value"?: string
-  "disabled"?: string
-  "name"?: string
-  "onradiogroupcontainerchange"?: string
-  "onradiogroupcontainerchanged"?: string
-}
-
-export type RadiogroupContainerEvent =
-  Window[RadiogroupContainerEventName]
-
-export type RadiogroupContainerEventName = Exclude<{
-  [K in keyof Window]: K extends `RadiogroupContainer${string}Event` ? K : never
-}[keyof Window], undefined>
-
-export type RadiogroupContainerEventListener =
-  GlobalEventHandlersEventMap[RadiogroupContainerEventType]
-
-export type RadiogroupContainerEventType = {
-  [K in keyof GlobalEventHandlersEventMap]: K extends `radiogroupcontainer${string}` ? K : never
-}[keyof GlobalEventHandlersEventMap]
-
-export type RadiogroupContainerEventHandler =
-  Exclude<GlobalEventHandlers[RadiogroupContainerEventHandlerName], null>
-
-export type RadiogroupContainerEventHandlerName = Exclude<{
-  [K in keyof GlobalEventHandlers]: K extends `onradiogroupcontainer${string}` ? K : never
-}[keyof GlobalEventHandlers], undefined>
+import {
+  type RadiogroupContainerAttributeName,
+} from "./types.ts"
 
 /**
  * A accessible radiogroup container element with keyboard support. Follows the
  * {@link https://www.w3.org/WAI/ARIA/apg/patterns/radio/ ARIA best practices guide on radiogroup}.
  */
 export class RadiogroupContainer extends HTMLElement {
-  static get tagName(): string {
+  static get tagName(): "radiogroup-container" {
     return "radiogroup-container"
   }
 

@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=node_modules/@onlyoffice/typedoc-resource/lib/config.json
+
+- name: typedoc
+  source:
+    path: dist/typedoc-raw.json

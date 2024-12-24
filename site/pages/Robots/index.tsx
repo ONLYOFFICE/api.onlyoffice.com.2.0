@@ -1,6 +1,5 @@
 import {type Data} from "@onlyoffice/eleventy-types"
 import {Config} from "@onlyoffice/site-config"
-import {h} from "preact"
 import {data as postscript} from "../Postscript/index.tsx"
 import {data as sitemap} from "../Sitemap/xml.tsx"
 

@@ -1,6 +1,6 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {ChevronRightIcon} from "@onlyoffice/ui-icons/poor/12.tsx"
-import {Fragment, type JSX, cloneElement, h, toChildArray} from "preact"
+import {ChevronRightIcon} from "@onlyoffice/ui-icons/poor/12.js"
+import {type JSX, cloneElement, toChildArray} from "preact"
 import {type HTMLAttributes} from "preact/compat"
 
 /**
@@ -16,6 +16,7 @@ export function Breadcrumb(p: HTMLAttributes<HTMLElement>): JSX.Element {
 
   function C(p: ChildrenIncludable & {index: number}): JSX.Element {
     if (p.index === crumbs.length - 1) {
+      // @ts-ignore, todo: resolve it
       return cloneElement(p.children, {"aria-current": "page"})
     }
     return <>{p.children}<ChevronRightIcon width={11} class="breadcrumb__separator" /></>

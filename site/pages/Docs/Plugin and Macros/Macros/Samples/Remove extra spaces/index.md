@@ -13,31 +13,31 @@ Removes extra spaces in text document.
 ```ts
 (function()
 {
- const oDocument = Api.GetDocument();
-const oRange = oDocument.GetRangeBySelect();
-const rawText = oRange.GetText();
-oRange.Delete();
+    const oDocument = Api.GetDocument();
+    const oRange = oDocument.GetRangeBySelect();
+    const rawText = oRange.GetText();
+    oRange.Delete();
 
-// Split the original word into an array of paragraphs based on newline characters
-const paragraphs = rawText.split('\n');
+    // Split the original word into an array of paragraphs based on newline characters
+    const paragraphs = rawText.split('\n');
 
-// Create an array to store cleaned paragraphs
-const cleanedParagraphs = [];
+    // Create an array to store cleaned paragraphs
+    const cleanedParagraphs = [];
 
-// Clean each paragraph and store it in the cleanedParagraphs array
-for (const paragraph of paragraphs) {
-    // Use a regular expression to replace consecutive whitespaces with a single space
-    const cleanedParagraph = paragraph.replace(/\s+/g, ' ');
-    cleanedParagraphs.push(cleanedParagraph);
-}
+    // Clean each paragraph and store it in the cleanedParagraphs array
+    for (const paragraph of paragraphs) {
+        // Use a regular expression to replace consecutive whitespaces with a single space
+        const cleanedParagraph = paragraph.replace(/\s+/g, ' ');
+        cleanedParagraphs.push(cleanedParagraph);
+    }
 
-// Join the cleaned paragraphs back together with newline characters
-const cleanedText = cleanedParagraphs.join('\n');
+    // Join the cleaned paragraphs with newline characters
+    const cleanedText = cleanedParagraphs.join('\n');
 
-// Insert the cleanedText with original paragraph structure
-const oParagraph = Api.CreateParagraph();
-oParagraph.AddText(cleanedText);
-oDocument.InsertContent([oParagraph], { "KeepTextOnly": true });   
+    // Insert the cleanedText into the original paragraph structure
+    const oParagraph = Api.CreateParagraph();
+    oParagraph.AddText(cleanedText);
+    oDocument.InsertContent([oParagraph], { "KeepTextOnly": true });
 })();
 ```
 

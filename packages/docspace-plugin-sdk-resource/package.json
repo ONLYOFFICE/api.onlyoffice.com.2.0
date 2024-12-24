@@ -2,16 +2,14 @@
   "name": "@onlyoffice/docspace-plugin-sdk-resource",
   "type": "module",
   "private": true,
-  "main": "dist/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf dist node_modules",
     "build": "typedoc-resource typedoc"
   },
   "dependencies": {
     "@onlyoffice/library-declaration": "workspace:^"
   },
   "devDependencies": {
-    "@onlyoffice/typedoc-resource": "workspace:^",
-    "rimraf": "6.0.1"
+    "@onlyoffice/typedoc-resource": "workspace:^"
   }
 }

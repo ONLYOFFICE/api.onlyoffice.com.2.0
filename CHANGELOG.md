@@ -1,5 +1,6 @@
 # Change Log
 
+- docs api: added the Deny access and History loading failed issues to Troubleshooting
 - docs api: updated the WOPI section
 - docs api: added the information about calling editor methods in the frameworks
 - docs api: added the Checking PDF forms page

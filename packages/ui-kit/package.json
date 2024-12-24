@@ -3,14 +3,14 @@
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./lib/main.ts",
+    ".": "./dist/main.js",
     "./main.css": "./lib/main.css",
-    "./client.ts": "./lib/client.ts"
+    "./client.js": "./dist/client.js"
   },
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
@@ -33,10 +33,9 @@
     "@onlyoffice/ui-select": "workspace:^",
     "@onlyoffice/ui-sr-only": "workspace:^",
     "@onlyoffice/ui-text-input": "workspace:^",
-    "preact": "10.22.0",
-    "typescript": "5.4.5"
+    "preact": "10.22.0"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

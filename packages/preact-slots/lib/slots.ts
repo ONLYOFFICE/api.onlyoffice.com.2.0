@@ -4,7 +4,9 @@ import {isValidElement, toChildArray} from "preact"
 // https://github.com/primer/react/blob/ea44386e4d7afae7bfd07a679604baaecca55965/packages/react/src/hooks/useSlots.ts#L35
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
 export function useSlots<C extends Record<string, any>>(children: any, config: C): [C, any] {
-  const sl = {}
+  // @ts-ignore todo resolve it
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const sl: any = {}
   const ou = []
 
   const ks = Object.keys(config)

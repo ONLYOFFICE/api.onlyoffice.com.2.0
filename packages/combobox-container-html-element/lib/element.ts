@@ -24,60 +24,16 @@ import {
   ComboboxContainerChangedEvent,
   type ComboboxContainerChangedEventListener,
 } from "./events.ts"
-
-export type ComboboxContainerAttributeName =
-  Exclude<keyof ComboboxContainerAttributes, undefined>
-
-export interface ComboboxContainerAttributes {
-  "default-index"?: string
-  "disabled"?: string
-  "name"?: string
-  "page-size"?: string
-  "oncomboboxcontainerchange"?: string
-  "oncomboboxcontainerchanged"?: string
-}
-
-export type ComboboxContainerFallbackStatesName =
-  keyof ComboboxContainerFallbackStates
-
-export type ComboboxContainerFallbackStates = {
-  [K in keyof ComboboxContainerStates as `state-${string & K}`]: string
-}
-
-export type ComboboxContainerStateName =
-  keyof ComboboxContainerStates
-
-export interface ComboboxContainerStates {
-  selected?: boolean
-}
-
-export type ComboboxContainerEvent =
-  Window[ComboboxContainerEventName]
-
-export type ComboboxContainerEventName = Exclude<{
-  [K in keyof Window]: K extends `ComboboxContainer${string}Event` ? K : never
-}[keyof Window], undefined>
-
-export type ComboboxContainerEventListener =
-  GlobalEventHandlersEventMap[ComboboxContainerEventType]
-
-export type ComboboxContainerEventType = {
-  [K in keyof GlobalEventHandlersEventMap]: K extends `comboboxcontainer${string}` ? K : never
-}[keyof GlobalEventHandlersEventMap]
-
-export type ComboboxContainerEventHandler =
-  Exclude<GlobalEventHandlers[ComboboxContainerEventHandlerName], null>
-
-export type ComboboxContainerEventHandlerName = Exclude<{
-  [K in keyof GlobalEventHandlers]: K extends `oncomboboxcontainer${string}` ? K : never
-}[keyof GlobalEventHandlers], undefined>
+import {
+  type ComboboxContainerAttributeName,
+} from "./types.ts"
 
 /**
  * A accessible combobox container element with keyboard support. Follows the
  * {@link https://www.w3.org/WAI/ARIA/apg/patterns/combobox/ ARIA best practices guide on combobox}.
  */
 export class ComboboxContainer extends HTMLElement {
-  static get tagName(): string {
+  static get tagName(): "combobox-container" {
     return "combobox-container"
   }
 

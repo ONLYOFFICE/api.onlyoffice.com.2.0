@@ -1,5 +1,5 @@
 import {Transform, type TransformCallback} from "node:stream"
-import * as L from "@onlyoffice/library-declaration/next.ts"
+import * as L from "@onlyoffice/library-declaration/next.js"
 import {Console} from "./console.ts"
 import {Declaration, type Entity} from "./processor.ts"
 import {type FlatTrail, flatTrail} from "./trail.ts"

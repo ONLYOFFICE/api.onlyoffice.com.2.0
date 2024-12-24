@@ -1,6 +1,6 @@
 import {type SitemapData, SitemapDatum} from "@onlyoffice/eleventy-sitemap"
 import {type Data} from "@onlyoffice/eleventy-types"
-import {type Entity} from "@onlyoffice/library-declaration/next.ts"
+import {type Entity} from "@onlyoffice/library-declaration/next.js"
 import {cutSuffix} from "@onlyoffice/strings"
 import {LibraryDatum} from "../internal/library.tsx"
 import {Sitemap} from "../internal/sitemap.ts"

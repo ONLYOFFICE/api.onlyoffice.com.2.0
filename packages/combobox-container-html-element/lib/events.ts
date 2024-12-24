@@ -34,7 +34,11 @@ class ComboboxContainerEvent extends Event {
 }
 
 export class ComboboxContainerChangeEvent extends ComboboxContainerEvent {
-  static get type(): string {
+  static get handlerName(): `on${typeof ComboboxContainerChangeEvent.type}` {
+    return `on${this.type}`
+  }
+
+  static get type(): "comboboxcontainerchange" {
     return "comboboxcontainerchange"
   }
 
@@ -47,12 +51,16 @@ export interface ComboboxContainerChangeEventListener extends EventListener {
   (this: ComboboxContainer, ev: ComboboxContainerChangeEvent): void
 }
 
-export interface GlobalComboboxContainerChangeHandler {
+export interface GlobalComboboxContainerChangeEventHandler {
   (this: GlobalEventHandlers, ev: ComboboxContainerChangeEvent): void
 }
 
 export class ComboboxContainerChangedEvent extends ComboboxContainerEvent {
-  static get type(): string {
+  static get handlerName(): `on${typeof ComboboxContainerChangedEvent.type}` {
+    return `on${this.type}`
+  }
+
+  static get type(): "comboboxcontainerchanged" {
     return "comboboxcontainerchanged"
   }
 
@@ -65,6 +73,6 @@ export interface ComboboxContainerChangedEventListener extends EventListener {
   (this: ComboboxContainer, ev: ComboboxContainerChangedEvent): void
 }
 
-export interface GlobalComboboxContainerChangedHandler {
+export interface GlobalComboboxContainerChangedEventHandler {
   (this: GlobalEventHandlers, ev: ComboboxContainerChangedEvent): void
 }

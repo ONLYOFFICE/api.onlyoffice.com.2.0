@@ -1,6 +1,6 @@
 import JSON5 from "json5"
 
-export function metaobject(s: string): object {
+export function parse(s: string): object {
   // It is problematic to use the unknown type here.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const r: Record<string, any> = {}

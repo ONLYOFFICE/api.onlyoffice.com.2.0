@@ -1,5 +1,5 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export function CodeListing(p: ChildrenIncludable): JSX.Element {
   return <tab-container class="code-listing">{p.children}</tab-container>

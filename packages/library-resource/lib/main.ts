@@ -2,7 +2,7 @@ import {readFile} from "node:fs/promises"
 import path from "node:path"
 import {URL, fileURLToPath} from "node:url"
 import {type Declaration} from "@onlyoffice/library-declaration"
-import {escape} from "@onlyoffice/node-path/win32.ts"
+import {escape} from "@onlyoffice/node-path/win32.js"
 
 export interface Resource {
   list(this: void): Declaration[]
@@ -15,10 +15,10 @@ export async function resource(df: string, mf: string): Promise<string> {
   const rf = resourceFile(fd)
   let rc = await readFile(rf, "utf8")
 
-  const d = "const d: Declaration[] = require"
+  const d = "const d = require"
   rc = rc.replace(`${d}("")`, `${d}("${escape(df)}")`)
 
-  const m = "const m: Record<string, number> = require"
+  const m = "const m = require"
   rc = rc.replace(`${m}("")`, `${m}("${escape(mf)}")`)
 
   return rc
@@ -34,5 +34,5 @@ function fixturesDir(d: string): string {
 }
 
 function resourceFile(d: string): string {
-  return path.join(d, "resource.ts")
+  return path.join(d, "resource.js")
 }

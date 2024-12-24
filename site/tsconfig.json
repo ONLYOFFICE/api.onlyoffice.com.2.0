@@ -4,11 +4,10 @@
     "jsx": "react",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
-    "rootDir": ".",
+    "jsxImportSource": null,
     "paths": {
       "@/*": ["./*"]
-    },
-    "outDir": "dist"
+    }
   },
   "include": [
     "assets",
@@ -19,12 +18,6 @@
     "layouts",
     "pages",
     "resources",
-    "eleventy.config.ts",
-    "index.d.ts"
-  ],
-  "exclude": [
-    "./dist",
-    "./node_modules",
-    "./**/fixtures"
+    "*.ts"
   ]
 }

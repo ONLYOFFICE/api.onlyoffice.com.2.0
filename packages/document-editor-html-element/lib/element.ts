@@ -6,6 +6,9 @@
 // todo: remove the on* listeners (from properties) on disconnect? (need to research)
 // todo: complete the implementation of the DocumentEditorEventList class to fit the DOMTokenList interface
 // todo: add the event attribute similar to the class attribute (continuation of the previous todo)
+// todo: add comments to all of them, including deprecation notices
+// todo: add exports, types fields to the package.json
+// todo: add @since tags to all of them
 
 import {
   type DocEditor,
@@ -18,125 +21,82 @@ import {
 } from "@onlyoffice/strings"
 import {
   DocumentEditorAppReadyEvent,
-  type DocumentEditorAppReadyListener,
+  type DocumentEditorAppReadyEventListener,
   DocumentEditorCollaborativeChangesEvent,
-  type DocumentEditorCollaborativeChangesListener,
+  type DocumentEditorCollaborativeChangesEventListener,
   DocumentEditorDocumentReadyEvent,
-  type DocumentEditorDocumentReadyListener,
+  type DocumentEditorDocumentReadyEventListener,
   DocumentEditorDocumentStateChangeEvent,
-  type DocumentEditorDocumentStateChangeListener,
+  type DocumentEditorDocumentStateChangeEventListener,
   DocumentEditorDownloadAsEvent,
-  type DocumentEditorDownloadAsListener,
+  type DocumentEditorDownloadAsEventListener,
   DocumentEditorErrorEvent,
-  type DocumentEditorErrorListener,
+  type DocumentEditorErrorEventListener,
   DocumentEditorInfoEvent,
-  type DocumentEditorInfoListener,
+  type DocumentEditorInfoEventListener,
   DocumentEditorMakeActionLinkEvent,
-  type DocumentEditorMakeActionLinkListener,
+  type DocumentEditorMakeActionLinkEventListener,
   DocumentEditorMetaChangeEvent,
-  type DocumentEditorMetaChangeListener,
+  type DocumentEditorMetaChangeEventListener,
   DocumentEditorOutdatedVersionEvent,
-  type DocumentEditorOutdatedVersionListener,
+  type DocumentEditorOutdatedVersionEventListener,
   DocumentEditorPluginsReadyEvent,
-  type DocumentEditorPluginsReadyListener,
+  type DocumentEditorPluginsReadyEventListener,
   DocumentEditorReadyEvent,
-  type DocumentEditorReadyListener,
+  type DocumentEditorReadyEventListener,
   DocumentEditorRequestCloseEvent,
-  type DocumentEditorRequestCloseListener,
+  type DocumentEditorRequestCloseEventListener,
   DocumentEditorRequestCompareFileEvent,
-  type DocumentEditorRequestCompareFileListener,
+  type DocumentEditorRequestCompareFileEventListener,
   DocumentEditorRequestCreateNewEvent,
-  type DocumentEditorRequestCreateNewListener,
+  type DocumentEditorRequestCreateNewEventListener,
   DocumentEditorRequestEditRightsEvent,
-  type DocumentEditorRequestEditRightsListener,
+  type DocumentEditorRequestEditRightsEventListener,
   DocumentEditorRequestHistoryCloseEvent,
-  type DocumentEditorRequestHistoryCloseListener,
+  type DocumentEditorRequestHistoryCloseEventListener,
   DocumentEditorRequestHistoryDataEvent,
-  type DocumentEditorRequestHistoryDataListener,
+  type DocumentEditorRequestHistoryDataEventListener,
   DocumentEditorRequestHistoryEvent,
-  type DocumentEditorRequestHistoryListener,
+  type DocumentEditorRequestHistoryEventListener,
   DocumentEditorRequestInsertImageEvent,
-  type DocumentEditorRequestInsertImageListener,
+  type DocumentEditorRequestInsertImageEventListener,
   DocumentEditorRequestMailMergeRecipientsEvent,
-  type DocumentEditorRequestMailMergeRecipientsListener,
+  type DocumentEditorRequestMailMergeRecipientsEventListener,
   DocumentEditorRequestOpenEvent,
-  type DocumentEditorRequestOpenListener,
+  type DocumentEditorRequestOpenEventListener,
   DocumentEditorRequestReferenceDataEvent,
-  type DocumentEditorRequestReferenceDataListener,
+  type DocumentEditorRequestReferenceDataEventListener,
   DocumentEditorRequestReferenceSourceEvent,
-  type DocumentEditorRequestReferenceSourceListener,
+  type DocumentEditorRequestReferenceSourceEventListener,
   DocumentEditorRequestRenameEvent,
-  type DocumentEditorRequestRenameListener,
+  type DocumentEditorRequestRenameEventListener,
   DocumentEditorRequestRestoreEvent,
-  type DocumentEditorRequestRestoreListener,
+  type DocumentEditorRequestRestoreEventListener,
   DocumentEditorRequestSaveAsEvent,
-  type DocumentEditorRequestSaveAsListener,
+  type DocumentEditorRequestSaveAsEventListener,
   DocumentEditorRequestSelectDocumentEvent,
-  type DocumentEditorRequestSelectDocumentListener,
+  type DocumentEditorRequestSelectDocumentEventListener,
   DocumentEditorRequestSelectSpreadsheetEvent,
-  type DocumentEditorRequestSelectSpreadsheetListener,
+  type DocumentEditorRequestSelectSpreadsheetEventListener,
   DocumentEditorRequestSendNotifyEvent,
-  type DocumentEditorRequestSendNotifyListener,
+  type DocumentEditorRequestSendNotifyEventListener,
   DocumentEditorRequestSharingSettingsEvent,
-  type DocumentEditorRequestSharingSettingsListener,
+  type DocumentEditorRequestSharingSettingsEventListener,
   DocumentEditorRequestUsersEvent,
-  type DocumentEditorRequestUsersListener,
+  type DocumentEditorRequestUsersEventListener,
   DocumentEditorWarningEvent,
-  type DocumentEditorWarningListener,
+  type DocumentEditorWarningEventListener,
 } from "./events.ts"
-
-export type DocumentEditorAttribute = Exclude<keyof DocumentEditorAttributes, undefined>
-
-export interface DocumentEditorAttributes {
-  "document-server-url"?: string
-  "config"?: string
-  "ondocumenteditorappready"?: string
-  "ondocumenteditorcollaborativechanges"?: string
-  "ondocumenteditordocumentready"?: string
-  "ondocumenteditordocumentstatechange"?: string
-  "ondocumenteditordownloadas"?: string
-  "ondocumenteditorerror"?: string
-  "ondocumenteditorinfo"?: string
-  "ondocumenteditormakeactionlink"?: string
-  "ondocumenteditormetachange"?: string
-  "ondocumenteditoroutdatedversion"?: string
-  "ondocumenteditorpluginsready"?: string
-  "ondocumenteditorready"?: string
-  "ondocumenteditorrequestclose"?: string
-  "ondocumenteditorrequestcomparefile"?: string
-  "ondocumenteditorrequestcreatenew"?: string
-  "ondocumenteditorrequesteditrights"?: string
-  "ondocumenteditorrequesthistory"?: string
-  "ondocumenteditorrequesthistoryclose"?: string
-  "ondocumenteditorrequesthistorydata"?: string
-  "ondocumenteditorrequestinsertimage"?: string
-  "ondocumenteditorrequestmailmergerecipients"?: string
-  "ondocumenteditorrequestopen"?: string
-  "ondocumenteditorrequestreferencedata"?: string
-  "ondocumenteditorrequestreferencesource"?: string
-  "ondocumenteditorrequestrename"?: string
-  "ondocumenteditorrequestrestore"?: string
-  "ondocumenteditorrequestsaveas"?: string
-  "ondocumenteditorrequestselectdocument"?: string
-  "ondocumenteditorrequestselectspreadsheet"?: string
-  "ondocumenteditorrequestsendnotify"?: string
-  "ondocumenteditorrequestsharingsettings"?: string
-  "ondocumenteditorrequestusers"?: string
-  "ondocumenteditorwarning"?: string
-}
-
-export type DocumentEditorEventType = {
-  [K in keyof GlobalEventHandlersEventMap]: K extends `documenteditor${string}` ? K : never
-}[keyof GlobalEventHandlersEventMap]
-
-export type DocumentEditorEventHandlerName = Exclude<{
-  [K in keyof GlobalEventHandlers]: K extends `ondocumenteditor${string}` ? K : never
-}[keyof GlobalEventHandlers], undefined>
+import {
+  type DocumentEditorAttributeName,
+  type DocumentEditorEventListenerName,
+  type DocumentEditorEventType,
+} from "./types.ts"
 
 export type DocumentEditorConfig = DocEditorConfigurableOptions
 
 export class DocumentEditor extends HTMLElement {
-  static get tagName(): string {
+  static get tagName(): "document-editor" {
     return "document-editor"
   }
 
@@ -182,11 +142,11 @@ export class DocumentEditor extends HTMLElement {
     ]
   }
 
-  static isDocumentEditorEventHandlerName(u: unknown): u is DocumentEditorEventHandlerName {
-    return this.eventHandlerNames.includes(u as DocumentEditorEventHandlerName)
+  static isDocumentEditorEventHandlerName(u: unknown): u is DocumentEditorEventListenerName {
+    return this.eventHandlerNames.includes(u as DocumentEditorEventListenerName)
   }
 
-  static get eventHandlerNames(): DocumentEditorEventHandlerName[] {
+  static get eventHandlerNames(): DocumentEditorEventListenerName[] {
     return [
       "ondocumenteditorappready",
       "ondocumenteditorcollaborativechanges",
@@ -258,13 +218,13 @@ export class DocumentEditor extends HTMLElement {
 
   // todo?: map methods from the this.#editor
 
-  #ondocumenteditorappready: DocumentEditorAppReadyListener | null = null
+  #ondocumenteditorappready: DocumentEditorAppReadyEventListener | null = null
 
-  get ondocumenteditorappready(): DocumentEditorAppReadyListener | null {
+  get ondocumenteditorappready(): DocumentEditorAppReadyEventListener | null {
     return this.#ondocumenteditorappready
   }
 
-  set ondocumenteditorappready(l: DocumentEditorAppReadyListener | null) {
+  set ondocumenteditorappready(l: DocumentEditorAppReadyEventListener | null) {
     if (this.#ondocumenteditorappready) {
       this.removeEventListener(DocumentEditorAppReadyEvent.type, this.#ondocumenteditorappready)
     }
@@ -274,13 +234,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorcollaborativechanges: DocumentEditorCollaborativeChangesListener | null = null
+  #ondocumenteditorcollaborativechanges: DocumentEditorCollaborativeChangesEventListener | null = null
 
-  get ondocumenteditorcollaborativechanges(): DocumentEditorCollaborativeChangesListener | null {
+  get ondocumenteditorcollaborativechanges(): DocumentEditorCollaborativeChangesEventListener | null {
     return this.#ondocumenteditorcollaborativechanges
   }
 
-  set ondocumenteditorcollaborativechanges(l: DocumentEditorCollaborativeChangesListener | null) {
+  set ondocumenteditorcollaborativechanges(l: DocumentEditorCollaborativeChangesEventListener | null) {
     if (this.#ondocumenteditorcollaborativechanges) {
       this.removeEventListener(DocumentEditorCollaborativeChangesEvent.type, this.#ondocumenteditorcollaborativechanges)
     }
@@ -290,13 +250,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditordocumentready: DocumentEditorDocumentReadyListener | null = null
+  #ondocumenteditordocumentready: DocumentEditorDocumentReadyEventListener | null = null
 
-  get ondocumenteditordocumentready(): DocumentEditorDocumentReadyListener | null {
+  get ondocumenteditordocumentready(): DocumentEditorDocumentReadyEventListener | null {
     return this.#ondocumenteditordocumentready
   }
 
-  set ondocumenteditordocumentready(l: DocumentEditorDocumentReadyListener | null) {
+  set ondocumenteditordocumentready(l: DocumentEditorDocumentReadyEventListener | null) {
     if (this.#ondocumenteditordocumentready) {
       this.removeEventListener(DocumentEditorDocumentReadyEvent.type, this.#ondocumenteditordocumentready)
     }
@@ -306,13 +266,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditordocumentstatechange: DocumentEditorDocumentStateChangeListener | null = null
+  #ondocumenteditordocumentstatechange: DocumentEditorDocumentStateChangeEventListener | null = null
 
-  get ondocumenteditordocumentstatechange(): DocumentEditorDocumentStateChangeListener | null {
+  get ondocumenteditordocumentstatechange(): DocumentEditorDocumentStateChangeEventListener | null {
     return this.#ondocumenteditordocumentstatechange
   }
 
-  set ondocumenteditordocumentstatechange(l: DocumentEditorDocumentStateChangeListener | null) {
+  set ondocumenteditordocumentstatechange(l: DocumentEditorDocumentStateChangeEventListener | null) {
     if (this.#ondocumenteditordocumentstatechange) {
       this.removeEventListener(DocumentEditorDocumentStateChangeEvent.type, this.#ondocumenteditordocumentstatechange)
     }
@@ -322,13 +282,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditordownloadas: DocumentEditorDownloadAsListener | null = null
+  #ondocumenteditordownloadas: DocumentEditorDownloadAsEventListener | null = null
 
-  get ondocumenteditordownloadas(): DocumentEditorDownloadAsListener | null {
+  get ondocumenteditordownloadas(): DocumentEditorDownloadAsEventListener | null {
     return this.#ondocumenteditordownloadas
   }
 
-  set ondocumenteditordownloadas(l: DocumentEditorDownloadAsListener | null) {
+  set ondocumenteditordownloadas(l: DocumentEditorDownloadAsEventListener | null) {
     if (this.#ondocumenteditordownloadas) {
       this.removeEventListener(DocumentEditorDownloadAsEvent.type, this.#ondocumenteditordownloadas)
     }
@@ -338,13 +298,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorerror: DocumentEditorErrorListener | null = null
+  #ondocumenteditorerror: DocumentEditorErrorEventListener | null = null
 
-  get ondocumenteditorerror(): DocumentEditorErrorListener | null {
+  get ondocumenteditorerror(): DocumentEditorErrorEventListener | null {
     return this.#ondocumenteditorerror
   }
 
-  set ondocumenteditorerror(l: DocumentEditorErrorListener | null) {
+  set ondocumenteditorerror(l: DocumentEditorErrorEventListener | null) {
     if (this.#ondocumenteditorerror) {
       this.removeEventListener(DocumentEditorErrorEvent.type, this.#ondocumenteditorerror)
     }
@@ -354,13 +314,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorinfo: DocumentEditorInfoListener | null = null
+  #ondocumenteditorinfo: DocumentEditorInfoEventListener | null = null
 
-  get ondocumenteditorinfo(): DocumentEditorInfoListener | null {
+  get ondocumenteditorinfo(): DocumentEditorInfoEventListener | null {
     return this.#ondocumenteditorinfo
   }
 
-  set ondocumenteditorinfo(l: DocumentEditorInfoListener | null) {
+  set ondocumenteditorinfo(l: DocumentEditorInfoEventListener | null) {
     if (this.#ondocumenteditorinfo) {
       this.removeEventListener(DocumentEditorInfoEvent.type, this.#ondocumenteditorinfo)
     }
@@ -370,13 +330,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditormakeactionlink: DocumentEditorMakeActionLinkListener | null = null
+  #ondocumenteditormakeactionlink: DocumentEditorMakeActionLinkEventListener | null = null
 
-  get ondocumenteditormakeactionlink(): DocumentEditorMakeActionLinkListener | null {
+  get ondocumenteditormakeactionlink(): DocumentEditorMakeActionLinkEventListener | null {
     return this.#ondocumenteditormakeactionlink
   }
 
-  set ondocumenteditormakeactionlink(l: DocumentEditorMakeActionLinkListener | null) {
+  set ondocumenteditormakeactionlink(l: DocumentEditorMakeActionLinkEventListener | null) {
     if (this.#ondocumenteditormakeactionlink) {
       this.removeEventListener(DocumentEditorMakeActionLinkEvent.type, this.#ondocumenteditormakeactionlink)
     }
@@ -386,13 +346,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditormetachange: DocumentEditorMetaChangeListener | null = null
+  #ondocumenteditormetachange: DocumentEditorMetaChangeEventListener | null = null
 
-  get ondocumenteditormetachange(): DocumentEditorMetaChangeListener | null {
+  get ondocumenteditormetachange(): DocumentEditorMetaChangeEventListener | null {
     return this.#ondocumenteditormetachange
   }
 
-  set ondocumenteditormetachange(l: DocumentEditorMetaChangeListener | null) {
+  set ondocumenteditormetachange(l: DocumentEditorMetaChangeEventListener | null) {
     if (this.#ondocumenteditormetachange) {
       this.removeEventListener(DocumentEditorMetaChangeEvent.type, this.#ondocumenteditormetachange)
     }
@@ -402,13 +362,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditoroutdatedversion: DocumentEditorOutdatedVersionListener | null = null
+  #ondocumenteditoroutdatedversion: DocumentEditorOutdatedVersionEventListener | null = null
 
-  get ondocumenteditoroutdatedversion(): DocumentEditorOutdatedVersionListener | null {
+  get ondocumenteditoroutdatedversion(): DocumentEditorOutdatedVersionEventListener | null {
     return this.#ondocumenteditoroutdatedversion
   }
 
-  set ondocumenteditoroutdatedversion(l: DocumentEditorOutdatedVersionListener | null) {
+  set ondocumenteditoroutdatedversion(l: DocumentEditorOutdatedVersionEventListener | null) {
     if (this.#ondocumenteditoroutdatedversion) {
       this.removeEventListener(DocumentEditorOutdatedVersionEvent.type, this.#ondocumenteditoroutdatedversion)
     }
@@ -418,13 +378,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorpluginsready: DocumentEditorPluginsReadyListener | null = null
+  #ondocumenteditorpluginsready: DocumentEditorPluginsReadyEventListener | null = null
 
-  get ondocumenteditorpluginsready(): DocumentEditorPluginsReadyListener | null {
+  get ondocumenteditorpluginsready(): DocumentEditorPluginsReadyEventListener | null {
     return this.#ondocumenteditorpluginsready
   }
 
-  set ondocumenteditorpluginsready(l: DocumentEditorPluginsReadyListener | null) {
+  set ondocumenteditorpluginsready(l: DocumentEditorPluginsReadyEventListener | null) {
     if (this.#ondocumenteditorpluginsready) {
       this.removeEventListener(DocumentEditorPluginsReadyEvent.type, this.#ondocumenteditorpluginsready)
     }
@@ -437,19 +397,19 @@ export class DocumentEditor extends HTMLElement {
   /**
    * @deprecated Prefer {@link ondocumenteditorappready} instead.
    */
-  #ondocumenteditorready: DocumentEditorReadyListener | null = null
+  #ondocumenteditorready: DocumentEditorReadyEventListener | null = null
 
   /**
    * @deprecated Prefer {@link ondocumenteditorappready} instead.
    */
-  get ondocumenteditorready(): DocumentEditorReadyListener | null {
+  get ondocumenteditorready(): DocumentEditorReadyEventListener | null {
     return this.#ondocumenteditorready
   }
 
   /**
    * @deprecated Prefer {@link ondocumenteditorappready} instead.
    */
-  set ondocumenteditorready(l: DocumentEditorReadyListener | null) {
+  set ondocumenteditorready(l: DocumentEditorReadyEventListener | null) {
     if (this.#ondocumenteditorready) {
       this.removeEventListener(DocumentEditorReadyEvent.type, this.#ondocumenteditorready)
     }
@@ -459,13 +419,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestclose: DocumentEditorRequestCloseListener | null = null
+  #ondocumenteditorrequestclose: DocumentEditorRequestCloseEventListener | null = null
 
-  get ondocumenteditorrequestclose(): DocumentEditorRequestCloseListener | null {
+  get ondocumenteditorrequestclose(): DocumentEditorRequestCloseEventListener | null {
     return this.#ondocumenteditorrequestclose
   }
 
-  set ondocumenteditorrequestclose(l: DocumentEditorRequestCloseListener | null) {
+  set ondocumenteditorrequestclose(l: DocumentEditorRequestCloseEventListener | null) {
     if (this.#ondocumenteditorrequestclose) {
       this.removeEventListener(DocumentEditorRequestCloseEvent.type, this.#ondocumenteditorrequestclose)
     }
@@ -475,13 +435,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestcomparefile: DocumentEditorRequestCompareFileListener | null = null
+  #ondocumenteditorrequestcomparefile: DocumentEditorRequestCompareFileEventListener | null = null
 
-  get ondocumenteditorrequestcomparefile(): DocumentEditorRequestCompareFileListener | null {
+  get ondocumenteditorrequestcomparefile(): DocumentEditorRequestCompareFileEventListener | null {
     return this.#ondocumenteditorrequestcomparefile
   }
 
-  set ondocumenteditorrequestcomparefile(l: DocumentEditorRequestCompareFileListener | null) {
+  set ondocumenteditorrequestcomparefile(l: DocumentEditorRequestCompareFileEventListener | null) {
     if (this.#ondocumenteditorrequestcomparefile) {
       this.removeEventListener(DocumentEditorRequestCompareFileEvent.type, this.#ondocumenteditorrequestcomparefile)
     }
@@ -491,13 +451,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestcreatenew: DocumentEditorRequestCreateNewListener | null = null
+  #ondocumenteditorrequestcreatenew: DocumentEditorRequestCreateNewEventListener | null = null
 
-  get ondocumenteditorrequestcreatenew(): DocumentEditorRequestCreateNewListener | null {
+  get ondocumenteditorrequestcreatenew(): DocumentEditorRequestCreateNewEventListener | null {
     return this.#ondocumenteditorrequestcreatenew
   }
 
-  set ondocumenteditorrequestcreatenew(l: DocumentEditorRequestCreateNewListener | null) {
+  set ondocumenteditorrequestcreatenew(l: DocumentEditorRequestCreateNewEventListener | null) {
     if (this.#ondocumenteditorrequestcreatenew) {
       this.removeEventListener(DocumentEditorRequestCreateNewEvent.type, this.#ondocumenteditorrequestcreatenew)
     }
@@ -507,13 +467,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequesteditrights: DocumentEditorRequestEditRightsListener | null = null
+  #ondocumenteditorrequesteditrights: DocumentEditorRequestEditRightsEventListener | null = null
 
-  get ondocumenteditorrequesteditrights(): DocumentEditorRequestEditRightsListener | null {
+  get ondocumenteditorrequesteditrights(): DocumentEditorRequestEditRightsEventListener | null {
     return this.#ondocumenteditorrequesteditrights
   }
 
-  set ondocumenteditorrequesteditrights(l: DocumentEditorRequestEditRightsListener | null) {
+  set ondocumenteditorrequesteditrights(l: DocumentEditorRequestEditRightsEventListener | null) {
     if (this.#ondocumenteditorrequesteditrights) {
       this.removeEventListener(DocumentEditorRequestEditRightsEvent.type, this.#ondocumenteditorrequesteditrights)
     }
@@ -523,13 +483,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequesthistory: DocumentEditorRequestHistoryListener | null = null
+  #ondocumenteditorrequesthistory: DocumentEditorRequestHistoryEventListener | null = null
 
-  get ondocumenteditorrequesthistory(): DocumentEditorRequestHistoryListener | null {
+  get ondocumenteditorrequesthistory(): DocumentEditorRequestHistoryEventListener | null {
     return this.#ondocumenteditorrequesthistory
   }
 
-  set ondocumenteditorrequesthistory(l: DocumentEditorRequestHistoryListener | null) {
+  set ondocumenteditorrequesthistory(l: DocumentEditorRequestHistoryEventListener | null) {
     if (this.#ondocumenteditorrequesthistory) {
       this.removeEventListener(DocumentEditorRequestHistoryEvent.type, this.#ondocumenteditorrequesthistory)
     }
@@ -539,13 +499,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequesthistoryclose: DocumentEditorRequestHistoryCloseListener | null = null
+  #ondocumenteditorrequesthistoryclose: DocumentEditorRequestHistoryCloseEventListener | null = null
 
-  get ondocumenteditorrequesthistoryclose(): DocumentEditorRequestHistoryCloseListener | null {
+  get ondocumenteditorrequesthistoryclose(): DocumentEditorRequestHistoryCloseEventListener | null {
     return this.#ondocumenteditorrequesthistoryclose
   }
 
-  set ondocumenteditorrequesthistoryclose(l: DocumentEditorRequestHistoryCloseListener | null) {
+  set ondocumenteditorrequesthistoryclose(l: DocumentEditorRequestHistoryCloseEventListener | null) {
     if (this.#ondocumenteditorrequesthistoryclose) {
       this.removeEventListener(DocumentEditorRequestHistoryCloseEvent.type, this.#ondocumenteditorrequesthistoryclose)
     }
@@ -555,13 +515,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequesthistorydata: DocumentEditorRequestHistoryDataListener | null = null
+  #ondocumenteditorrequesthistorydata: DocumentEditorRequestHistoryDataEventListener | null = null
 
-  get ondocumenteditorrequesthistorydata(): DocumentEditorRequestHistoryDataListener | null {
+  get ondocumenteditorrequesthistorydata(): DocumentEditorRequestHistoryDataEventListener | null {
     return this.#ondocumenteditorrequesthistorydata
   }
 
-  set ondocumenteditorrequesthistorydata(l: DocumentEditorRequestHistoryDataListener | null) {
+  set ondocumenteditorrequesthistorydata(l: DocumentEditorRequestHistoryDataEventListener | null) {
     if (this.#ondocumenteditorrequesthistorydata) {
       this.removeEventListener(DocumentEditorRequestHistoryDataEvent.type, this.#ondocumenteditorrequesthistorydata)
     }
@@ -571,13 +531,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestinsertimage: DocumentEditorRequestInsertImageListener | null = null
+  #ondocumenteditorrequestinsertimage: DocumentEditorRequestInsertImageEventListener | null = null
 
-  get ondocumenteditorrequestinsertimage(): DocumentEditorRequestInsertImageListener | null {
+  get ondocumenteditorrequestinsertimage(): DocumentEditorRequestInsertImageEventListener | null {
     return this.#ondocumenteditorrequestinsertimage
   }
 
-  set ondocumenteditorrequestinsertimage(l: DocumentEditorRequestInsertImageListener | null) {
+  set ondocumenteditorrequestinsertimage(l: DocumentEditorRequestInsertImageEventListener | null) {
     if (this.#ondocumenteditorrequestinsertimage) {
       this.removeEventListener(DocumentEditorRequestInsertImageEvent.type, this.#ondocumenteditorrequestinsertimage)
     }
@@ -590,19 +550,19 @@ export class DocumentEditor extends HTMLElement {
   /**
    * @deprecated Prefer {@link ondocumenteditorrequestselectspreadsheet} instead.
    */
-  #ondocumenteditorrequestmailmergerecipients: DocumentEditorRequestMailMergeRecipientsListener | null = null
+  #ondocumenteditorrequestmailmergerecipients: DocumentEditorRequestMailMergeRecipientsEventListener | null = null
 
   /**
    * @deprecated Prefer {@link ondocumenteditorrequestselectspreadsheet} instead.
    */
-  get ondocumenteditorrequestmailmergerecipients(): DocumentEditorRequestMailMergeRecipientsListener | null {
+  get ondocumenteditorrequestmailmergerecipients(): DocumentEditorRequestMailMergeRecipientsEventListener | null {
     return this.#ondocumenteditorrequestmailmergerecipients
   }
 
   /**
    * @deprecated Prefer {@link ondocumenteditorrequestselectspreadsheet} instead.
    */
-  set ondocumenteditorrequestmailmergerecipients(l: DocumentEditorRequestMailMergeRecipientsListener | null) {
+  set ondocumenteditorrequestmailmergerecipients(l: DocumentEditorRequestMailMergeRecipientsEventListener | null) {
     if (this.#ondocumenteditorrequestmailmergerecipients) {
       this.removeEventListener(DocumentEditorRequestMailMergeRecipientsEvent.type, this.#ondocumenteditorrequestmailmergerecipients)
     }
@@ -612,13 +572,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestopen: DocumentEditorRequestOpenListener | null = null
+  #ondocumenteditorrequestopen: DocumentEditorRequestOpenEventListener | null = null
 
-  get ondocumenteditorrequestopen(): DocumentEditorRequestOpenListener | null {
+  get ondocumenteditorrequestopen(): DocumentEditorRequestOpenEventListener | null {
     return this.#ondocumenteditorrequestopen
   }
 
-  set ondocumenteditorrequestopen(l: DocumentEditorRequestOpenListener | null) {
+  set ondocumenteditorrequestopen(l: DocumentEditorRequestOpenEventListener | null) {
     if (this.#ondocumenteditorrequestopen) {
       this.removeEventListener(DocumentEditorRequestOpenEvent.type, this.#ondocumenteditorrequestopen)
     }
@@ -628,13 +588,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestreferencedata: DocumentEditorRequestReferenceDataListener | null = null
+  #ondocumenteditorrequestreferencedata: DocumentEditorRequestReferenceDataEventListener | null = null
 
-  get ondocumenteditorrequestreferencedata(): DocumentEditorRequestReferenceDataListener | null {
+  get ondocumenteditorrequestreferencedata(): DocumentEditorRequestReferenceDataEventListener | null {
     return this.#ondocumenteditorrequestreferencedata
   }
 
-  set ondocumenteditorrequestreferencedata(l: DocumentEditorRequestReferenceDataListener | null) {
+  set ondocumenteditorrequestreferencedata(l: DocumentEditorRequestReferenceDataEventListener | null) {
     if (this.#ondocumenteditorrequestreferencedata) {
       this.removeEventListener(DocumentEditorRequestReferenceDataEvent.type, this.#ondocumenteditorrequestreferencedata)
     }
@@ -644,13 +604,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestreferencesource: DocumentEditorRequestReferenceSourceListener | null = null
+  #ondocumenteditorrequestreferencesource: DocumentEditorRequestReferenceSourceEventListener | null = null
 
-  get ondocumenteditorrequestreferencesource(): DocumentEditorRequestReferenceSourceListener | null {
+  get ondocumenteditorrequestreferencesource(): DocumentEditorRequestReferenceSourceEventListener | null {
     return this.#ondocumenteditorrequestreferencesource
   }
 
-  set ondocumenteditorrequestreferencesource(l: DocumentEditorRequestReferenceSourceListener | null) {
+  set ondocumenteditorrequestreferencesource(l: DocumentEditorRequestReferenceSourceEventListener | null) {
     if (this.#ondocumenteditorrequestreferencesource) {
       this.removeEventListener(DocumentEditorRequestReferenceSourceEvent.type, this.#ondocumenteditorrequestreferencesource)
     }
@@ -660,13 +620,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestrename: DocumentEditorRequestRenameListener | null = null
+  #ondocumenteditorrequestrename: DocumentEditorRequestRenameEventListener | null = null
 
-  get ondocumenteditorrequestrename(): DocumentEditorRequestRenameListener | null {
+  get ondocumenteditorrequestrename(): DocumentEditorRequestRenameEventListener | null {
     return this.#ondocumenteditorrequestrename
   }
 
-  set ondocumenteditorrequestrename(l: DocumentEditorRequestRenameListener | null) {
+  set ondocumenteditorrequestrename(l: DocumentEditorRequestRenameEventListener | null) {
     if (this.#ondocumenteditorrequestrename) {
       this.removeEventListener(DocumentEditorRequestRenameEvent.type, this.#ondocumenteditorrequestrename)
     }
@@ -676,13 +636,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestrestore: DocumentEditorRequestRestoreListener | null = null
+  #ondocumenteditorrequestrestore: DocumentEditorRequestRestoreEventListener | null = null
 
-  get ondocumenteditorrequestrestore(): DocumentEditorRequestRestoreListener | null {
+  get ondocumenteditorrequestrestore(): DocumentEditorRequestRestoreEventListener | null {
     return this.#ondocumenteditorrequestrestore
   }
 
-  set ondocumenteditorrequestrestore(l: DocumentEditorRequestRestoreListener | null) {
+  set ondocumenteditorrequestrestore(l: DocumentEditorRequestRestoreEventListener | null) {
     if (this.#ondocumenteditorrequestrestore) {
       this.removeEventListener(DocumentEditorRequestRestoreEvent.type, this.#ondocumenteditorrequestrestore)
     }
@@ -692,13 +652,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestsaveas: DocumentEditorRequestSaveAsListener | null = null
+  #ondocumenteditorrequestsaveas: DocumentEditorRequestSaveAsEventListener | null = null
 
-  get ondocumenteditorrequestsaveas(): DocumentEditorRequestSaveAsListener | null {
+  get ondocumenteditorrequestsaveas(): DocumentEditorRequestSaveAsEventListener | null {
     return this.#ondocumenteditorrequestsaveas
   }
 
-  set ondocumenteditorrequestsaveas(l: DocumentEditorRequestSaveAsListener | null) {
+  set ondocumenteditorrequestsaveas(l: DocumentEditorRequestSaveAsEventListener | null) {
     if (this.#ondocumenteditorrequestsaveas) {
       this.removeEventListener(DocumentEditorRequestSaveAsEvent.type, this.#ondocumenteditorrequestsaveas)
     }
@@ -708,13 +668,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestselectdocument: DocumentEditorRequestSelectDocumentListener | null = null
+  #ondocumenteditorrequestselectdocument: DocumentEditorRequestSelectDocumentEventListener | null = null
 
-  get ondocumenteditorrequestselectdocument(): DocumentEditorRequestSelectDocumentListener | null {
+  get ondocumenteditorrequestselectdocument(): DocumentEditorRequestSelectDocumentEventListener | null {
     return this.#ondocumenteditorrequestselectdocument
   }
 
-  set ondocumenteditorrequestselectdocument(l: DocumentEditorRequestSelectDocumentListener | null) {
+  set ondocumenteditorrequestselectdocument(l: DocumentEditorRequestSelectDocumentEventListener | null) {
     if (this.#ondocumenteditorrequestselectdocument) {
       this.removeEventListener(DocumentEditorRequestSelectDocumentEvent.type, this.#ondocumenteditorrequestselectdocument)
     }
@@ -724,13 +684,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestselectspreadsheet: DocumentEditorRequestSelectSpreadsheetListener | null = null
+  #ondocumenteditorrequestselectspreadsheet: DocumentEditorRequestSelectSpreadsheetEventListener | null = null
 
-  get ondocumenteditorrequestselectspreadsheet(): DocumentEditorRequestSelectSpreadsheetListener | null {
+  get ondocumenteditorrequestselectspreadsheet(): DocumentEditorRequestSelectSpreadsheetEventListener | null {
     return this.#ondocumenteditorrequestselectspreadsheet
   }
 
-  set ondocumenteditorrequestselectspreadsheet(l: DocumentEditorRequestSelectSpreadsheetListener | null) {
+  set ondocumenteditorrequestselectspreadsheet(l: DocumentEditorRequestSelectSpreadsheetEventListener | null) {
     if (this.#ondocumenteditorrequestselectspreadsheet) {
       this.removeEventListener(DocumentEditorRequestSelectSpreadsheetEvent.type, this.#ondocumenteditorrequestselectspreadsheet)
     }
@@ -740,13 +700,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestsendnotify: DocumentEditorRequestSendNotifyListener | null = null
+  #ondocumenteditorrequestsendnotify: DocumentEditorRequestSendNotifyEventListener | null = null
 
-  get ondocumenteditorrequestsendnotify(): DocumentEditorRequestSendNotifyListener | null {
+  get ondocumenteditorrequestsendnotify(): DocumentEditorRequestSendNotifyEventListener | null {
     return this.#ondocumenteditorrequestsendnotify
   }
 
-  set ondocumenteditorrequestsendnotify(l: DocumentEditorRequestSendNotifyListener | null) {
+  set ondocumenteditorrequestsendnotify(l: DocumentEditorRequestSendNotifyEventListener | null) {
     if (this.#ondocumenteditorrequestsendnotify) {
       this.removeEventListener(DocumentEditorRequestSendNotifyEvent.type, this.#ondocumenteditorrequestsendnotify)
     }
@@ -756,13 +716,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestsharingsettings: DocumentEditorRequestSharingSettingsListener | null = null
+  #ondocumenteditorrequestsharingsettings: DocumentEditorRequestSharingSettingsEventListener | null = null
 
-  get ondocumenteditorrequestsharingsettings(): DocumentEditorRequestSharingSettingsListener | null {
+  get ondocumenteditorrequestsharingsettings(): DocumentEditorRequestSharingSettingsEventListener | null {
     return this.#ondocumenteditorrequestsharingsettings
   }
 
-  set ondocumenteditorrequestsharingsettings(l: DocumentEditorRequestSharingSettingsListener | null) {
+  set ondocumenteditorrequestsharingsettings(l: DocumentEditorRequestSharingSettingsEventListener | null) {
     if (this.#ondocumenteditorrequestsharingsettings) {
       this.removeEventListener(DocumentEditorRequestSharingSettingsEvent.type, this.#ondocumenteditorrequestsharingsettings)
     }
@@ -772,13 +732,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorrequestusers: DocumentEditorRequestUsersListener | null = null
+  #ondocumenteditorrequestusers: DocumentEditorRequestUsersEventListener | null = null
 
-  get ondocumenteditorrequestusers(): DocumentEditorRequestUsersListener | null {
+  get ondocumenteditorrequestusers(): DocumentEditorRequestUsersEventListener | null {
     return this.#ondocumenteditorrequestusers
   }
 
-  set ondocumenteditorrequestusers(l: DocumentEditorRequestUsersListener | null) {
+  set ondocumenteditorrequestusers(l: DocumentEditorRequestUsersEventListener | null) {
     if (this.#ondocumenteditorrequestusers) {
       this.removeEventListener(DocumentEditorRequestUsersEvent.type, this.#ondocumenteditorrequestusers)
     }
@@ -788,13 +748,13 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  #ondocumenteditorwarning: DocumentEditorWarningListener | null = null
+  #ondocumenteditorwarning: DocumentEditorWarningEventListener | null = null
 
-  get ondocumenteditorwarning(): DocumentEditorWarningListener | null {
+  get ondocumenteditorwarning(): DocumentEditorWarningEventListener | null {
     return this.#ondocumenteditorwarning
   }
 
-  set ondocumenteditorwarning(l: DocumentEditorWarningListener | null) {
+  set ondocumenteditorwarning(l: DocumentEditorWarningEventListener | null) {
     if (this.#ondocumenteditorwarning) {
       this.removeEventListener(DocumentEditorWarningEvent.type, this.#ondocumenteditorwarning)
     }
@@ -804,11 +764,11 @@ export class DocumentEditor extends HTMLElement {
     }
   }
 
-  static isDocumentEditorAttribute(u: unknown): u is DocumentEditorAttribute {
-    return this.observedAttributes.includes(u as DocumentEditorAttribute)
+  static isDocumentEditorAttribute(u: unknown): u is DocumentEditorAttributeName {
+    return this.observedAttributes.includes(u as DocumentEditorAttributeName)
   }
 
-  static get observedAttributes(): DocumentEditorAttribute[] {
+  static get observedAttributes(): DocumentEditorAttributeName[] {
     return [
       "document-server-url",
       "config",
@@ -857,103 +817,103 @@ export class DocumentEditor extends HTMLElement {
       this.config = JSON.parse(v) as DocumentEditorConfig
       break
     case "ondocumenteditorappready":
-      this.ondocumenteditorappready = new Function("event", v) as DocumentEditorAppReadyListener
+      this.ondocumenteditorappready = new Function("event", v) as DocumentEditorAppReadyEventListener
       break
     case "ondocumenteditorcollaborativechanges":
-      this.ondocumenteditorcollaborativechanges = new Function("event", v) as DocumentEditorCollaborativeChangesListener
+      this.ondocumenteditorcollaborativechanges = new Function("event", v) as DocumentEditorCollaborativeChangesEventListener
       break
     case "ondocumenteditordocumentready":
-      this.ondocumenteditordocumentready = new Function("event", v) as DocumentEditorDocumentReadyListener
+      this.ondocumenteditordocumentready = new Function("event", v) as DocumentEditorDocumentReadyEventListener
       break
     case "ondocumenteditordocumentstatechange":
-      this.ondocumenteditordocumentstatechange = new Function("event", v) as DocumentEditorDocumentStateChangeListener
+      this.ondocumenteditordocumentstatechange = new Function("event", v) as DocumentEditorDocumentStateChangeEventListener
       break
     case "ondocumenteditordownloadas":
-      this.ondocumenteditordownloadas = new Function("event", v) as DocumentEditorDownloadAsListener
+      this.ondocumenteditordownloadas = new Function("event", v) as DocumentEditorDownloadAsEventListener
       break
     case "ondocumenteditorerror":
-      this.ondocumenteditorerror = new Function("event", v) as DocumentEditorErrorListener
+      this.ondocumenteditorerror = new Function("event", v) as DocumentEditorErrorEventListener
       break
     case "ondocumenteditorinfo":
-      this.ondocumenteditorinfo = new Function("event", v) as DocumentEditorInfoListener
+      this.ondocumenteditorinfo = new Function("event", v) as DocumentEditorInfoEventListener
       break
     case "ondocumenteditormakeactionlink":
-      this.ondocumenteditormakeactionlink = new Function("event", v) as DocumentEditorMakeActionLinkListener
+      this.ondocumenteditormakeactionlink = new Function("event", v) as DocumentEditorMakeActionLinkEventListener
       break
     case "ondocumenteditormetachange":
-      this.ondocumenteditormetachange = new Function("event", v) as DocumentEditorMetaChangeListener
+      this.ondocumenteditormetachange = new Function("event", v) as DocumentEditorMetaChangeEventListener
       break
     case "ondocumenteditoroutdatedversion":
-      this.ondocumenteditoroutdatedversion = new Function("event", v) as DocumentEditorOutdatedVersionListener
+      this.ondocumenteditoroutdatedversion = new Function("event", v) as DocumentEditorOutdatedVersionEventListener
       break
     case "ondocumenteditorpluginsready":
-      this.ondocumenteditorpluginsready = new Function("event", v) as DocumentEditorPluginsReadyListener
+      this.ondocumenteditorpluginsready = new Function("event", v) as DocumentEditorPluginsReadyEventListener
       break
     case "ondocumenteditorready":
-      this.ondocumenteditorready = new Function("event", v) as DocumentEditorReadyListener
+      this.ondocumenteditorready = new Function("event", v) as DocumentEditorReadyEventListener
       break
     case "ondocumenteditorrequestclose":
-      this.ondocumenteditorrequestclose = new Function("event", v) as DocumentEditorRequestCloseListener
+      this.ondocumenteditorrequestclose = new Function("event", v) as DocumentEditorRequestCloseEventListener
       break
     case "ondocumenteditorrequestcomparefile":
-      this.ondocumenteditorrequestcomparefile = new Function("event", v) as DocumentEditorRequestCompareFileListener
+      this.ondocumenteditorrequestcomparefile = new Function("event", v) as DocumentEditorRequestCompareFileEventListener
       break
     case "ondocumenteditorrequestcreatenew":
-      this.ondocumenteditorrequestcreatenew = new Function("event", v) as DocumentEditorRequestCreateNewListener
+      this.ondocumenteditorrequestcreatenew = new Function("event", v) as DocumentEditorRequestCreateNewEventListener
       break
     case "ondocumenteditorrequesteditrights":
-      this.ondocumenteditorrequesteditrights = new Function("event", v) as DocumentEditorRequestEditRightsListener
+      this.ondocumenteditorrequesteditrights = new Function("event", v) as DocumentEditorRequestEditRightsEventListener
       break
     case "ondocumenteditorrequesthistory":
-      this.ondocumenteditorrequesthistory = new Function("event", v) as DocumentEditorRequestHistoryListener
+      this.ondocumenteditorrequesthistory = new Function("event", v) as DocumentEditorRequestHistoryEventListener
       break
     case "ondocumenteditorrequesthistoryclose":
-      this.ondocumenteditorrequesthistoryclose = new Function("event", v) as DocumentEditorRequestHistoryCloseListener
+      this.ondocumenteditorrequesthistoryclose = new Function("event", v) as DocumentEditorRequestHistoryCloseEventListener
       break
     case "ondocumenteditorrequesthistorydata":
-      this.ondocumenteditorrequesthistorydata = new Function("event", v) as DocumentEditorRequestHistoryDataListener
+      this.ondocumenteditorrequesthistorydata = new Function("event", v) as DocumentEditorRequestHistoryDataEventListener
       break
     case "ondocumenteditorrequestinsertimage":
-      this.ondocumenteditorrequestinsertimage = new Function("event", v) as DocumentEditorRequestInsertImageListener
+      this.ondocumenteditorrequestinsertimage = new Function("event", v) as DocumentEditorRequestInsertImageEventListener
       break
     case "ondocumenteditorrequestmailmergerecipients":
-      this.ondocumenteditorrequestmailmergerecipients = new Function("event", v) as DocumentEditorRequestMailMergeRecipientsListener
+      this.ondocumenteditorrequestmailmergerecipients = new Function("event", v) as DocumentEditorRequestMailMergeRecipientsEventListener
       break
     case "ondocumenteditorrequestopen":
-      this.ondocumenteditorrequestopen = new Function("event", v) as DocumentEditorRequestOpenListener
+      this.ondocumenteditorrequestopen = new Function("event", v) as DocumentEditorRequestOpenEventListener
       break
     case "ondocumenteditorrequestreferencedata":
-      this.ondocumenteditorrequestreferencedata = new Function("event", v) as DocumentEditorRequestReferenceDataListener
+      this.ondocumenteditorrequestreferencedata = new Function("event", v) as DocumentEditorRequestReferenceDataEventListener
       break
     case "ondocumenteditorrequestreferencesource":
-      this.ondocumenteditorrequestreferencesource = new Function("event", v) as DocumentEditorRequestReferenceSourceListener
+      this.ondocumenteditorrequestreferencesource = new Function("event", v) as DocumentEditorRequestReferenceSourceEventListener
       break
     case "ondocumenteditorrequestrename":
-      this.ondocumenteditorrequestrename = new Function("event", v) as DocumentEditorRequestRenameListener
+      this.ondocumenteditorrequestrename = new Function("event", v) as DocumentEditorRequestRenameEventListener
       break
     case "ondocumenteditorrequestrestore":
-      this.ondocumenteditorrequestrestore = new Function("event", v) as DocumentEditorRequestRestoreListener
+      this.ondocumenteditorrequestrestore = new Function("event", v) as DocumentEditorRequestRestoreEventListener
       break
     case "ondocumenteditorrequestsaveas":
-      this.ondocumenteditorrequestsaveas = new Function("event", v) as DocumentEditorRequestSaveAsListener
+      this.ondocumenteditorrequestsaveas = new Function("event", v) as DocumentEditorRequestSaveAsEventListener
       break
     case "ondocumenteditorrequestselectdocument":
-      this.ondocumenteditorrequestselectdocument = new Function("event", v) as DocumentEditorRequestSelectDocumentListener
+      this.ondocumenteditorrequestselectdocument = new Function("event", v) as DocumentEditorRequestSelectDocumentEventListener
       break
     case "ondocumenteditorrequestselectspreadsheet":
-      this.ondocumenteditorrequestselectspreadsheet = new Function("event", v) as DocumentEditorRequestSelectSpreadsheetListener
+      this.ondocumenteditorrequestselectspreadsheet = new Function("event", v) as DocumentEditorRequestSelectSpreadsheetEventListener
       break
     case "ondocumenteditorrequestsendnotify":
-      this.ondocumenteditorrequestsendnotify = new Function("event", v) as DocumentEditorRequestSendNotifyListener
+      this.ondocumenteditorrequestsendnotify = new Function("event", v) as DocumentEditorRequestSendNotifyEventListener
       break
     case "ondocumenteditorrequestsharingsettings":
-      this.ondocumenteditorrequestsharingsettings = new Function("event", v) as DocumentEditorRequestSharingSettingsListener
+      this.ondocumenteditorrequestsharingsettings = new Function("event", v) as DocumentEditorRequestSharingSettingsEventListener
       break
     case "ondocumenteditorrequestusers":
-      this.ondocumenteditorrequestusers = new Function("event", v) as DocumentEditorRequestUsersListener
+      this.ondocumenteditorrequestusers = new Function("event", v) as DocumentEditorRequestUsersEventListener
       break
     case "ondocumenteditorwarning":
-      this.ondocumenteditorwarning = new Function("event", v) as DocumentEditorWarningListener
+      this.ondocumenteditorwarning = new Function("event", v) as DocumentEditorWarningEventListener
       break
     default:
       throw new Error(`The attribute '${n}' is not supported`)

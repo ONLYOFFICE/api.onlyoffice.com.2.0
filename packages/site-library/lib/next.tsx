@@ -1,9 +1,9 @@
-import * as L from "@onlyoffice/library-declaration/next.ts"
+import * as L from "@onlyoffice/library-declaration/next.js"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import * as SiteGlossary from "@onlyoffice/site-glossary"
 import * as SiteSignature from "@onlyoffice/site-signature"
 import {Badge, BadgeCaption, BadgeGroup} from "@onlyoffice/ui-kit"
-import {type ComponentChildren, Fragment, type JSX, createContext, h} from "preact"
+import {type ComponentChildren, type JSX, createContext} from "preact"
 import {useContext} from "preact/hooks"
 
 export interface Description {

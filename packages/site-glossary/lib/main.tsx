@@ -1,6 +1,6 @@
 import * as Elements from "@onlyoffice/preact-elements"
 import {clsx} from "clsx"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export function Glossary(p: Elements.DlProperties): JSX.Element {
   const {...o} = p

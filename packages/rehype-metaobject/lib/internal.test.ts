@@ -1,6 +1,6 @@
 import {test} from "uvu"
 import {equal as eq} from "uvu/assert"
-import {metaobject} from "./internal.ts"
+import {parse} from "./internal.ts"
 
 const cases: [string, object][] = [
   ["", {}],
@@ -57,7 +57,7 @@ const cases: [string, object][] = [
 
 for (const [s, e] of cases) {
   test(s, () => {
-    const a = metaobject(s)
+    const a = parse(s)
     eq(a, e)
   })
 }

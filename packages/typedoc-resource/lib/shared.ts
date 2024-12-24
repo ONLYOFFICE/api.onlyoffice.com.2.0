@@ -1,8 +1,10 @@
+import {readFile} from "node:fs/promises"
 import {get} from "node:https"
 import path from "node:path"
 import {cwd} from "node:process"
 import {type Writable} from "node:stream"
 import {StringWritable} from "@onlyoffice/stream-string"
+import yaml from "yaml"
 import {Console} from "./console.ts"
 
 const console = Console.shared
@@ -13,10 +15,11 @@ export class Config extends Array<ConfigEntity> {
   static async read(): Promise<Config> {
     const c = new Config()
 
-    const p = winCompatibility(path.join(cwd(), "config.ts"))
-    const m = await import(p)
+    const p = path.join(cwd(), "config.yml")
+    const d = await readFile(p, "utf8")
+    const m = yaml.parse(d)
 
-    for (const r of m.config) {
+    for (const r of m) {
       const e = ConfigEntity.fromObject(r)
       c.push(e)
     }
@@ -57,7 +60,6 @@ export interface InputConfigEntitySource {
   repo?: string
   reference?: string
   path?: string
-  content?: string
 }
 
 export class ConfigEntitySource {
@@ -65,7 +67,6 @@ export class ConfigEntitySource {
   repo = ""
   reference = ""
   path = ""
-  content = ""
 
   static fromObject(o: InputConfigEntitySource): ConfigEntitySource {
     const c = new ConfigEntitySource()
@@ -86,10 +87,6 @@ export class ConfigEntitySource {
       c.path = o.path
     }
 
-    if (o.content) {
-      c.content = o.content
-    }
-
     return c
   }
 
@@ -99,10 +96,12 @@ export class ConfigEntitySource {
   }
 
   async download(w: Writable): Promise<void> {
-    if (this.content) {
-      console.log("Start writing the content of the config entity source")
-      w.write(this.content)
-      console.log("Finish writing the content of the config entity source")
+    if (this.#isLocal) {
+      console.log(`Start reading the content of the config entity source from '${this.path}'`)
+      const f = path.join(cwd(), this.path)
+      const d = await readFile(f, "utf8")
+      w.write(d)
+      console.log(`Finish reading the content of the config entity source from '${this.path}'`)
       return
     }
 
@@ -124,10 +123,11 @@ export class ConfigEntitySource {
 
     console.log(`Finish downloading the config entity source from '${u.pathname}'`)
   }
-}
 
-// todo: move to a separate package
-function winCompatibility(p: string): string {
-  p = p.replaceAll("\\", "/")
-  return `file:///${p}`
+  get #isLocal(): boolean {
+    return this.owner === "" &&
+      this.repo === "" &&
+      this.reference === "" &&
+      this.path !== ""
+  }
 }
