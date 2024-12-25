@@ -1,0 +1,25 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["lib/*.ts"],
+  "excludeReferences": true,
+  "includeVersion": true,
+  "outputs": [
+    {
+      "name": "json",
+      "path": "dist/docs.json"
+    },
+    {
+      "name": "html",
+      "path": "dist/docs",
+      "options": {
+        "navigation": {
+          "includeCategories": true,
+          "includeGroups": true
+        }
+      }
+    }
+  ],
+  "treatValidationWarningsAsErrors": true,
+  "treatWarningsAsErrors": true,
+  "validation": true
+}

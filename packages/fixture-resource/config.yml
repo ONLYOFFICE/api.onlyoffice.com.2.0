@@ -2,4 +2,4 @@
 
 - name: typedoc
   source:
-    path: dist/typedoc-raw.json
+    path: fixtures/typedoc/dist/docs.json

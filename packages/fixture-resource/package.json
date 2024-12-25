@@ -6,16 +6,15 @@
     "./typedoc.js": "./dist/typedoc.js"
   },
   "scripts": {
-    "build:typedoc:raw": "cd fixtures/typedoc && typedoc . --entryPointStrategy expand --json ../../dist/typedoc-raw.json --pretty --readme README.md",
-    "build:typedoc": "typedoc-resource typedoc",
-    "build": "pnpm build:typedoc:raw && pnpm build:typedoc"
+    "build:typedoc": "pnpm docs:typedoc && typedoc-resource typedoc",
+    "build": "pnpm build:typedoc",
+    "docs:typedoc": "cd fixtures/typedoc && pnpm build-docs"
   },
   "dependencies": {
     "@onlyoffice/library-declaration": "workspace:^"
   },
   "devDependencies": {
     "@onlyoffice/typedoc-resource": "workspace:^",
-    "typedoc": "0.26.11",
     "typescript": "5.7.2"
   }
 }
