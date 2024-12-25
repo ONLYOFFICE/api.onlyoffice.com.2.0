@@ -142,6 +142,12 @@ In this example we are changing the font family and/or size in the presentation.
 
 [More](Change%20font%20family%20and%20size/index.md)
 
+## Hide or unhide rows and columns
+
+In this example we are hiding or unhiding specified rows and/or columns in the spreadsheet.
+
+[More](Hide%20or%20unhide%20rows%20and%20columns/index.md)
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)

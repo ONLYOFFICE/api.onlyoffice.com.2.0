@@ -8,6 +8,7 @@
 - macros: added remove extra spaces in document macro sample
 - macros: added the Sum of highlighted cells macro sample
 - macros: added change font family and size in presentations macro sample
+- macros: added hide unhide rows or columns in spreadsheet macro sample
 
 ## 6.3.0
 - docspace oauth api: added a new section
