@@ -1,14 +1,33 @@
-`CDocBuilderValue GetProperty(sName);`
+```yml signature
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: " "}
+- {type: entity, text: GetProperty}
+- {type: text, text: (}
+- {type: parameter, text: sName}
+- {type: text, text: ": "}
+- {type: type, text: const wchar_t*}
+- {type: text, text: )}
+```
 
-Returns a property of the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.GetProperty* method is not used.
+Returns a property of the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.GetProperty` method is not used.
 
 ## Parameters
 
-| Name    | Type             | Description                                           |
-| ------- | ---------------- | ----------------------------------------------------- |
-| *sName* | const wchar\_t\* | The name of the **CDocBuilderValue** object property. |
+<parameters>
+
+- sName
+
+  ```yml signature.variant="inline"
+  - {type: type, text: const wchar_t*}
+  ```
+
+  - : The name of the `CDocBuilderValue` object property.
+
+</parameters>
 
 ## Example
 
@@ -26,9 +45,9 @@ CValue oDocPr = oDocument.GetProperty("color");
 CDocBuilder::Dispose();
 ```
 
-There are two more ways to get a property of the **CDocBuilderValue** object:
+There are two more ways to get a property of the `CDocBuilderValue` object:
 
-1. use the **Get** method that takes the arguments both in the UTF8 or Unicode formats:
+1. use the `Get` method that takes the arguments both in the UTF8 or Unicode formats:
 
    ```cpp
    CDocBuilderValue Get(const char* name);
@@ -51,7 +70,7 @@ There are two more ways to get a property of the **CDocBuilderValue** object:
    CDocBuilder::Dispose();
    ```
 
-2. use the **operator\[]** postfix expression that takes the arguments both in the UTF8 or Unicode formats:
+2. use the `operator[]` postfix expression that takes the arguments both in the UTF8 or Unicode formats:
 
    ```cpp
    CDocBuilderValue operator[](const char* name);

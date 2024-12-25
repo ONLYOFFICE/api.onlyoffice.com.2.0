@@ -2,7 +2,7 @@
 //
 // hast-util-is-element: https://github.com/syntax-tree/hast-util-is-element/
 
-import type * as E from "@onlyoffice/hastscript/elements.ts"
+import type * as E from "@onlyoffice/hastscript/elements.js"
 import {type Element} from "hast"
 
 export function isAElement(u: unknown): u is E.AElement {

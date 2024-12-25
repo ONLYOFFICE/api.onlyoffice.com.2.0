@@ -9,6 +9,11 @@ class Cart {
 
   /**
    * Adds an item to the cart.
+   *
+   * ## Try It
+   *
+   * var item = addItem(0, 10);
+   *
    * @summary Puts a certain amount of an item in the cart.
    * @param {string} itemId - The ID of the item to add.
    * @param {number} quantity - How many of the item to add.
@@ -54,6 +59,11 @@ class Account {
 
   /**
    * Adds money to the account.
+   *
+   * ## Try It
+   *
+   * var result = deposit("0000-0000-0000-0000", 100);
+   *
    * @summary Deposits an amount into the account.
    * @param {string} accountId - The ID of the account to deposit to.
    * @param {number} depositAmount - How much to deposit.

@@ -1,8 +1,16 @@
-`boolean isDouble();`
+```yml signature
+- {type: type, text: boolean}
+- {type: text, text: " "}
+- {type: entity, text: isDouble}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is a double value.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.isDouble* method is not used.
+Returns true if the `CDocBuilderValue` object is a double value.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.isDouble` method is not used.
 
 ## Example
 

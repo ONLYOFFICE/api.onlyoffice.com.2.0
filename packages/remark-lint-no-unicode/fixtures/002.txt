@@ -1,0 +1,14 @@
+ignores forbidden characters in inline code and fenced code blocks
+
+---
+
+`abcd`
+
+```
+abcd
+```
+
+---
+
+
+---

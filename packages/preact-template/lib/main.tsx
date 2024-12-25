@@ -1,5 +1,5 @@
 import * as Elements from "@onlyoffice/preact-elements"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 import {renderToString} from "preact-render-to-string"
 
 export interface TemplateProperties extends Elements.TemplateProperties {

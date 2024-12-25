@@ -1,10 +1,10 @@
-import {DocumentEditor, type DocumentEditorAttributes} from "@onlyoffice/document-editor-html-element"
+import {DocumentEditor, type DocumentEditorAttributeMap} from "@onlyoffice/document-editor-html-element"
 import {type DocEditorConnector} from "@onlyoffice/document-server-types"
 import {DocumentBuilderErrorEvent, DocumentBuilderReadyEvent} from "./events.ts"
 
 export type DocumentBuilderAttribute = Exclude<keyof DocumentBuilderAttributes, undefined>
 
-export interface DocumentBuilderAttributes extends DocumentEditorAttributes {
+export interface DocumentBuilderAttributes extends DocumentEditorAttributeMap {
   command?: string
 }
 
@@ -13,7 +13,7 @@ interface DocumentBuilderCommandListener extends EventListener {
 }
 
 // @ts-ignore TS2417
-// Since `DocumentBuilderAttribute` is a subset of `DocumentEditorAttributes`
+// Since `DocumentBuilderAttribute` is a subset of `DocumentEditorAttributeMap`
 // the TypeScript error is not a cause for concern.
 export class DocumentBuilder extends DocumentEditor {
   static get tagName(): string {
@@ -76,6 +76,11 @@ export class DocumentBuilder extends DocumentEditor {
 
   get connector(): DocEditorConnector | null {
     return this.#connector
+  }
+
+  constructor() {
+    super()
+    this.eventList.add("documenteditordocumentready")
   }
 
   connectedCallback(): void {

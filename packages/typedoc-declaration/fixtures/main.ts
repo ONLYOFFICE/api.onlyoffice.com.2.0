@@ -1,0 +1,4 @@
+/**
+ * @hideconstructor
+ */
+class C {}

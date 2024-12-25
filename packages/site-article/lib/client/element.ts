@@ -1,5 +1,5 @@
 import {calc} from "@onlyoffice/css-calc"
-import {type TocContainer} from "@onlyoffice/site-toc/client.ts"
+import {type TocContainer} from "@onlyoffice/site-toc/client.js"
 
 export class ArticleContainer extends HTMLElement {
   static get tagName(): string {

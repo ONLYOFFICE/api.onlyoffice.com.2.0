@@ -26,7 +26,7 @@ Example: "classic"
 
 ## theme-type
 
-The theme type of the plugin icons. It can have the *light* or *dark* values.
+The theme type of the plugin icons. It can have the *light* or *dark* values.
 
 Type: string
 

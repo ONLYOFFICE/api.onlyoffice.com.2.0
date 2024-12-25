@@ -1,4 +1,3 @@
 ---
 layout: status
-eleventyExcludeFromCollections: true
 ---

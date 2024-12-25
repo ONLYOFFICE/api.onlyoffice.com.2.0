@@ -1,6 +1,6 @@
 import {type Declaration, type Type} from "@onlyoffice/library-declaration"
 import {type Signature} from "@onlyoffice/signature"
-import {normalize} from "@onlyoffice/signature/utils.ts"
+import {normalize} from "@onlyoffice/signature/utils.js"
 import * as description from "./internal/description.ts"
 import * as summary from "./internal/summary.ts"
 

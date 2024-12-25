@@ -1,0 +1,23 @@
+{
+  "name": "@onlyoffice/community-server-hosted-solutions-resource",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./*": "./dist/*"
+  },
+  "scripts": {
+    "build": "tsx lib/main.ts",
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/service-declaration": "workspace:^",
+    "@types/node": "20.12.12"
+  },
+  "devDependencies": {
+    "@onlyoffice/console": "workspace:^",
+    "@onlyoffice/openapi-resource": "workspace:^",
+    "tsx": "4.16.5",
+    "typescript": "5.7.2"
+  }
+}

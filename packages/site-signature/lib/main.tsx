@@ -2,7 +2,7 @@ import * as Elements from "@onlyoffice/preact-elements"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
 import type * as Sig from "@onlyoffice/signature"
 import {clsx} from "clsx"
-import {Fragment, type JSX, createContext, h} from "preact"
+import {type JSX, createContext} from "preact"
 import {useContext} from "preact/hooks"
 
 class Context {

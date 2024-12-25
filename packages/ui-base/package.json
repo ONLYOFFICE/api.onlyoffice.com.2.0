@@ -3,6 +3,6 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./main.css": "./dist/main.css"
+    "./main.css": "./lib/main.css"
   }
 }

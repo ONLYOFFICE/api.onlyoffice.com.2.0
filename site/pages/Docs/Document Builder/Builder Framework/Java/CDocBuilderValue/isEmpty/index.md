@@ -1,8 +1,16 @@
-`boolean isEmpty();`
+```yml signature
+- {type: type, text: boolean}
+- {type: text, text: " "}
+- {type: entity, text: isEmpty}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is empty.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.isEmpty* method is not used.
+Returns true if the `CDocBuilderValue` object is empty.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.isEmpty` method is not used.
 
 ## Example
 

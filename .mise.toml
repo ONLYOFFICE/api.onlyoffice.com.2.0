@@ -1,8 +1,0 @@
-[tools]
-node = "prefix:21"
-pnpm = "prefix:9"
-
-# The tools listed below are used in the project.
-# However, you probably installed them globally.
-# docker-desktop = "prefix:4"
-# jq = "prefix:1" # GNU

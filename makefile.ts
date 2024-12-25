@@ -12,16 +12,6 @@ interface PackageJson {
 
 function main(): void {
   sade("makefile.ts")
-    .command("clean")
-    .describe("Recursively run 'pnpm clean' on all packages")
-    .action(async (p: {_: string[]}) => {
-      if (p._.length === 0) {
-        p._ = await readdir("packages")
-      }
-      for (const n of p._) {
-        await run(n, "clean")
-      }
-    })
     .command("build")
     .describe("Recursively run 'pnpm build' on all packages")
     .action(async (p: {_: string[]}) => {
@@ -65,6 +55,7 @@ function main(): void {
           n === "node-path" ||
           n === "preact-elements" ||
           n === "preact-slots" ||
+          n === "preact-suspense" ||
           n === "preact-template" ||
           n === "rehype-clean" ||
           n === "remark-config" ||

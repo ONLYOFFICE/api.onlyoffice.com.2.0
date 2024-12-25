@@ -1,14 +1,33 @@
-`HRESULT ToBool([out, retval] VARIANT_BOOL* result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: ToBool}
+- {type: text, text: (}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {type: type, text: VARIANT_BOOL*}
+- {type: text, text: )}
+```
 
-Converts the **CDocBuilderValue** object to a boolean value.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.ToBool* method is not used.
+Converts the `CDocBuilderValue` object to a boolean value.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.ToBool` method is not used.
 
 ## Parameters
 
-| Name     | Type            | Description                 |
-| -------- | --------------- | --------------------------- |
-| *result* | VARIANT\_BOOL\* | The returned boolean value. |
+<parameters>
+
+- result
+
+  ```yml signature.variant="inline"
+  - {type: type, text: VARIANT_BOOL*}
+  ```
+
+  - : The returned boolean value.
+
+</parameters>
 
 ## Example
 

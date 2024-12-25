@@ -218,7 +218,7 @@ This class has the following parameters:
 
 ## Example
 
-Let’s have a look at how to add interface elements in the ONLYOFFICE style to the YouTube plugin.
+Let's have a look at how to add interface elements in the ONLYOFFICE style to the YouTube plugin.
 
 ![YouTube plugin](/assets/images/plugins/youtube_interface.png)
 

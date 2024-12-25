@@ -4,6 +4,7 @@ import {type Resource, nop} from "@onlyoffice/service-resource"
 
 const require = createRequire(import.meta.url)
 
+export const apisystem = or("apisystem")
 export const data = or("data")
 export const files = op("files")
 export const people = op("people")
@@ -16,14 +17,14 @@ function or(n: string): Resource {
 
 function file(n: string): string {
   if (isBuild()) {
-    return `@onlyoffice/docspace-resource/${n}.ts`
+    return `@onlyoffice/docspace-resource/${n}.js`
   }
-  return "@onlyoffice/openapi-resource-fixtures/resource.ts"
+  return "@onlyoffice/openapi-resource-fixtures/resource.js"
 }
 
 function op(n: string): Resource {
   if (isBuild()) {
-    return require(`@onlyoffice/docspace-resource/${n}.ts`)
+    return require(`@onlyoffice/docspace-resource/${n}.js`)
   }
   return nop()
 }

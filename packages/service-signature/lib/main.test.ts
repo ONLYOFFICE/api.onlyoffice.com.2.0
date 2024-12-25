@@ -19,7 +19,7 @@ import {
   type Token,
   TypeToken,
 } from "@onlyoffice/signature"
-import {normalize} from "@onlyoffice/signature/utils.ts"
+import {normalize} from "@onlyoffice/signature/utils.js"
 import {test} from "uvu"
 import {equal as eq} from "uvu/assert"
 import {

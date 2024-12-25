@@ -1,4 +1,3 @@
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {
   PartChapter,
   PartChapters,
@@ -11,6 +10,7 @@ import {type JSX, h} from "preact"
 import {Help} from "./help.tsx"
 import {Icon} from "./icon.tsx"
 import {Link} from "./link.tsx"
+import {Sitemap} from "./sitemap.ts"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -51,24 +51,13 @@ export class PartDatum implements PartData {
 }
 
 export interface PartParameters {
-  current: string
+  sitemapUrl: string
 }
 
 export function Part(p: PartParameters): JSX.Element {
   const s = Sitemap.shared
-
-  const e = s.find(p.current, "url")
-  if (!e) {
-    throw new Error(`Entity not found: ${p.current}`)
-  }
-  if (e.type !== "page") {
-    throw new Error(`Entity is not a page: ${p.current}`)
-  }
-
-  const d = e.data.part
-  if (!d) {
-    throw new Error(`Part data not found: ${e.id} (${e.url})`)
-  }
+  const e = s.findPageByUrl(p.sitemapUrl)
+  const d = e.part
 
   return <SPart>
     <PartHero>
@@ -78,30 +67,20 @@ export function Part(p: PartParameters): JSX.Element {
     <PartChapters>
       <SrOnly><h2>Chapters</h2></SrOnly>
       {e.children.map((id) => {
-        const e = s.find(id, "id")
-        if (!e) {
-          throw new Error(`Entity not found: ${id}`)
-        }
-        if (e.type !== "page") {
-          throw new Error(`Entity is not a page: ${id}`)
-        }
-
-        const m = e.data.menubar
-        if (!m) {
-          throw new Error(`Menubar data not found: ${id}`)
-        }
+        const e = s.findPageById(id)
+        const d = e.menubar
 
         return <PartChapter>
-          <Icon src="rich32" name={m.icon} height={32} width={32} />
-          <Icon src="rich48" name={m.icon} height={48} width={48} />
-          <Icon src="rich64" name={m.icon} height={64} width={64} />
-          <h3><Link href={m.path}>{m.title}</Link></h3>
-          <p>{e.data.summary}</p>
+          <Icon src="rich32" name={d.icon} height={32} width={32} />
+          <Icon src="rich48" name={d.icon} height={48} width={48} />
+          <Icon src="rich64" name={d.icon} height={64} width={64} />
+          <h3><Link href={d.path}>{d.title}</Link></h3>
+          <p>{e.summary}</p>
         </PartChapter>
       })}
     </PartChapters>
     <PartHelp>
-      <Help current={p.current} />
+      <Help sitemapUrl={p.sitemapUrl} />
     </PartHelp>
   </SPart>
 }

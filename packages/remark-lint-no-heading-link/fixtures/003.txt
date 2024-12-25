@@ -1,0 +1,10 @@
+sends a message if a document contains a heading with multiple links
+
+---
+
+# a, [b](https://www.onlyoffice.com/), c, [d](https://www.onlyoffice.com/)
+
+---
+
+1:6-1:38: A heading with a link is not permitted.
+1:43-1:75: A heading with a link is not permitted.

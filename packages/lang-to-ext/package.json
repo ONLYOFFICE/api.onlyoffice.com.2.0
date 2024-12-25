@@ -1,0 +1,18 @@
+{
+  "name": "@onlyoffice/lang-to-ext",
+  "type": "module",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
+    "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
+    "test": "pnpm test:types && pnpm test:unit"
+  },
+  "devDependencies": {
+    "c8": "9.1.0",
+    "tsx": "4.16.5",
+    "typescript": "5.7.2",
+    "uvu": "0.5.6"
+  }
+}

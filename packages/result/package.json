@@ -1,0 +1,13 @@
+{
+  "name": "@onlyoffice/result",
+  "type": "module",
+  "private": true,
+  "types": "index.d.ts",
+  "scripts": {
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "typescript": "5.7.2"
+  }
+}

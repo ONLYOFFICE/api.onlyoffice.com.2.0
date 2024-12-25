@@ -30,9 +30,9 @@ All ready-to-use plugins are available in the [ONLYOFFICE App Directory](https:/
 
 More plugin samples are listed [on GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins). Feel free to fork them and use them as examples to create your own plugin.
 
-## I packed the plugin folder to the archive, changed its extension to *.plugin* and added it to the editors. But it doesn’t work. What should I do?
+## I packed the plugin folder to the archive, changed its extension to *.plugin* and added it to the editors. But it doesn't work. What should I do?
 
-Please make sure that your plugin archive **doesn’t** look the following way:
+Please make sure that your plugin archive **doesn't** look the following way:
 
 ![Plugin archive](/assets/images/plugins/plugin_archive.png)
 

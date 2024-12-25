@@ -2,19 +2,18 @@
   "name": "@onlyoffice/hast-util-eleventy-img",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
     "@11ty/eleventy-img": "4.0.2",
     "@types/11ty__eleventy-img": "4.0.0",
-    "@types/hast": "3.0.4",
-    "typescript": "5.4.5"
+    "@types/hast": "3.0.4"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

@@ -66,7 +66,7 @@ There are three ways for the desktop app to be recognized:
 
 ## How to open new windows in the desktop editors?
 
-You can’t open new windows in the desktop editors because it is blocked (for example, for *OAuth*).
+You can't open new windows in the desktop editors because it is blocked (for example, for *OAuth*).
 
 To open the document in a new window / tab correctly, you need to use the `window.open("http://url.to.document")` JavaScript command or the *open:document* command of the **execCommand** method. The details on how to open documents in the desktop editors can be found [in this section](../../Usage%20API/Adding%20a%20DMS%20provider/Opening%20documents/index.md).
 

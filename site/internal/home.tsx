@@ -1,4 +1,3 @@
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import {
   HomeHero,
   HomeIn,
@@ -18,6 +17,7 @@ import {type JSX, h} from "preact"
 import {Icon} from "./icon.tsx"
 import {Image} from "./image.tsx"
 import {Link} from "./link.tsx"
+import {Sitemap} from "./sitemap.ts"
 import {SyntaxHighlight} from "./syntax-highlight.tsx"
 
 declare module "@onlyoffice/eleventy-types" {
@@ -92,14 +92,7 @@ export class HomeDatum implements HomeData {
 
 export function Home(): JSX.Element {
   const s = Sitemap.shared
-
-  const e = s.find("/", "url")
-  if (!e) {
-    throw new Error("Root entity not found")
-  }
-  if (e.type !== "page") {
-    throw new Error("Root entity is not a page")
-  }
+  const e = s.root
 
   return <SHome>
     <HomeHero>
@@ -111,18 +104,14 @@ export function Home(): JSX.Element {
       </SearchContainer>
     </HomeHero>
     {e.children.map((id, i) => {
-      const e = s.find(id, "id")
-      if (!e) {
-        throw new Error(`Entity not found: ${id}`)
-      }
-      if (e.type !== "page") {
-        throw new Error(`Entity is not a page: ${id}`)
+      const e = s.findPageById(id)
+
+      // todo: temporary
+      if (e.canonicalUrl === "/404/") {
+        return null
       }
 
-      const d = e.data.home
-      if (!d) {
-        throw new Error(`Home data not found: ${id}`)
-      }
+      const d = e.home
 
       let v: HomePartParameters["variant"] = "default"
       if (i % 2 !== 0) {
@@ -131,33 +120,23 @@ export function Home(): JSX.Element {
 
       return <HomePart variant={v}>
         <HomeIn>
-          <h2><a href={e.url}>{d.title}</a></h2>
+          <h2><a href={e.canonicalUrl}>{d.title}</a></h2>
           <p>{d.description}</p>
-          <a href={e.url}>More</a>
+          <a href={e.canonicalUrl}>More</a>
         </HomeIn>
         <HomeLinks>
           {e.children.map((id) => {
-            const e = s.find(id, "id")
-            if (!e) {
-              throw new Error(`Entity not found: ${id}`)
-            }
-            if (e.type !== "page") {
-              throw new Error(`Entity is not a page: ${id}`)
-            }
-
-            const m = e.data.menubar
-            if (!m) {
-              throw new Error(`Menubar data not found: ${id}`)
-            }
+            const e = s.findPageById(id)
+            const d = e.menubar
 
             return <HomeLink>
-              <Icon src="rich32" name={m.icon} height={32} width={32} />
-              <Link href={m.path}>{m.title}</Link>
+              <Icon src="rich32" name={d.icon} height={32} width={32} />
+              <Link href={d.path}>{d.title}</Link>
             </HomeLink>
           })}
         </HomeLinks>
         <HomePreview>
-          <a href={e.url} title={d.title} />
+          <a href={e.canonicalUrl} title={d.title} />
           <Image alt={d.image.alt} src={d.image.src} />
           <CodePreview>
             <pre><code><SyntaxHighlight syntax={d.sample.syntax}>

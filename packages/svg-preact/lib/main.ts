@@ -3,25 +3,18 @@ import transformJsx from "@babel/plugin-transform-react-jsx"
 import {optimize} from "svgo"
 
 /**
- * Converts an SVG file to a JSX component.
- *
+ * Converts an SVG file to a JavaScript file.
  * @param n The name of the SVG component.
  * @param c The content of the SVG file.
- *
- * @returns The content of the JSX file.
- *
+ * @returns The content of the JavaScript file.
  * @throws An error if the name of the SVG component is missing.
- * @throws An error if the content of the SVG file is missing.
  */
-export async function toJsxFile(n: string, c: string): Promise<string> {
+export async function toJsFile(n: string, c: string): Promise<string> {
   if (!n) {
     throw new Error("The name of the SVG component is required")
   }
-  if (!c) {
-    throw new Error("The content of the SVG file is required")
-  }
 
-  const s = optimize(c, {
+  const o = optimize(c, {
     plugins: [
       "removeDimensions",
       "sortAttrs",
@@ -36,26 +29,53 @@ export async function toJsxFile(n: string, c: string): Promise<string> {
     ],
   })
 
-  c = `export function ${n}({title, titleId, desc, descId, ...props}) {
-return ${s.data.replace(">", "aria-labelledby={titleId} aria-describedby={descId} {...props}>{desc ? <desc id={descId}>{desc}</desc> : null}{title ? <title id={titleId}>{title}</title> : null}")}
-}`
+  const e = `export function ${n}({title, titleId, desc, descId, ...props}) {
+    return ${o.data.replace(">", "aria-labelledby={titleId} aria-describedby={descId} {...props}>{desc ? <desc id={descId}>{desc}</desc> : null}{title ? <title id={titleId}>{title}</title> : null}")}
+  }`
 
-  const b = await transformAsync(c, {
+  const t = await transformAsync(e, {
     plugins: [[transformJsx, {
       pragma: "h",
       pragmaFrag: "Fragment",
       useBuiltIns: true,
     }]],
   })
-  if (!b || !b.code) {
-    throw new Error("Failed to transform")
+
+  if (!t || !t.code) {
+    throw new Error("The transformation failed")
   }
 
-  c = `import {type JSX, h} from "preact";\n\n${b.code
-    .replace("}) {", "}: JSX.SVGAttributes<SVGSVGElement> & {title?: string, titleId?: string, desc?: string, descId?: string}): JSX.Element {")
-    .replace('return h("svg", Object.assign({', '// @ts-ignore i have no idea how to fix this properly\n  return h("svg", Object.assign({')
-    .replace(`const ${n}`, `export const ${n}`)
-    .replace(`export default ${n};`, "")}\n`
+  const f = `import {h} from "preact";
 
-  return c
+${t.code}
+`
+
+  return f
+}
+
+/**
+ * Converts an SVG file to a TypeScript Declaration file.
+ * @param n The name of the SVG component.
+ * @param c The content of the SVG file.
+ * @returns The content of the TypeScript Declaration file.
+ * @throws An error if the name of the SVG component is missing.
+ */
+export function toTdsFile(n: string): string {
+  if (!n) {
+    throw new Error("The name of the SVG component is required")
+  }
+
+  const f = `import {type JSX} from "preact";
+
+export interface ${n}Properties extends JSX.SVGAttributes<SVGSVGElement> {
+  title?: string;
+  titleId?: string;
+  desc?: string;
+  descId?: string;
+}
+
+export declare function ${n}(p: ${n}Properties): JSX.Element;
+`
+
+  return f
 }

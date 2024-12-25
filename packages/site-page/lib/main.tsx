@@ -1,7 +1,7 @@
 import * as Elements from "@onlyoffice/preact-elements"
-import {SidebarIcon} from "@onlyoffice/ui-icons/poor/24.tsx"
+import {SidebarIcon} from "@onlyoffice/ui-icons/poor/24.js"
 import {clsx} from "clsx"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export function Page(p: Elements.DivProperties): JSX.Element {
   const {...o} = p

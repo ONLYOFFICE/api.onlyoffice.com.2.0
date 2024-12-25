@@ -1,5 +1,5 @@
 ---
-order: -1
+order: -2
 ---
 
 The reference figure and the steps below explain the process of setting the avatars for the users in ONLYOFFICE Docs.

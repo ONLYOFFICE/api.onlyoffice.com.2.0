@@ -6,8 +6,6 @@ Gets the list of content controls tags.
 
 **Supported editors:** documents.
 
-![WorkWithContentControlsTags](/assets/images/plugins/gifs/work-with-content-controls-tags.gif)
-
 ## Installation
 
 Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_work_with_content_controls_tags) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

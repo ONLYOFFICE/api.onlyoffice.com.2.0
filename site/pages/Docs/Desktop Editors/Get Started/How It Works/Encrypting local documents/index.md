@@ -14,7 +14,7 @@ To build the **Encryption** plugin, you need to create three files:
 
 More information about the plugin structure can be found [here](../../../../Plugin%20and%20Macros/Structure/Manifest/index.md).
 
-Let’s have a look at the config:
+Let's have a look at the config:
 
 ``` json
 {
@@ -84,15 +84,14 @@ As we can see from the code above, all files will be encrypted with one password
 
 ## Step 2. Creating the UI plugin for the app
 
-The **Encryption** plugin has no interface and can’t run by default. It works only within a document where it is opened (in one tab of the app). To work with all the documents opened or created in different tabs of the ONLYOFFICE desktop, the **UI** plugin for the app should be created. It helps to use the **Encryption** plugin when necessary for the whole app.
+The **Encryption** plugin has no interface and can't run by default. It works only within a document where it is opened (in one tab of the app). To work with all the documents opened or created in different tabs of the ONLYOFFICE desktop, the **UI** plugin for the app should be created. It helps to use the **Encryption** plugin when necessary for the whole app.
 
-This plugin can’t access the editing features but has almost the same config:
+This plugin can't access the editing features but has almost the same config:
 
 ``` json
 {
   "name": "Encryption",
-  "nameLocale": { 
-    "ru": "Шифрование",
+  "nameLocale": {
     "it": "Crittografia",
     "fr": "Chiffrement",
     "es": "Encriptación",

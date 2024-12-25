@@ -2,10 +2,10 @@
   "name": "@onlyoffice/rehype-description-list",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf coverage node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
     "test": "pnpm test:types && pnpm test:unit"
   },
@@ -14,7 +14,6 @@
     "@onlyoffice/hast-util-is-text": "workspace:^",
     "@types/hast": "3.0.4",
     "hastscript": "8.0.0",
-    "typescript": "5.4.5",
     "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
@@ -22,8 +21,8 @@
     "c8": "9.1.0",
     "rehype-parse": "9.0.0",
     "rehype-stringify": "10.0.0",
-    "rimraf": "6.0.1",
     "tsx": "4.16.5",
+    "typescript": "5.7.2",
     "unified": "11.0.5",
     "uvu": "0.5.6"
   }

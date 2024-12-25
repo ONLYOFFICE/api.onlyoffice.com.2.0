@@ -1,15 +1,45 @@
-`HRESULT CreateArray([in] long length, [out, retval] I_DOCBUILDER_VALUE** result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: CreateArray}
+- {type: text, text: (}
+- {type: parameter, text: length}
+- {type: text, text: ": [in] "}
+- {type: type, text: long}
+- {type: text, text: ", "}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
 
-Creates an array value, an analogue of *new Array (length)* in JS.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateArray* method is not used.
+Creates an array value, an analogue of `new Array (length)` in JS.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.CreateArray` method is not used.
 
 ## Parameters
 
-| Name     | Type                     | Description         |
-| -------- | ------------------------ | ------------------- |
-| *length* | long                     | The array length.   |
-| *result* | I\_DOCBUILDER\_VALUE\*\* | The returned array. |
+<parameters>
+
+- length
+
+  ```yml signature.variant="inline"
+  - {type: type, text: long}
+  ```
+
+  - : The array length.
+
+- result
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The returned array.
+
+</parameters>
 
 ## Example
 

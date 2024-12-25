@@ -11,7 +11,7 @@ This documentation describes:
 - How to [build](../../Structure/Manifest/index.md), [localize](../../Structure/Localization/index.md), run, [test](../../Tutorials/Developing/index.md) and [publish](../../Tutorials/Publishing/index.md) a plugin
 - How to customize plugins: create [context menu items](../../Customization/Context%20menu/index.md), [toolbar buttons](../../Customization/Toolbar/index.md), [windows and panels](../../Customization/Windows%20and%20panels/index.md), [input helpers](../../Customization/Input%20helper/index.md), process [buttons](../../Customization/Buttons/index.md)
 - How to [write](../../Macros/Writing%20macros/index.md), [debug](../../Macros/Debugging/index.md) and run a macro, add a custom function, or [convert](../../Macros/Converting%20VBA%20macros/index.md) VBA macros to use in ONLYOFFICE
-- How to [interact with the editors](../../Interacting%20with%20editors/index.md), use ONLYOFFICE [methods](../../Interacting%20with%20editors/Methods/index.md) and [events](../../Interacting%20with%20editors/Events/index.md)
+- How to [interact with the editors](../../Interacting%20with%20editors/index.md), use ONLYOFFICE [methods](../../Interacting%20with%20editors/Methods/index.md) and events
 - Where to find guides and [plugin](../../Tutorials/Samples/index.md)/[macro](../../Macros/Samples/index.md) code samples to get started
 
 ## What plugins can do
@@ -20,7 +20,7 @@ Here are some examples of what you can do with ONLYOFFICE plugins:
 
 - connect third-party services, like [Telegram](../../Tutorials/Samples/Telegram/index.md), [YouTube](../../Tutorials/Samples/YouTube/index.md), [Thesaurus](../../Tutorials/Samples/Thesaurus/index.md), [Translator](../../Tutorials/Samples/Translator/index.md), [Zotero](../../Tutorials/Samples/Zotero/index.md), [OCR](../../Tutorials/Samples/OCR/index.md), etc.;
 - add custom components & controls in the UI, like **Trackchanges**, **Trackchanges\_off**;
-- enhance the existing user experience and the editors’ functionality: [Autocomplete](../../Tutorials/Samples/Autocomplete/index.md), [Search & Replace](../../Tutorials/Samples/Search%20and%20replace/index.md), [Move cursor](../../Tutorials/Samples/Move%20cursor/index.md), [Extended comments](../../Tutorials/Samples/Extended%20comments/index.md);
+- enhance the existing user experience and the editors functionality: [Autocomplete](../../Tutorials/Samples/Autocomplete/index.md), [Search & Replace](../../Tutorials/Samples/Search%20and%20replace/index.md), [Move cursor](../../Tutorials/Samples/Move%20cursor/index.md), [Extended comments](../../Tutorials/Samples/Extended%20comments/index.md);
 - automate tasks in documents with [Macros](../../Macros/Getting%20started/index.md).
 
 Code samples are available at <https://github.com/ONLYOFFICE/sdkjs-plugins>.

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "${configDir}/lib",
+    "declaration": true,
+    "noEmit": false,
+    "outDir": "${configDir}/dist",
+    "sourceMap": true
+  },
+  "include": ["${configDir}/lib", "${configDir}/*.d.ts"],
+  "exclude": ["${configDir}/**/*.test.*"]
+}

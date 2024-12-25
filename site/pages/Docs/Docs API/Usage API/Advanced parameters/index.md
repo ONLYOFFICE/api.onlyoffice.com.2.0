@@ -68,7 +68,6 @@ const config = {
     referenceData: {
       fileKey: "BCFA2CED",
       instanceId: "https://example.com",
-      key: "Khirz6zTPdfd7",
     },
     title: "Example Document Title.docx",
     url: "https://example.com/url-to-example-document.docx",

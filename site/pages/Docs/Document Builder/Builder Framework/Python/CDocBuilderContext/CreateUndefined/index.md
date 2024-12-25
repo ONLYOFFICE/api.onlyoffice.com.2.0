@@ -1,8 +1,17 @@
-`def CreateUndefined(self);`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: CreateUndefined}
+- {type: text, text: (}
+- {type: parameter, text: self}
+- {type: text, text: )}
+```
 
-Creates an undefined value, an analogue of *undefined* in JS.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateUndefined* method is not used.
+Creates an undefined value, an analogue of `undefined` in JS.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.CreateUndefined` method is not used.
 
 ## Example
 

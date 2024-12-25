@@ -1,0 +1,10 @@
+ignores a document that does not contain forbidden characters
+
+---
+
+abc
+
+---
+
+
+---
