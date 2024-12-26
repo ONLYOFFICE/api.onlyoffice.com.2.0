@@ -183,7 +183,7 @@ interface TopicProperties {
 }
 
 function Topic(p: TopicProperties): JSX.Element {
-  const {onRetrieve} = useContext(ctx)
+  const {Description, onRetrieve} = useContext(ctx)
 
   const e = onRetrieve(p.id)
   if (e.type !== "group") {
@@ -192,6 +192,7 @@ function Topic(p: TopicProperties): JSX.Element {
 
   return <>
     <Heading for={e.group.name} />
+    {e.group.description && <Description>{e.group.description}</Description>}
     <SiteGlossary.Glossary>
       {e.children.map((id) => <TopicItem id={id} />)}
     </SiteGlossary.Glossary>
