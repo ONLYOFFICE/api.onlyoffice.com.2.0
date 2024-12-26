@@ -1,3 +1,9 @@
+/* Integration with @onlyoffice/site-glossary */
+
+.content .glossary {
+  margin-block-start: var(--base-size-24);
+}
+
 /* Integration with @onlyoffice/site-signature */
 
 .content .signature {
