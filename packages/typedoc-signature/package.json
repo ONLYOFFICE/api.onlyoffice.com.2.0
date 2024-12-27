@@ -1,5 +1,5 @@
 {
-  "name": "@onlyoffice/typedoc-declaration",
+  "name": "@onlyoffice/typedoc-signature",
   "type": "module",
   "private": true,
   "exports": {
@@ -17,13 +17,14 @@
     "@onlyoffice/console": "workspace:^",
     "@onlyoffice/library-declaration": "workspace:^",
     "@onlyoffice/signature": "workspace:^",
-    "@onlyoffice/typedoc-signature": "workspace:^",
+    "@onlyoffice/strings": "workspace:^",
     "@onlyoffice/typedoc-transformer": "workspace:^",
     "@onlyoffice/typedoc-transport": "workspace:^",
+    "@onlyoffice/typedoc-util-is-reflection": "workspace:^",
+    "@onlyoffice/typedoc-util-is-type": "workspace:^",
     "typedoc": "0.26.11"
   },
   "devDependencies": {
-    "@types/node": "20.12.12",
     "c8": "9.1.0",
     "tsx": "4.16.5",
     "typescript": "5.7.2",

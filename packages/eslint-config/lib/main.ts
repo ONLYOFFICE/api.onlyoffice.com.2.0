@@ -487,7 +487,6 @@ const c: Config = [
       "unicorn/new-for-builtins": e,
       "unicorn/no-anonymous-default-export": e,
       "unicorn/no-array-for-each": e,
-      "unicorn/no-array-push-push": e,
       "unicorn/no-array-reduce": e,
       "unicorn/no-await-expression-member": e,
       "unicorn/no-await-in-promise-methods": e,
