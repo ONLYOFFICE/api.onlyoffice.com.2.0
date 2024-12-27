@@ -12,7 +12,6 @@ import remarkLintBlockquoteIndentation from "remark-lint-blockquote-indentation"
 import remarkLintCheckboxCharacterStyle from "remark-lint-checkbox-character-style"
 import remarkLintCheckboxContentIndent from "remark-lint-checkbox-content-indent"
 import remarkLintCodeBlockStyle from "remark-lint-code-block-style"
-import remarkLintDefinitionCase from "remark-lint-definition-case"
 import remarkLintDefinitionSpacing from "remark-lint-definition-spacing"
 import remarkLintEmphasisMarker from "remark-lint-emphasis-marker"
 import remarkLintFencedCodeFlag from "remark-lint-fenced-code-flag"
@@ -45,7 +44,6 @@ import remarkLintNoMissingBlankLines from "remark-lint-no-missing-blank-lines"
 import remarkLintNoParagraphContentIndent from "remark-lint-no-paragraph-content-indent"
 import remarkLintNoReferenceLikeUrl from "remark-lint-no-reference-like-url"
 import remarkLintNoShortcutReferenceImage from "remark-lint-no-shortcut-reference-image"
-import remarkLintNoShortcutReferenceLink from "remark-lint-no-shortcut-reference-link"
 import remarkLintNoTableIndentation from "remark-lint-no-table-indentation"
 import remarkLintNoTabs from "remark-lint-no-tabs"
 import remarkLintNoUndefinedReferences from "remark-lint-no-undefined-references"
@@ -78,7 +76,6 @@ export function remarkConfig(): Preset {
       [remarkLintCheckboxCharacterStyle, {checked: "x", unchecked: " "}],
       remarkLintCheckboxContentIndent,
       [remarkLintCodeBlockStyle, "fenced"],
-      remarkLintDefinitionCase,
       remarkLintDefinitionSpacing,
       [remarkLintEmphasisMarker, "*"],
       remarkLintEslint,
@@ -96,6 +93,7 @@ export function remarkConfig(): Preset {
           "ini",
           "java",
           "json",
+          "jsonc",
           "json5",
           "kt",         // kotlin,
           "php",
@@ -143,7 +141,6 @@ export function remarkConfig(): Preset {
       remarkLintNoParagraphContentIndent,
       remarkLintNoReferenceLikeUrl,
       remarkLintNoShortcutReferenceImage,
-      remarkLintNoShortcutReferenceLink,
       remarkLintNoTableIndentation,
       remarkLintNoTabs,
       remarkLintNoThematicBreak,

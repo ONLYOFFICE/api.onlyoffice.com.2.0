@@ -2041,9 +2041,6 @@ importers:
       remark-lint-code-block-style:
         specifier: 4.0.0
         version: 4.0.0
-      remark-lint-definition-case:
-        specifier: 4.0.0
-        version: 4.0.0
       remark-lint-definition-spacing:
         specifier: 4.0.0
         version: 4.0.0
@@ -10179,9 +10176,6 @@ packages:
 
   remark-lint-code-block-style@4.0.0:
     resolution: {integrity: sha512-LKBKMVruEO0tzDnnnqi1TfUcnwY6Mo7cVtZM4E4pKt3KMhtvgU2wD68/MxDOEJd0pmnLrEgIadv74bY0gWhZpg==, tarball: https://registry.npmjs.org/remark-lint-code-block-style/-/remark-lint-code-block-style-4.0.0.tgz}
-
-  remark-lint-definition-case@4.0.0:
-    resolution: {integrity: sha512-XBmMmj8ii0KZUuJf7ZaVXDGp2+DWE02re9qn/6mV23rBpsDmpz7U1lQWRlwFQIE5q5bxIxP5pX7hDeTH0Egy9Q==, tarball: https://registry.npmjs.org/remark-lint-definition-case/-/remark-lint-definition-case-4.0.0.tgz}
 
   remark-lint-definition-spacing@4.0.0:
     resolution: {integrity: sha512-t6nP8unz6z/DLBTWeOmDFHPFbX3E2PbNgt2fTazRbVnMC6z3o25hBzg5hI6DL0MPt2ZTRX++rJsGRjb+vgh/tQ==, tarball: https://registry.npmjs.org/remark-lint-definition-spacing/-/remark-lint-definition-spacing-4.0.0.tgz}
@@ -18565,13 +18559,6 @@ snapshots:
       unist-util-position: 5.0.0
       unist-util-visit-parents: 6.0.1
       vfile-message: 4.0.2
-
-  remark-lint-definition-case@4.0.0:
-    dependencies:
-      '@types/mdast': 4.0.3
-      mdast-util-phrasing: 4.1.0
-      unified-lint-rule: 3.0.0
-      unist-util-visit-parents: 6.0.1
 
   remark-lint-definition-spacing@4.0.0:
     dependencies:
