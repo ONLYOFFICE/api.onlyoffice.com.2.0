@@ -172,3 +172,76 @@ function defaultPath(p: Page): string {
   const c = posix.dirname(p.filePathStem)
   return posix.join(c, b)
 }
+
+export class Pather {
+  /**
+   * The index where the key is a path and the value is a unique identifier.
+   */
+  #x = new Map<string, number>()
+
+  /**
+   * The index where the key is a path, and the value is a number of duplicates.
+   */
+  #y = new Map<string, number>()
+
+  /**
+   * @param a A list of path segments.
+   * @param b A corresponding list of unique identifiers.
+   * @returns A unique path.
+   */
+  pathify(a: string[], b: number[]): string {
+    const a0: string[] = []
+
+    for (let s of a) {
+      s = s.replaceAll("/", " ")
+      a0.push(s)
+    }
+
+    const b0 = [...b]
+
+    for (let i = 0; i < a0.length; i += 1) {
+      const c = a0.slice(0, i + 1)
+      const s = c[c.length - 1]
+
+      let x0 = b0[i]
+      let y0 = 0
+
+      let k = ""
+
+      while (true) {
+        if (y0 !== 0) {
+          c[c.length - 1] = `${s}-${y0}`
+        }
+
+        k = c.join("/")
+
+        const x1 = this.#x.get(k)
+        if (x1 === undefined) {
+          break
+        }
+
+        const y1 = this.#y.get(k)
+        if (y1 === undefined) {
+          break
+        }
+
+        if (x1 === x0) {
+          break
+        }
+
+        x0 = x1
+        y0 = y1 + 1
+      }
+
+      this.#x.set(k, x0)
+      this.#y.set(k, y0)
+
+      a0[i] = c[c.length - 1]
+      b0[i] = x0
+    }
+
+    const p = a0.join("/")
+
+    return p
+  }
+}
