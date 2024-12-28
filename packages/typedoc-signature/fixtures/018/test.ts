@@ -2,7 +2,6 @@ import {DeclarationEntity} from "@onlyoffice/library-declaration/next.js"
 import {
   EntityToken,
   KeywordToken,
-  Reference,
   type Signature,
   TextToken,
   type Token,
@@ -14,7 +13,7 @@ export const collection: DeclarationEntity[] = []
 
 const e0 = new DeclarationEntity()
 let s: Signature = []
-let t: Token | Reference
+let t: Token
 
 e0.id = 2
 
@@ -55,19 +54,5 @@ t.text = "boolean"
 s.push(t)
 
 e0.declaration.signature.verbose.push(...s)
-s = []
-
-t = new TextToken()
-t.text = "  "
-s.push(t)
-
-t = new Reference()
-t.id = "2"
-t.token = new TypeToken()
-t.token.text = "T"
-s.push(t)
-
-e0.declaration.signature.concise.push(...s)
-s = []
 
 collection.push(e0)

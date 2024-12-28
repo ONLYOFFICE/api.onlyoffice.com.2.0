@@ -81,19 +81,5 @@ t.text = "}"
 s.push(t)
 
 e0.declaration.signature.verbose.push(...s)
-s = []
-
-t = new TextToken()
-t.text = "  "
-s.push(t)
-
-t = new Reference()
-t.id = "5"
-t.token = new TypeToken()
-t.token.text = "B"
-s.push(t)
-
-e0.declaration.signature.concise.push(...s)
-s = []
 
 collection.push(e0)

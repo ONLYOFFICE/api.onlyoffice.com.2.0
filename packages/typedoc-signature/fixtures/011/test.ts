@@ -3,7 +3,6 @@ import {
   EntityToken,
   KeywordToken,
   ParameterToken,
-  Reference,
   type Signature,
   TextToken,
   type Token,
@@ -15,7 +14,7 @@ export const collection: DeclarationEntity[] = []
 
 const e0 = new DeclarationEntity()
 let s: Signature = []
-let t: Token | Reference
+let t: Token
 
 e0.id = 2
 
@@ -148,19 +147,5 @@ t.text = "}"
 s.push(t)
 
 e0.declaration.signature.verbose.push(...s)
-s = []
-
-t = new TextToken()
-t.text = "  "
-s.push(t)
-
-t = new Reference()
-t.id = "2"
-t.token = new TypeToken()
-t.token.text = "C"
-s.push(t)
-
-e0.declaration.signature.concise.push(...s)
-s = []
 
 collection.push(e0)
