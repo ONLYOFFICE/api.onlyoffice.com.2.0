@@ -11,15 +11,21 @@ export class Formatter {
     let f = false // has a formatted signature in the child elements
 
     for (const t of s) {
-      if (!(t instanceof Reference || t instanceof NoopToken)) {
-        if (t instanceof NewlineToken || t instanceof IndentToken) {
-          if (t.processed) {
-            f = true
-            break
-          }
-          t.processed = true
+      if (t instanceof NewlineToken || t instanceof IndentToken) {
+        if (t.processed) {
+          f = true
+          break
+        }
+        t.processed = true
+      } else {
+        let ct: Token
+        if (t instanceof Reference) {
+          ct = t.token
         } else {
-          l += t.text.length
+          ct = t
+        }
+        if (!(ct instanceof Reference || ct instanceof NoopToken)) {
+          l += ct.text.length
         }
       }
     }
