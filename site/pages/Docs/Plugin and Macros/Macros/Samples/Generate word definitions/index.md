@@ -6,7 +6,7 @@ order:
 
 Generates word definitions in your document using the [Dictionary API](https://api-ninjas.com/api/dictionary) offered by [API Ninjas](https://api-ninjas.com).
 
-To use this macro, you need to obtain your own API key from API Ninjas.
+> To use this macro, you need to obtain your own API key from API Ninjas.
 
 <!-- This code snippet is shown in the screenshot. -->
 
@@ -38,16 +38,8 @@ To use this macro, you need to obtain your own API key from API Ninjas.
 
 Methods used: GetDocument, GetRangeBySelect, GetText, CreateParagraph, AddText, InsertContent
 
-## Reference Microsoft VBA macro code
-
-<!-- code generated with AI -->
-
-```vb
-
-```
-
 ## Result
 
 <!-- imgpath -->
 
-![Generate word definitons](/assets/images/plugins/generate-word-defintions.png)
+![Generate word definitons](/assets/images/plugins/generate-word-definitions.png)
