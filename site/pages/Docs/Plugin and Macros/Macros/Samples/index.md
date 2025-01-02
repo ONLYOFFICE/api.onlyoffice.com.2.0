@@ -132,9 +132,9 @@ In this example we are adding comments and changing the background colors of sel
 
 ## Import hyperlinks
 
-[More](Import%20hyperlinks/index.md)
-
 In this example we are importing hyperlinks between different worksheets in the spreadsheet.
+
+[More](Import%20hyperlinks/index.md)
 
 ## Support
 
