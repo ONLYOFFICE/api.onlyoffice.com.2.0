@@ -1,4 +1,16 @@
 /**
- * @returns The description <b>should</b> be sanitized and formatted.
+ * The head description <b>should</b> be sanitized and formatted.
+ *
+ * ```ts
+ * // From the head.
+ * ```
+ *
+ * @summary
+ *
+ * The summary description <b>should</b> be sanitized and formatted.
+ *
+ * ```ts
+ * // From the summary.
+ * ```
  */
-function f(): void {}
+const c = 0

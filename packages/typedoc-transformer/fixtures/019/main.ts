@@ -1,12 +1,16 @@
 /**
- * The description <b>should</b> be sanitized and formatted.
+ * The head description <b>should</b> be sanitized and formatted.
+ *
+ * ```ts
+ * // From the head.
+ * ```
  *
  * @remarks
  *
- * The description <b>should</b> be sanitized and formatted.
+ * The remarks description <b>should</b> be sanitized and formatted.
  *
  * ```ts
- * var c = 0;
+ * // From the remarks.
  * ```
  */
 const c = 0

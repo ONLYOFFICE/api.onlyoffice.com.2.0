@@ -1,4 +1,6 @@
 /**
+ * @summary
+ *
  * The description <b>should</b> be sanitized and formatted.
  *
  * ```ts

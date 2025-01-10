@@ -1,7 +1,4 @@
 /**
- * @summary
- *
- * The description <b>should</b> be sanitized and formatted. The description
- * <b>should</b> be sanitized and formatted.
+ * @returns The description <b>should</b> be sanitized and formatted.
  */
-const c = 0
+function f(): void {}

@@ -1,4 +1,18 @@
 /**
- * @param p The description <b>should</b> be sanitized and formatted.
+ * @summary
+ *
+ * The summary description <b>should</b> be sanitized and formatted.
+ *
+ * ```ts
+ * // From the summary.
+ * ```
+ *
+ * @remarks
+ *
+ * The remarks description <b>should</b> be sanitized and formatted.
+ *
+ * ```ts
+ * // From the remarks.
+ * ```
  */
-function f(p: string): void {}
+const c = 0
