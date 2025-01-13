@@ -8,10 +8,8 @@ import {
 import {
   EntityToken,
   KeywordToken,
-  Reference,
   TextToken,
   type Token,
-  TypeToken,
 } from "@onlyoffice/signature"
 import {Console as C2} from "@onlyoffice/typedoc-signature/console.js"
 import {Console as C1} from "@onlyoffice/typedoc-transformer/console.js"
@@ -36,7 +34,7 @@ test.after(() => {
 test("process(): process a project reflection", async () => {
   const o = await setup()
   const e: Entity[] = []
-  let t: Token | Reference
+  let t: Token
 
   let d = new DeclarationEntity()
   d.id = 0
@@ -59,16 +57,6 @@ test("process(): process a project reflection", async () => {
   d.children = []
   d.declaration.name = "C"
   e.push(d)
-
-  t = new TextToken()
-  t.text = "  "
-  d.declaration.signature.concise.push(t)
-
-  t = new Reference()
-  t.id = "2"
-  t.token = new TypeToken()
-  t.token.text = "C"
-  d.declaration.signature.concise.push(t)
 
   t = new KeywordToken()
   t.text = "class"

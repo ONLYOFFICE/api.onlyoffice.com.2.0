@@ -35,23 +35,18 @@ interface F {
 
 const fs: F[] = [
   V.classDeclaration,
-  C.classDeclaration,
   V.classDeclaration,
-  C.classDeclaration,
   V.constructorDeclaration,
   V.enumMemberReflection,
   C.enumMemberReflection,
   V.enumReflection,
-  C.enumReflection,
   V.functionsDeclaration,
   C.functionsDeclaration,
   V.interfaceReflection,
-  C.interfaceReflection,
   C.methodDeclaration,
   V.propertyReflection,
   C.propertyReflection,
   V.typeAliasReflection,
-  C.typeAliasReflection,
   V.variableDeclaration,
   C.variableDeclaration,
 ]

@@ -67,7 +67,6 @@ export function compute(ct: Transport): void {
 
     if (isClassReflection(t)) {
       v.push(...V.classDeclaration(cf, t))
-      c.push(...C.classDeclaration(cf, t))
     } else if (isConstructorReflection(p) && isSignatureReflection(t)) {
       v.push(...V.constructorDeclaration(cf, t))
       c.push(...C.constructorDeclaration(t))
@@ -76,14 +75,12 @@ export function compute(ct: Transport): void {
       c.push(...C.enumMemberReflection(cf, t))
     } else if (isEnumReflection(t)) {
       v.push(...V.enumReflection(cf, t))
-      c.push(...C.enumReflection(cf, t))
     } else if (isFunctionReflection(p) && isCallSignatureReflection(t)) {
       v.push(...V.functionsDeclaration(cf, t))
       c.push(...C.functionsDeclaration(cf, t))
       r.push(...C.returns(cf, t.type))
     } else if (isInterfaceReflection(t)) {
       v.push(...V.interfaceReflection(cf, t))
-      c.push(...C.interfaceReflection(cf, t))
     } else if (isMethodReflection(p) && isCallSignatureReflection(t)) {
       v.push(...V.methodDeclaration(cf, t, p))
       c.push(...C.methodDeclaration(cf, t))
@@ -93,7 +90,6 @@ export function compute(ct: Transport): void {
       c.push(...C.propertyReflection(cf, t))
     } else if (isTypeAliasReflection(t)) {
       v.push(...V.typeAliasReflection(cf, t))
-      c.push(...C.typeAliasReflection(cf, t))
     } else if (isVariableReflection(t)) {
       v.push(...V.variableDeclaration(cf, t))
       c.push(...C.variableDeclaration(cf, t))

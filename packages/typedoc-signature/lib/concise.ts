@@ -10,14 +10,10 @@ import {
 } from "@onlyoffice/signature"
 import {
   isCallSignatureReflection,
-  isClassReflection,
   isEnumMemberReflection,
-  isEnumReflection,
-  isInterfaceReflection,
   isParameterReflection,
   isPropertyReflection,
   isSignatureReflection,
-  isTypeAliasReflection,
   isVariableReflection,
 } from "@onlyoffice/typedoc-util-is-reflection"
 import {
@@ -33,22 +29,6 @@ import {
 } from "@onlyoffice/typedoc-util-is-type"
 import {type JSONOutput as J} from "typedoc"
 import {type Context} from "./context.ts"
-
-export function classDeclaration(ctx: Context, r: J.Reflection): Signature {
-  const s: Signature = []
-
-  if (!isClassReflection(r)) {
-    return s
-  }
-
-  const t = new TextToken()
-  t.text = "  "
-  s.push(t)
-
-  s.push(reference(ctx, r.id, r.name))
-
-  return s
-}
 
 export function constructorDeclaration(r: J.Reflection): Signature {
   const s: Signature = []
@@ -78,22 +58,6 @@ export function enumMemberReflection(ctx: Context, r: J.Reflection): Signature {
     const b = type(ctx, r.type)
     s.push(...b)
   }
-
-  return s
-}
-
-export function enumReflection(ctx: Context, r: J.Reflection): Signature {
-  const s: Signature = []
-
-  if (!isEnumReflection(r)) {
-    return s
-  }
-
-  const t = new TextToken()
-  t.text = "  "
-  s.push(t)
-
-  s.push(reference(ctx, r.id, r.name))
 
   return s
 }
@@ -133,22 +97,6 @@ export function functionsDeclaration(ctx: Context, f: J.Reflection): Signature {
     const b = type(ctx, f.type)
     s.push(...b)
   }
-
-  return s
-}
-
-export function interfaceReflection(ctx: Context, r: J.Reflection): Signature {
-  const s: Signature = []
-
-  if (!isInterfaceReflection(r)) {
-    return s
-  }
-
-  const t = new TextToken()
-  t.text = "  "
-  s.push(t)
-
-  s.push(reference(ctx, r.id, r.name))
 
   return s
 }
@@ -210,22 +158,6 @@ export function propertyReflection(ctx: Context, r: J.Reflection): Signature {
     const b = type(ctx, r.type)
     s.push(...b)
   }
-
-  return s
-}
-
-export function typeAliasReflection(ctx: Context, r: J.Reflection): Signature {
-  const s: Signature = []
-
-  if (!isTypeAliasReflection(r)) {
-    return s
-  }
-
-  const t = new TextToken()
-  t.text = "  "
-  s.push(t)
-
-  s.push(reference(ctx, r.id, r.name))
 
   return s
 }
