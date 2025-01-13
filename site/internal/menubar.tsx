@@ -1,5 +1,5 @@
 import * as Site from "@onlyoffice/site-kit"
-import {CloseIcon, MenuIcon} from "@onlyoffice/ui-icons/poor/24.tsx"
+import {CloseIcon, MenuIcon} from "@onlyoffice/ui-icons/poor/24.js"
 import {type JSX, h} from "preact"
 import {Icon} from "./icon.tsx"
 import {Link} from "./link.tsx"

@@ -1,6 +1,6 @@
 import {setTimeout} from "node:timers/promises"
 import {createSuspense} from "@onlyoffice/preact-suspense"
-import {createElement, h, isValidElement} from "preact"
+import {createElement, isValidElement} from "preact"
 import {renderToStringAsync} from "preact-render-to-string"
 
 export async function renderToString(e: unknown): Promise<string> {

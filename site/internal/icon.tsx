@@ -1,7 +1,7 @@
-import * as rich24 from "@onlyoffice/ui-icons/rich/24.tsx"
-import * as rich32 from "@onlyoffice/ui-icons/rich/32.tsx"
-import * as rich48 from "@onlyoffice/ui-icons/rich/48.tsx"
-import * as rich64 from "@onlyoffice/ui-icons/rich/64.tsx"
+import * as rich24 from "@onlyoffice/ui-icons/rich/24.js"
+import * as rich32 from "@onlyoffice/ui-icons/rich/32.js"
+import * as rich48 from "@onlyoffice/ui-icons/rich/48.js"
+import * as rich64 from "@onlyoffice/ui-icons/rich/64.js"
 import {type JSX, h} from "preact"
 
 type InternalIcon = typeof rich32.DesktopEditorsIcon

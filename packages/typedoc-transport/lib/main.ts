@@ -2,7 +2,7 @@ import {Readable, Writable} from "node:stream"
 import {
   type Definition,
   type Entity,
-} from "@onlyoffice/library-declaration/next.ts"
+} from "@onlyoffice/library-declaration/next.js"
 import {type JSONOutput as J} from "typedoc"
 import {type FlatTrail, resolveTrail} from "./trail.ts"
 

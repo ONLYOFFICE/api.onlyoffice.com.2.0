@@ -1,13 +1,4 @@
 /**
- * Description of the first overload.
+ * @param p The description <b>should</b> be sanitized and formatted.
  */
-function f(p: string): void
-
-/**
- * Description of the second overload.
- */
-function f(p: number): void
-
-function f(p: null): void
-
-function f(p: string | number | null): void {}
+function f(p: string): void {}

@@ -1,0 +1,21 @@
+{
+  "name": "@onlyoffice/snapshot",
+  "type": "module",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/errors": "workspace:^",
+    "@onlyoffice/result": "workspace:^",
+    "@onlyoffice/stream-string": "workspace:^",
+    "@sinclair/typebox": "0.34.13",
+    "@types/node": "20.12.12"
+  },
+  "devDependencies": {
+    "typescript": "5.7.2"
+  }
+}

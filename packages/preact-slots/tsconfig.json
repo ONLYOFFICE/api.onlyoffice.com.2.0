@@ -1,9 +1,3 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment"
-  },
-  "include": ["lib", "index.d.ts"]
+  "extends": "../../tsconfig.base.json"
 }

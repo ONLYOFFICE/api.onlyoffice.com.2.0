@@ -1,10 +1,4 @@
-import {
-  type ComponentChildren,
-  Fragment,
-  type JSX,
-  h,
-  toChildArray,
-} from "preact"
+import {type ComponentChildren, type JSX, toChildArray} from "preact"
 
 export interface JoinProperties {
   children?: ComponentChildren

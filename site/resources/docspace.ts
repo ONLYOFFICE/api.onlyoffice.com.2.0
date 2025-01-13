@@ -17,14 +17,14 @@ function or(n: string): Resource {
 
 function file(n: string): string {
   if (isBuild()) {
-    return `@onlyoffice/docspace-resource/${n}.ts`
+    return `@onlyoffice/docspace-resource/${n}.js`
   }
-  return "@onlyoffice/openapi-resource-fixtures/resource.ts"
+  return "@onlyoffice/openapi-resource-fixtures/resource.js"
 }
 
 function op(n: string): Resource {
   if (isBuild()) {
-    return require(`@onlyoffice/docspace-resource/${n}.ts`)
+    return require(`@onlyoffice/docspace-resource/${n}.js`)
   }
   return nop()
 }

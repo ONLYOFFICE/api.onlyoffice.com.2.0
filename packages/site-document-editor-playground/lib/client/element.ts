@@ -7,7 +7,7 @@
 
 import {ComboboxContainer, ComboboxContainerChangeEvent, ComboboxContainerChangedEvent} from "@onlyoffice/combobox-container-html-element"
 import * as configSample from "@onlyoffice/document-editor-code-sample"
-import {DocumentEditor, type DocumentEditorEventHandlerName, type DocumentEditorEventType} from "@onlyoffice/document-editor-html-element"
+import {DocumentEditor, type DocumentEditorEventListenerName, type DocumentEditorEventType} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditorMirror} from "@onlyoffice/document-editor-mirror-html-element"
 import {type DocEditorConfigEvents, type DocEditorConfigurableOptions} from "@onlyoffice/document-server-types"
 import {type Client} from "@onlyoffice/server-client"
@@ -208,7 +208,7 @@ export class DocumentEditorPlayground extends HTMLElement {
     this.#client = value
   }
 
-  #documentEditorHandlers = new Map<DocumentEditorEventHandlerName, string>()
+  #documentEditorHandlers = new Map<DocumentEditorEventListenerName, string>()
 
   connectedCallback(): void {
     this.#setup()
@@ -796,7 +796,7 @@ export class DocumentEditorPlayground extends HTMLElement {
 
     for (const [, n] of this.#documentEditorHandlers.entries()) {
       const en = `documenteditor${n.toLocaleLowerCase().slice(2)}` as DocumentEditorEventType
-      const hn = `on${en}` as DocumentEditorEventHandlerName
+      const hn = `on${en}` as DocumentEditorEventListenerName
       de.eventList.remove(en)
       de[hn] = null
     }

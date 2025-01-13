@@ -4,7 +4,7 @@
 
 import {useSlots} from "@onlyoffice/preact-slots"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {ArrowDropdownIcon} from "@onlyoffice/ui-icons/poor/24.tsx"
+import {ArrowDropdownIcon} from "@onlyoffice/ui-icons/poor/24.js"
 import {clsx} from "clsx"
 import {type JSX, cloneElement, h} from "preact"
 import {type HTMLAttributes} from "preact/compat"

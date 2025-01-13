@@ -1,5 +1,5 @@
 import {Help as SHelp} from "@onlyoffice/site-kit"
-import {GithubIcon} from "@onlyoffice/ui-icons/rich/24.tsx"
+import {GithubIcon} from "@onlyoffice/ui-icons/rich/24.js"
 import {type JSX, h} from "preact"
 import {Link} from "./link.tsx"
 import {Sitemap} from "./sitemap.ts"

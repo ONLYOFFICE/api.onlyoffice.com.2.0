@@ -13,13 +13,7 @@ import {
   CodeListingTabListWrapper,
   CodeListingTabPanel,
 } from "@onlyoffice/ui-kit"
-import {
-  type ComponentChildren,
-  Fragment,
-  type JSX,
-  createContext,
-  h,
-} from "preact"
+import {type ComponentChildren, type JSX, createContext} from "preact"
 import {useContext} from "preact/hooks"
 
 export interface Description {

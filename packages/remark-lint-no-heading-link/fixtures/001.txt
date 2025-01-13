@@ -1,0 +1,7 @@
+ignores a document that does not contain a heading with a link
+
+---
+
+# h1
+
+---

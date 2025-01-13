@@ -1,0 +1,16 @@
+{
+  "name": "@onlyoffice/typedoc-fixtures",
+  "type": "module",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./animals.ts": "./lib/animals.ts",
+    "./cars.ts": "./lib/cars.ts"
+  },
+  "main": "lib/main.ts",
+  "scripts": {
+    "build-docs": "typedoc"
+  },
+  "devDependencies": {
+    "typedoc": "0.27.5"
+  }
+}

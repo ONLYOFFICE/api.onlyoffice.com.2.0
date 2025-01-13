@@ -1,0 +1,29 @@
+{
+  "name": "@onlyoffice/remark-lint-no-heading-link",
+  "type": "module",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
+    "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
+    "test": "pnpm test:types && pnpm test:unit"
+  },
+  "dependencies": {
+    "@onlyoffice/mdast-util-is-node": "workspace:^",
+    "@onlyoffice/remark-lint": "workspace:^",
+    "@types/mdast": "4.0.3",
+    "unified-lint-rule": "3.0.0",
+    "vfile": "6.0.1"
+  },
+  "devDependencies": {
+    "c8": "9.1.0",
+    "remark-lint": "10.0.0",
+    "remark-parse": "11.0.0",
+    "remark-stringify": "11.0.0",
+    "tsx": "4.16.5",
+    "typescript": "5.7.2",
+    "unified": "11.0.5",
+    "uvu": "0.5.6"
+  }
+}

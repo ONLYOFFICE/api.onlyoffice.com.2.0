@@ -1,36 +1,31 @@
 import {type Data} from "@onlyoffice/eleventy-types"
 import {Config} from "@onlyoffice/site-config"
-import {h} from "preact"
-import {data as postscript} from "../Postscript/index.tsx"
-import {data as sitemap} from "../Sitemap/xml.tsx"
 
 export function data(): Data {
   return {
     layout: null,
-    permalink: "/robots.txt",
+    virtualPath: "../robots.txt",
+    specificPath: "../robots.txt",
     eleventyExcludeFromCollections: true,
   }
 }
 
 export function render(): string {
   const c = Config.shared
-  const p = postscript()
-  const s = sitemap()
+
+  // todo: use internal/Sitemap, do not hardcode
 
   let r = ""
 
-  if (typeof s.permalink === "string") {
-    r += `Sitemap: ${c.baseUrl}`
-    r += s.permalink.slice(1)
-    r += "\n"
-  }
-
+  r += `Sitemap: ${new URL("sitemap.xml", c.baseUrl)}\n`
   r += "User-agent: *\n"
 
   if (!c.robots) {
     r += "Disallow: /\n"
-  } else if (typeof p.permalink === "string") {
-    r += `Disallow: ${p.permalink}\n`
+  } else {
+    r += "Disallow: /snapshot/index.html\n"
+    r += "Disallow: /snapshot.json\n"
+    r += "Disallow: /snapshot.schema.json\n"
   }
 
   return r

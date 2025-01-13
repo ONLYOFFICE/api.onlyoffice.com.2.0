@@ -3,11 +3,13 @@ import {
   type Heading,
   type Html,
   type InlineCode,
+  type Link,
   type Literal,
   type Node,
   type Paragraph,
   type Parent,
   type Text,
+  type ThematicBreak,
 } from "mdast"
 
 export function isCodeNode(u: unknown): u is Code {
@@ -25,8 +27,16 @@ export function isInlineCodeNode(u: unknown): u is InlineCode {
   return isLiteralNode(u) && u.type === "inlineCode"
 }
 
+export function isLinkNode(u: unknown): u is Link {
+  return isParentNode(u) && u.type === "link"
+}
+
 export function isParagraphNode(u: unknown): u is Paragraph {
   return isParentNode(u) && u.type === "paragraph"
+}
+
+export function isThematicBreakNode(u: unknown): u is ThematicBreak {
+  return isNode(u) && u.type === "thematicBreak"
 }
 
 export function isParentNode(u: unknown): u is Parent {

@@ -1,7 +1,7 @@
-import {Transport} from "@onlyoffice/typedoc-transport"
+import {type Transport} from "@onlyoffice/typedoc-transport"
 import {Declaration, Group} from "../../lib/processor.ts"
 
-export const name = "transforms a description with a @returns tag"
+export const name = "populates the narrative fields with the head and @summary tag"
 
 export function cb(t: Transport): void {
   let d = new Declaration()
@@ -13,14 +13,15 @@ export function cb(t: Transport): void {
   let g = new Group()
   g.id = 1
   g.parentId = 0
-  g.name = "Functions"
+  g.name = "Variables"
   g.children = [2]
   t.entities.push(g.to())
 
   d = new Declaration()
   d.id = 2
   d.parentId = 1
-  d.name = "f"
-  d.narrative.returns = "The description should be sanitized and formatted."
+  d.name = "c"
+  d.narrative.summary = "The summary description should be sanitized and formatted.\n\n```ts\n// From the summary.\n```"
+  d.narrative.description = "The head description should be sanitized and formatted.\n\n```ts\n// From the head.\n```"
   t.entities.push(d.to())
 }

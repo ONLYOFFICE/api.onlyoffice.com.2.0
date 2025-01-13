@@ -3,30 +3,28 @@
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./lib/main.tsx",
-    "./main.css": "./lib/main.css",
-    "./client.ts": "./lib/client.ts"
+    ".": "./dist/main.js",
+    "./client.js": "./dist/client.js",
+    "./main.css": "./lib/main.css"
   },
-  "main": "lib/main.tsx",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
-    "@onlyoffice/pagefind-types": "workspace:^",
     "@onlyoffice/preact-slots": "workspace:^",
     "@onlyoffice/preact-template": "workspace:^",
     "@onlyoffice/preact-types": "workspace:^",
     "@onlyoffice/ui-icons": "workspace:^",
     "@onlyoffice/ui-kit": "workspace:^",
     "@onlyoffice/ui-text-input": "workspace:^",
-    "preact": "10.22.0",
-    "typescript": "5.4.5"
+    "@types/pagefind": "workspace:^",
+    "preact": "10.22.0"
   },
   "devDependencies": {
-    "@storybook/preact": "8.0.0",
-    "rimraf": "6.0.1",
+    "typescript": "5.7.2",
     "vite": "5.1.6"
   }
 }

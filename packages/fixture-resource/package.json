@@ -3,18 +3,18 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./typedoc.ts": "./dist/typedoc.ts"
+    "./typedoc.js": "./dist/typedoc.js"
   },
   "scripts": {
-    "clean": "rimraf dist node_modules",
-    "build": "typedoc-resource typedoc"
+    "build:typedoc": "pnpm docs:typedoc && typedoc-resource typedoc",
+    "build": "pnpm build:typedoc",
+    "docs:typedoc": "cd fixtures/typedoc && pnpm build-docs"
   },
   "dependencies": {
     "@onlyoffice/library-declaration": "workspace:^"
   },
   "devDependencies": {
     "@onlyoffice/typedoc-resource": "workspace:^",
-    "rimraf": "6.0.1",
-    "typedoc": "0.26.11"
+    "typescript": "5.7.2"
   }
 }

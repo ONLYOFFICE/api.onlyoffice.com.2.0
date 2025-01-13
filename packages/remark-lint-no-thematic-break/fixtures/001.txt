@@ -1,0 +1,11 @@
+ignores a document that does not contain a thematic break
+
+---
+
+# ---
+*a**b***
+
+---
+
+
+---

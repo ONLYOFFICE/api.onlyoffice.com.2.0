@@ -21,7 +21,7 @@ function resource(n: string): Resource {
 
 function file(n: string): string {
   if (isBuild()) {
-    return `@onlyoffice/document-builder-resource/${n}.ts`
+    return `@onlyoffice/document-builder-resource/${n}.js`
   }
-  return "@onlyoffice/jsdoc-resource-fixtures/resource.ts"
+  return "@onlyoffice/jsdoc-resource-fixtures/resource.js"
 }

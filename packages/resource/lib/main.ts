@@ -36,5 +36,5 @@ export function componentBasename(n: string): string {
 
 // todo: rename to entrypointBasename
 export function resourceBasename(n: string): string {
-  return `${n}.ts`
+  return `${n}.js`
 }

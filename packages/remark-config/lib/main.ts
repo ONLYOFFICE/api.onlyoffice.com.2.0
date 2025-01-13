@@ -4,13 +4,14 @@
 // https://github.com/remarkjs/remark-lint/tree/10.0.0/packages/remark-lint-no-html
 
 import {remarkLintEslint} from "@onlyoffice/remark-lint-eslint"
+import {remarkLintNoHeadingLink} from "@onlyoffice/remark-lint-no-heading-link"
+import {remarkLintNoThematicBreak} from "@onlyoffice/remark-lint-no-thematic-break"
 import {remarkLintNoUnicode} from "@onlyoffice/remark-lint-no-unicode"
 import remarkLint from "remark-lint"
 import remarkLintBlockquoteIndentation from "remark-lint-blockquote-indentation"
 import remarkLintCheckboxCharacterStyle from "remark-lint-checkbox-character-style"
 import remarkLintCheckboxContentIndent from "remark-lint-checkbox-content-indent"
 import remarkLintCodeBlockStyle from "remark-lint-code-block-style"
-import remarkLintDefinitionCase from "remark-lint-definition-case"
 import remarkLintDefinitionSpacing from "remark-lint-definition-spacing"
 import remarkLintEmphasisMarker from "remark-lint-emphasis-marker"
 import remarkLintFencedCodeFlag from "remark-lint-fenced-code-flag"
@@ -43,7 +44,6 @@ import remarkLintNoMissingBlankLines from "remark-lint-no-missing-blank-lines"
 import remarkLintNoParagraphContentIndent from "remark-lint-no-paragraph-content-indent"
 import remarkLintNoReferenceLikeUrl from "remark-lint-no-reference-like-url"
 import remarkLintNoShortcutReferenceImage from "remark-lint-no-shortcut-reference-image"
-import remarkLintNoShortcutReferenceLink from "remark-lint-no-shortcut-reference-link"
 import remarkLintNoTableIndentation from "remark-lint-no-table-indentation"
 import remarkLintNoTabs from "remark-lint-no-tabs"
 import remarkLintNoUndefinedReferences from "remark-lint-no-undefined-references"
@@ -76,7 +76,6 @@ export function remarkConfig(): Preset {
       [remarkLintCheckboxCharacterStyle, {checked: "x", unchecked: " "}],
       remarkLintCheckboxContentIndent,
       [remarkLintCodeBlockStyle, "fenced"],
-      remarkLintDefinitionCase,
       remarkLintDefinitionSpacing,
       [remarkLintEmphasisMarker, "*"],
       remarkLintEslint,
@@ -94,6 +93,7 @@ export function remarkConfig(): Preset {
           "ini",
           "java",
           "json",
+          "jsonc",
           "json5",
           "kt",         // kotlin,
           "php",
@@ -135,14 +135,15 @@ export function remarkConfig(): Preset {
       remarkLintNoHeadingContentIndent,
       remarkLintNoHeadingIndent,
       remarkLintNoHeadingLikeParagraph,
+      remarkLintNoHeadingLink,
       remarkLintNoLiteralUrls,
       [remarkLintNoMissingBlankLines, {exceptTightLists: true}],
       remarkLintNoParagraphContentIndent,
       remarkLintNoReferenceLikeUrl,
       remarkLintNoShortcutReferenceImage,
-      remarkLintNoShortcutReferenceLink,
       remarkLintNoTableIndentation,
       remarkLintNoTabs,
+      remarkLintNoThematicBreak,
       remarkLintNoUndefinedReferences,
       [remarkLintNoUnicode, {
         hints: [

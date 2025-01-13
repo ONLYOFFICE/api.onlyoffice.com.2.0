@@ -116,7 +116,6 @@ export function arrayType(u: ArrayType): Signature {
       t.text = " of "
       s.push(t)
 
-      // eslint-disable-next-line unicorn/no-array-push-push
       s.push(...e)
     }
   }

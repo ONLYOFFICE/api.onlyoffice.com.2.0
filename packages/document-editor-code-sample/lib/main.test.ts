@@ -93,12 +93,12 @@ it("html(): includes config events", () => {
     <script type="module">
     const config = {
       events: {
-        onAppReady() {
-          console.log("Document Editor is ready")
-        },
-        onError(...args) {
-          console.error("Document Editor error:", ...args)
-        }
+        onAppReady: onAppReady() {
+            console.log("Document Editor is ready");
+          },
+        onError: onError(...args) {
+            console.error("Document Editor error:", ...args);
+          }
       }
     }
     const editor = new DocsAPI.DocEditor("placeholder", config)
@@ -129,12 +129,12 @@ it("js(): includes config events", () => {
   const s = js(e)
   is(s, `const config = {
   events: {
-    onAppReady() {
-      console.log("Document Editor is ready")
-    },
-    onError(...args) {
-      console.error("Document Editor error:", ...args)
-    }
+    onAppReady: onAppReady() {
+        console.log("Document Editor is ready");
+      },
+    onError: onError(...args) {
+        console.error("Document Editor error:", ...args);
+      }
   }
 }
 const editor = new DocsAPI.DocEditor("placeholder", config)`)

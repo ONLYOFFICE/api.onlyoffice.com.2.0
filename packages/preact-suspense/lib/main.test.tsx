@@ -1,7 +1,7 @@
 // todo: complete test cases
 
 import {setTimeout} from "node:timers/promises"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 import {renderToStringAsync as render} from "preact-render-to-string"
 import {test} from "uvu"
 import {is} from "uvu/assert"

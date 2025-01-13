@@ -2,7 +2,7 @@ import path from "node:path"
 import {
   Declaration,
   DeclarationEntity,
-} from "@onlyoffice/library-declaration/next.ts"
+} from "@onlyoffice/library-declaration/next.js"
 import {Application, type JSONOutput as J} from "typedoc"
 import {suite} from "uvu"
 import {equal as eq, is} from "uvu/assert"

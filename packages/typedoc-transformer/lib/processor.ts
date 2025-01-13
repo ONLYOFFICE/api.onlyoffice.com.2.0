@@ -1,6 +1,6 @@
 import {AsyncTransform} from "@onlyoffice/async-transform"
 import * as errors from "@onlyoffice/errors"
-import * as L from "@onlyoffice/library-declaration/next.ts"
+import * as L from "@onlyoffice/library-declaration/next.js"
 import {eslint} from "@onlyoffice/mdast-util-eslint"
 import {firstSentence} from "@onlyoffice/mdast-util-first-sentence"
 import {type Result} from "@onlyoffice/result"
@@ -111,7 +111,7 @@ export class Processor extends AsyncTransform {
 
         // If an entity contains a custom category and has a child entity that
         // is not included in any category, the latter will be added to the
-        // "Other" built-in category. This category cannot be added manually.
+        // "Other" built-in category.
         if (n.name === "Other") {
           continue
         }
@@ -767,25 +767,25 @@ export class Narrative {
   }
 
   static async fromComment(o: J.Comment): R<Narrative> {
-    // https://github.com/TypeStrong/typedoc/issues/2763/
-
     let err: E
     const n = new Narrative()
 
-    let d = appendContent("", o.summary)
+    const h = appendContent("", o.summary)
+
     let s = ""
+    let d = ""
     let e = ""
     let r = ""
 
     if (o.blockTags) {
       for (const t of o.blockTags) {
-        if (t.tag === "@remarks") {
-          d = appendContent(d, t.content)
+        if (t.tag === "@summary") {
+          s = appendContent(s, t.content)
           continue
         }
 
-        if (t.tag === "@summary") {
-          s = appendContent(s, t.content)
+        if (t.tag === "@remarks") {
+          d = appendContent(d, t.content)
           continue
         }
 
@@ -804,18 +804,38 @@ export class Narrative {
       }
     }
 
-    if (d && !s) {
-      const r = fromMarkdown(d)
-      const p = firstSentence(r)
-      s = toMarkdown(p)
-    }
-
-    if (d) {
-      d = await sanitizeMarkdown(d)
+    if (!h && !s && !d) {
+      // do nothing
+    } else if (h && !s && !d) {
+      let t = fromMarkdown(h)
+      t = firstSentence(t)
+      s = toMarkdown(t)
+      d = h
+    } else if (!h && s && !d) {
+      // do nothing
+    } else if (!h && !s && d) {
+      let t = fromMarkdown(d)
+      t = firstSentence(t)
+      s = toMarkdown(t)
+    } else if (h && s && !d) {
+      d = h
+    } else if (!h && s && d) {
+      // do nothing
+    } else if (h && !s && d) {
+      let t = fromMarkdown(h)
+      t = firstSentence(t)
+      s = toMarkdown(t)
+      d = `${h}\n\n${d}`
+    } else if (h && s && d) {
+      d = `${h}\n\n${d}`
     }
 
     if (s) {
       s = await sanitizeMarkdown(s)
+    }
+
+    if (d) {
+      d = await sanitizeMarkdown(d)
     }
 
     if (e) {

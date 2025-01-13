@@ -2,25 +2,19 @@
   "name": "@onlyoffice/server-client",
   "type": "module",
   "private": true,
-  "exports": {
-    ".": "./lib/main.ts",
-    "./client.ts": "./lib/client.ts",
-    "./document-editor.ts": "./lib/document-editor.ts"
-  },
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf coverage node_modules",
+    "build": "tsc --project tsconfig.build.json",
     "demo:server": "store-demo",
     "playwright": "cd node_modules/@web/test-runner-playwright/node_modules/.bin && ./playwright",
     "test:all": "pnpm test:types && pnpm test:unit && pnpm test:e2e",
-    "test:e2e": "web-test-runner",
-    "test:types": "tsc",
-    "test:unit": "c8 --all --src lib --exclude main.ts --exclude main.e2e.ts --reporter html --reporter text --check-coverage --branches 80 --functions 80 --lines 80 --statements 80 --per-file tsx node_modules/uvu/bin.js lib ^.*\\.unit\\.ts$",
+    "test:e2e": "tsx node_modules/@web/test-runner/dist/bin.js --config wtr.config.ts",
+    "test:types": "tsc --noEmit",
+    "test:unit": "c8 --config ../../c8.config.json --exclude main.ts --exclude main.e2e.ts tsx node_modules/uvu/bin.js lib ^.*\\.unit\\.ts$",
     "test": "tsx test.ts"
   },
   "dependencies": {
-    "@onlyoffice/document-server-types": "workspace:^",
-    "typescript": "5.4.5"
+    "@onlyoffice/document-server-types": "workspace:^"
   },
   "devDependencies": {
     "@onlyoffice/node-http": "workspace:^",
@@ -32,9 +26,8 @@
     "@web/test-runner": "0.18.2",
     "@web/test-runner-playwright": "0.11.0",
     "c8": "9.1.0",
-    "esbuild": "0.23.0",
-    "rimraf": "6.0.1",
     "tsx": "4.16.5",
+    "typescript": "5.7.2",
     "uvu": "0.5.6"
   }
 }

@@ -1,11 +1,16 @@
 # Change Log
 
+- docs api: added the Deny access and History loading failed issues to Troubleshooting
 - docs api: updated the WOPI section
 - docs api: added the information about calling editor methods in the frameworks
 - docs api: added the Checking PDF forms page
 - docspace backend: added the Removed user page
 - macros: added remove extra spaces in document macro sample
 - macros: added the Sum of highlighted cells macro sample
+- macros: added change font family and size in presentations macro sample
+- macros: added hide unhide rows or columns in spreadsheet macro sample
+- macros: added find company logos macro sample
+- macros: added import hyperlinks in spreadsheet macro sample
 - macros: added generate word definitons macro sample
 
 ## 6.3.0
