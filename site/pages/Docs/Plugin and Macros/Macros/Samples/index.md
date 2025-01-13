@@ -148,6 +148,12 @@ In this example we are hiding or unhiding specified rows and/or columns in the s
 
 [More](Hide%20or%20unhide%20rows%20and%20columns/index.md)
 
+## Find company logos
+
+In this example we are finding company logos in a spreadsheet using the Logo API offered by API Ninjas.
+
+[More](Find%20company%20logos/index.md)
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)
