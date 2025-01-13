@@ -3096,6 +3096,28 @@ importers:
         specifier: 5.7.2
         version: 5.7.2
 
+  packages/snapshot:
+    dependencies:
+      '@onlyoffice/errors':
+        specifier: workspace:^
+        version: link:../errors
+      '@onlyoffice/result':
+        specifier: workspace:^
+        version: link:../result
+      '@onlyoffice/stream-string':
+        specifier: workspace:^
+        version: link:../stream-string
+      '@sinclair/typebox':
+        specifier: 0.34.13
+        version: 0.34.13
+      '@types/node':
+        specifier: 20.12.12
+        version: 20.12.12
+    devDependencies:
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+
   packages/store-demo:
     dependencies:
       '@onlyoffice/console':
@@ -5930,6 +5952,9 @@ packages:
 
   '@shikijs/vscode-textmate@9.3.1':
     resolution: {integrity: sha512-79QfK1393x9Ho60QFyLti+QfdJzRQCVLFb97kOIV7Eo9vQU/roINgk7m24uv0a7AUvN//RDH36FLjjK48v0s9g==, tarball: https://registry.npmjs.org/@shikijs/vscode-textmate/-/vscode-textmate-9.3.1.tgz}
+
+  '@sinclair/typebox@0.34.13':
+    resolution: {integrity: sha512-ceVKqyCEgC355Kw0s/0tyfY9MzMQINSykJ/pG2w6YnaZyrcjV48svZpr8lVZrYgWjzOmrIPBhQRAtr/7eJpA5g==, tarball: https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.34.13.tgz}
 
   '@sindresorhus/slugify@1.1.2':
     resolution: {integrity: sha512-V9nR/W0Xd9TSGXpZ4iFUcFGhuOJtZX82Fzxj1YISlbSgKvIiNa7eLEZrT0vAraPOt++KHauIVNYgGRgjc13dXA==, tarball: https://registry.npmjs.org/@sindresorhus/slugify/-/slugify-1.1.2.tgz}
@@ -13019,6 +13044,8 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/vscode-textmate@9.3.1': {}
+
+  '@sinclair/typebox@0.34.13': {}
 
   '@sindresorhus/slugify@1.1.2':
     dependencies:
