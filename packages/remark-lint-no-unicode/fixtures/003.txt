@@ -1,0 +1,16 @@
+sends an abstract message if a document contains forbidden characters
+
+---
+
+# abcd
+
+abcd
+abcd
+
+---
+
+1:6-1:7: Character "d" (U+0064) is not allowed. Refer to "https://symbl.cc/en/0064/" for information regarding this character.
+3:4-3:5: Character "d" (U+0064) is not allowed. Refer to "https://symbl.cc/en/0064/" for information regarding this character.
+4:4-4:5: Character "d" (U+0064) is not allowed. Refer to "https://symbl.cc/en/0064/" for information regarding this character.
+
+---

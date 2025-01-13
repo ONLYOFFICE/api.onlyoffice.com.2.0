@@ -4,8 +4,10 @@ import * as Sig from "@onlyoffice/signature"
 import * as SiteGlossary from "@onlyoffice/site-glossary"
 import * as SiteSignature from "@onlyoffice/site-signature"
 import {Badge, BadgeCaption, BadgeGroup} from "@onlyoffice/ui-kit"
-import {type ComponentChildren, Fragment, type JSX, createContext, h} from "preact"
+import {type ComponentChildren, type JSX, createContext} from "preact"
 import {useContext} from "preact/hooks"
+
+export * as NextLibrary from "./next.tsx"
 
 export interface Description {
   (this: void, p: ChildrenIncludable): JSX.Element | null

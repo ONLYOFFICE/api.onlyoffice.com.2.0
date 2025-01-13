@@ -6,17 +6,17 @@ The plugin type is specified with the [type](../index.md#variationstype) paramet
 
 ## System
 
-The system plugin is not displayed in the editor interface and is started in the background with the server (or desktop editors start) not interfering with other plugins, so that they can work simultaneously. You don’t need to run such plugins. And unlike background plugins, they cannot be disabled. Samples of system plugins: [Settings](../../../Tutorials/Samples/Settings/index.md), [Search and replace on start](../../../Tutorials/Samples/Search%20and%20replace%20on%20start/index.md).
+The system plugin is not displayed in the editor interface and is started in the background with the server (or desktop editors start) not interfering with other plugins, so that they can work simultaneously. You don't need to run such plugins. And unlike background plugins, they cannot be disabled. Samples of system plugins: [Settings](../../../Tutorials/Samples/Settings/index.md), [Search and replace on start](../../../Tutorials/Samples/Search%20and%20replace%20on%20start/index.md).
 
 ## Background
 
-Launch such a plugin and it will work until you disable it in all opened documents and documents that will be opened later. Samples of background plugins: [ChatGPT](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/openai), [QR Code Generator](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/insertQR). The plugin state (enabled / disabled) persists between sessions. To access background plugins, click the **Background Plugins** button on the top toolbar.
+Launch such a plugin and it will work until you disable it in all opened documents and documents that will be opened later. Samples of background plugins: [AI](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/ai), [QR Code Generator](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/insertQR). The plugin state (enabled / disabled) persists between sessions. To access background plugins, click the **Background Plugins** button on the top toolbar.
 
 <img alt="Background plugins" src="/assets/images/plugins/background-plugins.png" width="416px">
 
 ## Window
 
-The plugin operates as a standalone window upon launch, like [Highlight code](../../../Tutorials/Samples/Highlight%20code/index.md), [Photo editor](../../../Tutorials/Samples/Photo%20editor/index.md), [OCR](../../../Tutorials/Samples/OCR/index.md).
+The plugin operates as a standalone window upon launch, like [Highlight code](../../../Tutorials/Samples/Highlight%20code/index.md), [Photo editor](../../../Tutorials/Samples/Photo%20editor/index.md), [OCR](../../../Tutorials/Samples/OCR/index.md).
 
 ![Plugin window](/assets/images/plugins/plugin-window.png)
 

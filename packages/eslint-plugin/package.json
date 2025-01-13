@@ -4,7 +4,10 @@
   "private": true,
   "main": "lib/main.js",
   "scripts": {
-    "test:types": "tsc",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
+  },
+  "devDependencies": {
+    "typescript": "5.7.2"
   }
 }

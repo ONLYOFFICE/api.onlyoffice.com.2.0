@@ -2,13 +2,24 @@
 order: -5
 ---
 
-For the integration of **ONLYOFFICE Document Builder** into any application, the COM **doctrenderer** library is used. The current application version contains five main classes:
+For the integration of ONLYOFFICE Document Builder into any application, the COM doctrenderer library is used.
 
-- *CDoctrenderer* class - used by **ONLYOFFICE Document Builder** in the file conversion process.
-- [CDocBuilder](CDocBuilder/index.md) class - used by **ONLYOFFICE Document Builder** for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
-- [CDocBuilderContext](CDocBuilderContext/index.md) class - used by **ONLYOFFICE Document Builder** for getting JS context for working.
-- [CDocBuilderContextScope](CDocBuilderContextScope/index.md) class - the stack-allocated class which sets the execution context for all operations executed within a local scope.
-- [CDocBuilderValue](CDocBuilderValue/index.md) class - used by **ONLYOFFICE Document Builder** for getting the results of called JS commands. It represents a wrapper for a JS object.
+## Classes
+
+The current application version contains four main classes:
+
+<references>
+
+- [CDocBuilder](CDocBuilder/index.md)
+  - : Used by ONLYOFFICE Document Builder for the document file (text document, spreadsheet, presentation, form document, PDF) to be generated.
+- [CDocBuilderContext](CDocBuilderContext/index.md)
+  - : Used by ONLYOFFICE Document Builder for getting JS context for working.
+- [CDocBuilderContextScope](CDocBuilderContextScope/index.md)
+  - : The stack-allocated class which sets the execution context for all operations executed within a local scope.
+- [CDocBuilderValue](CDocBuilderValue/index.md)
+  - : Used by ONLYOFFICE Document Builder for getting the results of called JS commands. It represents a wrapper for a JS object.
+
+</references>
 
 ## Example
 

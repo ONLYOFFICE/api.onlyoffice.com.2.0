@@ -7,7 +7,7 @@
 
 import {ComboboxContainer, ComboboxContainerChangeEvent, ComboboxContainerChangedEvent} from "@onlyoffice/combobox-container-html-element"
 import * as configSample from "@onlyoffice/document-editor-code-sample"
-import {DocumentEditor, type DocumentEditorEventHandlerName} from "@onlyoffice/document-editor-html-element"
+import {DocumentEditor, type DocumentEditorEventListenerName, type DocumentEditorEventType} from "@onlyoffice/document-editor-html-element"
 import {DocumentEditorMirror} from "@onlyoffice/document-editor-mirror-html-element"
 import {type DocEditorConfigEvents, type DocEditorConfigurableOptions} from "@onlyoffice/document-server-types"
 import {type Client} from "@onlyoffice/server-client"
@@ -208,7 +208,7 @@ export class DocumentEditorPlayground extends HTMLElement {
     this.#client = value
   }
 
-  #documentEditorHandlers = new Map<DocumentEditorEventHandlerName, string>()
+  #documentEditorHandlers = new Map<DocumentEditorEventListenerName, string>()
 
   connectedCallback(): void {
     this.#setup()
@@ -762,10 +762,12 @@ export class DocumentEditorPlayground extends HTMLElement {
     }
 
     if (!de.editor) {
+      de.eventList.add("documenteditorappready")
       de.ondocumenteditorappready = this.play.bind(this)
       return
     }
 
+    de.eventList.remove("documenteditorappready")
     de.ondocumenteditorappready = null
 
     const cf = this.#currentConfig
@@ -792,14 +794,23 @@ export class DocumentEditorPlayground extends HTMLElement {
       return
     }
 
+    for (const [, n] of this.#documentEditorHandlers.entries()) {
+      const en = `documenteditor${n.toLocaleLowerCase().slice(2)}` as DocumentEditorEventType
+      const hn = `on${en}` as DocumentEditorEventListenerName
+      de.eventList.remove(en)
+      de[hn] = null
+    }
     this.#documentEditorHandlers.clear()
+
     em.ondocumenteditormirrorconsoleerror = null
     em.ondocumenteditormirrorconsolelog = null
     em.ondocumenteditormirrorthrow = null
 
     if (events) {
       for (const [n, fn] of Object.entries(events)) {
-        const hn = `ondocumenteditor${n.toLocaleLowerCase().slice(2)}`
+        const en = `documenteditor${n.toLocaleLowerCase().slice(2)}` as DocumentEditorEventType
+
+        const hn = `on${en}`
         if (!DocumentEditor.isDocumentEditorEventHandlerName(hn)) {
           const er = new Error(`The '${hn}' (${n}) event does not exist in the DocumentEditor`)
           const ev = new DocumentEditorPlaygroundErrorEvent({
@@ -811,8 +822,9 @@ export class DocumentEditorPlayground extends HTMLElement {
           continue
         }
 
-        this.#documentEditorHandlers.set(hn, n)
+        de.eventList.add(en)
         de[hn] = new Function(fn) as EventListener
+        this.#documentEditorHandlers.set(hn, n)
       }
 
       em.ondocumenteditormirrorconsolelog = this.#handleDocumentEditorMirrorEvent.bind(this)

@@ -6,7 +6,7 @@ import {
   h,
   useContext,
 } from "@onlyoffice/hastscript"
-import type * as E from "@onlyoffice/hastscript/elements.ts"
+import type * as E from "@onlyoffice/hastscript/elements.js"
 import type * as Sg from "@onlyoffice/signature"
 import {clsx} from "clsx"
 

@@ -1,7 +1,6 @@
 import path from "node:path"
 import {URL} from "node:url"
 import {rootDir} from "@onlyoffice/eleventy-env"
-import {Sitemap} from "@onlyoffice/eleventy-sitemap"
 import * as pate from "@onlyoffice/node-path"
 import {cutPrefix, cutSuffix} from "@onlyoffice/strings"
 import {type Root} from "hast"
@@ -9,6 +8,7 @@ import {type JSX, h} from "preact"
 import {type HTMLAttributes} from "preact/compat"
 import {visit} from "unist-util-visit"
 import {type VFile} from "vfile"
+import {Sitemap} from "./sitemap.ts"
 
 export interface LinkProperties extends HTMLAttributes<HTMLAnchorElement> {
   file?: string
@@ -83,13 +83,7 @@ export function resolveLink(a: string, b: string): string {
 
   p = decodeURIComponent(`.${p}`)
 
-  const e = s.find(p, "path")
-  if (!e) {
-    throw new Error(`Expected an entity for the path: ${p}`)
-  }
-  if (e.type !== "page") {
-    throw new Error(`Expected a page entity for the path: ${p}`)
-  }
+  const e = s.findPageByPath(p)
 
-  return `${e.url}${h}`
+  return `${e.canonicalUrl}${h}`
 }

@@ -1,0 +1,252 @@
+/* eslint @stylistic/max-len: ["error", {code: 140}] */
+
+import {
+  type DocumentEditorAppReadyEvent,
+  type DocumentEditorAppReadyEventListener,
+  type DocumentEditorCollaborativeChangesEvent,
+  type DocumentEditorCollaborativeChangesEventListener,
+  type DocumentEditorDocumentReadyEvent,
+  type DocumentEditorDocumentReadyEventListener,
+  type DocumentEditorDocumentStateChangeEvent,
+  type DocumentEditorDocumentStateChangeEventListener,
+  type DocumentEditorDownloadAsEvent,
+  type DocumentEditorDownloadAsEventListener,
+  type DocumentEditorErrorEvent,
+  type DocumentEditorErrorEventListener,
+  type DocumentEditorInfoEvent,
+  type DocumentEditorInfoEventListener,
+  type DocumentEditorMakeActionLinkEvent,
+  type DocumentEditorMakeActionLinkEventListener,
+  type DocumentEditorMetaChangeEvent,
+  type DocumentEditorMetaChangeEventListener,
+  type DocumentEditorOutdatedVersionEvent,
+  type DocumentEditorOutdatedVersionEventListener,
+  type DocumentEditorPluginsReadyEvent,
+  type DocumentEditorPluginsReadyEventListener,
+  type DocumentEditorReadyEvent,
+  type DocumentEditorReadyEventListener,
+  type DocumentEditorRequestCloseEvent,
+  type DocumentEditorRequestCloseEventListener,
+  type DocumentEditorRequestCompareFileEvent,
+  type DocumentEditorRequestCompareFileEventListener,
+  type DocumentEditorRequestCreateNewEvent,
+  type DocumentEditorRequestCreateNewEventListener,
+  type DocumentEditorRequestEditRightsEvent,
+  type DocumentEditorRequestEditRightsEventListener,
+  type DocumentEditorRequestHistoryCloseEvent,
+  type DocumentEditorRequestHistoryCloseEventListener,
+  type DocumentEditorRequestHistoryDataEvent,
+  type DocumentEditorRequestHistoryDataEventListener,
+  type DocumentEditorRequestHistoryEvent,
+  type DocumentEditorRequestHistoryEventListener,
+  type DocumentEditorRequestInsertImageEvent,
+  type DocumentEditorRequestInsertImageEventListener,
+  type DocumentEditorRequestMailMergeRecipientsEvent,
+  type DocumentEditorRequestMailMergeRecipientsEventListener,
+  type DocumentEditorRequestOpenEvent,
+  type DocumentEditorRequestOpenEventListener,
+  type DocumentEditorRequestReferenceDataEvent,
+  type DocumentEditorRequestReferenceDataEventListener,
+  type DocumentEditorRequestReferenceSourceEvent,
+  type DocumentEditorRequestReferenceSourceEventListener,
+  type DocumentEditorRequestRenameEvent,
+  type DocumentEditorRequestRenameEventListener,
+  type DocumentEditorRequestRestoreEvent,
+  type DocumentEditorRequestRestoreEventListener,
+  type DocumentEditorRequestSaveAsEvent,
+  type DocumentEditorRequestSaveAsEventListener,
+  type DocumentEditorRequestSelectDocumentEvent,
+  type DocumentEditorRequestSelectDocumentEventListener,
+  type DocumentEditorRequestSelectSpreadsheetEvent,
+  type DocumentEditorRequestSelectSpreadsheetEventListener,
+  type DocumentEditorRequestSendNotifyEvent,
+  type DocumentEditorRequestSendNotifyEventListener,
+  type DocumentEditorRequestSharingSettingsEvent,
+  type DocumentEditorRequestSharingSettingsEventListener,
+  type DocumentEditorRequestUsersEvent,
+  type DocumentEditorRequestUsersEventListener,
+  type DocumentEditorWarningEvent,
+  type DocumentEditorWarningEventListener,
+  type GlobalDocumentEditorAppReadyEventHandler,
+  type GlobalDocumentEditorCollaborativeChangesEventHandler,
+  type GlobalDocumentEditorDocumentReadyEventHandler,
+  type GlobalDocumentEditorDocumentStateChangeEventHandler,
+  type GlobalDocumentEditorDownloadAsEventHandler,
+  type GlobalDocumentEditorErrorEventHandler,
+  type GlobalDocumentEditorInfoEventHandler,
+  type GlobalDocumentEditorMakeActionLinkEventHandler,
+  type GlobalDocumentEditorMetaChangeEventHandler,
+  type GlobalDocumentEditorOutdatedVersionEventHandler,
+  type GlobalDocumentEditorPluginsReadyEventHandler,
+  type GlobalDocumentEditorReadyEventHandler,
+  type GlobalDocumentEditorRequestCloseEventHandler,
+  type GlobalDocumentEditorRequestCompareFileEventHandler,
+  type GlobalDocumentEditorRequestCreateNewEventHandler,
+  type GlobalDocumentEditorRequestEditRightsEventHandler,
+  type GlobalDocumentEditorRequestHistoryCloseEventHandler,
+  type GlobalDocumentEditorRequestHistoryDataEventHandler,
+  type GlobalDocumentEditorRequestHistoryEventHandler,
+  type GlobalDocumentEditorRequestInsertImageEventHandler,
+  type GlobalDocumentEditorRequestMailMergeRecipientsEventHandler,
+  type GlobalDocumentEditorRequestOpenEventHandler,
+  type GlobalDocumentEditorRequestReferenceDataEventHandler,
+  type GlobalDocumentEditorRequestReferenceSourceEventHandler,
+  type GlobalDocumentEditorRequestRenameEventHandler,
+  type GlobalDocumentEditorRequestRestoreEventHandler,
+  type GlobalDocumentEditorRequestSaveAsEventHandler,
+  type GlobalDocumentEditorRequestSelectDocumentEventHandler,
+  type GlobalDocumentEditorRequestSelectSpreadsheetEventHandler,
+  type GlobalDocumentEditorRequestSendNotifyEventHandler,
+  type GlobalDocumentEditorRequestSharingSettingsEventHandler,
+  type GlobalDocumentEditorRequestUsersEventHandler,
+  type GlobalDocumentEditorWarningEventHandler,
+} from "./events.ts"
+
+export type DocumentEditorAttribute =
+  DocumentEditorAttributeMap[DocumentEditorAttributeName]
+
+export type DocumentEditorAttributeName =
+  keyof DocumentEditorAttributeMap
+
+export type DocumentEditorAttributeMap = {
+  [K in DocumentEditorPropertyName]: string
+} & {
+  [K in DocumentEditorEventListenerName]: string
+}
+
+export type DocumentEditorProperty =
+  DocumentEditorPropertyMap[DocumentEditorPropertyName]
+
+export type DocumentEditorPropertyName =
+  keyof DocumentEditorPropertyMap
+
+export interface DocumentEditorPropertyMap {
+  "document-server-url": string
+  "config": string
+}
+
+export type DocumentEditorEventListener =
+  DocumentEditorEventListenerMap[DocumentEditorEventListenerName]
+
+export type DocumentEditorEventListenerName =
+  keyof DocumentEditorEventListenerMap
+
+export interface DocumentEditorEventListenerMap {
+  [DocumentEditorAppReadyEvent.handlerName]: DocumentEditorAppReadyEventListener
+  [DocumentEditorCollaborativeChangesEvent.handlerName]: DocumentEditorCollaborativeChangesEventListener
+  [DocumentEditorDocumentReadyEvent.handlerName]: DocumentEditorDocumentReadyEventListener
+  [DocumentEditorDocumentStateChangeEvent.handlerName]: DocumentEditorDocumentStateChangeEventListener
+  [DocumentEditorDownloadAsEvent.handlerName]: DocumentEditorDownloadAsEventListener
+  [DocumentEditorErrorEvent.handlerName]: DocumentEditorErrorEventListener
+  [DocumentEditorInfoEvent.handlerName]: DocumentEditorInfoEventListener
+  [DocumentEditorMakeActionLinkEvent.handlerName]: DocumentEditorMakeActionLinkEventListener
+  [DocumentEditorMetaChangeEvent.handlerName]: DocumentEditorMetaChangeEventListener
+  [DocumentEditorOutdatedVersionEvent.handlerName]: DocumentEditorOutdatedVersionEventListener
+  [DocumentEditorPluginsReadyEvent.handlerName]: DocumentEditorPluginsReadyEventListener
+  [DocumentEditorReadyEvent.handlerName]: DocumentEditorReadyEventListener
+  [DocumentEditorRequestCloseEvent.handlerName]: DocumentEditorRequestCloseEventListener
+  [DocumentEditorRequestCompareFileEvent.handlerName]: DocumentEditorRequestCompareFileEventListener
+  [DocumentEditorRequestCreateNewEvent.handlerName]: DocumentEditorRequestCreateNewEventListener
+  [DocumentEditorRequestEditRightsEvent.handlerName]: DocumentEditorRequestEditRightsEventListener
+  [DocumentEditorRequestHistoryCloseEvent.handlerName]: DocumentEditorRequestHistoryCloseEventListener
+  [DocumentEditorRequestHistoryDataEvent.handlerName]: DocumentEditorRequestHistoryDataEventListener
+  [DocumentEditorRequestHistoryEvent.handlerName]: DocumentEditorRequestHistoryEventListener
+  [DocumentEditorRequestInsertImageEvent.handlerName]: DocumentEditorRequestInsertImageEventListener
+  [DocumentEditorRequestMailMergeRecipientsEvent.handlerName]: DocumentEditorRequestMailMergeRecipientsEventListener
+  [DocumentEditorRequestOpenEvent.handlerName]: DocumentEditorRequestOpenEventListener
+  [DocumentEditorRequestReferenceDataEvent.handlerName]: DocumentEditorRequestReferenceDataEventListener
+  [DocumentEditorRequestReferenceSourceEvent.handlerName]: DocumentEditorRequestReferenceSourceEventListener
+  [DocumentEditorRequestRenameEvent.handlerName]: DocumentEditorRequestRenameEventListener
+  [DocumentEditorRequestRestoreEvent.handlerName]: DocumentEditorRequestRestoreEventListener
+  [DocumentEditorRequestSaveAsEvent.handlerName]: DocumentEditorRequestSaveAsEventListener
+  [DocumentEditorRequestSelectDocumentEvent.handlerName]: DocumentEditorRequestSelectDocumentEventListener
+  [DocumentEditorRequestSelectSpreadsheetEvent.handlerName]: DocumentEditorRequestSelectSpreadsheetEventListener
+  [DocumentEditorRequestSendNotifyEvent.handlerName]: DocumentEditorRequestSendNotifyEventListener
+  [DocumentEditorRequestSharingSettingsEvent.handlerName]: DocumentEditorRequestSharingSettingsEventListener
+  [DocumentEditorRequestUsersEvent.handlerName]: DocumentEditorRequestUsersEventListener
+  [DocumentEditorWarningEvent.handlerName]: DocumentEditorWarningEventListener
+}
+
+export type GlobalDocumentEditorEventHandler =
+  GlobalDocumentEditorEventHandlerMap[GlobalDocumentEditorEventHandlerName]
+
+export type GlobalDocumentEditorEventHandlerName =
+  keyof GlobalDocumentEditorEventHandlerMap
+
+export interface GlobalDocumentEditorEventHandlerMap {
+  [DocumentEditorAppReadyEvent.handlerName]: GlobalDocumentEditorAppReadyEventHandler
+  [DocumentEditorCollaborativeChangesEvent.handlerName]: GlobalDocumentEditorCollaborativeChangesEventHandler
+  [DocumentEditorDocumentReadyEvent.handlerName]: GlobalDocumentEditorDocumentReadyEventHandler
+  [DocumentEditorDocumentStateChangeEvent.handlerName]: GlobalDocumentEditorDocumentStateChangeEventHandler
+  [DocumentEditorDownloadAsEvent.handlerName]: GlobalDocumentEditorDownloadAsEventHandler
+  [DocumentEditorErrorEvent.handlerName]: GlobalDocumentEditorErrorEventHandler
+  [DocumentEditorInfoEvent.handlerName]: GlobalDocumentEditorInfoEventHandler
+  [DocumentEditorMakeActionLinkEvent.handlerName]: GlobalDocumentEditorMakeActionLinkEventHandler
+  [DocumentEditorMetaChangeEvent.handlerName]: GlobalDocumentEditorMetaChangeEventHandler
+  [DocumentEditorOutdatedVersionEvent.handlerName]: GlobalDocumentEditorOutdatedVersionEventHandler
+  [DocumentEditorPluginsReadyEvent.handlerName]: GlobalDocumentEditorPluginsReadyEventHandler
+  [DocumentEditorReadyEvent.handlerName]: GlobalDocumentEditorReadyEventHandler
+  [DocumentEditorRequestCloseEvent.handlerName]: GlobalDocumentEditorRequestCloseEventHandler
+  [DocumentEditorRequestCompareFileEvent.handlerName]: GlobalDocumentEditorRequestCompareFileEventHandler
+  [DocumentEditorRequestCreateNewEvent.handlerName]: GlobalDocumentEditorRequestCreateNewEventHandler
+  [DocumentEditorRequestEditRightsEvent.handlerName]: GlobalDocumentEditorRequestEditRightsEventHandler
+  [DocumentEditorRequestHistoryCloseEvent.handlerName]: GlobalDocumentEditorRequestHistoryCloseEventHandler
+  [DocumentEditorRequestHistoryDataEvent.handlerName]: GlobalDocumentEditorRequestHistoryDataEventHandler
+  [DocumentEditorRequestHistoryEvent.handlerName]: GlobalDocumentEditorRequestHistoryEventHandler
+  [DocumentEditorRequestInsertImageEvent.handlerName]: GlobalDocumentEditorRequestInsertImageEventHandler
+  [DocumentEditorRequestMailMergeRecipientsEvent.handlerName]: GlobalDocumentEditorRequestMailMergeRecipientsEventHandler
+  [DocumentEditorRequestOpenEvent.handlerName]: GlobalDocumentEditorRequestOpenEventHandler
+  [DocumentEditorRequestReferenceDataEvent.handlerName]: GlobalDocumentEditorRequestReferenceDataEventHandler
+  [DocumentEditorRequestReferenceSourceEvent.handlerName]: GlobalDocumentEditorRequestReferenceSourceEventHandler
+  [DocumentEditorRequestRenameEvent.handlerName]: GlobalDocumentEditorRequestRenameEventHandler
+  [DocumentEditorRequestRestoreEvent.handlerName]: GlobalDocumentEditorRequestRestoreEventHandler
+  [DocumentEditorRequestSaveAsEvent.handlerName]: GlobalDocumentEditorRequestSaveAsEventHandler
+  [DocumentEditorRequestSelectDocumentEvent.handlerName]: GlobalDocumentEditorRequestSelectDocumentEventHandler
+  [DocumentEditorRequestSelectSpreadsheetEvent.handlerName]: GlobalDocumentEditorRequestSelectSpreadsheetEventHandler
+  [DocumentEditorRequestSendNotifyEvent.handlerName]: GlobalDocumentEditorRequestSendNotifyEventHandler
+  [DocumentEditorRequestSharingSettingsEvent.handlerName]: GlobalDocumentEditorRequestSharingSettingsEventHandler
+  [DocumentEditorRequestUsersEvent.handlerName]: GlobalDocumentEditorRequestUsersEventHandler
+  [DocumentEditorWarningEvent.handlerName]: GlobalDocumentEditorWarningEventHandler
+}
+
+export type DocumentEditorEvent =
+  DocumentEditorEventMap[DocumentEditorEventType]
+
+export type DocumentEditorEventType =
+  keyof DocumentEditorEventMap
+
+export interface DocumentEditorEventMap {
+  [DocumentEditorAppReadyEvent.type]: DocumentEditorAppReadyEvent
+  [DocumentEditorCollaborativeChangesEvent.type]: DocumentEditorCollaborativeChangesEvent
+  [DocumentEditorDocumentReadyEvent.type]: DocumentEditorDocumentReadyEvent
+  [DocumentEditorDocumentStateChangeEvent.type]: DocumentEditorDocumentStateChangeEvent
+  [DocumentEditorDownloadAsEvent.type]: DocumentEditorDownloadAsEvent
+  [DocumentEditorErrorEvent.type]: DocumentEditorErrorEvent
+  [DocumentEditorInfoEvent.type]: DocumentEditorInfoEvent
+  [DocumentEditorMakeActionLinkEvent.type]: DocumentEditorMakeActionLinkEvent
+  [DocumentEditorMetaChangeEvent.type]: DocumentEditorMetaChangeEvent
+  [DocumentEditorOutdatedVersionEvent.type]: DocumentEditorOutdatedVersionEvent
+  [DocumentEditorPluginsReadyEvent.type]: DocumentEditorPluginsReadyEvent
+  [DocumentEditorReadyEvent.type]: DocumentEditorReadyEvent
+  [DocumentEditorRequestCloseEvent.type]: DocumentEditorRequestCloseEvent
+  [DocumentEditorRequestCompareFileEvent.type]: DocumentEditorRequestCompareFileEvent
+  [DocumentEditorRequestCreateNewEvent.type]: DocumentEditorRequestCreateNewEvent
+  [DocumentEditorRequestEditRightsEvent.type]: DocumentEditorRequestEditRightsEvent
+  [DocumentEditorRequestHistoryCloseEvent.type]: DocumentEditorRequestHistoryCloseEvent
+  [DocumentEditorRequestHistoryDataEvent.type]: DocumentEditorRequestHistoryDataEvent
+  [DocumentEditorRequestHistoryEvent.type]: DocumentEditorRequestHistoryEvent
+  [DocumentEditorRequestInsertImageEvent.type]: DocumentEditorRequestInsertImageEvent
+  [DocumentEditorRequestMailMergeRecipientsEvent.type]: DocumentEditorRequestMailMergeRecipientsEvent
+  [DocumentEditorRequestOpenEvent.type]: DocumentEditorRequestOpenEvent
+  [DocumentEditorRequestReferenceDataEvent.type]: DocumentEditorRequestReferenceDataEvent
+  [DocumentEditorRequestReferenceSourceEvent.type]: DocumentEditorRequestReferenceSourceEvent
+  [DocumentEditorRequestRenameEvent.type]: DocumentEditorRequestRenameEvent
+  [DocumentEditorRequestRestoreEvent.type]: DocumentEditorRequestRestoreEvent
+  [DocumentEditorRequestSaveAsEvent.type]: DocumentEditorRequestSaveAsEvent
+  [DocumentEditorRequestSelectDocumentEvent.type]: DocumentEditorRequestSelectDocumentEvent
+  [DocumentEditorRequestSelectSpreadsheetEvent.type]: DocumentEditorRequestSelectSpreadsheetEvent
+  [DocumentEditorRequestSendNotifyEvent.type]: DocumentEditorRequestSendNotifyEvent
+  [DocumentEditorRequestSharingSettingsEvent.type]: DocumentEditorRequestSharingSettingsEvent
+  [DocumentEditorRequestUsersEvent.type]: DocumentEditorRequestUsersEvent
+  [DocumentEditorWarningEvent.type]: DocumentEditorWarningEvent
+}

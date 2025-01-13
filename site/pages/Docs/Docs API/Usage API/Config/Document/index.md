@@ -35,8 +35,7 @@ Type: object
 ``` json
 {
   "fileKey": "BCFA2CED",
-  "instanceId": "https://example.com",
-  "key": "Khirz6zTPdfd7"
+  "instanceId": "https://example.com"
 }
 ```
 
@@ -55,14 +54,6 @@ The unique system identifier. If the data was copied from a file on one system, 
 Type: string
 
 Example: `https://example.com`
-
-### referenceData.key
-
-Defines the unique document identifier used by the service to take the data from the co-editing session. In case the known key is sent, the document will be taken from the cache. Every time the document is edited and saved, the key must be generated anew. The document url can be used as the **key** but without the special characters and the length is limited to 128 symbols.
-
-Type: string
-
-Example: "Khirz6zTPdfd7"
 
 ## title
 
@@ -94,7 +85,6 @@ const docEditor = new DocsAPI.DocEditor("placeholder", {
     referenceData: {
       fileKey: "BCFA2CED",
       instanceId: "https://example.com",
-      key: "Khirz6zTPdfd7",
     },
     title: "Example Title",
     url: "https://example.com/url-to-example-document.xlsx",

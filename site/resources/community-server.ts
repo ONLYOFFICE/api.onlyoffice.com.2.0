@@ -13,7 +13,7 @@ function resource(n: string): Resource {
 
 function file(n: string): string {
   if (isBuild()) {
-    return `@onlyoffice/community-server-resource/${n}.ts`
+    return `@onlyoffice/community-server-resource/${n}.js`
   }
-  return "@onlyoffice/openapi-resource-fixtures/resource.ts"
+  return "@onlyoffice/openapi-resource-fixtures/resource.js"
 }

@@ -14,14 +14,18 @@ export function data(): Data {
 export function render(): JSX.Element {
   const c = Config.shared
   const s = Sitemap.shared
+
   return <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {s.entities.map((e) => {
       if (e.type !== "page") {
         return <></>
       }
+
+      const d = s.dateOf(e)
+
       return <url>
-        <loc>{c.baseUrl}{e.url}</loc>
-        <lastmod>{e.data.page.date.toISOString()}</lastmod>
+        <loc>{c.baseUrl}{e.data.url}</loc>
+        <lastmod>{d.toISOString()}</lastmod>
       </url>
     })}
   </urlset>

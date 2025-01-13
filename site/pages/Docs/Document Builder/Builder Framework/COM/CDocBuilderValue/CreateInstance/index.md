@@ -1,14 +1,33 @@
-`HRESULT CreateInstance([in, optional] VARIANT value);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: CreateInstance}
+- {type: text, text: (}
+- {type: parameter, text: value}
+- {type: text, text: ": [in, optional] "}
+- {type: type, text: VARIANT}
+- {type: text, text: )}
+```
 
-Creates an instance of the *CDocBuilderValue* class.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.CreateInstance* method is not used.
+Creates an instance of the `CDocBuilderValue` class.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.CreateInstance` method is not used.
 
 ## Parameters
 
-| Name    | Type    | Description                                     |
-| ------- | ------- | ----------------------------------------------- |
-| *value* | VARIANT | A value from which an instance will be created. |
+<parameters>
+
+- value
+
+  ```yml signature.variant="inline"
+  - {type: type, text: VARIANT}
+  ```
+
+  - : A value from which an instance will be created.
+
+</parameters>
 
 ## Example
 

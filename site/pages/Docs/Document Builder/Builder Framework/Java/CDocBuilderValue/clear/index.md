@@ -1,8 +1,16 @@
-`void clear();`
+```yml signature
+- {type: type, text: void}
+- {type: text, text: " "}
+- {type: entity, text: clear}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Clears the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.clear* method is not used.
+Clears the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.clear` method is not used.
 
 ## Example
 

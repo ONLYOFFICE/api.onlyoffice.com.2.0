@@ -12,6 +12,6 @@ export function data(): Data {
 
 export function render(): JSX.Element {
   return <Content>
-    <TableOfContents url="/" />
+    <TableOfContents sitemapUrl="/" />
   </Content>
 }

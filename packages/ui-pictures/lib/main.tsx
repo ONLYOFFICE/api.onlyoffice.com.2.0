@@ -1,8 +1,8 @@
 import * as Elements from "@onlyoffice/preact-elements"
 import {SpikyWow} from "@onlyoffice/ui-mascots"
 import {clsx} from "clsx"
-import {type JSX, h} from "preact"
-import {Picture404Overflow, Picture404Underflow} from "../dist/main.tsx"
+import {type JSX} from "preact"
+import {Picture404Overflow, Picture404Underflow} from "../dist/static.js"
 
 export interface Picture404Properties extends Omit<Elements.DivProperties, "size"> {
   label?: string

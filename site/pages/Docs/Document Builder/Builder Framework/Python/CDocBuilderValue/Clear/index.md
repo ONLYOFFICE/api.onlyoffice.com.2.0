@@ -1,8 +1,17 @@
-`def Clear(self);`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: Clear}
+- {type: text, text: (}
+- {type: parameter, text: self}
+- {type: text, text: )}
+```
 
-Clears the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.Clear* method is not used.
+Clears the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.Clear` method is not used.
 
 ## Example
 

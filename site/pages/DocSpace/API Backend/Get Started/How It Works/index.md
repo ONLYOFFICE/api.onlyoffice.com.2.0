@@ -8,3 +8,4 @@ This page describes what is going on in ONLYOFFICE DocSpace when you work with d
 - [Long-running operations](Long%20Running%20Operations/index.md)
 - [Uploading large files](Uploading%20Large%20Files/index.md)
 - [Webhooks](Webhooks/index.md)
+- [Removed users](Removed%20users/index.md)

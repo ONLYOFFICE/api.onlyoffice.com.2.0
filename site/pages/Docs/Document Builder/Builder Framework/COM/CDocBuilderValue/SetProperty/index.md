@@ -1,15 +1,45 @@
-`HRESULT SetProperty([in] BSTR name, [in] I_DOCBUILDER_VALUE* value);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: SetProperty}
+- {type: text, text: (}
+- {type: parameter, text: name}
+- {type: text, text: ": [in] "}
+- {type: type, text: BSTR}
+- {type: text, text: ", "}
+- {type: parameter, text: value}
+- {type: text, text: ": [in] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
 
-Sets a property to the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.SetProperty* method is not used.
+Sets a property to the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.SetProperty` method is not used.
 
 ## Parameters
 
-| Name    | Type                   | Description                                            |
-| ------- | ---------------------- | ------------------------------------------------------ |
-| *name*  | BSTR                   | The name of the **CDocBuilderValue** object property.  |
-| *value* | I\_DOCBUILDER\_VALUE\* | The value of the **CDocBuilderValue** object property. |
+<parameters>
+
+- name
+
+  ```yml signature.variant="inline"
+  - {type: type, text: BSTR}
+  ```
+
+  - : The name of the `CDocBuilderValue` object property.
+
+- value
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The value of the `CDocBuilderValue` object property.
+
+</parameters>
 
 ## Example
 

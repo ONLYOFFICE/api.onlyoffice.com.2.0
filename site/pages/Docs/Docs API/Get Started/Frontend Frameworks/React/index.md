@@ -100,6 +100,30 @@ This procedure creates a [basic React application](https://github.com/facebook/c
 
    - To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
 
+## Calling editor methods in the React component
+
+1. Add the `DocEditor.instances` parameter to the `window` object and get the editor object from it by the editor ID:
+
+   ```tsx
+   const documentEditor = window.DocEditor.instances["docxEditor"]
+   ```
+
+2. Call any editor [method](../../../Usage%20API/Methods/index.md) from this object:
+
+   ```tsx
+   documentEditor.showMessage("Welcome to ONLYOFFICE Editor!")
+   ```
+
+Example:
+
+```tsx
+const onDocumentReady = () => {
+  const documentEditor = window.DocEditor.instances["docxEditor"]
+
+  documentEditor.showMessage("Welcome to ONLYOFFICE Editor!")
+}
+```
+
 ## Deploying the demo React application
 
 The easiest way to deploy the application to a production environment is to install [serve](https://github.com/vercel/serve) and create a static server:

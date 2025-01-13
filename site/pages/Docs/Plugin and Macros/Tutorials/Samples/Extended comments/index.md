@@ -6,8 +6,6 @@ Pastes, edits, and removes comments and replies (with user data) in a document.
 
 **Supported editors:** documents.
 
-![ExtendedComments](/assets/images/plugins/gifs/extended-comments.gif)
-
 ## Installation
 
 Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_extended_comments) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

@@ -194,6 +194,9 @@ function options(s: string): ImageOptions {
     formats: ["jpg", "webp"],
     urlPath: "/assets/",
     outputDir: ".cache/assets/",
+    cacheOptions: {
+      duration: "28d",
+    },
 
     // Disk cache does not work with custom filename formats.
     // https://www.11ty.dev/docs/plugins/image/#disk-cache

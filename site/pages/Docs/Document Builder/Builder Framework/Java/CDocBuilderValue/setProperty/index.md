@@ -1,15 +1,45 @@
-`void setProperty(String name, Object value);`
+```yml signature
+- {type: type, text: void}
+- {type: text, text: " "}
+- {type: entity, text: setProperty}
+- {type: text, text: (}
+- {type: parameter, text: name}
+- {type: text, text: ": "}
+- {type: type, text: String}
+- {type: text, text: ", "}
+- {type: parameter, text: value}
+- {type: text, text: ": "}
+- {type: type, text: Object}
+- {type: text, text: )}
+```
 
-Sets a property to the **CDocBuilderValue** object.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.setProperty* method is not used.
+Sets a property to the `CDocBuilderValue` object.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.setProperty` method is not used.
 
 ## Parameters
 
-| Name    | Type   | Description                                            |
-| ------- | ------ | ------------------------------------------------------ |
-| *name*  | String | The name of the **CDocBuilderValue** object property.  |
-| *value* | Object | The value of the **CDocBuilderValue** object property. |
+<parameters>
+
+- name
+
+  ```yml signature.variant="inline"
+  - {type: type, text: String}
+  ```
+
+  - : The name of the `CDocBuilderValue` object property.
+
+- value
+
+  ```yml signature.variant="inline"
+  - {type: type, text: Object}
+  ```
+
+  - : The value of the `CDocBuilderValue` object property.
+
+</parameters>
 
 ## Example
 
@@ -26,9 +56,9 @@ document.setProperty("color", {"zX":{"red":112,"green":173,"blue":71,"alpha":255
 CDocBuilder.dispose();
 ```
 
-There are two more ways to set a property to the **CDocBuilderValue** object:
+There are two more ways to set a property to the `CDocBuilderValue` object:
 
-1. use the **Set** method that takes the object property name and value as arguments:
+1. use the `set` method that takes the object property name and value as arguments:
 
    ``` java
    void set(String name, Object value);
@@ -49,7 +79,7 @@ There are two more ways to set a property to the **CDocBuilderValue** object:
    CDocBuilder.dispose();
    ```
 
-2. use the **default\[]** postfix expression:
+2. use the `default[]` postfix expression:
 
    ``` java
    property CDocBuilderValue default[String]

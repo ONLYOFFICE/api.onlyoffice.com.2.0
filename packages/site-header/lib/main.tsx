@@ -1,7 +1,7 @@
 import * as Elements from "@onlyoffice/preact-elements"
 import {Slot, type SlotProperties} from "@onlyoffice/preact-slots"
 import {clsx} from "clsx"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export function HeaderAccessor(p: SlotProperties): JSX.Element {
   const {...o} = p

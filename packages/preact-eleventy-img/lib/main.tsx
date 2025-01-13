@@ -1,5 +1,5 @@
 import {type Metadata, generateObject} from "@11ty/eleventy-img"
-import {Fragment, type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export interface ImageAttributes {
   alt: string

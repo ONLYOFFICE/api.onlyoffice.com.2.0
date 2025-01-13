@@ -2,7 +2,7 @@
 /* eslint @stylistic/max-len: ["error", {code: 140}] */
 
 import {callerPosition} from "@onlyoffice/caller-position"
-import {DocumentEditor, type DocumentEditorEventHandlerName} from "@onlyoffice/document-editor-html-element"
+import {DocumentEditor, type DocumentEditorEventListenerName} from "@onlyoffice/document-editor-html-element"
 import {substringPosition} from "@onlyoffice/strings"
 
 declare global {
@@ -244,7 +244,7 @@ export class DocumentEditorMirror extends HTMLElement {
     return `try {(${fn}).call(this)} catch (e) {window.onthrow(e); throw e}`
   }
 
-  #createConsole(w: InternalWindow, p: [number, number], s: DocumentEditorEventHandlerName): Pick<Console, "error" | "log"> {
+  #createConsole(w: InternalWindow, p: [number, number], s: DocumentEditorEventListenerName): Pick<Console, "error" | "log"> {
     // eslint-disable-next-line unicorn/no-this-assignment, @typescript-eslint/no-this-alias
     const dm = this
     const co = w.console
@@ -297,7 +297,7 @@ export class DocumentEditorMirror extends HTMLElement {
     }
   }
 
-  #createThrow(p: [number, number], s: DocumentEditorEventHandlerName): ThrowPseudoEventListener {
+  #createThrow(p: [number, number], s: DocumentEditorEventListenerName): ThrowPseudoEventListener {
     // eslint-disable-next-line unicorn/no-this-assignment, @typescript-eslint/no-this-alias
     const dm = this
 
@@ -323,9 +323,9 @@ export class DocumentEditorMirror extends HTMLElement {
 }
 
 export class DocumentEditorMirrorConsoleEvent extends Event {
-  #source: DocumentEditorEventHandlerName
+  #source: DocumentEditorEventListenerName
 
-  get source(): DocumentEditorEventHandlerName {
+  get source(): DocumentEditorEventListenerName {
     return this.#source
   }
 
@@ -357,7 +357,7 @@ export class DocumentEditorMirrorConsoleEvent extends Event {
 }
 
 export interface DocumentEditorMirrorConsoleEventInit extends EventInit {
-  source: DocumentEditorEventHandlerName
+  source: DocumentEditorEventListenerName
   lineno: number
   colno: number
   args: unknown[]
@@ -422,9 +422,9 @@ export class DocumentEditorMirrorThrowEvent extends Event {
     return "documenteditormirrorthrow"
   }
 
-  #source: DocumentEditorEventHandlerName
+  #source: DocumentEditorEventListenerName
 
-  get source(): DocumentEditorEventHandlerName {
+  get source(): DocumentEditorEventListenerName {
     return this.#source
   }
 
@@ -456,7 +456,7 @@ export class DocumentEditorMirrorThrowEvent extends Event {
 }
 
 export interface DocumentEditorMirrorThrowEventInit extends EventInit {
-  source: DocumentEditorEventHandlerName
+  source: DocumentEditorEventListenerName
   lineno: number
   colno: number
   error: Error

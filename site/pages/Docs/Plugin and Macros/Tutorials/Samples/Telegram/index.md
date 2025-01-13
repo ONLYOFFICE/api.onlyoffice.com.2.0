@@ -10,8 +10,6 @@ Connects the Telegram application for instant messaging within the ONLYOFFICE ed
 
 **Analogues:** [Rainbow](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/rainbow), [Jitsi](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/jitsi).
 
-![Telegram](/assets/images/plugins/gifs/telegram.gif)
-
 ## Installation
 
 Available by default in ONLYOFFICE Enterprise Edition and Community Edition (Docs + Workspace).

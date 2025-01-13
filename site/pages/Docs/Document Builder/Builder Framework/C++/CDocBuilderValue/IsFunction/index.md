@@ -1,8 +1,16 @@
-`bool IsFunction();`
+```yml signature
+- {type: type, text: bool}
+- {type: text, text: " "}
+- {type: entity, text: IsFunction}
+- {type: text, text: (}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is a function.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsFunction* method is not used.
+Returns true if the `CDocBuilderValue` object is a function.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.IsFunction` method is not used.
 
 ## Example
 

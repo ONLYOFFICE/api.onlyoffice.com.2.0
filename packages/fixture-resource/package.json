@@ -1,0 +1,20 @@
+{
+  "name": "@onlyoffice/fixture-resource",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./typedoc.js": "./dist/typedoc.js"
+  },
+  "scripts": {
+    "build:typedoc": "pnpm docs:typedoc && typedoc-resource typedoc",
+    "build": "pnpm build:typedoc",
+    "docs:typedoc": "cd fixtures/typedoc && pnpm build-docs"
+  },
+  "dependencies": {
+    "@onlyoffice/library-declaration": "workspace:^"
+  },
+  "devDependencies": {
+    "@onlyoffice/typedoc-resource": "workspace:^",
+    "typescript": "5.7.2"
+  }
+}

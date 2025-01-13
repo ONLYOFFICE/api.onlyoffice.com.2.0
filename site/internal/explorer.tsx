@@ -1,6 +1,6 @@
-import {Sitemap, type SitemapEntity} from "@onlyoffice/eleventy-sitemap"
 import {Fragment, type JSX, h} from "preact"
 import {Tree, TreeGroup, TreeItem, TreeLink} from "../components/tree/tree.tsx"
+import {type Entity, GroupEntity, PageEntity, Sitemap} from "./sitemap.ts"
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
@@ -49,100 +49,50 @@ export class ExplorerDatum implements ExplorerData {
 }
 
 export interface ExplorerProperties {
+  sitemapUrl: string
   level: number
-  url: string
 }
 
 export function Explorer(p: ExplorerProperties): JSX.Element {
   const s = Sitemap.shared
-
-  let l = p.level
-  let e = s.find("/", "url")
-  while (true) {
-    if (!e || l === 0) {
-      break
-    }
-    for (const id of e.children) {
-      const c = s.find(id, "id")
-      if (!c) {
-        continue
-      }
-      let u = ""
-      if (c.type === "group") {
-        const b = s.find(c.parent, "id")
-        if (!b || b.type !== "page") {
-          continue
-        }
-        u = b.url
-      } else if (c.type === "page") {
-        u = c.url
-      } else {
-        // @ts-expect-error
-        throw new Error(`Unexpected entity type: ${c.type}`)
-      }
-      if (p.url.startsWith(u)) {
-        e = c
-        l -= 1
-        break
-      }
-    }
-  }
-
-  if (!e) {
-    return <></>
-  }
+  const e = s.findRoot(p.sitemapUrl, p.level)
 
   return <Tree>
     {e.children.map((id) => {
-      const e = s.find(id, "id")
-      if (!e || e.type !== "page") {
-        return null
-      }
+      const e = s.findPageById(id)
       return <TreeGroup>
-        <TreeLink href={e.url} active={p.url === e.url}>{e.title}</TreeLink>
-        <Sub e={e} />
+        <TreeLink href={e.canonicalUrl} active={p.sitemapUrl === e.sitemapUrl}>
+          {e.title}
+        </TreeLink>
+        {e.children.length !== 0 && <Sub e={e} />}
       </TreeGroup>
     })}
   </Tree>
 
-  function Sub({e}: {e: SitemapEntity}): JSX.Element | null {
+  function Sub({e}: {e: Entity}): JSX.Element | null {
     return <>{e.children.map((id) => {
-      const e = s.find(id, "id")
-      if (!e) {
-        return null
-      }
-      if (e.type === "group") {
-        if (e.children.length === 0) {
-          return null
-        }
-        const r = s.find(e.parent, "id")
-        if (!r) {
-          return null
-        }
-        if (r.type !== "page") {
-          throw new Error(`Nested group is not supported: ${e.id}`)
-        }
-        const b = s.find(p.url, "url")
-        if (!b) {
-          return null
-        }
-        return <TreeItem expanded={e.children.includes(b.id)}>
-          <TreeLink href="" active={false}>{e.title}</TreeLink>
-          <Sub e={e} />
-        </TreeItem>
-      }
-      if (e.type === "page") {
-        const x = e.data.explorer
-        if (!x) {
-          throw new Error(`Explorer data not found: ${e.url} (${e.id})`)
-        }
-        return <TreeItem expanded={p.url.startsWith(e.url)}>
-          <TreeLink href={x.url} active={p.url === e.url} blank={x.blank}>{e.title}</TreeLink>
+      const e = s.findById(id)
+
+      if (e instanceof GroupEntity) {
+        return <TreeItem expanded={p.sitemapUrl.startsWith(e.sitemapUrl)}>
+          <TreeLink href="" active={false}>
+            {e.title}
+          </TreeLink>
           {e.children.length !== 0 && <Sub e={e} />}
         </TreeItem>
       }
-      // @ts-expect-error
-      throw new Error(`Unexpected entity type: ${e.type}`)
+
+      if (e instanceof PageEntity) {
+        const d = e.explorer
+        return <TreeItem expanded={p.sitemapUrl.startsWith(e.sitemapUrl)}>
+          <TreeLink href={d.url} active={p.sitemapUrl === e.sitemapUrl} blank={d.blank}>
+            {d.title}
+          </TreeLink>
+          {e.children.length !== 0 && <Sub e={e} />}
+        </TreeItem>
+      }
+
+      throw new Error(`Unknown entity type: ${e}`)
     })}</>
   }
 }

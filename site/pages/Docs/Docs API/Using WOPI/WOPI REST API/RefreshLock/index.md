@@ -1,6 +1,6 @@
 `POST /wopi/files/(file_id)`
 
-Refreshes the lock on a file by resetting its automatic expiration timer to 30 minutes. The refreshed lock must expire automatically after 30 minutes unless it's modified by a subsequent WOPI operation, such as [Unlock](../Unlock/index.md) and *RefreshLock* operations.
+Refreshes the [lock](../../Key%20concepts/index.md#lock) on a file by resetting its automatic expiration timer to 30 minutes. The refreshed lock must expire automatically after 30 minutes unless it's modified by a subsequent WOPI operation, such as [Unlock](../Unlock/index.md) and *RefreshLock* operations.
 
 This operation works as follows:
 
@@ -10,15 +10,15 @@ This operation works as follows:
 
 ## Parameters
 
-| Name     | Type   | Description                        |
-| -------- | ------ | ---------------------------------- |
-| file\_id | string | The file ID that must be URL safe. |
+| Name     | Type   | Description                                                                 |
+| -------- | ------ | --------------------------------------------------------------------------- |
+| file\_id | string | The [file ID](../../Key%20concepts/index.md#file-id) that must be URL safe. |
 
 ## Query parameters
 
-| Name          | Type   | Description                                                                            |
-| ------------- | ------ | -------------------------------------------------------------------------------------- |
-| access\_token | string | An access token that the host will use to determine whether the request is authorized. |
+| Name          | Type   | Description                                                                                                                          |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| access\_token | string | An [access token](../../Key%20concepts/index.md#access-token) that the host will use to determine whether the request is authorized. |
 
 ## Request headers
 

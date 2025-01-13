@@ -6,8 +6,6 @@ Searches for and replaces text in the document when it is reopened.
 
 **Supported editors:** documents.
 
-![SearchAndReplaceOnStart](/assets/images/plugins/gifs/search-and-replace-on-start.gif)
-
 ## Installation
 
 Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/searchAndReplaceOnStart) and install it following the [desktop](../../Installing/ONLYOFFICE%20Desktop%20Editors/index.md), [on-premises](../../Installing/ONLYOFFICE%20Docs%20on-premises/index.md), or [cloud](../../Installing/ONLYOFFICE%20Cloud/index.md) installation instructions.

@@ -1,4 +1,4 @@
-import type * as T from "@onlyoffice/hastscript/texts.ts"
+import type * as T from "@onlyoffice/hastscript/texts.js"
 import {type Text} from "hast"
 
 export function isNewlineText(u: unknown): u is T.NewlineText {

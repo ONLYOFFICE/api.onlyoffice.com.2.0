@@ -13,6 +13,8 @@ const cs: [string, string][] = [
   ["a. b\n\nc. d", "a."],
   ["**a. b**", "**a.**"],
   ["**a*b. c*d**", "**a*b.***"],
+  ["A container. Box", "A container."],
+  ["on `I`", "on `I`."],
 ]
 
 for (const [a, e] of cs) {

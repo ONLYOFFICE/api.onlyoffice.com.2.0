@@ -1,10 +1,10 @@
-When performing the client-side browser requests to ONLYOFFICE Docs a *token* must be added to the parameters to validate the data.
+When performing the client-side browser requests to ONLYOFFICE Docs, a token must be added to the parameters to validate the data.
 
 ## Opening file
 
 When a file is [opened](../../../Get%20Started/How%20It%20Works/Opening%20file/index.md) for editing in ONLYOFFICE Docs, the [token](../../../Usage%20API/Config/index.md#token) must be added to the configuration to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the [config](../../../Usage%20API/Advanced%20parameters/index.md).
+The `payload` for the JWT token in the JSON format must have the same structure as the [config](../../../Usage%20API/Advanced%20parameters/index.md).
 
 > Please note that starting from version 7.1, the parameter list to be signed will be strictly regulated. Don't forget to add all the parameters listed below to your signature.
 
@@ -61,7 +61,7 @@ Sample token:
 
 When calling the [insertImage](../../../Usage%20API/Methods/index.md#insertimage) method to insert an image into the file, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
@@ -89,7 +89,7 @@ Sample token:
 
 When calling the [setHistoryData](../../../Usage%20API/Methods/index.md#sethistorydata) method to view the document [history](../../../Get%20Started/How%20It%20Works/Document%20history/index.md) version in ONLYOFFICE Docs, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
@@ -118,7 +118,7 @@ Sample token:
 
 When calling the [setMailMergeRecipients](../../../Usage%20API/Methods/index.md#setmailmergerecipients) method to insert recipient data for mail merge into the file, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
@@ -141,16 +141,16 @@ Sample token:
 
 When calling the [setReferenceData](../../../Usage%20API/Methods/index.md#setreferencedata) method to insert data into the spreadsheet by an external link, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
     "fileType": "xlsx",
+    "key": "Khirz6zTPdfd7",
     "path": "sample.xlsx",
     "referenceData": {
       "fileKey": "BCFA2CED",
-      "instanceId": "https://example.com",
-      "key": "Khirz6zTPdfd7"
+      "instanceId": "https://example.com"
     },
     "url": "https://example.com/url-to-example-document.xlsx"
   }
@@ -162,7 +162,7 @@ Sample token:
 
 ``` json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJwYXRoIjoic2FtcGxlLnhsc3giLCJyZWZlcmVuY2VEYXRhIjp7ImZpbGVLZXkiOiJCQ0ZBMkNFRCIsImluc3RhbmNlSWQiOiJodHRwczovL2V4YW1wbGUuY29tIn0sInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQueGxzeCJ9.UXosmM-E_Cu9j9QGSlcj9FEoSu5m-zCS4b6FxO_2k7w"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJrZXkiOiJLaGlyejZ6VFBkZmQ3IiwicGF0aCI6InNhbXBsZS54bHN4IiwicmVmZXJlbmNlRGF0YSI6eyJmaWxlS2V5IjoiQkNGQTJDRUQiLCJpbnN0YW5jZUlkIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSJ9LCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLWRvY3VtZW50Lnhsc3gifQ.US2wsI__77B0ApzMOIUGIU49cUAORvdzGZ4V49BO4Dc"
 }
 ```
 
@@ -170,16 +170,16 @@ Sample token:
 
 When calling the [setReferenceSource](../../../Usage%20API/Methods/index.md#setreferencesource) method to change a source of the external data, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
     "fileType": "xlsx",
+    "key": "Khirz6zTPdfd7",
     "path": "sample.xlsx",
     "referenceData": {
       "fileKey": "BCFA2CED",
-      "instanceId": "https://example.com",
-      "key": "Khirz6zTPdfd7"
+      "instanceId": "https://example.com"
     },
     "url": "https://example.com/url-to-example-document.xlsx"
   }
@@ -191,7 +191,7 @@ Sample token:
 
 ``` json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJwYXRoIjoic2FtcGxlLnhsc3giLCJyZWZlcmVuY2VEYXRhIjp7ImZpbGVLZXkiOiJCQ0ZBMkNFRCIsImluc3RhbmNlSWQiOiJodHRwczovL2V4YW1wbGUuY29tIn0sInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQueGxzeCJ9.UXosmM-E_Cu9j9QGSlcj9FEoSu5m-zCS4b6FxO_2k7w"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJrZXkiOiJLaGlyejZ6VFBkZmQ3IiwicGF0aCI6InNhbXBsZS54bHN4IiwicmVmZXJlbmNlRGF0YSI6eyJmaWxlS2V5IjoiQkNGQTJDRUQiLCJpbnN0YW5jZUlkIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSJ9LCJ1cmwiOiJodHRwczovL2V4YW1wbGUuY29tL3VybC10by1leGFtcGxlLWRvY3VtZW50Lnhsc3gifQ.US2wsI__77B0ApzMOIUGIU49cUAORvdzGZ4V49BO4Dc"
 }
 ```
 
@@ -199,7 +199,7 @@ Sample token:
 
 When calling the [setRequestedDocument](../../../Usage%20API/Methods/index.md#setrequesteddocument) method to select a document for comparing or combining, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
@@ -223,7 +223,7 @@ Sample token:
 
 When calling the [setRequestedSpreadsheet](../../../Usage%20API/Methods/index.md#setrequestedspreadsheet) method to insert recipient data for mail merge into the file, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
@@ -247,7 +247,7 @@ Sample token:
 
 When calling the [setRevisedFile](../../../Usage%20API/Methods/index.md#setrevisedfile) method to select a document for comparing, the token must be added to validate the parameters.
 
-The *payload* for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
+The `payload` for the JWT token in the JSON format must have the same structure as the method parameter. The parameter list to be signed is not strictly regulated, but we recommend that you specify all the parameter sent:
 
   ``` json
   {
