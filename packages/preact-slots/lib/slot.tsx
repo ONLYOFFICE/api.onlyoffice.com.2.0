@@ -6,11 +6,9 @@ import {merge} from "@onlyoffice/preact-merge"
 import {
   type ComponentChild,
   type ComponentChildren,
-  Fragment,
   type JSX,
   type VNode,
   cloneElement,
-  h,
   isValidElement,
   toChildArray,
 } from "preact"

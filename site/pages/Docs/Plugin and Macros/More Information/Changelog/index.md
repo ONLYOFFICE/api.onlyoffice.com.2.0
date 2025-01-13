@@ -62,7 +62,6 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 - Added the GetCurrentSentence method to *window\.Asc.plugin.executeMethod*.
 - Added the GetCurrentWord method to *window\.Asc.plugin.executeMethod*.
 - Added the GetDocumentLang method to *window\.Asc.plugin.executeMethod*.
-- Added the InstallDeveloperPlugin method to *window\.Asc.plugin.executeMethod*.
 - Added the MouseMoveWindow method to *window\.Asc.plugin.executeMethod*.
 - Added the MouseUpWindow method to *window\.Asc.plugin.executeMethod*.
 - Added the ReplaceCurrentSentence method to *window\.Asc.plugin.executeMethod*.

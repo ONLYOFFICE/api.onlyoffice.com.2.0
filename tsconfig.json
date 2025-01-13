@@ -1,16 +1,4 @@
 {
   "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-    "rootDir": "."
-  },
-  "include": [
-    ".remarkrc.js",
-    "eslint.config.js",
-    "makefile.ts",
-    "remark.config.ts",
-    "stylelint.config.js"
-  ]
+  "include": [".*.js", "*.js", "*.ts"]
 }

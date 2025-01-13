@@ -1,4 +1,4 @@
-import {Fragment, type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export function FontsPreload(): JSX.Element {
   return <>

@@ -16,8 +16,8 @@ This documentation describes:
 
 Here are some examples of what you can do with ONLYOFFICE DocSpace plugins:
 
-- connect third-party services, like [Draw.io](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw-io), [Speech to Text Conversion](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text), etc.;
-- enhance the existing user experience and the editors’ functionality: [PDF-converter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter).
+- connect third-party services, like [Draw.io](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw.io), [Speech to Text Conversion](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text), etc.;
+- enhance the existing user experience and the editors functionality: [PDF-converter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter).
 
 Code samples are available at <https://github.com/ONLYOFFICE/docspace-plugins>.
 

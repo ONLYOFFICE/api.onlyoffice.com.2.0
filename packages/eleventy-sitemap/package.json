@@ -2,18 +2,18 @@
   "name": "@onlyoffice/eleventy-sitemap",
   "type": "module",
   "private": true,
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
     "@onlyoffice/eleventy-types": "workspace:^",
-    "@onlyoffice/objects": "workspace:^",
-    "typescript": "5.4.5"
+    "@onlyoffice/errors": "workspace:^",
+    "@onlyoffice/result": "workspace:^"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

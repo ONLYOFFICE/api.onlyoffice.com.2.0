@@ -1,5 +1,5 @@
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {Fragment, type JSX, cloneElement, h, toChildArray} from "preact"
+import {type JSX, cloneElement, toChildArray} from "preact"
 
 export function SrOnly(p: ChildrenIncludable): JSX.Element {
   return <>

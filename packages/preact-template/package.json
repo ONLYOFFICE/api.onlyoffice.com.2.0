@@ -2,19 +2,18 @@
   "name": "@onlyoffice/preact-template",
   "type": "module",
   "private": true,
-  "main": "lib/main.tsx",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test": "pnpm test:types"
   },
   "dependencies": {
     "@onlyoffice/preact-elements": "workspace:^",
     "preact": "10.22.0",
-    "preact-render-to-string": "6.4.1",
-    "typescript": "5.4.5"
+    "preact-render-to-string": "6.4.1"
   },
   "devDependencies": {
-    "rimraf": "6.0.1"
+    "typescript": "5.7.2"
   }
 }

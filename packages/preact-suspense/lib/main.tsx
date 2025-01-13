@@ -1,7 +1,7 @@
 // todo: explain what this file does.
 
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {Fragment, type JSX, createContext, h, toChildArray} from "preact"
+import {type JSX, createContext, toChildArray} from "preact"
 import {Suspense, useContext} from "preact/compat"
 
 interface Contextual {

@@ -1,8 +1,17 @@
-`def IsArray(self);`
+```yml signature
+- {type: keyword, text: def}
+- {type: text, text: " "}
+- {type: entity, text: IsArray}
+- {type: text, text: (}
+- {type: parameter, text: self}
+- {type: text, text: )}
+```
 
-Returns true if the **CDocBuilderValue** object is an array.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.IsArray* method is not used.
+Returns true if the `CDocBuilderValue` object is an array.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.IsArray` method is not used.
 
 ## Example
 

@@ -52,7 +52,7 @@ See the [ONLYOFFICE Docs API](../../../../Docs%20API/Usage%20API/Config/Editor/P
 
 ### Known issues
 
-- In the *index.html* file there is always a default link to the [plugins.js](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js) file. Don’t forget to add it to the plugin folder.
+- In the *index.html* file there is always a default link to the [plugins.js](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js) file. Don't forget to add it to the plugin folder.
 - If the plugins placed into the folder and the plugins specified in the config coincide, the latter will be used.
 - If you want to upload the plugin to the S3 or Nginx servers, you need to allow cross-domain requests from the address of your document server. Or you can just let everyone use your plugin:
 
@@ -147,7 +147,7 @@ The plugins will be removed for all the users. [In some cases](https://nodejs.or
 
 The table below contains default plugins guids to make it easier for you to find them:
 
-## Default plugins guid’s
+## Default plugins guid's
 
 |                |                                        |
 | -------------- | -------------------------------------- |

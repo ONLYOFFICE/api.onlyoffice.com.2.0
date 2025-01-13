@@ -23,6 +23,7 @@ export class BuildResult {
 }
 
 export class EleventyLightningcss {
+  // @ts-ignore todo resolve it
   static #queue = new PQueue({concurrency: 1})
   static #cache = new Map<string, Promise<BuildResult>>()
 

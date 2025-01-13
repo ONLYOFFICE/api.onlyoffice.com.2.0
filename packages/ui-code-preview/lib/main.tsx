@@ -1,4 +1,4 @@
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 import {type HTMLAttributes} from "preact/compat"
 
 export function CodePreview(p: HTMLAttributes<HTMLDivElement>): JSX.Element {

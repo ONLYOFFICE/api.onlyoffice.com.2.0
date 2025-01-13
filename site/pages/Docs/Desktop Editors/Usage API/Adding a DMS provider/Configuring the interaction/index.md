@@ -9,7 +9,7 @@ Once your DMS is [added](../index.md) to the connection list, configure the DMS/
 - change the interface [theme](../Changing%20a%20theme/index.md),
 - enable end-to-end [encryption](../Encryption/index.md).
 
-Before proceeding further, it’s highly recommended to adjust the DMS elements to be displayed when the document is opened in the desktop application.
+Before proceeding further, it's highly recommended to adjust the DMS elements to be displayed when the document is opened in the desktop application.
 
 Exclude the functionality which is not related to the document manager. Hide such sections like navigation, site header and footer, etc. Remove links to the third-party resources. Other pages will open in the default browser without interacting with the desktop editors.
 

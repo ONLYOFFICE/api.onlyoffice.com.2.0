@@ -22,13 +22,13 @@ The reference figure and the steps below explain the process of setting a name t
 
 1. Create an *html* file to [Open the document](../Opening%20file/index.md#how-this-can-be-done-in-practice).
 
-2. If the anonymous user’s name is specified, it is displayed on the top toolbar.
+2. If the anonymous user's name is specified, it is displayed on the top toolbar.
 
 3. If the user name is not specified, it will be requested. The request can be turned off with the *"request"=false* value of the [editorConfig.customization.anonymous](../../../Usage%20API/Config/Editor/Customization/index.md#anonymous) parameter.
 
    ![Name request](/assets/images/editor/name-request.png)
 
-4. After the anonymous user’s name is set, the postfix is added to it via the *label* field of the *editorConfig.customization.anonymous* parameter to distinguish guests during the coediting session. By default this postfix is *"Guest"*.
+4. After the anonymous user's name is set, the postfix is added to it via the *label* field of the *editorConfig.customization.anonymous* parameter to distinguish guests during the coediting session. By default this postfix is *"Guest"*.
 
    ![Label](/assets/images/editor/label.png)
 

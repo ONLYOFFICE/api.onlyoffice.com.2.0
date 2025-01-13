@@ -4,7 +4,13 @@ import {
   isParagraphNode,
   isParentNode,
 } from "@onlyoffice/mdast-util-is-node"
-import {type Node, type Parent, type Root, type RootContent} from "mdast"
+import {
+  type Node,
+  type Parent,
+  type Root,
+  type RootContent,
+  type Text,
+} from "mdast"
 import {toString} from "mdast-util-to-string"
 import {split} from "sentence-splitter"
 import {English} from "sentence-splitter/lang"
@@ -48,19 +54,18 @@ function append(c: {s: string}, r: Parent, n: unknown): void {
     if (c.s.startsWith(t.value)) {
       c.s = c.s.slice(t.value.length)
     } else {
-      const i = t.value.indexOf(c.s)
-      if (i === -1) {
-        return
-      }
+      const i = Math.max(0, c.s.length)
+      t.value = t.value.slice(0, i + 1).trimEnd()
       c.s = ""
-      t.value = t.value.slice(0, i + 1)
     }
 
     if (!c.s && !t.value.endsWith(".")) {
-      t.value += "."
+      const d: Text = {type: "text", value: "."}
+      r.children.push(t as RootContent, d)
+    } else {
+      r.children.push(t as RootContent)
     }
 
-    r.children.push(t as RootContent)
     return
   }
 

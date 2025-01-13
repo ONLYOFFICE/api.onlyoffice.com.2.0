@@ -1,24 +1,24 @@
-ONLYOFFICE Docs [uses](../../Get%20Started/How%20It%20Works/Security/index.md) **tokens** generated using the JSON Web Tokens standard.
+ONLYOFFICE Docs [uses](../../Get%20Started/How%20It%20Works/Security/index.md) tokens generated using the JSON Web Tokens standard. The tokens are sent when performing the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs or the [HTTP requests](Request/index.md) to or from ONLYOFFICE Docs.
 
-> This feature is used in **ONLYOFFICE Docs** starting with version 4.2
+> This feature is used in ONLYOFFICE Docs starting with version 4.2
 
-For the validation setup it is necessary to edit the [secret key](https://helpcenter.onlyoffice.com/installation/docs-developer-configuring.aspx#SecretKey) and [token](https://helpcenter.onlyoffice.com/installation/docs-developer-configuring.aspx#Token) parameters in the configuration file which can be found (or created) at the following path:
+For the validation setup, it is necessary to edit the [secret key](https://helpcenter.onlyoffice.com/installation/docs-developer-configuring.aspx#SecretKey) and [token](https://helpcenter.onlyoffice.com/installation/docs-developer-configuring.aspx#Token) parameters in the configuration file, which can be found (or created) at the following path:
 
-For Linux - */etc/onlyoffice/documentserver/**local.json***.
+For Linux - `/etc/onlyoffice/documentserver/local.json`.
 
-For Windows - *%ProgramFiles%\ONLYOFFICE\DocumentServer\config\\**local.json***.
+For Windows - `%ProgramFiles%\ONLYOFFICE\DocumentServer\config\local.json`.
 
-> The default values are available in the *default.json* configuration file, which is available in the folders above (for Linux and Windows). Please do not edit the contents of the *default.json* file directly. The default values will be restored each time you restart Docker container or upgrade **ONLYOFFICE Docs** to a new version and all your changes will be lost.
+> The default values are available in the `default.json` configuration file, which is available in the folders above (for Linux and Windows). Please do not edit the contents of the `default.json` file directly. The default values will be restored each time you restart Docker container or upgrade ONLYOFFICE Docs to a new version and all your changes will be lost.
 
 Restart the services for the config changes to take effect:
 
-**For RPM/DEB packages:**
+For RPM/DEB packages:
 
 ``` sh
 systemctl restart ds-*
 ```
 
-**For Docker:**
+For Docker:
 
 ``` sh
 supervisorctl restart all
@@ -26,14 +26,14 @@ supervisorctl restart all
 
 ## Parameters
 
-| Parameter                                        | Type    | Example | Description                                                                                                                                                                                                                                                                                                                                                                             |
-| ------------------------------------------------ | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| services.CoAuthoring.secret.browser.string       | string  | secret  | Defines the *secret key* to generate a token in the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs. Deprecated since version 7.2, please use [services.CoAuthoring.secret.inbox.string](#services.CoAuthoring.secret.inbox.string) instead.                                                                                                                        |
-| services.CoAuthoring.secret.inbox.string         | string  | secret  | Defines the *secret key* to generate a token in the [incoming HTTP requests](Request/index.md#incoming-request) with the commands from the **document storage service** to the **document command service**, **document conversion service** and **document builder service** and a token in the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs since version 7.2. |
-| services.CoAuthoring.secret.outbox.string        | string  | secret  | Defines the *secret key* to generate a token in the [outgoing HTTP requests](Request/index.md#outgoing-requests) to the *callbackUrl* address by **document editing service**.                                                                                                                                                                                                          |
-| services.CoAuthoring.token.enable.browser        | boolean | false   | Defines if a token in the client-side [browser requests](Browser/index.md) is enabled or not.                                                                                                                                                                                                                                                                                           |
-| services.CoAuthoring.token.enable.request.inbox  | boolean | false   | Defines if a token in the [incoming HTTP requests](Request/index.md#incoming-request) is enabled or not.                                                                                                                                                                                                                                                                                |
-| services.CoAuthoring.token.enable.request.outbox | boolean | false   | Defines if a token in the [outgoing HTTP requests](Request/index.md#outgoing-requests) is enabled or not.                                                                                                                                                                                                                                                                               |
+| Parameter                                        | Type    | Example | Description                                                                                                                                                                                                                                                                                    |
+| ------------------------------------------------ | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| services.CoAuthoring.secret.browser.string       | string  | secret  | Defines the secret key to generate a token in the client-side [browser requests](Browser/index.md) to ONLYOFFICE Docs.                                                                                                                                                                         |
+| services.CoAuthoring.secret.inbox.string         | string  | secret  | Defines the secret key to generate a token in the [incoming HTTP requests](Request/Token%20in%20body/index.md#incoming-request) with the commands from the **document storage service** to the **document command service**, **document conversion service** and **document builder service**. |
+| services.CoAuthoring.secret.outbox.string        | string  | secret  | Defines the secret key to generate a token in the [outgoing HTTP requests](Request/Token%20in%20body/index.md#outgoing-requests) to the `callbackUrl` address by **document editing service**.                                                                                                 |
+| services.CoAuthoring.token.enable.browser        | boolean | false   | Defines if a token in the client-side [browser requests](Browser/index.md) is enabled or not.                                                                                                                                                                                                  |
+| services.CoAuthoring.token.enable.request.inbox  | boolean | false   | Defines if a token in the [incoming HTTP requests](Request/Token%20in%20body/index.md#incoming-request) is enabled or not.                                                                                                                                                                     |
+| services.CoAuthoring.token.enable.request.outbox | boolean | false   | Defines if a token in the [outgoing HTTP requests](Request/Token%20in%20body/index.md#outgoing-requests) is enabled or not.                                                                                                                                                                    |
 
 ## Sample local.json configuration
 

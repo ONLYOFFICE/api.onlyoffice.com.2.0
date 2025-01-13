@@ -1,16 +1,57 @@
-`HRESULT CreateTypedArray([in] VARIANT buffer, [in] long length, [out, retval] I_DOCBUILDER_VALUE** result);`
+```yml signature
+- {type: type, text: HRESULT}
+- {type: text, text: " "}
+- {type: entity, text: CreateTypedArray}
+- {type: text, text: (}
+- {type: parameter, text: buffer}
+- {type: text, text: ": [in] "}
+- {type: type, text: VARIANT}
+- {type: text, text: ", "}
+- {type: parameter, text: length}
+- {type: text, text: ": [in] "}
+- {type: type, text: long}
+- {type: text, text: ", "}
+- {type: parameter, text: result}
+- {type: text, text: ": [out, retval] "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+- {type: text, text: )}
+```
 
-Creates a Uint8Array value, an analogue of *Uint8Array* in JS.
+## Description
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderContext.CreateTypedArray* method is not used.
+Creates a Uint8Array value, an analogue of `Uint8Array` in JS.
+
+> Please note, that for the `.docbuilder` file the `CDocBuilderContext.CreateTypedArray` method is not used.
 
 ## Parameters
 
-| Name     | Type                     | Description               |
-| -------- | ------------------------ | ------------------------- |
-| *buffer* | VARIANT                  | The array buffer.         |
-| *length* | long                     | The array length.         |
-| *result* | I\_DOCBUILDER\_VALUE\*\* | The returned typed array. |
+<parameters>
+
+- buffer
+
+  ```yml signature.variant="inline"
+  - {type: type, text: VARIANT}
+  ```
+
+  - : The array buffer.
+
+- length
+
+  ```yml signature.variant="inline"
+  - {type: type, text: long}
+  ```
+
+  - : The array length.
+
+- result
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: type, text: I_DOCBUILDER_VALUE**}}
+  ```
+
+  - : The returned typed array.
+
+</parameters>
 
 ## Example
 

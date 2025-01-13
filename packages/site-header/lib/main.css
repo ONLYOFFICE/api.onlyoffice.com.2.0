@@ -2,30 +2,30 @@
 .header {
   --header-block-size: 60px; /* todo: use a token */
 
-  --header-inner-max-block-size: var(--size-breakpoint-xxxlarge);
+  --header-inner-max-inline-size: var(--size-breakpoint-xxxlarge);
 
   --header-leading-padding-inline-end: var(--base-size-24);
   --header-leading-padding-inline-start: var(--base-size-24);
   --header-leading-padding-inline: var(--header-leading-padding-inline-start) var(--header-leading-padding-inline-end);
   --header-leading-border-inline-end-width: var(--size-border-width-thin);
-  --header-leading-content-block-size: 0px;
-  --header-leading-block-size: calc(var(--header-leading-padding-inline-start) + var(--header-leading-content-block-size) + var(--header-leading-padding-inline-end) + var(--header-leading-border-inline-end-width));
+  --header-leading-content-inline-size: 0px;
+  --header-leading-inline-size: calc(var(--header-leading-padding-inline-start) + var(--header-leading-content-inline-size) + var(--header-leading-padding-inline-end) + var(--header-leading-border-inline-end-width));
 
   --header-training-padding-inline-end: 0px;
   --header-training-padding-inline-start: 0px;
   --header-training-padding-inline: var(--header-training-padding-inline-start) var(--header-training-padding-inline-end);
-  --header-training-content-block-size: 0px;
-  --header-training-block-size: calc(var(--header-training-padding-inline-start) + var(--header-training-content-block-size) + var(--header-training-padding-inline-end));
+  --header-training-content-inline-size: 0px;
+  --header-training-inline-size: calc(var(--header-training-padding-inline-start) + var(--header-training-content-inline-size) + var(--header-training-padding-inline-end));
 
   --header-content-padding-inline-offset: 0px;
   --header-content-padding-inline-value: var(--base-size-16);
   --header-content-padding-inline: calc(var(--header-content-padding-inline-value) - var(--header-content-padding-inline-offset));
-  --header-content-max-block-size: calc(var(--header-inner-max-block-size) - var(--header-leading-block-size) - var(--header-training-block-size));
+  --header-content-max-inline-size: calc(var(--header-inner-max-inline-size) - var(--header-leading-inline-size) - var(--header-training-inline-size));
 
   @media (--size-viewport-width-medium) {
     --header-leading-padding-inline-end: var(--base-size-24);
     --header-leading-padding-inline-start: var(--base-size-40);
-    --header-leading-content-block-size: 184px;
+    --header-leading-content-inline-size: 184px;
     --header-content-padding-inline-value: var(--base-size-40);
   }
 
@@ -33,28 +33,28 @@
     --header-block-size: var(--base-size-72);
     --header-leading-padding-inline-end: var(--base-size-24);
     --header-leading-padding-inline-start: var(--base-size-24);
-    --header-leading-content-block-size: 256px;
+    --header-leading-content-inline-size: 256px;
     --header-content-padding-inline-value: var(--base-size-64);
   }
 
   @media (--size-viewport-width-xlarge) {
     --header-leading-padding-inline-end: var(--base-size-32);
     --header-leading-padding-inline-start: var(--base-size-32);
-    --header-leading-content-block-size: 256px;
+    --header-leading-content-inline-size: 256px;
     --header-content-padding-inline-value: var(--base-size-72);
   }
 
   @media (--size-viewport-width-xxlarge) {
     --header-leading-padding-inline-end: var(--base-size-40);
     --header-leading-padding-inline-start: var(--base-size-56);
-    --header-leading-content-block-size: 256px;
+    --header-leading-content-inline-size: 256px;
     --header-content-padding-inline-value: var(--base-size-128);
   }
 
   @media (--size-viewport-width-xxxlarge) {
     --header-leading-padding-inline-end: var(--base-size-64);
     --header-leading-padding-inline-start: var(--base-size-64);
-    --header-leading-content-block-size: 372px;
+    --header-leading-content-inline-size: 372px;
     --header-content-padding-inline-value: var(--base-size-112);
   }
 }
@@ -81,13 +81,13 @@
   grid-template-columns: auto 1fr 0;
   inline-size: 100%;
   margin-inline: auto;
-  max-block-size: var(--header-inner-max-block-size);
+  max-inline-size: var(--header-inner-max-inline-size);
 
   @media (--size-viewport-width-medium) {
     grid-template-columns:
-      var(--header-leading-block-size)
-      minmax(0, var(--header-content-max-block-size))
-      var(--header-training-block-size);
+      var(--header-leading-inline-size)
+      minmax(0, var(--header-content-max-inline-size))
+      var(--header-training-inline-size);
   }
 }
 

@@ -11,7 +11,7 @@ import {
   type Response,
   type Type,
 } from "@onlyoffice/service-declaration"
-import {normalize} from "@onlyoffice/signature/utils.ts"
+import {normalize} from "@onlyoffice/signature/utils.js"
 import {entity, request} from "./internal.ts"
 
 export function computeDeclaration(d: Declaration): void {

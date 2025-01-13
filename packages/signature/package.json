@@ -3,23 +3,20 @@
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./lib/main.ts",
-    "./utils.ts": "./lib/utils.ts"
+    ".": "./dist/main.js",
+    "./utils.js": "./dist/utils.js"
   },
-  "main": "lib/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "clean": "rimraf coverage node_modules",
-    "test:types": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
     "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
     "test": "pnpm test:types && pnpm test:unit"
   },
-  "dependencies": {
-    "typescript": "5.4.5"
-  },
   "devDependencies": {
     "c8": "9.1.0",
-    "rimraf": "6.0.1",
     "tsx": "4.16.5",
+    "typescript": "5.7.2",
     "uvu": "0.5.6"
   }
 }

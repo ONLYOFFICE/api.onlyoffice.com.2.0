@@ -1,0 +1,15 @@
+{
+  "name": "@onlyoffice/docspace-plugin-sdk-resource",
+  "type": "module",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "typedoc-resource typedoc"
+  },
+  "dependencies": {
+    "@onlyoffice/library-declaration": "workspace:^"
+  },
+  "devDependencies": {
+    "@onlyoffice/typedoc-resource": "workspace:^"
+  }
+}

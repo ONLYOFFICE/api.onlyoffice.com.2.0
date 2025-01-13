@@ -6,7 +6,7 @@ The **document editing service** informs the **document storage service** about 
 
 ## actions
 
-Defines the object received when the user takes an action with the document. The *type* field value can have the following values:
+Defines the array of object received when the user takes an action with the document. The *type* field value can have the following values:
 
 - **0** - the user disconnects from the document co-editing;
 - **1** - the new user connects to the document co-editing;
@@ -194,7 +194,7 @@ It is received when the force saving request is performed.The *callbackUrl* depe
 }
 ```
 
-### Sample of JSON object sent to the "callbackUrl" address by document editing service after the [forcesave](../../Additional%20API/Command%20service/forcesave/index.md) command had been received
+### Sample of JSON object sent to the "callbackUrl" address by document editing service after the forcesave command had been received
 
 <!-- The 'changes' and 'serverVersion' fields should be left as they are, since the information about the types of these properties is not known. -->
 

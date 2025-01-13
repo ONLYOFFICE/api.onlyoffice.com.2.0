@@ -6,8 +6,8 @@ analytics: true
 robots: true
 
 server:
-  baseUrl: https://legacy-api.teamlab.info/
+  baseUrl: https://legacy-api.onlyoffice.com/
 
 playground:
   documentEditor:
-    documentServerUrl: https://api.docs.teamlab.info/
+    documentServerUrl: https://api.docs.onlyoffice.com/

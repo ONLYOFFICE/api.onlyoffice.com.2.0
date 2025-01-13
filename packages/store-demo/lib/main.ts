@@ -10,7 +10,7 @@ import {body} from "@onlyoffice/node-http"
 import {uniqueString} from "@onlyoffice/strings"
 import jwt, {type Algorithm} from "jsonwebtoken"
 import sade from "sade"
-import pack from "../package.json"
+import pack from "../package.json" with {type: "json"}
 
 const {sign} = jwt
 const console = new Console(pack.name, stdout, stderr)

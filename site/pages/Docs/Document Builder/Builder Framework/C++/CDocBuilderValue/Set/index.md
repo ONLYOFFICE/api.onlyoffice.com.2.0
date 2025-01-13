@@ -1,15 +1,45 @@
-`void Set(nIndex, sValue);`
+```yml signature
+- {type: type, text: void}
+- {type: text, text: " "}
+- {type: entity, text: Set}
+- {type: text, text: (}
+- {type: parameter, text: nIndex}
+- {type: text, text: ": "}
+- {type: type, text: const int&}
+- {type: text, text: ", "}
+- {type: parameter, text: sValue}
+- {type: text, text: ": "}
+- {id: ../../CDocBuilderValue/index.md, token: {type: type, text: CDocBuilderValue}}
+- {type: text, text: )}
+```
+
+## Description
 
 Sets an array value by its index.
 
-> Please note, that for the *.docbuilder* file the *CDocBuilderValue.Set* method is not used.
+> Please note, that for the `.docbuilder` file the `CDocBuilderValue.Set` method is not used.
 
 ## Parameters
 
-| Name     | Type             | Description                   |
-| -------- | ---------------- | ----------------------------- |
-| *nIndex* | const int&       | The index of the array value. |
-| *sValue* | CDocBuilderValue | The array value to be set.    |
+<parameters>
+
+- nIndex
+
+  ```yml signature.variant="inline"
+  - {type: type, text: const int&}
+  ```
+
+  - : The index of the array value.
+
+- sValue
+
+  ```yml signature.variant="inline"
+  - {id: ../../CDocBuilderValue/index.md, token: {type: keyword, text: CDocBuilderValue}}
+  ```
+
+  - : The array value to be set.
+
+</parameters>
 
 ## Example
 

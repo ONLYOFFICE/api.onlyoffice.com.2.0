@@ -1,0 +1,19 @@
+{
+  "name": "@types/tab-container-element",
+  "type": "module",
+  "private": true,
+  "types": "index.d.ts",
+  "scripts": {
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "dependencies": {
+    "typescript": "5.7.2"
+  },
+  "devDependencies": {
+    "preact": "10.22.0"
+  }
+}

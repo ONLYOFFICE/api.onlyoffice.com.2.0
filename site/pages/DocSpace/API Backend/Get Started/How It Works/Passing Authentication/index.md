@@ -1,5 +1,5 @@
 ---
-order: -4
+order: -5
 ---
 
 The user needs to perform several easy steps to pass authentication:

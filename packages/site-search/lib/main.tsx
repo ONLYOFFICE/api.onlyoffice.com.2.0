@@ -1,8 +1,7 @@
-import {type PagefindSearchOptions} from "@onlyoffice/pagefind-types"
 import {useSlots} from "@onlyoffice/preact-slots"
 import {Template} from "@onlyoffice/preact-template"
 import {type ChildrenIncludable} from "@onlyoffice/preact-types"
-import {CancelIcon, MagnifyingGlassIcon} from "@onlyoffice/ui-icons/poor/24.tsx"
+import {CancelIcon, MagnifyingGlassIcon} from "@onlyoffice/ui-icons/poor/24.js"
 import {
   TextInput,
   TextInputAction,
@@ -11,7 +10,8 @@ import {
   TextInputPlaceholder,
   TextInputTrailing,
 } from "@onlyoffice/ui-kit"
-import {type JSX, h} from "preact"
+import {type PagefindSearchOptions} from "pagefind"
+import {type JSX} from "preact"
 
 export interface SearchContainerProperties extends ChildrenIncludable {
   "search-options"?: PagefindSearchOptions
@@ -55,6 +55,7 @@ export function SearchContainer(p: SearchContainerProperties): JSX.Element {
 }
 
 export function SearchPlaceholder({children}: ChildrenIncludable): JSX.Element {
+  // @ts-ignore, todo: resolve it
   return children
 }
 

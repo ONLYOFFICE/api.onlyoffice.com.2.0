@@ -1,5 +1,5 @@
 ---
-order: -2
+order: -3
 icon: plugins
 summary: In this section, you will learn how to create your own plugins and add them to the DocSpace portal.
 

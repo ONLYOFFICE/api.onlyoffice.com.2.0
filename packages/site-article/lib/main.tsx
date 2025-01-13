@@ -1,6 +1,6 @@
 import * as Elements from "@onlyoffice/preact-elements"
 import {clsx} from "clsx"
-import {type JSX, h} from "preact"
+import {type JSX} from "preact"
 
 export interface ArticleProperties extends Elements.DivProperties {
   variant?: "default" | "narrow" | "wide"

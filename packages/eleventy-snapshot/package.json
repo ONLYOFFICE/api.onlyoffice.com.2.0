@@ -1,0 +1,21 @@
+{
+  "name": "@onlyoffice/eleventy-snapshot",
+  "type": "module",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/eleventy-types": "workspace:^",
+    "@onlyoffice/errors": "workspace:^",
+    "@onlyoffice/snapshot": "workspace:^",
+    "@types/11ty__eleventy": "workspace:^"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.1",
+    "typescript": "5.7.2"
+  }
+}

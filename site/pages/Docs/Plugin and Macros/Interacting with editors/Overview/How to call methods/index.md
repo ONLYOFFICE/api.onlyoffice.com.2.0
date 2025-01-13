@@ -4,7 +4,7 @@ order: -3
 
 To execute certain editor methods using the plugin, define the **executeMethod** method.
 
-The *callback* is the result that the method returns. It is an optional parameter. In case it is missing, the *window.Asc.plugin.onMethodReturn* function will be used to return the result of the method execution.
+The *callback* is the result that the method returns. It is an optional parameter. In case it is missing, the *window.Asc.plugin.onMethodReturn* function will be used to return the result of the method execution.
 
 ## executeMethod
 

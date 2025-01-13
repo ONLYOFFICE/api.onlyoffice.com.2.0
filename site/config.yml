@@ -51,10 +51,6 @@ playground:
       href: docs/docs-api/usage-api/config/document/referenceData/#instanceId
       type: string
 
-    - path: document.referenceData.key
-      href: docs/docs-api/usage-api/config/document/referenceData/#key
-      type: string
-
     - path: document.title
       href: docs/docs-api/usage-api/config/document/#title
       type: string

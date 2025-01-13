@@ -76,12 +76,6 @@ In this example we are inserting text into the document at the current cursor po
 
 [More](Insert%20text/index.md)
 
-## Currency exchange rates
-
-In this example we are returning information about the exchange rates for the last several days and fill in the table with the received values.
-
-[More](Currency%20exchange%20rates/index.md)
-
 ## Import CSV/TXT data
 
 In this example we are importing data from remote CSV/TXT files into the spreadsheet.
@@ -129,6 +123,36 @@ In this example we are replacing words in the text editor.
 In this example we are adding comments and changing the background colors of selected cells.
 
 [More](Add%20comments%20and%20change%20cell%20colors%20in%20spreadsheet/index.md)
+
+## Remove extra spaces
+
+In this example we are removing extra spaces in the text document. 
+
+[More](Remove%20extra%20spaces/index.md)
+
+## Sum of highlighted cells
+
+In this example we are summing the answer of all highlighted cells in a spreadsheet.
+
+[More](Sum%20of%20Highlighted%20Cells/index.md)
+
+## Change font family and size
+
+In this example we are changing the font family and/or size in the presentation.
+
+[More](Change%20font%20family%20and%20size/index.md)
+
+## Hide or unhide rows and columns
+
+In this example we are hiding or unhiding specified rows and/or columns in the spreadsheet.
+
+[More](Hide%20or%20unhide%20rows%20and%20columns/index.md)
+
+## Find company logos
+
+In this example we are finding company logos in a spreadsheet using the Logo API offered by API Ninjas.
+
+[More](Find%20company%20logos/index.md)
 
 ## Import hyperlinks
 

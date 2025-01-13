@@ -533,11 +533,11 @@ function onRequestReferenceData() {
 
   docEditor.setReferenceData({
     fileType: "xlsx",
+    key: "Khirz6zTPdfd7",
     path: "sample.xlsx",
     referenceData: {
       fileKey: "BCFA2CED",
       instanceId: "https://example.com",
-      key: "Khirz6zTPdfd7",
     },
     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJwYXRoIjoic2FtcGxlLnhsc3giLCJyZWZlcmVuY2VEYXRhIjp7ImZpbGVLZXkiOiJCQ0ZBMkNFRCIsImluc3RhbmNlSWQiOiJodHRwczovL2V4YW1wbGUuY29tIn0sInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQueGxzeCJ9.UXosmM-E_Cu9j9QGSlcj9FEoSu5m-zCS4b6FxO_2k7w",
     url: "https://example.com/url-to-example-document.xlsx",
@@ -572,11 +572,11 @@ function onRequestReferenceSource() {
 
   docEditor.setReferenceSource({
     fileType: "xlsx",
+    key: "Khirz6zTPdfd7",
     path: "sample.xlsx",
     referenceData: {
       fileKey: "BCFA2CED",
       instanceId: "https://example.com",
-      key: "Khirz6zTPdfd7",
     },
     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlVHlwZSI6Inhsc3giLCJwYXRoIjoic2FtcGxlLnhsc3giLCJyZWZlcmVuY2VEYXRhIjp7ImZpbGVLZXkiOiJCQ0ZBMkNFRCIsImluc3RhbmNlSWQiOiJodHRwczovL2V4YW1wbGUuY29tIn0sInVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20vdXJsLXRvLWV4YW1wbGUtZG9jdW1lbnQueGxzeCJ9.UXosmM-E_Cu9j9QGSlcj9FEoSu5m-zCS4b6FxO_2k7w",
     url: "https://example.com/url-to-example-document.xlsx",

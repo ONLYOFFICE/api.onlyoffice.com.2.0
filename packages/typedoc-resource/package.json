@@ -1,0 +1,23 @@
+{
+  "name": "@onlyoffice/typedoc-resource",
+  "type": "module",
+  "private": true,
+  "main": "dist/main.js",
+  "bin": "bin/typedoc-resource.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@onlyoffice/console": "workspace:^",
+    "@onlyoffice/library-declaration": "workspace:^",
+    "@onlyoffice/stream-string": "workspace:^",
+    "@onlyoffice/typedoc-declaration": "workspace:^",
+    "sade": "1.8.1",
+    "yaml": "2.4.1"
+  },
+  "devDependencies": {
+    "typescript": "5.7.2"
+  }
+}

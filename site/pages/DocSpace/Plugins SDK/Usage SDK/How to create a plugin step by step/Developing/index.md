@@ -83,7 +83,7 @@ If necessary, define the plugin's UI elements. Consult our [Storybook](https://a
 
 For example, the **draw\.io** plugin contains two main UI elements - the modal window and the diagram editor. Create the files for configuring each element. For your convenience, you can put these files into a separate *DrawIO* folder.
 
-- In the [Dialog.ts](https://github.com/ONLYOFFICE/docspace-plugins/blob/master/draw-io/src/DrawIO/Dialog.ts) file, configure the modal window settings. Specify the [IFrame](../../Coding%20Plugin/Plugin%20Components/IFrame/index.md) UI component that is used to embed the draw\.io website into a modal window:
+- In the [Dialog.ts](https://github.com/ONLYOFFICE/docspace-plugins/blob/master/draw.io/src/DrawIO/Dialog.ts) file, configure the modal window settings. Specify the [IFrame](../../Coding%20Plugin/Plugin%20Components/IFrame/index.md) UI component that is used to embed the draw\.io website into a modal window:
 
   ``` ts
   export const frameProps: IFrame = {
@@ -135,7 +135,7 @@ For example, the **draw\.io** plugin contains two main UI elements - the modal w
   }
   ```
 
-- In the [Editor.ts](https://github.com/ONLYOFFICE/docspace-plugins/blob/master/draw-io/src/DrawIO/Editor.ts) file, configure the diagram editor. Create the *DiagramEditor* function with the following parameters:
+- In the [Editor.ts](https://github.com/ONLYOFFICE/docspace-plugins/blob/master/draw.io/src/DrawIO/Editor.ts) file, configure the diagram editor. Create the *DiagramEditor* function with the following parameters:
 
   | Parameter      | Type    | Example                      | Description                                                       |
   | -------------- | ------- | ---------------------------- | ----------------------------------------------------------------- |
@@ -161,7 +161,7 @@ For example, the **draw\.io** plugin contains two main UI elements - the modal w
   | initializeEditor | Posts the *load* message to the editor. |
   | save             | Saves the given data.                   |
 
-  The full code for the *DiagramEditor* can be found [here](https://github.com/ONLYOFFICE/docspace-plugins/blob/master/draw-io/src/DrawIO/Editor.ts).
+  The full code for the *DiagramEditor* can be found [here](https://github.com/ONLYOFFICE/docspace-plugins/blob/master/draw.io/src/DrawIO/Editor.ts).
 
 ## Step 5. Create plugin types
 

@@ -9,5 +9,15 @@ export function data(): Data {
 }
 
 export function render(c: Context): JSX.Element {
-  return <Page url={c.page.url}>{c.content}</Page>
+  if (!c.isWritten) {
+    return <div>This page should not be rendered</div>
+  }
+
+  const u = c.sitemapUrl
+
+  if (!u) {
+    throw new Error("Missing sitemap URL")
+  }
+
+  return <Page sitemapUrl={u}>{c.content}</Page>
 }

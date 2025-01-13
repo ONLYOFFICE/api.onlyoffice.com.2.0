@@ -14,8 +14,8 @@ import type * as Library from "@onlyoffice/library-declaration"
 // eslint-disable-next-line no-duplicate-imports
 import * as library from "@onlyoffice/library-declaration"
 import * as signature from "@onlyoffice/library-signature"
+import {extractSection} from "@onlyoffice/mdast-util-extract-section"
 import {firstSentence} from "@onlyoffice/mdast-util-first-sentence"
-import {selectSection} from "@onlyoffice/mdast-util-select-section"
 import * as Signature from "@onlyoffice/signature"
 import {isStringLiteral} from "@onlyoffice/strings"
 import languagedetection from "@vscode/vscode-languagedetection"
@@ -629,9 +629,10 @@ async function declarationNode(dc: Doclet): Promise<[Library.DeclarationNode, ..
   // todo: it is a temporary solution.
   if (d.description) {
     const a = fromMarkdown(d.description)
-    const r = selectSection("Try It", a)
+    const r = extractSection("Try It", a)
     const b = toMarkdown(r)
     if (b) {
+      d.description = toMarkdown(a)
       d.tryIt = b
     }
   }

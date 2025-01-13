@@ -12,8 +12,6 @@ Counts paragraphs, words, and characters with or without spaces in the selected 
 
 **Supported editors:** documents.
 
-![CountWordsAndCharacters](/assets/images/plugins/gifs/count-words-and-characters.gif)
-
 ## Installation
 
 Available by default in ONLYOFFICE Enterprise Edition and Community Edition (Docs + Workspace).

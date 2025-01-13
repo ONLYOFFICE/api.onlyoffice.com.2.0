@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=node_modules/@onlyoffice/typedoc-resource/lib/config.json
+
+- name: main
+  source:
+    owner: onlyoffice
+    repo: docspace-plugin-sdk-declarations
+    reference: develop
+    path: docspace-plugin-sdk.json

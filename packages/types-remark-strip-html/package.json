@@ -1,0 +1,15 @@
+{
+  "name": "@types/remark-strip-html",
+  "type": "module",
+  "private": true,
+  "types": "index.d.ts",
+  "scripts": {
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@types/mdast": "4.0.3",
+    "remark-strip-html": "1.0.2",
+    "typescript": "5.7.2"
+  }
+}
