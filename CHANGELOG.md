@@ -10,6 +10,7 @@
 - macros: added change font family and size in presentations macro sample
 - macros: added hide unhide rows or columns in spreadsheet macro sample
 - macros: added find company logos macro sample
+- macros: added import hyperlinks in spreadsheet macro sample
 
 ## 6.3.0
 - docspace oauth api: added a new section
