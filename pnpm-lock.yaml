@@ -717,6 +717,28 @@ importers:
         specifier: 5.7.2
         version: 5.7.2
 
+  packages/eleventy-snapshot:
+    dependencies:
+      '@onlyoffice/eleventy-types':
+        specifier: workspace:^
+        version: link:../eleventy-types
+      '@onlyoffice/errors':
+        specifier: workspace:^
+        version: link:../errors
+      '@onlyoffice/snapshot':
+        specifier: workspace:^
+        version: link:../snapshot
+      '@types/11ty__eleventy':
+        specifier: workspace:^
+        version: link:../types-11ty__eleventy
+    devDependencies:
+      '@11ty/eleventy':
+        specifier: 2.0.1
+        version: 2.0.1
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+
   packages/eleventy-starry-night:
     dependencies:
       '@onlyoffice/eleventy-types':
