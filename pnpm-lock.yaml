@@ -4111,6 +4111,9 @@ importers:
       '@onlyoffice/eleventy-sitemap':
         specifier: workspace:^
         version: link:../packages/eleventy-sitemap
+      '@onlyoffice/eleventy-snapshot':
+        specifier: workspace:^
+        version: link:../packages/eleventy-snapshot
       '@onlyoffice/eleventy-starry-night':
         specifier: workspace:^
         version: link:../packages/eleventy-starry-night
@@ -4201,6 +4204,9 @@ importers:
       '@onlyoffice/site-kit':
         specifier: workspace:^
         version: link:../packages/site-kit
+      '@onlyoffice/snapshot':
+        specifier: workspace:^
+        version: link:../packages/snapshot
       '@onlyoffice/store-demo':
         specifier: workspace:^
         version: link:../packages/store-demo

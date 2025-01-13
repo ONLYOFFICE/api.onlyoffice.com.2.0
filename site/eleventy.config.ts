@@ -6,6 +6,7 @@ import {eleventyClean} from "@onlyoffice/eleventy-clean"
 import {isBuild} from "@onlyoffice/eleventy-env"
 import {eleventyHtmlMinifierTerser} from "@onlyoffice/eleventy-html-minifier-terser"
 import {eleventyPagefind} from "@onlyoffice/eleventy-pagefind"
+import {eleventySnapshot} from "@onlyoffice/eleventy-snapshot"
 import {eleventyStarryNight} from "@onlyoffice/eleventy-starry-night"
 import {type UserConfig} from "@onlyoffice/eleventy-types"
 import {Config} from "@onlyoffice/site-config"
@@ -23,6 +24,7 @@ function config(uc: UserConfig): unknown {
   uc.setServerPassthroughCopyBehavior("passthrough")
 
   uc.addPlugin(eleventyClean)
+  uc.addPlugin(eleventySnapshot)
 
   // https://github.com/11ty/eleventy/issues/235
   uc.addTemplateFormats("11ty.js")
