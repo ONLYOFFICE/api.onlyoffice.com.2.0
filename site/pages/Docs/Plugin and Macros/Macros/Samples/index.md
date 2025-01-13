@@ -160,6 +160,12 @@ In this example we are importing hyperlinks between different worksheets in the 
 
 [More](Import%20hyperlinks/index.md)
 
+## Generate word definitions
+
+In this example we are generating word definitions in our documents using the Dictionary API offered by API Ninjas.
+
+[More](Generate%20word%20definitions/index.md)
+
 ## Support
 
 If you want to request a feature or report a bug regarding macros, use the issues section [on GitHub.](https://github.com/ONLYOFFICE/plugin-macros/issues)
