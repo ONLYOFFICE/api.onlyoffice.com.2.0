@@ -24,10 +24,15 @@ declare module "@onlyoffice/eleventy-types" {
 
 declare module "@onlyoffice/eleventy-types" {
   interface Data {
-    virtualPath?(this: void, data: Data): string | undefined
-    specificPath?(this: void, data: Data): string | undefined
+    virtualPath?: PathCallback
+    specificPath?: PathCallback
   }
 }
+
+export type PathCallback =
+  ((this: void, data: Data) => string | undefined) |
+  string |
+  undefined
 
 export function eleventyUrl(uc: UserConfig): void {
   uc.on("eleventy.after", async (c) => {
@@ -120,11 +125,7 @@ function slugify(s: string): string {
   return u
 }
 
-interface PathCallback {
-  (d: Data): string | undefined
-}
-
-function computePath(d: Data, cb: PathCallback | undefined): string {
+function computePath(d: Data, cb: PathCallback): string {
   const p = d.page
 
   if (!p) {
@@ -132,18 +133,25 @@ function computePath(d: Data, cb: PathCallback | undefined): string {
   }
 
   const a = defaultPath(p)
-
-  let b = ""
-
-  if (cb) {
-    const v = cb(d)
-
-    if (v) {
-      b = v
-    }
-  }
+  const b = resolvePath(cb, d)
 
   return mergePath(a, b)
+}
+
+function resolvePath(cb: PathCallback, d: Data): string {
+  let p: string | undefined
+
+  if (cb && typeof cb === "function") {
+    p = cb(d)
+  } else if (cb && typeof cb === "string") {
+    p = cb
+  }
+
+  if (!p) {
+    p = ""
+  }
+
+  return p
 }
 
 function mergePath(a: string, b: string): string {
