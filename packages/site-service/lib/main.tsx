@@ -479,6 +479,8 @@ function Examples(p: ExamplesProperties): JSX.Element {
       return "HTTP"
     case "shell":
       return "cURL"
+    case "python":
+      return "Python"
     }
     throw new Error(`Unknown syntax: ${s}`)
   }

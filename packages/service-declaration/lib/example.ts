@@ -18,6 +18,7 @@ export class ExampleGenerator {
     return [
       this.http(),
       this.curl(),
+      this.python(),
     ]
   }
 
@@ -50,6 +51,13 @@ export class ExampleGenerator {
     const e = new Service.Example()
     e.syntax = "shell"
     e.code = this.s.convert("shell").toString()
+    return e
+  }
+
+  python(): Service.Example {
+    const e = new Service.Example()
+    e.syntax = "python"
+    e.code = this.s.convert("python").toString()
     return e
   }
 }
