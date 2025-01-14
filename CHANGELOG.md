@@ -12,6 +12,7 @@
 - macros: added find company logos macro sample
 - macros: added import hyperlinks in spreadsheet macro sample
 - macros: added generate word definitons macro sample
+- python code example
 
 ## 6.3.0
 - docspace oauth api: added a new section
