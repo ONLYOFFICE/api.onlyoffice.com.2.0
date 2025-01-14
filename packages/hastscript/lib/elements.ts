@@ -25,8 +25,23 @@ export type DtProperties = ElementProperties<"dt">
 export type FooterElement = Element<"footer">
 export type FooterProperties = ElementProperties<"footer">
 
+export type H1Element = Element<"h1">
+export type H1Properties = ElementProperties<"h1">
+
 export type H2Element = Element<"h2">
 export type H2Properties = ElementProperties<"h2">
+
+export type H3Element = Element<"h3">
+export type H3Properties = ElementProperties<"h3">
+
+export type H4Element = Element<"h4">
+export type H4Properties = ElementProperties<"h4">
+
+export type H5Element = Element<"h5">
+export type H5Properties = ElementProperties<"h5">
+
+export type H6Element = Element<"h6">
+export type H6Properties = ElementProperties<"h6">
 
 export type HeaderElement = Element<"header">
 export type HeaderProperties = ElementProperties<"header">

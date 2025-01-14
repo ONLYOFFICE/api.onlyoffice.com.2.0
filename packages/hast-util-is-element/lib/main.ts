@@ -37,8 +37,28 @@ export function isFooterElement(u: unknown): u is E.FooterElement {
   return isElement(u) && u.tagName === "footer"
 }
 
+export function isH1Element(u: unknown): u is E.H1Element {
+  return isElement(u) && u.tagName === "h1"
+}
+
 export function isH2Element(u: unknown): u is E.H2Element {
   return isElement(u) && u.tagName === "h2"
+}
+
+export function isH3Element(u: unknown): u is E.H3Element {
+  return isElement(u) && u.tagName === "h3"
+}
+
+export function isH4Element(u: unknown): u is E.H4Element {
+  return isElement(u) && u.tagName === "h4"
+}
+
+export function isH5Element(u: unknown): u is E.H5Element {
+  return isElement(u) && u.tagName === "h5"
+}
+
+export function isH6Element(u: unknown): u is E.H6Element {
+  return isElement(u) && u.tagName === "h6"
 }
 
 export function isHeaderElement(u: unknown): u is E.HeaderElement {
