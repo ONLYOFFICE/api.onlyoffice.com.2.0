@@ -2074,6 +2074,49 @@ importers:
         specifier: 0.5.6
         version: 0.5.6
 
+  packages/rehype-toc:
+    dependencies:
+      '@onlyoffice/hast-util-is-element':
+        specifier: workspace:^
+        version: link:../hast-util-is-element
+      '@types/hast':
+        specifier: 3.0.4
+        version: 3.0.4
+      hast-util-to-text:
+        specifier: 4.0.0
+        version: 4.0.0
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
+      vfile:
+        specifier: 6.0.1
+        version: 6.0.1
+    devDependencies:
+      c8:
+        specifier: 9.1.0
+        version: 9.1.0
+      rehype-parse:
+        specifier: 9.0.0
+        version: 9.0.0
+      rehype-stringify:
+        specifier: 10.0.0
+        version: 10.0.0
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      tsx:
+        specifier: 4.16.5
+        version: 4.16.5
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
+      uvu:
+        specifier: 0.5.6
+        version: 0.5.6
+
   packages/remark-config:
     dependencies:
       '@onlyoffice/remark-lint-eslint':
