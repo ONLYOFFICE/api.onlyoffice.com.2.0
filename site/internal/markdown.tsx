@@ -56,15 +56,15 @@ export function eleventyMarkdown(uc: UserConfig): void {
         v.path = f
 
         const m = markdown()
-        const d = await m.process(v)
 
-        const r = await m.process(v)
-        if (r.messages.length !== 0) {
-          const p = reporterPretty([r])
-          warn(p)
+        const p = await m.process(v)
+
+        if (p.messages.length !== 0) {
+          const m = reporterPretty([p])
+          warn(m)
         }
 
-        return d.result
+        return p.result
       }
     },
   })
