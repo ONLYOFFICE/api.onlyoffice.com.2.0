@@ -119,7 +119,7 @@ export interface EventContext {
 export interface ExtensionOptions {
   key?: string
   outputFileExtension?: string
-  compile?(content: string, file: string): () => unknown
+  compile?(content: string, file: string): (data: Data) => unknown
 }
 
 /**
