@@ -1,0 +1,27 @@
+{
+  "name": "@onlyoffice/rehype-section",
+  "type": "module",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
+    "test:unit": "c8 --config ../../c8.config.json tsx node_modules/uvu/bin.js lib ^.*\\.test\\.ts$",
+    "test": "pnpm test:types && pnpm test:unit"
+  },
+  "dependencies": {
+    "@onlyoffice/hast-util-is-element": "workspace:^",
+    "@types/hast": "3.0.4",
+    "hastscript": "8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "c8": "9.1.0",
+    "rehype-parse": "9.0.0",
+    "rehype-stringify": "10.0.0",
+    "tsx": "4.16.5",
+    "typescript": "5.7.2",
+    "unified": "11.0.5",
+    "uvu": "0.5.6"
+  }
+}

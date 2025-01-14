@@ -1,0 +1,19 @@
+wraps leading elements in the section element
+
+---
+
+<p>y</p>
+<p>y</p>
+<h2>x2</h2>
+<p>y</p>
+<p>y</p>
+
+---
+
+<section><p>y</p>
+<p>y</p>
+</section><section><h2>x2</h2>
+<p>y</p>
+<p>y</p></section>
+
+---

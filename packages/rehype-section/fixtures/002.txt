@@ -1,0 +1,21 @@
+sets the aria-labelledby attribute to the section element
+
+---
+
+<h1 id="x1">x1</h1>
+<h2 id="x2">x2</h2>
+<h3 id="x3">x3</h3>
+<h4 id="x4">x4</h4>
+<h5 id="x5">x5</h5>
+<h6 id="x6">x6</h6>
+
+---
+
+<section aria-labelledby="x1"><h1 id="x1">x1</h1>
+</section><section aria-labelledby="x2"><h2 id="x2">x2</h2>
+</section><section aria-labelledby="x3"><h3 id="x3">x3</h3>
+</section><section aria-labelledby="x4"><h4 id="x4">x4</h4>
+</section><section aria-labelledby="x5"><h5 id="x5">x5</h5>
+</section><section aria-labelledby="x6"><h6 id="x6">x6</h6></section>
+
+---
