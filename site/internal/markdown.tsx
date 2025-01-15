@@ -12,6 +12,7 @@ import {rehypeReferences} from "@onlyoffice/rehype-references"
 import {rehypeSection} from "@onlyoffice/rehype-section"
 import {rehypeSignature} from "@onlyoffice/rehype-signature"
 import {rehypeStarryNight} from "@onlyoffice/rehype-starry-night"
+import {type TocHeading, rehypeToc} from "@onlyoffice/rehype-toc"
 import type * as Hast from "hast"
 import type * as Mdast from "mdast"
 import {Fragment, type JSX, h} from "preact"
@@ -36,11 +37,21 @@ declare module "@onlyoffice/eleventy-types" {
   }
 }
 
-export interface MarkdownData {}
+export interface MarkdownData {
+  toc?: TocHeading[]
+}
 
 export class MarkdownDatum implements MarkdownData {
-  static fromVFile(_: VFile): MarkdownDatum {
-    return new MarkdownDatum()
+  toc: TocHeading[] = []
+
+  static fromVFile(f: VFile): MarkdownDatum {
+    const d = new MarkdownDatum()
+
+    if (f.data.toc) {
+      d.toc = f.data.toc
+    }
+
+    return d
   }
 }
 
@@ -108,6 +119,7 @@ function markdown(): MarkdownProcessor {
     .use(rehypeRaw)
     .use(rehypeMetaobject)
     .use(rehypeSlug, {enableCustomId: true})
+    .use(rehypeToc)
     .use(rehypeSection)
     .use(rehypeAutolink, {behavior: "wrap"})
     .use(rehypeLink)
