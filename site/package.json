@@ -63,6 +63,7 @@
     "@onlyoffice/rehype-parameters": "workspace:^",
     "@onlyoffice/rehype-preact": "workspace:^",
     "@onlyoffice/rehype-references": "workspace:^",
+    "@onlyoffice/rehype-section": "workspace:^",
     "@onlyoffice/rehype-signature": "workspace:^",
     "@onlyoffice/rehype-starry-night": "workspace:^",
     "@onlyoffice/server-client": "workspace:^",

@@ -4260,6 +4260,9 @@ importers:
       '@onlyoffice/rehype-references':
         specifier: workspace:^
         version: link:../packages/rehype-references
+      '@onlyoffice/rehype-section':
+        specifier: workspace:^
+        version: link:../packages/rehype-section
       '@onlyoffice/rehype-signature':
         specifier: workspace:^
         version: link:../packages/rehype-signature

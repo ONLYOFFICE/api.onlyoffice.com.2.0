@@ -9,6 +9,7 @@ import {rehypeMetastring} from "@onlyoffice/rehype-metastring"
 import {rehypeParameters} from "@onlyoffice/rehype-parameters"
 import {rehypePreact} from "@onlyoffice/rehype-preact"
 import {rehypeReferences} from "@onlyoffice/rehype-references"
+import {rehypeSection} from "@onlyoffice/rehype-section"
 import {rehypeSignature} from "@onlyoffice/rehype-signature"
 import {rehypeStarryNight} from "@onlyoffice/rehype-starry-night"
 import type * as Hast from "hast"
@@ -107,6 +108,7 @@ function markdown(): MarkdownProcessor {
     .use(rehypeRaw)
     .use(rehypeMetaobject)
     .use(rehypeSlug, {enableCustomId: true})
+    .use(rehypeSection)
     .use(rehypeAutolink, {behavior: "wrap"})
     .use(rehypeLink)
     .use(rehypeImage)
