@@ -2,6 +2,8 @@ import * as Elements from "@onlyoffice/preact-elements"
 import {clsx} from "clsx"
 import {type JSX} from "preact"
 
+// todo: make a research to check whether the narrow variant is still used
+
 export interface ArticleProperties extends Elements.DivProperties {
   variant?: "default" | "narrow" | "wide"
 }

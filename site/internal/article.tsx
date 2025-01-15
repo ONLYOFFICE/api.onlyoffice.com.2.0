@@ -51,11 +51,15 @@ export function Article(p: ArticleProperties): JSX.Element {
   const s = Sitemap.shared
   const e = s.findPageByUrl(p.sitemapUrl)
   const c = e.chapter
+  const m = e.markdown
 
-  return <Site.Article variant="narrow">
+  return <Site.Article variant="wide">
     <Site.ArticleBreadcrumb>
       <Breadcrumb sitemapUrl={p.sitemapUrl} />
     </Site.ArticleBreadcrumb>
+    <Site.ArticleSidebar>
+      <Toc />
+    </Site.ArticleSidebar>
     <Site.ArticleContent>
       <Site.SearchHidable>
         <Site.Content>
@@ -78,4 +82,31 @@ export function Article(p: ArticleProperties): JSX.Element {
       {c.help && <Help sitemapUrl={p.sitemapUrl} />}
     </Site.ArticleHelp>
   </Site.Article>
+
+  function Toc(): JSX.Element | null {
+    if (!m.toc || m.toc.length === 0) {
+      return null
+    }
+
+    const ls: JSX.Element[] = []
+
+    for (const t of m.toc) {
+      if (t.level !== 2) {
+        continue
+      }
+
+      ls.push(<Site.TocItem>
+        <Site.TocLink href={`#${t.id}`}>{t.text}</Site.TocLink>
+      </Site.TocItem>)
+    }
+
+    if (ls.length === 0) {
+      return null
+    }
+
+    return <Site.Toc>
+      <Site.TocHeading>In this article</Site.TocHeading>
+      <Site.TocList>{ls}</Site.TocList>
+    </Site.Toc>
+  }
 }
