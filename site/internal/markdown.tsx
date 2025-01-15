@@ -29,6 +29,20 @@ import {rehypeDocumentBuilderContainer} from "./document-builder-container.tsx"
 import {rehypeImage} from "./image.tsx"
 import {rehypeLink, resolveLink} from "./link.tsx"
 
+declare module "@onlyoffice/eleventy-types" {
+  interface Data {
+    markdown?: MarkdownData
+  }
+}
+
+export interface MarkdownData {}
+
+export class MarkdownDatum implements MarkdownData {
+  static fromVFile(_: VFile): MarkdownDatum {
+    return new MarkdownDatum()
+  }
+}
+
 export function Markdown(p: ChildrenIncludable): JSX.Element {
   let r: JSX.Element | null = null
 
@@ -48,10 +62,11 @@ export function Markdown(p: ChildrenIncludable): JSX.Element {
 
 export function eleventyMarkdown(uc: UserConfig): void {
   uc.addTemplateFormats("md")
+
   uc.addExtension("md", {
     outputFileExtension: "html",
     compile(c, f) {
-      return async () => {
+      return async (data) => {
         const v = new VFile(c)
         v.path = f
 
@@ -64,9 +79,15 @@ export function eleventyMarkdown(uc: UserConfig): void {
           warn(m)
         }
 
+        data.markdown = MarkdownDatum.fromVFile(p)
+
         return p.result
       }
     },
+  })
+
+  uc.addGlobalData("markdown", () => {
+    return new MarkdownDatum()
   })
 
   function warn(m: string): void {

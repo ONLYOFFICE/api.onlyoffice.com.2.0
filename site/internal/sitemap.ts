@@ -5,6 +5,7 @@ import {type ExplorerData} from "./explorer.tsx"
 import {type HelpData} from "./help.tsx"
 import {type HomeData} from "./home.tsx"
 import {type LibraryData} from "./library.tsx"
+import {type MarkdownData} from "./markdown.tsx"
 import {type MenubarData} from "./menubar.tsx"
 import {type PageData} from "./page.tsx"
 import {type PartData} from "./part.tsx"
@@ -392,6 +393,17 @@ export class PageEntity {
     const t = d.document
     if (!t) {
       throw new Error(`Page data not found: #${this.#e.id}, ${this.#e.data.url}`)
+    }
+
+    return t
+  }
+
+  get markdown(): MarkdownData {
+    const d = this.#s.dataOf(this.#e)
+
+    const t = d.markdown
+    if (!t) {
+      throw new Error(`Markdown data not found: #${this.#e.id}, ${this.#e.data.url}`)
     }
 
     return t
