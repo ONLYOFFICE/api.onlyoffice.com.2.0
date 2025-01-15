@@ -6,7 +6,7 @@ export class ArticleContainer extends HTMLElement {
     return "article-container"
   }
 
-  get #sidebarMargin(): string {
+  get #tocMargin(): string {
     const r = this.#rootElement
     if (!r) {
       return ""
@@ -14,7 +14,7 @@ export class ArticleContainer extends HTMLElement {
 
     const s = getComputedStyle(r)
 
-    const v = s.getPropertyValue("--article-sidebar-inset-block-start")
+    const v = s.getPropertyValue("--article-toc-target-inset-block-start")
     if (!v) {
       return ""
     }
@@ -39,13 +39,13 @@ export class ArticleContainer extends HTMLElement {
   }
 
   #setupToc(): void {
-    const m = this.#sidebarMargin
-    if (!m) {
+    const t = this.#tocElement
+    if (!t) {
       return
     }
 
-    const t = this.#tocElement
-    if (!t) {
+    const m = this.#tocMargin
+    if (!m) {
       return
     }
 

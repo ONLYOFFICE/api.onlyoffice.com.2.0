@@ -149,6 +149,7 @@ chapter-container:state(navigation-visible) .chapter {
 .chapter .article {
   --chapter-article-padding-block: var(--base-size-32);
   --article-sidebar-inset-block-start: calc(var(--chapter-navigation-inset-block-start) + var(--chapter-article-padding-block));
+  --article-toc-target-inset-block-start: var(--chapter-navigation-inset-block-start);
 
   block-size: 100%;
   margin-inline: auto;

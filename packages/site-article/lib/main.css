@@ -10,6 +10,7 @@
 
   --article-sidebar-inline-size: 232px;
   --article-sidebar-inset-block-start: 0px;
+  --article-toc-target-inset-block-start: 0px;
   --article-content-max-inline-size: 100ch;
 
   --article-variant-is-narrow: var(--false);
@@ -73,6 +74,7 @@
   grid-row: 1 / 4;
   inset-block-start: var(--article-sidebar-inset-block-start);
   max-block-size: calc(100vh - var(--article-sidebar-inset-block-start));
+  overflow-y: auto;
   position: sticky;
 }
 
