@@ -21,15 +21,27 @@ declare global {
 
 export class Snapshot {
   static get serverUrl(): string {
-    return env.PKG_SNAPSHOT_SERVER_URL || ""
+    const e = env.PKG_SNAPSHOT_SERVER_URL
+    if (!e) {
+      return ""
+    }
+    return new URL(e).toString()
   }
 
   static get githubServerUrl(): string {
-    return env.PKG_SNAPSHOT_GITHUB_SERVER_URL || ""
+    const e = env.PKG_SNAPSHOT_GITHUB_SERVER_URL
+    if (!e) {
+      return ""
+    }
+    return new URL(e).toString()
   }
 
   static get giteaServerUrl(): string {
-    return env.PKG_SNAPSHOT_GITEA_SERVER_URL || ""
+    const e = env.PKG_SNAPSHOT_GITEA_SERVER_URL
+    if (!e) {
+      return ""
+    }
+    return new URL(e).toString()
   }
 
   static get repository(): string {
@@ -38,6 +50,18 @@ export class Snapshot {
 
   static get runId(): string {
     return env.PKG_SNAPSHOT_RUN_ID || ""
+  }
+
+  static get isGithubServer(): boolean {
+    return Snapshot.serverUrl !== "" &&
+      Snapshot.githubServerUrl !== "" &&
+      Snapshot.serverUrl === Snapshot.githubServerUrl
+  }
+
+  static get isGiteaServer(): boolean {
+    return Snapshot.serverUrl !== "" &&
+      Snapshot.giteaServerUrl !== "" &&
+      Snapshot.serverUrl === Snapshot.giteaServerUrl
   }
 
   /* eslint-disable @typescript-eslint/explicit-function-return-type */
@@ -152,13 +176,7 @@ export class Snapshot {
       s.githubCommitUrl = u.toString()
     }
 
-    if (
-      Snapshot.serverUrl &&
-      Snapshot.githubServerUrl &&
-      Snapshot.serverUrl === Snapshot.githubServerUrl &&
-      Snapshot.repository &&
-      Snapshot.runId
-    ) {
+    if (Snapshot.isGithubServer && Snapshot.repository && Snapshot.runId) {
       const p = path.join("actions", "runs", Snapshot.runId, "/")
       const u = new URL(p, Snapshot.githubServerUrl)
       s.githubRunUrl = u.toString()
@@ -182,13 +200,7 @@ export class Snapshot {
       s.giteaCommitUrl = u.toString()
     }
 
-    if (
-      Snapshot.serverUrl &&
-      Snapshot.giteaServerUrl &&
-      Snapshot.serverUrl === Snapshot.giteaServerUrl &&
-      Snapshot.repository &&
-      Snapshot.runId
-    ) {
+    if (Snapshot.isGiteaServer && Snapshot.repository && Snapshot.runId) {
       const p = path.join("actions", "runs", Snapshot.runId, "/")
       const u = new URL(p, Snapshot.giteaServerUrl)
       s.giteaRunUrl = u.toString()
