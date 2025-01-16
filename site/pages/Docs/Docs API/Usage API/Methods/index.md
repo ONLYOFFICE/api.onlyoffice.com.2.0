@@ -8,27 +8,6 @@ After initializing **document editor** you will get the object that can be used 
 const docEditor = new DocsAPI.DocEditor("placeholder", config)
 ```
 
-- [createConnector](#createconnector) - create the connector to interact with text documents, spreadsheets, presentations, and fillable forms from the outside.
-- [denyEditingRights](#denyeditingrights) - deny editing.
-- [destroyEditor](#destroyeditor) - destroy *docEditor* object.
-- [downloadAs](#downloadas) - download the edited file.
-- [insertImage](#insertimage) - insert an image into the file.
-- [refreshHistory](#refreshhistory) - show the document version history.
-- [requestClose](#requestclose) - request to close the editor.
-- [setActionLink](#setactionlink) - set the link to the document which contains a bookmark.
-- [setFavorite](#setfavorite) - change the *Favorite* icon state.
-- [setHistoryData](#sethistorydata) - send the link to the document for viewing the version history.
-- [setMailMergeRecipients](#setmailmergerecipients) - insert recipient data for mail merge into the file.
-- [setReferenceData](#setreferencedata) - refresh data by a link to a file.
-- [setReferenceSource](#setreferencesource) - change a source of the external data.
-- [setRequestedDocument](#setrequesteddocument) - select a document for comparing, combining, or inserting text.
-- [setRequestedSpreadsheet](#setrequestedspreadsheet) - insert recipient data for mail merge into the file.
-- [setRevisedFile](#setrevisedfile) - select a document for comparing.
-- [setSharingSettings](#setsharingsettings) - update the *information* about the settings which allow to share the document with other users.
-- [setUsers](#setusers) - set a list of users to mention in the comments, grant the access rights to edit the specific sheet ranges, or set the user avatars.
-- [showMessage](#showmessage) - display tooltip with the message.
-- [startFilling](#startfilling) - start filling out the ready forms and lock the pdf editing.
-
 ## createConnector
 
 Create the [connector](../Automation%20API/index.md) to interact with text documents, spreadsheets, presentations, and fillable forms from the outside.

@@ -1,31 +1,4 @@
-The editorConfig section allows to change the parameters pertaining to the editor interface: opening mode (viewer or editor), interface language, additional buttons, etc.).
-
-- [actionLink](#actionlink)
-- [callbackUrl](#callbackurl)
-- [coEditing](#coediting)
-  - [coEditing.mode](#coeditingmode)
-  - [coEditing.change](#coeditingchange)
-- [createUrl](#createurl)
-- [lang](#lang)
-- [location](#location)
-- [mode](#mode)
-- [recent](#recent)
-  - [recent.folder](#recentfolder)
-  - [recent.title](#recenttitle)
-  - [recent.url](#recenturl)
-- [region](#region)
-- [templates](#templates)
-  - [templates.image](#templatesimage)
-  - [templates.title](#templatestitle)
-  - [templates.url](#templatesurl)
-- [user](#user)
-  - [user.firstname](#userfirstname)
-  - [user.group](#usergroup)
-  - [user.id](#userid)
-  - [user.image](#userimage)
-  - [user.lastname](#userlastname)
-  - [user.name](#username)
-- [Example](#example)
+The editorConfig section allows to change the parameters pertaining to the editor interface: opening mode (viewer or editor), interface language, additional buttons, etc.
 
 ## actionLink
 

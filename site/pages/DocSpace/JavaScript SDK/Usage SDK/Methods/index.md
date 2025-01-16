@@ -8,37 +8,6 @@ After initializing SDK, you will get an object that can be used to call the meth
 const docSpace = DocSpace.SDK.initManager({config})
 ```
 
-- [addTagsToRoom](#addtagstoroom)
-- [createFile](#createfile)
-- [createFolder](#createfolder)
-- [createHash](#createhash)
-- [createRoom](#createroom)
-- [createTag](#createtag)
-- [destroyFrame](#destroyframe)
-- [getConfig](#getconfig)
-- [getFiles](#getfiles)
-- [getFolderInfo](#getfolderinfo)
-- [getFolders](#getfolders)
-- [getHashSettings](#gethashsettings)
-- [getList](#getlist)
-- [getRooms](#getrooms)
-- [getSelection](#getselection)
-- [getUserInfo](#getuserinfo)
-- [initEditor](#initeditor)
-- [initFileSelector](#initfileselector)
-- [initFrame](#initframe)
-- [initManager](#initmanager)
-- [initRoomSelector](#initroomselector)
-- [initSystem](#initsystem)
-- [initViewer](#initviewer)
-- [login](#login)
-- [logout](#logout)
-- [openModal](#openmodal)
-- [removeTagsFromRoom](#removetagsfromroom)
-- [setConfig](#setconfig)
-- [setIsLoaded](#setisloaded)
-- [setListView](#setlistview)
-
 ## addTagsToRoom
 
 Adds the specified tags to the room with the specified ID.

@@ -1,41 +1,5 @@
 The events section allows to change all the functions pertaining to the events.
 
-- [onAppReady](#onappready) - the application is loaded into the browser.
-- [onCollaborativeChanges](#oncollaborativechanges) - the document is co-edited by the other user in the *strict* co-editing mode.
-- [onDocumentReady](#ondocumentready) - the document is loaded into the document editor.
-- [onDocumentStateChange](#ondocumentstatechange) - the document is modified.
-- [onDownloadAs](#ondownloadas) - the absolute URL to the edited file when the *downloadAs* method is being called.
-- [onError](#onerror) - an error or some other specific event occurs.
-- [onInfo](#oninfo) - the application opened the file.
-- [onMakeActionLink](#onmakeactionlink) - the user is trying to get link for opening the document which contains a bookmark, scrolling to the bookmark position.
-- [onMetaChange](#onmetachange) - the meta information of the document is changed via the *meta* command.
-- [onOutdatedVersion](#onoutdatedversion) - the document is opened for editing with the old *document.key* value, which was used to edit the previous document version and was successfully saved.
-- [onPluginsReady](#onpluginsready) - all plugins are loaded and can be used.
-- [onReady](#onready) - the application is loaded into the browser.
-- [onRequestClose](#onrequestclose) - the work with the editor must be ended and the editor must be closed.
-- [onRequestCompareFile](#onrequestcomparefile) - the user is trying to select document for comparing by clicking the *Document from Storage* button.
-- [onRequestCreateNew](#onrequestcreatenew) - the user is trying to create document by clicking the *Create New* button.
-- [onRequestEditRights](#onrequesteditrights) - the user is trying to switch the document from the viewing into the editing mode by clicking the *Edit current file* button.
-- [onRequestHistory](#onrequesthistory) - the user is trying to show the document version history by clicking the *Version History* button.
-- [onRequestHistoryClose](#onrequesthistoryclose) - the user is trying to go back to the document from viewing the document version history by clicking the *Close History* button.
-- [onRequestHistoryData](#onrequesthistorydata) - the user is trying to click the specific document version in the document version history.
-- [onRequestInsertImage](#onrequestinsertimage) - the user is trying to insert an image by clicking the *Image from Storage* button.
-- [onRequestMailMergeRecipients](#onrequestmailmergerecipients) - the user is trying to select recipients data by clicking the *Mail merge* button.
-- [onRequestOpen](#onrequestopen) - the user is trying to open an external link.
-- [onRequestReferenceData](#onrequestreferencedata) - the user is trying to refresh data inserted from the external file by clicking the *Update values* button in the *External* links dialog box of the *Data* tab.
-- [onRequestReferenceSource](#onrequestreferencesource) - the user is trying to change an external link by clicking the *Change source* button.
-- [onRequestRename](#onrequestrename) - the user is trying to rename the file by clicking the *Rename...* button.
-- [onRequestRestore](#onrequestrestore) - the user is trying to restore the file version by clicking the *Restore* button in the version history.
-- [onRequestSaveAs](#onrequestsaveas) - the user is trying to save file by clicking *Save Copy as...* button.
-- [onRequestSelectDocument](#onrequestselectdocument) - the user is trying to select a document for comparing, combining, or inserting text.
-- [onRequestSelectSpreadsheet](#onrequestselectspreadsheet) - the user is trying to select recipients data by clicking the *Mail merge* button.
-- [onRequestSendNotify](#onrequestsendnotify) - the user is mentioned in a comment.
-- [onRequestSharingSettings](#onrequestsharingsettings) - the user is trying to manage document access rights by clicking *Change access rights* button.
-- [onRequestStartFilling](#onrequeststartfilling) - the user is trying to start filling out the ready forms by clicking the *Start filling* button in the pdf editing mode.
-- [onRequestUsers](#onrequestusers) - the user can select other users to mention in the comments, grant the access rights to edit the specific sheet ranges, or set the user avatars.
-- [onSubmit](#onsubmit) - the force saving request of the *3* [forcesavetype](../../Callback%20handler/index.md#forcesavetype) is successfully performed.
-- [onWarning](#onwarning) - a warning occurs.
-
 ## onAppReady
 
 The function called when the application is loaded into the browser.

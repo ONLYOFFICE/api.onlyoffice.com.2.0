@@ -16,17 +16,6 @@ const connector = docEditor.createConnector()
 
 The connector has the same interface as plugins. Below you can find methods that are available for this class.
 
-- [addContextMenuItem](#addcontextmenuitem) - add an item to the context menu.
-- [addToolbarMenuItem](#addtoolbarmenuitem) - add an item to the toolbar menu.
-- [attachEvent](#attachevent) - add an event listener.
-- [callCommand](#callcommand) - send the data back to the editor.
-- [connect](#connect) - connect the connector to the editor.
-- [createWindow](#createwindow) - create the connector modal window to display the additional information inside the editor.
-- [detachEvent](#detachevent) - remove an event listener.
-- [disconnect](#disconnect) - disconnect the connector from the editor.
-- [executeMethod](#executemethod) - execute certain editor methods using the connector.
-- [updateContextMenuItem](#updatecontextmenuitem) - update an item in the context menu with the specified items.
-
 ## addContextMenuItem
 
 The function called to add an item to the context menu. The process of working with the context menu is the same as for [plugins](../../../Plugin%20and%20Macros/Customization/Context%20menu/index.md) except for the *onClick* method, which is used instead of subscribing by ID.

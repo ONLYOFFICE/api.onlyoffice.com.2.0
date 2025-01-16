@@ -4,15 +4,6 @@ order: -3
 
 When initializing the SDK frame, a number of events can be passed to the configuration, which will be executed at the appropriate moment:
 
-- [onAppError](#onapperror)
-- [onAppReady](#onappready)
-- [onAuthSuccess](#onauthsuccess)
-- [onCloseCallback](#onclosecallback)
-- [onDownload](#ondownload)
-- [onEditorCloseCallback](#oneditorclosecallback)
-- [onSelectCallback](#onselectcallback)
-- [onSignOut](#onsignout)
-
 ## onAppError
 
 The function called when SDK is initialized with an error. This error is returned during the initialization.
