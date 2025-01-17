@@ -105,4 +105,4 @@ Collects all the comments from the document and displays them in the custom inte
 
 > Please note that the connector is available only for **ONLYOFFICE Developer Edition**.
 >
-> This class is an additional feature which is available at extra cost and is not included by default in ONLYOFFICE Developer Edition. If you have any questions, please contact our sales team at <sales@onlyoffice.com>.
+> The connector is an additional feature not included by default in the ONLYOFFICE Developer Edition and is available at an extra cost. Please contact our sales team at <sales@onlyoffice.com> to request a quote.
