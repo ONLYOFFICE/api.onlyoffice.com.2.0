@@ -3111,6 +3111,9 @@ importers:
 
   packages/site-service:
     dependencies:
+      '@github/clipboard-copy-element':
+        specifier: 1.3.0
+        version: 1.3.0
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
@@ -3126,9 +3129,15 @@ importers:
       '@onlyoffice/site-signature':
         specifier: workspace:^
         version: link:../site-signature
+      '@onlyoffice/ui-icons':
+        specifier: workspace:^
+        version: link:../ui-icons
       '@onlyoffice/ui-kit':
         specifier: workspace:^
         version: link:../ui-kit
+      '@types/clipboard-copy-element':
+        specifier: workspace:^
+        version: link:../types-clipboard-copy-element
       preact:
         specifier: 10.22.0
         version: 10.22.0

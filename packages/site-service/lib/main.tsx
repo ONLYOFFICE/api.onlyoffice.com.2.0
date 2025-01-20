@@ -3,15 +3,18 @@ import type * as ServiceDeclaration from "@onlyoffice/service-declaration"
 import * as Sig from "@onlyoffice/signature"
 import * as SiteGlossary from "@onlyoffice/site-glossary"
 import {Signature} from "@onlyoffice/site-signature"
+import {ClipboardIcon} from "@onlyoffice/ui-icons/poor/24.js"
 import {
   Badge,
   BadgeCaption,
   BadgeGroup,
-  CodeListing,
-  CodeListingTab,
-  CodeListingTabList,
-  CodeListingTabListWrapper,
-  CodeListingTabPanel,
+  TabList,
+  TabListExtra,
+  TabListExtraList,
+  TabListTab,
+  TabListTabList,
+  TabListTabListWrapper,
+  TabListTabPanel,
 } from "@onlyoffice/ui-kit"
 import {type ComponentChildren, type JSX, createContext} from "preact"
 import {useContext} from "preact/hooks"
@@ -454,15 +457,22 @@ function Examples(p: ExamplesProperties): JSX.Element {
   const {examples} = p
   const {SyntaxHighlight} = useContext(ctx)
 
-  return <CodeListing>
-    <CodeListingTabListWrapper>
-      <CodeListingTabList label="List of Request Examples">
-        {examples.map((e) => <CodeListingTab id={e.syntax}>
+  return <TabList>
+    <TabListTabListWrapper>
+      <TabListTabList label="List of Request Examples">
+        {examples.map((e) => <TabListTab id={e.syntax} controls={`copy-${e.syntax}`}>
           {title(e.syntax)}
-        </CodeListingTab>)}
-      </CodeListingTabList>
-    </CodeListingTabListWrapper>
-    {examples.map((e) => <CodeListingTabPanel by={e.syntax}>
+        </TabListTab>)}
+      </TabListTabList>
+      <TabListExtraList label="List of Request Example Actions">
+        {examples.map((e) => <TabListExtra id={`copy-${e.syntax}`}>
+          <clipboard-copy value={e.code}>
+            <ClipboardIcon width="24" height="24" />
+          </clipboard-copy>
+        </TabListExtra>)}
+      </TabListExtraList>
+    </TabListTabListWrapper>
+    {examples.map((e) => <TabListTabPanel labelledby={e.syntax}>
       <pre>
         <code>
           <SyntaxHighlight syntax={e.syntax}>
@@ -470,8 +480,8 @@ function Examples(p: ExamplesProperties): JSX.Element {
           </SyntaxHighlight>
         </code>
       </pre>
-    </CodeListingTabPanel>)}
-  </CodeListing>
+    </TabListTabPanel>)}
+  </TabList>
 
   function title(s: string): string {
     switch (s) {
