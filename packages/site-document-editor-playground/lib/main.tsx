@@ -8,11 +8,6 @@ import {CloseIcon} from "@onlyoffice/ui-icons/poor/24.js"
 import {
   Button,
   CodeEditor,
-  CodeListing,
-  CodeListingTab,
-  CodeListingTabList,
-  CodeListingTabListWrapper,
-  CodeListingTabPanel,
   Content,
   FormControl,
   FormControlAction,
@@ -23,6 +18,11 @@ import {
   SelectListbox,
   SelectOption,
   SrOnly,
+  TabList,
+  TabListTab,
+  TabListTabList,
+  TabListTabListWrapper,
+  TabListTabPanel,
   TextInput,
   TextInputControl,
 } from "@onlyoffice/ui-kit"
@@ -59,16 +59,16 @@ export function DocumentEditorPlayground(p: DocumentEditorPlaygroundParameters):
   const cp: JSX.Element[] = []
 
   for (const s of samples) {
-    const t = <CodeListingTab id={s.id}>{s.label}</CodeListingTab>
+    const t = <TabListTab id={s.id}>{s.label}</TabListTab>
     ct.push(t)
 
-    const p = <CodeListingTabPanel by={s.id}>
+    const p = <TabListTabPanel labelledby={s.id}>
       <pre>
         <code data-de-playground-config-sample={s.id}>
           Sample of code in the process of generation...
         </code>
       </pre>
-    </CodeListingTabPanel>
+    </TabListTabPanel>
     cp.push(p)
   }
 
@@ -144,12 +144,12 @@ export function DocumentEditorPlayground(p: DocumentEditorPlaygroundParameters):
           <div class="de-playground__island de-playground__samples">
             <SrOnly><h2>Config Samples</h2></SrOnly>
             <Content>
-              <CodeListing>
-                <CodeListingTabListWrapper>
-                  <CodeListingTabList label="">{ct}</CodeListingTabList>
-                </CodeListingTabListWrapper>
+              <TabList>
+                <TabListTabListWrapper>
+                  <TabListTabList label="">{ct}</TabListTabList>
+                </TabListTabListWrapper>
                 {cp}
-              </CodeListing>
+              </TabList>
             </Content>
           </div>
           {ts}

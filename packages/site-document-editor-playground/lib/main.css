@@ -37,10 +37,6 @@
   margin-block-start: 0;
 }
 
-.de-playground .code-listing {
-  margin-block-start: 0;
-}
-
 .de-playground .de-playground__properties .de-playground__container .form-control {
   @media (--size-viewport-width-medium) and (not (--size-viewport-width-large)) {
     margin-block-start: 0;
