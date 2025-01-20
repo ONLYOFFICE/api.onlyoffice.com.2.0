@@ -31,6 +31,7 @@
     "@onlyoffice/ui-primitives": "workspace:^",
     "@onlyoffice/ui-select": "workspace:^",
     "@onlyoffice/ui-sr-only": "workspace:^",
+    "@onlyoffice/ui-tab-list": "workspace:^",
     "@onlyoffice/ui-text-input": "workspace:^",
     "preact": "10.22.0"
   },

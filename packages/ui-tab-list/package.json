@@ -1,0 +1,26 @@
+{
+  "name": "@onlyoffice/ui-tab-list",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./dist/main.js",
+    "./client.js": "./dist/client.js",
+    "./main.css": "./lib/main.css"
+  },
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test:types": "tsc --noEmit",
+    "test": "pnpm test:types"
+  },
+  "dependencies": {
+    "@github/tab-container-element": "4.8.0",
+    "@onlyoffice/preact-elements": "workspace:^",
+    "@types/tab-container-element": "workspace:^",
+    "clsx": "2.1.0",
+    "preact": "10.22.0"
+  },
+  "devDependencies": {
+    "typescript": "5.7.2"
+  }
+}

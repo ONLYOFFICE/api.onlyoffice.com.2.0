@@ -3988,6 +3988,9 @@ importers:
       '@onlyoffice/ui-sr-only':
         specifier: workspace:^
         version: link:../ui-sr-only
+      '@onlyoffice/ui-tab-list':
+        specifier: workspace:^
+        version: link:../ui-tab-list
       '@onlyoffice/ui-text-input':
         specifier: workspace:^
         version: link:../ui-text-input
@@ -4095,6 +4098,28 @@ importers:
       '@onlyoffice/preact-types':
         specifier: workspace:^
         version: link:../preact-types
+      preact:
+        specifier: 10.22.0
+        version: 10.22.0
+    devDependencies:
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
+
+  packages/ui-tab-list:
+    dependencies:
+      '@github/tab-container-element':
+        specifier: 4.8.0
+        version: 4.8.0
+      '@onlyoffice/preact-elements':
+        specifier: workspace:^
+        version: link:../preact-elements
+      '@types/tab-container-element':
+        specifier: workspace:^
+        version: link:../types-tab-container-element
+      clsx:
+        specifier: 2.1.0
+        version: 2.1.0
       preact:
         specifier: 10.22.0
         version: 10.22.0

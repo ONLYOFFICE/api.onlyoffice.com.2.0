@@ -1,0 +1,84 @@
+.tab-list {
+  border-end-end-radius: var(--size-border-radius-small);
+  border-end-start-radius: var(--size-border-radius-small);
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+
+.tab-list tab-list-container {
+  display: contents;
+}
+
+.tab-list tab-container {
+  display: contents;
+}
+
+.tab-list__tab-list-wrapper {
+  background-color: var(--color-background-default);
+  border-block-end-color: var(--color-border-muted);
+  border-block-end-style: solid;
+  border-block-end-width: var(--size-border-width-thin);
+  display: flex;
+  font-family: var(--base-text-font-family-monospace);
+  inline-size: 100%;
+  justify-content: space-between;
+}
+
+.tab-list__tab-list {
+  display: flex;
+  margin-block-end: calc(var(--size-border-width-thin) * -1);
+  padding-inline: var(--base-size-12);
+}
+
+.tab-list__tab {
+  background-color: var(--base-color-transparent);
+  border: none;
+  color: var(--color-foreground-muted);
+  cursor: pointer;
+  display: block;
+  padding: var(--base-size-12) var(--base-size-12);
+  position: relative;
+
+  &[aria-selected="true"] {
+    color: var(--color-foreground-accent);
+    z-index: 1;
+  }
+}
+
+.tab-list__tab[aria-selected="true"]::before {
+  background-color: var(--color-border-accent-emphasis);
+  block-size: var(--size-border-width-thick);
+  clip-path: inset(0 0 0 round var(--size-border-width-thick) var(--size-border-width-thick) 0 0%);
+  content: "";
+  inset-block-end: 0;
+  inset-inline: var(--base-size-12);
+  position: absolute;
+}
+
+.tab-list__extra-list {
+  column-gap: var(--base-size-12);
+  display: flex;
+  margin-block-end: calc(var(--size-border-width-thin) * -1);
+  padding-inline: var(--base-size-12);
+}
+
+.tab-list__extra {
+  align-items: center;
+  display: flex;
+  padding: var(--base-size-4);
+}
+
+.tab-list__tab-panel {
+  &:focus-within {
+    z-index: 1;
+  }
+}
+
+/* Integration with @github/clipboard-copy-element */
+
+.tab-list__extra clipboard-copy {
+  color: var(--color-foreground-muted);
+  cursor: pointer;
+  display: flex;
+}
