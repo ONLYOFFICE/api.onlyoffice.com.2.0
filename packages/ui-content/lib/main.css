@@ -262,13 +262,22 @@
   margin-block-start: var(--base-size-24);
 }
 
-/* Integration with @onlyoffice/code-listing */
+/* Integration with @onlyoffice/ui-tab-list */
 
-.content .code-listing {
+.content > .tab-list:first-child {
+  margin-block-start: 0;
+}
+
+.content .tab-list {
   margin-block-start: var(--base-size-24);
 }
 
-.content .code-listing div[role="tabpanel"] pre {
-  border: none;
+.content .tab-list__tab-panel > :first-child {
   margin-block-start: 0;
+}
+
+.content .tab-list__tab-panel > pre:first-child {
+  border-start-end-radius: 0;
+  border-start-start-radius: 0;
+  margin-block-start: calc(var(--size-border-width-thin) * -1);
 }
