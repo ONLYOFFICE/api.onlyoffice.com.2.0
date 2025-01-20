@@ -2,7 +2,6 @@ import {Content} from "@onlyoffice/ui-kit"
 import {type Meta} from "@storybook/preact"
 import {type JSX, h} from "preact"
 import {Default as CodeEditorStory} from "./code-editor.story.tsx"
-import {Default as CodeListingStory} from "./code-listing.story.tsx"
 
 export default {
   title: "UI Foundation / Content",
@@ -311,13 +310,5 @@ export function WithCodeEditor(): JSX.Element {
     <p>Paragraph before code editor</p>
     <CodeEditorStory />
     <p>Paragraph after code editor</p>
-  </Content>
-}
-
-export function WithCodeListing(): JSX.Element {
-  return <Content>
-    <p>Paragraph before code listing</p>
-    <CodeListingStory />
-    <p>Paragraph after code listing</p>
   </Content>
 }

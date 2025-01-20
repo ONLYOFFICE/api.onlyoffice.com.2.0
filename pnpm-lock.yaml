@@ -3861,25 +3861,6 @@ importers:
         specifier: 5.7.2
         version: 5.7.2
 
-  packages/ui-code-listing:
-    dependencies:
-      '@github/tab-container-element':
-        specifier: 4.8.0
-        version: 4.8.0
-      '@onlyoffice/preact-types':
-        specifier: workspace:^
-        version: link:../preact-types
-      '@types/tab-container-element':
-        specifier: workspace:^
-        version: link:../types-tab-container-element
-      preact:
-        specifier: 10.22.0
-        version: 10.22.0
-    devDependencies:
-      typescript:
-        specifier: 5.7.2
-        version: 5.7.2
-
   packages/ui-code-preview:
     dependencies:
       preact:
@@ -3977,9 +3958,6 @@ importers:
       '@onlyoffice/ui-code-editor':
         specifier: workspace:^
         version: link:../ui-code-editor
-      '@onlyoffice/ui-code-listing':
-        specifier: workspace:^
-        version: link:../ui-code-listing
       '@onlyoffice/ui-code-preview':
         specifier: workspace:^
         version: link:../ui-code-preview
