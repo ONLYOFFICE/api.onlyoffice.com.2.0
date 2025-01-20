@@ -218,6 +218,7 @@ function selectorNestedPattern(): string {
     ":first-child",
     ":first-of-type",
     ":focus-visible",
+    ":focus-within",
     ":focus",
     ":hover",
     ":last-child",
