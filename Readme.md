@@ -1,3 +1,8 @@
+## Information
+
+This repository is an archive of api.onlyoffice.com version 2.0. Now it moved to the new repository [api.onlyoffice.com](https://github.com/ONLYOFFICE/api.onlyoffice.com).
+
+
 Source code for the ONLYOFFICE API official website: [https://api.onlyoffice.com](https://api.onlyoffice.com).
 Includes documentation on the API use for the following ONLYOFFICE modules, components and editions:
 
